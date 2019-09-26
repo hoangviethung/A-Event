@@ -28,14 +28,14 @@ ul {
 }
 
 body {
-	margin          : 0;
-	font-family     : 'Roboto Condensed', sans-serif;
-	font-size       : 16px;
-	font-weight     : 400;
-	line-height     : 1.5;
-	color           : #1c1c1c;
-	text-align      : left;
-	background-color: #fff;
+	font-family          : 'K2D', sans-serif;
+	display              : grid;
+	grid-template-columns: 100%;
+	justify-content      : center;
+	background           : $main-color-4;
+	color                : $main-color-3;
+	margin               : 0;
+	line-height          : 1.5;
 }
 
 [tabindex="-1"]:focus {

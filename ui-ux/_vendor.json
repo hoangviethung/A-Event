@@ -11,11 +11,14 @@
 			"_vendor/ls.unveilhooks.min.js",
 			"bower_components/jquery/dist/jquery.min.js",
 			"bower_components/swiper/dist/js/swiper.js",
-			"bower_components/fancybox/dist/jquery.fancybox.js"
+			"bower_components/fancybox/dist/jquery.fancybox.js",
+			"bower_components/wow/dist/wow.js"
 		],
 		"css": [
 			"bower_components/swiper/dist/css/swiper.css",
-			"bower_components/fancybox/dist/jquery.fancybox.css"
+			"bower_components/fancybox/dist/jquery.fancybox.css",
+			"bower_components/fancybox/dist/jquery.fancybox.css",
+			"bower_components/wow/css/libs/animate.css"
 		]
 	}
 }

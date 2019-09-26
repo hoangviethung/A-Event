@@ -5,25 +5,2177 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<style>#loading{-webkit-transition:.8s;-o-transition:.8s;position:fixed;top:0;right:0;bottom:0;left:0;z-index:99999;transition:.8s;background:#fff;width:100%;height:100%}#loading #progress{-webkit-transition:.8s;-o-transition:.8s;display:none;transition:.8s;background:#000;width:0;height:1px}#loading #progress,#loading .progstat-wrapper{-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);position:absolute;top:50%;transform:translateY(-50%)}#loading .progstat-wrapper{margin-top:0;width:100%;color:#000;font-size:14px;font-weight:300;letter-spacing:3px;text-align:center}#loading .logo-loader{-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);margin-top:-100px;width:350px;height:350px}</style>
+		<style>#loading{-webkit-transition:1.5s;-o-transition:1.5s;position:fixed;top:0;right:0;bottom:0;left:0;z-index:99999;transition:1.5s;background:#000;width:100%;height:100%}#loading #progress{-webkit-transition:1.5s;-o-transition:1.5s;display:none;transition:1.5s;background:#000;width:0;height:1px}#loading #progress,#loading .progstat-wrapper{-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);position:absolute;top:50%;transform:translateY(-50%)}#loading .progstat-wrapper{margin-top:0;width:100%;color:#fff;font-size:14px;font-weight:300;letter-spacing:3px;text-align:center}#loading .logo-loader{-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);margin-top:-100px;width:150px;height:150px}</style>
 		<script>!function(){function n(n){return document.getElementById(n)}document.addEventListener("DOMContentLoaded",function(){var e=n("loading"),t=n("progress"),o=n("progstat"),r=document.images,i=0,d=r.length;if(0==d)return u();function a(){var n=100/d*(i+=1)<<0;if(t.style.width=n,o.innerHTML=n,i===d)return u()}function u(){e.style.opacity=0,setTimeout(function(){e.style.display="none";var n=document.getElementById("loading");n.parentNode.removeChild(n)},1500)}for(var c=0;c<d;c++){var s=new Image;s.onload=a,s.onerror=a,s.src=r[c].src}},!1)}();</script>
 		<link rel="stylesheet" href="./css/core.min.css">
-		<link rel="stylesheet" href="./css/main.min.css"><link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i&display=swap&subset=vietnamese" rel="stylesheet">
+		<link rel="stylesheet" href="./css/main.min.css"><link href="https://fonts.googleapis.com/css?family=K2D&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Pangolin&display=swap" rel="stylesheet">
 	</head>
 	<body class="trangchu-page">
 		<div id="loading">
-			<div class="logo-loader"><img src="./img/loading.gif" alt=""></div>
+			<div class="logo-loader"><img src="./img/icons/loading.gif" alt=""></div>
 			<div class="progstat-wrapper">Loading: <span id="progstat">0</span>%</div>
 			<div id="progress"></div>
 		</div>
 		<div id="fb-root"></div>
-		<header></header>
+		<header>
+			<div class="container">
+				<div class="row">
+					<div class="left-menu">
+						<div class="logo"><a href="index.html"><img src="./img/logo.png" alt=""></a></div>
+					</div>
+					<div class="add-event"><a href="index.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" class="sc-ckVGcZ cRPCZL"><g fill="none" fill-rule="evenodd"><circle id="oval-plus" class="sc-dxgOiQ kSEybs" stroke-width="2" cx="12" cy="12" r="11"></circle><path d="M6,12 L18,12" id="Line" class="sc-dxgOiQ kSEybs" stroke-width="2" stroke-linecap="square"></path><path d="M12,6 L12,18" id="Line2" class="sc-dxgOiQ kSEybs" stroke-width="2" stroke-linecap="square"></path></g></svg><span>ADD A EVENT</span></a></div>
+					<div class="login"><a href="index.html"><svg class="sc-eNPDpu cjclFo" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26"><g transform="translate(1 1)" stroke="#fff" stroke-width="2" fill="none"><circle cx="12" cy="12" r="12"></circle><path d="M15.65 6.78a3.56 3.56 0 0 0-3.5-3.65H12a3.56 3.56 0 0 0-3.65 3.5v.15c0 .42.42 2.45.42 2.45.3 1.78 1.46 3.3 3.23 3.3s2.92-1.47 3.23-3.3c0 0 .42-2.03.42-2.45zM3.13 20.09v-.37c0-1.62 1.2-2.82 2.82-3.23l6.05-1.1 6.1 1.15c1.57.47 2.77 1.56 2.77 3.23v.37"></path></g></svg><span>Login</span></a></div>
+				</div>
+			</div>
+		</header>
 		<main>
+			<section class="home-banner">
+				<div class="container">
+					<div class="banner-wrapper">
+						<div class="swpier-container slider-bannerHome">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<div class="box-banner">
+										<figure><img class="ofc" src="./img/banner/1.png" alt="" srcset="">
+											<figcaption>
+												<div class="type-of-event">
+													<h5><span>A . Event</span>| Thể loại sự kiện</h5><span>Name</span>
+												</div>
+												<div class="name-event">
+													<h5>TÊN CỦA SỰ KIỆN TRÊN BANNER</h5>
+												</div>
+												<div class="decription-event">
+													<p>ĐOẠN TÓM TẮT CỦA SỰ KIỆN</p>
+													<p>9.9.2019 | 21:00 - SÂN VẬN ĐỘNG QUÂN KHU 7 (THỜI GIAN)</p>
+												</div>
+											</figcaption>
+										</figure>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="box-banner">
+										<figure><img class="ofc" src="./img/banner/2.png" alt="" srcset="">
+											<figcaption>
+												<div class="type-of-event">
+													<h5><span>A . Event</span>| Thể loại sự kiện</h5><span>Name</span>
+												</div>
+												<div class="name-event">
+													<h5>TÊN CỦA SỰ KIỆN TRÊN BANNER</h5>
+												</div>
+												<div class="decription-event">
+													<p>ĐOẠN TÓM TẮT CỦA SỰ KIỆN</p>
+													<p>9.9.2019 | 21:00 - SÂN VẬN ĐỘNG QUÂN KHU 7 (THỜI GIAN)</p>
+												</div>
+											</figcaption>
+										</figure>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="box-banner">
+										<figure><img class="ofc" src="./img/banner/3.png" alt="" srcset="">
+											<figcaption>
+												<div class="type-of-event">
+													<h5><span>A . Event</span>| Thể loại sự kiện</h5><span>Name</span>
+												</div>
+												<div class="name-event">
+													<h5>TÊN CỦA SỰ KIỆN TRÊN BANNER</h5>
+												</div>
+												<div class="decription-event">
+													<p>ĐOẠN TÓM TẮT CỦA SỰ KIỆN</p>
+													<p>9.9.2019 | 21:00 - SÂN VẬN ĐỘNG QUÂN KHU 7 (THỜI GIAN)</p>
+												</div>
+											</figcaption>
+										</figure>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="box-banner">
+										<figure><img class="ofc" src="./img/banner/4.png" alt="" srcset="">
+											<figcaption>
+												<div class="type-of-event">
+													<h5><span>A . Event</span>| Thể loại sự kiện</h5><span>Name</span>
+												</div>
+												<div class="name-event">
+													<h5>TÊN CỦA SỰ KIỆN TRÊN BANNER</h5>
+												</div>
+												<div class="decription-event">
+													<p>ĐOẠN TÓM TẮT CỦA SỰ KIỆN</p>
+													<p>9.9.2019 | 21:00 - SÂN VẬN ĐỘNG QUÂN KHU 7 (THỜI GIAN)</p>
+												</div>
+											</figcaption>
+										</figure>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="about">
+				<div class="container"><a data-fancybox data-width="1000" data-height="800" href="https://youtu.be/JS2kenvaIuo">
+						<div class="block-about bg-main">
+							<h2 class="text-left wow bounceInUp" data-wow-duration="2s">A . Event - sự kiện của bạn<br><span>niềm vui mọi người</span></h2>
+							<h2 class="text-right wow bounceInUp" data-wow-duration="2s">Chúng tôi là ai ?<br><span>click để hiểu nhau hơn</span></h2>
+						</div></a></div>
+			</section>
+			<section class="catalog-event">
+				<div class="container">
+					<div class="catalog-wrapper bg-main">
+						<div class="title-catalog"><a href="#"><img class="icon" src="./img/icons/add.svg" alt="" srcset=""></a>
+							<div class="name-catalog"><span>A . Event - loại sự kiện</span><a href="#">
+									<h3>Name</h3></a></div>
+							<div class="event-tag">
+								<ul class="list-eventTag">
+									<li class="item"><a href="#">#eventtag-1</a></li>
+									<li class="item"><a href="#">#eventtag-2</a></li>
+									<li class="item"><a href="#">#eventtag-3</a></li>
+									<li class="item"><a href="#">#eventtag-4</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="swpier-container slider-ProductByCatalog">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/1.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/2.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/3.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/4.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/5.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/6.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/7.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/8.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/9.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/10.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/11.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/12.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/13.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/14.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/15.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/16.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/17.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/18.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/19.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/20.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+							</div>
+							<div class="swiper-button-next icon"></div>
+							<div class="swiper-button-prev icon"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="catalog-event">
+				<div class="container">
+					<div class="catalog-wrapper bg-main">
+						<div class="title-catalog"><a href="#"><img class="icon" src="./img/icons/add.svg" alt="" srcset=""></a>
+							<div class="name-catalog"><span>A . Event - loại sự kiện</span><a href="#">
+									<h3>Name</h3></a></div>
+							<div class="event-tag">
+								<ul class="list-eventTag">
+									<li class="item"><a href="#">#eventtag-1</a></li>
+									<li class="item"><a href="#">#eventtag-2</a></li>
+									<li class="item"><a href="#">#eventtag-3</a></li>
+									<li class="item"><a href="#">#eventtag-4</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="swpier-container slider-ProductByCatalog">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/1.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/2.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/3.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/4.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/5.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/6.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/7.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/8.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/9.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/10.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/11.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/12.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/13.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/14.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/15.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/16.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/17.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/18.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/19.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/20.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+							</div>
+							<div class="swiper-button-next icon"></div>
+							<div class="swiper-button-prev icon"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="catalog-event">
+				<div class="container">
+					<div class="catalog-wrapper bg-main">
+						<div class="title-catalog"><a href="#"><img class="icon" src="./img/icons/add.svg" alt="" srcset=""></a>
+							<div class="name-catalog"><span>A . Event - loại sự kiện</span><a href="#">
+									<h3>Name</h3></a></div>
+							<div class="event-tag">
+								<ul class="list-eventTag">
+									<li class="item"><a href="#">#eventtag-1</a></li>
+									<li class="item"><a href="#">#eventtag-2</a></li>
+									<li class="item"><a href="#">#eventtag-3</a></li>
+									<li class="item"><a href="#">#eventtag-4</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="swpier-container slider-ProductByCatalog">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/1.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/2.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/3.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/4.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/5.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/6.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/7.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/8.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/9.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/10.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/11.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/12.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/13.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/14.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/15.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/16.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/17.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/18.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/19.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/20.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+							</div>
+							<div class="swiper-button-next icon"></div>
+							<div class="swiper-button-prev icon"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="catalog-event">
+				<div class="container">
+					<div class="catalog-wrapper bg-main">
+						<div class="title-catalog"><a href="#"><img class="icon" src="./img/icons/add.svg" alt="" srcset=""></a>
+							<div class="name-catalog"><span>A . Event - loại sự kiện</span><a href="#">
+									<h3>Name</h3></a></div>
+							<div class="event-tag">
+								<ul class="list-eventTag">
+									<li class="item"><a href="#">#eventtag-1</a></li>
+									<li class="item"><a href="#">#eventtag-2</a></li>
+									<li class="item"><a href="#">#eventtag-3</a></li>
+									<li class="item"><a href="#">#eventtag-4</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="swpier-container slider-ProductByCatalog">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/1.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/2.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/3.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/4.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/5.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/6.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/7.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/8.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/9.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/10.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/11.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/12.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/13.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/14.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/15.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/16.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/17.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/18.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/19.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/20.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+							</div>
+							<div class="swiper-button-next icon"></div>
+							<div class="swiper-button-prev icon"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="catalog-event">
+				<div class="container">
+					<div class="catalog-wrapper bg-main">
+						<div class="title-catalog"><a href="#"><img class="icon" src="./img/icons/add.svg" alt="" srcset=""></a>
+							<div class="name-catalog"><span>A . Event - loại sự kiện</span><a href="#">
+									<h3>Name</h3></a></div>
+							<div class="event-tag">
+								<ul class="list-eventTag">
+									<li class="item"><a href="#">#eventtag-1</a></li>
+									<li class="item"><a href="#">#eventtag-2</a></li>
+									<li class="item"><a href="#">#eventtag-3</a></li>
+									<li class="item"><a href="#">#eventtag-4</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="swpier-container slider-ProductByCatalog">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/1.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/2.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/3.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/4.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/5.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/6.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/7.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/8.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/9.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/10.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/11.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/12.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/13.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/14.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/15.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/16.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/17.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/18.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/19.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+								<div class="swiper-slide"><a href="#">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/product/20.jpg" alt="" srcset=""></div>
+											<figcaption>
+												<h3>TÊN CỦA SỰ KIỆN</h3>
+												<div class="info-event">
+													<div class="price">
+														<h5>Từ:<span>1.500.000 VND</span></h5>
+													</div>
+													<div class="address">
+														<h5>Địa chỉ:<span>Hồ Chí Minh</span></h5>
+													</div>
+													<div class="time">
+														<h5>Thời gian:<span>12.12.2019</span></h5>
+													</div>
+												</div>
+											</figcaption>
+										</figure></a></div>
+							</div>
+							<div class="swiper-button-next icon"></div>
+							<div class="swiper-button-prev icon"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="home-news">
+				<div class="container">
+					<div class="tab-container bg-main">
+						<div class="block-title">
+							<h3>Tin tức sự kiện nổi bật</h3>
+							<ul class="list-catalogNews">
+								<li class="item acitve" toggle-for="item-1">LOẠI 1</li>
+								<li class="item" toggle-for="item-2">LOẠI 2</li>
+								<li class="item" toggle-for="item-3">LOẠI 3</li>
+								<li class="item" toggle-for="item-4">LOẠI 4</li>
+								<li class="item" toggle-for="item-5">LOẠI 5</li>
+							</ul>
+						</div>
+						<div class="tab-content">
+							<div class="content" tab-id="item-1">
+								<div class="list-news">
+									<div class="item">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/news/1.png" alt="" srcset=""></div>
+											<figcaption>
+												<h5>Cùng Master Event Điểm Qua Một Khoảng Khắc Thú Vị Tại Sự Kiễn Lễ Hộ Sắc Màu</h5><span class="time">23.10.2018</span>
+												<p>Cùng Master Event điểm qua những tấm hình ấn tượng của The Music Run qua các năm nhé các bạn.</p>
+											</figcaption>
+										</figure>
+									</div>
+									<div class="item">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/news/2.png" alt="" srcset=""></div>
+											<figcaption>
+												<h5>Master của ngày giải trí chia sẻ về tư duy tổ chức sự kiện, xu hướng năm 2019</h5><span class="time">23.10.2018</span>
+												<p>Sau thành công của Move 2015 - giao lưu với tỉ phú Richard Brandson, năm 2016 công ty M.O.V.E và Master Event tiếp tục mang đến khóa học với diễn giả Steve Rivkin.</p>
+											</figcaption>
+										</figure>
+									</div>
+									<div class="item">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/news/3.png" alt="" srcset=""></div>
+											<figcaption>
+												<h5>Khánh Thi làm liveshow kỷ niệm 25 sự nghiệp.</h5><span class="time">23.10.2018</span>
+												<p>Vào ngày 10/6, liveshow “Khánh Thi 25 năm” hiện thực giấc mơ liveshow đầu tiên trong sự nghiệp của “nữ hoàng dancesport” sẽ được diễn ra tại Cung thể thao Quần Ngựa (Hà Nội). Master Event vinh dự là đơn vị bảo trợ thông tin cho liveshow này.</p>
+											</figcaption>
+										</figure>
+									</div>
+									<div class="item">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/news/4.png" alt="" srcset=""></div>
+											<figcaption>
+												<h5>Bậc thầy về thuật bán hàng brian đến việt nam.</h5><span class="time">23.10.2018</span>
+												<p>Từ 05 - 06/12/2015, công ty DVH Bransons tổ chức, Master Event phối hợp thực hiện khóa đào tạo Phát triển kinh doanh toàn diện với Brian Tracy tại TP Hồ Chí Minh.</p>
+											</figcaption>
+										</figure>
+									</div>
+									<div class="item">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/news/5.png" alt="" srcset=""></div>
+											<figcaption>
+												<h5>Dàn sao ‘Avengers: Endgame’ náo loạn sự kiện ra mắt phim tại Mỹ</h5><span class="time">23.10.2018</span>
+												<p>Dàn sao của bộ phim đình đám năm 2019 đã ra mặt tại buổi họp báo vô cùng đẹp và lộng lẫy. Trong đó có Hoàng Việt Hùng diễn viên chính bộ phim.</p>
+											</figcaption>
+										</figure>
+									</div>
+									<div class="item">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/news/6.png" alt="" srcset=""></div>
+											<figcaption>
+												<h5>Sự kiện DJ Master nơi hồi tụi các cơ trưởng</h5><span class="time">23.10.2018</span>
+												<p>Tập hợp cực mạnh các cơ trưởng đến với sụ kiệm EDM này cùng nhau múa quạt sum vầy vào ngày 09.12.2019</p>
+											</figcaption>
+										</figure>
+									</div>
+								</div>
+							</div>
+							<div class="content" tab-id="item-2">
+								<div class="list-news">
+									<div class="item">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/news/7.png" alt="" srcset=""></div>
+											<figcaption>
+												<h5>Sự kiện ra mắt đĩa bay không người lái của VN sản xuất tại trung quốc được tổ chức tại Thái Lan</h5><span class="time">23.10.2018</span>
+												<p>Cùng Master Event điểm qua những tấm hình ấn tượng của The Music Run qua các năm nhé các bạn.</p>
+											</figcaption>
+										</figure>
+									</div>
+									<div class="item">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/news/8.png" alt="" srcset=""></div>
+											<figcaption>
+												<h5>Sơn Tùng M-TP nổi bật tại sự kiện của Gucci ở Hong Kong</h5><span class="time">23.10.2018</span>
+												<p>Sau thành công của Move 2015 - giao lưu với tỉ phú Richard Brandson, năm 2016 công ty M.O.V.E và Master Event tiếp tục mang đến khóa học với diễn giả Steve Rivkin.</p>
+											</figcaption>
+										</figure>
+									</div>
+									<div class="item">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/news/3.png" alt="" srcset=""></div>
+											<figcaption>
+												<h5>Khánh Thi làm liveshow kỷ niệm 25 sự nghiệp.</h5><span class="time">23.10.2018</span>
+												<p>Vào ngày 10/6, liveshow “Khánh Thi 25 năm” hiện thực giấc mơ liveshow đầu tiên trong sự nghiệp của “nữ hoàng dancesport” sẽ được diễn ra tại Cung thể thao Quần Ngựa (Hà Nội). Master Event vinh dự là đơn vị bảo trợ thông tin cho liveshow này.</p>
+											</figcaption>
+										</figure>
+									</div>
+									<div class="item">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/news/4.png" alt="" srcset=""></div>
+											<figcaption>
+												<h5>Bậc thầy về thuật bán hàng brian đến việt nam.</h5><span class="time">23.10.2018</span>
+												<p>Từ 05 - 06/12/2015, công ty DVH Bransons tổ chức, Master Event phối hợp thực hiện khóa đào tạo Phát triển kinh doanh toàn diện với Brian Tracy tại TP Hồ Chí Minh.</p>
+											</figcaption>
+										</figure>
+									</div>
+									<div class="item">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/news/5.png" alt="" srcset=""></div>
+											<figcaption>
+												<h5>Dàn sao ‘Avengers: Endgame’ náo loạn sự kiện ra mắt phim tại Mỹ</h5><span class="time">23.10.2018</span>
+												<p>Từ 05 - 06/12/2015, công ty DVH Bransons tổ chức, Master Event phối hợp thực hiện khóa đào tạo Phát triển kinh doanh toàn diện với Brian Tracy tại TP Hồ Chí Minh.</p>
+											</figcaption>
+										</figure>
+									</div>
+									<div class="item">
+										<figure>
+											<div class="box-img"><img class="ofc" src="./img/news/6.png" alt="" srcset=""></div>
+											<figcaption>
+												<h5>BẬC THẦY VỀ THUẬT BÁN HÀNG BRIAN TRACY ĐẾN VIỆT NAM</h5><span class="time">23.10.2018</span>
+												<p>Từ 05 - 06/12/2015, công ty DVH Bransons tổ chức, Master Event phối hợp thực hiện khóa đào tạo Phát triển kinh doanh toàn diện với Brian Tracy tại TP Hồ Chí Minh.</p>
+											</figcaption>
+										</figure>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 		</main>
 		<footer></footer>
-		<div id="back-to-top">
-			<figure><img src="./img/icons/back-to-top.svg" alt="" srcset=""></figure>
-		</div>
 		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?&amp;key=AIzaSyCHvmyTralDp2Y0m7zEiN185u1vtArcC5s&amp;libraries=places"></script>
 		<script type="text/javascript" src="./js/map.js"></script>
 		<script type="text/javascript" src="./js/core.min.js"></script>

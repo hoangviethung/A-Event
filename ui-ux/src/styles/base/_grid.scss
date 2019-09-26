@@ -6,11 +6,11 @@
 	margin-left  : auto;
 }
 
-/* @media (min-width: 768px) {
+@media (min-width: 768px) {
 	.container {
 		max-width: 740px;
 	}
-} */
+}
 
 @media (min-width: 1025px) {
 	.container {
@@ -20,12 +20,13 @@
 
 @media (min-width: 1200px) {
 	.container {
-		max-width: 1170px;
+		max-width: 1140px;
 	}
 }
-@media (min-width: 1360px) {
+
+@media (min-width: 1600px) {
 	.container {
-		max-width: 1200px;
+		max-width: 1440px;
 	}
 }
 

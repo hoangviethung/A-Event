@@ -1,52 +1,33 @@
-main {
-	padding-top: 120px;
+
+
+ul {
+	list-style: none;
+	padding   : 0;
 }
 
-.dichvu-page {
-	#breadcrumb-wrapper {
-		.breadcrumb {
-			border-top: none;
-		}
-	}
+.bg-main {
+	background: $main-color-2;
 }
 
 ::-webkit-scrollbar-track {
-	box-shadow: inset 0 0 6px rgba(255, 255, 255, 0);
-	background-color: #fff;
+	box-shadow      : inset 0 0 6px rgba(255, 255, 255, 0);
+	background-color: $main-color-2;
 }
 
 ::-webkit-scrollbar {
-	width: 5px;
-	height: 5px;
-	background-color: #fff;
+	width           : 5px;
+	height          : 5px;
+	background-color: $main-color-2;
 }
 
 ::-webkit-scrollbar-thumb {
-	border-radius: 2.5px;
-	box-shadow: inset 0 0 6px rgba(255, 255, 255, 0);
-	background-color: #3E4095;
+	border-radius   : 2.5px;
+	box-shadow      : inset 0 0 6px rgba(255, 255, 255, 0);
+	background-color: $main-color-1;
 }
 
-.tienich-title {
-	font-size: 34px;
-	font-weight: 700;
-	text-transform: uppercase;
-	margin-bottom: 35px;
-}
-
-.social-list {
-	display: flex;
-
-	nav {
-		margin-left: 10px;
-		display: flex;
-		align-items: center;
-
-		a {
-			flex: 0 0 30px;
-			max-width: 30px;
-			display: flex;
-			justify-content: center;
-		}
-	}
+.icon {
+	cursor: pointer;
+	width : 38px;
+	height: 38px;
 }
