@@ -42,7 +42,7 @@ class Tab {
 						tabContentElement.classList.remove("show")
 					}
 				});
-				targetDOM.style.display = "block"
+				targetDOM.style.display = "block",
 				setTimeout(() => {
 					targetDOM.classList.add("show")
 				}, 50);
