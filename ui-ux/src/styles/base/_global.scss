@@ -1,3 +1,26 @@
+section,
+footer {
+	width       : 100%;
+	margin-right: auto;
+	margin-left : auto;
+
+	@media (min-width: 768px) {
+		max-width: 740px;
+	}
+
+	@media (min-width: 1025px) {
+		max-width: 990px;
+	}
+
+	@media (min-width: 1200px) {
+		max-width: 1140px;
+	}
+
+	@media (min-width: 1600px) {
+		max-width: 1440px;
+	}
+}
+
 ul {
 	list-style: none;
 	padding   : 0;

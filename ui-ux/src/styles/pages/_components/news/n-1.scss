@@ -1,6 +1,6 @@
 .home-news {
 	.tab-container {
-		padding: 50px 30px;
+		padding: 50px 0;
 
 		.block-title {
 			display    : flex;
@@ -43,13 +43,13 @@
 				.list-news {
 					display  : flex;
 					flex-wrap: wrap;
-					margin   : 0 -30px;
+					margin   : 0 -15px;
 
 					.item {
 						position : relative;
 						flex     : 0 0 50%;
 						max-width: 50%;
-						padding  : 30px;
+						padding  : 30px 15px;
 
 						figure {
 							cursor : pointer;
