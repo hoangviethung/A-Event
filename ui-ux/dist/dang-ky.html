@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>A Event | Đăng Nhập - Đăng Ký</title>
+		<title>A Event | Đăng Ký</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -25,16 +25,91 @@
 					<div class="left-menu">
 						<div class="logo"><a href="index.html"><img src="./img/logo.png" alt=""></a></div>
 					</div>
-					<div class="add-event"><a href="index.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" class="sc-ckVGcZ cRPCZL"><g fill="none" fill-rule="evenodd"><circle id="oval-plus" class="sc-dxgOiQ kSEybs" stroke-width="2" cx="12" cy="12" r="11"></circle><path d="M6,12 L18,12" id="Line" class="sc-dxgOiQ kSEybs" stroke-width="2" stroke-linecap="square"></path><path d="M12,6 L12,18" id="Line2" class="sc-dxgOiQ kSEybs" stroke-width="2" stroke-linecap="square"></path></g></svg><span>ADD A EVENT</span></a></div>
-					<div class="login"><a href="login-register.html"><svg class="sc-eNPDpu cjclFo" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26"><g transform="translate(1 1)" stroke="#fff" stroke-width="2" fill="none"><circle cx="12" cy="12" r="12"></circle><path d="M15.65 6.78a3.56 3.56 0 0 0-3.5-3.65H12a3.56 3.56 0 0 0-3.65 3.5v.15c0 .42.42 2.45.42 2.45.3 1.78 1.46 3.3 3.23 3.3s2.92-1.47 3.23-3.3c0 0 .42-2.03.42-2.45zM3.13 20.09v-.37c0-1.62 1.2-2.82 2.82-3.23l6.05-1.1 6.1 1.15c1.57.47 2.77 1.56 2.77 3.23v.37"></path></g></svg><span>Login</span></a></div>
+					<div class="add-event"><a href="dang-nhap.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" class="sc-ckVGcZ cRPCZL"><g fill="none" fill-rule="evenodd"><circle id="oval-plus" class="sc-dxgOiQ kSEybs" stroke-width="2" cx="12" cy="12" r="11"></circle><path d="M6,12 L18,12" id="Line" class="sc-dxgOiQ kSEybs" stroke-width="2" stroke-linecap="square"></path><path d="M12,6 L12,18" id="Line2" class="sc-dxgOiQ kSEybs" stroke-width="2" stroke-linecap="square"></path></g></svg><span>ADD A EVENT</span></a></div>
+					<div class="button-login"><a href="dang-nhap.html"><svg class="sc-eNPDpu cjclFo" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26"><g transform="translate(1 1)" stroke="#fff" stroke-width="2" fill="none"><circle cx="12" cy="12" r="12"></circle><path d="M15.65 6.78a3.56 3.56 0 0 0-3.5-3.65H12a3.56 3.56 0 0 0-3.65 3.5v.15c0 .42.42 2.45.42 2.45.3 1.78 1.46 3.3 3.23 3.3s2.92-1.47 3.23-3.3c0 0 .42-2.03.42-2.45zM3.13 20.09v-.37c0-1.62 1.2-2.82 2.82-3.23l6.05-1.1 6.1 1.15c1.57.47 2.77 1.56 2.77 3.23v.37"></path></g></svg><span>Login</span></a></div>
 				</div>
 			</div>
 		</header>
 		<main>
-			<section class="login-register bg-main">
+			<section class="register bg-main">
 				<div class="container">
-					<div class="box-login-register">
-						<div class="tab-container"></div>
+					<div class="box-register">
+						<ul class="menu-login-register">
+							<li class="item"><a href="dang-nhap.html">ĐĂNG NHẬP</a></li>
+							<li class="item active"><a href="dang-ky.html">ĐĂNG KÍ</a></li>
+						</ul>
+						<div class="box-form-register">
+							<form action="#">
+								<div class="form-row">
+									<div class="form-group col-lg-12">
+										<label for="email">Email *</label>
+										<div class="form-input">
+											<input id="email" type="text" placeholder="Địa chỉ email *"><span class="error">Bắt lỗi</span>
+										</div>
+									</div>
+									<div class="form-group col-lg-12">
+										<label for="user-name">Username *</label>
+										<div class="form-input">
+											<input id="user-name" type="text" placeholder="Tên tài khoản *"><span class="error">Bắt lỗi</span>
+										</div>
+									</div>
+									<div class="form-group col-lg-12">
+										<label for="pass">Password *</label>
+										<div class="form-input">
+											<input id="pass" type="password" placeholder="Mật khẩu *"><span class="error">Bắt lỗi</span>
+										</div>
+									</div>
+									<div class="form-group col-lg-12">
+										<label for="repass">Retype Password *</label>
+										<div class="form-input">
+											<input id="repass" type="password" placeholder="Nhập lại mật khẩu *"><span class="error">Bắt lỗi</span>
+										</div>
+									</div>
+									<div class="form-group col-lg-12">
+										<label for="address">Address</label>
+										<div class="form-input">
+											<input id="address" type="text" placeholder="Địa chỉ"><span class="error">Bắt lỗi</span>
+										</div>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-group col-lg-6">
+										<label for="address">Date of birth *</label>
+										<div class="form-input">
+											<input type="date">
+										</div>
+									</div>
+									<div class="form-group col-lg-6">
+										<label for="address">Gender *</label>
+										<div class="form-input">
+											<label class="check-box" for="nam">Nam</label>
+											<input id="nam" type="radio" name="gender" checked>
+											<label class="check-box" for="nu">Nữ</label>
+											<input id="nu" type="radio" name="gender">
+										</div>
+									</div>
+									<div class="form-group col-lg-6">
+										<label class="choose-file" for="file-avatar">Chọn ảnh đại diện</label>
+										<div class="form-input">
+											<input id="file-avatar" type="file" hidden>
+										</div>
+									</div>
+									<div class="form-group col-lg-6">
+										<div class="form-input">
+											<select id="vip" name="">
+												<option value="">Normal</option>
+												<option value="">V.I.P</option>
+											</select>
+										</div>
+									</div>
+									<div class="form-group col-lg-12">
+										<P>To learn more about how Music.com collects, uses, shares and protects your personal data please read our full Privacy Policy.</P>
+										<p>To learn more about how Music.com collects, uses, shares and protects your personal data please read our full Privacy Policy.</p>
+									</div>
+								</div>
+								<button class="btn">ĐĂNG KÝ</button>
+							</form>
+						</div>
 					</div>
 				</div>
 			</section>

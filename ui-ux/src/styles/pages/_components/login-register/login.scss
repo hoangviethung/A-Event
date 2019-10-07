@@ -1,6 +1,6 @@
 .login {
 	padding-top        : 95px;
-	height             : 1500px;
+	height             : 1000px;
 	background-image   : url(../img/bg-login-register.svg);
 	background-size    : cover;
 	background-position: center 95px;
@@ -9,9 +9,9 @@
 		position  : absolute;
 		width     : 500px;
 		background: #232627;
-		top       : 50%;
+		top       : 150px;
 		left      : 50%;
-		transform : translate(-50%, -50%);
+		transform : translateX(-50%);
 		border    : 1px solid #37393a;
 
 		.menu-login-register {
@@ -110,22 +110,15 @@
 				.form-input {
 					position: relative;
 
-					input[type="text"] {
-						font-size    : 30px;
-						color        : #FFFFFF;
-						width        : 100%;
-						background   : none;
-						border       : none;
-						border-bottom: 2px solid rgba(255, 255, 255, 0.5);
-					}
-
+					input[type="text"],
 					input[type="password"] {
-						font-size    : 30px;
-						color        : #FFFFFF;
-						width        : 100%;
-						background   : none;
-						border       : none;
-						border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+						font-size     : 30px;
+						color         : #FFFFFF;
+						width         : 100%;
+						background    : none;
+						border        : none;
+						padding-bottom: 10px;
+						border-bottom : 2px solid rgba(255, 255, 255, 0.5);
 					}
 
 					.error {
