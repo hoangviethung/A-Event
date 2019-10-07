@@ -1,0 +1,31 @@
+section.login.bg-main
+	.container
+		.box-login
+			ul.menu-login-register
+				li.item.active
+					a(href="dang-nhap.hmtl") ĐĂNG NHẬP
+				li.item
+					a(href="dang-ky.hmtl") ĐĂNG KÍ
+			.login-with
+				span LOGIN WITH
+				a(href="#")
+					img(src="./img/icons/google.svg", alt="", srcset="")
+				a(href="#")
+					img(src="./img/icons/facebook.svg", alt="", srcset="")
+			.or-login
+				span or
+			.box-form-login
+				form(action="#")
+					.form-group
+						label(for="user-name") Tên tài khoản hoặc Email:
+						.form-input
+							input#user-name(type="text" placeholder="Username or e-mail")
+							span.error Bắt lỗi
+					.form-group
+						label(for="pass") Mật khẩu:
+						.form-input
+							input#pass(type="password", placeholder="Password")
+							span.error Bắt lỗi
+						.forgot-pass
+							a(href="#") Quên mật khẩu ???
+					button.btn ĐĂNG NHẬP
