@@ -122,11 +122,10 @@
 					}
 
 					.error {
-						position : absolute;
-						top      : 50%;
-						right    : 15px;
-						transform: translateY(-50%);
-						color    : #bc2e31;
+						display   : block;
+						text-align: right;
+						margin-top: 10px;
+						color     : #bc2e31;
 					}
 				}
 
