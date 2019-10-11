@@ -131,6 +131,14 @@ function showSubInformation() {
 	});
 }
 
+// LÂY TÊN FILE
+function getNameFile() {
+	$('input[type="file"]').change(function(e) {
+		var fileName = e.target.files[0].name;
+		$(this).parent('.form-input').siblings('p').html(fileName);
+	});
+}
+
 
 
 $(document).ready(function() {
@@ -141,6 +149,7 @@ $(document).ready(function() {
 	activeScrollMenu();
 	popupAbout();
 	showSubInformation();
+	getNameFile();
 	const newsTab = new Tab(".home-news .tab-container")
 
 

@@ -1,7 +1,7 @@
 .register {
 	position           : relative;
 	padding-top        : 95px;
-	height             : 1500px;
+	height             : 2000px;
 	background-image   : url(../img/bg-login-register.svg);
 	background-size    : cover;
 	background-position: center 95px;
@@ -122,11 +122,10 @@
 					}
 
 					.error {
-						position : absolute;
-						top      : 50%;
-						right    : 15px;
-						transform: translateY(-50%);
-						color    : #bc2e31;
+						display   : block;
+						text-align: right;
+						margin-top: 10px;
+						color     : #bc2e31;
 					}
 				}
 
