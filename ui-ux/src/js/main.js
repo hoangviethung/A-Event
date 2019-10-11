@@ -118,7 +118,7 @@ function sliderProductByCatalog() {
 	});
 }
 
-
+// SHOW SUB INFORMATION
 function showSubInformation() {
 	$('header .right-menu figure').click(function(e) {
 		e.preventDefault();
