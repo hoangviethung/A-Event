@@ -1,4 +1,5 @@
 section,
+main,
 footer {
 	width       : 100%;
 	margin-right: auto;
@@ -30,6 +31,10 @@ ul {
 	background: $main-color-2;
 }
 
+.hiden {
+	display: none !important;
+}
+
 .tab-container {
 	.tab-title {
 		.item {
@@ -50,6 +55,50 @@ ul {
 	}
 }
 
+#sub-information {
+	position  : fixed;
+	background: $main-color-2;
+	width     : 30%;
+	height    : 100vh;
+	top       : 0;
+	right     : 235px;
+	transition: .3s all ease-in-out;
+
+	figure {
+		display    : flex;
+		align-items: center;
+
+		.box-img {
+			position     : relative;
+			overflow     : hidden;
+			width        : 28px;
+			height       : 28px;
+			border-radius: 50%;
+			margin-right : 10px;
+
+			&:after {
+				content      : '';
+				position     : absolute;
+				width        : 100%;
+				height       : 100%;
+				top          : 0;
+				left         : 0;
+				border       : 2px solid $main-color-1;
+				border-radius: 50%;
+			}
+		}
+
+		figcaption {
+			h5 {
+				font-family   : 'Anton', sans-serif;
+				font-weight   : 400;
+				color         : $main-color-3;
+				font-size     : 20px;
+				letter-spacing: 2px;
+			}
+		}
+	}
+}
 
 ::-webkit-scrollbar-track {
 	box-shadow      : inset 0 0 6px rgba(255, 255, 255, 0);

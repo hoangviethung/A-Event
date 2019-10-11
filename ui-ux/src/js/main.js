@@ -1,7 +1,7 @@
 // Function thêm class lazyload vào các thẻ <img> có thuộc tính [data-src]
 const addClassLazyload = () => {
 	let imgList = document.querySelectorAll("img[data-src]")
-	Array.prototype.forEach.call(imgList, function (el) {
+	Array.prototype.forEach.call(imgList, function(el) {
 		if (el.className.length > 0) {
 			el.className = el.className + " lazyload"
 		} else {
@@ -43,9 +43,9 @@ class Tab {
 					}
 				});
 				targetDOM.style.display = "block",
-				setTimeout(() => {
-					targetDOM.classList.add("show")
-				}, 50);
+					setTimeout(() => {
+						targetDOM.classList.add("show")
+					}, 50);
 			})
 		})
 	}
@@ -119,14 +119,28 @@ function sliderProductByCatalog() {
 }
 
 
+function showSubInformation() {
+	$('header .right-menu figure').click(function(e) {
+		e.preventDefault();
+		$(this).siblings('#sub-information').addClass('active');
+	});
 
-$(document).ready(function () {
+	$('header .right-menu #sub-information .close').click(function(e) {
+		e.preventDefault();
+		$(this).parent('#sub-information').removeClass('active');
+	});
+}
+
+
+
+$(document).ready(function() {
 	objectFitImages("img.ofc"); // Luôn luôn chậy polyfill cho thuôc tính object-fit: cover trên các phiên bản IE >= 9
 	addClassLazyload(); // Luôn luôn addClass lazyload cho các hình ảnh có thuộc tính [data-src]
 	sliderHomeBanner();
 	sliderProductByCatalog();
 	activeScrollMenu();
 	popupAbout();
+	showSubInformation();
 	const newsTab = new Tab(".home-news .tab-container")
 
 
@@ -136,7 +150,7 @@ $(document).ready(function () {
 	new WOW().init();
 })
 
-$(document).ajaxComplete(function () {
+$(document).ajaxComplete(function() {
 	addClassLazyload();
 })
 
