@@ -31,7 +31,6 @@ html(lang="en")
 				span#progstat 0
 				| %
 			#progress
-		#fb-root
 		//- HEADER
 		block header
 			include _header.pug
@@ -43,7 +42,24 @@ html(lang="en")
 			include _footer.pug
 		//- BACK TO TOP
 		//- include _back-to-top.pug
-
+		//- Load Facebook SDK for JavaScript
+		#fb-root
+		script.
+			window.fbAsyncInit = function() {
+			FB.init({
+			xfbml            : true,
+			version          : 'v4.0'
+			});
+			};
+			(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+			fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+		//- Your customer chat code
+		.fb-customerchat(attribution='setup_tool' page_id='117903549608295' theme_color='#ffc300' logged_in_greeting='A Event xin chào, chúng tôi giúp gì được cho bạn ?' logged_out_greeting='A Event xin chào, chúng tôi giúp gì được cho bạn ?')
 		//- GOOGLE MAP
 		script(type="text/javascript", src="https://maps.googleapis.com/maps/api/js?&key=AIzaSyCHvmyTralDp2Y0m7zEiN185u1vtArcC5s&libraries=places")
 		//- FACEBOOK

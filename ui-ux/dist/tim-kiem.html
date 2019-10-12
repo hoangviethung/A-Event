@@ -18,7 +18,6 @@
 			<div class="progstat-wrapper">Loading: <span id="progstat">0</span>%</div>
 			<div id="progress"></div>
 		</div>
-		<div id="fb-root"></div>
 		<header>
 			<div class="container">
 				<div class="row">
@@ -110,6 +109,23 @@
 				</div>
 			</div>
 		</footer>
+		<div id="fb-root"></div>
+		<script>
+			window.fbAsyncInit = function() {
+			FB.init({
+			xfbml            : true,
+			version          : 'v4.0'
+			});
+			};
+			(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+			fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+		</script>
+		<div class="fb-customerchat" attribution="setup_tool" page_id="117903549608295" theme_color="#ffc300" logged_in_greeting="A Event xin chào, chúng tôi giúp gì được cho bạn ?" logged_out_greeting="A Event xin chào, chúng tôi giúp gì được cho bạn ?"></div>
 		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?&amp;key=AIzaSyCHvmyTralDp2Y0m7zEiN185u1vtArcC5s&amp;libraries=places"></script>
 		<script type="text/javascript" src="./js/core.min.js"></script>
 		<script type="text/javascript" src="./js/main.min.js"></script>
