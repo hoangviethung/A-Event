@@ -124,12 +124,14 @@ ul {
 }
 
 .btn {
+	display       : block;
 	font-family   : Anton, sans-serif;
 	background    : $main-color-1;
 	color         : $main-color-2;
+	text-align    : center;
 	border        : none;
 	border-radius : 20px;
 	width         : 100%;
-	height        : 50px;
+	line-height   : 50px;
 	letter-spacing: 5px;
 }

@@ -80,7 +80,7 @@ function sliderHomeBanner() {
 			disableOnInteraction: false,
 		},
 		pagination: {
-			el: '.swiper-pagination',
+			el: '.slider-bannerHome .swiper-pagination',
 		},
 		navigation: {
 			nextEl: '.slider-bannerHome .swiper-button-next',
@@ -89,11 +89,17 @@ function sliderHomeBanner() {
 	});
 }
 
-// POPUP ABOUT
-function popupAbout() {
-	$('.about [data-fancybox]').fancybox({
-		youtube: {
-			controls: true,
+// SLIDER HOME BANNER
+function sliderHotEvent() {
+	var swiper = new Swiper('.slider-hotEvent', {
+		slidesPerView: 1,
+		speed: 1000,
+		pagination: {
+			el: '.slider-hotEvent .swiper-pagination',
+		},
+		navigation: {
+			nextEl: '.slider-hotEvent .swiper-button-next',
+			prevEl: '.slider-hotEvent .swiper-button-prev',
 		},
 	});
 }
@@ -109,11 +115,20 @@ function sliderProductByCatalog() {
 			delay: 5000,
 		},
 		pagination: {
-			el: '.swiper-pagination',
+			el: '.slider-ProductByCatalog .swiper-pagination',
 		},
 		navigation: {
 			nextEl: '.slider-ProductByCatalog .swiper-button-next',
 			prevEl: '.slider-ProductByCatalog .swiper-button-prev',
+		},
+	});
+}
+
+// POPUP ABOUT
+function popupAbout() {
+	$('.about [data-fancybox]').fancybox({
+		youtube: {
+			controls: true,
 		},
 	});
 }
@@ -139,17 +154,58 @@ function getNameFile() {
 	});
 }
 
+// ĐẾM SỐ NGƯỢC
+function countDownSale() {
+	// Set the date we're counting down to
+	var countDownDate = new Date("Sep 30, 2020 23:59:59").getTime();
+
+	// Update the count down every 1 second
+	var x = setInterval(function() {
+		// Get today's date and time
+		var now = new Date().getTime();
+
+		// Find the distance between now and the count down date
+		var distance = countDownDate - now;
+
+		// Time calculations for days, hours, minutes and seconds
+
+		// var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+		// Display the result in the element with id="demo"
+		try {
+			// document.getElementById("days").innerHTML = days;
+			document.getElementById("hours").innerHTML = hours;
+			document.getElementById("minutes").innerHTML = minutes;
+			document.getElementById("seconds").innerHTML = seconds;
+			// If the count down is finished, write some text 
+			if (distance < 0) {
+				clearInterval(x);
+				document.getElementById("demo").innerHTML = "EXPIRED";
+			}
+		} catch (error) {
+
+		}
+	}, 1000);
+}
+
+
+
 
 
 $(document).ready(function() {
 	objectFitImages("img.ofc"); // Luôn luôn chậy polyfill cho thuôc tính object-fit: cover trên các phiên bản IE >= 9
 	addClassLazyload(); // Luôn luôn addClass lazyload cho các hình ảnh có thuộc tính [data-src]
 	sliderHomeBanner();
+	sliderHotEvent();
 	sliderProductByCatalog();
 	activeScrollMenu();
 	popupAbout();
 	showSubInformation();
 	getNameFile();
+	countDownSale();
 	const newsTab = new Tab(".home-news .tab-container")
 
 
