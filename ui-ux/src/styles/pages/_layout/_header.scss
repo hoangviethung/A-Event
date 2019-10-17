@@ -140,13 +140,13 @@ header {
 				background: $main-color-2;
 				width: 40%;
 				height: 100vh;
-				top: -100%;
-				right: 0;
+				top: 0;
+				right: -100%;
 				transition: 1s all ease-in-out;
 				padding: 50px 0;
 
 				&.active {
-					top: 0;
+					right: 0;
 				}
 
 				.close {
