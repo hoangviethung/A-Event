@@ -1,14 +1,19 @@
 section.home-news.bg-main
 	.container
 		.tab-container
-			.block-title
-				h3 Tin tức sự kiện nổi bật
+			.title-catalog
+				a(href="#")
+					img.icon(src="./img/icons/add.svg", alt="", srcset="")
+				.name-catalog
+					span A . Event - News
+					a(href="#")
+							h3 Tin Tức
 			ul.list-catalogNews
-				li.item(toggle-for="item-1").acitve LOẠI 1
-				li.item(toggle-for="item-2") LOẠI 2
-				li.item(toggle-for="item-3") LOẠI 3
-				li.item(toggle-for="item-4") LOẠI 4
-				li.item(toggle-for="item-5") LOẠI 5
+				li.item(toggle-for="item-1").acitve NỔI BẬT
+				li.item(toggle-for="item-2") MỚI
+				li.item(toggle-for="item-3") GIẢI TRÍ
+				li.item(toggle-for="item-4") HỌC HỎI
+				li.item(toggle-for="item-5") CÁC LĨNH VỰC KHÁC
 			.tab-content
 				.content(tab-id="item-1")
 					.list-news

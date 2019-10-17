@@ -1,67 +1,32 @@
-//- section.clients-partner.bg-main
-//- 	.container
-//- 		.tab-container
-//- 			.block-title
-//- 				h3 Tin tức sự kiện nổi bật
-//- 			ul.list-catalogNews
-//- 				li.item(toggle-for="item-1").acitve LOẠI 1
-//- 				li.item(toggle-for="item-2") LOẠI 2
-//- 				li.item(toggle-for="item-3") LOẠI 3
-//- 				li.item(toggle-for="item-4") LOẠI 4
-//- 				li.item(toggle-for="item-5") LOẠI 5
-//- 			.tab-content
-//- 				.content(tab-id="item-1")
-//- 					.list-news
-//- 						-for(i=1;i<7;i++)
-//- 							.item
-//- 								figure
-//- 									.box-img
-//- 										img.ofc(src="./img/news/"+i+".png", alt="", srcset="")
-//- 									figcaption
-//- 										h5 Cùng Master Event Điểm Qua Một Khoảng Khắc Thú Vị Tại Sự Kiễn Lễ Hộ Sắc Màu
-//- 										span.time 23.10.2018
-//- 										p Cùng Master Event điểm qua những tấm hình ấn tượng của The Music Run qua các năm nhé các bạn.
-//- 				.content(tab-id="item-2")
-//- 					.list-news
-//- 						-for(i=7;i<13;i++)
-//- 							.item
-//- 								figure
-//- 									.box-img
-//- 										img.ofc(src="./img/news/"+i+".png", alt="", srcset="")
-//- 									figcaption
-//- 										h5 Sự kiện ra mắt đĩa bay không người lái của VN sản xuất tại trung quốc được tổ chức tại Thái Lan
-//- 										span.time 23.10.2018
-//- 										p Cùng Master Event điểm qua những tấm hình ấn tượng của The Music Run qua các năm nhé các bạn.
-//- 				.content(tab-id="item-3")
-//- 					.list-news
-//- 						-for(i=13;i<19;i++)
-//- 							.item
-//- 								figure
-//- 									.box-img
-//- 										img.ofc(src="./img/news/"+i+".png", alt="", srcset="")
-//- 									figcaption
-//- 										h5 Sự kiện ra mắt đĩa bay không người lái của VN sản xuất tại trung quốc được tổ chức tại Thái Lan
-//- 										span.time 23.10.2018
-//- 										p Cùng Master Event điểm qua những tấm hình ấn tượng của The Music Run qua các năm nhé các bạn.
-//- 				.content(tab-id="item-4")
-//- 					.list-news
-//- 						-for(i=19;i<25;i++)
-//- 							.item
-//- 								figure
-//- 									.box-img
-//- 										img.ofc(src="./img/news/"+i+".png", alt="", srcset="")
-//- 									figcaption
-//- 										h5 Sự kiện ra mắt đĩa bay không người lái của VN sản xuất tại trung quốc được tổ chức tại Thái Lan
-//- 										span.time 23.10.2018
-//- 										p Cùng Master Event điểm qua những tấm hình ấn tượng của The Music Run qua các năm nhé các bạn.
-//- 				.content(tab-id="item-5")
-//- 					.list-news
-//- 						-for(i=28;i<34;i++)
-//- 							.item
-//- 								figure
-//- 									.box-img
-//- 										img.ofc(src="./img/news/"+i+".png", alt="", srcset="")
-//- 									figcaption
-//- 										h5 Sự kiện ra mắt đĩa bay không người lái của VN sản xuất tại trung quốc được tổ chức tại Thái Lan
-//- 										span.time 23.10.2018
-//- 										p Cùng Master Event điểm qua những tấm hình ấn tượng của The Music Run qua các năm nhé các bạn.
+section.clients-partner.bg-main
+	.container
+		.row
+			.col-lg-4.left-item
+				figure
+					a(href="index.html")
+						img(src="./img/logo.png", alt="")
+					figcaption
+						h3 A Event là gì ???
+						p A Event là hệ thống quản lý và phân phối vé trực tuyến, giúp việc mua bán vé sự kiện của bạn thật tiện lợi và dễ dàng.
+			.col-lg-8.right-item
+				.tab-container
+					ul.list-tab
+						li.item(toggle-for="item-1").acitve ĐỐI TÁC TIÊU BIỂU
+						li.item(toggle-for="item-2") KHÁCH HÀNG TIÊU BIỂU
+						li.item(toggle-for="item-3") NHẬN XÉT CỦA ĐỐI TÁC
+					.tab-content
+						.content(tab-id="item-1")
+							.list-img
+								-for(i=1;i<5;i++)
+									.item
+										a(href="https://asialive365.com/")
+											img(src="./img/clients-partner/doi-tac-"+i+".png", alt="", srcset="")
+						.content(tab-id="item-2")
+							.list-img
+								-for(i=1;i<15;i++)
+									.item
+										a(href="http://mtvwe.com/")
+											img(src="./img/clients-partner/khach-hang-"+i+".png", alt="")
+						.content(tab-id="item-3")
+							p NHẬN XÉT CỦA KHÁCH HÀNG
+
