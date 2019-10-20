@@ -12,7 +12,7 @@
                 <div class="or-login"><span>or</span></div>
                 <div class="box-form-login">
                     @if(session('thongbao'))
-                        <div class="alert alert-danger">
+                        <div class="alert alert-sussces">
                                 {{session('thongbao')}}
                         </div>
                     @endif
@@ -22,27 +22,25 @@
                         <div class="form-group">
                             <label for="user-name">Tên tài khoản hoặc Email:</label>
                             <div class="form-input">
-                            <input id="user-name" type="text" placeholder="Username hoặc e-mail" name="email"><span class="error">
-                                    @if(count($errors) > 0)
-                                    @foreach ($errors->all() as $err)
-                                        {{$err}}<br />
-                                    @endforeach
-                                    @endif
-                            </span>
+                            <input id="user-name" type="text" placeholder="Username hoặc e-mail" name="email">
+                            @if($errors->has('email'))
+                                <span class="error">
+                                    {{$errors->first('email')}}
+                                </span>
+                            @endif
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="pass">Mật khẩu:</label>
                             <div class="form-input">
-                            <input id="pass" type="password" placeholder="Password" name="password"><span class="error">
-                                    @if(count($errors) > 0)
-                                    @foreach ($errors->all() as $err)
-                                        {{$err}}<br />
-                                    @endforeach
-                                    @endif
-                            </span>
+                            <input id="pass" type="password" placeholder="Password" name="password">
+                            @if($errors->has('email'))
+                                <span class="error">
+                                    {{$errors->first('password')}}
+                                </span>
+                            @endif
                             </div>
-                            <div class="forgot-pass"><a href="#">Quên mật khẩu ???</a></div>
+                            {{-- <div class="forgot-pass"><a href="#">Quên mật khẩu ???</a></div> --}}
                         </div>
                         <button class="btn" type="submit">ĐĂNG NHẬP</button>
                     </form>
