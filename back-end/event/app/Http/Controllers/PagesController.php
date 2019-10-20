@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Slide;
 class PagesController extends Controller
 {
     /**
@@ -25,17 +26,18 @@ class PagesController extends Controller
         }
     }
     public function getIndex(){
-        return view('pages.body');
+        $slide = Slide::all();
+        return view('pages.body',['slide'=>$slide ]);
     }
     public function getSreach(){
         return view('pages.sreach');
     }
     public function getLogin(){
-        
+
         return view('pages.login');
     }
     public function postLogin(Request $request){
-        $this->validate($request, 
+        $this->validate($request,
         [
             'email'=>'required',
             'password'=>'required|min:3|max:50',
@@ -57,7 +59,11 @@ class PagesController extends Controller
         return view('pages.register');
     }
     public function getDangxuat(){
-        Auth::logout(); 
+        Auth::logout();
         return redirect('pages/body');
     }
+
+
+
+
 }
