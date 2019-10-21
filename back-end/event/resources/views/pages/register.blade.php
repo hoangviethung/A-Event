@@ -9,42 +9,79 @@
                     <li class="item active"><a href="{{ url('pages/register') }}">ĐĂNG KÍ</a></li>
                 </ul>
                 <div class="box-form-register">
-                    <form action="dang-nhap.html">
+                    @if(session('thongbao'))
+                        <div class="alert alert-success" style="position: absolute; text-align: center; font-size: 30px; color: red; font-weight: bold;">
+                            {{session('thongbao')}}
+                        </div>
+                    @endif
+                    <form action="pages/register" method="POST">
+                        <input type="hidden" name="_token" value="{{csrf_token()}}" />
                         <div class="form-row">
                             <div class="form-group col-lg-12">
                                 <label for="email">Email *</label>
                                 <div class="form-input">
-                                    <input id="email" type="text" placeholder="Địa chỉ email *"><span class="error">Bắt lỗi</span>
+                                    <input id="email" type="text" placeholder="Địa chỉ email *" name="email">
+                                       @if($errors->has('email'))
+                                       <span class="error">
+                                           {{$errors->first('email')}}
+                                        </span>
+                                       @endif
+                                  
                                 </div>
                             </div>
                             <div class="form-group col-lg-12">
                                 <label for="user-name">Tài khoản *</label>
                                 <div class="form-input">
-                                    <input id="user-name" type="text" placeholder="Tên tài khoản *"><span class="error">Bắt lỗi</span>
+                                    <input id="user-name" type="text" placeholder="Tên tài khoản *" name="name">
+                                    @if($errors->has('name'))
+                                       <span class="error">
+                                           {{$errors->first('name')}}
+                                        </span>
+                                    @endif
                                 </div>
                             </div>
                             <div class="form-group col-lg-12">
                                 <label for="pass">Mật khẩu *</label>
                                 <div class="form-input">
-                                    <input id="pass" type="password" placeholder="Mật khẩu *"><span class="error">Bắt lỗi</span>
+                                    <input id="pass" type="password" placeholder="Mật khẩu *" name="password">
+                                    @if($errors->has('password'))
+                                        <span class="error">
+                                            {{$errors->first('password')}}
+                                        </span>
+                                     @endif
                                 </div>
                             </div>
                             <div class="form-group col-lg-12">
                                 <label for="repass">Nhập lại mật khẩu *</label>
                                 <div class="form-input">
-                                    <input id="repass" type="password" placeholder="Nhập lại mật khẩu *"><span class="error">Bắt lỗi</span>
+                                    <input id="repass" type="password" placeholder="Nhập lại mật khẩu *" name="password">
+                                    @if($errors->has('password'))
+                                        <span class="error">
+                                            {{$errors->first('password')}}
+                                        </span>
+                                     @endif
                                 </div>
                             </div>
                             <div class="form-group col-lg-12">
                                 <label for="address">Số điện thoại *</label>
                                 <div class="form-input">
-                                    <input id="address" type="phone" placeholder="Số điện thoại"><span class="error">Bắt lỗi</span>
+                                    <input id="address" type="phone" placeholder="Số điện thoại" name="dien_thoai">
+                                    @if($errors->has('dien_thoai'))
+                                    <span class="error">
+                                        {{$errors->first('dien_thoai')}}
+                                    </span>
+                                 @endif
                                 </div>
                             </div>
                             <div class="form-group col-lg-12">
                                 <label for="address">Địa chỉ</label>
                                 <div class="form-input">
-                                    <input id="address" type="text" placeholder="Địa chỉ"><span class="error">Bắt lỗi</span>
+                                    <input id="address" type="text" placeholder="Địa chỉ" name="dia_chi">
+                                    @if($errors->has('dia_chi'))
+                                    <span class="error">
+                                        {{$errors->first('dia_chi')}}
+                                    </span>
+                                 @endif
                                 </div>
                             </div>
                         </div>
@@ -52,36 +89,46 @@
                             <div class="form-group col-lg-6">
                                 <label for="address">Ngày sinh *</label>
                                 <div class="form-input">
-                                    <input type="date">
+                                    <input type="text" name="ngay_sinh">
+                                    @if($errors->has('ngay_sinh'))
+                                    <span class="error">
+                                        {{$errors->first('ngay_sinh')}}
+                                    </span>
+                                 @endif
                                 </div>
                             </div>
                             <div class="form-group col-lg-6">
                                 <label for="address">Giới tính *</label>
                                 <div class="form-input">
-                                    <label class="check-box" for="nam">Nam</label>
-                                    <input id="nam" type="radio" name="gender" checked>
-                                    <label class="check-box" for="nu">Nữ</label>
-                                    <input id="nu" type="radio" name="gender">
+                                    <select id="vip">
+                                        <option value="gioi_tinh">Nam</option>
+                                        <option value="gioi_tinh">Nữ</option>
+                                    </select>
+                                    @if($errors->has('gioi_tinh'))
+                                    <span class="error">
+                                        {{$errors->first('gioi_tinh')}}
+                                    </span>
+                                 @endif
                                 </div>
                             </div>
                             <div class="form-group col-lg-6">
                                 <label class="choose-file" for="file-avatar">Chọn ảnh đại diện</label>
                                 <div class="form-input">
-                                    <input id="file-avatar" type="file" hidden>
+                                    <input id="file-avatar" type="file" hidden name="hinh">
                                 </div>
-                                <p>Details of goods: Quantity/G.W/Goods/FileName</p>
                             </div>
                             <div class="form-group col-lg-6">
                                 <div class="form-input">
-                                    <select id="vip" name="">
-                                        <option value="">Normal</option>
-                                        <option value="">V.I.P</option>
+                                    <select id="vip">
+                                        <option value="vip">Normal</option>
+                                        <option value="vip">V.I.P</option>
                                     </select>
+                                    @if($errors->has('vip'))
+                                    <span class="error">
+                                        {{$errors->first('vip')}}
+                                    </span>
+                                 @endif
                                 </div>
-                            </div>
-                            <div class="form-group col-lg-12">
-                                <P>To learn more about how Music.com collects, uses, shares and protects your personal data please read our full Privacy Policy.</P>
-                                <p>To learn more about how Music.com collects, uses, shares and protects your personal data please read our full Privacy Policy.</p>
                             </div>
                         </div>
                         <button class="btn" type="submit">ĐĂNG KÝ</button>

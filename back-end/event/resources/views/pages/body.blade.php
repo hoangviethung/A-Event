@@ -5,78 +5,26 @@
         <div class="banner-wrapper">
             <div class="swpier-container slider-bannerHome">
                 <div class="swiper-wrapper">
+                @foreach($slide as $slide)
                     <div class="swiper-slide">
                         <div class="box-banner">
-                            <figure><img class="ofc" src="images/banner/1.png" alt="" srcset="">
+                            <figure><img class="ofc" src="images/banner/{{$slide->banner}}.png" alt="" srcset="">
                                 <figcaption>
                                     <div class="type-of-event">
-                                        <h5><span>A . Event</span>| Thể loại sự kiện</h5><span>Name</span>
+                                        <h5><span>A . Event</span>| Thể loại sự kiện</h5><span>{{$slide->loai_su_kien}}</span>
                                     </div>
                                     <div class="name-event">
-                                        <h5>TÊN CỦA SỰ KIỆN TRÊN BANNER</h5>
+                                        <h5>{{$slide->ten_s_kien}}</h5>
                                     </div>
                                     <div class="decription-event">
-                                        <p>ĐOẠN TÓM TẮT CỦA SỰ KIỆN</p>
-                                        <p>9.9.2019 | 21:00 - SÂN VẬN ĐỘNG QUÂN KHU 7 (THỜI GIAN)</p>
+                                        <p>{{$slide->tom_tat}}</p>
+                                        <p>{{$slide->thoi_gian}} - {{$slide->dia_diem}} (THỜI GIAN)</p>
                                     </div>
                                 </figcaption>
                             </figure>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <div class="box-banner">
-                            <figure><img class="ofc" src="images/banner/2.png" alt="" srcset="">
-                                <figcaption>
-                                    <div class="type-of-event">
-                                        <h5><span>A . Event</span>| Thể loại sự kiện</h5><span>Name</span>
-                                    </div>
-                                    <div class="name-event">
-                                        <h5>TÊN CỦA SỰ KIỆN TRÊN BANNER</h5>
-                                    </div>
-                                    <div class="decription-event">
-                                        <p>ĐOẠN TÓM TẮT CỦA SỰ KIỆN</p>
-                                        <p>9.9.2019 | 21:00 - SÂN VẬN ĐỘNG QUÂN KHU 7 (THỜI GIAN)</p>
-                                    </div>
-                                </figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="box-banner">
-                            <figure><img class="ofc" src="images/banner/3.png" alt="" srcset="">
-                                <figcaption>
-                                    <div class="type-of-event">
-                                        <h5><span>A . Event</span>| Thể loại sự kiện</h5><span>Name</span>
-                                    </div>
-                                    <div class="name-event">
-                                        <h5>TÊN CỦA SỰ KIỆN TRÊN BANNER</h5>
-                                    </div>
-                                    <div class="decription-event">
-                                        <p>ĐOẠN TÓM TẮT CỦA SỰ KIỆN</p>
-                                        <p>9.9.2019 | 21:00 - SÂN VẬN ĐỘNG QUÂN KHU 7 (THỜI GIAN)</p>
-                                    </div>
-                                </figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="box-banner">
-                            <figure><img class="ofc" src="images/banner/4.png" alt="" srcset="">
-                                <figcaption>
-                                    <div class="type-of-event">
-                                        <h5><span>A . Event</span>| Thể loại sự kiện</h5><span>Name</span>
-                                    </div>
-                                    <div class="name-event">
-                                        <h5>TÊN CỦA SỰ KIỆN TRÊN BANNER</h5>
-                                    </div>
-                                    <div class="decription-event">
-                                        <p>ĐOẠN TÓM TẮT CỦA SỰ KIỆN</p>
-                                        <p>9.9.2019 | 21:00 - SÂN VẬN ĐỘNG QUÂN KHU 7 (THỜI GIAN)</p>
-                                    </div>
-                                </figcaption>
-                            </figure>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
