@@ -4,18 +4,48 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+<<<<<<< HEAD
 use App\users;
+=======
+use App\Slide;
+>>>>>>> d12c48ef7219dc9621ba0e165d60dafed943455d
 class PagesController extends Controller
 {
     public function getIndex(){
-        return view('pages.body');
+        $slide = Slide::all();
+        return view('pages.body',['slide'=>$slide ]);
     }
     public function getSreach(){
         return view('pages.sreach');
     }
     public function getLogin(){
+<<<<<<< HEAD
         return view('pages.login');
     }
+=======
+
+        return view('pages.login');
+    }
+    public function postLogin(Request $request){
+        $this->validate($request,
+        [
+            'email'=>'required',
+            'password'=>'required|min:3|max:50',
+        ]
+        ,
+        [
+            'email.required'=>'Bạn chưa nhập email',
+            'password.required'=>'Bạn chưa nhập mật khẩu',
+            'password.min'=>'Mật khẩu phải lơn hơn 3 kí tự',
+            'password.max'=>'Mật khẩu không quá 50 kí tự',
+        ]);
+        if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
+            return redirect('pages/body');
+        } else{
+            return redirect('pages/login')->with('thongbao', 'Đăng nhập không thành công !');
+        }
+    }
+>>>>>>> d12c48ef7219dc9621ba0e165d60dafed943455d
     public function getRegister(){
         return view('pages.register');
     }
@@ -78,6 +108,14 @@ class PagesController extends Controller
 
     public function getDangxuat(){
         Auth::logout();
+<<<<<<< HEAD
         return redirect('pages.body');
+=======
+        return redirect('pages/body');
+>>>>>>> d12c48ef7219dc9621ba0e165d60dafed943455d
     }
+
+
+
+
 }
