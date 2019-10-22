@@ -1,7 +1,7 @@
 // Function thêm class lazyload vào các thẻ <img> có thuộc tính [data-src]
 const addClassLazyload = () => {
 	let imgList = document.querySelectorAll("img[data-src]")
-	Array.prototype.forEach.call(imgList, function (el) {
+	Array.prototype.forEach.call(imgList, function(el) {
 		if (el.className.length > 0) {
 			el.className = el.className + " lazyload"
 		} else {
@@ -135,12 +135,12 @@ function popupAbout() {
 
 // SHOW SUB INFORMATION
 function showSubInformation() {
-	$('header .right-menu figure').click(function (e) {
+	$('header .right-menu figure').click(function(e) {
 		e.preventDefault();
 		$(this).siblings('#sub-information').addClass('active');
 	});
 
-	$('header .right-menu #sub-information .close').click(function (e) {
+	$('header .right-menu #sub-information .close').click(function(e) {
 		e.preventDefault();
 		$(this).parent('#sub-information').removeClass('active');
 	});
@@ -148,7 +148,7 @@ function showSubInformation() {
 
 // LÂY TÊN FILE
 function getNameFile() {
-	$('input[type="file"]').change(function (e) {
+	$('input[type="file"]').change(function(e) {
 		var fileName = e.target.files[0].name;
 		$(this).parent('.form-input').siblings('p').html(fileName);
 	});
@@ -160,7 +160,7 @@ function countDownSale() {
 	var countDownDate = new Date("Sep 30, 2020 23:59:59").getTime();
 
 	// Update the count down every 1 second
-	var x = setInterval(function () {
+	var x = setInterval(function() {
 		// Get today's date and time
 		var now = new Date().getTime();
 
@@ -191,11 +191,52 @@ function countDownSale() {
 	}, 1000);
 }
 
+// CLICK CHỌN FILE
+function chooseFile_Img() {
+
+	$('.button-choose-file').on('click', function() {
+		$(this).siblings('input[type=file]').click();
+		console.log('OK');
+	});
+
+	// ĐỔI ẢNH ĐÃ LẤY ĐƯỢC TỪ URL
+	$(".file-img").change(function() {
+		readURL(this);
+	});
+
+	// LẤY HÌNH ẢNH TỪ INPUT FILE
+	function readURL(input) {
+		if (input.files && input.files[0]) {
+			var reader = new FileReader();
+
+			reader.onload = function(e) {
+				$(input).siblings('.button-choose-file').children('img.ofc').attr('src', e.target.result);
+				console.log('Đổi hình');
+			}
+			reader.readAsDataURL(input.files[0]);
+		}
+	}
+
+}
+
+function CKEditor() {
+	ClassicEditor
+		.create(document.querySelector('#editor'))
+		.then(editor => {
+			console.log(editor);
+		})
+		.catch(error => {
+			console.error(error);
+		});
+}
 
 
 
 
-$(document).ready(function () {
+
+
+
+$(document).ready(function() {
 	objectFitImages("img.ofc"); // Luôn luôn chậy polyfill cho thuôc tính object-fit: cover trên các phiên bản IE >= 9
 	addClassLazyload(); // Luôn luôn addClass lazyload cho các hình ảnh có thuộc tính [data-src]
 	sliderHomeBanner();
@@ -206,6 +247,8 @@ $(document).ready(function () {
 	showSubInformation();
 	getNameFile();
 	countDownSale();
+	chooseFile_Img();
+	CKEditor();
 	const tabHomeNews = new Tab(".home-news .tab-container");
 	const tabClientsPartner = new Tab(".clients-partner .tab-container")
 
@@ -216,7 +259,7 @@ $(document).ready(function () {
 	new WOW().init();
 })
 
-$(document).ajaxComplete(function () {
+$(document).ajaxComplete(function() {
 	addClassLazyload();
 })
 
