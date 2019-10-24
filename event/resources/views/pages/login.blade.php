@@ -12,9 +12,9 @@
                 <div class="or-login"><span>or</span></div>
                 <div class="box-form-login">
                     @if(session('thongbao'))
-                        <div class="alert alert-sussces">
+                        <p style="text-align: center;margin-bottom: 10px;">
                                 {{session('thongbao')}}
-                        </div>
+                        </p>
                     @endif
                   
                     <form action="pages/login" method="POST">
@@ -40,7 +40,6 @@
                                 </span>
                             @endif
                             </div>
-                            {{-- <div class="forgot-pass"><a href="#">Quên mật khẩu ???</a></div> --}}
                         </div>
                         <button class="btn" type="submit">ĐĂNG NHẬP</button>
                     </form>

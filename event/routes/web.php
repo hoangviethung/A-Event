@@ -23,7 +23,6 @@ Route::group(['prefix'=>'pages'], function(){
 
     Route::get('addevent', 'PagesController@getAddevent');
 
-
     Route::get('login', 'PagesController@getLogin');
     Route::post('login', 'PagesController@postLogin');
     

@@ -10,11 +10,11 @@
                 </ul>
                 <div class="box-form-register">
                     @if(session('thongbao'))
-                        <div class="alert alert-success" style="position: absolute; text-align: center; font-size: 30px; color: red; font-weight: bold;">
+                        <p style="text-align: center;">
                             {{session('thongbao')}}
-                        </div>
+                        </p>
                     @endif
-                    <form action="pages/register" method="POST">
+                    <form action="pages/register" method="POST" enctype="multipart/form-data">
                         <input type="hidden" name="_token" value="{{csrf_token()}}" />
                         <div class="form-row">
                             <div class="form-group col-lg-12">
@@ -89,7 +89,7 @@
                             <div class="form-group col-lg-6">
                                 <label for="address">Ngày sinh *</label>
                                 <div class="form-input">
-                                    <input type="text" name="ngay_sinh">
+                                    <input type="date" name="ngay_sinh">
                                     @if($errors->has('ngay_sinh'))
                                     <span class="error">
                                         {{$errors->first('ngay_sinh')}}
@@ -100,9 +100,9 @@
                             <div class="form-group col-lg-6">
                                 <label for="address">Giới tính *</label>
                                 <div class="form-input">
-                                    <select id="vip">
-                                        <option value="gioi_tinh">Nam</option>
-                                        <option value="gioi_tinh">Nữ</option>
+                                    <select id="vip" name="gioi_tinh">
+                                        <option value="Nam">Nam</option>
+                                        <option value="Nữ">Nữ</option>
                                     </select>
                                     @if($errors->has('gioi_tinh'))
                                     <span class="error">
@@ -119,9 +119,9 @@
                             </div>
                             <div class="form-group col-lg-6">
                                 <div class="form-input">
-                                    <select id="vip">
-                                        <option value="vip">Normal</option>
-                                        <option value="vip">V.I.P</option>
+                                    <select id="vip" name="vip">
+                                        <option value="Normal">Normal</option>
+                                        <option value="V.I.P">V.I.P</option>
                                     </select>
                                     @if($errors->has('vip'))
                                     <span class="error">
