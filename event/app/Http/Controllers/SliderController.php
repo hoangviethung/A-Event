@@ -13,7 +13,7 @@ class SliderController extends Controller
     public function getSua(){
         return view('admin.slider.sua');
     }
-    
+
     public function getThem(){
         return view('admin.slider.them');
     }
