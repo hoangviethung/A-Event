@@ -55,6 +55,16 @@
 				position     : relative;
 				margin-bottom: 10px;
 
+				input[type="date"] {
+					font-size    : 18px;
+					color        : $main-color-1;
+					width        : 100%;
+					background   : none;
+					border       : 1px solid $main-color-1;
+					padding      : 10px;
+					border-radius: 5px;
+				}
+
 				input[type="text"],
 				input[type="password"],
 				input[type="number"],
