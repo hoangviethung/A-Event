@@ -50,8 +50,8 @@
 		}
 
 		.list-catalogNews {
-			display    : flex;
-			margin-left: auto;
+			display        : flex;
+			justify-content: flex-end;
 
 			.item {
 				cursor       : pointer;

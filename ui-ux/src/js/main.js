@@ -126,10 +126,21 @@ function sliderProductByCatalog() {
 
 // POPUP ABOUT
 function popupAbout() {
-	$('.about [data-fancybox]').fancybox({
-		youtube: {
-			controls: true,
+	$('.home-about [data-fancybox]').fancybox({
+		animationEffect: "circular",
+		transitionEffect: "zoom-in-out",
+		buttons: [
+			'zoom',
+			'close',
+			'share',
+			'fullscreen',
+		],
+		vimeo: {
+			color: 'ffd800'
 		},
+		thumbs: {
+			autoStart: true,
+		}
 	});
 }
 
