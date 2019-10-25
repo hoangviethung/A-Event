@@ -1,4 +1,6 @@
 @extends('admin.layouts.index')
+
+
 @section('content')
      <!-- Page Content -->
      <div id="page-wrapper">
@@ -22,25 +24,25 @@
                                 <tr>
                                     <th>Id</th>
                                     <th>Tên danh mục</th>
-                                    <th>Loại danh mục</th>
                                     <th colspan="2">Thao tác</th>
                                 </tr>
                                 </thead>
                                 <!--Table head-->
-                            
+
                                 <!--Table body-->
                                 <tbody>
+                                @foreach($danhmuc as $danhmuc)
                                 <tr class="table-info">
-                                    <th>1</th>
-                                    <td>sự kiện hót</td>
-                                    <td>Tin hót</td>
+                                    <th>{{$danhmuc->id}}</th>
+                                    <td>{{$danhmuc->ten_loai}}</td>
                                     <th>
-                                       <a href="admin/danhmuc/sua"><img src="images/edit.png" alt="A-event" srcset="" width="40" height="40"></a>
+                                       <a href="admin/danhmuc/sua/{{$danhmuc->id}}"><img src="images/edit.png" alt="A-event" srcset="" width="40" height="40"></a>
                                     </th>
                                     <th>
-                                        <a href="admin/danhmuc/sua"><img src="images/xoa.png" alt="A-event" srcset="" width="40" height="40"></a>
+                                        <a href="admin/danhmuc/xoa"><img src="images/xoa.png" alt="A-event" srcset="" width="40" height="40"></a>
                                     </th>
                                 </tr>
+                                @endforeach
                                 </tbody>
                                 <!--Table body-->
                         </table>
@@ -50,5 +52,5 @@
             </div>
             <!-- /.container-fluid -->
         </div>
-        <!-- /#page-wrapper -->  
+        <!-- /#page-wrapper -->
 @endsection

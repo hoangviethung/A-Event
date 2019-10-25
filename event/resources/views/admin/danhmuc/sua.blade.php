@@ -11,22 +11,40 @@
                         </h1>
                     </div>
                     <!-- /.col-lg-12 -->
-                    <div class="col-lg-7" style="padding-bottom:120px">
-                            <form action="" method="POST">
-                                    <div class="form-group">
-                                        <label>Tên danh mục</label>
-                                        <input class="form-control" name="tendanhmuc" placeholder="Nhập tên danh mục" />
-                                    </div>
-                                    <div class="form-group">
-                                            <label>Loại danh mục</label>
-                                            <select class="form-control">
-                                                <option value="0" name="loaisukien">Chọn loại danh mục</option>
-                                                <option value="1" name="loaisukien">Sự kiện hót</option>
-                                            </select>
-                                        </div>
-                                    <button type="submit" class="btn btn-default">Thêm</button>
-                            <form>
+                    <div class="row">
+                    <div class="col-md-12">
+                        <!-- /.col-lg-12 -->
+                       <!--Table-->
+                        <table class="table table-striped w-auto center">
+
+                                <!--Table head-->
+                                <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Tên danh mục</th>
+                                    <th colspan="2">Thao tác</th>
+                                </tr>
+                                </thead>
+                                <!--Table head-->
+
+                                <!--Table body-->
+                                <tbody>
+                                <tr class="table-info">
+                                    <th></th>
+                                    <td></td>
+                                    <th>
+                                       <a href="admin/danhmuc/sua/{{$danhmuc->id}}"><img src="images/edit.png" alt="A-event" srcset="" width="40" height="40"></a>
+                                    </th>
+                                    <th>
+                                        <a href="admin/danhmuc/xoa"><img src="images/xoa.png" alt="A-event" srcset="" width="40" height="40"></a>
+                                    </th>
+                                </tr>
+                                </tbody>
+                                <!--Table body-->
+                        </table>
+                        <!--Table-->
                     </div>
+                </div>
                 </div>
                 <!-- /.row -->
             </div>

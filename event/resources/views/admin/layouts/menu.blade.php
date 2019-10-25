@@ -19,11 +19,12 @@
                     <a href="admin/danhmuc/danhsach"><i class="fa fa-bar-chart-o fa-fw"></i>QL Danh mục<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="admin/danhmuc/danhsach">Danh sách danh mục</a>
+                            <a href="admin/danhmuc/danhsach">Danh sách</a>
                         </li>
                         <li>
-                            <a href="admin/danhmuc/them">Thêm danh mục</a>
+                            <a href="admin/danhmuc/them">Thêm</a>
                         </li>
+
                     </ul>
                     <!-- /.nav-second-level -->
                 </li>
