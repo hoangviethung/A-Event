@@ -9,13 +9,13 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
+use Symfony\Component\Routing\Annotation\Route;
 */
 
 
 
 
 // pages website
-
 Route::group(['prefix'=>'pages'], function(){
     Route::get('index', 'PagesController@getIndex');
     
@@ -31,6 +31,9 @@ Route::group(['prefix'=>'pages'], function(){
 
     Route::get('dangxuat', 'PagesController@getDangxuat');
 });
+
+Route::get('admin/login', 'PagesController@getLoginAdmin');
+Route::post('admin/login', 'PagesController@postLoginAdmin');
 // pages website
 
 // admin
@@ -63,5 +66,20 @@ Route::group(['prefix'=>'admin'], function(){
         Route::get('xoa', 'DanhmucController@getXoa');
     }); 
     // danhmuc
+
+    // user
+    Route::group(['prefix' => 'user'], function () {
+        Route::get('danhsach','UserController@getDanhsach');
+
+        Route::get('sua', 'UserController@getSua');
+        Route::post('sua', 'UserController@postSua');
+
+        Route::get('them', 'UserController@getThem');
+        Route::post('them', 'UserController@postThem');
+
+        Route::get('xoa', 'UserController@getXoa');
+    });
+    // user
 });
+
 // admin
