@@ -4,10 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class users extends Model
+class admin extends Model
 {
-    
-    protected $table = "user";
+    protected $table = "admin";
     protected $primaryKey = 'id';
     public $timestamps=false;
 }

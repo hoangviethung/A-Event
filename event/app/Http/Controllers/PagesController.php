@@ -122,6 +122,14 @@ class PagesController extends Controller
 
     }
 
+    // login admin
+    public function getLoginAdmin(){
+    return view('admin.login');
+    }
+    public function postLoginAdmin(){
+        
+    }
+    // login admin
 
 
 
