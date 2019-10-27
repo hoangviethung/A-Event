@@ -11,40 +11,33 @@
                         </h1>
                     </div>
                     <!-- /.col-lg-12 -->
-                    <div class="row">
-                    <div class="col-md-12">
-                        <!-- /.col-lg-12 -->
-                       <!--Table-->
-                        <table class="table table-striped w-auto center">
+                    <div class="col-lg-7" style="padding-bottom:120px">
+                        @if(count($errors) > 0)
+                            <div class="alert alert-danger">
+                                @foreach($errors->all() as $err)
+                                    {{$err}} <br>
+                                @endforeach
+                            </div>
+                        @endif
 
-                                <!--Table head-->
-                                <thead>
-                                <tr>
-                                    <th>Id</th>
-                                    <th>Tên danh mục</th>
-                                    <th colspan="2">Thao tác</th>
-                                </tr>
-                                </thead>
-                                <!--Table head-->
+                        @if(session('thongbao'))
 
-                                <!--Table body-->
-                                <tbody>
-                                <tr class="table-info">
-                                    <th></th>
-                                    <td></td>
-                                    <th>
-                                       <a href="admin/danhmuc/sua/{{$danhmuc->id}}"><img src="images/edit.png" alt="A-event" srcset="" width="40" height="40"></a>
-                                    </th>
-                                    <th>
-                                        <a href="admin/danhmuc/xoa"><img src="images/xoa.png" alt="A-event" srcset="" width="40" height="40"></a>
-                                    </th>
-                                </tr>
-                                </tbody>
-                                <!--Table body-->
-                        </table>
-                        <!--Table-->
+                            <div class="alert alert-success">  {{session('thongbao')}}</div>
+
+                        @endif
+
+                        <form action="admin/danhmuc/sua/{{$danhmuc->id}}" method="POST">
+                            <input type="hidden" name="_token" value="{{csrf_token()}}"/>
+                            <!-- để truyền dữ liệu phải cho nó 1 cái token -->
+                            <div class="form-group">
+                                <label>Tên danh mục</label>
+                                <input class="form-control" name="ten_loai" placeholder="Nhập tên danh mục" value="{{$danhmuc->ten_loai}}"/>
+                            </div>
+
+                            <button type="submit" class="btn btn-default">Sửa</button>
+                            <button type="reset" class="btn btn-default">Làm mới</button>
+                        <form>
                     </div>
-                </div>
                 </div>
                 <!-- /.row -->
             </div>
