@@ -17,6 +17,12 @@
                     <div class="col-md-12">
                         <!-- /.col-lg-12 -->
                        <!--Table-->
+                    @if(session('thongbao'))
+                       <div class="alert alert-success">
+                            {{session('thongbao')}}
+                       </div>
+
+                    @endif
                         <table class="table table-striped w-auto center">
 
                                 <!--Table head-->
@@ -39,7 +45,7 @@
                                        <a href="admin/danhmuc/sua/{{$danhmuc->id}}"><img src="images/edit.png" alt="A-event" srcset="" width="40" height="40"></a>
                                     </th>
                                     <th>
-                                        <a href="admin/danhmuc/xoa"><img src="images/xoa.png" alt="A-event" srcset="" width="40" height="40"></a>
+                                        <a href="admin/danhmuc/xoa/{{$danhmuc->id}}"><img src="images/xoa.png" alt="A-event" srcset="" width="40" height="40"></a>
                                     </th>
                                 </tr>
                                 @endforeach

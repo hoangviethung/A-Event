@@ -64,9 +64,9 @@ Route::group(['prefix'=>'admin'], function(){
         Route::get('them', 'DanhmucController@getThem');
         Route::post('them', 'DanhmucController@postThem');
         // Hàm post nhận dữ liệu về và lưu vào cơ sở dữ liệu
-        Route::get('xoa', 'DanhmucController@getXoa');
-<<<<<<< HEAD
-    }); 
+        Route::get('xoa/{id}', 'DanhmucController@getXoa');
+
+    });
     // danhmuc
 
     // user
@@ -85,8 +85,6 @@ Route::group(['prefix'=>'admin'], function(){
 });
 
 // admin
-=======
-    });
     // end danhmuc
     // event
     Route::group(['prefix' => 'events'], function () {
@@ -102,6 +100,4 @@ Route::group(['prefix'=>'admin'], function(){
         Route::get('xoa', 'EventsController@getXoa');
     });
     // end event
-});
 // admin
->>>>>>> 0339a1c1b81933a7221cd88e6ff88f25af0e59fb
