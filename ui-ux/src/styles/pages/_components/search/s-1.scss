@@ -25,4 +25,22 @@
 			padding   : 0 50px;
 		}
 	}
+
+	.ket-qua-tim-kiem {
+		margin-top: 150px;
+
+		.so-luong-ket-qua {
+			text-align   : right;
+			margin-bottom: 20px;
+
+			span {
+				padding-left: 10px;
+				color       : $main-color-1;
+			}
+		}
+
+		.item-event {
+			margin-bottom: 30px;
+		}
+	}
 }
