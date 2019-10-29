@@ -32,11 +32,15 @@ Route::group(['prefix'=>'pages'], function(){
     Route::get('dangxuat', 'PagesController@getDangxuat');
 });
 
-Route::get('admin/login', 'PagesController@getLoginAdmin');
-Route::post('admin/login', 'PagesController@postLoginAdmin');
 // pages website
 
 // admin
+
+Route::get('admin/login', 'AdminController@getLoginAdmin');
+Route::post('admin/login', 'AdminController@postLoginAdmin');
+Route::get('admin/logout', 'AdminController@getLogoutAdmin');
+
+
 Route::group(['prefix'=>'admin'], function(){
     // slider
     Route::group(['prefix' => 'slider'], function () {
@@ -65,43 +69,22 @@ Route::group(['prefix'=>'admin'], function(){
         Route::post('them', 'DanhmucController@postThem');
         // Hàm post nhận dữ liệu về và lưu vào cơ sở dữ liệu
         Route::get('xoa', 'DanhmucController@getXoa');
-<<<<<<< HEAD
     }); 
     // danhmuc
 
     // user
     Route::group(['prefix' => 'user'], function () {
-        Route::get('danhsach','UserController@getDanhsach');
+        Route::get('danhsach','AdminController@getDanhsach');
 
-        Route::get('sua', 'UserController@getSua');
-        Route::post('sua', 'UserController@postSua');
+        Route::get('sua/{id}', 'AdminController@getSua');
+        Route::post('sua/{id}', 'AdminController@postSua');
 
-        Route::get('them', 'UserController@getThem');
-        Route::post('them', 'UserController@postThem');
+        Route::get('them', 'AdminController@getThem');
+        Route::post('them', 'AdminController@postThem');
 
-        Route::get('xoa', 'UserController@getXoa');
+        Route::get('xoa/{id}', 'AdminController@getXoa');
     });
     // user
 });
 
 // admin
-=======
-    });
-    // end danhmuc
-    // event
-    Route::group(['prefix' => 'events'], function () {
-        // hướng đi admin/slider/danhsach
-        Route::get('events','EventsController@getDanhsach');
-
-        Route::get('sua', 'EventsController@getSua');
-        Route::post('sua', 'EventsController@postSua');
-
-        Route::get('them', 'EventsController@getThem');
-        Route::post('them', 'EventsController@postThem');
-
-        Route::get('xoa', 'EventsController@getXoa');
-    });
-    // end event
-});
-// admin
->>>>>>> 0339a1c1b81933a7221cd88e6ff88f25af0e59fb
