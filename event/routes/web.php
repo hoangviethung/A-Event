@@ -69,6 +69,26 @@ Route::group(['prefix'=>'admin'], function(){
     });
     // danhmuc
 
+    // Sự kiện
+    Route::group(['prefix' => 'event'], function () {
+        // hướng đi admin/slider/danhsach
+        Route::get('danhsach','EventController@getDanhsach');
+
+        Route::get('sua/{id}', 'EventController@getSua');
+        Route::post('sua/{id}', 'EventController@postSua');
+
+
+        Route::get('them', 'EventController@getThem');
+        Route::post('them', 'EventController@postThem');
+        // Hàm post nhận dữ liệu về và lưu vào cơ sở dữ liệu
+        Route::get('xoa/{id}', 'EventController@getXoa');
+
+    });
+
+
+
+
+
     // user
     Route::group(['prefix' => 'user'], function () {
         Route::get('danhsach','UserController@getDanhsach');
