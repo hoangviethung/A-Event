@@ -130,6 +130,15 @@
                                  @endif
                                 </div>
                             </div>
+                            <div class="form-group col-lg-6">
+                            <div class="g-recaptcha" data-sitekey="{{env('CAPTCHA_KEY')}}"></div>
+
+                                @if($errors->has('g-recaptcha-response'))
+                                    <span class="error">
+                                        {{$errors->first('g-recaptcha-response')}}
+                                    </span>
+                                @endif
+                            </div>
                         </div>
                         <button class="btn" type="submit">ĐĂNG KÝ</button>
                     </form>

@@ -9,7 +9,7 @@ use App\users;
 use App\Slide;
 
 use App\Events;
-
+use App\Rules\Captcha;
 use App\News;
 class PagesController extends Controller
 {
@@ -61,6 +61,7 @@ class PagesController extends Controller
             'gioi_tinh'=>'required',
             'hinh'=>'required',
             'vip'=>'required',
+            'g-recaptcha-response'=> new Captcha(),
         ],
         [
             'email.required'=>'bạn chưa nhập email',

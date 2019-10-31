@@ -29,7 +29,6 @@
                     <!-- /.nav-second-level -->
                 </li>
                 <li>
-<<<<<<< HEAD
                     <a href="admin/event/danhsach"><i class="fa fa-bar-chart-o fa-fw"></i>QL Sự kiện<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
@@ -44,9 +43,6 @@
                 </li>
                 <li>
                     <a href="admin/slider/danhsach"><i class="fa fa-bar-chart-o fa-fw"></i>QL Slider<span class="fa arrow"></span></a>
-=======
-                    <a href="admin/slider/danhsach"><i class="fa fa-bar-chart-o fa-fw"></i> QL Slider<span class="fa arrow"></span></a>
->>>>>>> 01b736b09ea5fec82d233c5f38db44b19d3f6bc0
                     <ul class="nav nav-second-level">
                         <li>
                             <a href="admin/slider/danhsach">Danh Sách Slider</a>
