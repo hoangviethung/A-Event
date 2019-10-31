@@ -12,7 +12,6 @@ class AdminController extends Controller
             view()->share('admin', Auth::user());
         }
     }
-
     public function getDanhsach(){
         $admin = admins::all();
         return view('admin.user.danhsach', ['admin'=>$admin]);
