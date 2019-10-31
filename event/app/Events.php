@@ -10,7 +10,7 @@ class Events extends Model
     public function product_type(){
         return $this->belongsTo('App\Type_events','id_loai','id');
     }
-
-    public $timestamps = false;
+    public function images_event(){
+        return $this->hasMany('App\Images_events','id_event','id');
+    }
 }
-

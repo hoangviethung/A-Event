@@ -45,7 +45,7 @@ class DanhmucController extends Controller
     public function postThem(Request $request){
         $this->validate($request,
         [
-            'ten_loai' => 'required|min:2|max: 100|'
+            'ten_loai' => 'required | min:2 | max: 100'
         ],
         [
             'ten_loai.required' => ' Bạn chưa nhập tên danh mục',
