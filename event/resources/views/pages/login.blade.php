@@ -34,7 +34,7 @@
                             <label for="pass">Mật khẩu:</label>
                             <div class="form-input">
                             <input id="pass" type="password" placeholder="Password" name="password">
-                            @if($errors->has('email'))
+                            @if($errors->has('password'))
                                 <span class="error">
                                     {{$errors->first('password')}}
                                 </span>

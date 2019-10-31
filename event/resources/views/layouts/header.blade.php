@@ -33,7 +33,7 @@
 						@else
 						<div class="avatar">
 							<figure>
-								<div class="box-img"><img class="ofc" src="images/{{Auth::user()->hinh}}" alt="A-event"></div>
+								<div class="box-img"><img class="ofc" src="images/user/{{Auth::user()->hinh}}" alt="A-event"></div>
 								<figcaption>
 								<h5>{{Auth::user()->name}}</h5>
 								</figcaption>
@@ -41,7 +41,7 @@
 							<div id="sub-information">
 								<div class="close"><svg width="26" height="24" xmlns="http://www.w3.org/2000/svg"><g><rect fill="none" id="canvas_background" height="26" width="28" y="-1" x="-1"/></g><g><path fill="#91918e" stroke="null" id="svg_2" d="m13.475695,0.194444c-6.483507,0 -11.788195,5.304688 -11.788195,11.788195c0,6.483507 5.304688,11.788195 11.788195,11.788195s11.788195,-5.304688 11.788195,-11.788195c0,-6.483507 -5.304688,-11.788195 -11.788195,-11.788195zm5.776215,15.914063l-1.650347,1.650347l-4.125868,-4.125868l-4.125868,4.125868l-1.650347,-1.650347l4.125868,-4.125868l-4.125868,-4.125868l1.650347,-1.650347l4.125868,4.125868l4.125868,-4.125868l1.650347,1.650347l-4.125868,4.125868l4.125868,4.125868z"/></g></svg></div>
 								<figure>
-									<div class="box-img"><img class="ofc" src="images/{{Auth::user()->hinh}}" alt="A-event"></div>
+									<div class="box-img"><img class="ofc" src="images/user/{{Auth::user()->hinh}}" alt="A-event"></div>
 									<figcaption>
 									
 										<h5>{{Auth::user()->name}}<span>{{Auth::user()->vip}}</span></h5>

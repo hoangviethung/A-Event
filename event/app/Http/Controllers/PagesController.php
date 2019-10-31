@@ -104,7 +104,7 @@ class PagesController extends Controller
         $file = $request->file('hinh');
         if($file->getClientOriginalExtension() == 'png' || 'jpg' || 'jpeg' || 'gif'){
             $filename = md5(time()).'_'.$file->getClientOriginalName();
-            $file->move('images',$filename);
+            $file->move('images/user',$filename);
             $link = $filename;
             $user->hinh = $link;
         }
@@ -121,16 +121,5 @@ class PagesController extends Controller
         return redirect('pages/index');
 
     }
-
-    // login admin
-    public function getLoginAdmin(){
-    return view('admin.login');
-    }
-    public function postLoginAdmin(){
-        
-    }
-    // login admin
-
-
 
 }

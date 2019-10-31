@@ -1,14 +1,14 @@
 @extends('layouts.index')
 @section('content')
 <main>
-    <section class="form-add-event bg-main">
-        <div class="main-banner">
+    <section class="form-add-event">
+        <div class="main-banner content wow fadeInDown" data-wow-delay=".2s">
             <div class="form-input">
                 <figure class="button-choose-file"><img class="ofc" src="images/form-add-event/main-banner.jpg" alt="">
                     <figcaption>
                         <h3>Tải ảnh bìa lên</h3>
                         <p>Kích thước tối ưu:</p>
-                        <p>1560 x 600px (không lớn hơn 1MB)</p><svg style="enable-background:new 0 0 24 24;" version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="info"/><g id="icons"><path d="M19,7h-0.4c-0.4,0-0.7-0.2-0.9-0.6l-1.2-2.3c-0.3-0.7-1-1.1-1.8-1.1H9.2C8.5,3,7.8,3.4,7.4,4.1L6.3,6.4   C6.1,6.8,5.8,7,5.4,7H5c-2.2,0-4,1.8-4,4v6c0,2.2,1.8,4,4,4h14c2.2,0,4-1.8,4-4v-6C23,8.8,21.2,7,19,7z M12,17c-2.2,0-4-1.8-4-4   c0-2.2,1.8-4,4-4s4,1.8,4,4C16,15.2,14.2,17,12,17z" id="photo"/></g></svg>
+                        <p>1440 x 600px (không lớn hơn 1MB)</p><svg style="enable-background:new 0 0 24 24;" version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="info"/><g id="icons"><path d="M19,7h-0.4c-0.4,0-0.7-0.2-0.9-0.6l-1.2-2.3c-0.3-0.7-1-1.1-1.8-1.1H9.2C8.5,3,7.8,3.4,7.4,4.1L6.3,6.4   C6.1,6.8,5.8,7,5.4,7H5c-2.2,0-4,1.8-4,4v6c0,2.2,1.8,4,4,4h14c2.2,0,4-1.8,4-4v-6C23,8.8,21.2,7,19,7z M12,17c-2.2,0-4-1.8-4-4   c0-2.2,1.8-4,4-4s4,1.8,4,4C16,15.2,14.2,17,12,17z" id="photo"/></g></svg>
                     </figcaption>
                 </figure>
                 <input class="file-img" type="file" hidden>
@@ -186,9 +186,15 @@
                             <input type="number" placeholder="Nhập tên sự kiện">
                         </div>
                     </div>
+                    <div class="form-group col-lg-6">
+                        <label>Ngày diễn ra sự kiện</label>
+                        <div class="form-input">
+                            <input type="date">
+                        </div>
+                    </div>
                     <div class="form-group col-lg-12">
                         <label>Thông tin sự kiện</label>
-                        <textarea id="editor" name="#">This is some sample content.</textarea>
+                        <textarea id="editor" name="content">This is some sample content.</textarea>
                     </div>
                     <div class="form-group col-lg-6">
                         <label for="sdt">Thông tin liên lạc</label>

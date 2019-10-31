@@ -69,6 +69,22 @@ function activeScrollMenu() {
 	}
 }
 
+function fixedBoxBooking() {
+	let heightProductDetail = $('.product-detail').height();
+
+	if ($(window).scrollTop() > 695) {
+		$(".box-booking .overview").slideDown();
+		$(".box-booking").addClass("fixed");
+	} else {
+		$(".box-booking .overview").slideUp();
+		$(".box-booking").removeClass("fixed")
+	}
+
+	if ($(window).scrollTop() > heightProductDetail - 400) {
+		$(".box-booking").removeClass("fixed")
+	}
+}
+
 // SLIDER HOME BANNER
 function sliderHomeBanner() {
 	var swiper = new Swiper('.slider-bannerHome', {
@@ -230,6 +246,7 @@ function chooseFile_Img() {
 
 }
 
+// CKEditor
 function CKEditor() {
 	ClassicEditor
 		.create(document.querySelector('#editor'))
@@ -240,6 +257,20 @@ function CKEditor() {
 			console.error(error);
 		});
 }
+
+function showInformationTicket() {
+	$('.list-ticket .item').click(function(e) {
+		e.preventDefault();
+
+		$('.list-ticket .item').not(this).removeClass('active');
+		$(this).toggleClass('active');
+
+		$('.list-ticket .item').not(this).find('.info-ticket').slideUp();
+		$(this).find('.info-ticket').slideToggle();
+	});
+}
+
+
 
 
 
@@ -253,20 +284,15 @@ $(document).ready(function() {
 	sliderHomeBanner();
 	sliderHotEvent();
 	sliderProductByCatalog();
-	activeScrollMenu();
 	popupAbout();
 	showSubInformation();
 	getNameFile();
 	countDownSale();
 	chooseFile_Img();
 	CKEditor();
+	showInformationTicket();
 	const tabHomeNews = new Tab(".home-news .tab-container");
 	const tabClientsPartner = new Tab(".clients-partner .tab-container")
-
-
-
-
-
 	new WOW().init();
 })
 
@@ -276,4 +302,5 @@ $(document).ajaxComplete(function() {
 
 window.addEventListener("scroll", () => {
 	activeScrollMenu();
+	fixedBoxBooking();
 })

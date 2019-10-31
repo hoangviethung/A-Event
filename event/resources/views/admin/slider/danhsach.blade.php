@@ -44,7 +44,7 @@
                                        <a href="admin/slider/sua"><img src="images/edit.png" alt="A-event" srcset="" width="40" height="40"></a>
                                     </td>
                                     <td>
-                                        <a href="admin/slider/sua"><img src="images/xoa.png" alt="A-event" srcset="" width="40" height="40"></a>
+                                        <a href="admin/slider/xoa"><img src="images/xoa.png" alt="A-event" srcset="" width="40" height="40"></a>
                                     </td>
                                 </tr>
                                 </tbody>
