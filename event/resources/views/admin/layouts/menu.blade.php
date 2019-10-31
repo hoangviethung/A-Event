@@ -54,13 +54,13 @@
                     <!-- /.nav-second-level -->
                 </li>
                 <li>
-                    <a href="admin/user/danhsach"><i class="fa fa-bar-chart-o fa-fw"></i> Account Admin<span class="fa arrow"></span></a>
+                    <a href="admin/user/danhsach"><i class="fa fa-bar-chart-o fa-fw"></i>QL Account<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="admin/user/danhsach">Danh Sách Admin</a>
+                            <a href="admin/user/danhsach">Danh Sách Account</a>
                         </li>
                         <li>
-                            <a href="admin/user/them">Thêm Admin</a>
+                            <a href="admin/user/them">Thêm Account</a>
                         </li>
                     </ul>
                     <!-- /.nav-second-level -->

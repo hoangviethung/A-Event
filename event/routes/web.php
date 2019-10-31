@@ -36,9 +36,9 @@ Route::group(['prefix'=>'pages'], function(){
 
 // admin
 
-Route::get('admin/login', 'AdminController@getLoginAdmin');
-Route::post('admin/login', 'AdminController@postLoginAdmin');
-Route::get('admin/logout', 'AdminController@getLogoutAdmin');
+Route::get('admin/login', 'PagesController@getLoginAdmin');
+Route::post('admin/login', 'PagesController@postLoginAdmin');
+Route::get('admin/logout', 'PagesController@getLogoutAdmin');
 
 
 Route::group(['prefix'=>'admin'], function(){
@@ -88,23 +88,19 @@ Route::group(['prefix'=>'admin'], function(){
 
     });
 
-
-
-
-
-    // user
+    // Accounts
     Route::group(['prefix' => 'user'], function () {
-        Route::get('danhsach','AdminController@getDanhsach');
+        Route::get('danhsach','PagesController@getDanhsach');
 
-        Route::get('sua/{id}', 'AdminController@getSua');
-        Route::post('sua/{id}', 'AdminController@postSua');
+        Route::get('sua/{id}', 'PagesController@getSua');
+        Route::post('sua/{id}', 'PagesController@postSua');
 
-        Route::get('them', 'AdminController@getThem');
-        Route::post('them', 'AdminController@postThem');
+        Route::get('them', 'PagesController@getThem');
+        Route::post('them', 'PagesController@postThem');
 
-        Route::get('xoa/{id}', 'AdminController@getXoa');
+        Route::get('xoa/{id}', 'PagesController@getXoa');
     });
-    // user
+    // Accounts
 });
 
 // admin

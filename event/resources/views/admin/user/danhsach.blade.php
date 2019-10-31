@@ -6,28 +6,19 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Danh sách tài khoản
+                            Danh Sách Accounts
                         </h1>
                     </div>
                 </div>
                 <!-- /.row -->
                 <div class="row">
                     <div class="col-md-12">
+                        @if(session('thongbao'))
+                            <div class="alert alert-success" style="width: 50% !important;">
+                                {{session('thongbao')}}
+                            </div>
+                        @endif
                         <!-- /.col-lg-12 -->
-                       <!--Table-->
-                       @if(count($errors) > 0)
-                       <div class="alert alert-danger" style="width: 50% !important;">
-                           @foreach ($errors->all() as $err)
-                                   {{$err}}<br />
-                           @endforeach
-                       </div>
-                   @endif
-
-                   @if(session('thongbao')) 
-                       <div class="alert alert-success" style="width: 50% !important;">
-                           {{session('thongbao')}}
-                       </div>
-                   @endif
                         <div class="table-responsive">
                             <table class="table table-striped w-auto center">
 
@@ -35,10 +26,15 @@
                                     <thead>
                                     <tr>
                                         <th>Id</th>
-                                        <th>Tên admin</th>
-                                        <th>Hình admin</th>
-                                        <th>Email</th>
-                                        <th>Password</th>
+                                        <th>Email Accounts</th>
+                                        <th>Tên Accounts</th>
+                                        <th>Mật Khẩu</th>
+                                        <th>Số Điện Thoại</th>
+                                        <th>Địa Chỉ</th>
+                                        <th>Ngày Sinh</th>
+                                        <th>Giới Tính</th>
+                                        <th>Hình Accounts</th>
+                                        <th>Loại Khách</th>
                                         <th colspan="2">Thao tác</th>
                                     </tr>
                                     </thead>
@@ -46,19 +42,27 @@
                                     
                                     <!--Table body-->
                                     <tbody>
-                                        @foreach ($admin as $adm)
+                                        @foreach ($user as $use)
                                             <tr class="table-info">
-                                                <td>{{$adm->id}}</td>
-                                                <td>{{$adm->name}}</td>
-                                                <td><img src="images/admin/{{$adm->hinh}}" alt="Admin-Event" width="50" height="50"></td>
-                                                <td>{{$adm->email}}</td>
-                                                <td>{{$adm->password}}</td>
-                                                <td>
-                                                <a href="admin/user/sua/{{$adm->id}}"><img src="images/edit.png" alt="A-event" srcset="" width="40" height="40"></a>
-                                                </td>
-                                                <td>
-                                                <a href="admin/user/xoa/{{$adm->id}}"><img src="images/xoa.png" alt="A-event" srcset="" width="40" height="40"></a>
-                                                </td>
+                                            <td>{{$use->id}}</td>
+                                            <td>{{$use->email}}</td>
+                                            <td>{{$use->name}}</td>
+                                            <td>{{$use->password}}</td>
+                                            <td>{{$use->dien_thoai}}</td>
+                                            <td>
+                                                <textarea cols="30" rows="3">{{$use->dia_chi}}</textarea>
+                                                
+                                            
+                                            </td>
+                                            <td>{{$use->ngay_sinh}}</td>
+                                            <td>{{$use->gioi_tinh}}</td>
+                                            <td><img src="images/user/{{$use->hinh}}" alt="A-event" srcset="" width="50" height="50"></td>
+                                            <td>{{$use->vip}}</td>
+                                            <td> <a href="admin/user/sua/{{$use->id}}"><img src="images/edit.png" alt="A-event" srcset="" width="40" height="40"></a>
+                                            </td>
+                                            <td>
+                                            <a href="admin/user/xoa/{{$use->id}}"><img src="images/xoa.png" alt="A-event" srcset="" width="40" height="40"></a>
+                                            </td>
                                             </tr>
                                         @endforeach
                                     </tbody>
