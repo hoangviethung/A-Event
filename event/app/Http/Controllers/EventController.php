@@ -11,6 +11,7 @@ class EventController extends Controller
     //Hiển thị danh sách
     public function getDanhsach(){
         $event = Events::all();
+        
         return view('admin.event.danhsach',['event'=>$event]);
     }
 

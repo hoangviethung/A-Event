@@ -11,6 +11,7 @@ use App\Slide;
 use App\Events;
 use App\Rules\Captcha;
 use App\News;
+use App\Type_events;
 class PagesController extends Controller
 {
     function __construct()
@@ -21,7 +22,7 @@ class PagesController extends Controller
     }
 
     public function getIndex(){
-        $slide = Slide::all();
+        $slide = Events::where('hien_thi_slider',1)->get();
         $giaitri = Events::where('id_loai',1)->get();
         $kienthuc = Events::where('id_loai',2)->get();
         $new_01= News::get();

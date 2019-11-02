@@ -26,6 +26,10 @@
 
     <!-- DataTables Responsive CSS -->
     <link href="css_admin/bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
+
+    <script type="text/javascript" src="editor/ckeditor/ckeditor.js"></script>
+
+    <script src="editor/ckeditor/ckeditor.js" type="text/javascript" language="javascript"></script>
 </head>
 
 <body>
@@ -59,6 +63,8 @@
     <script src="css_admin/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
 
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+
+
     <script>
     $(document).ready(function() {
         $('#dataTables-example').DataTable({
@@ -66,6 +72,7 @@
         });
     });
     </script>
+
     @yield('script')
 </body>
 
