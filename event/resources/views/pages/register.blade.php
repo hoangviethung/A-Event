@@ -139,7 +139,7 @@
                             <div class="g-recaptcha" data-sitekey="{{env('CAPTCHA_KEY')}}" style="text-align: -webkit-center;"></div>
 
                                 @if($errors->has('g-recaptcha-response'))
-                                    <span class="error">
+                                    <span class="error" style="text-align: center;display: inherit;color: #bc2e31;">
                                         {{$errors->first('g-recaptcha-response')}}
                                     </span>
                                 @endif
