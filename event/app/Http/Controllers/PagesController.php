@@ -101,7 +101,7 @@ class PagesController extends Controller
         $file = $request->file('hinh');
         if($file->getClientOriginalExtension() == 'png' || 'jpg' || 'jpeg' || 'gif'){
             $filename = md5(time()).'_'.$file->getClientOriginalName();
-            $file->move('images/user',$filename);
+            $upload =  $file->move('images/user',$filename);
             $link = $filename;
             $user->hinh = $link;
         }
@@ -250,7 +250,7 @@ class PagesController extends Controller
             $file = $request->file('hinh');
             if($file->getClientOriginalExtension() == 'png' || 'jpg' || 'jpeg' || 'gif'){
                 $filename = md5(time()).'_'.$file->getClientOriginalName();
-                $file->move('images/user',$filename);
+                $file->move(public_path('images/user'), $filename);
                 $link = $filename;
                 $user->hinh = $link;
             }
@@ -271,5 +271,14 @@ class PagesController extends Controller
     public function getLoginAdmin(){
         return view('admin/login');
     }
-// QL User
+
+    public function postLoginAdmin(Request $request){
+        $arr = ['email' => $request->email, 'password' =>$request->password];
+        if(Auth::attempt($arr)){
+           return redirect('admin/login');
+        }else{
+            return redirect('admin/event/danhsach')->with('thongbao', 'Đăng nhập thành công !');
+        }
+    }
+    // QL User
 }
