@@ -8,17 +8,17 @@
                             @foreach($slide as $slide)
 							    <div class="swiper-slide"><a href="chi-tiet-su-kien.html">
 									<div class="box-banner">
-										<figure><img class="ofc" src="images/banner/{{$slide->banner}}.png" alt="" srcset="">
+										<figure><img class="ofc" src="images/banner/{{$slide->banner}}" alt="" srcset="">
 											<figcaption>
 												<div class="type-of-event">
-													<h5><span>A . Event</span>| Thể loại sự kiện</h5><span>{{$slide->loai_su_kien}}</span>
+													<h5><span>A . Event</span>| Thể loại sự kiện</h5><span >{{$slide->type_events->ten_loai}}</span>
 												</div>
 												<div class="name-event">
-                                                        <h5>{{$slide->ten_s_kien}}</h5>
+                                                        <h5>{{$slide->ten_su_kien}}</h5>
 												</div>
 												<div class="decription-event">
                                                         <p>{{$slide->tom_tat}}</p>
-                                                        <p>{{$slide->thoi_gian}} - {{$slide->dia_diem}} (THỜI GIAN)</p>
+                                                        <p>{{$slide->ngay_dien_ra}} - {{$slide->dia_chi}} (THỜI GIAN)</p>
 												</div>
 											</figcaption>
 										</figure>

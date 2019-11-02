@@ -69,7 +69,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Ngày bán vé</label>
-                                <input class="form-control" name="ngay_ban" value="{{$event->ngay_ban}}" type="date"/>
+                                <input class="form-control" name="ngay_ban" value="{{$event->ngay_ban}}" placeholer="" type="date"/>
                             </div>
 
                             <div class="form-group">
@@ -81,16 +81,59 @@
                                 <textarea class="form-control" rows="7" cols="20" name="mo_ta" value="" >{{$event->mo_ta}}</textarea>
                             </div>
                             <div class="form-group">
-                                <label>Hiển thị sự kiện trên Slider trang chủ</label>
-                                <input class="form-control" type="checkbox" name="hien_thi_slider" value="{{$event->hien_thi_slider}}"><br/>
+                                <label>Hiển thị sự kiện trên Slider </label>
+                                <label class="radio-inline">
+
+                                <input name="hien_thi_slider" value="0" type="radio"
+                                @if($event->hien_thi_slider ==0)
+                                    {{"checked"}}
+                                    @endif
+                                            >Không
+
+
+                                </label>
+                                <label class="radio-inline">
+                                <input name="hien_thi_slider"
+                                @if($event->hien_thi_slider ==1)
+                                    {{"checked"}}
+                                    @endif
+                                    value="1" type="radio" >Có
+                                </label>
                             </div>
                             <div class="form-group">
-                                <label>Hiển thị sự kiện nổi bật trên trang chủ</label>
-                                <input class="form-control" type="checkbox" name="hien_thi_noi_bat" value="{{$event->hien_thi_noi_bat}}"><br/>
+                                <label>Hiển thị sự kiện nổi bật </label>
+                                <label class="radio-inline">
+                                <input name="hien_thi_noi_bat" value="0" type="radio"
+                                @if($event->hien_thi_noi_bat ==0)
+                                    {{"checked"}}
+                                    @endif
+
+                                >Không
+                                </label>
+                                <label class="radio-inline">
+                                <input name="hien_thi_noi_bat" value="1"
+                                @if($event->hien_thi_noi_bat ==1)
+                                    {{"checked"}}
+                                    @endif
+                                type="radio" >Có
+                                </label>
                             </div>
                             <div class="form-group">
-                                <label>Duyệt sự kiện</label>
-                                <input class="form-control" type="checkbox" name="duyet" value="{{$event->duyet}}"><br/>
+                                <label>Duyệt bài </label>
+                                <label class="radio-inline">
+                                <input name="duyet" value="0" type="radio"
+                                @if($event->duyet ==0)
+                                    {{"checked"}}
+                                    @endif
+                                 checked="">Không
+                                </label>
+                                <label class="radio-inline">
+                                <input name="duyet" value="1"
+                                @if($event->duyet ==1)
+                                    {{"checked"}}
+                                    @endif
+                                type="radio" >Có
+                                </label>
                             </div>
 
                             <button type="submit" class="btn btn-default">Sửa</button>

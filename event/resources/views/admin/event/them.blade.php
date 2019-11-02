@@ -70,22 +70,48 @@
                                 <label>Tóm tắt sự kiện ( Hiển thị trên Slider, Sự kiện nổi bật)</label>
                                 <textarea class="form-control" rows="2" cols="20" name="tom_tat"></textarea>
                             </div>
+
+
                             <div class="form-group">
                                 <label>Mô tả sự kiện</label>
-                                <textarea class="form-control" rows="7" cols="20" name="mo_ta"></textarea>
+                                <textarea class="form-control ckeditor" id="demo"  name="mo_ta"></textarea>
+                            </div>
+
+
+
+
+                            <div class="form-group">
+                                <label>Hiển thị sự kiện trên Slider </label>
+                                <label class="radio-inline">
+                                <input name="hien_thi_slider" value="0" type="radio" checked="">Không
+                                </label>
+                                <label class="radio-inline">
+                                <input name="hien_thi_slider" value="1" type="radio" >Có
+                                </label>
                             </div>
                             <div class="form-group">
-                                <label>Hiển thị sự kiện trên Slider trang chủ</label>
-                                <input class="form-control" type="checkbox" name="hien_thi_slider" value="1"><br/>
+                                <label>Hiển thị sự kiện nổi bật </label>
+                                <label class="radio-inline">
+                                <input name="hien_thi_noi_bat" value="0" type="radio" checked="">Không
+                                </label>
+                                <label class="radio-inline">
+                                <input name="hien_thi_noi_bat" value="1" type="radio" >Có
+                                </label>
                             </div>
                             <div class="form-group">
-                                <label>Hiển thị sự kiện nổi bật trên trang chủ</label>
-                                <input class="form-control" type="checkbox" name="hien_thi_noi_bat" value="1"><br/>
+                                <label>Duyệt bài </label>
+                                <label class="radio-inline">
+                                <input name="duyet" value="0" type="radio" checked="">Không
+                                </label>
+                                <label class="radio-inline">
+                                <input name="duyet" value="1" type="radio" >Có
+                                </label>
                             </div>
-                            <div class="form-group">
-                                <label>Duyệt sự kiện</label>
-                                <input class="form-control" type="checkbox" name="duyet" value="1"><br/>
-                            </div>
+
+
+
+
+
                             <button type="submit" class="btn btn-default">Thêm</button>
                         <form>
                     </div>

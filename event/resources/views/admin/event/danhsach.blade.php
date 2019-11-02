@@ -55,7 +55,7 @@
                                 <tr class="table-info">
                                     <th>{{$event->id}}</th>
                                     <td>{{$event->ten_su_kien}}</td>
-                                    <td>{{$event->id_loai}}</td>
+                                    <td>{{$event->type_events->ten_loai}}</td>
                                     <td>{{$event->banner}}</td>
                                     <td>{{$event->ngay_dien_ra}}</td>
                                     <td>{{$event->gia_ve}}</td>
@@ -64,9 +64,28 @@
                                     <td>{{$event->ngay_ban}}</td>
                                     <td>{{$event->tom_tat}}</td>
                                     <td>{{$event->mo_ta}}</td>
-                                    <td>{{$event->hien_thi_slider}}</td>
-                                    <td>{{$event->hien_thi_noi_bat}}</td>
-                                    <td>{{$event->duyet}}</td>
+                                    <td>
+                                        @if($event->hien_thi_slider == 1 )
+                                            {{"Cho phép"}}
+                                        @else
+                                        {{"Không"}}
+                                        @endif
+                                    </td>
+                                    <td>
+                                        @if($event->hien_thi_noi_bat == 1 )
+                                            {{"Cho phép"}}
+                                        @else
+                                        {{"Không"}}
+                                        @endif
+                                    </td>
+                                    <td>
+                                        @if($event->hien_thi_noi_bat == 1 )
+                                            {{"Cho phép"}}
+                                        @else
+                                        {{"Không"}}
+                                        @endif
+                                    </td>
+
                                     <th>
                                        <a href="admin/event/sua/{{$event->id}}"><img src="images/edit.png" alt="A-event" srcset="" width="40" height="40"></a>
                                     </th>
