@@ -21,8 +21,9 @@ class PagesController extends Controller
         $slide = Events::where('hien_thi_slider',1)->get();
         $giaitri = Events::where('id_loai',1)->get();
         $kienthuc = Events::where('id_loai',2)->get();
+        $sukienkhac = Events::where('id_loai',3)->get();
         $new_01= News::get();
-        return view('pages.body',compact('slide','giaitri','kienthuc','new_01'));
+        return view('pages.body',compact('slide','giaitri','kienthuc','new_01','sukienkhac'));
     }
     public function getAddevent(){
         return view('pages.addevent');
@@ -128,7 +129,7 @@ class PagesController extends Controller
         return view('admin/user/them');
     }
     public function postThem(Request $request){
-        $this->validate($request, 
+        $this->validate($request,
         [
             'email'=>'required|min:3|max:32',
             'name'=>'required|min:3|max:32',
@@ -199,7 +200,7 @@ class PagesController extends Controller
 
     public function postSua(Request $request, $id){
         $user = users::find($id);
-        $this->validate($request, 
+        $this->validate($request,
         [
             'email'=>'required|min:3|max:32',
             'name'=>'required|min:3|max:32',
