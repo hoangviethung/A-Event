@@ -94,7 +94,7 @@
                                     <span class="error">
                                         {{$errors->first('ngay_sinh')}}
                                     </span>
-                                 @endif
+                                    @endif
                                 </div>
                             </div>
                             <div class="form-group col-lg-6">
@@ -115,6 +115,11 @@
                                 <label class="choose-file" for="file-avatar">Chọn ảnh đại diện</label>
                                 <div class="form-input">
                                     <input id="file-avatar" type="file" hidden name="hinh">
+                                    @if($errors->has('hinh'))
+                                        <span class="error">
+                                            {{$errors->first('hinh')}}
+                                        </span>
+                                    @endif
                                 </div>
                             </div>
                             <div class="form-group col-lg-6">
@@ -130,8 +135,8 @@
                                  @endif
                                 </div>
                             </div>
-                            <div class="form-group col-lg-6">
-                            <div class="g-recaptcha" data-sitekey="{{env('CAPTCHA_KEY')}}"></div>
+                            <div class="form-group col-lg-12">
+                            <div class="g-recaptcha" data-sitekey="{{env('CAPTCHA_KEY')}}" style="text-align: -webkit-center;"></div>
 
                                 @if($errors->has('g-recaptcha-response'))
                                     <span class="error">

@@ -13,6 +13,10 @@
                 <!-- /.row -->
                 <div class="row">
                     <div class="col-md-12">
+                            <div class="table-responsive">
+
+
+                        
                         <!-- /.col-lg-12 -->
                        <!--Table-->
                     @if(session('thongbao'))
@@ -94,6 +98,7 @@
                                 <!--Table body-->
                         </table>
                         <!--Table-->
+                    </div>
                     </div>
                 </div>
             </div>
