@@ -35,6 +35,13 @@ class PagesController extends Controller
         return view('pages.login');
     }
 
+
+
+    public function getChitiet(Request $req){
+        $chitiet = Events::where('id',$req->id)->first();
+        return view('pages.chitiet',compact('chitiet'));
+    }
+
     public function postLogin(Request $request){
         $arr = ['email' => $request->email, 'password' =>$request->password];
         if(Auth::attempt($arr)){
