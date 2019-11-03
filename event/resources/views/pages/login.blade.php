@@ -8,7 +8,7 @@
                     <li class="item active"><a href="{{ url('pages/login') }}">ĐĂNG NHẬP</a></li>
                     <li class="item"><a href="{{ url('pages/register') }}">ĐĂNG KÍ</a></li>
                 </ul>
-                <div class="login-with"><span>LOGIN WITH</span><a href="#"><img src="images/icons/google.svg" alt="" srcset=""></a><a href="#"><img src="images/icons/facebook.svg" alt="" srcset=""></a></div>
+                <div class="login-with"><span>LOGIN WITH</span><a href="#"><img src="images/icons/google.svg" alt="" srcset=""></a><a href="{{ url('pages/login/facebook') }}"><img src="images/icons/facebook.svg" alt="" srcset=""></a></div>
                 <div class="or-login"><span>or</span></div>
                 <div class="box-form-login">
                     @if(session('thongbao'))

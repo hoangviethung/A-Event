@@ -13,6 +13,7 @@
         "fideloper/proxy": "^4.0",
         "google/recaptcha": "~1.1",
         "laravel/framework": "^6.0",
+        "laravel/socialite": "^4.2",
         "laravel/tinker": "^1.0"
     },
     "require-dev": {
@@ -59,5 +60,6 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
         ]
-    }
+    },
+    
 }

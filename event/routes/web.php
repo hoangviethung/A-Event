@@ -30,6 +30,11 @@ Route::group(['prefix'=>'pages'], function(){
     Route::post('/register', 'PagesController@postRegister');
 
     Route::get('dangxuat', 'PagesController@getDangxuat');
+
+    Route::get('login/facebook', 'Auth\SocialController@redirectToProvider');
+    Route::get('login/facebook/callback', 'Auth\SocialController@handleProviderCallback');
+
+
 });
 
 // pages website
