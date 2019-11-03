@@ -22,6 +22,10 @@ Route::group(['prefix'=>'pages'], function(){
     Route::get('sreach', 'PagesController@getSreach');
 
     Route::get('addevent', 'PagesController@getAddevent');
+    Route::get('chitiet/{id}',[
+        'as' =>'chitiet',
+        'uses'=>'PagesController@getChitiet',
+    ]);
 
     Route::get('login', 'PagesController@getLogin');
     Route::post('login', 'PagesController@postLogin');
@@ -74,7 +78,7 @@ Route::group(['prefix'=>'admin'], function(){
         Route::post('them', 'DanhmucController@postThem');
         // Hàm post nhận dữ liệu về và lưu vào cơ sở dữ liệu
         Route::get('xoa', 'DanhmucController@getXoa');
-    }); 
+    });
     // danhmuc
 
     // Sự kiện

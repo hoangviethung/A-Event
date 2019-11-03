@@ -6,7 +6,8 @@
 					<div class="swpier-container slider-bannerHome">
 						<div class="swiper-wrapper">
                             @foreach($slide as $slide)
-							    <div class="swiper-slide"><a href="chi-tiet-su-kien.html">
+							    <div class="swiper-slide">
+                                    <a href="{{url('pages/chitiet',$slide->id)}}">
 									<div class="box-banner">
 										<figure><img class="ofc" src="images/banner/{{$slide->banner}}" alt="" srcset="">
 											<figcaption>
@@ -117,10 +118,10 @@
 							<div class="swiper-wrapper">
                         @foreach($giaitri as $giaitri)
 								<div class="swiper-slide">
-                                    <a href="chi-tiet-su-kien.html">
+                                    <a href="{{url('pages/chitiet',$giaitri->id)}}">
 										<div class="item-event">
 											<figure>
-												<div class="box-img"><img class="ofc" src="images/product/1.jpg" alt="" srcset=""></div>
+												<div class="box-img"><img class="ofc" src="images/product/{{$giaitri->banner}}" alt="" srcset=""></div>
 												<figcaption>
 													<h3>{{$giaitri -> ten_su_kien}}</h3>
 													<div class="info-event">
@@ -170,10 +171,10 @@
 							<div class="swiper-wrapper">
                             @foreach($kienthuc as $kienthuc)
 								<div class="swiper-slide">
-                                    <a href="chi-tiet-su-kien.html">
+                                    <a href="{{url('pages/chitiet',$kienthuc->id)}}">
 										<div class="item-event">
 											<figure>
-												<div class="box-img"><img class="ofc" src="images/product/1.jpg" alt="" srcset=""></div>
+												<div class="box-img"><img class="ofc" src="images/product/{{$kienthuc->banner}}" alt="" srcset=""></div>
 												<figcaption>
 													<h3>{{$kienthuc->ten_su_kien}}</h3>
 													<div class="info-event">
@@ -223,10 +224,10 @@
 							<div class="swiper-wrapper">
                             @foreach($sukienkhac as $sukienkhac)
 								<div class="swiper-slide">
-                                    <a href="chi-tiet-su-kien.html">
+                                    <a href="{{url('pages/chitiet',$sukienkhac->id)}}">
 										<div class="item-event">
 											<figure>
-												<div class="box-img"><img class="ofc" src="images/product/1.jpg" alt="" srcset=""></div>
+												<div class="box-img"><img class="ofc" src="images/product/{{$sukienkhac->banner}}" alt="" srcset=""></div>
 												<figcaption>
 													<h3>{{$sukienkhac->ten_su_kien}}</h3>
 													<div class="info-event">
