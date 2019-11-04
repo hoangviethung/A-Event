@@ -5,13 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Events;
 use App\Type_events;
+use Illuminate\Support\Str;
 class EventController extends Controller
 {
 
     //Hiển thị danh sách
     public function getDanhsach(){
         $event = Events::all();
-        
+
         return view('admin.event.danhsach',['event'=>$event]);
     }
 
@@ -72,8 +73,24 @@ class EventController extends Controller
         $event->hien_thi_slider = $request->hien_thi_slider;
         $event->hien_thi_noi_bat = $request->hien_thi_noi_bat;
         $event->duyet = $request->duyet;
-        $event->save();
 
+        if($request->hasFile('banner')){
+            $file = $request->file('banner');
+            $duoi = $file->getClientOriginalExtension();
+            if($duoi !='jpg' && $duoi !='png' &&$duoi !='jpeg')
+                {
+                    return redirect('admin/event/them')->with('thongbao','Vui lòng upload ảnh có đuôi JPG,PNG,JPEG');
+                }
+            $name = $file->getClientOriginalName();
+            $banner = Str::random(10)."_". $name;
+            $file->move('images/product',$banner);
+            $event->banner = $banner;
+        }
+        else
+        {
+        $event->banner = "";
+        }
+        $event->save();
         return redirect('admin/event/them')->with('thongbao','Thêm thành công');
     }
 
@@ -135,6 +152,23 @@ class EventController extends Controller
         $event->hien_thi_slider = $request->hien_thi_slider;
         $event->hien_thi_noi_bat = $request->hien_thi_noi_bat;
         $event->duyet = $request->duyet;
+
+        if($request->hasFile('banner')){
+            $file = $request->file('banner');
+            $duoi = $file->getClientOriginalExtension();
+            if($duoi !='jpg' && $duoi !='png' &&$duoi !='jpeg')
+                {
+                    return redirect('admin/event/them')->with('thongbao','Vui lòng upload ảnh có đuôi JPG,PNG,JPEG');
+                }
+            $name = $file->getClientOriginalName();
+            $banner = Str::random(10)."_". $name;
+            $file->move('images/product',$banner);
+            $event->banner = $banner;
+        }
+        else
+        {
+        $event->banner = "";
+        }
         $event->save();
 
             return redirect('admin/event/sua/'.$event->id)->with('thongbao','Sửa thành công'); // Đưa người dùng về trnag sửa
