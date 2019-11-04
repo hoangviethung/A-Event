@@ -26,10 +26,14 @@
 
     <!-- DataTables Responsive CSS -->
     <link href="css_admin/bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
-
-    <script type="text/javascript" src="editor/ckeditor/ckeditor.js"></script>
-
-    <script src="editor/ckeditor/ckeditor.js" type="text/javascript" language="javascript"></script>
+    <!-- <script src="editor/ckeditor/ckeditor.js"></script> -->
+    <script src="editor/ckeditor/ckeditor.js"></script>
+    <!-- <script src="https://cdn.ckeditor.com/ckeditor5/15.0.0/classic/ckeditor.js"></script> -->
+    <style>
+    .ck-content{
+        min-height: 200px;
+    }
+    </style>
 </head>
 
 <body>

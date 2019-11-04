@@ -77,9 +77,9 @@ class EventController extends Controller
         if($request->hasFile('banner')){
             $file = $request->file('banner');
             $duoi = $file->getClientOriginalExtension();
-            if($duoi !='jpg' && $duoi !='png' &&$duoi !='jpeg')
+            if($duoi !='jpg' && $duoi !='PNG' && $duoi !='jpeg')
                 {
-                    return redirect('admin/event/them')->with('thongbao','Vui lòng upload ảnh có đuôi JPG,PNG,JPEG');
+                    return redirect('admin/event/them')->with('loi','Vui lòng upload ảnh có đuôi JPG,PNG,JPEG');
                 }
             $name = $file->getClientOriginalName();
             $banner = Str::random(10)."_". $name;
@@ -156,18 +156,15 @@ class EventController extends Controller
         if($request->hasFile('banner')){
             $file = $request->file('banner');
             $duoi = $file->getClientOriginalExtension();
-            if($duoi !='jpg' && $duoi !='png' &&$duoi !='jpeg')
+            if($duoi !='jpg' && $duoi !='PNG' && $duoi !='jpeg')
                 {
-                    return redirect('admin/event/them')->with('thongbao','Vui lòng upload ảnh có đuôi JPG,PNG,JPEG');
+                    return redirect('admin/event/sua')->with('loi','Vui lòng upload ảnh có đuôi JPG,PNG,JPEG');
                 }
             $name = $file->getClientOriginalName();
             $banner = Str::random(10)."_". $name;
             $file->move('images/product',$banner);
+            unlink("images/product/".$event->banner);
             $event->banner = $banner;
-        }
-        else
-        {
-        $event->banner = "";
         }
         $event->save();
 

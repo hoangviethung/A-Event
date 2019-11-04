@@ -67,7 +67,7 @@ For licensing, see LICENSE.html or https://ckeditor.com/sales/license/ckfinder
 		<pre class="prettyprint"><code>ClassicEditor
 	.create( document.querySelector( '#editor1' ), {
 		ckfinder: {
-			uploadUrl: '/ckfinder/connector?command=QuickUpload&type=Files&responseType=json',
+			uploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files&responseType=json',
 		},
 		toolbar: [ 'ckfinder', 'imageUpload', '|', 'heading', '|', 'bold', 'italic', '|', 'undo', 'redo' ]
 	} )
@@ -94,7 +94,7 @@ For licensing, see LICENSE.html or https://ckeditor.com/sales/license/ckfinder
 			all you have to do is pass some additional configuration options to CKEditor:</p>
 		<pre class="prettyprint"><code>CKEDITOR.replace( 'editor2', {
 	filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
-	filebrowserUploadUrl: '/ckfinder/connector?command=QuickUpload&type=Files'
+	filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
 } );</code></pre>
 		<p>It is also possible to use <code>CKFinder.setupCKEditor()</code> as shown below:</p>
 		<pre class="prettyprint"><code>var editor = CKEDITOR.replace( 'ckfinder' );
@@ -136,7 +136,7 @@ CKFinder.setupCKEditor( editor );</code></pre>
 			.create( document.querySelector( '#editor1' ), {
 				ckfinder: {
 					// To avoid issues, set it to an absolute path that does not start with dots, e.g. '/ckfinder/core/php/(...)'
-					uploadUrl: '/ckfinder/connector?command=QuickUpload&type=Files&responseType=json'
+					uploadUrl: '../core/connector/php/connector.php?command=QuickUpload&type=Files&responseType=json'
 				},
 				toolbar: [ 'ckfinder', 'imageUpload', '|', 'heading', '|', 'bold', 'italic', '|', 'undo', 'redo' ]
 

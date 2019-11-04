@@ -68,13 +68,15 @@
 
                             <div class="form-group">
                                 <label>Tóm tắt sự kiện ( Hiển thị trên Slider, Sự kiện nổi bật)</label>
-                                <textarea class="form-control" rows="2" cols="20" name="tom_tat"></textarea>
+                                <textarea class="form-control ckeditor" id="editor1"  rows="2" cols="20" name="tom_tat"></textarea>
                             </div>
 
 
                             <div class="form-group">
                                 <label>Mô tả sự kiện</label>
-                                <textarea class="form-control ckeditor" id="demo"  name="mo_ta"></textarea>
+                                <textarea class="form-control ckeditor" id="editor"  rows="3" cols="10"  name="mo_ta"></textarea>
+
+
                             </div>
 
 
@@ -121,4 +123,16 @@
             <!-- /.container-fluid -->
         </div>
         <!-- /#page-wrapper -->
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+    ClassicEditor
+        .create( document.querySelector( '#editor1' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
 @endsection
