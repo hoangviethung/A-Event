@@ -50,7 +50,7 @@
                             <div class="form-group">
                                 <label>Ảnh Banner của sự kiện</label>
                                 <p>
-                                <img width="200px" src="images/product/{{$event->banner}}"
+                                <img width="200px" src="images/product/{{$event->banner}}">
                                 </p>
                                 <input class="form-control" name="banner" value="" type="file"/>
                             </div>

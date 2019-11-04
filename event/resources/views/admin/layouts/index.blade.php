@@ -70,7 +70,9 @@
         $('#dataTables-example').DataTable({
                 responsive: true
         });
+
     });
+
     </script>
 
     @yield('script')
