@@ -49,7 +49,10 @@
                             </div>
                             <div class="form-group">
                                 <label>Ảnh Banner của sự kiện</label>
-                                <input class="form-control" name="banner" value="{{$event->banner}}" type="file"/>
+                                <p>
+                                <img width="200px" src="images/product/{{$event->banner}}"
+                                </p>
+                                <input class="form-control" name="banner" value="" type="file"/>
                             </div>
                             <div class="form-group">
                                 <label>Ngày diễn ra sự kiện</label>

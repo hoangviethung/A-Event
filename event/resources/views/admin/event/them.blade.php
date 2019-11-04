@@ -26,7 +26,7 @@
                             {{session('thongbao')}}
                         </div>
                     @endif
-                        <form action="admin/event/them" method="POST">
+                        <form action="admin/event/them" method="POST" enctype="multipart/form-data" >
                             <!-- để truyền dữ liệu phải cho nó 1 cái token -->
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                             <div class="form-group">

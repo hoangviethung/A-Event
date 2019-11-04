@@ -16,7 +16,7 @@
                             <div class="table-responsive">
 
 
-                        
+
                         <!-- /.col-lg-12 -->
                        <!--Table-->
                     @if(session('thongbao'))
@@ -56,7 +56,12 @@
                                     <th>{{$event->id}}</th>
                                     <td>{{$event->ten_su_kien}}</td>
                                     <td>{{$event->type_events->ten_loai}}</td>
-                                    <td>{{$event->banner}}</td>
+                                    <td>
+                                    <img src="images/product/{{$event->banner}}" width="120px"  />
+
+
+
+                                    </td>
                                     <td>{{$event->ngay_dien_ra}}</td>
                                     <td>{{$event->gia_ve}}</td>
                                     <td>{{$event->so_luong_ve}}</td>
@@ -79,7 +84,7 @@
                                         @endif
                                     </td>
                                     <td>
-                                        @if($event->hien_thi_noi_bat == 1 )
+                                        @if($event->duyet == 1 )
                                             {{"Cho phép"}}
                                         @else
                                         {{"Không"}}

@@ -9,7 +9,7 @@
 							    <div class="swiper-slide">
                                     <a href="{{url('pages/chitiet',$slide->id)}}">
 									<div class="box-banner">
-										<figure><img class="ofc" src="images/banner/{{$slide->banner}}" alt="" srcset="">
+										<figure><img class="ofc" src="images/product/{{$slide->banner}}" alt="" srcset="">
 											<figcaption>
 												<div class="type-of-event">
 													<h5><span>A . Event</span>| Thể loại sự kiện</h5><span >{{$slide->type_events->ten_loai}}</span>

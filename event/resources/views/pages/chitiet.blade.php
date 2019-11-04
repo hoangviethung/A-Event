@@ -4,7 +4,7 @@
 <main>
 			<section class="product-detail">
 				<div class="banner-event">
-					<figure><img class="ofc" src="./images/banner/{{$chitiet->banner}}" alt="" srcset=""></figure>
+					<figure><img class="ofc" src="./images/product/{{$chitiet->banner}}" alt="" srcset=""></figure>
 				</div>
 				<div class="main-intro">
 					<div class="container">
