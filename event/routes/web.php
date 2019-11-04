@@ -16,10 +16,13 @@ use Symfony\Component\Routing\Annotation\Route;
 
 
 // pages website
+
+
 Route::group(['prefix'=>'pages'], function(){
     Route::get('index', 'PagesController@getIndex');
 
-    Route::get('sreach', 'PagesController@getSreach');
+    Route::get('search', 'PagesController@getSearch');
+    Route::post('search', 'PagesController@postSearch');
 
     Route::get('addevent', 'PagesController@getAddevent');
     Route::get('chitiet/{id}',[
@@ -35,12 +38,11 @@ Route::group(['prefix'=>'pages'], function(){
 
     Route::get('dangxuat', 'PagesController@getDangxuat');
 
-    Route::get('login/facebook', 'Auth\SocialController@redirectToProvider');
-    Route::get('login/facebook/callback', 'Auth\SocialController@handleProviderCallback');
+    Route::get('login/google', 'Auth\SocialController@redirectToProvider');
+    Route::get('login/google/callback', 'Auth\SocialController@handleProviderCallback');
 
 
 });
-
 // pages website
 
 // admin

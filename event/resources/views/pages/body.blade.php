@@ -123,7 +123,7 @@
 											<figure>
 												<div class="box-img"><img class="ofc" src="images/product/{{$giaitri->banner}}" alt="" srcset=""></div>
 												<figcaption>
-													<h3>{{$giaitri -> ten_su_kien}}</h3>
+													<h3>{{$giaitri ->ten_su_kien}}</h3>
 													<div class="info-event">
 														<div class="item">
 															<h5>Từ:<span>{{$giaitri->gia_ve}} VND</span></h5>

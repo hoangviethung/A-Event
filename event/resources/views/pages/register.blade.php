@@ -9,11 +9,6 @@
                     <li class="item active"><a href="{{ url('pages/register') }}">ĐĂNG KÍ</a></li>
                 </ul>
                 <div class="box-form-register">
-                    @if(session('thongbao'))
-                        <p style="text-align: center;">
-                            {{session('thongbao')}}
-                        </p>
-                    @endif
                     <form action="pages/register" method="POST" enctype="multipart/form-data">
                         <input type="hidden" name="_token" value="{{csrf_token()}}" />
                         <div class="form-row">

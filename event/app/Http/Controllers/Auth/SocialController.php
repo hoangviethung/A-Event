@@ -1,20 +1,19 @@
 <?php
 
-namespace App\Http\Controllers;
 namespace App\Http\Controllers\Auth;
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+
 use Socialite;
+use App\Http\Controllers\Controller;
 class SocialController extends Controller
 {
-     /**
+    /**
      * Redirect the user to the GitHub authentication page.
      *
      * @return \Illuminate\Http\Response
      */
     public function redirectToProvider()
     {
-        return Socialite::driver('facebook')->redirect();
+        return Socialite::driver('google')->stateless()->user();
     }
 
     /**
@@ -24,8 +23,10 @@ class SocialController extends Controller
      */
     public function handleProviderCallback()
     {
-        $user = Socialite::driver('facebook')->user();
-        dd($user);
-        // $user->token;
+        $user = Socialite::driver('google')->user();
+        $user->getName();
+        $user->getAvatar();
+    
+      
     }
 }

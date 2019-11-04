@@ -66,28 +66,7 @@
 <script type="text/javascript" src="js/main.min.js"></script>
 <script src="https://cdn.ckeditor.com/ckeditor5/12.4.0/classic/ckeditor.js"></script>
 <script src='https://www.google.com/recaptcha/api.js'></script>
-
-<script>
-    window.fbAsyncInit = function() {
-      FB.init({
-        appId      : '{2502179883223760}',
-        cookie     : true,
-        xfbml      : true,
-        version    : '{v5.0}'
-      });
-        
-      FB.AppEvents.logPageView();   
-        
-    };
-  
-    (function(d, s, id){
-       var js, fjs = d.getElementsByTagName(s)[0];
-       if (d.getElementById(id)) {return;}
-       js = d.createElement(s); js.id = id;
-       js.src = "https://connect.facebook.net/en_US/sdk.js";
-       fjs.parentNode.insertBefore(js, fjs);
-     }(document, 'script', 'facebook-jssdk'));
-  </script>
+<script type="text/javascript" src="../../editor/ckeditor/ckeditor.js"></script>
 @yield('script')
 </body>
 </html>

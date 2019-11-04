@@ -28,26 +28,42 @@ class PagesController extends Controller
     public function getAddevent(){
         return view('pages.addevent');
     }
-    public function getSreach(){
-        return view('pages.sreach');
+    public function getSearch(){
+        return view('pages.search');
+    }
+    public function postSearch(Request $request){
+        $tukhoa = $request->tukhoa;
+        $event = Events::where('ten_su_kien','like',"%$tukhoa%")->orWhere('dia_chi','like',"%$tukhoa%")->orWhere('tom_tat','like',"%$tukhoa%")->take(12)->get();
+        return view('pages.search',['event'=>$event,'tukhoa'=>$tukhoa,'sreach'=>$event]);
     }
     public function getLogin(){
         return view('pages.login');
     }
-
-
-
     public function getChitiet(Request $req){
         $chitiet = Events::where('id',$req->id)->first();
         return view('pages.chitiet',compact('chitiet'));
     }
 
     public function postLogin(Request $request){
+        $this->validate($request, 
+        [
+            'email'=>'required|min:3|max:32',
+            'password'=>'required|min:3|max:32',
+        ],
+        [
+            'email.required'=>'bạn chưa nhập email',
+            'email.min'=>'email phải lớn hơn 3 kí tự',
+            'email.max'=>'email không quá 32 kí tự',
+
+            'password.required'=>'bạn chưa nhập mật khẩu',
+            'password.min'=>'mật khẩu phải lớn hơn 3 kí tự',
+            'password.max'=>'mật khẩu không quá 32 kí tự',
+        ]);
         $arr = ['email' => $request->email, 'password' =>$request->password];
         if(Auth::attempt($arr)){
            return redirect('pages/index');
         }else{
-            return redirect('pages/login')->with('thongbao', 'Đăng nhập không thành công !');
+            return redirect('pages/login')->with('thongbao', 'Tài khoản hoặc mật khẩu không chính xác !');
         }
     }
 
@@ -119,7 +135,7 @@ class PagesController extends Controller
     }
     $user->vip = $request->vip;
     $user->save();
-    return redirect('pages/register')->with('thongbao', 'Đăng kí thành công !');
+        return redirect('pages/login')->with('thongbao', 'Đăng kí thành công bạn vui lòng đăng nhập !');
     }
 
     public function getDangxuat(){
@@ -290,4 +306,5 @@ class PagesController extends Controller
         }
     }
     // QL User
+    
 }

@@ -31,15 +31,15 @@ return [
     ],
 
     // login with google and facebook
-    'facebook' => [
-        'client_id' => env('2502179883223760'),
-        'client_secret' => env('89c7a153e8b59026e2a5d6fa4faff43a'),
-        'redirect' => env('http://localhost/A-event/event/public/facebook/callback'),
-    ],
+    // 'facebook' => [
+    //     'client_id' => env('GITHUB_CLIENT_ID'),
+    //     'client_secret' => env('GITHUB_CLIENT_SECRET'),
+    //     'redirect' => 'http://your-callback-url',
+    // ],
     'google' => [
-        'client_id' => env('127658938381-iv5a46iu6mgbipm1cremdorp35047fk7.apps.googleusercontent.com'),
-        'client_secret' => env('8tMEdyCr3ourm41D0A9Hczj8'),
-        'redirect' => env('http://localhost/A-event/event/public'),
+        'client_id'     => env('127658938381-79tqafc7g0urcermecs0gc6c9ikiso4c.apps.googleusercontent.com'),
+        'client_secret' => env('W0oYu04CTGCtgQmZL0A62qYl'),
+        'redirect'      => env('http://localhost/A-event/event/public/pages/login/google/callback')
     ],
 
 ];
