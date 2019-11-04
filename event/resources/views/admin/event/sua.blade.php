@@ -56,7 +56,11 @@
                             </div>
                             <div class="form-group">
                                 <label>Ngày diễn ra sự kiện</label>
-                                <input class="form-control" name="ngay_dien_ra" value="{{$event->ngay_dien_ra}}" type="date"/>
+                                <input class="form-control" name="ngay_dien_ra" value="{{$event->ngay_dien_ra}}" type="datetime"/>
+                            </div>
+                            <div class="form-group">
+                                <label>Ngày bán vé</label>
+                                <input class="form-control" name="ngay_ban" value="{{$event->ngay_ban}}" placeholer="" type="datetime"/>
                             </div>
                             <div class="form-group">
                                 <label>Giá vé</label>
@@ -69,10 +73,6 @@
                             <div class="form-group">
                                 <label>Nơi diễn ra sự kiện</label>
                                 <input class="form-control" name="dia_chi" value="{{$event->dia_chi}}" type="text"/>
-                            </div>
-                            <div class="form-group">
-                                <label>Ngày bán vé</label>
-                                <input class="form-control" name="ngay_ban" value="{{$event->ngay_ban}}" placeholer="" type="date"/>
                             </div>
 
                             <div class="form-group">

@@ -47,7 +47,11 @@
                             </div>
                             <div class="form-group">
                                 <label>Ngày diễn ra sự kiện</label>
-                                <input class="form-control" name="ngay_dien_ra" type="date"/>
+                                <input class="form-control" name="ngay_dien_ra" type="datetime-local"/>
+                            </div>
+                            <div class="form-group">
+                                <label>Ngày bán vé</label>
+                                <input class="form-control" name="ngay_ban" type="datetime-local"/>
                             </div>
                             <div class="form-group">
                                 <label>Giá vé</label>
@@ -60,10 +64,6 @@
                             <div class="form-group">
                                 <label>Nơi diễn ra sự kiện</label>
                                 <input class="form-control" name="dia_chi" type="text"/>
-                            </div>
-                            <div class="form-group">
-                                <label>Ngày bán vé</label>
-                                <input class="form-control" name="ngay_ban" type="date"/>
                             </div>
 
                             <div class="form-group">

@@ -35,10 +35,10 @@
                                     <th>Loại sự kiện</th>
                                     <th>Banner của sự kiện</th>
                                     <th>Ngày diễn ra sự kiện</th>
+                                    <th>Ngày bán</th>
                                     <th>Giá vé</th>
                                     <th>Số lượng vé</th>
                                     <th>Nơi diễn ra sự kiện</th>
-                                    <th>Ngày bán</th>
                                     <th>Tóm tắt</th>
                                     <th>Mô tả</th>
                                     <th>Hiển thị trên Slider trang chủ</th>
@@ -63,10 +63,10 @@
 
                                     </td>
                                     <td>{{$event->ngay_dien_ra}}</td>
+                                    <td>{{$event->ngay_ban}}</td>
                                     <td>{{$event->gia_ve}}</td>
                                     <td>{{$event->so_luong_ve}}</td>
                                     <td>{{$event->dia_chi}}</td>
-                                    <td>{{$event->ngay_ban}}</td>
                                     <td>{{$event->tom_tat}}</td>
                                     <td>{{$event->mo_ta}}</td>
                                     <td>
