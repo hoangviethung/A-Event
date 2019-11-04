@@ -52,7 +52,7 @@ Route::post('admin/login', 'PagesController@postLoginAdmin');
 Route::get('admin/logout', 'PagesController@getLogoutAdmin');
 
 
-Route::group(['prefix'=>'admin'], function(){
+Route::group(['prefix'=>'admin','middleware'=>'checklogin'], function(){
     // slider
     Route::group(['prefix' => 'slider'], function () {
         // hướng đi admin/slider/danhsach

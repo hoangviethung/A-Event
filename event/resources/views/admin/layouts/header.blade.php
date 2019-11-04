@@ -9,7 +9,7 @@
         <a class="navbar-brand" href="{{ url('admin/login') }}">A Event | Admin</a>
         </div>
         <!-- /.navbar-header -->
-
+        @if(Auth::user())
         <ul class="nav navbar-top-links navbar-right">
             <!-- /.dropdown -->
             <li class="dropdown">
@@ -17,7 +17,7 @@
                     <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
-                <li><a href="{{ url('admin/danhmuc/danhsach') }}"><i class="fa fa-user fa-fw"></i>ADMIN</a>
+                <li><a href="{{ url('admin/danhmuc/danhsach') }}"><i class="fa fa-user fa-fw"></i>{{Auth::user()->name}}</a>
                     </li>
                     <li><a href="{{ url('admin/danhmuc/danhsach') }}"><i class="fa fa-gear fa-fw"></i> Cài đặt</a>
                     </li>
@@ -29,6 +29,7 @@
             </li>
             <!-- /.dropdown -->
         </ul>
+        @endif
         <!-- /.navbar-top-links -->
         @include('admin.layouts.menu')
         <!-- /.navbar-static-side -->

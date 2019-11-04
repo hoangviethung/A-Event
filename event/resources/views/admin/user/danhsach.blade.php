@@ -35,6 +35,7 @@
                                         <th>Giới Tính</th>
                                         <th>Hình Accounts</th>
                                         <th>Loại Khách</th>
+                                        <th>Phân Quyền</th>
                                         <th colspan="2">Thao tác</th>
                                     </tr>
                                     </thead>
@@ -49,15 +50,12 @@
                                             <td>{{$use->name}}</td>
                                             <td>{{$use->password}}</td>
                                             <td>{{$use->dien_thoai}}</td>
-                                            <td>
-                                                <textarea cols="30" rows="3">{{$use->dia_chi}}</textarea>
-                                                
-                                            
-                                            </td>
+                                            <td><textarea cols="30" rows="3">{{$use->dia_chi}}</textarea></td>
                                             <td>{{$use->ngay_sinh}}</td>
                                             <td>{{$use->gioi_tinh}}</td>
                                             <td><img src="images/user/{{$use->hinh}}" alt="A-event" srcset="" width="50" height="50"></td>
                                             <td>{{$use->vip}}</td>
+                                            <td>{{$use->type}}</td>
                                             <td> <a href="admin/user/sua/{{$use->id}}"><img src="images/edit.png" alt="A-event" srcset="" width="40" height="40"></a>
                                             </td>
                                             <td>

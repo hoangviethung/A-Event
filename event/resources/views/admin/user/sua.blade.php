@@ -114,7 +114,20 @@
                                                 {{$errors->first('vip')}}
                                             </span>
                                          @endif 
-                                    </div><br />
+                                    </div>
+                                    <div class="form-group">
+                                            <label>Phân quyền Accounts</label><br />
+                                            <select id="vip" name="type" value="{{$user->type}}">
+                                                    <option value="2">Admin</option>
+                                                    <option value="1">User</option>
+                                            </select>
+                                            @if($errors->has('type'))
+                                                <span class="error">
+                                                    {{$errors->first('type')}}
+                                                </span>
+                                             @endif 
+                                        </div>
+                                    <br />
                                     <button type="submit" class="btn btn-default">Sửa Accounts</button>
                             <form>
                     </div>

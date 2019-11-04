@@ -163,6 +163,7 @@ class PagesController extends Controller
             'gioi_tinh'=>'required',
             'hinh'=>'required',
             'vip'=>'required',
+            'type'=>'required',
         ],
         [
             'email.required'=>'bạn chưa nhập email',
@@ -192,6 +193,8 @@ class PagesController extends Controller
             'hinh.required'=>'bạn chưa chọn hình',
 
             'vip.required'=>'bạn chưa nhập chọn khách hàng',
+
+            'type.required'=>'bạn chưa chọn kiểu Accounts',
         ]);
         $user = new users;
         $user->email = $request->email;
@@ -213,6 +216,7 @@ class PagesController extends Controller
             $user->hinh= '';
         }
         $user->vip = $request->vip;
+        $user->type = $request->type;
         $user->save();
         return redirect('admin/user/them')->with('thongbao', 'Đăng kí Accounts thành công !');
     }
@@ -234,6 +238,7 @@ class PagesController extends Controller
             'gioi_tinh'=>'required',
             'hinh'=>'required',
             'vip'=>'required',
+            'type'=>'required',
         ],
         [
             'email.required'=>'bạn chưa nhập email',
@@ -263,6 +268,8 @@ class PagesController extends Controller
             'hinh.required'=>'bạn chưa chọn hình',
 
             'vip.required'=>'bạn chưa nhập chọn khách hàng',
+
+            'type.required'=>'bạn chưa chọn kiểu Accounts',
         ]);
         $user->email = $request->email;
         $user->name = $request->name;
@@ -283,6 +290,7 @@ class PagesController extends Controller
             $user->hinh= '';
         }
         $user->vip = $request->vip;
+        $user->type = $request->type;
         $user->save();
         return redirect('admin/user/sua/'.$user->id)->with('thongbao', 'Sửa Accounts thành công !');
     }
@@ -298,11 +306,27 @@ class PagesController extends Controller
     }
 
     public function postLoginAdmin(Request $request){
+        $this->validate($request,
+            [
+                'email'=>'required|min:3|max:32',
+                'password'=>'required|min:3|max:32',
+            ],
+            [
+                'email.required'=>'bạn chưa nhập email',
+                'email.min'=>'email phải lớn hơn 3 kí tự',
+                'email.max'=>'email không quá 32 kí tự',
+
+                'password.required'=>'bạn chưa nhập mật khẩu',
+                'password.min'=>'mật khẩu phải lớn hơn 3 kí tự',
+                'password.max'=>'mật khẩu không quá 32 kí tự',
+            ]);  
+ 
         $arr = ['email' => $request->email, 'password' =>$request->password];
         if(Auth::attempt($arr)){
-           return redirect('admin/login');
-        }else{
             return redirect('admin/event/danhsach')->with('thongbao', 'Đăng nhập thành công !');
+        }else{
+        
+            return redirect('admin/login')->with('thongbao', 'bạn không có quyền truy cập!');
         }
     }
     // QL User

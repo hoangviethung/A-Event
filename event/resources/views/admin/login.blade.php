@@ -25,13 +25,13 @@
 			<section class="admin-login bg-main">
 				<div class="container">	
 					<div class="box-login">
+						@if(session('thongbao'))
+							<p style="text-align: center !important;margin-bottom: 10px !important;">
+									{{session('thongbao')}}
+							</p>
+						@endif
 						<h1>Admin - A-EVENT</h1>
 						<div class="box-form-login">
-								@if(session('thongbao'))
-								<div class="alert alert-danger" style="text-align: center !important;margin-bottom: 10px !important;">
-										{{session('thongbao')}}
-								</div>
-							@endif
 							<form action="admin/login" method="POST">
 								@csrf
 								<div class="form-group">

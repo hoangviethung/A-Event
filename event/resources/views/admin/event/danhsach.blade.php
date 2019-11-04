@@ -56,12 +56,7 @@
                                     <th>{{$event->id}}</th>
                                     <td>{{$event->ten_su_kien}}</td>
                                     <td>{{$event->type_events->ten_loai}}</td>
-                                    <td>
-                                    <img src="images/product/{{$event->banner}}" width="120px"  />
-
-
-
-                                    </td>
+                                    <td><img src="images/product/{{$event->banner}}" width="120"  height="50"/></td>
                                     <td>{{$event->ngay_dien_ra}}</td>
                                     <td>{{$event->ngay_ban}}</td>
                                     <td>{{$event->gia_ve}}</td>
