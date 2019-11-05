@@ -5,7 +5,7 @@
         <form action="pages/search" method="POST" autocomplete="off">
             @csrf
             <div class="form-group">
-                <label class="content wow fadeInUp" for="search" data-wow-delay=".3s"><button class="btn" type="submit" style="letter-spacing: 1px !important;border-radius: 10px !important;line-height: 40px;font-family: K2D,sans-serif;font-weight: bold;">Tìm kiếm</button></label>
+                <label class="content wow fadeInUp" for="search" data-wow-delay=".3s"><button class="btn" hidden type="submit" style="letter-spacing: 1px !important;border-radius: 10px !important;line-height: 40px;font-family: K2D,sans-serif;font-weight: bold;">Tìm kiếm</button></label>
                 <input id="search" type="text" name="tukhoa" placeholder="Nhập tìm kiếm..." autocomplete="off">
                
             </div>

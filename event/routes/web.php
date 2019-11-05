@@ -24,7 +24,7 @@ Route::group(['prefix'=>'pages'], function(){
     Route::get('search', 'PagesController@getSearch');
     Route::post('search', 'PagesController@postSearch');
 
-    Route::get('addevent', 'PagesController@getAddevent');
+    Route::get('addevent', 'AddeventController@getAddevent');
     Route::get('chitiet/{id}',[
         'as' =>'chitiet',
         'uses'=>'PagesController@getChitiet',
@@ -41,6 +41,12 @@ Route::group(['prefix'=>'pages'], function(){
     Route::get('login/google', 'Auth\SocialController@redirectToProvider');
     Route::get('login/google/callback', 'Auth\SocialController@handleProviderCallback');
 
+    
+    Route::get('login/google', 'Auth\SocialController@redirectToProvider');
+    Route::get('login/google/callback', 'Auth\SocialController@handleProviderCallback');
+
+   
+
 
 });
 // pages website
@@ -56,7 +62,7 @@ Route::group(['prefix'=>'admin','middleware'=>'checklogin'], function(){
     // slider
     Route::group(['prefix' => 'slider'], function () {
         // hướng đi admin/slider/danhsach
-        Route::get('slider','SliderController@getDanhsach');
+        Route::get('danhsach','SliderController@getDanhsach');
 
         Route::get('sua', 'SliderController@getSua');
         Route::post('sua', 'SliderController@postSua');
@@ -112,6 +118,7 @@ Route::group(['prefix'=>'admin','middleware'=>'checklogin'], function(){
         Route::get('xoa/{id}', 'PagesController@getXoa');
     });
     // Accounts
+    Route::get('dashboard', 'PagesController@getDashboard');
 });
 
 // admin

@@ -35,12 +35,12 @@
 							<form action="admin/login" method="POST">
 								@csrf
 								<div class="form-group">
-									<label for="user-name">Admin Email:</label>
+									<label for="user-name">Admin Tên:</label>
 									<div class="form-input">
-										<input id="user-name" type="text" placeholder="Nhập email" name="email">
-										@if($errors->has('email'))
+										<input id="user-name" type="text" placeholder="Nhập tên admin" name="name">
+										@if($errors->has('name'))
 											<span class="error">
-												{{$errors->first('email')}}
+												{{$errors->first('name')}}
 											</span>
 										@endif
 									</div>
