@@ -316,15 +316,9 @@ class PagesController extends Controller
                 'password.required'=>'bạn chưa nhập mật khẩu',
                 'password.min'=>'mật khẩu phải lớn hơn 3 kí tự',
                 'password.max'=>'mật khẩu không quá 32 kí tự',
-<<<<<<< HEAD
             ]);  
  
         $arr = ['name' => $request->name, 'password' =>$request->password];
-=======
-            ]);
-
-        $arr = ['email' => $request->email, 'password' =>$request->password];
->>>>>>> 496d533a83de446ff3e394adc6d01992de4c655d
         if(Auth::attempt($arr)){
             return redirect('admin/dashboard')->with('thongbao', 'Đăng nhập thành công !');
         }else{

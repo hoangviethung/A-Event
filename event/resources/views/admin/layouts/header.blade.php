@@ -10,7 +10,7 @@
         </div>
         <!-- /.navbar-header -->
         @if(Auth::user())
-        <!-- <ul class="nav navbar-top-links navbar-right">
+      <ul class="nav navbar-top-links navbar-right">
 
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -27,7 +27,7 @@
                 </ul>
             </li>
 
-        </ul> -->
+        </ul> 
         @endif
         <!-- /.navbar-top-links -->
         @include('admin.layouts.menu')
