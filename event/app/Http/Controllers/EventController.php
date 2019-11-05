@@ -29,7 +29,7 @@ class EventController extends Controller
             'ten_su_kien' => 'required|unique:Events,ten_su_kien|min:2|max: 100|',
             'ngay_dien_ra' =>'required',
             'gia_ve'=> 'required|integer|min:1000|max:100000000|',
-            'banner'=>'required',
+            'banner'=>'required|mimes:jpeg,png,jpg,gif,svg|',
             'ngay_dien_ra' =>'required',
             'dia_chi' => 'required',
             'ngay_ban' => 'required',
@@ -47,6 +47,7 @@ class EventController extends Controller
             'gia_ve.min' => 'Giá tối thiếu 1 000 đồng đến 100 000 000 đồng',
             'gia_ve.max' => 'Giá tối thiếu 1 000 đồng đến 100 000 000 đồng',
             'banner.required' => 'Bạn chưa add banner sự kiện',
+            'banner.mimes' => 'Banner phải là hình có đuôi jpeg,png,jpg,gif,svg',
             // 'banner.image'=> 'Banner phải là ảnh(jpeg, png, bmp, gif, svg)',
             'ngay_dien_ra.required'=> 'Bạn chưa thêm ngày diễn ra sự kiện',
             'dia_chi.required' => 'Bạn chưa nhập nơi diễn ra sự kiện',
@@ -76,11 +77,6 @@ class EventController extends Controller
 
         if($request->hasFile('banner')){
             $file = $request->file('banner');
-            $duoi = $file->getClientOriginalExtension();
-            if($duoi !='jpg' && $duoi !='PNG' && $duoi !='jpeg')
-                {
-                    return redirect('admin/event/them')->with('loi','Vui lòng upload ảnh có đuôi JPG,PNG,JPEG');
-                }
             $name = $file->getClientOriginalName();
             $banner = Str::random(10)."_". $name;
             $file->move('images/product',$banner);
@@ -109,14 +105,13 @@ class EventController extends Controller
             'ten_su_kien' => 'required|min:2|max: 100|',
             'ngay_dien_ra' =>'required',
             'gia_ve'=> 'required|integer|min:1000|max:100000000|',
-            'banner'=>'required',
+            'banner'=>'required|mimes:jpeg,png,jpg,gif,svg|',
             'ngay_dien_ra' =>'required',
             'dia_chi' => 'required',
             'ngay_ban' => 'required',
             'mo_ta' => 'required',
             'so_luong_ve' => 'required|integer|',
-        ],
-        [
+        ],[
             'ten_su_kien.required' => ' Bạn chưa nhập tên sự kiện',
             'ten_su_kien.min' => ' Tên sự kiện phải có từ 3 đến 100 ký tự',
             'ten_su_kien.max' => ' Tên sự kiện phải có từ 3 đến 100 ký tự',
@@ -126,16 +121,13 @@ class EventController extends Controller
             'gia_ve.min' => 'Giá tối thiếu 1 000 đồng đến 100 000 000 đồng',
             'gia_ve.max' => 'Giá tối thiếu 1 000 đồng đến 100 000 000 đồng',
             'banner.required' => 'Bạn chưa add banner sự kiện',
-            // 'banner.image'=> 'Banner phải là ảnh(jpeg, png, bmp, gif, svg)',
+            'banner.mimes'=> 'Banner phải là hình có đuôi (jpeg,png,jpg.gif,svg)',
             'ngay_dien_ra.required'=> 'Bạn chưa thêm ngày diễn ra sự kiện',
             'dia_chi.required' => 'Bạn chưa nhập nơi diễn ra sự kiện',
             'ngay_ban.required' => 'Bạn chưa nhập ngày bán vé',
             'mo_ta.required' => 'Bạn chưa nhập mô tả sự kiện',
             'so_luong_ve.required' => 'Bạn chưa nhập số lượng vé',
             'so_luong_ve.integer' => ' Số lượng phải là số'
-
-
-
         ]);
 
 
@@ -155,14 +147,9 @@ class EventController extends Controller
 
         if($request->hasFile('banner')){
             $file = $request->file('banner');
-            $duoi = $file->getClientOriginalExtension();
-            if($duoi !='jpg' && $duoi !='PNG' && $duoi !='jpeg')
-                {
-                    return redirect('admin/event/sua')->with('loi','Vui lòng upload ảnh có đuôi JPG,PNG,JPEG');
-                }
             $name = $file->getClientOriginalName();
             $banner = Str::random(10)."_". $name;
-            $file->move('images/product',$banner);
+            $file->move("images/product",$banner);
             unlink("images/product/".$event->banner);
             $event->banner = $banner;
         }

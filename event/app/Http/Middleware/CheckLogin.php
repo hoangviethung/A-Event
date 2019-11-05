@@ -13,15 +13,17 @@ class CheckLogin
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next, $guard = null)
+    public function handle($request, Closure $next)
     {
-        if(Auth::guard($guard)->check()){
-            if(Auth::user()->type == 2){
-                return $next($request);
-            }
-            return redirect('admin/login')->with('thongbao','Bạn không có quyền truy cập !');
-          
-        }
-        return redirect('pages/login');
+        return $next($request);
+        // , $guard = null
+        // if(Auth::guard($guard)->check()){
+        //     if(Auth::user()->type == 2){
+        //         return $next($request);
+        //     }
+        //     return redirect('admin/login')->with('thongbao','Bạn không có quyền truy cập !');
+
+        // }
+        // return redirect('pages/login');
     }
 }
