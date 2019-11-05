@@ -1,3 +1,6 @@
+// @import File Here !!!
+import map from "./map";
+
 // Function thêm class lazyload vào các thẻ <img> có thuộc tính [data-src]
 const addClassLazyload = () => {
 	let imgList = document.querySelectorAll("img[data-src]")
@@ -271,29 +274,34 @@ function showInformationTicket() {
 }
 
 
-
-
-
-
-
-
-
 $(document).ready(function() {
-	objectFitImages("img.ofc"); // Luôn luôn chậy polyfill cho thuôc tính object-fit: cover trên các phiên bản IE >= 9
-	addClassLazyload(); // Luôn luôn addClass lazyload cho các hình ảnh có thuộc tính [data-src]
+	// GOOGLE MAP
+	map();
+	// WOW
+	new WOW().init();
+	// Luôn luôn chậy polyfill cho thuôc tính object-fit: cover trên các phiên bản IE >= 9
+	objectFitImages("img.ofc");
+	// Luôn luôn addClass lazyload cho các hình ảnh có thuộc tính [data-src]
+	addClassLazyload();
+	// SLDIER
 	sliderHomeBanner();
 	sliderHotEvent();
 	sliderProductByCatalog();
+	// FANCYBOX
 	popupAbout();
+	// SHOW SUB INFO EVENT
 	showSubInformation();
+	// GET NAME FILE
 	getNameFile();
+	// ĐẾM NGƯỢC
 	countDownSale();
+	// FILL HÌNH ẢNH RA
 	chooseFile_Img();
-	CKEditor();
+	// SHOW INFO TICKET
 	showInformationTicket();
+	// TAB JS
 	const tabHomeNews = new Tab(".home-news .tab-container");
 	const tabClientsPartner = new Tab(".clients-partner .tab-container")
-	new WOW().init();
 })
 
 $(document).ajaxComplete(function() {
