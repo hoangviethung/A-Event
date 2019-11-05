@@ -17,7 +17,7 @@
 	</head>
 	<body>
 		<div id="loading">
-			<div class="logo-loader"><img src="./img/icons/loading.gif" alt=""></div>
+			<div class="logo-loader"><img src="images/icons/loading.gif" alt=""></div>
 			<div class="progstat-wrapper">Loading: <span id="progstat">0</span>%</div>
 			<div id="progress"></div>
 		</div>
@@ -25,22 +25,38 @@
 			<section class="admin-login bg-main">
 				<div class="container">	
 					<div class="box-login">
+						@if(session('thongbao'))
+							<p style="text-align: center !important;margin-bottom: 10px !important;">
+									{{session('thongbao')}}
+							</p>
+						@endif
 						<h1>Admin - A-EVENT</h1>
 						<div class="box-form-login">
-							<form action="#">
+							<form action="admin/login" method="POST">
+								@csrf
 								<div class="form-group">
-									<label for="user-name">Admin Name:</label>
+									<label for="user-name">Admin Email:</label>
 									<div class="form-input">
-										<input id="user-name" type="text" placeholder="Nhập tên Admin"><span class="error">Bắt lỗi</span>
+										<input id="user-name" type="text" placeholder="Nhập email" name="email">
+										@if($errors->has('email'))
+											<span class="error">
+												{{$errors->first('email')}}
+											</span>
+										@endif
 									</div>
 								</div>
 								<div class="form-group">
 									<label for="pass">Mật khẩu:</label>
 									<div class="form-input">
-										<input id="pass" type="password" placeholder="Nhập mật khẩu"><span class="error">Bắt lỗi</span>
+										<input id="pass" type="password" placeholder="Nhập mật khẩu" name="password">
+										@if($errors->has('password'))
+											<span class="error">
+												{{$errors->first('password')}}
+											</span>
+										@endif
 									</div>
 								</div>
-								<button class="btn">ĐĂNG NHẬP</button>
+								<button class="btn" type="submit">ĐĂNG NHẬP</button>
 							</form>
 						</div>
 					</div>

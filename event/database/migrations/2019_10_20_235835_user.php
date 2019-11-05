@@ -24,6 +24,7 @@ class User extends Migration
             $table->boolean('gioi_tinh');
             $table->string('hinh');
             $table->boolean('vip');
+            $table->integer('type')->nullable();
         });
     }
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 22, 2019 at 03:20 AM
+-- Generation Time: Oct 31, 2019 at 04:22 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.10
 
@@ -25,6 +25,20 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `hinh` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `events`
 --
 
@@ -33,24 +47,27 @@ CREATE TABLE `events` (
   `ten_su_kien` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `id_loai` int(10) NOT NULL,
   `banner` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `ngay_dien_ra` datetime DEFAULT NULL,
-  `anh_su_kien` int(11) DEFAULT NULL,
-  `gia_ve` double(8,2) DEFAULT NULL,
+  `ngay_dien_ra` datetime NOT NULL,
+  `gia_ve` double(8,2) NOT NULL,
   `dia_chi` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `ngay_ban` datetime DEFAULT NULL,
+  `ngay_ban` datetime NOT NULL,
+  `tom_tat` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `mo_ta` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `so_luong_ve` int(11) DEFAULT NULL
+  `so_luong_ve` int(11) NOT NULL,
+  `hien_thi_slider` tinyint(1) DEFAULT NULL,
+  `hien_thi_noi_bat` tinyint(1) DEFAULT NULL,
+  `duyet` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `events`
 --
 
-INSERT INTO `events` (`id`, `ten_su_kien`, `id_loai`, `banner`, `ngay_dien_ra`, `anh_su_kien`, `gia_ve`, `dia_chi`, `ngay_ban`, `mo_ta`, `so_luong_ve`) VALUES
-(1, 'Sự kiện test', 1, '1.jpg', '2019-10-02 00:00:00', 0, 1.00, 'Hà Nội', '0000-00-00 00:00:00', NULL, 0),
-(2, 'Sự kiện giải trí', 1, '2.jpg', '2019-10-03 00:00:00', NULL, 1.00, 'TP HCM', NULL, NULL, NULL),
-(3, 'Sự kiện 1', 1, '3.jpg', '2019-10-17 00:00:00', NULL, 100000.00, 'TP HCM', NULL, NULL, NULL),
-(4, 'Sự kiện kiến thức ', 2, '5.jpg', '2019-10-10 00:00:00', NULL, NULL, 'Hà Nội', NULL, NULL, NULL);
+INSERT INTO `events` (`id`, `ten_su_kien`, `id_loai`, `banner`, `ngay_dien_ra`, `gia_ve`, `dia_chi`, `ngay_ban`, `tom_tat`, `mo_ta`, `so_luong_ve`, `hien_thi_slider`, `hien_thi_noi_bat`, `duyet`) VALUES
+(1, 'Sự kiện test', 1, '1.jpg', '2019-10-02 00:00:00', 1.00, 'Hà Nội', '0000-00-00 00:00:00', NULL, NULL, 0, NULL, NULL, NULL),
+(2, 'Sự kiện giải trí', 1, '2.jpg', '2019-10-03 00:00:00', 1.00, 'TP HCM', '0000-00-00 00:00:00', NULL, NULL, 0, NULL, NULL, NULL),
+(3, 'Sự kiện 1', 1, '3.jpg', '2019-10-17 00:00:00', 100000.00, 'TP HCM', '0000-00-00 00:00:00', NULL, NULL, 0, NULL, NULL, NULL),
+(4, 'Sự kiện kiến thức ', 2, '5.jpg', '2019-10-10 00:00:00', 0.00, 'Hà Nội', '0000-00-00 00:00:00', NULL, NULL, 0, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -105,7 +122,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (9, '2019_10_21_213909_events', 3),
 (10, '2019_10_21_214921_type_events', 4),
 (11, '2019_10_21_215139_images_event', 5),
-(12, '2019_10_21_215741_news', 6);
+(12, '2019_10_21_215741_news', 6),
+(13, '2019_10_23_232741_shortlink', 7),
+(14, '2019_10_24_234232_admin', 8);
 
 -- --------------------------------------------------------
 
@@ -143,6 +162,20 @@ CREATE TABLE `password_resets` (
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `token` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `short_links`
+--
+
+CREATE TABLE `short_links` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `code` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `link` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -189,7 +222,8 @@ CREATE TABLE `type_events` (
 
 INSERT INTO `type_events` (`id`, `ten_loai`, `created_at`, `updated_at`) VALUES
 (1, 'Giải trí', NULL, NULL),
-(2, 'Kiến thức', NULL, NULL);
+(2, 'Kiến thức', NULL, NULL),
+(3, 'Sự kiện khác', '2019-10-28 15:19:00', '2019-10-28 15:19:00');
 
 -- --------------------------------------------------------
 
@@ -245,6 +279,12 @@ INSERT INTO `users` (`id`, `name`, `dien_thoai`, `hinh`, `gioi_tinh`, `ten`, `id
 --
 
 --
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `events`
 --
 ALTER TABLE `events`
@@ -282,6 +322,12 @@ ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
+-- Indexes for table `short_links`
+--
+ALTER TABLE `short_links`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `slider`
 --
 ALTER TABLE `slider`
@@ -310,10 +356,16 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -325,13 +377,19 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `short_links`
+--
+ALTER TABLE `short_links`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `slider`
@@ -343,7 +401,7 @@ ALTER TABLE `slider`
 -- AUTO_INCREMENT for table `type_events`
 --
 ALTER TABLE `type_events`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `user`

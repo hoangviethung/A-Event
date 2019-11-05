@@ -9,11 +9,6 @@
                     <li class="item active"><a href="{{ url('pages/register') }}">ĐĂNG KÍ</a></li>
                 </ul>
                 <div class="box-form-register">
-                    @if(session('thongbao'))
-                        <p style="text-align: center;">
-                            {{session('thongbao')}}
-                        </p>
-                    @endif
                     <form action="pages/register" method="POST" enctype="multipart/form-data">
                         <input type="hidden" name="_token" value="{{csrf_token()}}" />
                         <div class="form-row">
@@ -94,7 +89,7 @@
                                     <span class="error">
                                         {{$errors->first('ngay_sinh')}}
                                     </span>
-                                 @endif
+                                    @endif
                                 </div>
                             </div>
                             <div class="form-group col-lg-6">
@@ -115,6 +110,11 @@
                                 <label class="choose-file" for="file-avatar">Chọn ảnh đại diện</label>
                                 <div class="form-input">
                                     <input id="file-avatar" type="file" hidden name="hinh">
+                                    @if($errors->has('hinh'))
+                                        <span class="error">
+                                            {{$errors->first('hinh')}}
+                                        </span>
+                                    @endif
                                 </div>
                             </div>
                             <div class="form-group col-lg-6">
@@ -129,6 +129,15 @@
                                     </span>
                                  @endif
                                 </div>
+                            </div>
+                            <div class="form-group col-lg-12">
+                            <div class="g-recaptcha" data-sitekey="{{env('CAPTCHA_KEY')}}" style="text-align: -webkit-center;"></div>
+
+                                @if($errors->has('g-recaptcha-response'))
+                                    <span class="error" style="text-align: center;display: inherit;color: #bc2e31;">
+                                        {{$errors->first('g-recaptcha-response')}}
+                                    </span>
+                                @endif
                             </div>
                         </div>
                         <button class="btn" type="submit">ĐĂNG KÝ</button>

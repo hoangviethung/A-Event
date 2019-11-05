@@ -45,7 +45,7 @@ return [
             'driver' => 'token',
             'provider' => 'users',
             'hash' => false,
-        ],
+        ]
     ],
 
     /*
@@ -69,8 +69,7 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
-        ],
-
+        ]
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
@@ -97,7 +96,7 @@ return [
             'provider' => 'users',
             'table' => 'password_resets',
             'expire' => 60,
-        ],
+        ]
     ],
 
     /*

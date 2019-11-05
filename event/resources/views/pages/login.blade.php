@@ -3,20 +3,19 @@
 <main>
     <section class="login bg-main">
         <div class="container">
+                @if(session('thongbao'))
+                <p style="text-align: center;margin-bottom: 10px;">
+                        {{session('thongbao')}}
+                </p>
+            @endif
             <div class="box-login">
                 <ul class="menu-login-register">
                     <li class="item active"><a href="{{ url('pages/login') }}">ĐĂNG NHẬP</a></li>
                     <li class="item"><a href="{{ url('pages/register') }}">ĐĂNG KÍ</a></li>
                 </ul>
-                <div class="login-with"><span>LOGIN WITH</span><a href="#"><img src="images/icons/google.svg" alt="" srcset=""></a><a href="#"><img src="images/icons/facebook.svg" alt="" srcset=""></a></div>
+                <div class="login-with"><span>LOGIN WITH</span><a href="{{ url('pages/login/google') }}"><img src="images/icons/google.svg" alt="" srcset=""></a><a href="{{ url('pages/login/facebook') }}"><img src="images/icons/facebook.svg" alt="" srcset=""></a></div>
                 <div class="or-login"><span>or</span></div>
                 <div class="box-form-login">
-                    @if(session('thongbao'))
-                        <p style="text-align: center;margin-bottom: 10px;">
-                                {{session('thongbao')}}
-                        </p>
-                    @endif
-                  
                     <form action="pages/login" method="POST">
                         @csrf
                         <div class="form-group">
@@ -34,7 +33,7 @@
                             <label for="pass">Mật khẩu:</label>
                             <div class="form-input">
                             <input id="pass" type="password" placeholder="Password" name="password">
-                            @if($errors->has('email'))
+                            @if($errors->has('password'))
                                 <span class="error">
                                     {{$errors->first('password')}}
                                 </span>

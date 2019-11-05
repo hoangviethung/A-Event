@@ -16,12 +16,19 @@ use Symfony\Component\Routing\Annotation\Route;
 
 
 // pages website
+
+
 Route::group(['prefix'=>'pages'], function(){
     Route::get('index', 'PagesController@getIndex');
 
-    Route::get('sreach', 'PagesController@getSreach');
+    Route::get('search', 'PagesController@getSearch');
+    Route::post('search', 'PagesController@postSearch');
 
     Route::get('addevent', 'PagesController@getAddevent');
+    Route::get('chitiet/{id}',[
+        'as' =>'chitiet',
+        'uses'=>'PagesController@getChitiet',
+    ]);
 
     Route::get('login', 'PagesController@getLogin');
     Route::post('login', 'PagesController@postLogin');
@@ -30,14 +37,22 @@ Route::group(['prefix'=>'pages'], function(){
     Route::post('/register', 'PagesController@postRegister');
 
     Route::get('dangxuat', 'PagesController@getDangxuat');
-});
 
-Route::get('admin/login', 'PagesController@getLoginAdmin');
-Route::post('admin/login', 'PagesController@postLoginAdmin');
+    Route::get('login/google', 'Auth\SocialController@redirectToProvider');
+    Route::get('login/google/callback', 'Auth\SocialController@handleProviderCallback');
+
+
+});
 // pages website
 
 // admin
-Route::group(['prefix'=>'admin'], function(){
+
+Route::get('admin/login', 'PagesController@getLoginAdmin');
+Route::post('admin/login', 'PagesController@postLoginAdmin');
+Route::get('admin/logout', 'PagesController@getLogoutAdmin');
+
+
+Route::group(['prefix'=>'admin','middleware'=>'checklogin'], function(){
     // slider
     Route::group(['prefix' => 'slider'], function () {
         // hướng đi admin/slider/danhsach
@@ -64,40 +79,39 @@ Route::group(['prefix'=>'admin'], function(){
         Route::get('them', 'DanhmucController@getThem');
         Route::post('them', 'DanhmucController@postThem');
         // Hàm post nhận dữ liệu về và lưu vào cơ sở dữ liệu
-        Route::get('xoa/{id}', 'DanhmucController@getXoa');
-
+        Route::get('xoa', 'DanhmucController@getXoa');
     });
     // danhmuc
 
-    // user
-    Route::group(['prefix' => 'user'], function () {
-        Route::get('danhsach','UserController@getDanhsach');
+    // Sự kiện
+    Route::group(['prefix' => 'event'], function () {
+        // hướng đi admin/slider/danhsach
+        Route::get('danhsach','EventController@getDanhsach');
 
-        Route::get('sua', 'UserController@getSua');
-        Route::post('sua', 'UserController@postSua');
+        Route::get('sua/{id}', 'EventController@getSua');
+        Route::post('sua/{id}', 'EventController@postSua');
 
-        Route::get('them', 'UserController@getThem');
-        Route::post('them', 'UserController@postThem');
 
-        Route::get('xoa', 'UserController@getXoa');
+        Route::get('them', 'EventController@getThem');
+        Route::post('them', 'EventController@postThem');
+        // Hàm post nhận dữ liệu về và lưu vào cơ sở dữ liệu
+        Route::get('xoa/{id}', 'EventController@getXoa');
+
     });
-    // user
+
+    // Accounts
+    Route::group(['prefix' => 'user'], function () {
+        Route::get('danhsach','PagesController@getDanhsach');
+
+        Route::get('sua/{id}', 'PagesController@getSua');
+        Route::post('sua/{id}', 'PagesController@postSua');
+
+        Route::get('them', 'PagesController@getThem');
+        Route::post('them', 'PagesController@postThem');
+
+        Route::get('xoa/{id}', 'PagesController@getXoa');
+    });
+    // Accounts
 });
 
-// admin
-    // end danhmuc
-    // event
-    Route::group(['prefix' => 'events'], function () {
-        // hướng đi admin/slider/danhsach
-        Route::get('events','EventsController@getDanhsach');
-
-        Route::get('sua', 'EventsController@getSua');
-        Route::post('sua', 'EventsController@postSua');
-
-        Route::get('them', 'EventsController@getThem');
-        Route::post('them', 'EventsController@postThem');
-
-        Route::get('xoa', 'EventsController@getXoa');
-    });
-    // end event
 // admin

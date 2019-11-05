@@ -13,10 +13,10 @@
                     <!-- /input-group -->
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                    <a href="admin/danhmuc/danhsach"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                 </li>
                 <li>
-                    <a href="admin/danhmuc/danhsach"><i class="fa fa-bar-chart-o fa-fw"></i>QL Danh mục<span class="fa arrow"></span></a>
+                    <a href="admin/danhmuc/danhsach"><i class="fa fa-bar-chart-o fa-fw"></i> QL Danh mục<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
                             <a href="admin/danhmuc/danhsach">Danh sách</a>
@@ -29,10 +29,23 @@
                     <!-- /.nav-second-level -->
                 </li>
                 <li>
+                    <a href="admin/event/danhsach"><i class="fa fa-bar-chart-o fa-fw"></i>QL Sự kiện<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="admin/event/danhsach">Danh sách</a>
+                        </li>
+                        <li>
+                            <a href="admin/event/them">Thêm</a>
+                        </li>
+
+                    </ul>
+                    <!-- /.nav-second-level -->
+                </li>
+                <li>
                     <a href="admin/slider/danhsach"><i class="fa fa-bar-chart-o fa-fw"></i>QL Slider<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="admin/slider/danhsach">Danh sách Slider</a>
+                            <a href="admin/slider/danhsach">Danh Sách Slider</a>
                         </li>
                         <li>
                             <a href="admin/slider/them">Thêm Slider</a>
@@ -41,13 +54,13 @@
                     <!-- /.nav-second-level -->
                 </li>
                 <li>
-                    <a href="admin/user/danhsach"><i class="fa fa-bar-chart-o fa-fw"></i>QL User<span class="fa arrow"></span></a>
+                    <a href="admin/user/danhsach"><i class="fa fa-bar-chart-o fa-fw"></i>QL Account<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="admin/user/danhsach">Danh sách User</a>
+                            <a href="admin/user/danhsach">Danh Sách Account</a>
                         </li>
                         <li>
-                            <a href="admin/user/them">Thêm User</a>
+                            <a href="admin/user/them">Thêm Account</a>
                         </li>
                     </ul>
                     <!-- /.nav-second-level -->
