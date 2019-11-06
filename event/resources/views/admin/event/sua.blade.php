@@ -57,7 +57,8 @@
                                 <p>
                                 <img width="200px" src="images/product/{{$event->banner}}">
                                 </p>
-                                <input class="form-control" name="banner" type="file"/>
+                                <p>{{$event->banner}}</p>
+                                <input class="form-control" name="banner" id="" type="file" value="{{$event->banner}}"/>
                             </div>
                             <div class="form-group">
                                 <label>Ngày diễn ra sự kiện</label>
