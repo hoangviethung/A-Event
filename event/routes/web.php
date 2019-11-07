@@ -38,8 +38,8 @@ Route::group(['prefix'=>'pages'], function(){
 
     Route::get('dangxuat', 'PagesController@getDangxuat');
 
-    Route::get('login/google', 'Auth\SocialController@redirectToProvider');
-    Route::get('login/google/callback', 'Auth\SocialController@handleProviderCallback');
+    Route::get('login/facebook', 'Auth\SocialController@redirectToProvider');
+    Route::get('login/facebook/callback', 'Auth\SocialController@handleProviderCallback');
 
     
     Route::get('login/google', 'Auth\SocialController@redirectToProvider');
