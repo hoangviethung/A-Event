@@ -6,14 +6,16 @@ use Illuminate\Http\Request;
 use App\Events;
 use App\Type_events;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
 class EventController extends Controller
 {
 
     //Hiển thị danh sách
     public function getDanhsach(){
-        $event = Events::all();
 
-        return view('admin.event.danhsach',['event'=>$event]);
+        $duyet = Events::where('duyet',0)->get();
+        $event = Events::where('duyet',1)->get();
+        return view('admin.event.danhsach',compact('duyet','event'));
     }
 
 
@@ -30,6 +32,7 @@ class EventController extends Controller
             'ngay_dien_ra' =>'required',
             'gia_ve'=> 'required|integer|min:1000|max:100000000|',
             'banner'=>'required|mimes:jpeg,png,jpg,gif,svg|max:2048|',
+            'logo'=>'mimes:jpeg,png,jpg.gif,svg|max:2048|',
             'ngay_dien_ra' =>'required',
             'dia_chi' => 'required',
             'ngay_ban' => 'required',
@@ -49,6 +52,8 @@ class EventController extends Controller
             'banner.required' => 'Bạn chưa add banner sự kiện',
             'banner.mimes' => 'Banner phải là hình có đuôi jpeg,png,jpg,gif,svg',
             'banner.max'=>'Dung lượng hình không được quá 2Mb',
+            'logo.mimes'=>'Logo phải là hình có đuôi jpeg,png,jpg,gif,svg',
+            'logo.max'=>'Dung lượng hình không được quá 2Mb',
             // 'banner.image'=> 'Banner phải là ảnh(jpeg, png, bmp, gif, svg)',
             'ngay_dien_ra.required'=> 'Bạn chưa thêm ngày diễn ra sự kiện',
             'dia_chi.required' => 'Bạn chưa nhập nơi diễn ra sự kiện',
@@ -65,6 +70,7 @@ class EventController extends Controller
         $event->ten_su_kien = $request->ten_su_kien;
         $event->id_loai = $request->id_loai;
         $event->banner = $request->banner;
+        $event->logo = $request->logo;
         $event->ngay_dien_ra = $request->ngay_dien_ra;
         $event->gia_ve = $request->gia_ve;
         $event->dia_chi = $request->dia_chi;
@@ -75,6 +81,18 @@ class EventController extends Controller
         $event->hien_thi_slider = $request->hien_thi_slider;
         $event->hien_thi_noi_bat = $request->hien_thi_noi_bat;
         $event->duyet = $request->duyet;
+
+        if($request->hasFile('logo')){
+            $file_logo = $request->file('logo');
+            $name_logo = $file_logo->getClientOriginalName();
+            $logo = Str::random(10)."_". $name_logo;
+            $file_logo->move('images/logo',$logo);
+            $event->logo = $logo;
+        }
+        else
+        {
+        $event->logo = "";
+        }
 
         if($request->hasFile('banner')){
             $file = $request->file('banner');
@@ -87,6 +105,7 @@ class EventController extends Controller
         {
         $event->banner = "";
         }
+
         $event->save();
         return redirect('admin/event/them')->with('thongbao','Thêm thành công');
     }
@@ -107,6 +126,7 @@ class EventController extends Controller
             'ngay_dien_ra' =>'required',
             'gia_ve'=> 'required|integer|min:1000|max:100000000|',
             'banner'=>'required|mimes:jpeg,png,jpg,gif,svg|max:2048|',
+            'logo'=>'mimes:jpeg,png,jpg.gif,svg|max:2048|',
             'ngay_dien_ra' =>'required',
             'dia_chi' => 'required',
             'ngay_ban' => 'required',
@@ -124,6 +144,8 @@ class EventController extends Controller
             'banner.required' => 'Bạn chưa add banner sự kiện',
             'banner.mimes'=> 'Banner phải là hình có đuôi (jpeg,png,jpg.gif,svg)',
             'banner.max'=>'Dung lượng hình không được quá 2Mb',
+            'logo.mimes'=>'Logo phải là hình có đuôi jpeg,png,jpg,gif,svg',
+            'logo.max'=>'Dung lượng hình không được quá 2Mb',
             'ngay_dien_ra.required'=> 'Bạn chưa thêm ngày diễn ra sự kiện',
             'dia_chi.required' => 'Bạn chưa nhập nơi diễn ra sự kiện',
             'ngay_ban.required' => 'Bạn chưa nhập ngày bán vé',
@@ -136,6 +158,7 @@ class EventController extends Controller
         $event->ten_su_kien = $request->ten_su_kien;
         $event->id_loai = $request->id_loai;
         $event->banner = $request->banner;
+        $event->logo = $request->logo;
         $event->ngay_dien_ra = $request->ngay_dien_ra;
         $event->gia_ve = $request->gia_ve;
         $event->dia_chi = $request->dia_chi;
@@ -147,6 +170,14 @@ class EventController extends Controller
         $event->hien_thi_noi_bat = $request->hien_thi_noi_bat;
         $event->duyet = $request->duyet;
 
+
+        if($request->hasFile('logo')){
+            $file_logo = $request->file('logo');
+            $name_logo = $file_logo->getClientOriginalName();
+            $logo = Str::random(10)."_". $name_logo;
+            $file_logo->move('images/logo',$logo);
+            $event->logo = $logo;
+        }
         if($request->hasFile('banner')){
             // $oldimg = Events::where('banner')->get();
              //code for remove old file
@@ -173,6 +204,35 @@ class EventController extends Controller
     }
 
 
+
+
+    // ****PHÊ DUYỆT SỰ KIỆN******
+    public function getDuyet($id){
+        $danhmuc = Type_events::all();
+        $duyet = Events::find($id);
+        return view('admin.event.pheduyet',['danhmuc'=>$danhmuc],['duyet'=>$duyet]);
+
+    }
+
+    public function postDuyet(Request $request,$id){
+        $duyet = Events::find($id);
+        $duyet->hien_thi_slider = $request->hien_thi_slider;
+        $duyet->hien_thi_noi_bat = $request->hien_thi_noi_bat;
+        $duyet->duyet = $request->duyet;
+
+
+
+        $duyet->save();
+
+            return redirect('admin/event/pheduyet/'.$duyet->id)->with('thongbao','Duyệt bài thành công'); // Đưa người dùng về trnag sửa
+    }
+
+
+
+
+
+
+
 // Xóa
 
 public function getXoa($id){
@@ -180,4 +240,13 @@ public function getXoa($id){
     $event->delete();
     return redirect('admin/event/danhsach')->with('thongbao','Bạn đã xóa thành công');
 }
+
+
+
+
+
+
+
 }
+
+

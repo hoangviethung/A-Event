@@ -34,6 +34,10 @@
                                 <input class="form-control" name="ten_su_kien" placeholder="Nhập tên sự kiện"/>
                             </div>
                             <div class="form-group">
+                                <label>Logo sự kiện</label>
+                                <input class="form-control" name="logo" id="" type="file"/>
+                            </div>
+                            <div class="form-group">
                                 <label>Thể loại sự kiện</label>
                             <select class="form-control" name="id_loai" >
                                     @foreach($danhmuc as $danhmuc)
