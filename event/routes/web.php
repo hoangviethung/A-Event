@@ -41,11 +41,11 @@ Route::group(['prefix'=>'pages'], function(){
     Route::get('login/google', 'Auth\SocialController@redirectToProvider');
     Route::get('login/google/callback', 'Auth\SocialController@handleProviderCallback');
 
-    
+
     Route::get('login/google', 'Auth\SocialController@redirectToProvider');
     Route::get('login/google/callback', 'Auth\SocialController@handleProviderCallback');
 
-   
+
 
 
 });
@@ -59,20 +59,6 @@ Route::get('admin/logout', 'PagesController@getLogoutAdmin');
 
 
 Route::group(['prefix'=>'admin','middleware'=>'checklogin'], function(){
-    // slider
-    Route::group(['prefix' => 'slider'], function () {
-        // hướng đi admin/slider/danhsach
-        Route::get('danhsach','SliderController@getDanhsach');
-
-        Route::get('sua', 'SliderController@getSua');
-        Route::post('sua', 'SliderController@postSua');
-
-        Route::get('them', 'SliderController@getThem');
-        Route::post('them', 'SliderController@postThem');
-
-        Route::get('xoa', 'SliderController@getXoa');
-    });
-    // slider
     // danhmuc
     Route::group(['prefix' => 'danhmuc'], function () {
         // hướng đi admin/slider/danhsach
@@ -103,6 +89,9 @@ Route::group(['prefix'=>'admin','middleware'=>'checklogin'], function(){
         // Hàm post nhận dữ liệu về và lưu vào cơ sở dữ liệu
         Route::get('xoa/{id}', 'EventController@getXoa');
 
+        // Phê duyệt
+        Route::get('pheduyet/{id}', 'EventController@getDuyet');
+        Route::post('pheduyet/{id}', 'EventController@postDuyet');
     });
 
     // Accounts

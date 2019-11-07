@@ -6,7 +6,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-        <a class="navbar-brand" href="{{ url('admin/login') }}">A Event | Admin</a>
+        <a class="navbar-brand" href="{{ url('admin/event/danhsach') }}">A Event | Admin</a>
         </div>
         <!-- /.navbar-header -->
         @if(Auth::user())
@@ -27,7 +27,7 @@
                 </ul>
             </li>
 
-        </ul> 
+        </ul>
         @endif
         <!-- /.navbar-top-links -->
         @include('admin.layouts.menu')

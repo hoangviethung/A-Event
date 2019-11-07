@@ -42,18 +42,6 @@
                     <!-- /.nav-second-level -->
                 </li>
                 <li>
-                    <a href="admin/slider/danhsach"><i class="fa fa-bar-chart-o fa-fw"></i>QL Slider<span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-                        <li>
-                            <a href="admin/slider/danhsach">Danh Sách Slider</a>
-                        </li>
-                        <li>
-                            <a href="admin/slider/them">Thêm Slider</a>
-                        </li>
-                    </ul>
-                    <!-- /.nav-second-level -->
-                </li>
-                <li>
                     <a href="admin/user/danhsach"><i class="fa fa-bar-chart-o fa-fw"></i>QL Account<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
