@@ -13,8 +13,8 @@ class EventController extends Controller
     //Hiển thị danh sách
     public function getDanhsach(){
 
-        $duyet = Events::where('duyet',0)->get();
-        $event = Events::where('duyet',1)->get();
+        $duyet = Events::where('duyet',0)->orderBy('id','desc')->get();
+        $event = Events::where('duyet',1)->orderBy('id','desc')->get();
         return view('admin.event.danhsach',compact('duyet','event'));
     }
 
