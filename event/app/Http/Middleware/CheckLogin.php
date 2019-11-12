@@ -22,6 +22,6 @@ class CheckLogin
             return redirect('admin/login')->with('thongbao','Bạn không có quyền truy cập !');
           
         }
-        return redirect('pages/login');
+        return redirect('admin/login');
     }
 }

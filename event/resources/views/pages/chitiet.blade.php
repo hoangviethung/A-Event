@@ -19,7 +19,7 @@
 									<div class="desc">
 										<div class="title">GIỚI THIỆU</div>
 										<div class="CKEditor">
-										{{$chitiet->mo_ta}}
+											{{$chitiet->mo_ta}}
 										</div>
 									</div>
 									<div class="ticket-booking">

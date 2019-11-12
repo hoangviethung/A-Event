@@ -13,7 +13,7 @@
                     <!-- /input-group -->
                 </li>
                 <li>
-                    <a href="admin/danhmuc/danhsach"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                    <a href="admin/dashboard"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                 </li>
                 <li>
                     <a href="admin/danhmuc/danhsach"><i class="fa fa-bar-chart-o fa-fw"></i> QL Danh mục<span class="fa arrow"></span></a>
@@ -38,18 +38,6 @@
                             <a href="admin/event/them">Thêm</a>
                         </li>
 
-                    </ul>
-                    <!-- /.nav-second-level -->
-                </li>
-                <li>
-                    <a href="admin/slider/danhsach"><i class="fa fa-bar-chart-o fa-fw"></i>QL Slider<span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-                        <li>
-                            <a href="admin/slider/danhsach">Danh Sách Slider</a>
-                        </li>
-                        <li>
-                            <a href="admin/slider/them">Thêm Slider</a>
-                        </li>
                     </ul>
                     <!-- /.nav-second-level -->
                 </li>

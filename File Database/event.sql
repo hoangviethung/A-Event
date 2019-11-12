@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 31, 2019 at 04:22 PM
--- Server version: 10.4.8-MariaDB
--- PHP Version: 7.3.10
+-- Generation Time: Nov 05, 2019 at 04:40 PM
+-- Server version: 10.1.40-MariaDB
+-- PHP Version: 7.3.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,35 +25,21 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
---
-
-CREATE TABLE `admin` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `hinh` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `events`
 --
 
 CREATE TABLE `events` (
   `id` int(10) UNSIGNED NOT NULL,
-  `ten_su_kien` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `id_loai` int(10) NOT NULL,
-  `banner` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `ngay_dien_ra` datetime NOT NULL,
-  `gia_ve` double(8,2) NOT NULL,
-  `dia_chi` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `ngay_ban` datetime NOT NULL,
-  `tom_tat` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `mo_ta` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `so_luong_ve` int(11) NOT NULL,
+  `ten_su_kien` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id_loai` int(10) DEFAULT NULL,
+  `banner` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ngay_dien_ra` datetime DEFAULT NULL,
+  `gia_ve` double(8,2) DEFAULT NULL,
+  `dia_chi` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ngay_ban` datetime DEFAULT NULL,
+  `tom_tat` text COLLATE utf8mb4_unicode_ci,
+  `mo_ta` text COLLATE utf8mb4_unicode_ci,
+  `so_luong_ve` int(11) DEFAULT NULL,
   `hien_thi_slider` tinyint(1) DEFAULT NULL,
   `hien_thi_noi_bat` tinyint(1) DEFAULT NULL,
   `duyet` tinyint(1) DEFAULT NULL
@@ -81,7 +67,7 @@ CREATE TABLE `failed_jobs` (
   `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -91,7 +77,7 @@ CREATE TABLE `failed_jobs` (
 --
 
 CREATE TABLE `images_event` (
-  `id` int(10) NOT NULL,
+  `id` int(10) UNSIGNED NOT NULL,
   `duong_dan` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -121,10 +107,11 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (8, '2019_10_20_235835_user', 3),
 (9, '2019_10_21_213909_events', 3),
 (10, '2019_10_21_214921_type_events', 4),
-(11, '2019_10_21_215139_images_event', 5),
-(12, '2019_10_21_215741_news', 6),
 (13, '2019_10_23_232741_shortlink', 7),
-(14, '2019_10_24_234232_admin', 8);
+(14, '2019_10_24_234232_admin', 8),
+(21, '2019_10_21_215139_images_event', 9),
+(22, '2019_10_21_215741_news', 9),
+(23, '2019_11_02_215354_create_social_accounts_table', 10);
 
 -- --------------------------------------------------------
 
@@ -135,22 +122,14 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 CREATE TABLE `news` (
   `id` int(10) UNSIGNED NOT NULL,
   `tieu_de` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `noi_dung` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `tom_tat` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `hinh_anh` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `hinh_anh_hien_thi` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `video` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `ngay_dang` datetime DEFAULT NULL,
+  `noi_dung` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `hinh_anh` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `hinh_anh_hien_thi` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `video` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ngay_dang` datetime NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `news`
---
-
-INSERT INTO `news` (`id`, `tieu_de`, `noi_dung`, `tom_tat`, `hinh_anh`, `hinh_anh_hien_thi`, `video`, `ngay_dang`, `created_at`, `updated_at`) VALUES
-(1, 'Tin tức', NULL, 'Demo Show tin tức', NULL, '4.png', NULL, '2019-10-24 00:00:00', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -206,6 +185,20 @@ INSERT INTO `slider` (`id`, `ten_su_kien`, `banner`, `loai_su_kien`, `thoi_gian`
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `social_accounts`
+--
+
+CREATE TABLE `social_accounts` (
+  `user_id` int(11) NOT NULL,
+  `provider_user_id` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `provider` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `type_events`
 --
 
@@ -233,16 +226,25 @@ INSERT INTO `type_events` (`id`, `ten_loai`, `created_at`, `updated_at`) VALUES
 
 CREATE TABLE `user` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `dien_thoai` int(11) NOT NULL,
-  `dia_chi` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `ngay_sinh` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `gioi_tinh` tinyint(1) NOT NULL,
-  `hinh` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `vip` tinyint(1) NOT NULL
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `dien_thoai` int(11) DEFAULT NULL,
+  `dia_chi` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ngay_sinh` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `gioi_tinh` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `hinh` text COLLATE utf8mb4_unicode_ci,
+  `vip` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `type` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `email`, `name`, `password`, `dien_thoai`, `dia_chi`, `ngay_sinh`, `gioi_tinh`, `hinh`, `vip`, `type`) VALUES
+(1, 'nguyentuyen1322@gmail.com', 'Tuyen Nguyen', '$2y$10$50iEPmhhrqPZzSzK3EjQyuy58GHljDipqNHgx7L87f3tIt.jdkXOa', 356518436, 'tp hcm', '2019-11-21', 'Nam', '10710964d7a550c32f92749adcd8d793_cS-6.jpg', 'Normal', '1'),
+(2, 'admin@gmail.com', 'Admin', '$2y$10$0QFAWdoWtsatLCPJzOm.yeKJ8M.0SupSOIcpRO8Bb7DahWjgfOXu.', 356518436, 'Thành Phố Hồ Chí Minh', '2019-11-01', 'Nam', '54671d405544766eaeb406fb19c20850_cS-7.jpg', 'V.I.P', '2');
 
 -- --------------------------------------------------------
 
@@ -277,12 +279,6 @@ INSERT INTO `users` (`id`, `name`, `dien_thoai`, `hinh`, `gioi_tinh`, `ten`, `id
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `admin`
---
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `events`
@@ -356,16 +352,10 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `admin`
---
-ALTER TABLE `admin`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -374,16 +364,22 @@ ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `images_event`
+--
+ALTER TABLE `images_event`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `short_links`
@@ -401,13 +397,13 @@ ALTER TABLE `slider`
 -- AUTO_INCREMENT for table `type_events`
 --
 ALTER TABLE `type_events`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users`

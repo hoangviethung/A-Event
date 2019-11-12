@@ -107,15 +107,16 @@
                                 </div>
                             </div>
                             <div class="form-group col-lg-6">
-                                <label class="choose-file" for="file-avatar">Chọn ảnh đại diện</label>
+                                <label class="choose-file" for="file-avatar" style="margin-bottom: 0 !important;">Chọn ảnh đại diện</label>
                                 <div class="form-input">
                                     <input id="file-avatar" type="file" hidden name="hinh">
                                     @if($errors->has('hinh'))
-                                        <span class="error">
+                                        <span class="error" style="margin-top: 10px !important">
                                             {{$errors->first('hinh')}}
                                         </span>
                                     @endif
                                 </div>
+                                <p></p>
                             </div>
                             <div class="form-group col-lg-6">
                                 <div class="form-input">

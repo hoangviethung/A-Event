@@ -34,6 +34,10 @@
                                 <input class="form-control" name="ten_su_kien" placeholder="Nhập tên sự kiện"/>
                             </div>
                             <div class="form-group">
+                                <label>Logo sự kiện</label>
+                                <input class="form-control" name="logo" id="" type="file"/>
+                            </div>
+                            <div class="form-group">
                                 <label>Thể loại sự kiện</label>
                             <select class="form-control" name="id_loai" >
                                     @foreach($danhmuc as $danhmuc)
@@ -42,6 +46,11 @@
                             </select>
                             </div>
                             <div class="form-group">
+                            @if(session('loi'))
+                                <div class="alert alert-danger">
+                                    {{session('loi')}}
+                                </div>
+                            @endif
                                 <label>Ảnh Banner của sự kiện</label>
                                 <input class="form-control" name="banner" type="file"/>
                             </div>
@@ -66,13 +75,13 @@
                                 <input class="form-control" name="dia_chi" type="text"/>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group" style="width: 150%">
                                 <label>Tóm tắt sự kiện ( Hiển thị trên Slider, Sự kiện nổi bật)</label>
                                 <textarea class="form-control ckeditor" id="editor1"  rows="2" cols="20" name="tom_tat"></textarea>
                             </div>
 
 
-                            <div class="form-group">
+                            <div class="form-group" style="width: 150%">
                                 <label>Mô tả sự kiện</label>
                                 <textarea class="form-control ckeditor" id="editor"  rows="3" cols="10"  name="mo_ta"></textarea>
 

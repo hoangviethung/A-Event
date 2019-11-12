@@ -18,15 +18,12 @@ class PagesController extends Controller
         }
     }
     public function getIndex(){
-        $slide = Events::where('hien_thi_slider',1)->get();
-        $giaitri = Events::where('id_loai',1)->get();
-        $kienthuc = Events::where('id_loai',2)->get();
-        $sukienkhac = Events::where('id_loai',3)->get();
+        $slide = Events::where([['hien_thi_slider',1],['duyet',1],])->orderBy('id','desc')->get();
+        $giaitri = Events::where([['id_loai',1],['duyet',1],])->orderBy('id','desc')->get();
+        $kienthuc = Events::where([['id_loai',2],['duyet',1],])->orderBy('id','desc')->get();
+        $sukienkhac = Events::where([['id_loai',3],['duyet',1],])->orderBy('id','desc')->get();
         $new_01= News::get();
         return view('pages.body',compact('slide','giaitri','kienthuc','new_01','sukienkhac'));
-    }
-    public function getAddevent(){
-        return view('pages.addevent');
     }
     public function getSearch(){
         return view('pages.search');
@@ -45,7 +42,7 @@ class PagesController extends Controller
     }
 
     public function postLogin(Request $request){
-        $this->validate($request, 
+        $this->validate($request,
         [
             'email'=>'required|min:3|max:32',
             'password'=>'required|min:3|max:32',
@@ -308,27 +305,31 @@ class PagesController extends Controller
     public function postLoginAdmin(Request $request){
         $this->validate($request,
             [
-                'email'=>'required|min:3|max:32',
+                'name'=>'required|min:3|max:32',
                 'password'=>'required|min:3|max:32',
             ],
             [
-                'email.required'=>'bạn chưa nhập email',
-                'email.min'=>'email phải lớn hơn 3 kí tự',
-                'email.max'=>'email không quá 32 kí tự',
+                'name.required'=>'bạn chưa nhập email',
+                'name.min'=>'email phải lớn hơn 3 kí tự',
+                'name.max'=>'email không quá 32 kí tự',
 
                 'password.required'=>'bạn chưa nhập mật khẩu',
                 'password.min'=>'mật khẩu phải lớn hơn 3 kí tự',
                 'password.max'=>'mật khẩu không quá 32 kí tự',
             ]);  
  
-        $arr = ['email' => $request->email, 'password' =>$request->password];
+        $arr = ['name' => $request->name, 'password' =>$request->password];
         if(Auth::attempt($arr)){
-            return redirect('admin/event/danhsach')->with('thongbao', 'Đăng nhập thành công !');
+            return redirect('admin/dashboard')->with('thongbao', 'Đăng nhập thành công !');
         }else{
-        
+
             return redirect('admin/login')->with('thongbao', 'bạn không có quyền truy cập!');
         }
     }
+
+    public function getDashboard(){
+        return view('admin.layouts.index');
+    }
     // QL User
-    
+
 }

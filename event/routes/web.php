@@ -24,7 +24,7 @@ Route::group(['prefix'=>'pages'], function(){
     Route::get('search', 'PagesController@getSearch');
     Route::post('search', 'PagesController@postSearch');
 
-    Route::get('addevent', 'PagesController@getAddevent');
+    Route::get('addevent', 'AddeventController@getAddevent');
     Route::get('chitiet/{id}',[
         'as' =>'chitiet',
         'uses'=>'PagesController@getChitiet',
@@ -38,8 +38,14 @@ Route::group(['prefix'=>'pages'], function(){
 
     Route::get('dangxuat', 'PagesController@getDangxuat');
 
+    Route::get('login/facebook', 'Auth\SocialController@redirectToProvider');
+    Route::get('login/facebook/callback', 'Auth\SocialController@handleProviderCallback');
+
+
     Route::get('login/google', 'Auth\SocialController@redirectToProvider');
     Route::get('login/google/callback', 'Auth\SocialController@handleProviderCallback');
+
+
 
 
 });
@@ -53,20 +59,6 @@ Route::get('admin/logout', 'PagesController@getLogoutAdmin');
 
 
 Route::group(['prefix'=>'admin','middleware'=>'checklogin'], function(){
-    // slider
-    Route::group(['prefix' => 'slider'], function () {
-        // hướng đi admin/slider/danhsach
-        Route::get('slider','SliderController@getDanhsach');
-
-        Route::get('sua', 'SliderController@getSua');
-        Route::post('sua', 'SliderController@postSua');
-
-        Route::get('them', 'SliderController@getThem');
-        Route::post('them', 'SliderController@postThem');
-
-        Route::get('xoa', 'SliderController@getXoa');
-    });
-    // slider
     // danhmuc
     Route::group(['prefix' => 'danhmuc'], function () {
         // hướng đi admin/slider/danhsach
@@ -97,6 +89,9 @@ Route::group(['prefix'=>'admin','middleware'=>'checklogin'], function(){
         // Hàm post nhận dữ liệu về và lưu vào cơ sở dữ liệu
         Route::get('xoa/{id}', 'EventController@getXoa');
 
+        // Phê duyệt
+        Route::get('pheduyet/{id}', 'EventController@getDuyet');
+        Route::post('pheduyet/{id}', 'EventController@postDuyet');
     });
 
     // Accounts
@@ -112,6 +107,7 @@ Route::group(['prefix'=>'admin','middleware'=>'checklogin'], function(){
         Route::get('xoa/{id}', 'PagesController@getXoa');
     });
     // Accounts
+    Route::get('dashboard', 'PagesController@getDashboard');
 });
 
 // admin
