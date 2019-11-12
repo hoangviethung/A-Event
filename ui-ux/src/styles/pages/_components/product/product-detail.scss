@@ -28,19 +28,19 @@
 
 				&.time {
 					&:after {
-						background-image: url(../img/icons/time.svg);
+						background-image: url(../images/icons/time.svg);
 					}
 				}
 
 				&.address {
 					&:after {
-						background-image: url(../img/icons/address.svg);
+						background-image: url(../images/icons/address.svg);
 					}
 				}
 
 				&.price {
 					&:after {
-						background-image: url(../img/icons/price.svg);
+						background-image: url(../images/icons/price.svg);
 					}
 				}
 			}
@@ -103,7 +103,7 @@
 
 						.name {
 							&:after {
-								background-image: url(../img/logo.png);
+								background-image: url(../images/logo.png);
 								left            : 0;
 							}
 						}
@@ -112,7 +112,7 @@
 							text-align: right;
 
 							&:after {
-								background-image: url(../img/icons/arrow-seemore.svg);
+								background-image: url(../images/icons/arrow-seemore.svg);
 								right           : 0;
 								transition      : .3s all ease-in-out;
 							}
@@ -166,7 +166,7 @@
 					background: $main-color-4;
 					padding   : 20px;
 
-					.org-img {
+					.org-images {
 						flex        : 0 0 100px;
 						max-width   : 100px;
 						height      : 100px;
