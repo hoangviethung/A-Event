@@ -18,7 +18,7 @@
                                                         <h5>{{$slide->ten_su_kien}}</h5>
 												</div>
 												<div class="decription-event">
-                                                        <p>{{$slide->tom_tat}}</p>
+                                                        <p>{!! $slide->tom_tat !!}</p>
                                                         <p>{{$slide->ngay_dien_ra}} - {{$slide->dia_chi}} (THỜI GIAN)</p>
 												</div>
 											</figcaption>
