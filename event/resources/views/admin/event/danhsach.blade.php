@@ -161,7 +161,7 @@
                                     <td><img src="images/product/{{$event->banner}}" width="120"  height="50"/></td>
                                     <td>{{$event->ngay_dien_ra}}</td>
                                     <td>{{$event->ngay_ban}}</td>
-                                    <td>{{$event->gia_ve}}</td>
+                                    <td>{{number_format($event->gia_ve)}} VNĐ</td>
                                     <td>{{$event->so_luong_ve}}</td>
                                     <td>{{$event->dia_chi}}</td>
                                     <td>{{$event->tom_tat}}</td>

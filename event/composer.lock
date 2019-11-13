@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "432831b298ce333a480704363c0e9658",
+    "content-hash": "4f56a5f9bb4ae8166315e0e1f88e7571",
     "packages": [
         {
             "name": "buzz/laravel-google-captcha",

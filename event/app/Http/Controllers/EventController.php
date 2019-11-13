@@ -179,20 +179,15 @@ class EventController extends Controller
             $event->logo = $logo;
         }
         if($request->hasFile('banner')){
-            // $oldimg = Events::where('banner')->get();
-             //code for remove old file
-
-            //  $path = public_path()."images/product/";
-            //  if($event->file != ''  && $event->file != null){
-            //      $file_old = $path.$event->file;
-            //      unlink($file_old);
-            // }
 
             $file = $request->file('banner');
             $name = $file->getClientOriginalName();
             $banner = Str::random(10)."_". $name;
             $file->move("images/product",$banner);
-            // unlink('images/product/'.$event->banner);
+            // if(File::exists("images/product",$banner)){
+            //     unlink("images/product".$banner->banner);
+            // }
+            
             $event->banner = $banner;
         }
 

@@ -64,7 +64,8 @@
                             </div>
                             <div class="form-group">
                                 <label>Giá vé</label>
-                                <input class="form-control" name="gia_ve" type="text"/>
+                               
+                                <input class="form-control" name="gia_ve"  type="number"/>
                             </div>
                             <div class="form-group">
                                 <label>Số lượng vé</label>
