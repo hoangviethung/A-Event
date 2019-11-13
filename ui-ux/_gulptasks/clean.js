@@ -5,7 +5,7 @@ export const cleanDist = () => {
 }
 
 export const cleanImage = () => {
-	return del("dist/img")
+	return del("dist/images")
 }
 
 export const cleanVideo = () => {

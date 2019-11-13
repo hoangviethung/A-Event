@@ -1,17 +1,6 @@
 // @import File Here !!!
 import map from "./map";
 
-// Function thêm class lazyload vào các thẻ <img> có thuộc tính [data-src]
-const addClassLazyload = () => {
-	let imgList = document.querySelectorAll("img[data-src]")
-	Array.prototype.forEach.call(imgList, function(el) {
-		if (el.className.length > 0) {
-			el.className = el.className + " lazyload"
-		} else {
-			el.className = "lazyload"
-		}
-	});
-}
 // Script Cho Tab
 class Tab {
 	selector;
@@ -249,18 +238,6 @@ function chooseFile_Img() {
 
 }
 
-// CKEditor
-function CKEditor() {
-	ClassicEditor
-		.create(document.querySelector('#editor'))
-		.then(editor => {
-			console.log(editor);
-		})
-		.catch(error => {
-			console.error(error);
-		});
-}
-
 function showInformationTicket() {
 	$('.list-ticket .item').click(function(e) {
 		e.preventDefault();
@@ -273,16 +250,53 @@ function showInformationTicket() {
 	});
 }
 
+function quantityTickets() {
+	jQuery('<div class="quantity-nav"><div class="quantity-button quantity-up">+</div><div class="quantity-button quantity-down">-</div></div>').insertAfter('.quantity input');
+	jQuery('.quantity').each(function() {
+		var spinner = jQuery(this),
+			input = spinner.find('input[type="number"]'),
+			btnUp = spinner.find('.quantity-up'),
+			btnDown = spinner.find('.quantity-down'),
+			min = input.attr('min'),
+			max = input.attr('max');
+
+		btnUp.click(function() {
+			var oldValue = parseFloat(input.val());
+			if (oldValue >= max) {
+				var newVal = oldValue;
+			} else {
+				var newVal = oldValue + 1;
+			}
+			spinner.find("input").val(newVal);
+			spinner.find("input").trigger("change");
+		});
+
+		btnDown.click(function() {
+			var oldValue = parseFloat(input.val());
+			if (oldValue <= min) {
+				var newVal = oldValue;
+			} else {
+				var newVal = oldValue - 1;
+			}
+			spinner.find("input").val(newVal);
+			spinner.find("input").trigger("change");
+		});
+
+	});
+}
+
+function triggerClickButtonBooking() {
+	$('.box-price button').on('click', function() {
+		$('.buyer-info button').trigger('click');
+	});
+}
+
 
 $(document).ready(function() {
 	// GOOGLE MAP
 	map();
 	// WOW
 	new WOW().init();
-	// Luôn luôn chậy polyfill cho thuôc tính object-fit: cover trên các phiên bản IE >= 9
-	objectFitImages("img.ofc");
-	// Luôn luôn addClass lazyload cho các hình ảnh có thuộc tính [data-src]
-	addClassLazyload();
 	// SLDIER
 	sliderHomeBanner();
 	sliderHotEvent();
@@ -299,6 +313,10 @@ $(document).ready(function() {
 	chooseFile_Img();
 	// SHOW INFO TICKET
 	showInformationTicket();
+	// QUANTITY
+	quantityTickets();
+	// TRIGER CLICK BUTTON
+	triggerClickButtonBooking();
 	// TAB JS
 	const tabHomeNews = new Tab(".home-news .tab-container");
 	const tabClientsPartner = new Tab(".clients-partner .tab-container")

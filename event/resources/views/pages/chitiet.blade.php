@@ -19,7 +19,7 @@
 									<div class="desc">
 										<div class="title">GIỚI THIỆU</div>
 										<div class="CKEditor">
-										{{$chitiet->mo_ta}}
+											{{$chitiet->mo_ta}}
 										</div>
 									</div>
 									<div class="ticket-booking">
@@ -27,7 +27,7 @@
 										<div class="list-ticket wow fadeInDown" data-wow-delay=".3s">
 											<div class="item">
 												<div class="name">HẠNG A</div>
-												<div class="price">{{$chitiet->gia_ve}} VND</div>
+												<div class="price">{{number_format($chitiet->gia_ve)}} VNĐ/div>
 												<div class="info-ticket">
 													<p>Vị trí:<span>Ghế ngồi trên khán đài A</span></p>
 													<p> Quà tặng (sẽ nhận tại sự kiện):<span>Nón</span></p>

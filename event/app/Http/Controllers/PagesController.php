@@ -9,6 +9,7 @@ use App\Events;
 use App\Rules\Captcha;
 use App\News;
 use App\Type_events;
+use Carbon\Carbon;
 class PagesController extends Controller
 {
     function __construct()
@@ -18,10 +19,10 @@ class PagesController extends Controller
         }
     }
     public function getIndex(){
-        $slide = Events::where([['hien_thi_slider',1],['duyet',1],])->get();
-        $giaitri = Events::where([['id_loai',1],['duyet',1],])->get();
-        $kienthuc = Events::where([['id_loai',2],['duyet',1],])->get();
-        $sukienkhac = Events::where([['id_loai',3],['duyet',1],])->get();
+        $slide = Events::where([['hien_thi_slider',1],['duyet',1],])->orderBy('id','desc')->get();
+        $giaitri = Events::where([['id_loai',1],['duyet',1],])->orderBy('id','desc')->get();
+        $kienthuc = Events::where([['id_loai',2],['duyet',1],])->orderBy('id','desc')->get();
+        $sukienkhac = Events::where([['id_loai',3],['duyet',1],])->orderBy('id','desc')->get();
         $new_01= News::get();
         return view('pages.body',compact('slide','giaitri','kienthuc','new_01','sukienkhac'));
     }

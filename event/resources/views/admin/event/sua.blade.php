@@ -79,7 +79,12 @@
                             </div>
                             <div class="form-group">
                                 <label>Giá vé</label>
-                                <input class="form-control" name="gia_ve" value="{{$event->gia_ve}}" type="text"/>
+                                <script>
+                                    function format_curency(a) {
+                                        a.value = a.value.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
+                                    }
+                                </script>
+                                <input class="form-control" onChange="format_curency(this);" name="gia_ve"  value="{{$event->gia_ve}}" type="number"/>
                             </div>
                             <div class="form-group">
                                 <label>Số lượng vé</label>

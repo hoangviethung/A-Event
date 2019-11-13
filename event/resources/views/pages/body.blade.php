@@ -126,7 +126,7 @@
 													<h3>{{$giaitri ->ten_su_kien}}</h3>
 													<div class="info-event">
 														<div class="item">
-															<h5>Từ:<span>{{$giaitri->gia_ve}} VND</span></h5>
+															<h5>Từ:<span>{{number_format($giaitri->gia_ve)}} VNĐ</span></h5>
 														</div>
 														<div class="item">
 															<h5>Địa chỉ:<span>{{$giaitri->dia_chi}}</span></h5>
@@ -179,7 +179,7 @@
 													<h3>{{$kienthuc->ten_su_kien}}</h3>
 													<div class="info-event">
 														<div class="item">
-															<h5>Từ:<span>{{$kienthuc->gia_ve}} VND</span></h5>
+															<h5>Từ:<span>{{number_format($kienthuc->gia_ve)}} VND</span></h5>
 														</div>
 														<div class="item">
 															<h5>Địa chỉ:<span>{{$kienthuc->dia_chi}}</span></h5>
@@ -232,7 +232,7 @@
 													<h3>{{$sukienkhac->ten_su_kien}}</h3>
 													<div class="info-event">
 														<div class="item">
-															<h5>Từ:<span>{{$sukienkhac->gia_ve}} VND</span></h5>
+															<h5>Từ:<span>{{number_format($sukienkhac->gia_ve)}} VND</span></h5>
 														</div>
 														<div class="item">
 															<h5>Địa chỉ:<span>{{$sukienkhac->dia_chi}}</span></h5>

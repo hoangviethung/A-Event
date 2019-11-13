@@ -45,7 +45,7 @@ export const server = () => {
 	}, series(cssTask));
 
 	watch([
-		"src/img/**/**.{svg,png,jpg,speg,gif}"
+		"src/images/**/**.{svg,png,jpg,speg,gif}"
 	], {
 		delay: 800
 	}, series(cleanImage, copyImage));
