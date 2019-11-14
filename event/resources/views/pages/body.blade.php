@@ -19,7 +19,7 @@
 												</div>
 												<div class="decription-event">
                                                         <p>{!! $slide->tom_tat !!}</p>
-                                                        <p>{{$slide->ngay_dien_ra}} - {{$slide->dia_chi}} (THỜI GIAN)</p>
+                                                        <p>{{$slide->ngay_dien_ra}} - {{$slide->dia_chi}} ({{$slide->thoi_gian}})</p>
 												</div>
 											</figcaption>
 										</figure>
@@ -132,7 +132,7 @@
 															<h5>Địa chỉ:<span>{{$giaitri->dia_chi}}</span></h5>
 														</div>
 														<div class="item">
-															<h5>Thời gian:<span>{{$giaitri->ngay_dien_ra}}</span></h5>
+															<h5>Thời gian:<span>{{$giaitri->ngay_dien_ra}} </span></h5>
 														</div>
 														<div class="item">
 															<h5>Trạng thái:<span>Mở bán</span></h5>
@@ -185,7 +185,7 @@
 															<h5>Địa chỉ:<span>{{$kienthuc->dia_chi}}</span></h5>
 														</div>
 														<div class="item">
-															<h5>Thời gian:<span>{{$kienthuc->ngay_dien_ra}}</span></h5>
+															<h5>Thời gian:<span>{{$kienthuc->ngay_dien_ra}} </span></h5>
 														</div>
 														<div class="item">
 															<h5>Trạng thái:<span>Mở bán</span></h5>

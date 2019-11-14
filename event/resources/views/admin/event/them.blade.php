@@ -56,7 +56,11 @@
                             </div>
                             <div class="form-group">
                                 <label>Ngày diễn ra sự kiện</label>
-                                <input class="form-control" name="ngay_dien_ra" type="datetime-local"/>
+                                <input class="form-control" name="ngay_dien_ra" type="datetime"/>
+                            </div>
+                            <div class="form-group">
+                                <label>Giờ diễn ra</label>
+                                <input class="form-control" name="thoi_gian" type="time" />
                             </div>
                             <div class="form-group">
                                 <label>Ngày bán vé</label>
@@ -64,7 +68,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Giá vé</label>
-                               
+
                                 <input class="form-control" name="gia_ve"  type="number"/>
                             </div>
                             <div class="form-group">

@@ -84,9 +84,9 @@
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?&amp;key=AIzaSyCHvmyTralDp2Y0m7zEiN185u1vtArcC5s&amp;libraries=places"></script>
 <script type="text/javascript" src="js/core.min.js"></script>
 <script type="text/javascript" src="js/main.min.js"></script>
-<script src="https://cdn.ckeditor.com/ckeditor5/12.4.0/classic/ckeditor.js"></script>
+<!-- <script src="https://cdn.ckeditor.com/ckeditor5/12.4.0/classic/ckeditor.js"></script> -->
 <script src='https://www.google.com/recaptcha/api.js'></script>
-<script type="text/javascript" src="../../editor/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="editor/ckeditor/ckeditor.js"></script>
 @yield('script')
 </body>
 </html>
