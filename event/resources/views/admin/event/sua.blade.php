@@ -74,6 +74,10 @@
                                 <input class="form-control" name="ngay_dien_ra" value="{{$event->ngay_dien_ra}}" type="datetime"/>
                             </div>
                             <div class="form-group">
+                                <label>Giờ diễn ra sự kiện</label>
+                                <input class="form-control" name="thoi_gian" value="{{$event->thoi_gian}}" type="time"/>
+                            </div>
+                            <div class="form-group">
                                 <label>Ngày bán vé</label>
                                 <input class="form-control" name="ngay_ban" value="{{$event->ngay_ban}}" type="datetime"/>
                             </div>

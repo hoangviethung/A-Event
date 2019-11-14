@@ -13,7 +13,7 @@ class EventController extends Controller
     //Hiển thị danh sách
     public function getDanhsach(){
 
-        $duyet = Events::where('duyet',0)->orderBy('id','desc')->get();
+        $duyet = Events::where('duyet',0)->orWhere('duyet',null)->orderBy('id','desc')->get();
         $event = Events::where('duyet',1)->orderBy('id','desc')->get();
         return view('admin.event.danhsach',compact('duyet','event'));
     }
@@ -30,10 +30,10 @@ class EventController extends Controller
         [
             'ten_su_kien' => 'required|unique:Events,ten_su_kien|min:2|max: 100|',
             'ngay_dien_ra' =>'required',
+            'thoi_gian' => 'required',
             'gia_ve'=> 'required|integer|min:1000|max:100000000|',
             'banner'=>'required|mimes:jpeg,png,jpg,gif,svg|max:2048|',
             'logo'=>'mimes:jpeg,png,jpg.gif,svg|max:2048|',
-            'ngay_dien_ra' =>'required',
             'dia_chi' => 'required',
             'ngay_ban' => 'required',
             'mo_ta' => 'required',
@@ -45,6 +45,7 @@ class EventController extends Controller
             'ten_su_kien.min' => ' Tên sự kiện phải có từ 3 đến 100 ký tự',
             'ten_su_kien.max' => ' Tên sự kiện phải có từ 3 đến 100 ký tự',
             'ngay_dien_ra.required' => 'Bạn chưa chọn ngày diễn ra sự kiện',
+            'thoi_gian.required' =>'Bạn chưa chọn thời gian diễn ra sự kiện',
             'gia_ve.required' => 'Bạn chưa nhập giá vé',
             'gia_ve.integer' => 'Giá vé phải là số ',
             'gia_ve.min' => 'Giá tối thiếu 1 000 đồng đến 100 000 000 đồng',
@@ -55,7 +56,6 @@ class EventController extends Controller
             'logo.mimes'=>'Logo phải là hình có đuôi jpeg,png,jpg,gif,svg',
             'logo.max'=>'Dung lượng hình không được quá 2Mb',
             // 'banner.image'=> 'Banner phải là ảnh(jpeg, png, bmp, gif, svg)',
-            'ngay_dien_ra.required'=> 'Bạn chưa thêm ngày diễn ra sự kiện',
             'dia_chi.required' => 'Bạn chưa nhập nơi diễn ra sự kiện',
             'ngay_ban.required' => 'Bạn chưa nhập ngày bán vé',
             'mo_ta.required' => 'Bạn chưa nhập mô tả sự kiện',
@@ -72,6 +72,7 @@ class EventController extends Controller
         $event->banner = $request->banner;
         $event->logo = $request->logo;
         $event->ngay_dien_ra = $request->ngay_dien_ra;
+        $event->thoi_gian = $request->thoi_gian;
         $event->gia_ve = $request->gia_ve;
         $event->dia_chi = $request->dia_chi;
         $event->ngay_ban = $request->ngay_ban;
@@ -124,6 +125,7 @@ class EventController extends Controller
         [
             'ten_su_kien' => 'required|min:2|max: 100|',
             'ngay_dien_ra' =>'required',
+            'thoi_gian'=>'required',
             'gia_ve'=> 'required|integer|min:1000|max:100000000|',
             'banner'=>'required|mimes:jpeg,png,jpg,gif,svg|max:2048|',
             'logo'=>'mimes:jpeg,png,jpg.gif,svg|max:2048|',
@@ -137,6 +139,7 @@ class EventController extends Controller
             'ten_su_kien.min' => ' Tên sự kiện phải có từ 3 đến 100 ký tự',
             'ten_su_kien.max' => ' Tên sự kiện phải có từ 3 đến 100 ký tự',
             'ngay_dien_ra.required' => 'Bạn chưa chọn ngày diễn ra sự kiện',
+            'thoi_gian.required' =>'Bạn chưa chọn thời gian diễn ra sự kiện',
             'gia_ve.required' => 'Bạn chưa nhập giá vé',
             'gia_ve.integer' => 'Giá vé phải là số ',
             'gia_ve.min' => 'Giá tối thiếu 1 000 đồng đến 100 000 000 đồng',
@@ -160,6 +163,7 @@ class EventController extends Controller
         $event->banner = $request->banner;
         $event->logo = $request->logo;
         $event->ngay_dien_ra = $request->ngay_dien_ra;
+        $event->thoi_gian = $request->thoi_gian;
         $event->gia_ve = $request->gia_ve;
         $event->dia_chi = $request->dia_chi;
         $event->ngay_ban = $request->ngay_ban;
@@ -187,7 +191,7 @@ class EventController extends Controller
             // if(File::exists("images/product",$banner)){
             //     unlink("images/product".$banner->banner);
             // }
-            
+
             $event->banner = $banner;
         }
 

@@ -25,6 +25,8 @@ Route::group(['prefix'=>'pages'], function(){
     Route::post('search', 'PagesController@postSearch');
 
     Route::get('addevent', 'AddeventController@getAddevent');
+    Route::post('addevent', 'AddeventController@postAddevent');
+
     Route::get('chitiet/{id}',[
         'as' =>'chitiet',
         'uses'=>'PagesController@getChitiet',
