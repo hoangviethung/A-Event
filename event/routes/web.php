@@ -45,6 +45,8 @@ Route::group(['prefix'=>'pages'], function(){
     Route::get('login/google', 'Auth\SocialController@redirectToProvider');
     Route::get('login/google/callback', 'Auth\SocialController@handleProviderCallback');
 
+    Route::get('login/testfb', 'Auth\SocialController@aaaa');
+    Route::get('login/loginfb', 'Auth\SocialController@loginfb');
 
 
 

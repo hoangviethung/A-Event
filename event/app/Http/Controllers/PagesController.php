@@ -10,6 +10,7 @@ use App\Rules\Captcha;
 use App\News;
 use App\Type_events;
 use Carbon\Carbon;
+
 class PagesController extends Controller
 {
     function __construct()
@@ -303,6 +304,7 @@ class PagesController extends Controller
         return view('admin/login');
     }
 
+    
     public function postLoginAdmin(Request $request){
         $this->validate($request,
             [
