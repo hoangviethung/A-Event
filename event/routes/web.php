@@ -24,13 +24,19 @@ Route::group(['prefix'=>'pages'], function(){
     Route::get('search', 'PagesController@getSearch');
     Route::post('search', 'PagesController@postSearch');
 
-    Route::get('addevent', 'AddeventController@getAddevent');
+    Route::get('addevent', 'AddeventController@getAddevent')->middleware('check_addevent');
     Route::post('addevent', 'AddeventController@postAddevent');
 
     Route::get('chitiet/{id}',[
         'as' =>'chitiet',
         'uses'=>'PagesController@getChitiet',
     ]);
+    
+    Route::get('bookingone','BookingController@getBookingone');
+    Route::post('bookingone','BookingController@postBookingone');
+
+    Route::get('bookingtwo','BookingController@getBookingtwo');
+    Route::post('bookingtwo','BookingController@postBookingtwo');
 
     Route::get('login', 'PagesController@getLogin');
     Route::post('login', 'PagesController@postLogin');
@@ -47,10 +53,7 @@ Route::group(['prefix'=>'pages'], function(){
     Route::get('login/google', 'Auth\SocialController@redirectToProvider');
     Route::get('login/google/callback', 'Auth\SocialController@handleProviderCallback');
 
-    Route::get('login/testfb', 'Auth\SocialController@aaaa');
     Route::get('login/loginfb', 'Auth\SocialController@loginfb');
-
-
 
 });
 // pages website
@@ -97,7 +100,20 @@ Route::group(['prefix'=>'admin','middleware'=>'checklogin'], function(){
         Route::get('pheduyet/{id}', 'EventController@getDuyet');
         Route::post('pheduyet/{id}', 'EventController@postDuyet');
     });
+    // Addevent
+    Route::group(['prefix' => 'new'], function () {
 
+        Route::get('danhsach','NewController@getDanhsach');
+        
+        Route::get('sua', 'NewController@getSua');
+        Route::post('sua', 'NewController@postSua');
+
+        Route::get('them', 'NewController@getThem');
+        Route::post('them', 'NewController@postThem');
+
+        Route::get('xoa', 'NewController@getXoa');
+    });
+    // Addevent
     // Accounts
     Route::group(['prefix' => 'user'], function () {
         Route::get('danhsach','PagesController@getDanhsach');
@@ -111,6 +127,13 @@ Route::group(['prefix'=>'admin','middleware'=>'checklogin'], function(){
         Route::get('xoa/{id}', 'PagesController@getXoa');
     });
     // Accounts
+    // Seenmail
+    Route::group(['prefix' => 'seenmail'], function () {
+
+        Route::get('mail','SeenmailController@getThongbao');
+        Route::post('mail', 'SeenmailController@postThongbao');
+    });
+    // Seenmail
     Route::get('dashboard', 'PagesController@getDashboard');
 });
 

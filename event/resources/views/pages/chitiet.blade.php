@@ -75,7 +75,7 @@
 								</div>
 							</div>
 							<div class="col-lg-4 aside-boxing">
-								<div class="box-booking"><a class="btn wow flipInX" href="dat-ve-buoc-1.html" data-wow-delay=".5s">MUA VÉ NGAY</a>
+								<div class="box-booking"><a class="btn wow flipInX" href="{{ url('pages/bookingone') }}" data-wow-delay=".5s">MUA VÉ NGAY</a>
 									<div class="overview">
 										<h1>{{$chitiet->ten_su_kien}}</h1>
 										<div class="item time">{{$chitiet->ngay_dien_ra}} | {{$chitiet->thoi_gian}}</div>
