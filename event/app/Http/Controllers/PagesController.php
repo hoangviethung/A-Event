@@ -50,9 +50,9 @@ class PagesController extends Controller
             'app_secret' => '2934d5b7cb9feee19aa59e6466d7b3d9',
             'default_graph_version' => 'v5.0',
             ]);
-          
+
           $helper = $fb->getRedirectLoginHelper();
-          
+
           $permissions = ['email'];
           $linkloginfb = $helper->getLoginUrl('https://localhost/A-event/event/public/pages/login/loginsuccess', $permissions);
           $linkloginfb = str_replace('amp;','',htmlspecialchars($linkloginfb));
@@ -80,7 +80,7 @@ class PagesController extends Controller
         ]);
         $arr = ['email' => $request->email, 'password' =>$request->password];
         if(Auth::attempt($arr)){
-            
+
            return redirect('pages/index');
         }else{
             return redirect('pages/login')->with('thongbao', 'Tài khoản hoặc mật khẩu không chính xác !');
@@ -184,8 +184,8 @@ class PagesController extends Controller
                 'password.required'=>'bạn chưa nhập mật khẩu',
                 'password.min'=>'mật khẩu phải lớn hơn 3 kí tự',
                 'password.max'=>'mật khẩu không quá 32 kí tự',
-            ]);  
- 
+            ]);
+
         $arr = ['name' => $request->name, 'password' =>$request->password];
         if(Auth::attempt($arr)){
             return redirect('admin/dashboard')->with('thongbao', 'Đăng nhập thành công !');

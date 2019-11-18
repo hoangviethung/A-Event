@@ -39,7 +39,7 @@
                                 <img width="100px" src="images/logo/{{$event->logo}}">
                                 </p>
                                 <p>{{$event->logo}}</p>
-                                <input class="form-control" name="logo" id="" type="file" value="{{$event->logo}}"/>
+                                <input class="form-control" name="logo" id="" type="file"/>
                             </div>
 
                             <div class="form-group">
@@ -67,11 +67,11 @@
                                 <img width="200px" src="images/product/{{$event->banner}}">
                                 </p>
                                 <p>{{$event->banner}}</p>
-                                <input class="form-control" name="banner" id="" type="file" value="{{$event->banner}}"/>
+                                <input class="form-control" name="banner" id="" type="file"/>
                             </div>
                             <div class="form-group">
                                 <label>Ngày diễn ra sự kiện</label>
-                                <input class="form-control" name="ngay_dien_ra" value="{{$event->ngay_dien_ra}}" type="datetime"/>
+                                <input class="form-control" name="ngay_dien_ra" value="{{$event->ngay_dien_ra}}" type="date"/>
                             </div>
                             <div class="form-group">
                                 <label>Giờ diễn ra sự kiện</label>

@@ -69,9 +69,9 @@ class EventController extends Controller
         $event = new Events;
         $event->ten_su_kien = $request->ten_su_kien;
         $event->id_loai = $request->id_loai;
+        $event->ngay_dien_ra = $request->ngay_dien_ra;
         $event->banner = $request->banner;
         $event->logo = $request->logo;
-        $event->ngay_dien_ra = $request->ngay_dien_ra;
         $event->thoi_gian = $request->thoi_gian;
         $event->gia_ve = $request->gia_ve;
         $event->dia_chi = $request->dia_chi;
@@ -160,9 +160,9 @@ class EventController extends Controller
 
         $event->ten_su_kien = $request->ten_su_kien;
         $event->id_loai = $request->id_loai;
+        $event->ngay_dien_ra = $request->ngay_dien_ra;
         $event->banner = $request->banner;
         $event->logo = $request->logo;
-        $event->ngay_dien_ra = $request->ngay_dien_ra;
         $event->thoi_gian = $request->thoi_gian;
         $event->gia_ve = $request->gia_ve;
         $event->dia_chi = $request->dia_chi;
@@ -175,15 +175,18 @@ class EventController extends Controller
         $event->duyet = $request->duyet;
 
 
-        if($request->hasFile('logo')){
-            $file_logo = $request->file('logo');
-            $name_logo = $file_logo->getClientOriginalName();
-            $logo = Str::random(10)."_". $name_logo;
-            $file_logo->move('images/logo',$logo);
-            $event->logo = $logo;
-        }
-        if($request->hasFile('banner')){
+        // if($request->hasFile('logo')){
+        //     $file_logo = $request->file('logo');
+        //     $name_logo = $file_logo->getClientOriginalName();
+        //     $logo = Str::random(10)."_". $name_logo;
+        //      $file_logo->move("images/logo",$logo);
+        //     $event->logo = $logo;
+        // }
 
+
+
+
+        if($request->hasFile('banner')){
             $file = $request->file('banner');
             $name = $file->getClientOriginalName();
             $banner = Str::random(10)."_". $name;

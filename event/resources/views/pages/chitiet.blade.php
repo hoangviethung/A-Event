@@ -19,8 +19,9 @@
 									<div class="desc">
 										<div class="title">GIỚI THIỆU</div>
 										<div class="CKEditor">
-											{{$chitiet->mo_ta}}
+											{!!htmlspecialchars_decode($chitiet->mo_ta)!!}
 										</div>
+
 									</div>
 									<div class="ticket-booking">
 										<div class="title">THÔNG TIN VÉ</div>

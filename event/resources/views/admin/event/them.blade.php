@@ -56,7 +56,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Ngày diễn ra sự kiện</label>
-                                <input class="form-control" name="ngay_dien_ra" type="datetime"/>
+                                <input class="form-control" name="ngay_dien_ra" type="date"/>
                             </div>
                             <div class="form-group">
                                 <label>Giờ diễn ra</label>
@@ -90,6 +90,17 @@
                                 <label>Mô tả sự kiện</label>
                                 <textarea class="form-control ckeditor" id="editor"  rows="3" cols="10"  name="mo_ta"></textarea>
 
+
+                                <!-- <script>
+                                    CKEDITOR.replace('editor', {
+                                    fullPage: true,
+                                    extraPlugins: 'docprops',
+                                    // Disable content filtering because if you use full page mode, you probably
+                                    // want to  freely enter any HTML content in source mode without any limitations.
+                                    allowedContent: true,
+                                    height: 320
+                                    });
+                                </script> -->
 
                             </div>
 

@@ -10,6 +10,7 @@ CKEDITOR.editorConfig = function(config) {
     config.allowedContent = true;
     config.fullPage = true;
 };
+
 CKEDITOR.config.allowedContent = true;
 
 CKEDITOR.editorConfig = function(config) {
