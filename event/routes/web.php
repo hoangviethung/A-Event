@@ -53,7 +53,7 @@ Route::group(['prefix'=>'pages'], function(){
     Route::get('login/google', 'Auth\SocialController@redirectToProvider');
     Route::get('login/google/callback', 'Auth\SocialController@handleProviderCallback');
 
-    Route::get('login/loginfb', 'Auth\SocialController@loginfb');
+    Route::get('login/loginsuccess', 'Auth\SocialController@loginsuccess');
 
 });
 // pages website
@@ -116,15 +116,15 @@ Route::group(['prefix'=>'admin','middleware'=>'checklogin'], function(){
     // Addevent
     // Accounts
     Route::group(['prefix' => 'user'], function () {
-        Route::get('danhsach','PagesController@getDanhsach');
+        Route::get('danhsach','UserController@getDanhsach');
 
-        Route::get('sua/{id}', 'PagesController@getSua');
-        Route::post('sua/{id}', 'PagesController@postSua');
+        Route::get('sua/{id}', 'UserController@getSua');
+        Route::post('sua/{id}', 'UserController@postSua');
 
-        Route::get('them', 'PagesController@getThem');
-        Route::post('them', 'PagesController@postThem');
+        Route::get('them', 'UserController@getThem');
+        Route::post('them', 'UserController@postThem');
 
-        Route::get('xoa/{id}', 'PagesController@getXoa');
+        Route::get('xoa/{id}', 'UserController@getXoa');
     });
     // Accounts
     // Seenmail
@@ -132,8 +132,8 @@ Route::group(['prefix'=>'admin','middleware'=>'checklogin'], function(){
 
         Route::get('danhsach','SeenmailController@getDanhsach');
         
-        Route::get('mail','SeenmailController@getThongbao');
-        Route::post('mail', 'SeenmailController@postThongbao');
+        Route::get('getmail','SeenmailController@getThongbao');
+        Route::post('postmail', 'SeenmailController@postThongbao');
     });
     // Seenmail
     Route::get('dashboard', 'PagesController@getDashboard');

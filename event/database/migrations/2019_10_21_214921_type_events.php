@@ -16,8 +16,6 @@ class TypeEvents extends Migration
         Schema::create('type_events', function (Blueprint $table) {
             $table->increments('id');
             $table->string('ten_loai');
-
-
             $table->timestamps();
         });
     }

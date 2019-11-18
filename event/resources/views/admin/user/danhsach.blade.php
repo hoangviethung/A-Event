@@ -58,7 +58,10 @@
                                             <td><textarea cols="30" rows="3">{{$use->dia_chi}}</textarea></td>
                                             <td>{{$use->ngay_sinh}}</td>
                                             <td>{{$use->gioi_tinh}}</td>
-                                            <td><img src="images/user/{{$use->hinh}}" alt="A-event" srcset="" width="50" height="50"></td>
+                                            <td>
+                                                <img src="images/user/{{$use->hinh}}" alt="" width="50" height="50">
+                                                <img src="{{$use->hinh}}" alt="" width="50" height="50">
+                                            </td>
                                             <td>{{$use->vip}}</td>
                                             <td>{{$use->type}}</td>
                                             </tr>

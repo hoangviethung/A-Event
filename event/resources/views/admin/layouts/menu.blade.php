@@ -71,7 +71,7 @@
                             <a href="admin/seenmail/danhsach"> Danh Sách Gửi</a>
                         </li>
                         <li>
-                            <a href="admin/seenmail/mail">Gửi Email</a>
+                            <a href="admin/seenmail/getmail">Gửi Email</a>
                         </li>
                     </ul>
                 </li>

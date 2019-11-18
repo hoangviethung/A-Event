@@ -23,33 +23,20 @@
                                 <!--Table head-->
                                 <thead>
                                 <tr>
-                                    <th>Id</th>
+                                    <th>STT</th>
                                     <th>Tên sự kiện</th>
-                                    <th>Loại sự kiện</th>
-                                    <th>Banner của <br>
-                                    sự kiện</th>
-                                    <th>Ngày diễn <br>
-                                    ra sự kiện</th>
-                                    <th>Ngày bán</th>
-                                    <th>Giá vé</th>
-                                    <th>Số lượng vé</th>
+                                    <th>Tên khách hàng</th>
+                                    <th>Số vé</th>
+                                    <th>Chỗ ngồi</th>
                                     <th>Nơi diễn ra <br>
                                     sự kiện</th>
-                                    <th>Tóm tắt</th>
                                     <th>Mô tả</th>
-                                    <th>Duyệt bài</th>
-
                                 </tr>
                                 </thead>
                                 <!--Table head-->
 
                                 <!--Table body-->
                                 <tbody>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
                                     <td></td>
                                     <td></td>
                                     <td></td>

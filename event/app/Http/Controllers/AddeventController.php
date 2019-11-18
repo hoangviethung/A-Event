@@ -9,6 +9,14 @@ use Illuminate\Support\Str;
 use Carbon\Carbon;
 class AddeventController extends Controller
 {
+    function __construct()
+    {
+        $this->middleware(function ($request, $next) {
+            if($request->cookie('loginfb'))
+            view()->share('loginfb',json_decode($request->cookie('loginfb')));
+            return $next($request);
+        });
+    }
     public function getAddevent(){
         $danhmuc = Type_events::all();
         return view('pages.addevent',['danhmuc'=>$danhmuc]);

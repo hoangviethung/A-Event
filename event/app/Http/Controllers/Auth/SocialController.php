@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
-use Socialite;
+use App\users;
 use App\Http\Controllers\Controller;
 use Facebook\Facebook;
+use Illuminate\Support\Facades\Cookie;
 
 class SocialController extends Controller
 {
@@ -17,23 +17,8 @@ class SocialController extends Controller
     {
         return Socialite::driver('facebook')->stateless()->user();
     }
-    public function aaaa(){
-        session_start();
-$fb = new Facebook([
-  'app_id' => '420853728859282', // Replace {app-id} with your app id
-  'app_secret' => '2934d5b7cb9feee19aa59e6466d7b3d9',
-  'default_graph_version' => 'v5.0',
-  ]);
 
-$helper = $fb->getRedirectLoginHelper();
-
-$permissions = ['email']; // Optional permissions
-$loginUrl = $helper->getLoginUrl('http://localhost/A-event/event/public/pages/login/loginfb', $permissions);
-
-echo '<a href="' . htmlspecialchars($loginUrl) . '">Log in with Facebook!</a>';
-    }
-
-public function loginfb(){
+public function loginsuccess(){
     session_start();
 $fb = new Facebook([
     'app_id' => '420853728859282', // Replace {app-id} with your app id
@@ -70,7 +55,6 @@ if (! isset($accessToken)) {
 }
 
 // Logged in
-echo '<h3>Access Token</h3>';
 // var_dump($accessToken->getValue());
 
 // The OAuth 2.0 client handler helps us manage access tokens
@@ -78,7 +62,6 @@ $oAuth2Client = $fb->getOAuth2Client();
 
 // Get the access token metadata from /debug_token
 $tokenMetadata = $oAuth2Client->debugToken($accessToken);
-echo '<h3>Metadata</h3>';
 // print_r($tokenMetadata);
 
 // Validation (these will throw FacebookSDKException's when they fail)
@@ -100,7 +83,6 @@ if (! $accessToken->isLongLived()) {
     exit;
   }
 
-  echo '<h3>Long-lived</h3>';
   var_dump($accessToken->getValue());
 }
 
@@ -111,7 +93,7 @@ $_SESSION['fb_access_token'] = (string) $accessToken;
 $curl = curl_init();
 // khởi tạo phiên làm việc với Curl
  
-curl_setopt($curl, CURLOPT_URL, "https://graph.facebook.com/".$tokenMetadata->getUserId()."?fields=id,name,picture,email,birthday&access_token=".$accessToken->getValue()."");
+curl_setopt($curl, CURLOPT_URL, "https://graph.facebook.com/".$tokenMetadata->getUserId()."?fields=id,name,picture&access_token=".$accessToken->getValue()."");
 // khai báo địa chỉ url
  
 curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-type: text/html','charset:UTF-8'));
@@ -135,24 +117,24 @@ $data = curl_exec($curl);
 curl_close($curl);
 // kết thúc phiên làm việc với curl
 $data = json_decode($data);
-print_r($data);
-echo $data->id;
-echo $data->name;
-echo $data->picture->data->url;
+$checkuser = users::where('id_fb',$data->id)->get();
+if(count($checkuser) > 0){
+  Cookie::queue(Cookie::make('loginfb',json_encode([
+    'name'=>$data->name,
+    'hinh'=>$data->picture->data->url,
+  ]), 2000));
+}else{
+  $user = new users;
+  $user->id_fb =  $data->id;
+  $user->name =  $data->name;
+  $user->hinh = $data->picture->data->url;
+  $user->save();
+  Cookie::queue(Cookie::make('loginfb',json_encode([
+    'name'=>$data->namel,
+    'hinh'=>$data->picture->data->url,
+  ]), 2000));
+}
+return redirect('pages/index');
 }
 
-
-    /**
-     * Obtain the user information from GitHub.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function handleProviderCallback()
-    {
-        $user = Socialite::driver('facebook')->user();
-        $user->getName();
-        $user->getAvatar();
-    
-      
-    }
 }
