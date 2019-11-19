@@ -39,7 +39,7 @@
                                 <img width="100px" src="images/logo/{{$event->logo}}">
                                 </p>
                                 <p>{{$event->logo}}</p>
-                                <input class="form-control" name="logo" id="" type="file" value="{{$event->logo}}"/>
+                                <input class="form-control" name="logo" id="" type="file"/>
                             </div>
 
                             <div class="form-group">
@@ -67,11 +67,15 @@
                                 <img width="200px" src="images/product/{{$event->banner}}">
                                 </p>
                                 <p>{{$event->banner}}</p>
-                                <input class="form-control" name="banner" id="" type="file" value="{{$event->banner}}"/>
+                                <input class="form-control" name="banner" id="" type="file"/>
                             </div>
                             <div class="form-group">
                                 <label>Ngày diễn ra sự kiện</label>
-                                <input class="form-control" name="ngay_dien_ra" value="{{$event->ngay_dien_ra}}" type="datetime"/>
+                                <input class="form-control" name="ngay_dien_ra" value="{{$event->ngay_dien_ra}}" type="date"/>
+                            </div>
+                            <div class="form-group">
+                                <label>Giờ diễn ra sự kiện</label>
+                                <input class="form-control" name="thoi_gian" value="{{$event->thoi_gian}}" type="time"/>
                             </div>
                             <div class="form-group">
                                 <label>Ngày bán vé</label>
@@ -79,7 +83,12 @@
                             </div>
                             <div class="form-group">
                                 <label>Giá vé</label>
-                                <input class="form-control" name="gia_ve" value="{{$event->gia_ve}}" type="text"/>
+                                <script>
+                                    function format_curency(a) {
+                                        a.value = a.value.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
+                                    }
+                                </script>
+                                <input class="form-control" onChange="format_curency(this);" name="gia_ve"  value="{{$event->gia_ve}}" type="number"/>
                             </div>
                             <div class="form-group">
                                 <label>Số lượng vé</label>

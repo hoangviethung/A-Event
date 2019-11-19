@@ -33,6 +33,7 @@
                                 <!--Table head-->
                                 <thead>
                                 <tr>
+                                <th colspan="2">Thao tác</th>
                                     <th>Id</th>
                                     <th>Tên sự kiện</th>
                                     <th>Loại sự kiện</th>
@@ -48,7 +49,7 @@
                                     <th>Tóm tắt</th>
                                     <th>Mô tả</th>
                                     <th>Duyệt bài</th>
-                                    <th colspan="2">Thao tác</th>
+
                                 </tr>
                                 </thead>
                                 <!--Table head-->
@@ -57,6 +58,12 @@
                                 <tbody>
                                 @foreach($duyet as $duyet)
                                     <tr class="table-info">
+                                    <th>
+                                        <a href="admin/event/pheduyet/{{$duyet->id}}"><img src="images/accept.png" alt="A-event" srcset="" width="40" height="40"></a>
+                                    </th>
+                                    <th>
+                                        <a href="admin/event/pheduyet/{{$duyet->id}}"><img src="images/xoa.png" alt="A-event" srcset="" width="40" height="40"></a>
+                                    </th>
                                     <th>{{$duyet->id}}</th>
                                     <td><img src="images/logo/{{$duyet->logo}}" width="50" height="50"> : {{$duyet->ten_su_kien}}</td>
                                     <td>{{$duyet->type_events->ten_loai}}</td>
@@ -76,12 +83,6 @@
                                         @endif
                                     </td>
 
-                                    <th>
-                                        <a href="admin/event/pheduyet/{{$duyet->id}}"><img src="images/edit.png" alt="A-event" srcset="" width="40" height="40"></a>
-                                    </th>
-                                    <th>
-                                        <a href="admin/event/pheduyet/{{$duyet->id}}"><img src="images/xoa.png" alt="A-event" srcset="" width="40" height="40"></a>
-                                    </th>
                                 @endforeach
 
 
@@ -128,6 +129,8 @@
                                     sự kiện</th>
                                     <th>Ngày diễn <br>
                                     ra sự kiện</th>
+                                    <th>Thời gian
+                                        <br> diễn ra</th>
                                     <th>Ngày bán</th>
                                     <th>Giá vé</th>
                                     <th>Số lượng vé</th>
@@ -140,7 +143,7 @@
                                     <th>Hiển thị trên <br>
                                     sự kiện nổi bật</th>
                                     <th>Duyệt bài</th>
-                                 
+
                                 </tr>
                                 </thead>
                                 <!--Table head-->
@@ -160,8 +163,9 @@
                                     <td>{{$event->type_events->ten_loai}}</td>
                                     <td><img src="images/product/{{$event->banner}}" width="120"  height="50"/></td>
                                     <td>{{$event->ngay_dien_ra}}</td>
+                                    <td>{{$event->thoi_gian}}</td>
                                     <td>{{$event->ngay_ban}}</td>
-                                    <td>{{$event->gia_ve}}</td>
+                                    <td>{{number_format($event->gia_ve)}} VNĐ</td>
                                     <td>{{$event->so_luong_ve}}</td>
                                     <td>{{$event->dia_chi}}</td>
                                     <td>{{$event->tom_tat}}</td>
@@ -188,7 +192,7 @@
                                         @endif
                                     </td>
 
-                                   
+
                                 </tr>
                                 @endforeach
                                 </tbody>

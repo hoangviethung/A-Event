@@ -21,7 +21,7 @@
                                 <input type="hidden" name="_token" value="{{csrf_token()}}" />
                                 <div class="form-group">
                                         <label>Email Accounts</label>
-                                <input class="form-control" name="email" placeholder="Nhập email accounts" value="{{$user->email}}"/>
+                                        <input class="form-control" name="email" placeholder="Nhập email accounts" value="{{$user->email}}"/>
                                         @if($errors->has('email'))
                                             <span class="error">
                                                 {{$errors->first('email')}}

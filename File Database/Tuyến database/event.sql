@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 05, 2019 at 04:40 PM
+-- Generation Time: Nov 16, 2019 at 04:51 PM
 -- Server version: 10.1.40-MariaDB
 -- PHP Version: 7.3.5
 
@@ -31,9 +31,11 @@ SET time_zone = "+00:00";
 CREATE TABLE `events` (
   `id` int(10) UNSIGNED NOT NULL,
   `ten_su_kien` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `id_loai` int(10) DEFAULT NULL,
+  `logo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id_loai` int(10) NOT NULL,
   `banner` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `ngay_dien_ra` datetime DEFAULT NULL,
+  `ngay_dien_ra` date DEFAULT NULL,
+  `thoi_gian` time DEFAULT NULL,
   `gia_ve` double(8,2) DEFAULT NULL,
   `dia_chi` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `ngay_ban` datetime DEFAULT NULL,
@@ -49,11 +51,15 @@ CREATE TABLE `events` (
 -- Dumping data for table `events`
 --
 
-INSERT INTO `events` (`id`, `ten_su_kien`, `id_loai`, `banner`, `ngay_dien_ra`, `gia_ve`, `dia_chi`, `ngay_ban`, `tom_tat`, `mo_ta`, `so_luong_ve`, `hien_thi_slider`, `hien_thi_noi_bat`, `duyet`) VALUES
-(1, 'Sự kiện test', 1, '1.jpg', '2019-10-02 00:00:00', 1.00, 'Hà Nội', '0000-00-00 00:00:00', NULL, NULL, 0, NULL, NULL, NULL),
-(2, 'Sự kiện giải trí', 1, '2.jpg', '2019-10-03 00:00:00', 1.00, 'TP HCM', '0000-00-00 00:00:00', NULL, NULL, 0, NULL, NULL, NULL),
-(3, 'Sự kiện 1', 1, '3.jpg', '2019-10-17 00:00:00', 100000.00, 'TP HCM', '0000-00-00 00:00:00', NULL, NULL, 0, NULL, NULL, NULL),
-(4, 'Sự kiện kiến thức ', 2, '5.jpg', '2019-10-10 00:00:00', 0.00, 'Hà Nội', '0000-00-00 00:00:00', NULL, NULL, 0, NULL, NULL, NULL);
+INSERT INTO `events` (`id`, `ten_su_kien`, `logo`, `id_loai`, `banner`, `ngay_dien_ra`, `thoi_gian`, `gia_ve`, `dia_chi`, `ngay_ban`, `tom_tat`, `mo_ta`, `so_luong_ve`, `hien_thi_slider`, `hien_thi_noi_bat`, `duyet`) VALUES
+(1, 'Sự kiện test', NULL, 1, '1.jpg', '2019-10-02', NULL, 1.00, 'Hà Nội', '0000-00-00 00:00:00', NULL, NULL, 0, 1, 1, 1),
+(2, 'Sự kiện giải trí', NULL, 1, '2.jpg', '2019-10-03', NULL, 1.00, 'TP HCM', '0000-00-00 00:00:00', NULL, NULL, 100, 1, 1, 1),
+(3, 'Sự kiện 1', NULL, 1, '3.jpg', '2019-10-17', NULL, 100000.00, 'TP HCM', '0000-00-00 00:00:00', NULL, NULL, 100, 1, 1, 1),
+(4, 'Sự kiện kiến thức', '4nWQu7elOj_LeeSin.png', 3, 'S68KvVAcsK_LeeSin.png', '2019-10-10', NULL, 10000.00, 'Hà Nội', '2019-10-10 00:00:00', NULL, '<p><u><em><strong>asdkjasgkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk</strong></em></u></p>', 1000, 1, 0, 1),
+(6, 'Test chức năng phê duyệt', 'edS95pp9QC_LeeSin.png', 2, 'QpVi8wdhDA_LeeSin.png', '2020-02-01', '14:02:00', 100000.00, 'HCM', '2019-01-01 02:00:00', '<p>sdasd</p>', '<h1>asdasdadasdas</h1>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><img alt=\"\" src=\"http://localhost/A-Event/event/public/images/product/images/Capture.PNG\" style=\"width: 352px; height: 360px;\" /></p>', 100, 1, 0, 1),
+(9, 'sadasdfasdfgashdfghasf', '2yoRbqqs8r_LeeSin.png', 1, 'ZogfvqXlyy_LeeSin.png', '2019-11-08', '15:00:00', 100000.00, 'sdasdasd', '2020-01-01 01:00:00', '<p>asd</p>', '<p>d</p>', 1000, 0, 0, 1),
+(10, 'Test nha dsasd', '42HFLmc5FU_LeeSin.png', 2, 'aeesIXC15T_LeeSin.png', '2020-02-02', '02:01:00', 1000.00, 'Ho Chi Minh City', NULL, NULL, '<p>sd</p>', 10000, 0, 0, 1),
+(11, 'Test Add Event', 'trQzNoPcT2_banner.png', 3, '09VFsWbsyr_header.png', '2020-02-02', '02:01:00', 1000.00, 'Ho Chi Minh City', NULL, NULL, '<p>sds</p>', 10000, 0, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -160,31 +166,6 @@ CREATE TABLE `short_links` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `slider`
---
-
-CREATE TABLE `slider` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `ten_su_kien` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `banner` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `loai_su_kien` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `thoi_gian` datetime NOT NULL,
-  `tom_tat` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `dia_diem` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `slider`
---
-
-INSERT INTO `slider` (`id`, `ten_su_kien`, `banner`, `loai_su_kien`, `thoi_gian`, `tom_tat`, `dia_diem`, `created_at`, `updated_at`) VALUES
-(1, 'Sự kiện 1', '1', 'Giải trí', '2019-10-16 04:14:12', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque dolor eligendi vitae culpa velit placeat eius, iusto animi aliquid. Consequuntur dolorum nesciunt quidem eum asperiores ipsa atque quia quae aliquid.', 'TP HCM', NULL, NULL);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `social_accounts`
 --
 
@@ -214,7 +195,7 @@ CREATE TABLE `type_events` (
 --
 
 INSERT INTO `type_events` (`id`, `ten_loai`, `created_at`, `updated_at`) VALUES
-(1, 'Giải trí', NULL, NULL),
+(1, 'Giải trí', NULL, '2019-11-16 15:29:06'),
 (2, 'Kiến thức', NULL, NULL),
 (3, 'Sự kiện khác', '2019-10-28 15:19:00', '2019-10-28 15:19:00');
 
@@ -226,6 +207,7 @@ INSERT INTO `type_events` (`id`, `ten_loai`, `created_at`, `updated_at`) VALUES
 
 CREATE TABLE `user` (
   `id` bigint(20) UNSIGNED NOT NULL,
+  `id_fb` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `name` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `password` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -235,46 +217,17 @@ CREATE TABLE `user` (
   `gioi_tinh` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `hinh` text COLLATE utf8mb4_unicode_ci,
   `vip` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `type` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `email`, `name`, `password`, `dien_thoai`, `dia_chi`, `ngay_sinh`, `gioi_tinh`, `hinh`, `vip`, `type`) VALUES
-(1, 'nguyentuyen1322@gmail.com', 'Tuyen Nguyen', '$2y$10$50iEPmhhrqPZzSzK3EjQyuy58GHljDipqNHgx7L87f3tIt.jdkXOa', 356518436, 'tp hcm', '2019-11-21', 'Nam', '10710964d7a550c32f92749adcd8d793_cS-6.jpg', 'Normal', '1'),
-(2, 'admin@gmail.com', 'Admin', '$2y$10$0QFAWdoWtsatLCPJzOm.yeKJ8M.0SupSOIcpRO8Bb7DahWjgfOXu.', 356518436, 'Thành Phố Hồ Chí Minh', '2019-11-01', 'Nam', '54671d405544766eaeb406fb19c20850_cS-7.jpg', 'V.I.P', '2');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `users`
---
-
-CREATE TABLE `users` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `dien_thoai` int(11) NOT NULL,
-  `hinh` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `gioi_tinh` tinyint(1) NOT NULL,
-  `ten` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `id_type_user` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `vip` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `dia_chi` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `name`, `dien_thoai`, `hinh`, `gioi_tinh`, `ten`, `id_type_user`, `password`, `vip`, `email`, `dia_chi`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, '', 0, '', 0, '', '', '123456', '', 'nguyentuyen1322@gmail.com', '', NULL, NULL, NULL);
+INSERT INTO `user` (`id`, `id_fb`, `email`, `name`, `password`, `dien_thoai`, `dia_chi`, `ngay_sinh`, `gioi_tinh`, `hinh`, `vip`, `type`) VALUES
+(1, NULL, 'nguyentuyen1322@gmail.com', 'Tuyen Nguyen', '$2y$10$50iEPmhhrqPZzSzK3EjQyuy58GHljDipqNHgx7L87f3tIt.jdkXOa', 356518436, 'tp hcm', '2019-11-21', 'Nam', '10710964d7a550c32f92749adcd8d793_cS-6.jpg', 'Normal', '1'),
+(2, NULL, 'admin@gmail.com', 'Admin', '$2y$10$0QFAWdoWtsatLCPJzOm.yeKJ8M.0SupSOIcpRO8Bb7DahWjgfOXu.', 356518436, 'Thành Phố Hồ Chí Minh', '2019-11-01', 'Nam', '54671d405544766eaeb406fb19c20850_cS-7.jpg', 'V.I.P', '2'),
+(3, '1385068081652444', NULL, 'Nguyễn Văn Tuyến', NULL, NULL, NULL, NULL, NULL, 'https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=1385068081652444&height=50&width=50&ext=1576501694&hash=AeS0hp2I9rWHrXHq', NULL, '1');
 
 --
 -- Indexes for dumped tables
@@ -324,12 +277,6 @@ ALTER TABLE `short_links`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `slider`
---
-ALTER TABLE `slider`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `type_events`
 --
 ALTER TABLE `type_events`
@@ -342,12 +289,6 @@ ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -355,7 +296,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -388,12 +329,6 @@ ALTER TABLE `short_links`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `slider`
---
-ALTER TABLE `slider`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
 -- AUTO_INCREMENT for table `type_events`
 --
 ALTER TABLE `type_events`
@@ -403,13 +338,7 @@ ALTER TABLE `type_events`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables

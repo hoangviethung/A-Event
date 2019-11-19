@@ -5,6 +5,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="shortcut icon" type="image/png" href="images/favicon/favicon.png">
 		<style>#loading{-webkit-transition:1.5s;-o-transition:1.5s;position:fixed;top:0;right:0;bottom:0;left:0;z-index:99999;transition:1.5s;background:#000;width:100%;height:100%}#loading #progress{-webkit-transition:1.5s;-o-transition:1.5s;display:none;transition:1.5s;background:#000;width:0;height:1px}#loading #progress,#loading .progstat-wrapper{-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);position:absolute;top:50%;transform:translateY(-50%)}#loading .progstat-wrapper{margin-top:0;width:100%;color:#fff;font-size:14px;font-weight:300;letter-spacing:3px;text-align:center}#loading .logo-loader{-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);margin-top:-100px;width:150px;height:150px}</style>
 		<script>!function(){function n(n){return document.getElementById(n)}document.addEventListener("DOMContentLoaded",function(){var e=n("loading"),t=n("progress"),o=n("progstat"),r=document.images,i=0,d=r.length;if(0==d)return u();function a(){var n=100/d*(i+=1)<<0;if(t.style.width=n,o.innerHTML=n,i===d)return u()}function u(){e.style.opacity=0,setTimeout(function(){e.style.display="none";var n=document.getElementById("loading");n.parentNode.removeChild(n)},1500)}for(var c=0;c<d;c++){var s=new Image;s.onload=a,s.onerror=a,s.src=r[c].src}},!1)}();</script>
 		<base href="{{ asset('') }}" />
@@ -27,10 +28,10 @@
 					</div>
 					<div class="add-event"><a href="{{ url('pages/addevent') }}"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" class="sc-ckVGcZ cRPCZL"><g fill="none" fill-rule="evenodd"><circle id="oval-plus" class="sc-dxgOiQ kSEybs" stroke-width="2" cx="12" cy="12" r="11"></circle><path d="M6,12 L18,12" id="Line" class="sc-dxgOiQ kSEybs" stroke-width="2" stroke-linecap="square"></path><path d="M12,6 L12,18" id="Line2" class="sc-dxgOiQ kSEybs" stroke-width="2" stroke-linecap="square"></path></g></svg><span>ADD A EVENT</span></a></div>
 					<div class="right-menu">
-
-						@if(!Auth::user())
+						@if(!Auth::user() && !isset($loginfb))
 						<div class="button-login"><a href="{{ url('pages/login') }}"><svg class="sc-eNPDpu cjclFo" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26"><g transform="translate(1 1)" stroke="#fff" stroke-width="2" fill="none"><circle cx="12" cy="12" r="12"></circle><path d="M15.65 6.78a3.56 3.56 0 0 0-3.5-3.65H12a3.56 3.56 0 0 0-3.65 3.5v.15c0 .42.42 2.45.42 2.45.3 1.78 1.46 3.3 3.23 3.3s2.92-1.47 3.23-3.3c0 0 .42-2.03.42-2.45zM3.13 20.09v-.37c0-1.62 1.2-2.82 2.82-3.23l6.05-1.1 6.1 1.15c1.57.47 2.77 1.56 2.77 3.23v.37"></path></g></svg><span>Login</span></a></div>
-						@else
+						@endif
+						@if(Auth::user())
 						<div class="avatar">
 							<figure>
 								<div class="box-img"><img class="ofc" src="images/user/{{Auth::user()->hinh}}" alt="A-event"></div>
@@ -43,17 +44,40 @@
 								<figure>
 									<div class="box-img"><img class="ofc" src="images/user/{{Auth::user()->hinh}}" alt="A-event"></div>
 									<figcaption>
-
 										<h5>{{Auth::user()->name}}<span>{{Auth::user()->vip}}</span></h5>
-
-										{{-- <a href="{{ url('pages/index') }}">Logout</a> --}}
 									</figcaption>
 								</figure>
 								<ul class="list-item"><a href="#">
-										<li class="item">Vé đã đặt</li></a><a href="#">
-										<li class="item">Sự kiện đã tạo</li></a><a href="#">
-										<li class="item">Thông tin tài khoản</li></a><a href="{{ url('pages/dangxuat') }}">
-										<li class="item">Đăng xuất</li></a></ul>
+									<li class="item">Vé đã đặt</li></a><a href="#">
+									<li class="item">Sự kiện đã tạo</li></a><a href="#">
+									<li class="item">Thông tin tài khoản</li></a><a href="{{ url('pages/dangxuat') }}">
+									<li class="item">Đăng xuất</li></a>
+								</ul>
+							</div>
+						</div>
+						@endif
+						@if(isset($loginfb))
+						<div class="avatar">
+							<figure>
+								<div class="box-img"><img class="ofc" src="{{$loginfb->hinh}}" alt="A-event"></div>
+								<figcaption>
+								<h5>{{$loginfb->name}}</h5>
+								</figcaption>
+							</figure>
+							<div id="sub-information">
+								<div class="close"><svg width="26" height="24" xmlns="http://www.w3.org/2000/svg"><g><rect fill="none" id="canvas_background" height="26" width="28" y="-1" x="-1"/></g><g><path fill="#91918e" stroke="null" id="svg_2" d="m13.475695,0.194444c-6.483507,0 -11.788195,5.304688 -11.788195,11.788195c0,6.483507 5.304688,11.788195 11.788195,11.788195s11.788195,-5.304688 11.788195,-11.788195c0,-6.483507 -5.304688,-11.788195 -11.788195,-11.788195zm5.776215,15.914063l-1.650347,1.650347l-4.125868,-4.125868l-4.125868,4.125868l-1.650347,-1.650347l4.125868,-4.125868l-4.125868,-4.125868l1.650347,-1.650347l4.125868,4.125868l4.125868,-4.125868l1.650347,1.650347l-4.125868,4.125868l4.125868,4.125868z"/></g></svg></div>
+								<figure>
+									<div class="box-img"><img class="ofc" src="{{$loginfb->hinh}}" alt="A-event"></div>
+									<figcaption>
+										<h5>{{$loginfb->name}}<span>Vip</span></h5>
+									</figcaption>
+								</figure>
+								<ul class="list-item"><a href="#">
+									<li class="item">Vé đã đặt</li></a><a href="#">
+									<li class="item">Sự kiện đã tạo</li></a><a href="#">
+									<li class="item">Thông tin tài khoản</li></a><a href="{{ url('pages/dangxuat') }}">
+									<li class="item">Đăng xuất</li></a>
+								</ul>
 							</div>
 						</div>
 						@endif

@@ -19,15 +19,16 @@
 									<div class="desc">
 										<div class="title">GIỚI THIỆU</div>
 										<div class="CKEditor">
-											{{$chitiet->mo_ta}}
+											{!!htmlspecialchars_decode($chitiet->mo_ta)!!}
 										</div>
+
 									</div>
 									<div class="ticket-booking">
 										<div class="title">THÔNG TIN VÉ</div>
 										<div class="list-ticket wow fadeInDown" data-wow-delay=".3s">
 											<div class="item">
 												<div class="name">HẠNG A</div>
-												<div class="price">{{$chitiet->gia_ve}} VND</div>
+												<div class="price">{{number_format($chitiet->gia_ve)}} VNĐ </div>
 												<div class="info-ticket">
 													<p>Vị trí:<span>Ghế ngồi trên khán đài A</span></p>
 													<p> Quà tặng (sẽ nhận tại sự kiện):<span>Nón</span></p>
@@ -75,10 +76,10 @@
 								</div>
 							</div>
 							<div class="col-lg-4 aside-boxing">
-								<div class="box-booking"><a class="btn wow flipInX" href="dat-ve-buoc-1.html" data-wow-delay=".5s">MUA VÉ NGAY</a>
+								<div class="box-booking"><a class="btn wow flipInX" href="{{ url('pages/bookingone') }}" data-wow-delay=".5s">MUA VÉ NGAY</a>
 									<div class="overview">
 										<h1>{{$chitiet->ten_su_kien}}</h1>
-										<div class="item time">{{$chitiet->ngay_dien_ra}}</div>
+										<div class="item time">{{$chitiet->ngay_dien_ra}} | {{$chitiet->thoi_gian}}</div>
 										<div class="item address">{{$chitiet->dia_chi}}</div>
 										<div class="item price">Từ {{$chitiet->gia_ve}} VND</div>
 									</div>

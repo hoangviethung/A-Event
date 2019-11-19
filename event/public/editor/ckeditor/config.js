@@ -7,7 +7,12 @@ CKEDITOR.editorConfig = function(config) {
     // Define changes to default configuration here. For example:
     config.language = 'vi';
     config.uiColor = '#AADC6E';
+    config.allowedContent = true;
+    config.fullPage = true;
 };
+
+CKEDITOR.config.allowedContent = true;
+
 CKEDITOR.editorConfig = function(config) {
     config.filebrowserBrowseUrl = 'editor/ckfinder/ckfinder.html';
     config.filebrowserImageBrowseUrl = 'editor/ckfinder/ckfinder.html?type=Images';

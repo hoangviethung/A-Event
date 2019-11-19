@@ -25,6 +25,7 @@
                                     <!--Table head-->
                                     <thead>
                                     <tr>
+                                        <th colspan="2">Thao tác</th>
                                         <th>Id</th>
                                         <th>Email Accounts</th>
                                         <th>Tên Accounts</th>
@@ -36,7 +37,6 @@
                                         <th>Hình Accounts</th>
                                         <th>Loại Khách</th>
                                         <th>Phân Quyền</th>
-                                        <th colspan="2">Thao tác</th>
                                     </tr>
                                     </thead>
                                     <!--Table head-->
@@ -45,6 +45,11 @@
                                     <tbody>
                                         @foreach ($user as $use)
                                             <tr class="table-info">
+                                                <td> <a href="admin/user/sua/{{$use->id}}"><img src="images/edit.png" alt="A-event" srcset="" width="40" height="40"></a>
+                                                </td>
+                                                <td>
+                                                <a href="admin/user/xoa/{{$use->id}}"><img src="images/xoa.png" alt="A-event" srcset="" width="40" height="40"></a>
+                                                </td>
                                             <td>{{$use->id}}</td>
                                             <td>{{$use->email}}</td>
                                             <td>{{$use->name}}</td>
@@ -53,14 +58,12 @@
                                             <td><textarea cols="30" rows="3">{{$use->dia_chi}}</textarea></td>
                                             <td>{{$use->ngay_sinh}}</td>
                                             <td>{{$use->gioi_tinh}}</td>
-                                            <td><img src="images/user/{{$use->hinh}}" alt="A-event" srcset="" width="50" height="50"></td>
+                                            <td>
+                                                <img src="images/user/{{$use->hinh}}" alt="" width="50" height="50">
+                                                <img src="{{$use->hinh}}" alt="" width="50" height="50">
+                                            </td>
                                             <td>{{$use->vip}}</td>
                                             <td>{{$use->type}}</td>
-                                            <td> <a href="admin/user/sua/{{$use->id}}"><img src="images/edit.png" alt="A-event" srcset="" width="40" height="40"></a>
-                                            </td>
-                                            <td>
-                                            <a href="admin/user/xoa/{{$use->id}}"><img src="images/xoa.png" alt="A-event" srcset="" width="40" height="40"></a>
-                                            </td>
                                             </tr>
                                         @endforeach
                                     </tbody>

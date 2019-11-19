@@ -56,7 +56,11 @@
                             </div>
                             <div class="form-group">
                                 <label>Ngày diễn ra sự kiện</label>
-                                <input class="form-control" name="ngay_dien_ra" type="datetime-local"/>
+                                <input class="form-control" name="ngay_dien_ra" type="date"/>
+                            </div>
+                            <div class="form-group">
+                                <label>Giờ diễn ra</label>
+                                <input class="form-control" name="thoi_gian" type="time" />
                             </div>
                             <div class="form-group">
                                 <label>Ngày bán vé</label>
@@ -64,7 +68,8 @@
                             </div>
                             <div class="form-group">
                                 <label>Giá vé</label>
-                                <input class="form-control" name="gia_ve" type="text"/>
+
+                                <input class="form-control" name="gia_ve"  type="number"/>
                             </div>
                             <div class="form-group">
                                 <label>Số lượng vé</label>
@@ -85,6 +90,17 @@
                                 <label>Mô tả sự kiện</label>
                                 <textarea class="form-control ckeditor" id="editor"  rows="3" cols="10"  name="mo_ta"></textarea>
 
+
+                                <!-- <script>
+                                    CKEDITOR.replace('editor', {
+                                    fullPage: true,
+                                    extraPlugins: 'docprops',
+                                    // Disable content filtering because if you use full page mode, you probably
+                                    // want to  freely enter any HTML content in source mode without any limitations.
+                                    allowedContent: true,
+                                    height: 320
+                                    });
+                                </script> -->
 
                             </div>
 
