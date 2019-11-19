@@ -176,7 +176,7 @@ module.exports = () => {
 					map: map,
 					title: location.name,
 					position: locationLatLng,
-					icon: './img/icons/gmap.svg'
+					icon: './images/icons/gmap.svg'
 				});
 				bounds.extend(marker.position);
 				markers.push(marker);
