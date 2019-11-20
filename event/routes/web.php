@@ -51,13 +51,6 @@ Route::group(['prefix'=>'pages'], function(){
 
     Route::get('dangxuat', 'PagesController@getDangxuat');
 
-    Route::get('login/facebook', 'Auth\SocialController@redirectToProvider');
-    Route::get('login/facebook/callback', 'Auth\SocialController@handleProviderCallback');
-
-
-    Route::get('login/google', 'Auth\SocialController@redirectToProvider');
-    Route::get('login/google/callback', 'Auth\SocialController@handleProviderCallback');
-
     Route::get('login/loginsuccess', 'Auth\SocialController@loginsuccess');
 
 });
@@ -135,11 +128,6 @@ Route::group(['prefix'=>'admin','middleware'=>'checklogin'], function(){
     // Seenmail
     Route::group(['prefix' => 'seenmail'], function () {
 
-<<<<<<< HEAD
-=======
-        Route::get('danhsach','SeenmailController@getDanhsach');
-
->>>>>>> 6c5d49fd3684e271047e5961e0b67da28f063015
         Route::get('getmail','SeenmailController@getThongbao');
         Route::post('postmail', 'SeenmailController@postThongbao');
     });
