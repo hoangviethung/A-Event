@@ -31,7 +31,12 @@ Route::group(['prefix'=>'pages'], function(){
         'as' =>'chitiet',
         'uses'=>'PagesController@getChitiet',
     ]);
-    
+
+    Route::get('bookingone/{id}',[
+        'as' => 'bookingone',
+        'uses' => 'PagesController@getBookingone',
+    ]);
+
     Route::get('bookingone','BookingController@getBookingone');
     Route::post('bookingone','BookingController@postBookingone');
 
@@ -104,7 +109,7 @@ Route::group(['prefix'=>'admin','middleware'=>'checklogin'], function(){
     Route::group(['prefix' => 'new'], function () {
 
         Route::get('danhsach','NewController@getDanhsach');
-        
+
         Route::get('sua', 'NewController@getSua');
         Route::post('sua', 'NewController@postSua');
 
@@ -130,6 +135,11 @@ Route::group(['prefix'=>'admin','middleware'=>'checklogin'], function(){
     // Seenmail
     Route::group(['prefix' => 'seenmail'], function () {
 
+<<<<<<< HEAD
+=======
+        Route::get('danhsach','SeenmailController@getDanhsach');
+
+>>>>>>> 6c5d49fd3684e271047e5961e0b67da28f063015
         Route::get('getmail','SeenmailController@getThongbao');
         Route::post('postmail', 'SeenmailController@postThongbao');
     });

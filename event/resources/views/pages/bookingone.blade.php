@@ -3,7 +3,7 @@
     <main>
         <section class="booking-step-1">
             <div class="banner-event">
-                <figure><img class="ofc" src="images/banner/5.png" alt="" srcset=""></figure>
+                <figure><img class="ofc" src="./images/product/{{$bookingone->banner}}" alt="" srcset=""></figure>
             </div>
             <nav>
                 <div class="container">
