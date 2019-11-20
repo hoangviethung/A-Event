@@ -63,6 +63,31 @@
 												</div>
 											</div>
 										</div>
+                                    </div>
+                                    <div class="gmap">
+										<div class="title">BẢN ĐỒ</div>
+										<div class="google-map">
+											<div id="map"></div>
+										</div>
+										<script>
+											var locationsObject = {
+												inputLocations : [
+													{
+														lat: 10.807100,
+														lng: 106.661638,
+														name: 'Ho Chi Minh Headoffice',
+														icon: "./images/icons/gmap.svg",
+														address: 'Floor 4, Thang Long Building, 29 Thang Long St., Ward 4,  Tan Binh Dist., HCMC, Vietnam.',
+														hotLine: '(+84) 903 910 430 - Mr.Linh',
+														phone: '(84.28) 3848 7858',
+														fax: '(84.28) 3848 7858',
+														email: 'npv-saleadmin@npvexpress.com',
+														website: 'www.npvexpress.com',
+														optimized: false
+													}
+												],
+											}
+										</script>
 									</div>
 									<div class="organizer">
 										<div class="title">NHÀ TỔ CHỨC</div>
