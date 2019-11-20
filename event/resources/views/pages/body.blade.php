@@ -103,8 +103,13 @@
 				<div class="container">
 					<div class="catalog-wrapper">
 						<div class="title-catalog wow fadeInLeft" data-wow-delay=".3s"><a href="#"><img class="icon" src="images/icons/add.svg" alt="" srcset=""></a>
-							<div class="name-catalog"><span>A . Event - loại sự kiện</span><a href="#">
-									<h3>Giải trí</h3></a></div>
+                            <div class="name-catalog"><span>A . Event - loại sự kiện</span>
+
+                            <a href="{{url('pages/danhmuc/1')}}">
+                                    <h3>Giải trí</h3>
+                            </a>
+
+                        </div>
 							<div class="event-tag">
 								<ul class="list-eventTag">
 									<li class="item"><a href="#">#eventtag-1</a></li>
@@ -156,7 +161,8 @@
 				<div class="container">
 					<div class="catalog-wrapper">
 						<div class="title-catalog wow fadeInLeft" data-wow-delay=".3s"><a href="#"><img class="icon" src="images/icons/add.svg" alt="" srcset=""></a>
-							<div class="name-catalog"><span>A . Event - loại sự kiện</span><a href="#">
+                            <div class="name-catalog"><span>A . Event - loại sự kiện</span>
+                            <a href="{{url('pages/danhmuc/2')}}">
 									<h3>Kiến thức</h3></a></div>
 							<div class="event-tag">
 								<ul class="list-eventTag">
@@ -209,8 +215,11 @@
 				<div class="container">
 					<div class="catalog-wrapper">
 						<div class="title-catalog wow fadeInLeft" data-wow-delay=".3s"><a href="#"><img class="icon" src="images/icons/add.svg" alt="" srcset=""></a>
-							<div class="name-catalog"><span>A . Event - loại sự kiện</span><a href="#">
-									<h3>Sự kiện khác</h3></a></div>
+                            <div class="name-catalog"><span>A . Event - loại sự kiện</span>
+                            <a href="{{url('pages/danhmuc/3')}}">
+                                    <h3>Sự kiện khác</h3>
+                            </a>
+                            </div>
 							<div class="event-tag">
 								<ul class="list-eventTag">
 									<li class="item"><a href="#">#eventtag-1</a></li>

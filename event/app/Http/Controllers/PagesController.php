@@ -68,6 +68,16 @@ class PagesController extends Controller
         return view('pages.bookingone',compact('bookingone'));
     }
 
+    public function getDanhmuc($id)
+    {
+        $danhmuc = Type_events::find($id);
+        $sukien = Events::where('id_loai',$id)->paginate(9);
+        return view('pages.danhmuc',['danhmuc'=>$danhmuc,'sukien'=>$sukien]);
+    }
+
+
+
+
 
     public function postLogin(Request $request){
         $this->validate($request,
