@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 class SeenmailController extends Controller
 {
+
     public function getDanhsach(){
         return view('admin.thongbao.danhsach');
     }
@@ -42,10 +43,13 @@ class SeenmailController extends Controller
             'cho_ngoi' => $request->cho_ngoi,
             'dia_chi' => $request->dia_chi,
             'mo_ta' => $request->mo_ta,
+            'banner' => 'images/email/banner.png',
+            'logo'=>'images/email/logo.png',
+          
         ];
         Mail::send('admin.thongbao.layoutmail', $data, function ($message) use ($data) {
             $message->from('hotroaevent@gmail.com', 'Hỗ trợ Aevent');
-            $message->to($data['email'], 'Khách hàng thân yêu');
+            $message->to($data['email'], 'Khách hàng');
             $message->subject($data['ten_su_kien']);
             $message->subject($data['ten_khach_hang']);
             $message->subject($data['so_ve']);

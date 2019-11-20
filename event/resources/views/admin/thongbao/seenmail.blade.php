@@ -30,8 +30,8 @@
                                 @endif 
                             </div>
                             <div class="form-group">
-                                <label>Nhap email</label>
-                                <input class="form-control" name="email" placeholder="Nhập email khach"/>
+                                <label>Nhập email</label>
+                                <input class="form-control" name="email" placeholder="Nhập email khách hàng"/>
                                 @if($errors->has('email'))
                                     <span style="color: red; text-align: left;font-size: 14px;font-weight: bold;">
                                         {{$errors->first('email')}}
@@ -76,7 +76,7 @@
                             </div>
                             <div class="form-group" style="width: 60%%">
                                 <label>Mô tả sự kiện</label>
-                                <textarea class="form-control ckeditor" id="editor"  rows="3" cols="6"  name="mo_ta"></textarea>
+                                <textarea class="form-control"  rows="3" cols="6"  name="mo_ta"></textarea>
                                 @if($errors->has('mo_ta'))
                                     <span style="color: red; text-align: left;font-size: 14px;font-weight: bold;">
                                         {{$errors->first('mo_ta')}}

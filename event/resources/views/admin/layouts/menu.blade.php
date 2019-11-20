@@ -68,9 +68,6 @@
                     <a href="admin/seenmail/danhsach"><i class="fa fa-envelope"></i> QL Email<span class="fa arrow"></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="admin/seenmail/danhsach"> Danh Sách Gửi</a>
-                        </li>
-                        <li>
                             <a href="admin/seenmail/getmail">Gửi Email</a>
                         </li>
                     </ul>
