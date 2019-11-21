@@ -34,7 +34,11 @@
                                 <input class="form-control" name="ten_su_kien" placeholder="Nhập tên sự kiện"/>
                             </div>
                             <div class="form-group">
-                                <label>Logo sự kiện</label>
+                                <label>Nhà tài trợ</label>
+                                <input class="form-control" name="nha_tai_tro" placeholder="Nhà tài trợ"/>
+                            </div>
+                            <div class="form-group">
+                                <label>Logo Nhà tài trợ</label>
                                 <input class="form-control" name="logo" id="" type="file"/>
                             </div>
                             <div class="form-group">
@@ -64,14 +68,43 @@
                             </div>
                             <div class="form-group">
                                 <label>Ngày bán vé</label>
-                                <input class="form-control" name="ngay_ban" type="datetime-local"/>
+                                <input class="form-control" name="ngay_ban" type="date"/>
                             </div>
                             <div class="form-group">
-                                <label>Giá vé</label>
+                                <label>Vị trí ngồi của vé thường</label>
+
+                                <input class="form-control" name="vi_tri_ve_thuong"  type="text"/>
+                            </div>
+                            <div class="form-group">
+                                <label>Quà tặng khi mua vé thường</label>
+
+                                <input class="form-control" name="qua_tang_thuong"  type="text"/>
+                            </div>
+                            <div class="form-group">
+                                <label>Giá vé thường</label>
 
                                 <input class="form-control" name="gia_ve"  type="number"/>
                             </div>
                             <div class="form-group">
+                                <label>Vị trí ngồi của vé VIP</label>
+
+                                <input class="form-control" name="vi_tri_ve_vip"  type="text"/>
+                            </div>
+                            <div class="form-group">
+                                <label>Quà tặng khi mua vé VIP</label>
+
+                                <input class="form-control" name="qua_tang_vip"  type="text"/>
+                            </div>
+                            <div class="form-group">
+                                <label>Giá vé VIP</label>
+
+                                <input class="form-control" name="gia_ve_vip"  type="number"/>
+                            </div>
+
+
+
+                            <div class="form-group">
+
                                 <label>Số lượng vé</label>
                                 <input class="form-control" name="so_luong_ve" type="text"/>
                             </div>

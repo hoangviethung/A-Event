@@ -79,7 +79,7 @@
 					<div class="container">
 						<div class="row">
                             @foreach($sukien as $sukien)
-							<div class="col-lg-4"><a href="chi-tiet-su-kien.html">
+							<div class="col-lg-4"><a href="{{url('pages/chitiet',$danhmuc->id)}}">
 									<div class="item-event">
 										<figure>
 											<div class="box-img"><img class="ofc" src="./images/product/{{$sukien->banner}}" alt="" srcset=""></div>

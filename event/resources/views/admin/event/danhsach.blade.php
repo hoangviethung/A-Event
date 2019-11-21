@@ -37,12 +37,20 @@
                                     <th>Id</th>
                                     <th>Tên sự kiện</th>
                                     <th>Loại sự kiện</th>
+                                    <th>Nhà tài trợ</th>
                                     <th>Banner của <br>
                                     sự kiện</th>
                                     <th>Ngày diễn <br>
                                     ra sự kiện</th>
                                     <th>Ngày bán</th>
+                                    <th>Vị trí <br> vé thường</th>
+                                    <th>Quà tặng <br> vé thường</th>
                                     <th>Giá vé</th>
+                                    <th>Vị trí <br> vé VIP</th>
+                                    <th>Quà tặng <br> vé VIP</th>
+                                    <th>Giá vé VIP</th>
+
+
                                     <th>Số lượng vé</th>
                                     <th>Nơi diễn ra <br>
                                     sự kiện</th>
@@ -65,12 +73,18 @@
                                         <a href="admin/event/pheduyet/{{$duyet->id}}"><img src="images/xoa.png" alt="A-event" srcset="" width="40" height="40"></a>
                                     </th>
                                     <th>{{$duyet->id}}</th>
-                                    <td><img src="images/logo/{{$duyet->logo}}" width="50" height="50"> : {{$duyet->ten_su_kien}}</td>
+                                    <td>{{$duyet->ten_su_kien}}</td>
                                     <td>{{$duyet->type_events->ten_loai}}</td>
+                                    <td><img src="images/logo/{{$duyet->logo}}" width="50" height="50"> : {{$duyet->nha_tai_tro}}</td>                       
                                     <td><img src="images/product/{{$duyet->banner}}" width="120"  height="50"/></td>
                                     <td>{{$duyet->ngay_dien_ra}}</td>
                                     <td>{{$duyet->ngay_ban}}</td>
-                                    <td>{{$duyet->gia_ve}}</td>
+                                    <td>{{$duyet->vi_tri_ve_thuong}}</td>
+                                    <td>{{$duyet->qua_tang_thuong}}</td>
+                                    <td>{{number_format($duyet->gia_ve)}}</td>
+                                    <td>{{$duyet->vi_tri_ve_vip}}</td>
+                                    <td>{{$duyet->qua_tang_vip}}</td>
+                                    <td>{{number_format($duyet->gia_ve_vip)}}</td>
                                     <td>{{$duyet->so_luong_ve}}</td>
                                     <td>{{$duyet->dia_chi}}</td>
                                     <td>{{$duyet->tom_tat}}</td>
@@ -125,6 +139,7 @@
                                     <th>Id</th>
                                     <th>Tên sự kiện</th>
                                     <th>Loại sự kiện</th>
+                                    <th>Nhà tài trợ</th>
                                     <th>Banner của <br>
                                     sự kiện</th>
                                     <th>Ngày diễn <br>
@@ -132,7 +147,14 @@
                                     <th>Thời gian
                                         <br> diễn ra</th>
                                     <th>Ngày bán</th>
-                                    <th>Giá vé</th>
+                                    <th>Vị trí <br> vé thường</th>
+                                    <th>Quà tặng <br> vé thường</th>
+                                    <th>Giá vé thường</th>
+                                    <th>Vị trí <br> vé VIP</th>
+                                    <th>Quà tặng <br> vé VIP</th>
+                                    <th>Giá vé VIP</th>
+
+
                                     <th>Số lượng vé</th>
                                     <th>Nơi diễn ra <br>
                                     sự kiện</th>
@@ -159,13 +181,19 @@
                                         <a href="admin/event/xoa/{{$event->id}}"><img src="images/xoa.png" alt="A-event" srcset="" width="40" height="40"></a>
                                     </th>
                                     <th>{{$event->id}}</th>
-                                    <td><img src="images/logo/{{$event->logo}}" width="50" height="50"> : {{$event->ten_su_kien}}</td>
+                                    <td>{{$event->ten_su_kien}}</td>
                                     <td>{{$event->type_events->ten_loai}}</td>
+                                    <td><img src="images/logo/{{$event->logo}}" width="50" height="50">: {{$event->nha_tai_tro}}</td>
                                     <td><img src="images/product/{{$event->banner}}" width="120"  height="50"/></td>
                                     <td>{{$event->ngay_dien_ra}}</td>
                                     <td>{{$event->thoi_gian}}</td>
                                     <td>{{$event->ngay_ban}}</td>
+                                    <td>{{$event->vi_tri_ve_thuong}}</td>
+                                    <td>{{$event->qua_tang_thuong}}</td>
                                     <td>{{number_format($event->gia_ve)}} VNĐ</td>
+                                    <td>{{$event->vi_tri_ve_vip}}</td>
+                                    <td>{{$event->qua_tang_vip}}</td>
+                                    <td>{{number_format($event->gia_ve_vip)}} VNĐ</td>
                                     <td>{{$event->so_luong_ve}}</td>
                                     <td>{{$event->dia_chi}}</td>
                                     <td>{{$event->tom_tat}}</td>

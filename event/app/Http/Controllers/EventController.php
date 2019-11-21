@@ -31,7 +31,13 @@ class EventController extends Controller
             'ten_su_kien' => 'required|unique:Events,ten_su_kien|min:2|max: 100|',
             'ngay_dien_ra' =>'required',
             'thoi_gian' => 'required',
+            'nha_tai_tro' => 'required',
             'gia_ve'=> 'required|integer|min:1000|max:100000000|',
+            'vi_tri_ve_thuong' => 'min:10|max:200|',
+            'qua_tang_thuong' => 'min:10|max:200|',
+            'vi_tri_ve_vip' => 'min:10|max:200|',
+            'qua_tang_vip'=>'min:10|max:200|',
+            'gia_ve_vip'=>'|integer|min:1000|max:100000000|',
             'banner'=>'required|mimes:jpeg,png,jpg,gif,svg|max:2048|',
             'logo'=>'mimes:jpeg,png,jpg.gif,svg|max:2048|',
             'dia_chi' => 'required',
@@ -44,12 +50,23 @@ class EventController extends Controller
             'ten_su_kien.unique' => 'Tên sự kiện đã trùng với 1 sự kiện khác',
             'ten_su_kien.min' => ' Tên sự kiện phải có từ 3 đến 100 ký tự',
             'ten_su_kien.max' => ' Tên sự kiện phải có từ 3 đến 100 ký tự',
+            'nha_tai_tro.required' => ' Bạn chưa nhập nhà tài trợ'
             'ngay_dien_ra.required' => 'Bạn chưa chọn ngày diễn ra sự kiện',
             'thoi_gian.required' =>'Bạn chưa chọn thời gian diễn ra sự kiện',
             'gia_ve.required' => 'Bạn chưa nhập giá vé',
-            'gia_ve.integer' => 'Giá vé phải là số ',
+            'gia_ve.integer' => 'Giá vé phải là số nguyên dương',
             'gia_ve.min' => 'Giá tối thiếu 1 000 đồng đến 100 000 000 đồng',
             'gia_ve.max' => 'Giá tối thiếu 1 000 đồng đến 100 000 000 đồng',
+            'gia_ve_vip.max' => 'Giá tối thiếu 1 000 đồng đến 100 000 000 đồng',
+            'gia_ve_vip.min' => 'Giá tối thiếu 1 000 đồng đến 100 000 000 đồng',
+            'gia_ve_vip.integer' => 'Giá vé phải là số nguyên dương',
+            'vi_tri_ve_thuong.min' => 'Nhập vị trí ngồi của vé thường( Không được quá 10 -> 200 kí tự )',
+            'vi_tri_ve_thuong.max' => 'Nhập vị trí ngồi của vé thường( Không được quá 10 -> 200 kí tự )',
+            'qua_tang_thuong.max' => 'Nhập quà tặng của vé thường( Không được quá 10 -> 200 kí tự )',
+            'qua_tang_thuong.min' => 'Nhập quà tặng của vé thường( Không được quá 10 -> 200 kí tự )',
+            'vi_tri_ve_vip.min' => 'Nhập vị trí ngồi của vé vip( Không được quá 10 -> 200 kí tự )',
+            'vi_tri_ve_vip.max' => 'Nhập vị trí ngồi của vé vip( Không được quá 10 -> 200 kí tự )',
+            'gia_ve.integer' => 'Giá vé phải là số ',
             'banner.required' => 'Bạn chưa add banner sự kiện',
             'banner.mimes' => 'Banner phải là hình có đuôi jpeg,png,jpg,gif,svg',
             'banner.max'=>'Dung lượng hình không được quá 2Mb',
@@ -72,6 +89,12 @@ class EventController extends Controller
         $event->ngay_dien_ra = $request->ngay_dien_ra;
         $event->banner = $request->banner;
         $event->logo = $request->logo;
+        $event->nha_tai_tro = $request->nha_tai_tro;
+        $event->vi_tri_ve_thuong = $request->vi_tri_ve_thuong;
+        $event->vi_tri_ve_vip = $request->vi_tri_ve_vip;
+        $event->gia_ve_vip = $request->gia_ve_vip;
+        $event->qua_tang_thuong = $request->qua_tang_thuong;
+        $event->qua_tang_vip = $request->qua_tang_vip;
         $event->thoi_gian = $request->thoi_gian;
         $event->gia_ve = $request->gia_ve;
         $event->dia_chi = $request->dia_chi;
@@ -125,8 +148,14 @@ class EventController extends Controller
         [
             'ten_su_kien' => 'required|min:2|max: 100|',
             'ngay_dien_ra' =>'required',
+            'nha_tai_tro' => 'required',
             'thoi_gian'=>'required',
             'gia_ve'=> 'required|integer|min:1000|max:100000000|',
+            'vi_tri_ve_thuong' => 'min:10|max:200|',
+            'qua_tang_thuong' => 'min:10|max:200|',
+            'vi_tri_ve_vip' => 'min:10|max:200|',
+            'qua_tang_vip'=>'min:10|max:200|',
+            'gia_ve_vip'=>'|integer|min:1000|max:100000000|',
             'banner'=>'required|mimes:jpeg,png,jpg,gif,svg|max:2048|',
             'logo'=>'mimes:jpeg,png,jpg.gif,svg|max:2048|',
             'ngay_dien_ra' =>'required',
@@ -138,12 +167,22 @@ class EventController extends Controller
             'ten_su_kien.required' => ' Bạn chưa nhập tên sự kiện',
             'ten_su_kien.min' => ' Tên sự kiện phải có từ 3 đến 100 ký tự',
             'ten_su_kien.max' => ' Tên sự kiện phải có từ 3 đến 100 ký tự',
+            'nha_tai_tro.required' => 'Nhập nhà tổ chức' 
             'ngay_dien_ra.required' => 'Bạn chưa chọn ngày diễn ra sự kiện',
             'thoi_gian.required' =>'Bạn chưa chọn thời gian diễn ra sự kiện',
             'gia_ve.required' => 'Bạn chưa nhập giá vé',
             'gia_ve.integer' => 'Giá vé phải là số ',
             'gia_ve.min' => 'Giá tối thiếu 1 000 đồng đến 100 000 000 đồng',
             'gia_ve.max' => 'Giá tối thiếu 1 000 đồng đến 100 000 000 đồng',
+            'gia_ve_vip.max' => 'Giá tối thiếu 1 000 đồng đến 100 000 000 đồng',
+            'gia_ve_vip.min' => 'Giá tối thiếu 1 000 đồng đến 100 000 000 đồng',
+            'gia_ve_vip.integer' => 'Giá vé phải là số nguyên dương',
+            'vi_tri_ve_thuong.min' => 'Nhập vị trí ngồi của vé thường( Không được quá 10 -> 200 kí tự )',
+            'vi_tri_ve_thuong.max' => 'Nhập vị trí ngồi của vé thường( Không được quá 10 -> 200 kí tự )',
+            'qua_tang_thuong.max' => 'Nhập quà tặng của vé thường( Không được quá 10 -> 200 kí tự )',
+            'qua_tang_thuong.min' => 'Nhập quà tặng của vé thường( Không được quá 10 -> 200 kí tự )',
+            'qua_tang_vip.max' => 'Nhập quà tặng của vé vip( Không được quá 10 -> 200 kí tự )',
+            'qua_tang_vip.min' => 'Nhập quà tặng của vé vip( Không được quá 10 -> 200 kí tự )',
             'banner.required' => 'Bạn chưa add banner sự kiện',
             'banner.mimes'=> 'Banner phải là hình có đuôi (jpeg,png,jpg.gif,svg)',
             'banner.max'=>'Dung lượng hình không được quá 2Mb',
@@ -163,6 +202,12 @@ class EventController extends Controller
         $event->ngay_dien_ra = $request->ngay_dien_ra;
         $event->banner = $request->banner;
         $event->logo = $request->logo;
+        $event->nha_tai_tro = $request->nha_tai_tro;
+        $event->vi_tri_ve_thuong = $request->vi_tri_ve_thuong;
+        $event->vi_tri_ve_vip = $request->vi_tri_ve_vip;
+        $event->gia_ve_vip = $request->gia_ve_vip;
+        $event->qua_tang_thuong = $request->qua_tang_thuong;
+        $event->qua_tang_vip = $request->qua_tang_vip;
         $event->thoi_gian = $request->thoi_gian;
         $event->gia_ve = $request->gia_ve;
         $event->dia_chi = $request->dia_chi;
@@ -175,13 +220,13 @@ class EventController extends Controller
         $event->duyet = $request->duyet;
 
 
-        // if($request->hasFile('logo')){
-        //     $file_logo = $request->file('logo');
-        //     $name_logo = $file_logo->getClientOriginalName();
-        //     $logo = Str::random(10)."_". $name_logo;
-        //      $file_logo->move("images/logo",$logo);
-        //     $event->logo = $logo;
-        // }
+        if($request->hasFile('logo')){
+            $file_logo = $request->file('logo');
+            $name_logo = $file_logo->getClientOriginalName();
+            $logo = Str::random(10)."_". $name_logo;
+             $file_logo->move("images/logo",$logo);
+            $event->logo = $logo;
+        }
 
 
 
