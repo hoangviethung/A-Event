@@ -43,7 +43,7 @@ class SeenmailController extends Controller
             'cho_ngoi' => $request->cho_ngoi,
             'dia_chi' => $request->dia_chi,
             'mo_ta' => $request->mo_ta,
-            'banner' => 'images/email/banner.png',
+            'banner' => 'images/email/banner.jpg',
             'logo'=>'images/email/logo.png',
           
         ];

@@ -15,15 +15,17 @@ class User extends Migration
     {
         Schema::create('user', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('email');
-            $table->string('name');
-            $table->string('password');
-            $table->integer('dien_thoai');
-            $table->string('dia_chi');
-            $table->string('ngay_sinh');
-            $table->boolean('gioi_tinh');
-            $table->string('hinh');
-            $table->boolean('vip');
+            $table->varchar('id_fb', 255)->nullable();
+            $table->varchar('id_gg', 255)->nullable();
+            $table->string('email')->nullable();
+            $table->string('name')->nullable();
+            $table->string('password')->nullable();
+            $table->integer('dien_thoai')->nullable();
+            $table->string('dia_chi')->nullable();
+            $table->string('ngay_sinh')->nullable();
+            $table->boolean('gioi_tinh')->nullable();
+            $table->string('hinh')->nullable();
+            $table->boolean('vip')->nullable();
             $table->integer('type')->nullable();
         });
     }

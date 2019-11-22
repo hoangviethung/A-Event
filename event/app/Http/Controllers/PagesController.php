@@ -11,6 +11,7 @@ use App\News;
 use App\Type_events;
 use Carbon\Carbon;
 use Facebook\Facebook;
+use Socialite;
 use Illuminate\Support\Facades\Cookie;
 
 
@@ -18,6 +19,7 @@ class PagesController extends Controller
 {
     function __construct()
     {
+     
         if(Auth::check()){
             view()->share('user', Auth::user());
         }
@@ -58,6 +60,51 @@ class PagesController extends Controller
           $linkloginfb = str_replace('amp;','',htmlspecialchars($linkloginfb));
         return view('pages.login',['linkloginfb'=>$linkloginfb]);
     }
+    public function redirectToGoogle($provider)
+    {
+        return Socialite::driver($provider)->redirect();
+    }
+   
+    public function handleGoogleCallback($provider)
+    {
+        
+
+        $user = Socialite::driver($provider)->stateless()->user();
+        $authusers = $this->finddOrCreateUser($user, $provider);
+        Auth::login($authusers, true);
+        return redirect($this->redirectTo);
+    //    return $user->token;
+    }
+
+    public function finddOrCreateUser($user){
+        
+        // dd($user);
+        $checkuser = users::where('id_gg', $user->id)->get();
+        if (count($checkuser) > 0) {
+            Cookie::queue(Cookie::make('logingg', json_encode([
+            'name'=>$user->name,
+            'email'=>$user->email,
+            'picture'=>$user->picture,
+    ]), 2000));
+        } else {
+            $user = new users;
+            $user->id_gg =  $user->id;
+            $user->name =  $user->name;
+            $user->email = $user->email;
+            $user->hinh = $user->picture;
+            $user->save();
+            Auth::login($user);
+            Cookie::queue(Cookie::make('logingg', json_encode([
+            'name'=>$user->name,
+            'email'=>$user->email,
+            'picture'=>$user->picture,
+    ]), 2000));
+        }
+        
+        return redirect('pages/index');
+    }
+    
+
     public function getChitiet(Request $req){
         $chitiet = Events::where('id',$req->id)->first();
         return view('pages.chitiet',compact('chitiet'));
