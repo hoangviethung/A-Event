@@ -136,6 +136,11 @@ Route::group(['prefix'=>'admin','middleware'=>'checklogin'], function(){
     // Seenmail
     Route::group(['prefix' => 'seenmail'], function () {
 
+<<<<<<< HEAD
+=======
+        Route::get('danhsach','SeenmailController@getDanhsach');
+
+>>>>>>> 55c1f3df3469e4a2baacb1cbeea940b0bec62c38
         Route::get('getmail','SeenmailController@getThongbao');
         Route::post('postmail', 'SeenmailController@postThongbao');
     });

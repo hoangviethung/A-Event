@@ -34,6 +34,10 @@
                                 <input class="form-control" name="ten_su_kien" value="{{$event->ten_su_kien}}" placeholder="Nhập tên sự kiện"/>
                             </div>
                             <div class="form-group">
+                                <label>Nhà tài trợ</label>
+                                <input class="form-control" name="nha_tai_tro" value="{{$event->nha_tai_tro}}" placeholder="Nhà tài trợ"/>
+                            </div>
+                            <div class="form-group">
                                 <label>Logo sự kiện</label>
                                 <p>
                                 <img width="100px" src="images/logo/{{$event->logo}}">
@@ -82,13 +86,28 @@
                                 <input class="form-control" name="ngay_ban" value="{{$event->ngay_ban}}" type="datetime"/>
                             </div>
                             <div class="form-group">
-                                <label>Giá vé</label>
-                                <script>
-                                    function format_curency(a) {
-                                        a.value = a.value.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
-                                    }
-                                </script>
-                                <input class="form-control" onChange="format_curency(this);" name="gia_ve"  value="{{$event->gia_ve}}" type="number"/>
+                                <label>Vị trí ngồi của vé thường</label>
+                                <input class="form-control" name="vi_tri_ve_thuong" value="{{$event->vi_tri_ve_thuong}}" type="datetime"/>
+                            </div>
+                            <div class="form-group">
+                                <label>Quà tặng khi mua vé thường</label>
+                                <input class="form-control" name="qua_tang_thuong" value="{{$event->qua_tang_thuong}}" type="datetime"/>
+                            </div>
+                            <div class="form-group">
+                                <label>Giá vé thường</label>
+                                <input class="form-control" name="gia_ve"  value="{{$event->gia_ve}}" type="number"/>
+                            </div>
+                            <div class="form-group">
+                                <label>Vị trí ngồi của vé VIP</label>
+                                <input class="form-control" name="vi_tri_ve_vip" value="{{$event->vi_tri_ve_vip}}" type="datetime"/>
+                            </div>
+                            <div class="form-group">
+                                <label>Quà tặng khi mua vé VIP</label>
+                                <input class="form-control" name="qua_tang_vip" value="{{$event->qua_tang_vip}}" type="datetime"/>
+                            </div>
+                            <div class="form-group">
+                                <label>Giá vé VIP</label>
+                                <input class="form-control" name="gia_ve"  value="{{$event->gia_ve_vip}}" type="number"/>
                             </div>
                             <div class="form-group">
                                 <label>Số lượng vé</label>

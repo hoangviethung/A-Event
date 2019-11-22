@@ -27,41 +27,24 @@
 										<div class="title">THÔNG TIN VÉ</div>
 										<div class="list-ticket wow fadeInDown" data-wow-delay=".3s">
 											<div class="item">
-												<div class="name">HẠNG A</div>
+												<div class="name">HẠNG THƯỜNG</div>
 												<div class="price">{{number_format($chitiet->gia_ve)}} VNĐ </div>
 												<div class="info-ticket">
-													<p>Vị trí:<span>Ghế ngồi trên khán đài A</span></p>
-													<p> Quà tặng (sẽ nhận tại sự kiện):<span>Nón</span></p>
+													<p>Vị trí:<span>{{$chitiet->vi_tri_ve_thuong}}</span></p>
+													<p> Quà tặng (sẽ nhận tại sự kiện):<span>{{$chitiet->qua_tang_thuong}}</span></p>
 													<p>Lưu ý:<span>Trên mỗi đơn hàng, quý khách được đặt tối đa 2 vé</span></p>
 												</div>
 											</div>
 											<div class="item">
-												<div class="name">HẠNG B</div>
-												<div class="price">{{$chitiet->gia_ve}} VND</div>
+												<div class="name">HẠNG VIP</div>
+												<div class="price">{{number_format($chitiet->gia_ve_vip)}} VND</div>
 												<div class="info-ticket">
-													<p>Vị trí:<span>Ghế ngồi trên khán đài A</span></p>
-													<p> Quà tặng (sẽ nhận tại sự kiện):<span>Nón</span></p>
+													<p>Vị trí:<span>{{$chitiet->vi_tri_ve_vip}}</span></p>
+													<p> Quà tặng (sẽ nhận tại sự kiện):<span>{{$chitiet->qua_tang_vip}}</span></p>
 													<p>Lưu ý:<span>Trên mỗi đơn hàng, quý khách được đặt tối đa 2 vé</span></p>
 												</div>
 											</div>
-											<div class="item">
-												<div class="name">HẠNG C</div>
-												<div class="price">{{$chitiet->gia_ve}} VND</div>
-												<div class="info-ticket">
-													<p>Vị trí:<span>Ghế ngồi trên khán đài A</span></p>
-													<p> Quà tặng (sẽ nhận tại sự kiện):<span>Nón</span></p>
-													<p>Lưu ý:<span>Trên mỗi đơn hàng, quý khách được đặt tối đa 2 vé</span></p>
-												</div>
-											</div>
-											<div class="item">
-												<div class="name">HẠNG D</div>
-												<div class="price">{{$chitiet->gia_ve}} VND</div>
-												<div class="info-ticket">
-													<p>Vị trí:<span>Ghế ngồi trên khán đài A</span></p>
-													<p> Quà tặng (sẽ nhận tại sự kiện):<span>Nón</span></p>
-													<p>Lưu ý:<span>Trên mỗi đơn hàng, quý khách được đặt tối đa 2 vé</span></p>
-												</div>
-											</div>
+										
 										</div>
                                     </div>
                                     <div class="gmap">
@@ -92,9 +75,9 @@
 									<div class="organizer">
 										<div class="title">NHÀ TỔ CHỨC</div>
 										<div class="content wow fadeInDown" data-wow-delay=".3s">
-											<div class="org-img"><img class="ofc" src="./images/product/organizer.png" alt="" srcset=""></div>
+											<div class="org-img"><img class="ofc" src="./images/product/{{$chitiet->logo}}.png" alt="" srcset=""></div>
 											<div class="desc">
-												<p>Grab và Yeah1 Network phối hợp tổ chức chương trình.</p>
+												<p>{{$chitiet->nha_tai_tro}} tổ chức chương trình.</p>
 											</div>
 										</div>
 									</div>
@@ -106,7 +89,7 @@
 										<h1>{{$chitiet->ten_su_kien}}</h1>
 										<div class="item time">{{$chitiet->ngay_dien_ra}} | {{$chitiet->thoi_gian}}</div>
 										<div class="item address">{{$chitiet->dia_chi}}</div>
-										<div class="item price">Từ {{$chitiet->gia_ve}} VND</div>
+										<div class="item price">Từ {{number_format($chitiet->gia_ve)}} VNĐ</div>
 									</div>
 									<div class="facebook-button">
 										<div class="item">
