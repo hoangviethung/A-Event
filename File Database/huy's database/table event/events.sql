@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 21, 2019 at 05:54 PM
+-- Generation Time: Nov 25, 2019 at 03:46 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.10
 
@@ -64,7 +64,7 @@ INSERT INTO `events` (`id`, `ten_su_kien`, `nha_tai_tro`, `logo`, `id_loai`, `ba
 (10, 'Test nha dsasd', NULL, '42HFLmc5FU_LeeSin.png', 2, 'aeesIXC15T_LeeSin.png', '2020-02-02', '02:01:00', NULL, 1000.00, NULL, NULL, NULL, NULL, 'Ho Chi Minh City', NULL, NULL, '<p>sd</p>', 10000, 0, 0, 1),
 (12, 'sadasdsad', NULL, 'LS73yPQyX2_521EC9.jpg', 1, '9MFzUQZyt1_521EC9.jpg', '2020-02-02', '01:01:00', NULL, 10000.00, NULL, NULL, NULL, NULL, 'asdasdas', '2019-02-02 14:01:00', '<p>sadasdas</p>', '<p>sadasd</p>', 10000, 0, 0, 1),
 (13, 'Test nha', 'sadsad', 'hEg9dob1cS_521EC9.jpg', 1, '2Rkyz1JCbM_521EC9.jpg', '2019-02-04', '01:00:00', NULL, 10000.00, NULL, NULL, NULL, NULL, 'dsadas', '2019-01-01 00:00:00', '<p>sadsadsadsa</p>', '<p>sadasd</p>', 10000, 0, 0, 1),
-(15, 'Test nha sadasdas dasdsad', NULL, 'EBdxBvT3FG_521EC9.jpg', 1, 'hQjrLVKPYv_521EC9.jpg', '2019-02-04', '01:00:00', 'sadsadsadsad', 100000.00, 'asdsadsadsadasdas', 'dsadsadasdsa', NULL, 'dsadsadsadsadas', 'dsadas', '2019-01-01 00:00:00', '<p>sadsadsadsa</p>', '<p>sadasd</p>', 10000, 0, 0, 1);
+(15, 'Test nha sadasdas dasdsad', 'sadsadasd', '0Fm3PR34e0_521EC9.jpg', 1, 'yNJeZ68eZ1_521EC9.jpg', '2019-02-04', '01:00:00', 'sadsadsadsad', 10000.00, 'asdsadsadsadasdas', 'dsadsadasdsa', NULL, 'dsadsadsadsadas', '350 Lê đức thọ, phường 6 , quận gò vấp', '2019-01-01 00:00:00', '<p>sadsadsadsa</p>', '<p>sadasd</p>', 10000, 0, 0, 1);
 
 --
 -- Indexes for dumped tables

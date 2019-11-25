@@ -13,12 +13,11 @@ use Carbon\Carbon;
 use Facebook\Facebook;
 use Illuminate\Support\Facades\Cookie;
 
-
 class PagesController extends Controller
 {
     function __construct()
     {
-     
+
         if(Auth::check()){
             view()->share('user', Auth::user());
         }
@@ -38,8 +37,9 @@ class PagesController extends Controller
         $giaitri = Events::where([['id_loai',1],['duyet',1],])->orderBy('id','desc')->get();
         $kienthuc = Events::where([['id_loai',2],['duyet',1],])->orderBy('id','desc')->get();
         $sukienkhac = Events::where([['id_loai',3],['duyet',1],])->orderBy('id','desc')->get();
+        $noibat = Events::where([['hien_thi_noi_bat',1],['duyet',1],])->orderBy('id','desc')->get();
         $new_01= News::get();
-        return view('pages.body',compact('slide','giaitri','kienthuc','new_01','sukienkhac'));
+        return view('pages.body',compact('slide','giaitri','kienthuc','new_01','sukienkhac','noibat'));
     }
     public function getSearch(){
         return view('pages.search');
@@ -50,6 +50,7 @@ class PagesController extends Controller
         return view('pages.search',['event'=>$event,'tukhoa'=>$tukhoa,'sreach'=>$event]);
     }
     public function getLogin(){
+
         session_start();
         $fb = new Facebook([
             'app_id' => '420853728859282',
@@ -65,7 +66,7 @@ class PagesController extends Controller
         return view('pages.login',['linkloginfb'=>$linkloginfb]);
     }
 
-  
+
 
     public function getChitiet(Request $req){
         $chitiet = Events::where('id',$req->id)->first();
