@@ -56,13 +56,13 @@
 											<div class="decription-event wow fadeIn" data-wow-delay=".6s">
 												<div class="box-countdown">
 													<div class="block">
-														<div id="hours">3</div><span>Giờ</span>
+														<div id="hours">0</div><span>Giờ</span>
 													</div>
 													<div class="block">
-														<div id="minutes">4</div><span>Phút</span>
+														<div id="minutes">0</div><span>Phút</span>
 													</div>
 													<div class="block">
-														<div id="seconds">5</div><span>Giây</span>
+														<div id="seconds">0</div><span>Giây</span>
 													</div>
 													<div class="block"><span>
 
@@ -79,31 +79,7 @@
 									</figure>
 								</div>
                             @endforeach
-								<div class="swiper-slide">
-									<figure class="wow fadeInDown" data-wow-delay=".3s">
-										<figcaption>
-											<div class="name-event wow fadeIn" data-wow-delay=".3s">
-												<h3>Shark Tank</h3>
-												<h5>Cùng tận hưởng trực tiếp các thương vụ vô cùng kịch tính</h5>
-											</div>
-											<div class="decription-event wow fadeIn" data-wow-delay=".6s">
-												<div class="box-countdown">
-													<div class="block">
-														<div id="hours">0</div><span>Giờ</span>
-													</div>
-													<div class="block">
-														<div id="minutes">0</div><span>Phút</span>
-													</div>
-													<div class="block">
-														<div id="seconds">0</div><span>Giây</span>
-													</div>
-													<div class="block"><span>9.9.2019</span></div>
-												</div>
-												<p class="limit-line">Chương trình truyền hình đầu tư thực tế “Shark Tank Việt Nam - Thương vụ bạc tỷ” đang thu hút sự chú ý từ nhiều bạn trẻ, đặc biệt là các công ty khởi nghiệp (start-up), trong không khí quốc gia cùng khởi nghiệp.</p><a href="chi-tiet-su-kien.html">Tham Gia</a>
-											</div>
-										</figcaption><img class="ofc" src="images/hot-item/2.png" alt="" srcset="">
-									</figure>
-								</div>
+
 							</div>
 							<div class="swiper-pagination"></div>
 							<div class="swiper-button-next icon"></div>

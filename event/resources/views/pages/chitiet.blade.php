@@ -50,7 +50,7 @@
                                     <div class="gmap">
 										<div class="title">BẢN ĐỒ</div>
 										<div class="google-map">
-                                        <div id="map" class="mapouter"><div class="gmap_canvas"><iframe width="670" height="500" id="gmap_canvas"
+                                        <div id="map" class="mapouter"><div class="gmap_canvas"><iframe width="870" height="500" id="gmap_canvas"
                                         src="https://maps.google.com/maps?q={{$chitiet->dia_chi}}&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.divi-discounts.com">elegant drag & drop builder</a></div><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div>
 										</div>
 
