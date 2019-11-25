@@ -13,6 +13,11 @@
 		<link rel="stylesheet" href="css/main.min.css"><link href="https://fonts.googleapis.com/css?family=K2D&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Pangolin&display=swap" rel="stylesheet">
+        <style>
+            .gmap_canvas{
+                width: 100% !important;
+            }
+        </style>
 	</head>
 	<body>
 		<div id="loading">
