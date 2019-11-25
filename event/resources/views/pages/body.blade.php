@@ -56,13 +56,13 @@
 											<div class="decription-event wow fadeIn" data-wow-delay=".6s">
 												<div class="box-countdown">
 													<div class="block">
-														<div id="hours">0</div><span>Giờ</span>
+														<div id="hours">3</div><span>Giờ</span>
 													</div>
 													<div class="block">
-														<div id="minutes">0</div><span>Phút</span>
+														<div id="minutes">4</div><span>Phút</span>
 													</div>
 													<div class="block">
-														<div id="seconds">0</div><span>Giây</span>
+														<div id="seconds">5</div><span>Giây</span>
 													</div>
 													<div class="block"><span>
 
