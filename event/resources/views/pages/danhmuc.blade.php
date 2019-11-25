@@ -10,7 +10,6 @@
 							</div>
 						</form>
 					</div>
-<<<<<<< HEAD
 					<div class="box-filter">
 						<div class="container">
 							<form action="#">
@@ -95,32 +94,6 @@
 														<div class="item">
 															<h5>Trạng thái:<span>Mở bán</span></h5>
 														</div>
-=======
-                </div>
-                <h1>{{$danhmuc->ten_loai}}</h1>
-				<div class="list-item">
-					<div class="container">
-						<div class="row">
-                            @foreach($sukien as $sukien)
-							<div class="col-lg-4"><a href="{{url('pages/chitiet',$danhmuc->id)}}">
-									<div class="item-event">
-										<figure>
-											<div class="box-img"><img class="ofc" src="./images/product/{{$sukien->banner}}" alt="" srcset=""></div>
-											<figcaption>
-												<h3>{{$sukien->ten_su_kien}}</h3>
-												<div class="info-event">
-													<div class="item">
-														<h5>Từ:<span>{{$sukien->gia_ve}}</span></h5>
-													</div>
-													<div class="item">
-														<h5>Địa chỉ:<span>{{$sukien->dia_chi}}</span></h5>
-													</div>
-													<div class="item">
-														<h5>Thời gian:<span>{{$sukien->ngay_dien_ra}}</span></h5>
-													</div>
-													<div class="item">
-														<h5>Trạng thái:<span>Mở bán</span></h5>
->>>>>>> 55c1f3df3469e4a2baacb1cbeea940b0bec62c38
 													</div>
 												</figcaption>
 											</figure>

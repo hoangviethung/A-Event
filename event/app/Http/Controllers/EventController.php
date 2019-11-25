@@ -50,7 +50,7 @@ class EventController extends Controller
             'ten_su_kien.unique' => 'Tên sự kiện đã trùng với 1 sự kiện khác',
             'ten_su_kien.min' => ' Tên sự kiện phải có từ 3 đến 100 ký tự',
             'ten_su_kien.max' => ' Tên sự kiện phải có từ 3 đến 100 ký tự',
-            'nha_tai_tro.required' => ' Bạn chưa nhập nhà tài trợ'
+            'nha_tai_tro.required' => ' Bạn chưa nhập nhà tài trợ',
             'ngay_dien_ra.required' => 'Bạn chưa chọn ngày diễn ra sự kiện',
             'thoi_gian.required' =>'Bạn chưa chọn thời gian diễn ra sự kiện',
             'gia_ve.required' => 'Bạn chưa nhập giá vé',
@@ -167,7 +167,7 @@ class EventController extends Controller
             'ten_su_kien.required' => ' Bạn chưa nhập tên sự kiện',
             'ten_su_kien.min' => ' Tên sự kiện phải có từ 3 đến 100 ký tự',
             'ten_su_kien.max' => ' Tên sự kiện phải có từ 3 đến 100 ký tự',
-            'nha_tai_tro.required' => 'Nhập nhà tổ chức' 
+            'nha_tai_tro.required' => 'Nhập nhà tổ chức',
             'ngay_dien_ra.required' => 'Bạn chưa chọn ngày diễn ra sự kiện',
             'thoi_gian.required' =>'Bạn chưa chọn thời gian diễn ra sự kiện',
             'gia_ve.required' => 'Bạn chưa nhập giá vé',

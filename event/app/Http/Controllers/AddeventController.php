@@ -9,6 +9,7 @@ use Illuminate\Support\Str;
 use Carbon\Carbon;
 class AddeventController extends Controller
 {
+    // k hiện user thì add cái này vô controller
     function __construct()
     {
         $this->middleware(function ($request, $next) {
@@ -16,6 +17,12 @@ class AddeventController extends Controller
             view()->share('loginfb',json_decode($request->cookie('loginfb')));
             return $next($request);
         });
+        $this->middleware(function ($request, $next) {
+            if($request->cookie('logingg'))
+            view()->share('logingg',json_decode($request->cookie('logingg')));
+            return $next($request);
+        });
+
     }
     public function getAddevent(){
         $danhmuc = Type_events::all();

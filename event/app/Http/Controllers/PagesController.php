@@ -11,7 +11,6 @@ use App\News;
 use App\Type_events;
 use Carbon\Carbon;
 use Facebook\Facebook;
-use Socialite;
 use Illuminate\Support\Facades\Cookie;
 
 
@@ -26,6 +25,11 @@ class PagesController extends Controller
         $this->middleware(function ($request, $next) {
              if($request->cookie('loginfb'))
             view()->share('loginfb',json_decode($request->cookie('loginfb')));
+            return $next($request);
+        });
+        $this->middleware(function ($request, $next) {
+             if($request->cookie('logingg'))
+            view()->share('logingg',json_decode($request->cookie('logingg')));
             return $next($request);
         });
     }
@@ -60,50 +64,8 @@ class PagesController extends Controller
           $linkloginfb = str_replace('amp;','',htmlspecialchars($linkloginfb));
         return view('pages.login',['linkloginfb'=>$linkloginfb]);
     }
-    public function redirectToGoogle($provider)
-    {
-        return Socialite::driver($provider)->redirect();
-    }
-   
-    public function handleGoogleCallback($provider)
-    {
-        
 
-        $user = Socialite::driver($provider)->stateless()->user();
-        $authusers = $this->finddOrCreateUser($user, $provider);
-        Auth::login($authusers, true);
-        return redirect($this->redirectTo);
-    //    return $user->token;
-    }
-
-    public function finddOrCreateUser($user){
-        
-        // dd($user);
-        $checkuser = users::where('id_gg', $user->id)->get();
-        if (count($checkuser) > 0) {
-            Cookie::queue(Cookie::make('logingg', json_encode([
-            'name'=>$user->name,
-            'email'=>$user->email,
-            'picture'=>$user->picture,
-    ]), 2000));
-        } else {
-            $user = new users;
-            $user->id_gg =  $user->id;
-            $user->name =  $user->name;
-            $user->email = $user->email;
-            $user->hinh = $user->picture;
-            $user->save();
-            Auth::login($user);
-            Cookie::queue(Cookie::make('logingg', json_encode([
-            'name'=>$user->name,
-            'email'=>$user->email,
-            'picture'=>$user->picture,
-    ]), 2000));
-        }
-        
-        return redirect('pages/index');
-    }
-    
+  
 
     public function getChitiet(Request $req){
         $chitiet = Events::where('id',$req->id)->first();
@@ -121,11 +83,6 @@ class PagesController extends Controller
         $sukien = Events::where('id_loai',$id)->paginate(9);
         return view('pages.danhmuc',['danhmuc'=>$danhmuc,'sukien'=>$sukien]);
     }
-
-
-
-
-
     public function postLogin(Request $request){
         $this->validate($request,
         [
@@ -225,6 +182,9 @@ class PagesController extends Controller
         Cookie::queue(
             Cookie::forget('loginfb')
         );
+        Cookie::queue(
+            Cookie::forget('logingg')
+        );
         Auth::logout();
         return redirect('pages/index');
 
@@ -250,6 +210,7 @@ class PagesController extends Controller
             ]);
 
         $arr = ['name' => $request->name, 'password' =>$request->password];
+        $this->getDangxuat();
         if(Auth::attempt($arr)){
             return redirect('admin/dashboard')->with('thongbao', 'Đăng nhập thành công !');
         }else{

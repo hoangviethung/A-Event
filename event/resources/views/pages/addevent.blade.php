@@ -7,18 +7,6 @@
                 {{session('thongbao')}}
             </div>
         @endif
-        {{-- @if(session('thongbao'))
-            <div class="alert alert-success" style="color: #3c763d;
-                                            background-color: #dff0d8;
-                                            border-color: #d6e9c6;
-                                            padding: 15px;
-                                            margin-bottom: 20px;
-                                            border-radius: 7px;
-                                            border: 1px solid transparent;
-">
-                {{session('thongbao')}}
-            </div>
-        @endif --}}
         <div class="form-info-event" style="padding-top: 0px;">
         <form action="pages/addevent" method="POST" enctype="multipart/form-data" >
         <input type="hidden" name="_token" value="{{csrf_token()}}">

@@ -9,26 +9,16 @@
     <link rel="shortcut icon" type="image/png" href="images/favicon/favicon.png">
     <title>A Event | Admin</title>
     <base href="{{asset('')}}">
-    <!-- Bootstrap Core CSS -->
     <link href="css_admin/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- MetisMenu CSS -->
     <link href="css_admin/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
     <link href="css_admin/dist/css/sb-admin-2.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
     <link href="css_admin/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    <!-- DataTables CSS -->
     <link href="css_admin/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">
-
-    <!-- DataTables Responsive CSS -->
     <link href="css_admin/bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
-    <!-- <script src="editor/ckeditor/ckeditor.js"></script> -->
+    <link href="css_admin/toastr/toastr.css" rel="stylesheet">
+    <link href="css_admin/toastr/toastr.js.map" rel="stylesheet">
+    <link href="css_admin/toastr/toastr.min.css" rel="stylesheet">
     <script src="editor/ckeditor/ckeditor.js"></script>
-    <!-- <script src="https://cdn.ckeditor.com/ckeditor5/15.0.0/classic/ckeditor.js"></script> -->
     <style>
     .ck-content{
         min-height: 200px;
@@ -51,24 +41,13 @@
     <!-- /#wrapper -->
 
     <!-- jQuery -->
+    <script src="css_admin/toastr/toastr.min"></script>
     <script src="css_admin/bower_components/jquery/dist/jquery.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
     <script src="css_admin/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
-    <!-- Metis Menu Plugin JavaScript -->
     <script src="css_admin/bower_components/metisMenu/dist/metisMenu.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
     <script src="css_admin/dist/js/sb-admin-2.js"></script>
-
-    <!-- DataTables JavaScript -->
     <script src="css_admin/bower_components/DataTables/media/js/jquery.dataTables.min.js"></script>
     <script src="css_admin/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
-
-    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
-
-
     <script>
     $(document).ready(function() {
         $('#dataTables-example').DataTable({
@@ -78,6 +57,7 @@
     });
 
     </script>
+    
 
     @yield('script')
 </body>

@@ -58,8 +58,8 @@ Route::group(['prefix'=>'pages'], function(){
 
     Route::get('login/loginsuccess', 'Auth\SocialController@loginsuccess');
 
-    Route::get('login/{provider}', 'PagesController@redirectToGoogle');
-    Route::get('login/{provider}/callback', 'PagesController@handleGoogleCallback');
+    Route::get('login/{provider}', 'Auth\SocialController@redirectToGoogle');
+    Route::get('login/{provider}/callback', 'Auth\SocialController@handleGoogleCallback');
 
 });
 // pages website
@@ -84,7 +84,7 @@ Route::group(['prefix'=>'admin','middleware'=>'checklogin'], function(){
         Route::get('them', 'DanhmucController@getThem');
         Route::post('them', 'DanhmucController@postThem');
         // Hàm post nhận dữ liệu về và lưu vào cơ sở dữ liệu
-        Route::get('xoa', 'DanhmucController@getXoa');
+        Route::get('xoa/{id}', 'DanhmucController@getXoa');
     });
     // danhmuc
 
@@ -136,11 +136,6 @@ Route::group(['prefix'=>'admin','middleware'=>'checklogin'], function(){
     // Seenmail
     Route::group(['prefix' => 'seenmail'], function () {
 
-<<<<<<< HEAD
-=======
-        Route::get('danhsach','SeenmailController@getDanhsach');
-
->>>>>>> 55c1f3df3469e4a2baacb1cbeea940b0bec62c38
         Route::get('getmail','SeenmailController@getThongbao');
         Route::post('postmail', 'SeenmailController@postThongbao');
     });

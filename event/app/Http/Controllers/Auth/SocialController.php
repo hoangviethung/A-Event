@@ -5,7 +5,7 @@ use App\users;
 use App\Http\Controllers\Controller;
 use Facebook\Facebook;
 use Illuminate\Support\Facades\Cookie;
-
+use Socialite;
 class SocialController extends Controller
 {
     /**
@@ -130,11 +130,52 @@ if(count($checkuser) > 0){
   $user->hinh = $data->picture->data->url;
   $user->save();
   Cookie::queue(Cookie::make('loginfb',json_encode([
-    'name'=>$data->namel,
+    'name'=>$data->name,
     'hinh'=>$data->picture->data->url,
   ]), 2000));
 }
 return redirect('pages/index');
+}
+
+public function redirectToGoogle($provider)
+{
+    return Socialite::driver($provider)->redirect();
+}
+
+public function handleGoogleCallback($provider)
+{
+    
+
+    $user = Socialite::driver($provider)->stateless()->user();
+   $this->finddOrCreateUser($user);
+   return redirect('pages/index');
+
+}
+
+public function finddOrCreateUser($user){
+    
+//  dd($user);
+    $checkuser = users::where('id_gg', $user->id)->get();
+    if (count($checkuser) > 0) {
+        Cookie::queue(Cookie::make('logingg', json_encode([
+        'name'=>$user->name,
+        'email'=>$user->email,
+        'hinh'=>$user->avatar,
+]), 2000));
+    } else {
+        $users = new users;
+        $users->id_gg =  $user->id;
+        $users->name =  $user->name;
+        $users->email = $user->email;
+        $users->hinh = $user->avatar;
+        $users->save();
+        Cookie::queue(Cookie::make('logingg', json_encode([
+        'name'=>$user->name,
+        'email'=>$user->email,
+        'hinh'=>$user->avatar,
+]), 2000));
+    }
+    
 }
 
 }

@@ -56,7 +56,6 @@ class DanhmucController extends Controller
         $danhmuc = new Type_events;
         $danhmuc->ten_loai = $request->ten_loai;
         $danhmuc->save();
-
         return redirect('admin/danhmuc/them')->with('thongbao','Thêm thành công');
     }
 

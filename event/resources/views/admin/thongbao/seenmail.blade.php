@@ -29,15 +29,31 @@
                                     </span>
                                 @endif 
                             </div>
-                            <div class="form-group">
-                                <label>Nhập email</label>
-                                <input class="form-control" name="email" placeholder="Nhập email khách hàng"/>
-                                @if($errors->has('email'))
-                                    <span style="color: red; text-align: left;font-size: 14px;font-weight: bold;">
-                                        {{$errors->first('email')}}
-                                    </span>
-                                @endif 
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Nhập email khách hàng</label>
+                                        <input class="form-control" name="email" placeholder="Nhập email khách hàng"/>
+                                        @if($errors->has('email'))
+                                            <span style="color: red; text-align: left;font-size: 14px;font-weight: bold;">
+                                                {{$errors->first('email')}}
+                                            </span>
+                                        @endif 
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Nhập email chủ event</label>
+                                        <input class="form-control" name="emailc" placeholder="Nhập email chủ event"/>
+                                        @if($errors->has('emailc'))
+                                            <span style="color: red; text-align: left;font-size: 14px;font-weight: bold;">
+                                                {{$errors->first('emailc')}}
+                                            </span>
+                                        @endif 
+                                    </div>
+                                </div>
                             </div>
+                           
                             <div class="form-group">
                                 <label>Tên khách hàng</label>
                                 <input class="form-control" name="ten_khach_hang" placeholder="Nhập tên khách hàng"/>

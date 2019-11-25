@@ -19,6 +19,7 @@ class SeenmailController extends Controller
         $this->validate($request, [
             'ten_su_kien'=>'required',
             'email'=>'required',
+            'emailc'=>'required',
             'ten_khach_hang'=>'required',
             'so_ve'=>'required',
             'cho_ngoi'=>'required',
@@ -27,7 +28,8 @@ class SeenmailController extends Controller
 
         ],[
             'ten_su_kien.required'=>'bạn chưa nhập tên sự kiện',
-            'email.required'=>'bạn chưa nhập email',
+            'email.required'=>'bạn chưa nhập email khách hàng',
+            'emailc.required'=>'bạn chưa nhập email chủ event',
             'ten_khach_hang.required'=>'bạn chưa nhập tên khách hàng',
             'so_ve.required'=>'bạn chưa chọn số vé',
             'cho_ngoi.required'=>'bạn chưa nhập chỗ ngồi',
@@ -38,6 +40,7 @@ class SeenmailController extends Controller
         $data = [
             'ten_su_kien' => $request->ten_su_kien,
             'email' => $request->email,
+            'emailc' => $request->emailc,
             'ten_khach_hang' => $request->ten_khach_hang,
             'so_ve' => $request->so_ve,
             'cho_ngoi' => $request->cho_ngoi,
@@ -50,6 +53,7 @@ class SeenmailController extends Controller
         Mail::send('admin.thongbao.layoutmail', $data, function ($message) use ($data) {
             $message->from('hotroaevent@gmail.com', 'Hỗ trợ Aevent');
             $message->to($data['email'], 'Khách hàng');
+            $message->to($data['emailc'], 'Khách hàng');
             $message->subject($data['ten_su_kien']);
             $message->subject($data['ten_khach_hang']);
             $message->subject($data['so_ve']);
