@@ -51,7 +51,8 @@
                                     <th>Giá vé VIP</th>
 
 
-                                    <th>Số lượng vé</th>
+                                    <th>Số lượng vé thường</th>
+                                    <th>Số lượng vé vip</th>
                                     <th>Nơi diễn ra <br>
                                     sự kiện</th>
                                     <th>Tóm tắt</th>
@@ -75,7 +76,7 @@
                                     <th>{{$duyet->id}}</th>
                                     <td>{{$duyet->ten_su_kien}}</td>
                                     <td>{{$duyet->type_events->ten_loai}}</td>
-                                    <td><img src="images/logo/{{$duyet->logo}}" width="50" height="50"> : {{$duyet->nha_tai_tro}}</td>                       
+                                    <td><img src="images/logo/{{$duyet->logo}}" width="50" height="50"> : {{$duyet->nha_tai_tro}}</td>
                                     <td><img src="images/product/{{$duyet->banner}}" width="120"  height="50"/></td>
                                     <td>{{$duyet->ngay_dien_ra}}</td>
                                     <td>{{$duyet->ngay_ban}}</td>
@@ -85,7 +86,8 @@
                                     <td>{{$duyet->vi_tri_ve_vip}}</td>
                                     <td>{{$duyet->qua_tang_vip}}</td>
                                     <td>{{number_format($duyet->gia_ve_vip)}}</td>
-                                    <td>{{$duyet->so_luong_ve}}</td>
+                                    <td>{{$duyet->so_luong_ve_thuong}}</td>
+                                    <td>{{$duyet->so_luong_ve_vip}}</td>
                                     <td>{{$duyet->dia_chi}}</td>
                                     <td>{{$duyet->tom_tat}}</td>
                                     <td>{{$duyet->mo_ta}}</td>
@@ -155,7 +157,8 @@
                                     <th>Giá vé VIP</th>
 
 
-                                    <th>Số lượng vé</th>
+                                    <th>Số lượng vé thường</th>
+                                    <th>Số lượng vé vip</th>
                                     <th>Nơi diễn ra <br>
                                     sự kiện</th>
                                     <th>Tóm tắt</th>
@@ -194,7 +197,8 @@
                                     <td>{{$event->vi_tri_ve_vip}}</td>
                                     <td>{{$event->qua_tang_vip}}</td>
                                     <td>{{number_format($event->gia_ve_vip)}} VNĐ</td>
-                                    <td>{{$event->so_luong_ve}}</td>
+                                    <td>{{$event->so_luong_ve_thuong}}</td>
+                                    <td>{{$event->so_luong_ve_vip}}</td>
                                     <td>{{$event->dia_chi}}</td>
                                     <td>{{$event->tom_tat}}</td>
                                     <td class="text-over" style="max-width: 500px; overflow: hidden; text-overflow: ellipsis; -webkit-line-clamp: 3; height: 75px;-webkit-box-orient: vertical;">{{$event->mo_ta}}</td>

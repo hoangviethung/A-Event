@@ -110,8 +110,12 @@
                                 <input class="form-control" name="gia_ve"  value="{{$event->gia_ve_vip}}" type="number"/>
                             </div>
                             <div class="form-group">
-                                <label>Số lượng vé</label>
-                                <input class="form-control" name="so_luong_ve" value="{{$event->so_luong_ve}}" type="text"/>
+                                <label>Số lượng vé thường</label>
+                                <input class="form-control" name="so_luong_ve_thuong" value="{{$event->so_luong_ve_thuong}}" type="text"/>
+                            </div>
+                            <div class="form-group">
+                                <label>Số lượng vé vip</label>
+                                <input class="form-control" name="so_luong_ve_vip" value="{{$event->so_luong_ve_vip}}" type="text"/>
                             </div>
                             <div class="form-group">
                                 <label>Nơi diễn ra sự kiện</label>

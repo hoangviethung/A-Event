@@ -209,12 +209,12 @@
                         </div>
                     </div> -->
                     <div class="form-group col-lg-6">
-                        <label>Số lượng vé</label>
+                        <label>Số lượng vé thường</label>
                         <div class="form-input">
-                            <input type="number" name="so_luong_ve"  placeholder="Nhập số lượng">
-                            @if($errors->has('so_luong_ve'))
+                            <input type="number" name="so_luong_ve_thuong"  placeholder="Nhập số lượng">
+                            @if($errors->has('so_luong_ve_thuong'))
                                 <span class="error" style="text-align: left !important; display: block; color: red;font-family: K2D,sans-serif;line-height: 1.3; font-size: 18px; padding-top: 5px;margin: 0;">
-                                    {{$errors->first('so_luong_ve')}}
+                                    {{$errors->first('so_luong_ve_thuong')}}
                                 </span>
                             @endif
                         </div>

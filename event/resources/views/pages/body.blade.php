@@ -21,7 +21,7 @@
                                                         <p>{!! $slide->tom_tat !!}</p>
                                                         <p><?php $origDate = "$slide->ngay_dien_ra";
 
-                                                            $newDate = date(" \N\g\à\y\: d \T\h\á\\n\\g\: m \N\ă\m\: Y", strtotime($origDate));
+                                                            $newDate = date(" \N\g\à\y\ d, \T\h\á\\n\\g\ m, \N\ă\m\ Y", strtotime($origDate));
                                                             echo $newDate; ?>
  - {{$slide->dia_chi}} ({{$slide->thoi_gian}})</p>
 												</div>
