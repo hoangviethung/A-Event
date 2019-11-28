@@ -20,25 +20,18 @@ class BookingController extends Controller
             return $next($request);
         });
     }
-    public function getBookingone(){
-        return view('pages.bookingone');
+    public function getBookingone(Request $req){
+        $bookingone = Events::where('id',$req->id)->first();
+        return view('pages.bookingone',compact('bookingone'));
     }
-    public function postBookingone(Request $req){
-        $bills = new Bills;
-        $bill->id_event = $req->id_event;
-        $bill->ten_nguoi_mua = $req->ten_nguoi_mua;
-        $bill->phone = $req->phone;
-        $bill->email = $req->email;
-        $bill->ngay_mua = $req->ngay_mua;
-        $bill->tong_tien = $req->tong_tien;
-        $bill->save();
-
-        $event = new Events;
-
+    public function getBookingtwo(Request $req){
+        // print_r( $req->quantity1);
+        // exit;
+        $bookingtwo = Events::where('id',$req->id)->first();
+        return view('pages.bookingtwo',compact('bookingtwo'));
     }
-
-
-    public function getBookingtwo(){
-        return view('pages.bookingtwo');
+    public function postBookingtwo(Request $req){
+        $bookingtwo = Events::where('id',$req->id)->first();
+        return view('pages.bookingtwo',['bookingtwo'=>$bookingtwo,'quantity1'=>$req->quantity1,'quantity2'=>$req->quantity2,'tong_tien_thuong'=>$req->tong_tien_thuong,'tong_tien_vip'=>$req->tong_tien_vip,'tong_cong'=>$req->tong_cong]);
     }
 }
