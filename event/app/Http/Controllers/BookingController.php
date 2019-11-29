@@ -31,6 +31,13 @@ class BookingController extends Controller
         return view('pages.bookingtwo',compact('bookingtwo'));
     }
     public function postBookingtwo(Request $req){
+        // $this->validate($req,[
+
+        // ],
+        // [
+
+        // ]);
+        
         $bookingtwo = Events::where('id',$req->id)->first();
         return view('pages.bookingtwo',['bookingtwo'=>$bookingtwo,'quantity1'=>$req->quantity1,'quantity2'=>$req->quantity2,'tong_tien_thuong'=>$req->tong_tien_thuong,'tong_tien_vip'=>$req->tong_tien_vip,'tong_cong'=>$req->tong_cong]);
     }

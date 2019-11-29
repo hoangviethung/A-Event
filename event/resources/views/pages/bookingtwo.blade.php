@@ -72,7 +72,7 @@
                                         <tr>
                                             <td>
                                                 <div class="loaive">Hạng VIP</div>
-                                                <div class="gia">{{$bookingtwo->gia_ve_vip}}</div>
+                                                <div class="gia">{{$bookingtwo->gia_ve}}</div>
                                             </td>
                                             <td>
                                                 <div class="soluong">{{$quantity2}}</div>
@@ -92,8 +92,13 @@
                 </div>
             </div>
             @else
-                <div class="alert alert-danger">
-                    Chưa chọn vé
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="alert alert-danger" style="width: 100%; background-color: #ffd800; padding: 100px; margin: 0;height: 100%;
+                        text-align: center; font-size: 48px; font-family: Anton,sans-serif;"> 
+                            Bạn chưa chọn vé
+                        </div>
+                    </div>
                 </div>
                 @endif
         </section>
