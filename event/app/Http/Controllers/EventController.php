@@ -43,7 +43,8 @@ class EventController extends Controller
             'dia_chi' => 'required',
             'ngay_ban' => 'required',
             'mo_ta' => 'required',
-            'so_luong_ve' => 'required|integer|',
+            'so_luong_ve_thuong' => 'required|integer|',
+            'so_luong_ve_vip' => 'required|integer|',
         ],
         [
             'ten_su_kien.required' => ' Bạn chưa nhập tên sự kiện',
@@ -64,6 +65,8 @@ class EventController extends Controller
             'vi_tri_ve_thuong.max' => 'Nhập vị trí ngồi của vé thường( Không được quá 10 -> 200 kí tự )',
             'qua_tang_thuong.max' => 'Nhập quà tặng của vé thường( Không được quá 10 -> 200 kí tự )',
             'qua_tang_thuong.min' => 'Nhập quà tặng của vé thường( Không được quá 10 -> 200 kí tự )',
+            'qua_tang_thuong.vip' => 'Nhập quà tặng của vé vip( Không được quá 10 -> 200 kí tự )',
+            'qua_tang_thuong.vip' => 'Nhập quà tặng của vé vip( Không được quá 10 -> 200 kí tự )',
             'vi_tri_ve_vip.min' => 'Nhập vị trí ngồi của vé vip( Không được quá 10 -> 200 kí tự )',
             'vi_tri_ve_vip.max' => 'Nhập vị trí ngồi của vé vip( Không được quá 10 -> 200 kí tự )',
             'gia_ve.integer' => 'Giá vé phải là số ',
@@ -76,8 +79,10 @@ class EventController extends Controller
             'dia_chi.required' => 'Bạn chưa nhập nơi diễn ra sự kiện',
             'ngay_ban.required' => 'Bạn chưa nhập ngày bán vé',
             'mo_ta.required' => 'Bạn chưa nhập mô tả sự kiện',
-            'so_luong_ve.required' => 'Bạn chưa nhập số lượng vé',
-            'so_luong_ve.integer' => ' Số lượng phải là số'
+            'so_luong_ve_thuong.required' => 'Bạn chưa nhập số lượng vé thường',
+            'so_luong_ve_thuong.integer' => ' Số lượng phải là số',
+            'so_luong_ve_vip.required' => 'Bạn chưa nhập số lượng vé vip',
+            'so_luong_ve_vip.integer' => ' Số lượng phải là số'
 
 
 
@@ -101,7 +106,8 @@ class EventController extends Controller
         $event->ngay_ban = $request->ngay_ban;
         $event->tom_tat = $request->tom_tat;
         $event->mo_ta = $request->mo_ta;
-        $event->so_luong_ve = $request->so_luong_ve;
+        $event->so_luong_ve_thuong = $request->so_luong_ve_thuong;
+        $event->so_luong_ve_vip = $request->so_luong_ve_vip;
         $event->hien_thi_slider = $request->hien_thi_slider;
         $event->hien_thi_noi_bat = $request->hien_thi_noi_bat;
         $event->duyet = $request->duyet;
@@ -162,7 +168,8 @@ class EventController extends Controller
             'dia_chi' => 'required',
             'ngay_ban' => 'required',
             'mo_ta' => 'required',
-            'so_luong_ve' => 'required|integer|',
+            'so_luong_ve_thuong' => 'required|integer|',
+            'so_luong_ve_vip' => 'required|integer|',
         ],[
             'ten_su_kien.required' => ' Bạn chưa nhập tên sự kiện',
             'ten_su_kien.min' => ' Tên sự kiện phải có từ 3 đến 100 ký tự',
@@ -192,8 +199,10 @@ class EventController extends Controller
             'dia_chi.required' => 'Bạn chưa nhập nơi diễn ra sự kiện',
             'ngay_ban.required' => 'Bạn chưa nhập ngày bán vé',
             'mo_ta.required' => 'Bạn chưa nhập mô tả sự kiện',
-            'so_luong_ve.required' => 'Bạn chưa nhập số lượng vé',
-            'so_luong_ve.integer' => ' Số lượng phải là số'
+            'so_luong_ve_thuong.required' => 'Bạn chưa nhập số lượng vé thường',
+            'so_luong_ve_thuong.integer' => ' Số lượng phải là số',
+            'so_luong_ve_vip.required' => 'Bạn chưa nhập số lượng vé vip',
+            'so_luong_ve_vip.integer' => ' Số lượng phải là số'
         ]);
 
 
@@ -214,7 +223,8 @@ class EventController extends Controller
         $event->ngay_ban = $request->ngay_ban;
         $event->tom_tat = $request->tom_tat;
         $event->mo_ta = $request->mo_ta;
-        $event->so_luong_ve = $request->so_luong_ve;
+        $event->so_luong_ve_thuong = $request->so_luong_ve_thuong;
+        $event->so_luong_ve_vip = $request->so_luong_ve_vip;
         $event->hien_thi_slider = $request->hien_thi_slider;
         $event->hien_thi_noi_bat = $request->hien_thi_noi_bat;
         $event->duyet = $request->duyet;

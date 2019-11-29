@@ -105,8 +105,13 @@
 
                             <div class="form-group">
 
-                                <label>Số lượng vé</label>
-                                <input class="form-control" name="so_luong_ve" type="text"/>
+                                <label>Số lượng vé< thường </label>
+                                <input class="form-control" name="so_luong_ve_thuong" type="text"/>
+                            </div>
+                            <div class="form-group">
+
+                                <label>Số lượng vé vip</label>
+                                <input class="form-control" name="so_luong_ve_vip" type="text"/>
                             </div>
                             <div class="form-group">
                                 <label>Nơi diễn ra sự kiện</label>

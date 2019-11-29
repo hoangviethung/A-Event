@@ -3,17 +3,18 @@
     <main>
         <section class="booking-step-1">
             <div class="banner-event">
-                <figure><img class="ofc" src="images/banner/5.png" alt="event"></figure>
+                <figure><img class="ofc" src="images/product/{{$bookingtwo->banner}}" alt="event"></figure>
             </div>
             <nav>
                 <div class="container">
                     <ul>
-                        <li class="item"><a href="{{ url('pages/bookingone') }}">Chọn vé</a></li>
-                        <li class="item active"><a href="{{ url('pages/bookingtwo') }}">Thanh toán</a></li>
+                        <li class="item"><a href="{{ url('pages/bookingone',$bookingtwo->id) }}">Chọn vé</a></li>
+                        <li class="item active"><a href="{{ url('pages/bookingtwo',$bookingtwo->id) }}">Thanh toán</a></li>
                         <li class="item">Hoàn tất</li>
                     </ul>
                 </div>
             </nav>
+            @if(isset($quantity1))
             <div class="booking">
                 <div class="container">
                     <div class="row">
@@ -25,12 +26,8 @@
                                 <form action="#">
                                     <div class="form-row">
                                         <div class="form-group col-lg-6">
-                                            <label for="firstname">Họ*</label>
+                                            <label for="firstname">Họ và Tên*</label>
                                             <input id="firstname" type="text" name="" placeholder="Nhập họ của bạn">
-                                        </div>
-                                        <div class="form-group col-lg-6">
-                                            <label for="lastname">Tên*</label>
-                                            <input id="lastname" type="text" name="" placeholder="Nhập tên của bạn">
                                         </div>
                                         <div class="form-group col-lg-6">
                                             <label for="email">Email*</label>
@@ -52,7 +49,7 @@
                         <div class="col-lg-4">
                             <div class="box-price">
                                 <div class="title-box">
-                                    <h3>THÔNG TIN ĐẶT VÉ</h3><a href="{{ url('pages/bookingone') }}">Sửa</a>
+                                    <h3>THÔNG TIN ĐẶT VÉ</h3><a href="{{ url('pages/bookingone',$bookingtwo->id) }}">Sửa</a>
                                 </div>
                                 <table>
                                     <thead>
@@ -64,27 +61,27 @@
                                     <tbody>
                                         <tr>
                                             <td>
-                                                <div class="loaive">Hạng A</div>
-                                                <div class="gia">4.500.000</div>
+                                                <div class="loaive">Hạng THƯỜNG</div>
+                                                <div class="gia">{{$bookingtwo->gia_ve}}</div>
                                             </td>
                                             <td>
-                                                <div class="soluong">3</div>
-                                                <div class="tonggia">13.500.000</div>
+                                                <div class="soluong">{{$quantity1}}</div>
+                                                <div class="tonggia">{{$tong_tien_thuong}}</div>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>
-                                                <div class="loaive">Hạng B</div>
-                                                <div class="gia">3.500.000</div>
+                                                <div class="loaive">Hạng VIP</div>
+                                                <div class="gia">{{$bookingtwo->gia_ve_vip}}</div>
                                             </td>
                                             <td>
-                                                <div class="soluong">1</div>
-                                                <div class="tonggia">3.500.000</div>
+                                                <div class="soluong">{{$quantity2}}</div>
+                                                <div class="tonggia">{{$tong_tien_vip}}</div>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>Tổng cộng</td>
-                                            <td>17.000.000</td>
+                                            <td>{{$tong_cong}}</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -94,6 +91,11 @@
                     </div>
                 </div>
             </div>
+            @else
+                <div class="alert alert-danger">
+                    Chưa chọn vé
+                </div>
+                @endif
         </section>
     </main>
 

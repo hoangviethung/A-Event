@@ -12,7 +12,12 @@
 							<div class="col-lg-8">
 								<div class="overview">
 									<h1 class="wow fadeInLeft" data-wow-delay=".3s">{{$chitiet->ten_su_kien}}</h1>
-									<div class="item time wow fadeInLeft" data-wow-delay=".6s">{{$chitiet->ngay_dien_ra}}</div>
+									<div class="item time wow fadeInLeft" data-wow-delay=".6s">
+                                    <?php $origDate = "$chitiet->ngay_dien_ra";
+                                    $newDate = date(" \N\g\à\y\ d, \T\h\á\\n\\g\ m, \N\ă\m\ Y", strtotime($origDate));
+                                    echo $newDate;
+                                    ?>
+                                    </div>
 									<div class="item address wow fadeInLeft" data-wow-delay=".9s">{{$chitiet->dia_chi}}</div>
 								</div>
 								<div class="details-event">
@@ -50,7 +55,7 @@
                                     <div class="gmap">
 										<div class="title">BẢN ĐỒ</div>
 										<div class="google-map">
-                                        <div id="map" class="mapouter"><div class="gmap_canvas"><iframe width="670" height="500" id="gmap_canvas"
+                                        <div id="map" class="mapouter"><div class="gmap_canvas"><iframe width="870" height="500" id="gmap_canvas"
                                         src="https://maps.google.com/maps?q={{$chitiet->dia_chi}}&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.divi-discounts.com">elegant drag & drop builder</a></div><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div>
 										</div>
 
@@ -89,7 +94,9 @@
 								<div class="box-booking"><a class="btn wow flipInX" href="{{ url('pages/bookingone',$chitiet->id) }}" data-wow-delay=".5s">MUA VÉ NGAY</a>
 									<div class="overview">
 										<h1>{{$chitiet->ten_su_kien}}</h1>
-										<div class="item time">{{$chitiet->ngay_dien_ra}} | {{$chitiet->thoi_gian}}</div>
+										<div class="item time"><?php $origDate = "$chitiet->ngay_dien_ra";
+                                        $newDate = date(" \N\g\à\y\ d, \T\h\á\\n\\g\ m, \N\ă\m\ Y", strtotime($origDate));
+                                        echo $newDate; ?> ( {{$chitiet->thoi_gian}} )</div>
 										<div class="item address">{{$chitiet->dia_chi}}</div>
 										<div class="item price">Từ {{number_format($chitiet->gia_ve)}} VNĐ</div>
 									</div>

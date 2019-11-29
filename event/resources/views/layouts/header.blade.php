@@ -16,6 +16,7 @@
         <style>
             .gmap_canvas{
                 width: 100% !important;
+                height: auto !important;
             }
         </style>
 	</head>

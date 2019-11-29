@@ -73,10 +73,7 @@ class PagesController extends Controller
         return view('pages.chitiet',compact('chitiet'));
     }
 
-    public function getBookingone(Request $req){
-        $bookingone = Events::where('id',$req->id)->first();
-        return view('pages.bookingone',compact('bookingone'));
-    }
+
 
     public function getDanhmuc($id)
     {
