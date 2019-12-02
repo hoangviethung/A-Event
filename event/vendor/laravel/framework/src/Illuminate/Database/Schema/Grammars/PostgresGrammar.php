@@ -233,23 +233,39 @@ class PostgresGrammar extends Grammar
     /**
      * Compile the SQL needed to retrieve all table names.
      *
+<<<<<<< HEAD
      * @param  string  $schema
+=======
+     * @param  string|array  $schema
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * @return string
      */
     public function compileGetAllTables($schema)
     {
+<<<<<<< HEAD
         return "select tablename from pg_catalog.pg_tables where schemaname = '{$schema}'";
+=======
+        return "select tablename from pg_catalog.pg_tables where schemaname in ('".implode("','", (array) $schema)."')";
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 
     /**
      * Compile the SQL needed to retrieve all view names.
      *
+<<<<<<< HEAD
      * @param  string  $schema
+=======
+     * @param  string|array  $schema
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * @return string
      */
     public function compileGetAllViews($schema)
     {
+<<<<<<< HEAD
         return "select viewname from pg_catalog.pg_views where schemaname = '{$schema}'";
+=======
+        return "select viewname from pg_catalog.pg_views where schemaname in ('".implode("','", (array) $schema)."')";
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 
     /**
@@ -788,7 +804,11 @@ class PostgresGrammar extends Grammar
      */
     protected function typeGeometry(Fluent $column)
     {
+<<<<<<< HEAD
         return $this->formatPostGisType('geometry');
+=======
+        return $this->formatPostGisType('geometry', $column);
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 
     /**
@@ -799,7 +819,11 @@ class PostgresGrammar extends Grammar
      */
     protected function typePoint(Fluent $column)
     {
+<<<<<<< HEAD
         return $this->formatPostGisType('point');
+=======
+        return $this->formatPostGisType('point', $column);
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 
     /**
@@ -810,7 +834,11 @@ class PostgresGrammar extends Grammar
      */
     protected function typeLineString(Fluent $column)
     {
+<<<<<<< HEAD
         return $this->formatPostGisType('linestring');
+=======
+        return $this->formatPostGisType('linestring', $column);
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 
     /**
@@ -821,7 +849,11 @@ class PostgresGrammar extends Grammar
      */
     protected function typePolygon(Fluent $column)
     {
+<<<<<<< HEAD
         return $this->formatPostGisType('polygon');
+=======
+        return $this->formatPostGisType('polygon', $column);
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 
     /**
@@ -832,7 +864,11 @@ class PostgresGrammar extends Grammar
      */
     protected function typeGeometryCollection(Fluent $column)
     {
+<<<<<<< HEAD
         return $this->formatPostGisType('geometrycollection');
+=======
+        return $this->formatPostGisType('geometrycollection', $column);
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 
     /**
@@ -843,7 +879,11 @@ class PostgresGrammar extends Grammar
      */
     protected function typeMultiPoint(Fluent $column)
     {
+<<<<<<< HEAD
         return $this->formatPostGisType('multipoint');
+=======
+        return $this->formatPostGisType('multipoint', $column);
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 
     /**
@@ -854,7 +894,11 @@ class PostgresGrammar extends Grammar
      */
     public function typeMultiLineString(Fluent $column)
     {
+<<<<<<< HEAD
         return $this->formatPostGisType('multilinestring');
+=======
+        return $this->formatPostGisType('multilinestring', $column);
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 
     /**
@@ -865,7 +909,11 @@ class PostgresGrammar extends Grammar
      */
     protected function typeMultiPolygon(Fluent $column)
     {
+<<<<<<< HEAD
         return $this->formatPostGisType('multipolygon');
+=======
+        return $this->formatPostGisType('multipolygon', $column);
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 
     /**
@@ -876,18 +924,39 @@ class PostgresGrammar extends Grammar
      */
     protected function typeMultiPolygonZ(Fluent $column)
     {
+<<<<<<< HEAD
         return $this->formatPostGisType('multipolygonz');
+=======
+        return $this->formatPostGisType('multipolygonz', $column);
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 
     /**
      * Format the column definition for a PostGIS spatial type.
      *
      * @param  string  $type
+<<<<<<< HEAD
      * @return string
      */
     private function formatPostGisType(string $type)
     {
         return "geography($type, 4326)";
+=======
+     * @param  \Illuminate\Support\Fluent  $column
+     * @return string
+     */
+    private function formatPostGisType(string $type, Fluent $column)
+    {
+        if ($column->isGeometry === null) {
+            return sprintf('geography(%s, %s)', $type, $column->projection ?? '4326');
+        }
+
+        if ($column->projection !== null) {
+            return sprintf('geometry(%s, %s)', $type, $column->projection);
+        }
+
+        return "geometry({$type})";
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 
     /**

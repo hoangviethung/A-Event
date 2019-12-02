@@ -20,8 +20,11 @@ use Symfony\Component\Mime\Part\TextPart;
  * Implements RFC 7578.
  *
  * @author Fabien Potencier <fabien@symfony.com>
+<<<<<<< HEAD
  *
  * @experimental in 4.3
+=======
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
  */
 final class FormDataPart extends AbstractMultipartPart
 {
@@ -58,16 +61,37 @@ final class FormDataPart extends AbstractMultipartPart
     private function prepareFields(array $fields): array
     {
         $values = [];
+<<<<<<< HEAD
         array_walk_recursive($fields, function ($item, $key) use (&$values) {
             if (!\is_array($item)) {
                 $values[] = $this->preparePart($key, $item);
             }
         });
+=======
+
+        $prepare = function ($item, $key, $root = null) use (&$values, &$prepare) {
+            $fieldName = $root ? sprintf('%s[%s]', $root, $key) : $key;
+
+            if (\is_array($item)) {
+                array_walk($item, $prepare, $fieldName);
+
+                return;
+            }
+
+            $values[] = $this->preparePart($fieldName, $item);
+        };
+
+        array_walk($fields, $prepare);
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
         return $values;
     }
 
+<<<<<<< HEAD
     private function preparePart($name, $value): TextPart
+=======
+    private function preparePart(string $name, $value): TextPart
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         if (\is_string($value)) {
             return $this->configurePart($name, new TextPart($value, 'utf-8', 'plain', '8bit'));

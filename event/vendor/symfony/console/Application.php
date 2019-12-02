@@ -41,10 +41,19 @@ use Symfony\Component\Console\Output\ConsoleOutput;
 use Symfony\Component\Console\Output\ConsoleOutputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
+<<<<<<< HEAD
 use Symfony\Component\Debug\ErrorHandler;
 use Symfony\Component\Debug\Exception\FatalThrowableError;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\EventDispatcher\LegacyEventDispatcherProxy;
+=======
+use Symfony\Component\Debug\ErrorHandler as LegacyErrorHandler;
+use Symfony\Component\Debug\Exception\FatalThrowableError;
+use Symfony\Component\ErrorHandler\ErrorHandler;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Symfony\Component\EventDispatcher\LegacyEventDispatcherProxy;
+use Symfony\Contracts\Service\ResetInterface;
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
 /**
  * An Application is the container for a collection of commands.
@@ -61,7 +70,11 @@ use Symfony\Component\EventDispatcher\LegacyEventDispatcherProxy;
  *
  * @author Fabien Potencier <fabien@symfony.com>
  */
+<<<<<<< HEAD
 class Application
+=======
+class Application implements ResetInterface
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 {
     private $commands = [];
     private $wantHelps = false;
@@ -124,6 +137,7 @@ class Application
             $output = new ConsoleOutput();
         }
 
+<<<<<<< HEAD
         $renderException = function ($e) use ($output) {
             if (!$e instanceof \Exception) {
                 $e = class_exists(FatalThrowableError::class) ? new FatalThrowableError($e) : new \ErrorException($e->getMessage(), $e->getCode(), E_ERROR, $e->getFile(), $e->getLine());
@@ -132,14 +146,28 @@ class Application
                 $this->renderException($e, $output->getErrorOutput());
             } else {
                 $this->renderException($e, $output);
+=======
+        $renderException = function (\Throwable $e) use ($output) {
+            if ($output instanceof ConsoleOutputInterface) {
+                $this->renderThrowable($e, $output->getErrorOutput());
+            } else {
+                $this->renderThrowable($e, $output);
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
             }
         };
         if ($phpHandler = set_exception_handler($renderException)) {
             restore_exception_handler();
+<<<<<<< HEAD
             if (!\is_array($phpHandler) || !$phpHandler[0] instanceof ErrorHandler) {
                 $debugHandler = true;
             } elseif ($debugHandler = $phpHandler[0]->setExceptionHandler($renderException)) {
                 $phpHandler[0]->setExceptionHandler($debugHandler);
+=======
+            if (!\is_array($phpHandler) || (!$phpHandler[0] instanceof ErrorHandler && !$phpHandler[0] instanceof LegacyErrorHandler)) {
+                $errorHandler = true;
+            } elseif ($errorHandler = $phpHandler[0]->setExceptionHandler($renderException)) {
+                $phpHandler[0]->setExceptionHandler($errorHandler);
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
             }
         }
 
@@ -171,7 +199,11 @@ class Application
                     restore_exception_handler();
                 }
                 restore_exception_handler();
+<<<<<<< HEAD
             } elseif (!$debugHandler) {
+=======
+            } elseif (!$errorHandler) {
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
                 $finalHandler = $phpHandler[0]->setExceptionHandler(null);
                 if ($finalHandler !== $renderException) {
                     $phpHandler[0]->setExceptionHandler($finalHandler);
@@ -276,6 +308,16 @@ class Application
         return $exitCode;
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * {@inheritdoc}
+     */
+    public function reset()
+    {
+    }
+
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     public function setHelperSet(HelperSet $helperSet)
     {
         $this->helperSet = $helperSet;
@@ -626,6 +668,13 @@ class Application
             }
         }
 
+<<<<<<< HEAD
+=======
+        if ($this->has($name)) {
+            return $this->get($name);
+        }
+
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         $allCommands = $this->commandLoader ? array_merge($this->commandLoader->getNames(), array_keys($this->commands)) : array_keys($this->commands);
         $expr = preg_replace_callback('{([^:]+|)}', function ($matches) { return preg_quote($matches[1]).'[^:]*'; }, $name);
         $commands = preg_grep('{^'.$expr.'}', $allCommands);
@@ -671,20 +720,33 @@ class Application
             }));
         }
 
+<<<<<<< HEAD
         $exact = \in_array($name, $commands, true) || isset($aliases[$name]);
         if (\count($commands) > 1 && !$exact) {
+=======
+        if (\count($commands) > 1) {
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
             $usableWidth = $this->terminal->getWidth() - 10;
             $abbrevs = array_values($commands);
             $maxLen = 0;
             foreach ($abbrevs as $abbrev) {
                 $maxLen = max(Helper::strlen($abbrev), $maxLen);
             }
+<<<<<<< HEAD
             $abbrevs = array_map(function ($cmd) use ($commandList, $usableWidth, $maxLen) {
+=======
+            $abbrevs = array_map(function ($cmd) use ($commandList, $usableWidth, $maxLen, &$commands) {
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
                 if (!$commandList[$cmd] instanceof Command) {
                     $commandList[$cmd] = $this->commandLoader->get($cmd);
                 }
 
                 if ($commandList[$cmd]->isHidden()) {
+<<<<<<< HEAD
+=======
+                    unset($commands[array_search($cmd, $commands)]);
+
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
                     return false;
                 }
 
@@ -692,12 +754,30 @@ class Application
 
                 return Helper::strlen($abbrev) > $usableWidth ? Helper::substr($abbrev, 0, $usableWidth - 3).'...' : $abbrev;
             }, array_values($commands));
+<<<<<<< HEAD
             $suggestions = $this->getAbbreviationSuggestions(array_filter($abbrevs));
 
             throw new CommandNotFoundException(sprintf("Command \"%s\" is ambiguous.\nDid you mean one of these?\n%s", $name, $suggestions), array_values($commands));
         }
 
         return $this->get($exact ? $name : reset($commands));
+=======
+
+            if (\count($commands) > 1) {
+                $suggestions = $this->getAbbreviationSuggestions(array_filter($abbrevs));
+
+                throw new CommandNotFoundException(sprintf("Command \"%s\" is ambiguous.\nDid you mean one of these?\n%s", $name, $suggestions), array_values($commands));
+            }
+        }
+
+        $command = $this->get(reset($commands));
+
+        if ($command->isHidden()) {
+            @trigger_error(sprintf('Command "%s" is hidden, finding it using an abbreviation is deprecated since Symfony 4.4, use its full name instead.', $command->getName()), E_USER_DEPRECATED);
+        }
+
+        return $command;
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 
     /**
@@ -768,21 +848,92 @@ class Application
 
     /**
      * Renders a caught exception.
+<<<<<<< HEAD
      */
     public function renderException(\Exception $e, OutputInterface $output)
     {
+=======
+     *
+     * @deprecated since Symfony 4.4, use "renderThrowable()" instead
+     */
+    public function renderException(\Exception $e, OutputInterface $output)
+    {
+        @trigger_error(sprintf('The "%s::renderException()" method is deprecated since Symfony 4.4, use "renderThrowable()" instead.', __CLASS__), E_USER_DEPRECATED);
+
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         $output->writeln('', OutputInterface::VERBOSITY_QUIET);
 
         $this->doRenderException($e, $output);
 
+<<<<<<< HEAD
+=======
+        $this->finishRenderThrowableOrException($output);
+    }
+
+    public function renderThrowable(\Throwable $e, OutputInterface $output): void
+    {
+        if (__CLASS__ !== \get_class($this) && __CLASS__ === (new \ReflectionMethod($this, 'renderThrowable'))->getDeclaringClass()->getName() && __CLASS__ !== (new \ReflectionMethod($this, 'renderException'))->getDeclaringClass()->getName()) {
+            @trigger_error(sprintf('The "%s::renderException()" method is deprecated since Symfony 4.4, use "renderThrowable()" instead.', __CLASS__), E_USER_DEPRECATED);
+
+            if (!$e instanceof \Exception) {
+                $e = class_exists(FatalThrowableError::class) ? new FatalThrowableError($e) : new \ErrorException($e->getMessage(), $e->getCode(), E_ERROR, $e->getFile(), $e->getLine());
+            }
+
+            $this->renderException($e, $output);
+
+            return;
+        }
+
+        $output->writeln('', OutputInterface::VERBOSITY_QUIET);
+
+        $this->doRenderThrowable($e, $output);
+
+        $this->finishRenderThrowableOrException($output);
+    }
+
+    private function finishRenderThrowableOrException(OutputInterface $output): void
+    {
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         if (null !== $this->runningCommand) {
             $output->writeln(sprintf('<info>%s</info>', sprintf($this->runningCommand->getSynopsis(), $this->getName())), OutputInterface::VERBOSITY_QUIET);
             $output->writeln('', OutputInterface::VERBOSITY_QUIET);
         }
     }
 
+<<<<<<< HEAD
     protected function doRenderException(\Exception $e, OutputInterface $output)
     {
+=======
+    /**
+     * @deprecated since Symfony 4.4, use "doRenderThrowable()" instead
+     */
+    protected function doRenderException(\Exception $e, OutputInterface $output)
+    {
+        @trigger_error(sprintf('The "%s::doRenderException()" method is deprecated since Symfony 4.4, use "doRenderThrowable()" instead.', __CLASS__), E_USER_DEPRECATED);
+
+        $this->doActuallyRenderThrowable($e, $output);
+    }
+
+    protected function doRenderThrowable(\Throwable $e, OutputInterface $output): void
+    {
+        if (__CLASS__ !== \get_class($this) && __CLASS__ === (new \ReflectionMethod($this, 'doRenderThrowable'))->getDeclaringClass()->getName() && __CLASS__ !== (new \ReflectionMethod($this, 'doRenderException'))->getDeclaringClass()->getName()) {
+            @trigger_error(sprintf('The "%s::doRenderException()" method is deprecated since Symfony 4.4, use "doRenderThrowable()" instead.', __CLASS__), E_USER_DEPRECATED);
+
+            if (!$e instanceof \Exception) {
+                $e = class_exists(FatalThrowableError::class) ? new FatalThrowableError($e) : new \ErrorException($e->getMessage(), $e->getCode(), E_ERROR, $e->getFile(), $e->getLine());
+            }
+
+            $this->doRenderException($e, $output);
+
+            return;
+        }
+
+        $this->doActuallyRenderThrowable($e, $output);
+    }
+
+    private function doActuallyRenderThrowable(\Throwable $e, OutputInterface $output): void
+    {
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         do {
             $message = trim($e->getMessage());
             if ('' === $message || OutputInterface::VERBOSITY_VERBOSE <= $output->getVerbosity()) {
@@ -1030,12 +1181,17 @@ class Application
 
     /**
      * Returns abbreviated suggestions in string format.
+<<<<<<< HEAD
      *
      * @param array $abbrevs Abbreviated suggestions to convert
      *
      * @return string A formatted string of abbreviated suggestions
      */
     private function getAbbreviationSuggestions($abbrevs)
+=======
+     */
+    private function getAbbreviationSuggestions(array $abbrevs): string
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         return '    '.implode("\n    ", $abbrevs);
     }
@@ -1061,12 +1217,18 @@ class Application
      * Finds alternative of $name among $collection,
      * if nothing is found in $collection, try in $abbrevs.
      *
+<<<<<<< HEAD
      * @param string   $name       The string
      * @param iterable $collection The collection
      *
      * @return string[] A sorted array of similar string
      */
     private function findAlternatives($name, $collection)
+=======
+     * @return string[] A sorted array of similar string
+     */
+    private function findAlternatives(string $name, iterable $collection): array
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $threshold = 1e3;
         $alternatives = [];
@@ -1133,12 +1295,20 @@ class Application
     /**
      * @internal
      */
+<<<<<<< HEAD
     public function isSingleCommand()
+=======
+    public function isSingleCommand(): bool
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         return $this->singleCommand;
     }
 
+<<<<<<< HEAD
     private function splitStringByWidth($string, $width)
+=======
+    private function splitStringByWidth(string $string, int $width): array
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         // str_split is not suitable for multi-byte characters, we should use preg_split to get char array properly.
         // additionally, array_slice() is not enough as some character has doubled width.
@@ -1150,6 +1320,7 @@ class Application
         $utf8String = mb_convert_encoding($string, 'utf8', $encoding);
         $lines = [];
         $line = '';
+<<<<<<< HEAD
         foreach (preg_split('//u', $utf8String) as $char) {
             // test if $char could be appended to current line
             if (mb_strwidth($line.$char, 'utf8') <= $width) {
@@ -1159,6 +1330,23 @@ class Application
             // if not, push current line to array and make new line
             $lines[] = str_pad($line, $width);
             $line = $char;
+=======
+
+        $offset = 0;
+        while (preg_match('/.{1,10000}/u', $utf8String, $m, 0, $offset)) {
+            $offset += \strlen($m[0]);
+
+            foreach (preg_split('//u', $m[0]) as $char) {
+                // test if $char could be appended to current line
+                if (mb_strwidth($line.$char, 'utf8') <= $width) {
+                    $line .= $char;
+                    continue;
+                }
+                // if not, push current line to array and make new line
+                $lines[] = str_pad($line, $width);
+                $line = $char;
+            }
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         }
 
         $lines[] = \count($lines) ? str_pad($line, $width) : $line;
@@ -1171,11 +1359,17 @@ class Application
     /**
      * Returns all namespaces of the command name.
      *
+<<<<<<< HEAD
      * @param string $name The full name of the command
      *
      * @return string[] The namespaces of the command
      */
     private function extractAllNamespaces($name)
+=======
+     * @return string[] The namespaces of the command
+     */
+    private function extractAllNamespaces(string $name): array
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         // -1 as third argument is needed to skip the command short name when exploding
         $parts = explode(':', $name, -1);

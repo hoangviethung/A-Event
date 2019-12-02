@@ -14,9 +14,18 @@
 
 namespace Ramsey\Uuid\Exception;
 
+<<<<<<< HEAD
 /**
  * Thrown to indicate that the parsed UUID string is invalid.
  */
 class InvalidUuidStringException extends \InvalidArgumentException
+=======
+use InvalidArgumentException;
+
+/**
+ * Thrown to indicate that the parsed UUID string is invalid.
+ */
+class InvalidUuidStringException extends InvalidArgumentException
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 {
 }

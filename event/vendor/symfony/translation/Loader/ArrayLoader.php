@@ -25,7 +25,11 @@ class ArrayLoader implements LoaderInterface
      */
     public function load($resource, $locale, $domain = 'messages')
     {
+<<<<<<< HEAD
         $this->flatten($resource);
+=======
+        $resource = $this->flatten($resource);
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         $catalogue = new MessageCatalogue($locale);
         $catalogue->add($resource, $domain);
 
@@ -39,6 +43,7 @@ class ArrayLoader implements LoaderInterface
      *   'key' => ['key2' => ['key3' => 'value']]
      * Becomes:
      *   'key.key2.key3' => 'value'
+<<<<<<< HEAD
      *
      * This function takes an array by reference and will modify it
      *
@@ -62,5 +67,22 @@ class ArrayLoader implements LoaderInterface
                 $messages[$path.'.'.$key] = $value;
             }
         }
+=======
+     */
+    private function flatten(array $messages): array
+    {
+        $result = [];
+        foreach ($messages as $key => $value) {
+            if (\is_array($value)) {
+                foreach ($this->flatten($value) as $k => $v) {
+                    $result[$key.'.'.$k] = $v;
+                }
+            } else {
+                $result[$key] = $value;
+            }
+        }
+
+        return $result;
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 }

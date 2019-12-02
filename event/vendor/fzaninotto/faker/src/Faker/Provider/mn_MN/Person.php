@@ -72,7 +72,11 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Generate an identification number.
+<<<<<<< HEAD
      * 
+=======
+     *
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * @example ИЙ92011412
      */
     public function idNumber()

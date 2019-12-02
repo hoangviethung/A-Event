@@ -62,7 +62,11 @@ class HttpKernel implements HttpKernelInterface, TerminableInterface
      */
     public function handle(Request $request, $type = HttpKernelInterface::MASTER_REQUEST, $catch = true)
     {
+<<<<<<< HEAD
         $request->headers->set('X-Php-Ob-Level', ob_get_level());
+=======
+        $request->headers->set('X-Php-Ob-Level', (string) ob_get_level());
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
         try {
             return $this->handleRaw($request, $type);
@@ -76,7 +80,11 @@ class HttpKernel implements HttpKernelInterface, TerminableInterface
                 throw $e;
             }
 
+<<<<<<< HEAD
             return $this->handleException($e, $request, $type);
+=======
+            return $this->handleThrowable($e, $request, $type);
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         }
     }
 
@@ -91,13 +99,21 @@ class HttpKernel implements HttpKernelInterface, TerminableInterface
     /**
      * @internal
      */
+<<<<<<< HEAD
     public function terminateWithException(\Exception $exception, Request $request = null)
+=======
+    public function terminateWithException(\Throwable $exception, Request $request = null)
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         if (!$request = $request ?: $this->requestStack->getMasterRequest()) {
             throw $exception;
         }
 
+<<<<<<< HEAD
         $response = $this->handleException($exception, $request, self::MASTER_REQUEST);
+=======
+        $response = $this->handleThrowable($exception, $request, self::MASTER_REQUEST);
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
         $response->sendHeaders();
         $response->sendContent();
@@ -110,6 +126,7 @@ class HttpKernel implements HttpKernelInterface, TerminableInterface
      *
      * Exceptions are not caught.
      *
+<<<<<<< HEAD
      * @param Request $request A Request instance
      * @param int     $type    The type of the request (one of HttpKernelInterface::MASTER_REQUEST or HttpKernelInterface::SUB_REQUEST)
      *
@@ -119,6 +136,12 @@ class HttpKernel implements HttpKernelInterface, TerminableInterface
      * @throws NotFoundHttpException When controller cannot be found
      */
     private function handleRaw(Request $request, int $type = self::MASTER_REQUEST)
+=======
+     * @throws \LogicException       If one of the listener does not behave as expected
+     * @throws NotFoundHttpException When controller cannot be found
+     */
+    private function handleRaw(Request $request, int $type = self::MASTER_REQUEST): Response
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $this->requestStack->push($request);
 
@@ -175,6 +198,7 @@ class HttpKernel implements HttpKernelInterface, TerminableInterface
     /**
      * Filters a response object.
      *
+<<<<<<< HEAD
      * @param Response $response A Response instance
      * @param Request  $request  An error message in case the response is not a Response object
      * @param int      $type     The type of the request (one of HttpKernelInterface::MASTER_REQUEST or HttpKernelInterface::SUB_REQUEST)
@@ -184,6 +208,11 @@ class HttpKernel implements HttpKernelInterface, TerminableInterface
      * @throws \RuntimeException if the passed object is not a Response instance
      */
     private function filterResponse(Response $response, Request $request, int $type)
+=======
+     * @throws \RuntimeException if the passed object is not a Response instance
+     */
+    private function filterResponse(Response $response, Request $request, int $type): Response
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $event = new ResponseEvent($this, $request, $type, $response);
 
@@ -208,6 +237,7 @@ class HttpKernel implements HttpKernelInterface, TerminableInterface
     }
 
     /**
+<<<<<<< HEAD
      * Handles an exception by trying to convert it to a Response.
      *
      * @param \Exception $e       An \Exception instance
@@ -217,12 +247,23 @@ class HttpKernel implements HttpKernelInterface, TerminableInterface
      * @throws \Exception
      */
     private function handleException(\Exception $e, Request $request, int $type): Response
+=======
+     * Handles a throwable by trying to convert it to a Response.
+     *
+     * @throws \Exception
+     */
+    private function handleThrowable(\Throwable $e, Request $request, int $type): Response
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $event = new ExceptionEvent($this, $request, $type, $e);
         $this->dispatcher->dispatch($event, KernelEvents::EXCEPTION);
 
         // a listener might have replaced the exception
+<<<<<<< HEAD
         $e = $event->getException();
+=======
+        $e = $event->getThrowable();
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
         if (!$event->hasResponse()) {
             $this->finishRequest($request, $type);

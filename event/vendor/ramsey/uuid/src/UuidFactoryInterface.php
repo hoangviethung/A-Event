@@ -14,6 +14,14 @@
 
 namespace Ramsey\Uuid;
 
+<<<<<<< HEAD
+=======
+use Exception;
+use InvalidArgumentException;
+use Ramsey\Uuid\Exception\InvalidUuidStringException;
+use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
+
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 /**
  * UuidFactoryInterface defines common functionality all `UuidFactory` instances
  * must implement
@@ -29,10 +37,17 @@ interface UuidFactoryInterface
      *     could arise when the clock is set backwards in time or if the node ID
      *     changes.
      * @return UuidInterface
+<<<<<<< HEAD
      * @throws \Ramsey\Uuid\Exception\UnsatisfiedDependencyException if called on a 32-bit system and
      *     `Moontoast\Math\BigNumber` is not present
      * @throws \InvalidArgumentException
      * @throws \Exception if it was not possible to gather sufficient entropy
+=======
+     * @throws UnsatisfiedDependencyException if called on a 32-bit system and
+     *     `Moontoast\Math\BigNumber` is not present
+     * @throws InvalidArgumentException
+     * @throws Exception if it was not possible to gather sufficient entropy
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     public function uuid1($node = null, $clockSeq = null);
 
@@ -40,10 +55,17 @@ interface UuidFactoryInterface
      * Generate a version 3 UUID based on the MD5 hash of a namespace identifier
      * (which is a UUID) and a name (which is a string).
      *
+<<<<<<< HEAD
      * @param string $ns The UUID namespace in which to create the named UUID
      * @param string $name The name to create a UUID for
      * @return UuidInterface
      * @throws \Ramsey\Uuid\Exception\InvalidUuidStringException
+=======
+     * @param string|UuidInterface $ns The UUID namespace in which to create the named UUID
+     * @param string $name The name to create a UUID for
+     * @return UuidInterface
+     * @throws InvalidUuidStringException
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     public function uuid3($ns, $name);
 
@@ -51,9 +73,15 @@ interface UuidFactoryInterface
      * Generate a version 4 (random) UUID.
      *
      * @return UuidInterface
+<<<<<<< HEAD
      * @throws \Ramsey\Uuid\Exception\UnsatisfiedDependencyException if `Moontoast\Math\BigNumber` is not present
      * @throws \InvalidArgumentException
      * @throws \Exception
+=======
+     * @throws UnsatisfiedDependencyException if `Moontoast\Math\BigNumber` is not present
+     * @throws InvalidArgumentException
+     * @throws Exception
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     public function uuid4();
 
@@ -61,10 +89,17 @@ interface UuidFactoryInterface
      * Generate a version 5 UUID based on the SHA-1 hash of a namespace
      * identifier (which is a UUID) and a name (which is a string).
      *
+<<<<<<< HEAD
      * @param string $ns The UUID namespace in which to create the named UUID
      * @param string $name The name to create a UUID for
      * @return UuidInterface
      * @throws \Ramsey\Uuid\Exception\InvalidUuidStringException
+=======
+     * @param string|UuidInterface $ns The UUID namespace in which to create the named UUID
+     * @param string $name The name to create a UUID for
+     * @return UuidInterface
+     * @throws InvalidUuidStringException
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     public function uuid5($ns, $name);
 
@@ -73,8 +108,13 @@ interface UuidFactoryInterface
      *
      * @param string $bytes A 16-byte string representation of a UUID
      * @return UuidInterface
+<<<<<<< HEAD
      * @throws \Ramsey\Uuid\Exception\InvalidUuidStringException
      * @throws \InvalidArgumentException if string has not 16 characters
+=======
+     * @throws InvalidUuidStringException
+     * @throws InvalidArgumentException if string has not 16 characters
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     public function fromBytes($bytes);
 
@@ -83,7 +123,11 @@ interface UuidFactoryInterface
      *
      * @param string $uuid A string representation of a UUID
      * @return UuidInterface
+<<<<<<< HEAD
      * @throws \Ramsey\Uuid\Exception\InvalidUuidStringException
+=======
+     * @throws InvalidUuidStringException
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     public function fromString($uuid);
 
@@ -96,8 +140,13 @@ interface UuidFactoryInterface
      * @param mixed $integer The integer to use when creating a `Uuid` from an
      *     integer; may be of any type understood by the configured number converter
      * @return UuidInterface
+<<<<<<< HEAD
      * @throws \Ramsey\Uuid\Exception\UnsatisfiedDependencyException if `Moontoast\Math\BigNumber` is not present
      * @throws \Ramsey\Uuid\Exception\InvalidUuidStringException
+=======
+     * @throws UnsatisfiedDependencyException if `Moontoast\Math\BigNumber` is not present
+     * @throws InvalidUuidStringException
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     public function fromInteger($integer);
 }

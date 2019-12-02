@@ -16,10 +16,17 @@ use Illuminate\Support\Testing\Fakes\QueueFake;
  * @method static string getConnectionName()
  * @method static \Illuminate\Contracts\Queue\Queue setConnectionName(string $name)
  * @method static void assertNothingPushed()
+<<<<<<< HEAD
  * @method static void assertNotPushed(string $job, \Closure $callback = null)
  * @method static void assertPushed(string $job, \Closure|int $callback = null)
  * @method static void assertPushedOn(string $job, int $times = 1)
  * @method static void assertPushedWithChain(string $queue, string $job, \Closure $callback = null)
+=======
+ * @method static void assertNotPushed(string $job, callable $callback = null)
+ * @method static void assertPushed(string $job, callable|int $callback = null)
+ * @method static void assertPushedOn(string $queue, string $job, callable|int $callback = null)
+ * @method static void assertPushedWithChain(string $job, array $expectedChain = [], callable $callback = null)
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
  *
  * @see \Illuminate\Queue\QueueManager
  * @see \Illuminate\Queue\Queue

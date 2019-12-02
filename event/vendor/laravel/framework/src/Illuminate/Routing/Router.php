@@ -133,6 +133,21 @@ class Router implements BindingRegistrar, RegistrarContract
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Register a new HEAD route with the router.
+     *
+     * @param  string  $uri
+     * @param  \Closure|array|string|callable|null  $action
+     * @return \Illuminate\Routing\Route
+     */
+    public function head($uri, $action = null)
+    {
+        return $this->addRoute('HEAD', $uri, $action);
+    }
+
+    /**
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * Register a new GET route with the router.
      *
      * @param  string  $uri

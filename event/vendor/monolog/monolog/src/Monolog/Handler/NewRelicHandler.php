@@ -12,6 +12,10 @@
 namespace Monolog\Handler;
 
 use Monolog\Logger;
+<<<<<<< HEAD
+=======
+use Monolog\Utils;
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 use Monolog\Formatter\NormalizerFormatter;
 use Monolog\Formatter\FormatterInterface;
 
@@ -182,7 +186,11 @@ class NewRelicHandler extends AbstractProcessingHandler
         if (null === $value || is_scalar($value)) {
             newrelic_add_custom_parameter($key, $value);
         } else {
+<<<<<<< HEAD
             newrelic_add_custom_parameter($key, @json_encode($value));
+=======
+            newrelic_add_custom_parameter($key, Utils::jsonEncode($value, null, true));
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         }
     }
 

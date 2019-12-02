@@ -13,6 +13,10 @@ namespace Monolog\Handler;
 
 use Monolog\Formatter\FormatterInterface;
 use Monolog\Logger;
+<<<<<<< HEAD
+=======
+use Monolog\Utils;
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 use Monolog\Handler\Slack\SlackRecord;
 
 /**
@@ -115,7 +119,11 @@ class SlackHandler extends SocketHandler
         $dataArray['token'] = $this->token;
 
         if (!empty($dataArray['attachments'])) {
+<<<<<<< HEAD
             $dataArray['attachments'] = json_encode($dataArray['attachments']);
+=======
+            $dataArray['attachments'] = Utils::jsonEncode($dataArray['attachments']);
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         }
 
         return $dataArray;

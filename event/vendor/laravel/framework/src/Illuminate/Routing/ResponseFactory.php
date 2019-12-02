@@ -70,7 +70,11 @@ class ResponseFactory implements FactoryContract
     /**
      * Create a new response for a given view.
      *
+<<<<<<< HEAD
      * @param  string  $view
+=======
+     * @param  string|array  $view
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * @param  array  $data
      * @param  int  $status
      * @param  array  $headers
@@ -78,6 +82,13 @@ class ResponseFactory implements FactoryContract
      */
     public function view($view, $data = [], $status = 200, array $headers = [])
     {
+<<<<<<< HEAD
+=======
+        if (is_array($view)) {
+            return $this->make($this->view->first($view, $data), $status, $headers);
+        }
+
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         return $this->make($this->view->make($view, $data), $status, $headers);
     }
 

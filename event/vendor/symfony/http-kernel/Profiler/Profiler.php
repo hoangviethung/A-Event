@@ -12,6 +12,10 @@
 namespace Symfony\Component\HttpKernel\Profiler;
 
 use Psr\Log\LoggerInterface;
+<<<<<<< HEAD
+=======
+use Symfony\Component\Debug\Exception\FatalThrowableError;
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 use Symfony\Component\HttpFoundation\Exception\ConflictingHeadersException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -138,10 +142,21 @@ class Profiler implements ResetInterface
     /**
      * Collects data for the given Response.
      *
+<<<<<<< HEAD
      * @return Profile|null A Profile instance or null if the profiler is disabled
      */
     public function collect(Request $request, Response $response, \Exception $exception = null)
     {
+=======
+     * @param \Throwable|null $exception
+     *
+     * @return Profile|null A Profile instance or null if the profiler is disabled
+     */
+    public function collect(Request $request, Response $response/*, \Throwable $exception = null*/)
+    {
+        $exception = 2 < \func_num_args() ? func_get_arg(2) : null;
+
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         if (false === $this->enabled) {
             return null;
         }
@@ -163,9 +178,20 @@ class Profiler implements ResetInterface
 
         $response->headers->set('X-Debug-Token', $profile->getToken());
 
+<<<<<<< HEAD
         foreach ($this->collectors as $collector) {
             $collector->collect($request, $response, $exception);
 
+=======
+        $wrappedException = null;
+        foreach ($this->collectors as $collector) {
+            if (($e = $exception) instanceof \Error) {
+                $r = new \ReflectionMethod($collector, 'collect');
+                $e = 2 >= $r->getNumberOfParameters() || !($p = $r->getParameters()[2])->hasType() || \Exception::class !== $p->getType()->getName() ? $e : ($wrappedException ?? $wrappedException = new FatalThrowableError($e));
+            }
+
+            $collector->collect($request, $response, $e);
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
             // we need to clone for sub-requests
             $profile->addCollector(clone $collector);
         }

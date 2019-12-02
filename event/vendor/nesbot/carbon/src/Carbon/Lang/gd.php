@@ -8,9 +8,12 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+<<<<<<< HEAD
 \Symfony\Component\Translation\PluralizationRules::set(function ($number) {
     return $number === 1 ? 0 : 1;
 }, 'gd');
+=======
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
 /*
  * Authors:
@@ -19,6 +22,7 @@
  */
 return [
     'year' => ':count bliadhna',
+<<<<<<< HEAD
     'a_year' => 'bliadhna|:count bliadhna',
     'y' => ':count b.',
     'month' => ':count mìosan',
@@ -38,6 +42,27 @@ return [
     'min' => ':count md.',
     'second' => ':count diogan',
     'a_second' => 'beagan diogan|:count diogan',
+=======
+    'a_year' => '{1}bliadhna|:count bliadhna',
+    'y' => ':count b.',
+    'month' => ':count mìosan',
+    'a_month' => '{1}mìos|:count mìosan',
+    'm' => ':count ms.',
+    'week' => ':count seachdainean',
+    'a_week' => '{1}seachdain|:count seachdainean',
+    'w' => ':count s.',
+    'day' => ':count latha',
+    'a_day' => '{1}latha|:count latha',
+    'd' => ':count l.',
+    'hour' => ':count uairean',
+    'a_hour' => '{1}uair|:count uairean',
+    'h' => ':count u.',
+    'minute' => ':count mionaidean',
+    'a_minute' => '{1}mionaid|:count mionaidean',
+    'min' => ':count md.',
+    'second' => ':count diogan',
+    'a_second' => '{1}beagan diogan|:count diogan',
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     's' => ':count d.',
     'ago' => 'bho chionn :time',
     'from_now' => 'ann an :time',

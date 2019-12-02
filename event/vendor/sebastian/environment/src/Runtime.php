@@ -41,11 +41,19 @@ final class Runtime
             return false;
         }
 
+<<<<<<< HEAD
         if (\PHP_SAPI === 'cli' && \ini_get('opcache.enable_cli') === '1') {
             return true;
         }
 
         if (\PHP_SAPI !== 'cli' && \ini_get('opcache.enable') === '1') {
+=======
+        if ((\PHP_SAPI === 'cli' || \PHP_SAPI === 'phpdbg') && \ini_get('opcache.enable_cli') === '1') {
+            return true;
+        }
+
+        if (\PHP_SAPI !== 'cli' && \PHP_SAPI !== 'phpdbg' && \ini_get('opcache.enable') === '1') {
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
             return true;
         }
 

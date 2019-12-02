@@ -16,6 +16,11 @@
  * - JD Isaacks
  * - Nafies Luthfi
  * - Raymundus Jati Primanda (mundusjp)
+<<<<<<< HEAD
+=======
+ * - diankur313
+ * - a-wip0
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
  */
 return [
     'year' => ':count tahun',
@@ -40,7 +45,11 @@ return [
     'a_second' => '{1}beberapa detik|]1,Inf[:count detik',
     's' => ':countdt',
     'ago' => ':time yang lalu',
+<<<<<<< HEAD
     'from_now' => 'dalam :time',
+=======
+    'from_now' => ':time dari sekarang',
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     'after' => ':time setelahnya',
     'before' => ':time sebelumnya',
     'formats' => [

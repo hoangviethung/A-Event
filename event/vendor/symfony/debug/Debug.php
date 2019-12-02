@@ -11,10 +11,20 @@
 
 namespace Symfony\Component\Debug;
 
+<<<<<<< HEAD
+=======
+@trigger_error(sprintf('The "%s" class is deprecated since Symfony 4.4, use "%s" instead.', Debug::class, \Symfony\Component\ErrorHandler\Debug::class), E_USER_DEPRECATED);
+
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 /**
  * Registers all the debug tools.
  *
  * @author Fabien Potencier <fabien@symfony.com>
+<<<<<<< HEAD
+=======
+ *
+ * @deprecated since Symfony 4.4, use Symfony\Component\ErrorHandler\Debug instead.
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
  */
 class Debug
 {

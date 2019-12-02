@@ -2,7 +2,15 @@
     "name": "fzaninotto/faker",
     "type": "library",
     "description": "Faker is a PHP library that generates fake data for you.",
+<<<<<<< HEAD
     "keywords": ["faker", "fixtures", "data"],
+=======
+    "keywords": [
+        "faker",
+        "fixtures",
+        "data"
+    ],
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     "license": "MIT",
     "authors": [
         {
@@ -13,9 +21,15 @@
         "php": "^5.3.3 || ^7.0"
     },
     "require-dev": {
+<<<<<<< HEAD
         "phpunit/phpunit": "^4.8.35 || ^5.7",
         "squizlabs/php_codesniffer": "^1.5",
         "ext-intl": "*"
+=======
+        "ext-intl": "*",
+        "phpunit/phpunit": "^4.8.35 || ^5.7",
+        "squizlabs/php_codesniffer": "^2.9.2"
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     },
     "autoload": {
         "psr-4": {
@@ -29,7 +43,15 @@
     },
     "extra": {
         "branch-alias": {
+<<<<<<< HEAD
             "dev-master": "1.8-dev"
         }
+=======
+            "dev-master": "1.9"
+        }
+    },
+    "config": {
+        "sort-packages": true
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 }

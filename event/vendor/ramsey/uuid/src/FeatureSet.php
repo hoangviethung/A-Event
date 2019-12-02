@@ -289,7 +289,13 @@ class FeatureSet
     {
         if ($this->is64BitSystem()) {
             return new PhpTimeConverter();
+<<<<<<< HEAD
         } elseif ($this->hasBigNumber()) {
+=======
+        }
+
+        if ($this->hasBigNumber()) {
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
             return new BigNumberTimeConverter();
         }
 

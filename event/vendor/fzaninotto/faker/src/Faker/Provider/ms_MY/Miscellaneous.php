@@ -22,7 +22,11 @@ class Miscellaneous extends \Faker\Provider\Miscellaneous
     /**
      * Some alphabet has higher frequency that coincides with the current number
      * of registrations. E.g. W = Wilayah Persekutuan
+<<<<<<< HEAD
      * 
+=======
+     *
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * @link https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Malaysia#Current_format
      */
     protected static $peninsularPrefix = array(
@@ -71,7 +75,11 @@ class Miscellaneous extends \Faker\Provider\Miscellaneous
 
     /**
      * Chances of having an empty alphabet will be 1/24
+<<<<<<< HEAD
      * 
+=======
+     *
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * @link https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Malaysia#Current_format
      */
     protected static $validAlphabets = array(
@@ -83,9 +91,15 @@ class Miscellaneous extends \Faker\Provider\Miscellaneous
 
     /**
      * Return a valid Malaysia JPJ(Road Transport Department) vehicle licence plate number
+<<<<<<< HEAD
      * 
      * @example 'WKN 2368'
      * 
+=======
+     *
+     * @example 'WKN 2368'
+     *
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * @return @string
      */
     public function jpjNumberPlate()
@@ -97,9 +111,15 @@ class Miscellaneous extends \Faker\Provider\Miscellaneous
 
     /**
      * Return Peninsular prefix alphabet
+<<<<<<< HEAD
      * 
      * @example 'W'
      * 
+=======
+     *
+     * @example 'W'
+     *
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * @return @string
      */
     public static function peninsularPrefix()
@@ -109,9 +129,15 @@ class Miscellaneous extends \Faker\Provider\Miscellaneous
 
     /**
      * Return Sarawak state prefix alphabet
+<<<<<<< HEAD
      * 
      * @example 'QA'
      * 
+=======
+     *
+     * @example 'QA'
+     *
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * @return @string
      */
     public static function sarawakPrefix()
@@ -121,9 +147,15 @@ class Miscellaneous extends \Faker\Provider\Miscellaneous
 
     /**
      * Return Sabah state prefix alphabet
+<<<<<<< HEAD
      * 
      * @example 'SA'
      * 
+=======
+     *
+     * @example 'SA'
+     *
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * @return @string
      */
     public static function sabahPrefix()
@@ -133,9 +165,15 @@ class Miscellaneous extends \Faker\Provider\Miscellaneous
 
     /**
      * Return specialty licence plate prefix
+<<<<<<< HEAD
      * 
      * @example 'G1M'
      * 
+=======
+     *
+     * @example 'G1M'
+     *
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * @return @string
      */
     public static function specialPrefix()
@@ -145,9 +183,15 @@ class Miscellaneous extends \Faker\Provider\Miscellaneous
 
     /**
      * Return a valid license plate alphabet
+<<<<<<< HEAD
      * 
      * @example 'A'
      * 
+=======
+     *
+     * @example 'A'
+     *
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * @return @string
      */
     public static function validAlphabet()
@@ -157,9 +201,15 @@ class Miscellaneous extends \Faker\Provider\Miscellaneous
 
     /**
      * Return a valid number sequence between 1 and 9999
+<<<<<<< HEAD
      * 
      * @example '1234'
      * 
+=======
+     *
+     * @example '1234'
+     *
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * @return @integer
      */
     public static function numberSequence()

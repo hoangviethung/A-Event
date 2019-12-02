@@ -17,6 +17,11 @@ use Symfony\Component\VarDumper\Cloner\Stub;
  * Casts DateTimeInterface related classes to array representation.
  *
  * @author Dany Maillard <danymaillard93b@gmail.com>
+<<<<<<< HEAD
+=======
+ *
+ * @final since Symfony 4.4
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
  */
 class DateCaster
 {
@@ -52,7 +57,11 @@ class DateCaster
         return $filter & Caster::EXCLUDE_VERBOSE ? $i : $i + $a;
     }
 
+<<<<<<< HEAD
     private static function formatInterval(\DateInterval $i)
+=======
+    private static function formatInterval(\DateInterval $i): string
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $format = '%R ';
 
@@ -110,12 +119,20 @@ class DateCaster
         return $filter & Caster::EXCLUDE_VERBOSE ? $p : $p + $a;
     }
 
+<<<<<<< HEAD
     private static function formatDateTime(\DateTimeInterface $d, $extra = '')
+=======
+    private static function formatDateTime(\DateTimeInterface $d, string $extra = ''): string
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         return $d->format('Y-m-d H:i:'.self::formatSeconds($d->format('s'), $d->format('u')).$extra);
     }
 
+<<<<<<< HEAD
     private static function formatSeconds($s, $us)
+=======
+    private static function formatSeconds(string $s, string $us): string
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         return sprintf('%02d.%s', $s, 0 === ($len = \strlen($t = rtrim($us, '0'))) ? '0' : ($len <= 3 ? str_pad($t, 3, '0') : $us));
     }

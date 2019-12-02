@@ -41,7 +41,11 @@ class XliffFileDumper extends FileDumper
             return $this->dumpXliff1($defaultLocale, $messages, $domain, $options);
         }
         if ('2.0' === $xliffVersion) {
+<<<<<<< HEAD
             return $this->dumpXliff2($defaultLocale, $messages, $domain, $options);
+=======
+            return $this->dumpXliff2($defaultLocale, $messages, $domain);
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         }
 
         throw new InvalidArgumentException(sprintf('No support implemented for dumping XLIFF version "%s".', $xliffVersion));
@@ -55,7 +59,11 @@ class XliffFileDumper extends FileDumper
         return 'xlf';
     }
 
+<<<<<<< HEAD
     private function dumpXliff1($defaultLocale, MessageCatalogue $messages, $domain, array $options = [])
+=======
+    private function dumpXliff1(string $defaultLocale, MessageCatalogue $messages, ?string $domain, array $options = [])
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $toolInfo = ['tool-id' => 'symfony', 'tool-name' => 'Symfony'];
         if (\array_key_exists('tool_info', $options)) {
@@ -129,7 +137,11 @@ class XliffFileDumper extends FileDumper
         return $dom->saveXML();
     }
 
+<<<<<<< HEAD
     private function dumpXliff2($defaultLocale, MessageCatalogue $messages, $domain, array $options = [])
+=======
+    private function dumpXliff2(string $defaultLocale, MessageCatalogue $messages, ?string $domain)
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $dom = new \DOMDocument('1.0', 'utf-8');
         $dom->formatOutput = true;
@@ -196,6 +208,7 @@ class XliffFileDumper extends FileDumper
         return $dom->saveXML();
     }
 
+<<<<<<< HEAD
     /**
      * @param string     $key
      * @param array|null $metadata
@@ -203,6 +216,9 @@ class XliffFileDumper extends FileDumper
      * @return bool
      */
     private function hasMetadataArrayInfo($key, $metadata = null)
+=======
+    private function hasMetadataArrayInfo(string $key, array $metadata = null): bool
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         return null !== $metadata && \array_key_exists($key, $metadata) && ($metadata[$key] instanceof \Traversable || \is_array($metadata[$key]));
     }

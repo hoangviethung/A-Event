@@ -248,7 +248,11 @@ class Process implements \IteratorAggregate
      *
      * @final
      */
+<<<<<<< HEAD
     public function mustRun(callable $callback = null, array $env = [])
+=======
+    public function mustRun(callable $callback = null, array $env = []): self
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         if (0 !== $this->run($callback, $env)) {
             throw new ProcessFailedException($this);
@@ -288,6 +292,15 @@ class Process implements \IteratorAggregate
         $this->hasCallback = null !== $callback;
         $descriptors = $this->getDescriptors();
 
+<<<<<<< HEAD
+=======
+        if ($this->env) {
+            $env += $this->env;
+        }
+
+        $env += $this->getDefaultEnv();
+
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         if (\is_array($commandline = $this->commandline)) {
             $commandline = implode(' ', array_map([$this, 'escapeArgument'], $commandline));
 
@@ -295,6 +308,7 @@ class Process implements \IteratorAggregate
                 // exec is mandatory to deal with sending a signal to the process
                 $commandline = 'exec '.$commandline;
             }
+<<<<<<< HEAD
         }
 
         if ($this->env) {
@@ -302,6 +316,12 @@ class Process implements \IteratorAggregate
         }
         $env += $this->getDefaultEnv();
 
+=======
+        } else {
+            $commandline = $this->replacePlaceholders($commandline, $env);
+        }
+
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         $options = ['suppress_errors' => true];
 
         if ('\\' === \DIRECTORY_SEPARATOR) {
@@ -367,7 +387,11 @@ class Process implements \IteratorAggregate
      *
      * @final
      */
+<<<<<<< HEAD
     public function restart(callable $callback = null, array $env = [])
+=======
+    public function restart(callable $callback = null, array $env = []): self
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         if ($this->isRunning()) {
             throw new RuntimeException('Process is already running');
@@ -952,6 +976,19 @@ class Process implements \IteratorAggregate
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Gets the last output time in seconds.
+     *
+     * @return float|null The last output time in seconds or null if it isn't started
+     */
+    public function getLastOutputTime(): ?float
+    {
+        return $this->lastOutputTime;
+    }
+
+    /**
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * Gets the command line to be executed.
      *
      * @return string The command to execute
@@ -1203,9 +1240,19 @@ class Process implements \IteratorAggregate
      * @param bool $inheritEnv
      *
      * @return $this
+<<<<<<< HEAD
      */
     public function inheritEnvironmentVariables($inheritEnv = true)
     {
+=======
+     *
+     * @deprecated since Symfony 4.4, env variables are always inherited
+     */
+    public function inheritEnvironmentVariables($inheritEnv = true)
+    {
+        @trigger_error(sprintf('The "%s()" method is deprecated since Symfony 4.4, env variables are always inherited.', __METHOD__), E_USER_DEPRECATED);
+
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         if (!$inheritEnv) {
             throw new InvalidArgumentException('Not inheriting environment variables is not supported.');
         }
@@ -1532,7 +1579,11 @@ class Process implements \IteratorAggregate
         return true;
     }
 
+<<<<<<< HEAD
     private function prepareWindowsCommandLine(string $cmd, array &$env)
+=======
+    private function prepareWindowsCommandLine(string $cmd, array &$env): string
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $uid = uniqid('', true);
         $varCount = 0;
@@ -1624,7 +1675,22 @@ class Process implements \IteratorAggregate
         return '"'.str_replace(['"', '^', '%', '!', "\n"], ['""', '"^^"', '"^%"', '"^!"', '!LF!'], $argument).'"';
     }
 
+<<<<<<< HEAD
     private function getDefaultEnv()
+=======
+    private function replacePlaceholders(string $commandline, array $env)
+    {
+        return preg_replace_callback('/"\$([_a-zA-Z]++[_a-zA-Z0-9]*+)"/', function ($matches) use ($commandline, $env) {
+            if (!isset($env[$matches[1]]) || false === $env[$matches[1]]) {
+                throw new InvalidArgumentException(sprintf('Command line is missing a value for key %s: %s.', $matches[0], $commandline));
+            }
+
+            return '\\' === \DIRECTORY_SEPARATOR ? $this->escapeArgument($env[$matches[1]]) : $matches[0];
+        }, $commandline);
+    }
+
+    private function getDefaultEnv(): array
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $env = [];
 

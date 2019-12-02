@@ -80,6 +80,7 @@ interface KernelInterface extends HttpKernelInterface
      * where BundleName is the name of the bundle
      * and the remaining part is the relative path in the bundle.
      *
+<<<<<<< HEAD
      * If $dir is passed, and the first segment of the path is "Resources",
      * this method will look for a file named:
      *
@@ -92,11 +93,20 @@ interface KernelInterface extends HttpKernelInterface
      * @param bool   $first Whether to return the first path or paths for all matching bundles
      *
      * @return string|array The absolute path of the resource or an array if $first is false
+=======
+     * @param string $name A resource name to locate
+     *
+     * @return string|array The absolute path of the resource or an array if $first is false (array return value is deprecated)
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      *
      * @throws \InvalidArgumentException if the file cannot be found or the name is not valid
      * @throws \RuntimeException         if the name contains invalid/unsafe characters
      */
+<<<<<<< HEAD
     public function locateResource($name, $dir = null, $first = true);
+=======
+    public function locateResource($name/*, $dir = null, $first = true*/);
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
     /**
      * Gets the name of the kernel.
@@ -133,7 +143,11 @@ interface KernelInterface extends HttpKernelInterface
     /**
      * Gets the current container.
      *
+<<<<<<< HEAD
      * @return ContainerInterface|null A ContainerInterface instance or null when the Kernel is shutdown
+=======
+     * @return ContainerInterface
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     public function getContainer();
 

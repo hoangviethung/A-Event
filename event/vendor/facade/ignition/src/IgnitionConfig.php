@@ -37,6 +37,13 @@ class IgnitionConfig implements Arrayable
 
     public function getEnableShareButton(): bool
     {
+<<<<<<< HEAD
+=======
+        if (! app()->isBooted()) {
+            return false;
+        }
+
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         return Arr::get($this->options, 'enable_share_button', true);
     }
 

@@ -8,6 +8,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+<<<<<<< HEAD
 return array_replace_recursive(require __DIR__.'/en.php', [
     'months' => ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'],
     'months_short' => ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'],
@@ -54,3 +55,6 @@ return array_replace_recursive(require __DIR__.'/en.php', [
     'ago' => ':time yang lalu',
     'from_now' => 'dalam :time',
 ]);
+=======
+return require __DIR__.'/id.php';
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045

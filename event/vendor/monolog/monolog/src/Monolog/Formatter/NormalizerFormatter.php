@@ -28,7 +28,11 @@ class NormalizerFormatter implements FormatterInterface
     protected $maxNormalizeDepth = 9;
     protected $maxNormalizeItemCount = 1000;
 
+<<<<<<< HEAD
     private $jsonEncodeOptions = JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRESERVE_ZERO_FRACTION;
+=======
+    private $jsonEncodeOptions = Utils::DEFAULT_JSON_FLAGS;
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
     /**
      * @param string|null $dateFormat The format of the timestamp: one supported by DateTime::format
@@ -189,7 +193,11 @@ class NormalizerFormatter implements FormatterInterface
         $data = [
             'class' => Utils::getClass($e),
             'message' => $e->getMessage(),
+<<<<<<< HEAD
             'code' => $e->getCode(),
+=======
+            'code' => (int) $e->getCode(),
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
             'file' => $e->getFile().':'.$e->getLine(),
         ];
 
@@ -202,8 +210,13 @@ class NormalizerFormatter implements FormatterInterface
                 $data['faultactor'] = $e->faultactor;
             }
 
+<<<<<<< HEAD
             if (isset($e->detail)) {
                 $data['detail'] = $e->detail;
+=======
+            if (isset($e->detail) && (is_string($e->detail) || is_object($e->detail) || is_array($e->detail))) {
+                $data['detail'] = is_string($e->detail) ? $e->detail : reset($e->detail);
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
             }
         }
 
@@ -226,6 +239,7 @@ class NormalizerFormatter implements FormatterInterface
      *
      * @param  mixed             $data
      * @throws \RuntimeException if encoding fails and errors are not ignored
+<<<<<<< HEAD
      * @return string|bool
      */
     protected function toJson($data, bool $ignoreErrors = false)
@@ -350,6 +364,13 @@ class NormalizerFormatter implements FormatterInterface
                 $data
             );
         }
+=======
+     * @return string if encoding fails and ignoreErrors is true 'null' is returned
+     */
+    protected function toJson($data, bool $ignoreErrors = false): string
+    {
+        return Utils::jsonEncode($data, $this->jsonEncodeOptions, $ignoreErrors);
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 
     protected function formatDate(\DateTimeInterface $date)

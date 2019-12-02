@@ -13,14 +13,20 @@ namespace Symfony\Component\Mime\Header;
 
 use Symfony\Component\Mime\Address;
 use Symfony\Component\Mime\Exception\RfcComplianceException;
+<<<<<<< HEAD
 use Symfony\Component\Mime\NamedAddress;
+=======
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
 /**
  * A Mailbox MIME Header for something like Sender (one named address).
  *
  * @author Fabien Potencier <fabien@symfony.com>
+<<<<<<< HEAD
  *
  * @experimental in 4.3
+=======
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
  */
 final class MailboxHeader extends AbstractHeader
 {
@@ -45,10 +51,15 @@ final class MailboxHeader extends AbstractHeader
 
     /**
      * @throws RfcComplianceException
+<<<<<<< HEAD
      *
      * @return Address
      */
     public function getBody()
+=======
+     */
+    public function getBody(): Address
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         return $this->getAddress();
     }
@@ -69,7 +80,11 @@ final class MailboxHeader extends AbstractHeader
     public function getBodyAsString(): string
     {
         $str = $this->address->getEncodedAddress();
+<<<<<<< HEAD
         if ($this->address instanceof NamedAddress && $name = $this->address->getName()) {
+=======
+        if ($name = $this->address->getName()) {
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
             $str = $this->createPhrase($this, $name, $this->getCharset(), true).' <'.$str.'>';
         }
 

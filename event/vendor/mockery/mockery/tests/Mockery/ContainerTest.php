@@ -1239,7 +1239,11 @@ class ContainerTest extends MockeryTestCase
         $mock->shouldReceive('foo')->with(array('yourself' => 21));
 
         $this->expectException(\Mockery\Exception\NoMatchingExpectationException::class);
+<<<<<<< HEAD
         $this->expectExceptionMessage('MyTestClass::foo(resource(...))');
+=======
+        $this->expectExceptionMessage("0 => Hamcrest\Core\IsEqual Object (...)");
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         $mock->foo(fopen('php://memory', 'r'));
     }
 
@@ -1252,7 +1256,11 @@ class ContainerTest extends MockeryTestCase
         $mock->shouldReceive('foo')->with(array('yourself' => 21));
 
         $this->expectException(\Mockery\Exception\NoMatchingExpectationException::class);
+<<<<<<< HEAD
         $this->expectExceptionMessage("MyTestClass::foo(['myself' => [...]])");
+=======
+        $this->expectExceptionMessage("'myself' => Hamcrest\Core\IsEqual Object (...)");
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         $mock->foo($testArray);
     }
 

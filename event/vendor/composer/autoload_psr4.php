@@ -30,6 +30,10 @@ return array(
     'Symfony\\Component\\HttpFoundation\\' => array($vendorDir . '/symfony/http-foundation'),
     'Symfony\\Component\\Finder\\' => array($vendorDir . '/symfony/finder'),
     'Symfony\\Component\\EventDispatcher\\' => array($vendorDir . '/symfony/event-dispatcher'),
+<<<<<<< HEAD
+=======
+    'Symfony\\Component\\ErrorHandler\\' => array($vendorDir . '/symfony/error-handler'),
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     'Symfony\\Component\\Debug\\' => array($vendorDir . '/symfony/debug'),
     'Symfony\\Component\\CssSelector\\' => array($vendorDir . '/symfony/css-selector'),
     'Symfony\\Component\\Console\\' => array($vendorDir . '/symfony/console'),
@@ -67,6 +71,10 @@ return array(
     'Doctrine\\Common\\Lexer\\' => array($vendorDir . '/doctrine/lexer/lib/Doctrine/Common/Lexer'),
     'Doctrine\\Common\\Inflector\\' => array($vendorDir . '/doctrine/inflector/lib/Doctrine/Common/Inflector'),
     'DeepCopy\\' => array($vendorDir . '/myclabs/deep-copy/src/DeepCopy'),
+<<<<<<< HEAD
+=======
+    'Darryldecode\\' => array($vendorDir . '/darryldecode/cart/src/Darryldecode'),
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     'Cron\\' => array($vendorDir . '/dragonmantank/cron-expression/src/Cron'),
     'Carbon\\' => array($vendorDir . '/nesbot/carbon/src/Carbon'),
     'Buzz\\LaravelGoogleCaptcha\\' => array($vendorDir . '/buzz/laravel-google-captcha/src'),

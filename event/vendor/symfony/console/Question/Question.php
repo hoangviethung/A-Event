@@ -29,6 +29,10 @@ class Question
     private $validator;
     private $default;
     private $normalizer;
+<<<<<<< HEAD
+=======
+    private $trimmable = true;
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
     /**
      * @param string $question The question to ask to the user
@@ -270,4 +274,22 @@ class Question
     {
         return (bool) \count(array_filter(array_keys($array), 'is_string'));
     }
+<<<<<<< HEAD
+=======
+
+    public function isTrimmable(): bool
+    {
+        return $this->trimmable;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setTrimmable(bool $trimmable): self
+    {
+        $this->trimmable = $trimmable;
+
+        return $this;
+    }
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 }

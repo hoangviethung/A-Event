@@ -34,7 +34,11 @@ return [
     'second' => '{1}beberapa saat|]1,Inf[:count saat',
     's' => ':count saat',
     'ago' => ':time yang lepas',
+<<<<<<< HEAD
     'from_now' => 'dalam :time',
+=======
+    'from_now' => ':time dari sekarang',
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     'after' => ':time selepas',
     'before' => ':time sebelum',
     'formats' => [

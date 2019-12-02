@@ -8,9 +8,12 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+<<<<<<< HEAD
 \Symfony\Component\Translation\PluralizationRules::set(function ($number) {
     return $number === 1 ? 0 : 1;
 }, 'bm');
+=======
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
 /*
  * Authors:
@@ -18,16 +21,24 @@
  */
 return [
     'year' => 'san :count',
+<<<<<<< HEAD
     'a_year' => 'san kelen|san :count',
     'y' => 'san :count',
     'month' => 'kalo :count',
     'a_month' => 'kalo kelen|kalo :count',
+=======
+    'a_year' => '{1}san kelen|san :count',
+    'y' => 'san :count',
+    'month' => 'kalo :count',
+    'a_month' => '{1}kalo kelen|kalo :count',
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     'm' => 'k. :count',
     'week' => 'dɔgɔkun :count',
     'a_week' => 'dɔgɔkun kelen',
     'w' => 'd. :count',
     'day' => 'tile :count',
     'd' => 't. :count',
+<<<<<<< HEAD
     'a_day' => 'tile kelen|tile :count',
     'hour' => 'lɛrɛ :count',
     'a_hour' => 'lɛrɛ kelen|lɛrɛ :count',
@@ -37,6 +48,17 @@ return [
     'min' => 'm. :count',
     'second' => 'sekondi :count',
     'a_second' => 'sanga dama dama|sekondi :count',
+=======
+    'a_day' => '{1}tile kelen|tile :count',
+    'hour' => 'lɛrɛ :count',
+    'a_hour' => '{1}lɛrɛ kelen|lɛrɛ :count',
+    'h' => 'l. :count',
+    'minute' => 'miniti :count',
+    'a_minute' => '{1}miniti kelen|miniti :count',
+    'min' => 'm. :count',
+    'second' => 'sekondi :count',
+    'a_second' => '{1}sanga dama dama|sekondi :count',
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     's' => 'sek. :count',
     'ago' => 'a bɛ :time bɔ',
     'from_now' => ':time kɔnɔ',

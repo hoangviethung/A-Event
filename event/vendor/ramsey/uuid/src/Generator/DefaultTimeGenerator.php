@@ -14,8 +14,16 @@
 
 namespace Ramsey\Uuid\Generator;
 
+<<<<<<< HEAD
 use Ramsey\Uuid\BinaryUtils;
 use Ramsey\Uuid\Converter\TimeConverterInterface;
+=======
+use Exception;
+use InvalidArgumentException;
+use Ramsey\Uuid\BinaryUtils;
+use Ramsey\Uuid\Converter\TimeConverterInterface;
+use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 use Ramsey\Uuid\Provider\NodeProviderInterface;
 use Ramsey\Uuid\Provider\TimeProviderInterface;
 
@@ -72,10 +80,17 @@ class DefaultTimeGenerator implements TimeGeneratorInterface
      *     could arise when the clock is set backwards in time or if the node ID
      *     changes.
      * @return string A binary string
+<<<<<<< HEAD
      * @throws \Ramsey\Uuid\Exception\UnsatisfiedDependencyException if called on a 32-bit system and
      *     `Moontoast\Math\BigNumber` is not present
      * @throws \InvalidArgumentException
      * @throws \Exception if it was not possible to gather sufficient entropy
+=======
+     * @throws UnsatisfiedDependencyException if called on a 32-bit system and
+     *     `Moontoast\Math\BigNumber` is not present
+     * @throws InvalidArgumentException
+     * @throws Exception if it was not possible to gather sufficient entropy
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     public function generate($node = null, $clockSeq = null)
     {
@@ -96,14 +111,22 @@ class DefaultTimeGenerator implements TimeGeneratorInterface
 
         $hex = vsprintf(
             '%08s%04s%04s%02s%02s%012s',
+<<<<<<< HEAD
             array(
+=======
+            [
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
                 $uuidTime['low'],
                 $uuidTime['mid'],
                 sprintf('%04x', $timeHi),
                 sprintf('%02x', $clockSeqHi),
                 sprintf('%02x', $clockSeq & 0xff),
                 $node,
+<<<<<<< HEAD
             )
+=======
+            ]
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         );
 
         return hex2bin($hex);
@@ -115,8 +138,13 @@ class DefaultTimeGenerator implements TimeGeneratorInterface
      *
      * @param string|int $node A node value that may be used to override the node provider
      * @return string Hexadecimal representation of the node ID
+<<<<<<< HEAD
      * @throws \InvalidArgumentException
      * @throws \Exception
+=======
+     * @throws InvalidArgumentException
+     * @throws Exception
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     protected function getValidNode($node)
     {
@@ -130,7 +158,11 @@ class DefaultTimeGenerator implements TimeGeneratorInterface
         }
 
         if (!ctype_xdigit($node) || strlen($node) > 12) {
+<<<<<<< HEAD
             throw new \InvalidArgumentException('Invalid node value');
+=======
+            throw new InvalidArgumentException('Invalid node value');
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         }
 
         return strtolower(sprintf('%012s', $node));

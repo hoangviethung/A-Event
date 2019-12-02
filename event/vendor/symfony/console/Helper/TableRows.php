@@ -23,7 +23,11 @@ class TableRows implements \IteratorAggregate
         $this->generator = $generator;
     }
 
+<<<<<<< HEAD
     public function getIterator()
+=======
+    public function getIterator(): \Traversable
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $g = $this->generator;
 

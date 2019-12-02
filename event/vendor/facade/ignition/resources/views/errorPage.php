@@ -1,5 +1,11 @@
 <!doctype html>
 <html class="theme-<?=$config['theme']?>">
+<<<<<<< HEAD
+=======
+<!--
+<?=$throwableString?>
+-->
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 <head>
     <!-- Hide dumps asap -->
     <style>

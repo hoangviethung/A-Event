@@ -25,15 +25,35 @@ class RedisBroadcaster extends Broadcaster
     protected $connection;
 
     /**
+<<<<<<< HEAD
+=======
+     * The Redis key prefix.
+     *
+     * @var string
+     */
+    protected $prefix;
+
+    /**
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * Create a new broadcaster instance.
      *
      * @param  \Illuminate\Contracts\Redis\Factory  $redis
      * @param  string|null  $connection
+<<<<<<< HEAD
      * @return void
      */
     public function __construct(Redis $redis, $connection = null)
     {
         $this->redis = $redis;
+=======
+     * @param  string  $prefix
+     * @return void
+     */
+    public function __construct(Redis $redis, $connection = null, $prefix = '')
+    {
+        $this->redis = $redis;
+        $this->prefix = $prefix;
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         $this->connection = $connection;
     }
 
@@ -47,7 +67,13 @@ class RedisBroadcaster extends Broadcaster
      */
     public function auth($request)
     {
+<<<<<<< HEAD
         $channelName = $this->normalizeChannelName($request->channel_name);
+=======
+        $channelName = $this->normalizeChannelName(
+            str_replace($this->prefix, '', $request->channel_name)
+        );
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
         if ($this->isGuardedChannel($request->channel_name) &&
             ! $this->retrieveUser($request, $channelName)) {

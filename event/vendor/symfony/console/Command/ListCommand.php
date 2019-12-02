@@ -74,12 +74,20 @@ EOF
             'raw_text' => $input->getOption('raw'),
             'namespace' => $input->getArgument('namespace'),
         ]);
+<<<<<<< HEAD
     }
 
     /**
      * {@inheritdoc}
      */
     private function createDefinition()
+=======
+
+        return 0;
+    }
+
+    private function createDefinition(): InputDefinition
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         return new InputDefinition([
             new InputArgument('namespace', InputArgument::OPTIONAL, 'The namespace name'),

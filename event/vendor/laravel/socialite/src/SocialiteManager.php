@@ -3,6 +3,7 @@
 namespace Laravel\Socialite;
 
 use Illuminate\Support\Arr;
+<<<<<<< HEAD
 use Illuminate\Support\Str;
 use InvalidArgumentException;
 use Illuminate\Support\Manager;
@@ -13,6 +14,18 @@ use Laravel\Socialite\One\TwitterProvider;
 use Laravel\Socialite\Two\FacebookProvider;
 use Laravel\Socialite\Two\LinkedInProvider;
 use Laravel\Socialite\Two\BitbucketProvider;
+=======
+use Illuminate\Support\Manager;
+use Illuminate\Support\Str;
+use InvalidArgumentException;
+use Laravel\Socialite\One\TwitterProvider;
+use Laravel\Socialite\Two\BitbucketProvider;
+use Laravel\Socialite\Two\FacebookProvider;
+use Laravel\Socialite\Two\GithubProvider;
+use Laravel\Socialite\Two\GitlabProvider;
+use Laravel\Socialite\Two\GoogleProvider;
+use Laravel\Socialite\Two\LinkedInProvider;
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 use League\OAuth1\Client\Server\Twitter as TwitterServer;
 
 class SocialiteManager extends Manager implements Contracts\Factory

@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+<<<<<<< HEAD
+=======
+4.4.0
+-----
+
+ * Added support for `*:only-of-type`
+
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 2.8.0
 -----
 

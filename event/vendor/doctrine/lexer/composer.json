@@ -32,7 +32,11 @@
     },
     "extra": {
         "branch-alias": {
+<<<<<<< HEAD
             "dev-master": "1.1.x-dev"
+=======
+            "dev-master": "1.2.x-dev"
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         }
     },
     "config": {

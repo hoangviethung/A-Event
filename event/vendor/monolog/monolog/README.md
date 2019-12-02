@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Monolog - Logging for PHP [![Build Status](https://img.shields.io/travis/Seldaek/monolog.svg)](https://travis-ci.org/Seldaek/monolog)
+=======
+# Monolog - Logging for PHP [![Build Status](https://travis-ci.org/Seldaek/monolog.svg?branch=master)](https://travis-ci.org/Seldaek/monolog)
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
 [![Total Downloads](https://img.shields.io/packagist/dt/monolog/monolog.svg)](https://packagist.org/packages/monolog/monolog)
 [![Latest Stable Version](https://img.shields.io/packagist/v/monolog/monolog.svg)](https://packagist.org/packages/monolog/monolog)
@@ -48,9 +52,17 @@ $log->error('Bar');
 - [Extending Monolog](doc/04-extending.md)
 - [Log Record Structure](doc/message-structure.md)
 
+<<<<<<< HEAD
 ## Support
 
 Get supported Monolog and help fund the project with the [Tidelift Subscription](https://tidelift.com/subscription/pkg/packagist-monolog-monolog?utm_source=packagist-monolog-monolog&utm_medium=referral&utm_campaign=readme)
+=======
+## Support Monolog Financially
+
+Get supported Monolog and help fund the project with the [Tidelift Subscription](https://tidelift.com/subscription/pkg/packagist-monolog-monolog?utm_source=packagist-monolog-monolog&utm_medium=referral&utm_campaign=enterprise) or via [GitHub sponsorship](https://github.com/sponsors/Seldaek). 
+
+Tidelift delivers commercial support and maintenance for the open source dependencies you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact dependencies you use.
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
 ## Third Party Packages
 
@@ -73,7 +85,11 @@ Bugs and feature request are tracked on [GitHub](https://github.com/Seldaek/mono
 - Frameworks and libraries using [PSR-3](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-3-logger-interface.md)
   can be used very easily with Monolog since it implements the interface.
 - [Symfony](http://symfony.com) comes out of the box with Monolog.
+<<<<<<< HEAD
 - [Laravel 4 & 5](http://laravel.com/) come out of the box with Monolog.
+=======
+- [Laravel](http://laravel.com/) comes out of the box with Monolog.
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 - [Lumen](http://lumen.laravel.com/) comes out of the box with Monolog.
 - [PPI](https://github.com/ppi/framework) comes out of the box with Monolog.
 - [CakePHP](http://cakephp.org/) is usable with Monolog via the [cakephp-monolog](https://github.com/jadb/cakephp-monolog) plugin.

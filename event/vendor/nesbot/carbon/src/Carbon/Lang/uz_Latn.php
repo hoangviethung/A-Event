@@ -8,9 +8,12 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+<<<<<<< HEAD
 \Symfony\Component\Translation\PluralizationRules::set(function ($number) {
     return $number === 1 ? 0 : 1;
 }, 'uz');
+=======
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
 /*
  * Authors:
@@ -19,6 +22,7 @@
  */
 return [
     'year' => ':count yil',
+<<<<<<< HEAD
     'a_year' => 'bir yil|:count yil',
     'y' => ':count y',
     'month' => ':count oy',
@@ -38,6 +42,27 @@ return [
     'min' => ':count d',
     'second' => ':count soniya',
     'a_second' => 'soniya|:count soniya',
+=======
+    'a_year' => '{1}bir yil|:count yil',
+    'y' => ':count y',
+    'month' => ':count oy',
+    'a_month' => '{1}bir oy|:count oy',
+    'm' => ':count o',
+    'week' => ':count hafta',
+    'a_week' => '{1}bir hafta|:count hafta',
+    'w' => ':count h',
+    'day' => ':count kun',
+    'a_day' => '{1}bir kun|:count kun',
+    'd' => ':count k',
+    'hour' => ':count soat',
+    'a_hour' => '{1}bir soat|:count soat',
+    'h' => ':count soat',
+    'minute' => ':count daqiqa',
+    'a_minute' => '{1}bir daqiqa|:count daqiqa',
+    'min' => ':count d',
+    'second' => ':count soniya',
+    'a_second' => '{1}soniya|:count soniya',
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     's' => ':count son.',
     'ago' => 'Bir necha :time oldin',
     'from_now' => 'Yaqin :time ichida',

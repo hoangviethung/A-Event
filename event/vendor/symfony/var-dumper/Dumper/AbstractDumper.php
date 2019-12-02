@@ -116,7 +116,10 @@ abstract class AbstractDumper implements DataDumperInterface, DumperInterface
     /**
      * Dumps a Data object.
      *
+<<<<<<< HEAD
      * @param Data                               $data   A Data object
+=======
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * @param callable|resource|string|true|null $output A line dumper callable, an opened stream, an output path or true to return the dump
      *
      * @return string|null The dump as string when $output is true

@@ -28,6 +28,10 @@ use Facade\Ignition\Exceptions\InvalidConfig;
 use Facade\Ignition\DumpRecorder\DumpRecorder;
 use Facade\Ignition\Middleware\SetNotifierName;
 use Facade\Ignition\QueryRecorder\QueryRecorder;
+<<<<<<< HEAD
+=======
+use Facade\Ignition\Middleware\CustomizeGrouping;
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 use Facade\Ignition\Commands\SolutionMakeCommand;
 use Facade\Ignition\Middleware\AddGitInformation;
 use Facade\Ignition\Views\Engines\CompilerEngine;
@@ -332,6 +336,13 @@ class IgnitionServiceProvider extends ServiceProvider
             $middleware[] = (new AddGitInformation());
         }
 
+<<<<<<< HEAD
+=======
+        if (! is_null(config('flare.reporting.grouping_type'))) {
+            $middleware[] = new CustomizeGrouping(config('flare.reporting.grouping_type'));
+        }
+
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         foreach ($middleware as $singleMiddleware) {
             $this->app->get('flare.client')->registerMiddleware($singleMiddleware);
         }

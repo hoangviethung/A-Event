@@ -93,9 +93,13 @@ class UrlMatcher implements UrlMatcherInterface, RequestMatcherInterface
             throw new NoConfigurationException();
         }
 
+<<<<<<< HEAD
         throw 0 < \count($this->allow)
             ? new MethodNotAllowedException(array_unique($this->allow))
             : new ResourceNotFoundException(sprintf('No routes found for "%s".', $pathinfo));
+=======
+        throw 0 < \count($this->allow) ? new MethodNotAllowedException(array_unique($this->allow)) : new ResourceNotFoundException(sprintf('No routes found for "%s".', $pathinfo));
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 
     /**
@@ -120,8 +124,12 @@ class UrlMatcher implements UrlMatcherInterface, RequestMatcherInterface
     /**
      * Tries to match a URL with a set of routes.
      *
+<<<<<<< HEAD
      * @param string          $pathinfo The path info to be parsed
      * @param RouteCollection $routes   The set of routes
+=======
+     * @param string $pathinfo The path info to be parsed
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      *
      * @return array An array of parameters
      *
@@ -208,7 +216,10 @@ class UrlMatcher implements UrlMatcherInterface, RequestMatcherInterface
      * in matchers that do not have access to the matched Route instance
      * (like the PHP and Apache matcher dumpers).
      *
+<<<<<<< HEAD
      * @param Route  $route      The route we are matching against
+=======
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * @param string $name       The name of the route
      * @param array  $attributes An array of attributes from the matcher
      *
@@ -231,7 +242,10 @@ class UrlMatcher implements UrlMatcherInterface, RequestMatcherInterface
      *
      * @param string $pathinfo The path
      * @param string $name     The route name
+<<<<<<< HEAD
      * @param Route  $route    The route
+=======
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      *
      * @return array The first element represents the status, the second contains additional information
      */
@@ -279,7 +293,11 @@ class UrlMatcher implements UrlMatcherInterface, RequestMatcherInterface
     /**
      * @internal
      */
+<<<<<<< HEAD
     protected function createRequest($pathinfo)
+=======
+    protected function createRequest(string $pathinfo): ?Request
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         if (!class_exists('Symfony\Component\HttpFoundation\Request')) {
             return null;

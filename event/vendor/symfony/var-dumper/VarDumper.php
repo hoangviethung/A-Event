@@ -14,6 +14,11 @@ namespace Symfony\Component\VarDumper;
 use Symfony\Component\VarDumper\Caster\ReflectionCaster;
 use Symfony\Component\VarDumper\Cloner\VarCloner;
 use Symfony\Component\VarDumper\Dumper\CliDumper;
+<<<<<<< HEAD
+=======
+use Symfony\Component\VarDumper\Dumper\ContextProvider\SourceContextProvider;
+use Symfony\Component\VarDumper\Dumper\ContextualizedDumper;
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 use Symfony\Component\VarDumper\Dumper\HtmlDumper;
 
 // Load the global dump() function
@@ -38,6 +43,11 @@ class VarDumper
                 $dumper = \in_array(\PHP_SAPI, ['cli', 'phpdbg']) ? new CliDumper() : new HtmlDumper();
             }
 
+<<<<<<< HEAD
+=======
+            $dumper = new ContextualizedDumper($dumper, [new SourceContextProvider()]);
+
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
             self::$handler = function ($var) use ($cloner, $dumper) {
                 $dumper->dump($cloner->cloneVar($var));
             };

@@ -64,7 +64,11 @@ final class ResponseHasCookie extends Constraint
         return 'the Response '.$this->toString();
     }
 
+<<<<<<< HEAD
     protected function getCookie(Response $response): ?Cookie
+=======
+    private function getCookie(Response $response): ?Cookie
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $cookies = $response->headers->getCookies();
 

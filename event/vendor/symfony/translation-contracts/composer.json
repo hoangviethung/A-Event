@@ -16,7 +16,11 @@
         }
     ],
     "require": {
+<<<<<<< HEAD
         "php": "^7.1.3"
+=======
+        "php": "^7.2.5"
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     },
     "suggest": {
         "symfony/translation-implementation": ""
@@ -27,7 +31,11 @@
     "minimum-stability": "dev",
     "extra": {
         "branch-alias": {
+<<<<<<< HEAD
             "dev-master": "1.1-dev"
+=======
+            "dev-master": "2.0-dev"
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         }
     }
 }

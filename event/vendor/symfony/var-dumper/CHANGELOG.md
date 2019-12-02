@@ -1,6 +1,20 @@
 CHANGELOG
 =========
 
+<<<<<<< HEAD
+=======
+4.4.0
+-----
+
+ * added `VarDumperTestTrait::setUpVarDumper()` and `VarDumperTestTrait::tearDownVarDumper()`
+   to configure casters & flags to use in tests
+ * added `ImagineCaster` and infrastructure to dump images
+ * added the stamps of a message after it is dispatched in `TraceableMessageBus` and `MessengerDataCollector` collected data
+ * added `UuidCaster`
+ * made all casters final
+ * added support for the `NO_COLOR` env var (https://no-color.org/)
+
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 4.3.0
 -----
 

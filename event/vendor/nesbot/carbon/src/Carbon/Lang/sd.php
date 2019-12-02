@@ -33,10 +33,13 @@ $weekdays = [
     'ڇنڇر',
 ];
 
+<<<<<<< HEAD
 \Symfony\Component\Translation\PluralizationRules::set(function ($number) {
     return $number === 1 ? 0 : 1;
 }, 'sd');
 
+=======
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 /*
  * Authors:
  * - Narain Sagar
@@ -44,6 +47,7 @@ $weekdays = [
  * - Narain Sagar
  */
 return [
+<<<<<<< HEAD
     'year' => 'هڪ سال|:count سال',
     'month' => 'هڪ مهينو|:count مهينا',
     'week' => 'ھڪ ھفتو|:count هفتا',
@@ -51,6 +55,15 @@ return [
     'hour' => 'هڪ ڪلاڪ|:count ڪلاڪ',
     'minute' => 'هڪ منٽ|:count منٽ',
     'second' => 'چند سيڪنڊ|:count سيڪنڊ',
+=======
+    'year' => '{1}'.'هڪ سال'.'|:count '.'سال',
+    'month' => '{1}'.'هڪ مهينو'.'|:count '.'مهينا',
+    'week' => '{1}'.'ھڪ ھفتو'.'|:count '.'هفتا',
+    'day' => '{1}'.'هڪ ڏينهن'.'|:count '.'ڏينهن',
+    'hour' => '{1}'.'هڪ ڪلاڪ'.'|:count '.'ڪلاڪ',
+    'minute' => '{1}'.'هڪ منٽ'.'|:count '.'منٽ',
+    'second' => '{1}'.'چند سيڪنڊ'.'|:count '.'سيڪنڊ',
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     'ago' => ':time اڳ',
     'from_now' => ':time پوء',
     'diff_yesterday' => 'ڪالهه',

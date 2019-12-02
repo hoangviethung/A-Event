@@ -37,5 +37,10 @@ class PsyVersionCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $output->writeln($this->getApplication()->getVersion());
+<<<<<<< HEAD
+=======
+
+        return 0;
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 }

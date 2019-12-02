@@ -89,6 +89,7 @@ class ExpectationDirector
     {
         $expectation = $this->findExpectation($args);
         if (is_null($expectation)) {
+<<<<<<< HEAD
             $exception = new \Mockery\Exception\NoMatchingExpectationException(
                 'No matching handler found for '
                 . $this->_mock->mockery_getName() . '::'
@@ -102,6 +103,14 @@ class ExpectationDirector
                 ->setMethodName($this->_name)
                 ->setActualArguments($args);
             throw $exception;
+=======
+            throw new \Mockery\Exception\NoMatchingExpectationException(
+                $this->_mock,
+                $this->_name,
+                $args,
+                $this->getExpectations()
+            );
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         }
         return $expectation->verifyCall($args);
     }

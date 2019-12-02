@@ -179,6 +179,30 @@ class ExpectationTest extends MockeryTestCase
         $this->assertNull($this->mock->bar);
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * @group issue/1005
+     */
+    public function testSetsPublicPropertiesCorrectlyForDifferentInstancesOfSameClass()
+    {
+        $mockInstanceOne = mock('MockeryTest_Foo');
+        $mockInstanceTwo = mock('MockeryTest_Foo');
+
+        $mockInstanceOne->shouldReceive('foo')
+            ->andSet('bar', 'baz');
+
+        $mockInstanceTwo->shouldReceive('foo')
+            ->andSet('bar', 'bazz');
+
+        $mockInstanceOne->foo();
+        $mockInstanceTwo->foo();
+
+        $this->assertEquals('baz', $mockInstanceOne->bar);
+        $this->assertEquals('bazz', $mockInstanceTwo->bar);
+    }
+
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     public function testReturnsSameValueForAllIfNoArgsExpectationAndSomeGiven()
     {
         $this->mock->shouldReceive('foo')->andReturn(1);
@@ -218,6 +242,38 @@ class ExpectationTest extends MockeryTestCase
         $this->assertEquals(6, $this->mock->foo(5));
     }
 
+<<<<<<< HEAD
+=======
+    public function testReturnsValueOfArgument()
+    {
+        $args = [1, 2, 3, 4, 5];
+        $index = 2;
+        $this->mock->shouldReceive('foo')->withArgs($args)->andReturnArg($index);
+        $this->assertEquals($args[$index], $this->mock->foo(...$args));
+    }
+
+    public function testReturnsNullArgument()
+    {
+        $args = [1, null, 3];
+        $index = 1;
+        $this->mock->shouldReceive('foo')->withArgs($args)->andReturnArg($index);
+        $this->assertNull($this->mock->foo(...$args));
+    }
+
+    public function testExceptionOnInvalidArgumentIndexValue()
+    {
+        $this->expectException(\InvalidArgumentException::class);
+        $this->mock->shouldReceive('foo')->andReturnArg("invalid");
+    }
+
+    public function testExceptionOnArgumentIndexOutOfRange()
+    {
+        $this->expectException(\OutOfBoundsException::class);
+        $this->mock->shouldReceive('foo')->andReturnArg(2);
+        $this->mock->foo(0, 1); // only pass 2 arguments so index #2 won't exist
+    }
+
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     public function testReturnsUndefined()
     {
         $this->mock->shouldReceive('foo')->andReturnUndefined();
@@ -1386,7 +1442,11 @@ class ExpectationTest extends MockeryTestCase
     {
         $this->mock->shouldReceive('foo')->with(Mockery::type('stdClass'));
         $this->expectException(\Mockery\Exception::class);
+<<<<<<< HEAD
         $this->mock->foo(new Exception);
+=======
+        $this->mock->foo(new \DateTime());
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         Mockery::close();
     }
 
@@ -1505,6 +1565,28 @@ class ExpectationTest extends MockeryTestCase
         Mockery::close();
     }
 
+<<<<<<< HEAD
+=======
+    public function testCaptureStoresArgumentOfTypeScalar_ClosureEvaluatesToTrue()
+    {
+        $temp = null;
+        $this->mock->shouldReceive('foo')->with(Mockery::capture($temp))->once();
+        $this->mock->foo(4);
+
+        $this->assertSame(4, $temp);
+    }
+
+    public function testCaptureStoresArgumentOfTypeArgument_ClosureEvaluatesToTrue()
+    {
+        $object = new stdClass();
+        $temp = null;
+        $this->mock->shouldReceive('foo')->with(Mockery::capture($temp))->once();
+        $this->mock->foo($object);
+
+        $this->assertSame($object, $temp);
+    }
+
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     public function testOnConstraintMatchesArgument_ClosureEvaluatesToTrue()
     {
         $function = function ($arg) {

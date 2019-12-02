@@ -16,7 +16,11 @@ Let's take the following code for an example:
     {
         function callExternalService($param)
         {
+<<<<<<< HEAD
             $externalService = new Service\External();
+=======
+            $externalService = new Service\External($version = 5);
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
             $externalService->sendSomething($param);
             return $externalService->getSomething();
         }
@@ -92,6 +96,47 @@ Our test example from above now becomes:
         }
     }
 
+<<<<<<< HEAD
+=======
+
+
+Testing the constructor arguments of hard Dependencies
+------------------------------------------------------
+
+Sometimes we might want to ensure that the hard dependency is instantiated with
+particular arguments. With overloaded mocks, we can set up expectations on the
+constructor.
+
+.. code-block:: php
+
+    <?php
+    namespace AppTest;
+    use Mockery as m;
+    /**
+     * @runTestsInSeparateProcesses
+     * @preserveGlobalState disabled
+     */
+    class ServiceTest extends \PHPUnit_Framework_TestCase
+    {
+        public function testCallingExternalService()
+        {
+            $externalMock = m::mock('overload:App\Service\External');
+            $externalMock->allows('sendSomething');
+            $externalMock->shouldReceive('__construct')
+                ->once()
+                ->with(5);
+
+            $service = new \App\Service();
+            $result = $service->callExternalService($param);
+        }
+    }
+
+
+.. note::
+    For more straightforward and single-process tests oriented way check
+    :ref:`mocking-class-within-class`.
+
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 .. note::
 
     This cookbook entry is an adaption of the blog post titled

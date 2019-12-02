@@ -20,8 +20,11 @@ use Symfony\Component\Mime\Header\Headers;
 
 /**
  * @author Fabien Potencier <fabien@symfony.com>
+<<<<<<< HEAD
  *
  * @experimental in 4.3
+=======
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
  */
 class TextPart extends AbstractPart
 {
@@ -146,6 +149,22 @@ class TextPart extends AbstractPart
         return $headers;
     }
 
+<<<<<<< HEAD
+=======
+    public function asDebugString(): string
+    {
+        $str = parent::asDebugString();
+        if (null !== $this->charset) {
+            $str .= ' charset: '.$this->charset;
+        }
+        if (null !== $this->disposition) {
+            $str .= ' disposition: '.$this->disposition;
+        }
+
+        return $str;
+    }
+
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     private function getEncoder(): ContentEncoderInterface
     {
         if ('8bit' === $this->encoding) {
@@ -168,6 +187,12 @@ class TextPart extends AbstractPart
         return 'quoted-printable';
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * @return array
+     */
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     public function __sleep()
     {
         // convert resources to strings for serialization

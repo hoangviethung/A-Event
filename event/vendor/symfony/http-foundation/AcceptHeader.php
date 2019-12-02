@@ -153,7 +153,11 @@ class AcceptHeader
     /**
      * Sorts items by descending quality.
      */
+<<<<<<< HEAD
     private function sort()
+=======
+    private function sort(): void
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         if (!$this->sorted) {
             uasort($this->items, function (AcceptHeaderItem $a, AcceptHeaderItem $b) {

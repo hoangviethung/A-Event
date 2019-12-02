@@ -49,7 +49,11 @@ class File extends UploadedFile
      * Create a new fake file.
      *
      * @param  string  $name
+<<<<<<< HEAD
      * @param  int  $kilobytes
+=======
+     * @param  string|int  $kilobytes
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * @return \Illuminate\Http\Testing\File
      */
     public static function create($name, $kilobytes = 0)
@@ -58,6 +62,21 @@ class File extends UploadedFile
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Create a new fake file with content.
+     *
+     * @param  string  $name
+     * @param  string  $content
+     * @return \Illuminate\Http\Testing\File
+     */
+    public static function createWithContent($name, $content)
+    {
+        return (new FileFactory)->createWithContent($name, $content);
+    }
+
+    /**
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * Create a new fake image.
      *
      * @param  string  $name

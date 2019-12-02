@@ -93,7 +93,11 @@ class WindowsPipes extends AbstractPipes
     /**
      * {@inheritdoc}
      */
+<<<<<<< HEAD
     public function getDescriptors()
+=======
+    public function getDescriptors(): array
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         if (!$this->haveReadSupport) {
             $nullstream = fopen('NUL', 'c');
@@ -118,7 +122,11 @@ class WindowsPipes extends AbstractPipes
     /**
      * {@inheritdoc}
      */
+<<<<<<< HEAD
     public function getFiles()
+=======
+    public function getFiles(): array
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         return $this->files;
     }
@@ -126,7 +134,11 @@ class WindowsPipes extends AbstractPipes
     /**
      * {@inheritdoc}
      */
+<<<<<<< HEAD
     public function readAndWrite($blocking, $close = false)
+=======
+    public function readAndWrite(bool $blocking, bool $close = false): array
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $this->unblock();
         $w = $this->write();
@@ -161,7 +173,11 @@ class WindowsPipes extends AbstractPipes
     /**
      * {@inheritdoc}
      */
+<<<<<<< HEAD
     public function haveReadSupport()
+=======
+    public function haveReadSupport(): bool
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         return $this->haveReadSupport;
     }
@@ -169,7 +185,11 @@ class WindowsPipes extends AbstractPipes
     /**
      * {@inheritdoc}
      */
+<<<<<<< HEAD
     public function areOpen()
+=======
+    public function areOpen(): bool
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         return $this->pipes && $this->fileHandles;
     }

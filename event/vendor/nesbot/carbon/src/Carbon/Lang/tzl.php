@@ -8,6 +8,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+<<<<<<< HEAD
 \Symfony\Component\Translation\PluralizationRules::set(function ($number) {
     return $number > 1 ? 1 : 0;
 }, 'tzl');
@@ -25,6 +26,22 @@ return [
     'h' => ':count þora|:count þoras',
     'minute' => ':count míut|:count míuts',
     'min' => ':count míut|:count míuts',
+=======
+
+return [
+    'year' => '[0,1]:count ar|:count ars',
+    'y' => '[0,1]:count ar|:count ars',
+    'month' => '[0,1]:count mes|:count mesen',
+    'm' => '[0,1]:count mes|:count mesen',
+    'week' => '[0,1]:count seifetziua|:count seifetziuas',
+    'w' => '[0,1]:count seifetziua|:count seifetziuas',
+    'day' => '[0,1]:count ziua|:count ziuas',
+    'd' => '[0,1]:count ziua|:count ziuas',
+    'hour' => '[0,1]:count þora|:count þoras',
+    'h' => '[0,1]:count þora|:count þoras',
+    'minute' => '[0,1]:count míut|:count míuts',
+    'min' => '[0,1]:count míut|:count míuts',
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     'second' => ':count secunds',
     's' => ':count secunds',
 

@@ -14,7 +14,10 @@ namespace Psy\Command;
 use JakubOnderka\PhpConsoleHighlighter\Highlighter;
 use Psy\Configuration;
 use Psy\ConsoleColorFactory;
+<<<<<<< HEAD
 use Psy\Output\ShellOutput;
+=======
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -123,8 +126,15 @@ HELP
         $output->writeln('');
         $output->writeln(\sprintf('From <info>%s:%s</info>:', $this->replaceCwd($info['file']), $info['line']));
         $output->writeln('');
+<<<<<<< HEAD
         $output->write($highlighter->getCodeSnippet($contents, $info['line'], $num, $num), ShellOutput::OUTPUT_RAW);
         $output->stopPaging();
+=======
+        $output->write($highlighter->getCodeSnippet($contents, $info['line'], $num, $num), false, OutputInterface::OUTPUT_RAW);
+        $output->stopPaging();
+
+        return 0;
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 
     /**

@@ -522,7 +522,11 @@ class Request extends SymfonyRequest implements Arrayable, ArrayAccess
      *
      * @param  string|null  $param
      * @param  mixed   $default
+<<<<<<< HEAD
      * @return \Illuminate\Routing\Route|object|string
+=======
+     * @return \Illuminate\Routing\Route|object|string|null
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     public function route($param = null, $default = null)
     {

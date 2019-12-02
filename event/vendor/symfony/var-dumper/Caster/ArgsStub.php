@@ -49,7 +49,11 @@ class ArgsStub extends EnumStub
         }
     }
 
+<<<<<<< HEAD
     private static function getParameters($function, $class)
+=======
+    private static function getParameters(string $function, ?string $class): array
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         if (isset(self::$parameters[$k = $class.'::'.$function])) {
             return self::$parameters[$k];

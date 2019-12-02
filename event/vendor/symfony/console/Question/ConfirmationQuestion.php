@@ -35,10 +35,15 @@ class ConfirmationQuestion extends Question
 
     /**
      * Returns the default answer normalizer.
+<<<<<<< HEAD
      *
      * @return callable
      */
     private function getDefaultNormalizer()
+=======
+     */
+    private function getDefaultNormalizer(): callable
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $default = $this->getDefault();
         $regex = $this->trueAnswerRegex;

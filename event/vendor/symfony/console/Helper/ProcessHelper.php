@@ -28,12 +28,20 @@ class ProcessHelper extends Helper
     /**
      * Runs an external process.
      *
+<<<<<<< HEAD
      * @param OutputInterface $output    An OutputInterface instance
      * @param array|Process   $cmd       An instance of Process or an array of the command and arguments
      * @param string|null     $error     An error message that must be displayed if something went wrong
      * @param callable|null   $callback  A PHP callback to run whenever there is some
      *                                   output available on STDOUT or STDERR
      * @param int             $verbosity The threshold for verbosity
+=======
+     * @param array|Process $cmd       An instance of Process or an array of the command and arguments
+     * @param string|null   $error     An error message that must be displayed if something went wrong
+     * @param callable|null $callback  A PHP callback to run whenever there is some
+     *                                 output available on STDOUT or STDERR
+     * @param int           $verbosity The threshold for verbosity
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      *
      * @return Process The process that ran
      */
@@ -92,11 +100,18 @@ class ProcessHelper extends Helper
      * This is identical to run() except that an exception is thrown if the process
      * exits with a non-zero exit code.
      *
+<<<<<<< HEAD
      * @param OutputInterface $output   An OutputInterface instance
      * @param string|Process  $cmd      An instance of Process or a command to run
      * @param string|null     $error    An error message that must be displayed if something went wrong
      * @param callable|null   $callback A PHP callback to run whenever there is some
      *                                  output available on STDOUT or STDERR
+=======
+     * @param string|Process $cmd      An instance of Process or a command to run
+     * @param string|null    $error    An error message that must be displayed if something went wrong
+     * @param callable|null  $callback A PHP callback to run whenever there is some
+     *                                 output available on STDOUT or STDERR
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      *
      * @return Process The process that ran
      *
@@ -118,10 +133,13 @@ class ProcessHelper extends Helper
     /**
      * Wraps a Process callback to add debugging output.
      *
+<<<<<<< HEAD
      * @param OutputInterface $output   An OutputInterface interface
      * @param Process         $process  The Process
      * @param callable|null   $callback A PHP callable
      *
+=======
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * @return callable
      */
     public function wrapCallback(OutputInterface $output, Process $process, callable $callback = null)
@@ -141,7 +159,11 @@ class ProcessHelper extends Helper
         };
     }
 
+<<<<<<< HEAD
     private function escapeString($str)
+=======
+    private function escapeString(string $str): string
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         return str_replace('<', '\\<', $str);
     }

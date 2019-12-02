@@ -52,8 +52,13 @@ final class SourceContextProvider implements ContextProviderInterface
                 && 'dump' === $trace[$i]['function']
                 && VarDumper::class === $trace[$i]['class']
             ) {
+<<<<<<< HEAD
                 $file = $trace[$i]['file'];
                 $line = $trace[$i]['line'];
+=======
+                $file = $trace[$i]['file'] ?? $file;
+                $line = $trace[$i]['line'] ?? $line;
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
                 while (++$i < $this->limit) {
                     if (isset($trace[$i]['function'], $trace[$i]['file']) && empty($trace[$i]['class']) && 0 !== strpos($trace[$i]['function'], 'call_user_func')) {

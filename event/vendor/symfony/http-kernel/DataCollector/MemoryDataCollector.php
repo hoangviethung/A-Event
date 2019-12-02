@@ -18,6 +18,11 @@ use Symfony\Component\HttpFoundation\Response;
  * MemoryDataCollector.
  *
  * @author Fabien Potencier <fabien@symfony.com>
+<<<<<<< HEAD
+=======
+ *
+ * @final since Symfony 4.4
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
  */
 class MemoryDataCollector extends DataCollector implements LateDataCollectorInterface
 {
@@ -28,8 +33,15 @@ class MemoryDataCollector extends DataCollector implements LateDataCollectorInte
 
     /**
      * {@inheritdoc}
+<<<<<<< HEAD
      */
     public function collect(Request $request, Response $response, \Exception $exception = null)
+=======
+     *
+     * @param \Throwable|null $exception
+     */
+    public function collect(Request $request, Response $response/*, \Throwable $exception = null*/)
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $this->updateMemoryUsage();
     }
@@ -89,7 +101,14 @@ class MemoryDataCollector extends DataCollector implements LateDataCollectorInte
         return 'memory';
     }
 
+<<<<<<< HEAD
     private function convertToBytes($memoryLimit)
+=======
+    /**
+     * @return int|float
+     */
+    private function convertToBytes(string $memoryLimit)
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         if ('-1' === $memoryLimit) {
             return -1;

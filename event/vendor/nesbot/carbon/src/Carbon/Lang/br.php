@@ -8,9 +8,12 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+<<<<<<< HEAD
 \Symfony\Component\Translation\PluralizationRules::set(function ($number) {
     return $number === 1 ? 0 : 1;
 }, 'br');
+=======
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
 /*
  * Authors:
@@ -24,11 +27,19 @@ return [
     'month' => '{1}:count miz|{2}:count viz|[0,Inf[:count miz',
     'a_month' => '{1}ur miz|{2}:count viz|[0,Inf[:count miz',
     'week' => ':count sizhun',
+<<<<<<< HEAD
     'a_week' => 'ur sizhun|:count sizhun',
     'day' => '{1}:count devezh|{2}:count zevezh|[0,Inf[:count devezh',
     'a_day' => '{1}un devezh|{2}:count zevezh|[0,Inf[:count devezh',
     'hour' => ':count eur',
     'a_hour' => 'un eur|:count eur',
+=======
+    'a_week' => '{1}ur sizhun|:count sizhun',
+    'day' => '{1}:count devezh|{2}:count zevezh|[0,Inf[:count devezh',
+    'a_day' => '{1}un devezh|{2}:count zevezh|[0,Inf[:count devezh',
+    'hour' => ':count eur',
+    'a_hour' => '{1}un eur|:count eur',
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     'minute' => '{1}:count vunutenn|{2}:count vunutenn|[0,Inf[:count munutenn',
     'a_minute' => '{1}ur vunutenn|{2}:count vunutenn|[0,Inf[:count munutenn',
     'second' => ':count eilenn',

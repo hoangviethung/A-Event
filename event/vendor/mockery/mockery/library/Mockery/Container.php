@@ -230,7 +230,11 @@ class Container
         $this->getLoader()->load($def);
 
         $mock = $this->_getInstance($def->getClassName(), $constructorArgs);
+<<<<<<< HEAD
         $mock->mockery_init($this, $config->getTargetObject());
+=======
+        $mock->mockery_init($this, $config->getTargetObject(), $config->isInstanceMock());
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
         if (!empty($quickdefs)) {
             $mock->shouldReceive($quickdefs)->byDefault();

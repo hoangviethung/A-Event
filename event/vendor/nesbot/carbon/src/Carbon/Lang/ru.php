@@ -33,6 +33,10 @@
  * - Pavel Skripkin (psxx)
  * - AlexWalkerson
  * - Vladislav UnsealedOne
+<<<<<<< HEAD
+=======
+ * - dima-bzz
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
  */
 $transformDiff = function ($input) {
     return strtr($input, [
@@ -76,6 +80,14 @@ return [
     'before' => function ($time) use ($transformDiff) {
         return $transformDiff($time).' до';
     },
+<<<<<<< HEAD
+=======
+    'diff_now' => 'только что',
+    'diff_yesterday' => 'вчера',
+    'diff_tomorrow' => 'завтра',
+    'diff_before_yesterday' => 'позавчера',
+    'diff_after_tomorrow' => 'послезавтра',
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     'formats' => [
         'LT' => 'H:mm',
         'LTS' => 'H:mm:ss',

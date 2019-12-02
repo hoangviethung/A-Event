@@ -8,9 +8,12 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+<<<<<<< HEAD
 \Symfony\Component\Translation\PluralizationRules::set(function ($number) {
     return $number === 1 ? 0 : 1;
 }, 'si');
+=======
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
 /*
  * Authors:
@@ -19,6 +22,7 @@
  * - JD Isaacks
  */
 return [
+<<<<<<< HEAD
     'year' => 'වසර|වසර :count',
     'month' => 'මාසය|මාස :count',
     'week' => 'සතියක්|සති :count යි',
@@ -26,6 +30,15 @@ return [
     'hour' => 'පැය|පැය :count',
     'minute' => 'මිනිත්තුව|මිනිත්තු :count',
     'second' => 'තත්පර කිහිපය|තත්පර :count',
+=======
+    'year' => '{1}වසර|වසර :count',
+    'month' => '{1}මාසය|මාස :count',
+    'week' => '{1}සතියක්|සති :count යි',
+    'day' => '{1}දිනය|දින :count',
+    'hour' => '{1}පැය|පැය :count',
+    'minute' => '{1}මිනිත්තුව|මිනිත්තු :count',
+    'second' => '{1}තත්පර කිහිපය|තත්පර :count',
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     'ago' => ':timeකට පෙර',
     'from_now' => ':timeකින්',
     'diff_yesterday' => 'ඊයේ',

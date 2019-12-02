@@ -31,7 +31,17 @@ abstract class Facade
      */
     public static function resolved(Closure $callback)
     {
+<<<<<<< HEAD
         static::$app->afterResolving(static::getFacadeAccessor(), function ($service) use ($callback) {
+=======
+        $accessor = static::getFacadeAccessor();
+
+        if (static::$app->resolved($accessor) === true) {
+            $callback(static::getFacadeRoot());
+        }
+
+        static::$app->afterResolving($accessor, function ($service) use ($callback) {
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
             $callback($service);
         });
     }

@@ -39,11 +39,16 @@ class ProfilerListener implements EventSubscriberInterface
     protected $parents;
 
     /**
+<<<<<<< HEAD
      * @param Profiler                     $profiler           A Profiler instance
      * @param RequestStack                 $requestStack       A RequestStack instance
      * @param RequestMatcherInterface|null $matcher            A RequestMatcher instance
      * @param bool                         $onlyException      True if the profiler only collects data when an exception occurs, false otherwise
      * @param bool                         $onlyMasterRequests True if the profiler only collects data when the request is a master request, false otherwise
+=======
+     * @param bool $onlyException      True if the profiler only collects data when an exception occurs, false otherwise
+     * @param bool $onlyMasterRequests True if the profiler only collects data when the request is a master request, false otherwise
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     public function __construct(Profiler $profiler, RequestStack $requestStack, RequestMatcherInterface $matcher = null, bool $onlyException = false, bool $onlyMasterRequests = false)
     {
@@ -65,7 +70,11 @@ class ProfilerListener implements EventSubscriberInterface
             return;
         }
 
+<<<<<<< HEAD
         $this->exception = $event->getException();
+=======
+        $this->exception = $event->getThrowable();
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 
     /**

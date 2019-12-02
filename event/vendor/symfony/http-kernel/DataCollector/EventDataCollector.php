@@ -23,6 +23,11 @@ use Symfony\Contracts\Service\ResetInterface;
  * EventDataCollector.
  *
  * @author Fabien Potencier <fabien@symfony.com>
+<<<<<<< HEAD
+=======
+ *
+ * @final since Symfony 4.4
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
  */
 class EventDataCollector extends DataCollector implements LateDataCollectorInterface
 {
@@ -38,8 +43,15 @@ class EventDataCollector extends DataCollector implements LateDataCollectorInter
 
     /**
      * {@inheritdoc}
+<<<<<<< HEAD
      */
     public function collect(Request $request, Response $response, \Exception $exception = null)
+=======
+     *
+     * @param \Throwable|null $exception
+     */
+    public function collect(Request $request, Response $response/*, \Throwable $exception = null*/)
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $this->currentRequest = $this->requestStack && $this->requestStack->getMasterRequest() !== $request ? $request : null;
         $this->data = [

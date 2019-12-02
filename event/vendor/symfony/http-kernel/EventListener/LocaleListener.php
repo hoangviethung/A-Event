@@ -33,11 +33,14 @@ class LocaleListener implements EventSubscriberInterface
     private $defaultLocale;
     private $requestStack;
 
+<<<<<<< HEAD
     /**
      * @param RequestStack                      $requestStack  A RequestStack instance
      * @param string                            $defaultLocale The default locale
      * @param RequestContextAwareInterface|null $router        The router
      */
+=======
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     public function __construct(RequestStack $requestStack, string $defaultLocale = 'en', RequestContextAwareInterface $router = null)
     {
         $this->defaultLocale = $defaultLocale;

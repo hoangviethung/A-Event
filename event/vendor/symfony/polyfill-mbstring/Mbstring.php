@@ -512,7 +512,13 @@ final class Mbstring
             $offset = 0;
         } elseif ($offset = (int) $offset) {
             if ($offset < 0) {
+<<<<<<< HEAD
                 $haystack = self::mb_substr($haystack, 0, $offset, $encoding);
+=======
+                if (0 > $offset += self::mb_strlen($needle)) {
+                    $haystack = self::mb_substr($haystack, 0, $offset, $encoding);
+                }
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
                 $offset = 0;
             } else {
                 $haystack = self::mb_substr($haystack, $offset, 2147483647, $encoding);
@@ -532,7 +538,11 @@ final class Mbstring
             return null;
         }
 
+<<<<<<< HEAD
         if ($split_length < 1) {
+=======
+        if (1 > $split_length = (int) $split_length) {
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
             trigger_error('The length of each segment must be greater than zero', E_USER_WARNING);
 
             return false;
@@ -542,6 +552,13 @@ final class Mbstring
             $encoding = mb_internal_encoding();
         }
 
+<<<<<<< HEAD
+=======
+        if ('UTF-8' === $encoding = self::getEncoding($encoding)) {
+            return preg_split("/(.{{$split_length}})/u", $string, null, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
+        }
+
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         $result = array();
         $length = mb_strlen($string, $encoding);
 
@@ -815,11 +832,22 @@ final class Mbstring
             return self::$internalEncoding;
         }
 
+<<<<<<< HEAD
+=======
+        if ('UTF-8' === $encoding) {
+            return 'UTF-8';
+        }
+
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         $encoding = strtoupper($encoding);
 
         if ('8BIT' === $encoding || 'BINARY' === $encoding) {
             return 'CP850';
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         if ('UTF8' === $encoding) {
             return 'UTF-8';
         }

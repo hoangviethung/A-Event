@@ -20,6 +20,11 @@ use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
  * Basically, this class removes all objects from the trace.
  *
  * @author Fabien Potencier <fabien@symfony.com>
+<<<<<<< HEAD
+=======
+ *
+ * @deprecated since Symfony 4.4, use Symfony\Component\ErrorHandler\Exception\FlattenException instead.
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
  */
 class FlattenException
 {
@@ -34,12 +39,25 @@ class FlattenException
     private $file;
     private $line;
 
+<<<<<<< HEAD
+=======
+    /**
+     * @return static
+     */
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     public static function create(\Exception $exception, $statusCode = null, array $headers = [])
     {
         return static::createFromThrowable($exception, $statusCode, $headers);
     }
 
+<<<<<<< HEAD
     public static function createFromThrowable(\Throwable $exception, ?int $statusCode = null, array $headers = []): self
+=======
+    /**
+     * @return static
+     */
+    public static function createFromThrowable(\Throwable $exception, int $statusCode = null, array $headers = [])
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $e = new static();
         $e->setMessage($exception->getMessage());
@@ -285,7 +303,11 @@ class FlattenException
         return $this;
     }
 
+<<<<<<< HEAD
     private function flattenArgs($args, $level = 0, &$count = 0)
+=======
+    private function flattenArgs(array $args, int $level = 0, int &$count = 0): array
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $result = [];
         foreach ($args as $key => $value) {
@@ -321,7 +343,11 @@ class FlattenException
         return $result;
     }
 
+<<<<<<< HEAD
     private function getClassNameFromIncomplete(\__PHP_Incomplete_Class $value)
+=======
+    private function getClassNameFromIncomplete(\__PHP_Incomplete_Class $value): string
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $array = new \ArrayObject($value);
 

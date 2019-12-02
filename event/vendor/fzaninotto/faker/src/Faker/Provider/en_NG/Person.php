@@ -74,7 +74,11 @@ class Person extends \Faker\Provider\Person
         'Funmilayo',
         'Gbadamosi', 'Gbogboade', 'Grace',
         'Habeeb', 'Hanifat', 'Isaac',
+<<<<<<< HEAD
         'Ismail', 'Isokun', 'Isreal', 'Iyalla',
+=======
+        'Ismail', 'Isokun', 'Israel', 'Iyalla',
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         'Jamiu', 'Jimoh', 'Joshua', 'Justina',
         'Katherine', 'Kayode', 'Kayode', 'Kimberly',
         'Ladega', 'Latifat', 'Lawal', 'Leonard',

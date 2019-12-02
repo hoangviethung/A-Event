@@ -35,7 +35,10 @@ class HIncludeFragmentRenderer extends RoutableFragmentRenderer
 
     /**
      * @param EngineInterface|Environment $templating            An EngineInterface or a Twig instance
+<<<<<<< HEAD
      * @param UriSigner                   $signer                A UriSigner instance
+=======
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * @param string                      $globalDefaultTemplate The global default content (it can be a template name or the content)
      */
     public function __construct($templating = null, UriSigner $signer = null, string $globalDefaultTemplate = null, string $charset = 'utf-8')
@@ -52,6 +55,11 @@ class HIncludeFragmentRenderer extends RoutableFragmentRenderer
      * @param EngineInterface|Environment|null $templating An EngineInterface or an Environment instance
      *
      * @throws \InvalidArgumentException
+<<<<<<< HEAD
+=======
+     *
+     * @internal
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     public function setTemplating($templating)
     {

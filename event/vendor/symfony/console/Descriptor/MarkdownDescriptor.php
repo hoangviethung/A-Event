@@ -167,7 +167,11 @@ class MarkdownDescriptor extends Descriptor
         }
     }
 
+<<<<<<< HEAD
     private function getApplicationTitle(Application $application)
+=======
+    private function getApplicationTitle(Application $application): string
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         if ('UNKNOWN' !== $application->getName()) {
             if ('UNKNOWN' !== $application->getVersion()) {

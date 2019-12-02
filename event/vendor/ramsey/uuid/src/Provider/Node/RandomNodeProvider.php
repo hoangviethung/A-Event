@@ -14,6 +14,10 @@
 
 namespace Ramsey\Uuid\Provider\Node;
 
+<<<<<<< HEAD
+=======
+use Exception;
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 use Ramsey\Uuid\Provider\NodeProviderInterface;
 
 /**
@@ -28,6 +32,7 @@ class RandomNodeProvider implements NodeProviderInterface
      * Returns the system node ID
      *
      * @return string System node ID as a hexadecimal string
+<<<<<<< HEAD
      * @throws \Exception if it was not possible to gather sufficient entropy
      */
     public function getNode()
@@ -38,5 +43,31 @@ class RandomNodeProvider implements NodeProviderInterface
         $node = $node | 0x010000000000;
 
         return str_pad(dechex($node), 12, '0', STR_PAD_LEFT);
+=======
+     * @throws Exception if it was not possible to gather sufficient entropy
+     */
+    public function getNode()
+    {
+        $nodeBytes = random_bytes(6);
+
+        // Split the node bytes for math on 32-bit systems.
+        $nodeMsb = substr($nodeBytes, 0, 3);
+        $nodeLsb = substr($nodeBytes, 3);
+
+        // Set the multicast bit; see RFC 4122, section 4.5.
+        $nodeMsb = hex2bin(
+            str_pad(
+                dechex(hexdec(bin2hex($nodeMsb)) | 0x010000),
+                6,
+                '0',
+                STR_PAD_LEFT
+            )
+        );
+
+        // Recombine the node bytes.
+        $node = $nodeMsb . $nodeLsb;
+
+        return str_pad(bin2hex($node), 12, '0', STR_PAD_LEFT);
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 }

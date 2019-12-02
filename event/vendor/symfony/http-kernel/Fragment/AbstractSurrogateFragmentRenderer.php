@@ -32,9 +32,13 @@ abstract class AbstractSurrogateFragmentRenderer extends RoutableFragmentRendere
      * The "fallback" strategy when surrogate is not available should always be an
      * instance of InlineFragmentRenderer.
      *
+<<<<<<< HEAD
      * @param SurrogateInterface        $surrogate      An Surrogate instance
      * @param FragmentRendererInterface $inlineStrategy The inline strategy to use when the surrogate is not supported
      * @param UriSigner                 $signer
+=======
+     * @param FragmentRendererInterface $inlineStrategy The inline strategy to use when the surrogate is not supported
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     public function __construct(SurrogateInterface $surrogate = null, FragmentRendererInterface $inlineStrategy, UriSigner $signer = null)
     {
@@ -83,7 +87,11 @@ abstract class AbstractSurrogateFragmentRenderer extends RoutableFragmentRendere
         return new Response($tag);
     }
 
+<<<<<<< HEAD
     private function generateSignedFragmentUri($uri, Request $request): string
+=======
+    private function generateSignedFragmentUri(ControllerReference $uri, Request $request): string
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         if (null === $this->signer) {
             throw new \LogicException('You must use a URI when using the ESI rendering strategy or set a URL signer.');

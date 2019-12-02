@@ -12,12 +12,25 @@
 namespace Symfony\Component\Routing\Loader\DependencyInjection;
 
 use Psr\Container\ContainerInterface;
+<<<<<<< HEAD
 use Symfony\Component\Routing\Loader\ObjectRouteLoader;
 
+=======
+use Symfony\Component\Routing\Loader\ContainerLoader;
+use Symfony\Component\Routing\Loader\ObjectRouteLoader;
+
+@trigger_error(sprintf('The "%s" class is deprecated since Symfony 4.4, use "%s" instead.', ServiceRouterLoader::class, ContainerLoader::class), E_USER_DEPRECATED);
+
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 /**
  * A route loader that executes a service to load the routes.
  *
  * @author Ryan Weaver <ryan@knpuniversity.com>
+<<<<<<< HEAD
+=======
+ *
+ * @deprecated since Symfony 4.4, use Symfony\Component\Routing\Loader\ContainerLoader instead.
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
  */
 class ServiceRouterLoader extends ObjectRouteLoader
 {

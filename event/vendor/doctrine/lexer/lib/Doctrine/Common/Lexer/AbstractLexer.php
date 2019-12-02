@@ -300,7 +300,11 @@ abstract class AbstractLexer
      */
     protected function getModifiers()
     {
+<<<<<<< HEAD
         return 'i';
+=======
+        return 'iu';
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 
     /**

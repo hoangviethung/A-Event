@@ -192,6 +192,13 @@ class Request
 
     protected static $requestFactory;
 
+<<<<<<< HEAD
+=======
+    /**
+     * @var string|null
+     */
+    private $preferredFormat;
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     private $isHostValid = true;
     private $isForwardedValid = true;
 
@@ -537,7 +544,11 @@ class Request
 
         foreach ($this->headers->all() as $key => $value) {
             $key = strtoupper(str_replace('-', '_', $key));
+<<<<<<< HEAD
             if (\in_array($key, ['CONTENT_TYPE', 'CONTENT_LENGTH'])) {
+=======
+            if (\in_array($key, ['CONTENT_TYPE', 'CONTENT_LENGTH', 'CONTENT_MD5'], true)) {
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
                 $_SERVER[$key] = implode(', ', $value);
             } else {
                 $_SERVER['HTTP_'.$key] = implode(', ', $value);
@@ -563,14 +574,30 @@ class Request
      *
      * You should only list the reverse proxies that you manage directly.
      *
+<<<<<<< HEAD
      * @param array $proxies          A list of trusted proxies
+=======
+     * @param array $proxies          A list of trusted proxies, the string 'REMOTE_ADDR' will be replaced with $_SERVER['REMOTE_ADDR']
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * @param int   $trustedHeaderSet A bit field of Request::HEADER_*, to set which headers to trust from your proxies
      *
      * @throws \InvalidArgumentException When $trustedHeaderSet is invalid
      */
     public static function setTrustedProxies(array $proxies, int $trustedHeaderSet)
     {
+<<<<<<< HEAD
         self::$trustedProxies = $proxies;
+=======
+        self::$trustedProxies = array_reduce($proxies, function ($proxies, $proxy) {
+            if ('REMOTE_ADDR' !== $proxy) {
+                $proxies[] = $proxy;
+            } elseif (isset($_SERVER['REMOTE_ADDR'])) {
+                $proxies[] = $_SERVER['REMOTE_ADDR'];
+            }
+
+            return $proxies;
+        }, []);
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         self::$trustedHeaderSet = $trustedHeaderSet;
     }
 
@@ -632,7 +659,11 @@ class Request
      */
     public static function normalizeQueryString($qs)
     {
+<<<<<<< HEAD
         if ('' == $qs) {
+=======
+        if ('' === ($qs ?? '')) {
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
             return '';
         }
 
@@ -702,7 +733,11 @@ class Request
     /**
      * Gets the Session.
      *
+<<<<<<< HEAD
      * @return SessionInterface|null The session
+=======
+     * @return SessionInterface The session
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     public function getSession()
     {
@@ -745,11 +780,14 @@ class Request
         return null !== $this->session;
     }
 
+<<<<<<< HEAD
     /**
      * Sets the Session.
      *
      * @param SessionInterface $session The Session
      */
+=======
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     public function setSession(SessionInterface $session)
     {
         $this->session = $session;
@@ -1353,6 +1391,11 @@ class Request
      *  * _format request attribute
      *  * $default
      *
+<<<<<<< HEAD
+=======
+     * @see getPreferredFormat
+     *
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * @param string|null $default The default format
      *
      * @return string|null The request format
@@ -1451,8 +1494,13 @@ class Request
      */
     public function isMethodSafe()
     {
+<<<<<<< HEAD
         if (\func_num_args() > 0 && func_get_arg(0)) {
             throw new \BadMethodCallException('Checking only for cacheable HTTP methods with Symfony\Component\HttpFoundation\Request::isMethodSafe() is not supported.');
+=======
+        if (\func_num_args() > 0) {
+            @trigger_error(sprintf('Passing arguments to "%s()" has been deprecated since Symfony 4.4; use "%s::isMethodCacheable()" to check if the method is cacheable instead.', __METHOD__, __CLASS__), E_USER_DEPRECATED);
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         }
 
         return \in_array($this->getMethod(), ['GET', 'HEAD', 'OPTIONS', 'TRACE']);
@@ -1570,9 +1618,39 @@ class Request
     }
 
     /**
+<<<<<<< HEAD
      * Returns the preferred language.
      *
      * @param array $locales An array of ordered available locales
+=======
+     * Gets the preferred format for the response by inspecting, in the following order:
+     *   * the request format set using setRequestFormat
+     *   * the values of the Accept HTTP header
+     *   * the content type of the body of the request.
+     */
+    public function getPreferredFormat(?string $default = 'html'): ?string
+    {
+        if (null !== $this->preferredFormat) {
+            return $this->preferredFormat;
+        }
+
+        $preferredFormat = null;
+        foreach ($this->getAcceptableContentTypes() as $contentType) {
+            if ($preferredFormat = $this->getFormat($contentType)) {
+                break;
+            }
+        }
+
+        $this->preferredFormat = $this->getRequestFormat($preferredFormat ?: $this->getContentType());
+
+        return $this->preferredFormat ?: $default;
+    }
+
+    /**
+     * Returns the preferred language.
+     *
+     * @param string[] $locales An array of ordered available locales
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      *
      * @return string|null The preferred locale
      */
@@ -1792,12 +1870,20 @@ class Request
             $requestUri = '/'.$requestUri;
         }
 
+<<<<<<< HEAD
         if ($baseUrl && false !== $prefix = $this->getUrlencodedPrefix($requestUri, $baseUrl)) {
+=======
+        if ($baseUrl && null !== $prefix = $this->getUrlencodedPrefix($requestUri, $baseUrl)) {
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
             // full $baseUrl matches
             return $prefix;
         }
 
+<<<<<<< HEAD
         if ($baseUrl && false !== $prefix = $this->getUrlencodedPrefix($requestUri, rtrim(\dirname($baseUrl), '/'.\DIRECTORY_SEPARATOR).'/')) {
+=======
+        if ($baseUrl && null !== $prefix = $this->getUrlencodedPrefix($requestUri, rtrim(\dirname($baseUrl), '/'.\DIRECTORY_SEPARATOR).'/')) {
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
             // directory portion of $baseUrl matches
             return rtrim($prefix, '/'.\DIRECTORY_SEPARATOR);
         }
@@ -1901,7 +1987,11 @@ class Request
         ];
     }
 
+<<<<<<< HEAD
     private function setPhpDefaultLocale(string $locale)
+=======
+    private function setPhpDefaultLocale(string $locale): void
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         // if either the class Locale doesn't exist, or an exception is thrown when
         // setting the default locale, the intl module is not installed, and
@@ -1916,6 +2006,7 @@ class Request
 
     /**
      * Returns the prefix as encoded in the string when the string starts with
+<<<<<<< HEAD
      * the given prefix, false otherwise.
      *
      * @return string|false The prefix as it is encoded in $string, or false
@@ -1924,6 +2015,14 @@ class Request
     {
         if (0 !== strpos(rawurldecode($string), $prefix)) {
             return false;
+=======
+     * the given prefix, null otherwise.
+     */
+    private function getUrlencodedPrefix(string $string, string $prefix): ?string
+    {
+        if (0 !== strpos(rawurldecode($string), $prefix)) {
+            return null;
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         }
 
         $len = \strlen($prefix);
@@ -1932,10 +2031,17 @@ class Request
             return $match[0];
         }
 
+<<<<<<< HEAD
         return false;
     }
 
     private static function createRequestFromFactory(array $query = [], array $request = [], array $attributes = [], array $cookies = [], array $files = [], array $server = [], $content = null)
+=======
+        return null;
+    }
+
+    private static function createRequestFromFactory(array $query = [], array $request = [], array $attributes = [], array $cookies = [], array $files = [], array $server = [], $content = null): self
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         if (self::$requestFactory) {
             $request = (self::$requestFactory)($query, $request, $attributes, $cookies, $files, $server, $content);
@@ -1963,7 +2069,11 @@ class Request
         return self::$trustedProxies && IpUtils::checkIp($this->server->get('REMOTE_ADDR'), self::$trustedProxies);
     }
 
+<<<<<<< HEAD
     private function getTrustedValues($type, $ip = null)
+=======
+    private function getTrustedValues(int $type, string $ip = null): array
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $clientValues = [];
         $forwardedValues = [];
@@ -2014,7 +2124,11 @@ class Request
         throw new ConflictingHeadersException(sprintf('The request has both a trusted "%s" header and a trusted "%s" header, conflicting with each other. You should either configure your proxy to remove one of them, or configure your project to distrust the offending one.', self::$trustedHeaders[self::HEADER_FORWARDED], self::$trustedHeaders[$type]));
     }
 
+<<<<<<< HEAD
     private function normalizeAndFilterClientIps(array $clientIps, $ip)
+=======
+    private function normalizeAndFilterClientIps(array $clientIps, string $ip): array
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         if (!$clientIps) {
             return [];

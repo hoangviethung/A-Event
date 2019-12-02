@@ -461,6 +461,10 @@ parameter:
 type_expr:
       type                                                  { $$ = $1; }
     | '?' type                                              { $$ = Node\NullableType[$2]; }
+<<<<<<< HEAD
+=======
+    | union_type                                            { $$ = Node\UnionType[$1]; }
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 ;
 
 type:
@@ -469,6 +473,14 @@ type:
     | T_CALLABLE                                            { $$ = Node\Identifier['callable']; }
 ;
 
+<<<<<<< HEAD
+=======
+union_type:
+      type '|' type                                         { init($1, $3); }
+    | union_type '|' type                                   { push($1, $3); }
+;
+
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 optional_type:
       /* empty */                                           { $$ = null; }
     | type_expr                                             { $$ = $1; }

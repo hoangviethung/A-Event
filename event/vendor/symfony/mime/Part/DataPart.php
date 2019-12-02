@@ -17,8 +17,11 @@ use Symfony\Component\Mime\MimeTypes;
 
 /**
  * @author Fabien Potencier <fabien@symfony.com>
+<<<<<<< HEAD
  *
  * @experimental in 4.3
+=======
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
  */
 class DataPart extends TextPart
 {
@@ -105,6 +108,19 @@ class DataPart extends TextPart
         return $headers;
     }
 
+<<<<<<< HEAD
+=======
+    public function asDebugString(): string
+    {
+        $str = parent::asDebugString();
+        if (null !== $this->filename) {
+            $str .= ' filename: '.$this->filename;
+        }
+
+        return $str;
+    }
+
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     private function generateContentId(): string
     {
         return bin2hex(random_bytes(16)).'@symfony';
@@ -117,6 +133,12 @@ class DataPart extends TextPart
         }
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * @return array
+     */
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     public function __sleep()
     {
         // converts the body to a string

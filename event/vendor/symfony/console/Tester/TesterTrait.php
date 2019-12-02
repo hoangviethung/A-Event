@@ -162,6 +162,12 @@ trait TesterTrait
         }
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * @return resource
+     */
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     private static function createStream(array $inputs)
     {
         $stream = fopen('php://memory', 'r+', false);

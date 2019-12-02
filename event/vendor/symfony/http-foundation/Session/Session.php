@@ -31,11 +31,14 @@ class Session implements SessionInterface, \IteratorAggregate, \Countable
     private $data = [];
     private $usageIndex = 0;
 
+<<<<<<< HEAD
     /**
      * @param SessionStorageInterface $storage    A SessionStorageInterface instance
      * @param AttributeBagInterface   $attributes An AttributeBagInterface instance, (defaults null for default AttributeBag)
      * @param FlashBagInterface       $flashes    A FlashBagInterface instance (defaults null for default FlashBag)
      */
+=======
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     public function __construct(SessionStorageInterface $storage = null, AttributeBagInterface $attributes = null, FlashBagInterface $flashes = null)
     {
         $this->storage = $storage ?: new NativeSessionStorage();
@@ -134,29 +137,43 @@ class Session implements SessionInterface, \IteratorAggregate, \Countable
     /**
      * Returns the number of attributes.
      *
+<<<<<<< HEAD
      * @return int The number of attributes
+=======
+     * @return int
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     public function count()
     {
         return \count($this->getAttributeBag()->all());
     }
 
+<<<<<<< HEAD
     /**
      * @return int
      *
      * @internal
      */
     public function getUsageIndex()
+=======
+    public function &getUsageIndex(): int
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         return $this->usageIndex;
     }
 
     /**
+<<<<<<< HEAD
      * @return bool
      *
      * @internal
      */
     public function isEmpty()
+=======
+     * @internal
+     */
+    public function isEmpty(): bool
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         if ($this->isStarted()) {
             ++$this->usageIndex;
@@ -272,10 +289,15 @@ class Session implements SessionInterface, \IteratorAggregate, \Countable
      * Gets the attributebag interface.
      *
      * Note that this method was added to help with IDE autocompletion.
+<<<<<<< HEAD
      *
      * @return AttributeBagInterface
      */
     private function getAttributeBag()
+=======
+     */
+    private function getAttributeBag(): AttributeBagInterface
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         return $this->getBag($this->attributeName);
     }

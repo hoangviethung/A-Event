@@ -31,6 +31,10 @@ return [
         'maximum_number_of_collected_queries' => 200,
         'report_query_bindings' => true,
         'report_view_data' => true,
+<<<<<<< HEAD
+=======
+        'grouping_type' => null,
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     ],
 
     /*

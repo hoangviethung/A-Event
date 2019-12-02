@@ -2,6 +2,24 @@
 
 All notable changes to `ignition` will be documented in this file
 
+<<<<<<< HEAD
+=======
+## 1.13.0 - 2019-11-27
+
+- Allow custom grouping types
+
+## 1.12.1 - 2019-11-25
+
+- Detect multibyte position offsets when adding linenumbers to the blade view - Fixes #193
+
+## 1.12.0 - 2019-11-14
+
+- Add exception to html (#206)
+- Add a clear exception when passing no parameters to ddd (#205)
+- Ignore JS tests (#215)
+- Fix share report route bug
+
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 ## 1.11.2 - 2019-10-13
 
 - simplify default Laravel installation (#198)

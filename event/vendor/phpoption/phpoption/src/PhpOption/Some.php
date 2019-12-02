@@ -74,25 +74,42 @@ final class Some extends Option
      */
     public function ifDefined($callable)
     {
+<<<<<<< HEAD
         call_user_func($callable, $this->value);
+=======
+        $callable($this->value);
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 
     public function forAll($callable)
     {
+<<<<<<< HEAD
         call_user_func($callable, $this->value);
+=======
+        $callable($this->value);
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
         return $this;
     }
 
     public function map($callable)
     {
+<<<<<<< HEAD
         return new self(call_user_func($callable, $this->value));
+=======
+        return new self($callable($this->value));
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 
     public function flatMap($callable)
     {
+<<<<<<< HEAD
         $rs = call_user_func($callable, $this->value);
         if ( ! $rs instanceof Option) {
+=======
+        $rs = $callable($this->value);
+        if (!$rs instanceof Option) {
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
             throw new \RuntimeException('Callables passed to flatMap() must return an Option. Maybe you should use map() instead?');
         }
 
@@ -101,7 +118,11 @@ final class Some extends Option
 
     public function filter($callable)
     {
+<<<<<<< HEAD
         if (true === call_user_func($callable, $this->value)) {
+=======
+        if (true === $callable($this->value)) {
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
             return $this;
         }
 
@@ -110,7 +131,11 @@ final class Some extends Option
 
     public function filterNot($callable)
     {
+<<<<<<< HEAD
         if (false === call_user_func($callable, $this->value)) {
+=======
+        if (false === $callable($this->value)) {
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
             return $this;
         }
 
@@ -137,16 +162,28 @@ final class Some extends Option
 
     public function getIterator()
     {
+<<<<<<< HEAD
         return new ArrayIterator(array($this->value));
+=======
+        return new ArrayIterator([$this->value]);
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 
     public function foldLeft($initialValue, $callable)
     {
+<<<<<<< HEAD
         return call_user_func($callable, $initialValue, $this->value);
+=======
+        return $callable($initialValue, $this->value);
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 
     public function foldRight($initialValue, $callable)
     {
+<<<<<<< HEAD
         return call_user_func($callable, $this->value, $initialValue);
+=======
+        return $callable($this->value, $initialValue);
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 }

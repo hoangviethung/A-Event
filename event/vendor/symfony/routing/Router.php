@@ -98,11 +98,15 @@ class Router implements RouterInterface, RequestMatcherInterface
     private $expressionLanguageProviders = [];
 
     /**
+<<<<<<< HEAD
      * @param LoaderInterface $loader   A LoaderInterface instance
      * @param mixed           $resource The main resource to load
      * @param array           $options  An array of options
      * @param RequestContext  $context  The context
      * @param LoggerInterface $logger   A logger instance
+=======
+     * @param mixed $resource The main resource to load
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     public function __construct(LoaderInterface $loader, $resource, array $options = [], RequestContext $context = null, LoggerInterface $logger = null, string $defaultLocale = null)
     {
@@ -129,8 +133,11 @@ class Router implements RouterInterface, RequestMatcherInterface
      *   * strict_requirements:    Configure strict requirement checking for generators
      *                             implementing ConfigurableRequirementsInterface (default is true)
      *
+<<<<<<< HEAD
      * @param array $options An array of options
      *
+=======
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * @throws \InvalidArgumentException When unsupported option is provided
      */
     public function setOptions(array $options)
@@ -369,7 +376,11 @@ class Router implements RouterInterface, RequestMatcherInterface
             );
 
             if ($compiled) {
+<<<<<<< HEAD
                 $this->generator = new $this->options['generator_class'](require $cache->getPath(), $this->context, $this->logger);
+=======
+                $this->generator = new $this->options['generator_class'](require $cache->getPath(), $this->context, $this->logger, $this->defaultLocale);
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
             } else {
                 if (!class_exists($this->options['generator_cache_class'], false)) {
                     require_once $cache->getPath();
@@ -420,10 +431,15 @@ class Router implements RouterInterface, RequestMatcherInterface
     /**
      * Provides the ConfigCache factory implementation, falling back to a
      * default implementation if necessary.
+<<<<<<< HEAD
      *
      * @return ConfigCacheFactoryInterface
      */
     private function getConfigCacheFactory()
+=======
+     */
+    private function getConfigCacheFactory(): ConfigCacheFactoryInterface
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         if (null === $this->configCacheFactory) {
             $this->configCacheFactory = new ConfigCacheFactory($this->options['debug']);
@@ -432,7 +448,11 @@ class Router implements RouterInterface, RequestMatcherInterface
         return $this->configCacheFactory;
     }
 
+<<<<<<< HEAD
     private function checkDeprecatedOption($key)
+=======
+    private function checkDeprecatedOption(string $key)
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         switch ($key) {
             case 'generator_base_class':

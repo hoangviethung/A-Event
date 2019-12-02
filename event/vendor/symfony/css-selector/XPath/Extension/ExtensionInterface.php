@@ -30,34 +30,51 @@ interface ExtensionInterface
      *
      * @return callable[]
      */
+<<<<<<< HEAD
     public function getNodeTranslators();
+=======
+    public function getNodeTranslators(): array;
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
     /**
      * Returns combination translators.
      *
      * @return callable[]
      */
+<<<<<<< HEAD
     public function getCombinationTranslators();
+=======
+    public function getCombinationTranslators(): array;
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
     /**
      * Returns function translators.
      *
      * @return callable[]
      */
+<<<<<<< HEAD
     public function getFunctionTranslators();
+=======
+    public function getFunctionTranslators(): array;
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
     /**
      * Returns pseudo-class translators.
      *
      * @return callable[]
      */
+<<<<<<< HEAD
     public function getPseudoClassTranslators();
+=======
+    public function getPseudoClassTranslators(): array;
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
     /**
      * Returns attribute operation translators.
      *
      * @return callable[]
      */
+<<<<<<< HEAD
     public function getAttributeMatchingTranslators();
 
     /**
@@ -66,4 +83,12 @@ interface ExtensionInterface
      * @return string
      */
     public function getName();
+=======
+    public function getAttributeMatchingTranslators(): array;
+
+    /**
+     * Returns extension name.
+     */
+    public function getName(): string;
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 }

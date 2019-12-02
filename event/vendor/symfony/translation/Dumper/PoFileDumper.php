@@ -51,13 +51,74 @@ class PoFileDumper extends FileDumper
                 $output .= $this->formatComments(implode(' ', (array) $metadata['sources']), ':');
             }
 
+<<<<<<< HEAD
             $output .= sprintf('msgid "%s"'."\n", $this->escape($source));
             $output .= sprintf('msgstr "%s"'."\n", $this->escape($target));
+=======
+            $sourceRules = $this->getStandardRules($source);
+            $targetRules = $this->getStandardRules($target);
+            if (2 == \count($sourceRules) && $targetRules !== []) {
+                $output .= sprintf('msgid "%s"'."\n", $this->escape($sourceRules[0]));
+                $output .= sprintf('msgid_plural "%s"'."\n", $this->escape($sourceRules[1]));
+                foreach ($targetRules as $i => $targetRule) {
+                    $output .= sprintf('msgstr[%d] "%s"'."\n", $i, $this->escape($targetRule));
+                }
+            } else {
+                $output .= sprintf('msgid "%s"'."\n", $this->escape($source));
+                $output .= sprintf('msgstr "%s"'."\n", $this->escape($target));
+            }
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         }
 
         return $output;
     }
 
+<<<<<<< HEAD
+=======
+    private function getStandardRules(string $id)
+    {
+        // Partly copied from TranslatorTrait::trans.
+        $parts = [];
+        if (preg_match('/^\|++$/', $id)) {
+            $parts = explode('|', $id);
+        } elseif (preg_match_all('/(?:\|\||[^\|])++/', $id, $matches)) {
+            $parts = $matches[0];
+        }
+
+        $intervalRegexp = <<<'EOF'
+/^(?P<interval>
+    ({\s*
+        (\-?\d+(\.\d+)?[\s*,\s*\-?\d+(\.\d+)?]*)
+    \s*})
+
+        |
+
+    (?P<left_delimiter>[\[\]])
+        \s*
+        (?P<left>-Inf|\-?\d+(\.\d+)?)
+        \s*,\s*
+        (?P<right>\+?Inf|\-?\d+(\.\d+)?)
+        \s*
+    (?P<right_delimiter>[\[\]])
+)\s*(?P<message>.*?)$/xs
+EOF;
+
+        $standardRules = [];
+        foreach ($parts as $part) {
+            $part = trim(str_replace('||', '|', $part));
+
+            if (preg_match($intervalRegexp, $part)) {
+                // Explicit rule is not a standard rule.
+                return [];
+            } else {
+                $standardRules[] = $part;
+            }
+        }
+
+        return $standardRules;
+    }
+
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     /**
      * {@inheritdoc}
      */
@@ -66,7 +127,11 @@ class PoFileDumper extends FileDumper
         return 'po';
     }
 
+<<<<<<< HEAD
     private function escape($str)
+=======
+    private function escape(string $str): string
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         return addcslashes($str, "\0..\37\42\134");
     }

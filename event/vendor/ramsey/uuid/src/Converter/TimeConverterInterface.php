@@ -14,6 +14,11 @@
 
 namespace Ramsey\Uuid\Converter;
 
+<<<<<<< HEAD
+=======
+use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
+
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 /**
  * TimeConverterInterface provides facilities for converting parts of time into
  * representations that may be used in UUIDs
@@ -27,7 +32,11 @@ interface TimeConverterInterface
      * @param string $seconds
      * @param string $microSeconds
      * @return string[] An array guaranteed to contain `low`, `mid`, and `high` keys
+<<<<<<< HEAD
      * @throws \Ramsey\Uuid\Exception\UnsatisfiedDependencyException if called on a 32-bit system and
+=======
+     * @throws UnsatisfiedDependencyException if called on a 32-bit system and
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      *     `Moontoast\Math\BigNumber` is not present
      * @link http://tools.ietf.org/html/rfc4122#section-4.2.2
      */

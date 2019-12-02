@@ -190,9 +190,15 @@ class PhpRedisConnection extends Connection implements ConnectionContract
      * @param  int|null  $count
      * @return mixed|false
      */
+<<<<<<< HEAD
     public function spop($key, $count = null)
     {
         return $this->command('spop', [$key]);
+=======
+    public function spop($key, $count = 1)
+    {
+        return $this->command('spop', [$key, $count]);
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 
     /**

@@ -28,7 +28,11 @@ use Symfony\Component\Yaml\Yaml;
 class YamlFileLoader extends FileLoader
 {
     private static $availableKeys = [
+<<<<<<< HEAD
         'resource', 'type', 'prefix', 'path', 'host', 'schemes', 'methods', 'defaults', 'requirements', 'options', 'condition', 'controller', 'name_prefix', 'trailing_slash_on_root', 'locale', 'format', 'utf8',
+=======
+        'resource', 'type', 'prefix', 'path', 'host', 'schemes', 'methods', 'defaults', 'requirements', 'options', 'condition', 'controller', 'name_prefix', 'trailing_slash_on_root', 'locale', 'format', 'utf8', 'exclude',
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     ];
     private $yamlParser;
 
@@ -101,10 +105,16 @@ class YamlFileLoader extends FileLoader
     /**
      * Parses a route and adds it to the RouteCollection.
      *
+<<<<<<< HEAD
      * @param RouteCollection $collection A RouteCollection instance
      * @param string          $name       Route name
      * @param array           $config     Route definition
      * @param string          $path       Full path of the YAML file being processed
+=======
+     * @param string $name   Route name
+     * @param array  $config Route definition
+     * @param string $path   Full path of the YAML file being processed
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     protected function parseRoute(RouteCollection $collection, $name, array $config, $path)
     {
@@ -154,10 +164,16 @@ class YamlFileLoader extends FileLoader
     /**
      * Parses an import and adds the routes in the resource to the RouteCollection.
      *
+<<<<<<< HEAD
      * @param RouteCollection $collection A RouteCollection instance
      * @param array           $config     Route definition
      * @param string          $path       Full path of the YAML file being processed
      * @param string          $file       Loaded file name
+=======
+     * @param array  $config Route definition
+     * @param string $path   Full path of the YAML file being processed
+     * @param string $file   Loaded file name
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     protected function parseImport(RouteCollection $collection, array $config, $path, $file)
     {
@@ -171,6 +187,10 @@ class YamlFileLoader extends FileLoader
         $schemes = isset($config['schemes']) ? $config['schemes'] : null;
         $methods = isset($config['methods']) ? $config['methods'] : null;
         $trailingSlashOnRoot = $config['trailing_slash_on_root'] ?? true;
+<<<<<<< HEAD
+=======
+        $exclude = $config['exclude'] ?? null;
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
         if (isset($config['controller'])) {
             $defaults['_controller'] = $config['controller'];
@@ -187,7 +207,11 @@ class YamlFileLoader extends FileLoader
 
         $this->setCurrentDir(\dirname($path));
 
+<<<<<<< HEAD
         $imported = $this->import($config['resource'], $type, false, $file) ?: [];
+=======
+        $imported = $this->import($config['resource'], $type, false, $file, $exclude) ?: [];
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
         if (!\is_array($imported)) {
             $imported = [$imported];

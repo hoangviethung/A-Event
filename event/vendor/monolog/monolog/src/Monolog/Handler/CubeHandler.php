@@ -12,6 +12,10 @@
 namespace Monolog\Handler;
 
 use Monolog\Logger;
+<<<<<<< HEAD
+=======
+use Monolog\Utils;
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
 /**
  * Logs to Cube.
@@ -122,9 +126,15 @@ class CubeHandler extends AbstractProcessingHandler
         $data['data']['level'] = $record['level'];
 
         if ($this->scheme === 'http') {
+<<<<<<< HEAD
             $this->writeHttp(json_encode($data));
         } else {
             $this->writeUdp(json_encode($data));
+=======
+            $this->writeHttp(Utils::jsonEncode($data));
+        } else {
+            $this->writeUdp(Utils::jsonEncode($data));
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         }
     }
 

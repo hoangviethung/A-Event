@@ -23,6 +23,11 @@ use Symfony\Component\Debug\FatalErrorHandler\FatalErrorHandlerInterface;
 use Symfony\Component\Debug\FatalErrorHandler\UndefinedFunctionFatalErrorHandler;
 use Symfony\Component\Debug\FatalErrorHandler\UndefinedMethodFatalErrorHandler;
 
+<<<<<<< HEAD
+=======
+@trigger_error(sprintf('The "%s" class is deprecated since Symfony 4.4, use "%s" instead.', ErrorHandler::class, \Symfony\Component\ErrorHandler\ErrorHandler::class), E_USER_DEPRECATED);
+
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 /**
  * A generic ErrorHandler for the PHP engine.
  *
@@ -47,6 +52,11 @@ use Symfony\Component\Debug\FatalErrorHandler\UndefinedMethodFatalErrorHandler;
  * @author Grégoire Pineau <lyrixx@lyrixx.info>
  *
  * @final since Symfony 4.3
+<<<<<<< HEAD
+=======
+ *
+ * @deprecated since Symfony 4.4, use Symfony\Component\ErrorHandler\ErrorHandler instead.
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
  */
 class ErrorHandler
 {
@@ -172,9 +182,14 @@ class ErrorHandler
     /**
      * Sets a logger to non assigned errors levels.
      *
+<<<<<<< HEAD
      * @param LoggerInterface $logger  A PSR-3 logger to put as default for the given levels
      * @param array|int       $levels  An array map of E_* to LogLevel::* or an integer bit field of E_* constants
      * @param bool            $replace Whether to replace or not any existing logger
+=======
+     * @param array|int $levels  An array map of E_* to LogLevel::* or an integer bit field of E_* constants
+     * @param bool      $replace Whether to replace or not any existing logger
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     public function setDefaultLogger(LoggerInterface $logger, $levels = E_ALL, $replace = false)
     {
@@ -349,7 +364,11 @@ class ErrorHandler
     /**
      * Re-registers as a PHP error handler if levels changed.
      */
+<<<<<<< HEAD
     private function reRegister($prev)
+=======
+    private function reRegister(int $prev)
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         if ($prev !== $this->thrownErrors | $this->loggedErrors) {
             $handler = set_error_handler('var_dump');
@@ -688,7 +707,11 @@ class ErrorHandler
     /**
      * Cleans the trace by removing function arguments and the frames added by the error handler and DebugClassLoader.
      */
+<<<<<<< HEAD
     private function cleanTrace($backtrace, $type, $file, $line, $throw)
+=======
+    private function cleanTrace(array $backtrace, int $type, string $file, int $line, bool $throw): array
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $lightTrace = $backtrace;
 

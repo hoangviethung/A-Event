@@ -137,7 +137,11 @@ class JsonFormatter extends NormalizerFormatter
             return 'Over '.$this->maxNormalizeDepth.' levels deep, aborting normalization';
         }
 
+<<<<<<< HEAD
         if (is_array($data) || $data instanceof \Traversable) {
+=======
+        if (is_array($data)) {
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
             $normalized = [];
 
             $count = 1;

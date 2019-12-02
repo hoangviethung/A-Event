@@ -40,7 +40,11 @@ class RequirePassword
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Closure  $next
+<<<<<<< HEAD
      * @param  string  $redirectToRoute
+=======
+     * @param  string|null  $redirectToRoute
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * @return mixed
      */
     public function handle($request, Closure $next, $redirectToRoute = null)

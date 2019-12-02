@@ -40,7 +40,11 @@ final class None extends Option
 
     public function getOrCall($callable)
     {
+<<<<<<< HEAD
         return call_user_func($callable);
+=======
+        return $callable();
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 
     public function getOrElse($default)
@@ -126,5 +130,11 @@ final class None extends Option
         return $initialValue;
     }
 
+<<<<<<< HEAD
     private function __construct() { }
+=======
+    private function __construct()
+    {
+    }
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 }

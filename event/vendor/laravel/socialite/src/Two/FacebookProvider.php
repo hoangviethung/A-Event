@@ -2,8 +2,13 @@
 
 namespace Laravel\Socialite\Two;
 
+<<<<<<< HEAD
 use Illuminate\Support\Arr;
 use GuzzleHttp\ClientInterface;
+=======
+use GuzzleHttp\ClientInterface;
+use Illuminate\Support\Arr;
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
 class FacebookProvider extends AbstractProvider implements ProviderInterface
 {
@@ -19,7 +24,11 @@ class FacebookProvider extends AbstractProvider implements ProviderInterface
      *
      * @var string
      */
+<<<<<<< HEAD
     protected $version = 'v3.0';
+=======
+    protected $version = 'v3.3';
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
     /**
      * The user fields being requested.
@@ -175,4 +184,20 @@ class FacebookProvider extends AbstractProvider implements ProviderInterface
 
         return $this;
     }
+<<<<<<< HEAD
+=======
+
+    /**
+     * Specify which graph version should be used.
+     *
+     * @param  string  $version
+     * @return $this
+     */
+    public function usingGraphVersion(string $version)
+    {
+        $this->version = $version;
+
+        return $this;
+    }
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 }

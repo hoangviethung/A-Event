@@ -32,6 +32,13 @@ final class ProgressBar
     private $format;
     private $internalFormat;
     private $redrawFreq = 1;
+<<<<<<< HEAD
+=======
+    private $writeCount;
+    private $lastWriteTime;
+    private $minSecondsBetweenRedraws = 0;
+    private $maxSecondsBetweenRedraws = 1;
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     private $output;
     private $step = 0;
     private $max;
@@ -42,16 +49,26 @@ final class ProgressBar
     private $messages = [];
     private $overwrite = true;
     private $terminal;
+<<<<<<< HEAD
     private $firstRun = true;
+=======
+    private $previousMessage;
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
     private static $formatters;
     private static $formats;
 
     /**
+<<<<<<< HEAD
      * @param OutputInterface $output An OutputInterface instance
      * @param int             $max    Maximum steps (0 if unknown)
      */
     public function __construct(OutputInterface $output, int $max = 0)
+=======
+     * @param int $max Maximum steps (0 if unknown)
+     */
+    public function __construct(OutputInterface $output, int $max = 0, float $minSecondsBetweenRedraws = 0.1)
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         if ($output instanceof ConsoleOutputInterface) {
             $output = $output->getErrorOutput();
@@ -61,12 +78,24 @@ final class ProgressBar
         $this->setMaxSteps($max);
         $this->terminal = new Terminal();
 
+<<<<<<< HEAD
+=======
+        if (0 < $minSecondsBetweenRedraws) {
+            $this->redrawFreq = null;
+            $this->minSecondsBetweenRedraws = $minSecondsBetweenRedraws;
+        }
+
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         if (!$this->output->isDecorated()) {
             // disable overwrite when output does not support ANSI codes.
             $this->overwrite = false;
 
             // set a reasonable redraw frequency so output isn't flooded
+<<<<<<< HEAD
             $this->setRedrawFrequency($max / 10);
+=======
+            $this->redrawFreq = null;
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         }
 
         $this->startTime = time();
@@ -183,6 +212,14 @@ final class ProgressBar
         return $this->percent;
     }
 
+<<<<<<< HEAD
+=======
+    public function getBarOffset(): int
+    {
+        return floor($this->max ? $this->percent * $this->barWidth : (null === $this->redrawFreq ? min(5, $this->barWidth / 15) * $this->writeCount : $this->step) % $this->barWidth);
+    }
+
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     public function setBarWidth(int $size)
     {
         $this->barWidth = max(1, $size);
@@ -238,9 +275,25 @@ final class ProgressBar
      *
      * @param int|float $freq The frequency in steps
      */
+<<<<<<< HEAD
     public function setRedrawFrequency(int $freq)
     {
         $this->redrawFreq = max($freq, 1);
+=======
+    public function setRedrawFrequency(?int $freq)
+    {
+        $this->redrawFreq = null !== $freq ? max(1, $freq) : null;
+    }
+
+    public function minSecondsBetweenRedraws(float $seconds): void
+    {
+        $this->minSecondsBetweenRedraws = $seconds;
+    }
+
+    public function maxSecondsBetweenRedraws(float $seconds): void
+    {
+        $this->maxSecondsBetweenRedraws = $seconds;
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 
     /**
@@ -305,11 +358,35 @@ final class ProgressBar
             $step = 0;
         }
 
+<<<<<<< HEAD
         $prevPeriod = (int) ($this->step / $this->redrawFreq);
         $currPeriod = (int) ($step / $this->redrawFreq);
         $this->step = $step;
         $this->percent = $this->max ? (float) $this->step / $this->max : 0;
         if ($prevPeriod !== $currPeriod || $this->max === $step) {
+=======
+        $redrawFreq = $this->redrawFreq ?? (($this->max ?: 10) / 10);
+        $prevPeriod = (int) ($this->step / $redrawFreq);
+        $currPeriod = (int) ($step / $redrawFreq);
+        $this->step = $step;
+        $this->percent = $this->max ? (float) $this->step / $this->max : 0;
+        $timeInterval = microtime(true) - $this->lastWriteTime;
+
+        // Draw regardless of other limits
+        if ($this->max === $step) {
+            $this->display();
+
+            return;
+        }
+
+        // Throttling
+        if ($timeInterval < $this->minSecondsBetweenRedraws) {
+            return;
+        }
+
+        // Draw each step period, but not too late
+        if ($prevPeriod !== $currPeriod || $timeInterval >= $this->maxSecondsBetweenRedraws) {
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
             $this->display();
         }
     }
@@ -393,8 +470,19 @@ final class ProgressBar
      */
     private function overwrite(string $message): void
     {
+<<<<<<< HEAD
         if ($this->overwrite) {
             if (!$this->firstRun) {
+=======
+        if ($this->previousMessage === $message) {
+            return;
+        }
+
+        $originalMessage = $message;
+
+        if ($this->overwrite) {
+            if (null !== $this->previousMessage) {
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
                 if ($this->output instanceof ConsoleSectionOutput) {
                     $lines = floor(Helper::strlen($message) / $this->terminal->getWidth()) + $this->formatLineCount + 1;
                     $this->output->clear($lines);
@@ -412,9 +500,17 @@ final class ProgressBar
             $message = PHP_EOL.$message;
         }
 
+<<<<<<< HEAD
         $this->firstRun = false;
 
         $this->output->write($message);
+=======
+        $this->previousMessage = $originalMessage;
+        $this->lastWriteTime = microtime(true);
+
+        $this->output->write($message);
+        ++$this->writeCount;
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 
     private function determineBestFormat(): string
@@ -436,7 +532,11 @@ final class ProgressBar
     {
         return [
             'bar' => function (self $bar, OutputInterface $output) {
+<<<<<<< HEAD
                 $completeBars = floor($bar->getMaxSteps() > 0 ? $bar->getProgressPercent() * $bar->getBarWidth() : $bar->getProgress() % $bar->getBarWidth());
+=======
+                $completeBars = $bar->getBarOffset();
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
                 $display = str_repeat($bar->getBarCharacter(), $completeBars);
                 if ($completeBars < $bar->getBarWidth()) {
                     $emptyBars = $bar->getBarWidth() - $completeBars - Helper::strlenWithoutDecoration($output->getFormatter(), $bar->getProgressCharacter());

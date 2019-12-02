@@ -63,7 +63,11 @@ class LinkStub extends ConstStub
         }
     }
 
+<<<<<<< HEAD
     private function getComposerRoot($file, &$inVendor)
+=======
+    private function getComposerRoot(string $file, bool &$inVendor)
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         if (null === self::$vendorRoots) {
             self::$vendorRoots = [];

@@ -9,7 +9,11 @@ class DateTime extends Base
     protected static $defaultTimezone = null;
 
     /**
+<<<<<<< HEAD
      * @param string|float|int $max
+=======
+     * @param \DateTime|string|float|int $max
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * @return int|false
      */
     protected static function getMaxTimestamp($max = 'now')
@@ -147,7 +151,11 @@ class DateTime extends Base
      * an interval
      * Accepts date string that can be recognized by strtotime().
      *
+<<<<<<< HEAD
      * @param string $date      Defaults to 30 years ago
+=======
+     * @param \DateTime|string $date      Defaults to 30 years ago
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * @param string $interval  Defaults to 5 days after
      * @param string|null $timezone time zone in which the date time should be set, default to DateTime::$defaultTimezone, if set, otherwise the result of `date_default_timezone_get`
      * @example dateTimeInInterval('1999-02-02 11:42:52', '+ 5 days')

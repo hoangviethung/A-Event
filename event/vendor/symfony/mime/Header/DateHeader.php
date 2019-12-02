@@ -15,8 +15,11 @@ namespace Symfony\Component\Mime\Header;
  * A Date MIME Header.
  *
  * @author Chris Corbyn
+<<<<<<< HEAD
  *
  * @experimental in 4.3
+=======
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
  */
 final class DateHeader extends AbstractHeader
 {
@@ -37,10 +40,14 @@ final class DateHeader extends AbstractHeader
         $this->setDateTime($body);
     }
 
+<<<<<<< HEAD
     /**
      * @return \DateTimeImmutable
      */
     public function getBody()
+=======
+    public function getBody(): \DateTimeImmutable
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         return $this->getDateTime();
     }

@@ -105,6 +105,11 @@ class Person extends \Faker\Provider\Person
         'Меркушев', 'Лыткин', 'Туров',
     );
 
+<<<<<<< HEAD
+=======
+    protected static $lastNameSuffix = array('a', '');
+
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     /**
      * Return male middle name
      *
@@ -154,4 +159,27 @@ class Person extends \Faker\Provider\Person
             static::GENDER_FEMALE,
         )));
     }
+<<<<<<< HEAD
+=======
+
+    /**
+     * Return last name for the specified gender.
+     *
+     * @param string|null $gender A gender of the last name should be generated
+     *     for. If the argument is skipped a random gender will be used.
+     * @return string Last name
+     */
+    public function lastName($gender = null)
+    {
+        $lastName = static::randomElement(static::$lastName);
+
+        if (static::GENDER_FEMALE === $gender) {
+            return $lastName . 'a';
+        } elseif (static::GENDER_MALE === $gender) {
+            return $lastName;
+        }
+
+        return $lastName . static::randomElement(static::$lastNameSuffix);
+    }
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 }

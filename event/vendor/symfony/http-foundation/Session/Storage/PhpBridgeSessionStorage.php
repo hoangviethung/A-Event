@@ -11,6 +11,11 @@
 
 namespace Symfony\Component\HttpFoundation\Session\Storage;
 
+<<<<<<< HEAD
+=======
+use Symfony\Component\HttpFoundation\Session\Storage\Proxy\AbstractProxy;
+
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 /**
  * Allows session to be started by PHP and managed by Symfony.
  *
@@ -19,8 +24,12 @@ namespace Symfony\Component\HttpFoundation\Session\Storage;
 class PhpBridgeSessionStorage extends NativeSessionStorage
 {
     /**
+<<<<<<< HEAD
      * @param \SessionHandlerInterface|null $handler
      * @param MetadataBag                   $metaBag MetadataBag
+=======
+     * @param AbstractProxy|\SessionHandlerInterface|null $handler
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     public function __construct($handler = null, MetadataBag $metaBag = null)
     {

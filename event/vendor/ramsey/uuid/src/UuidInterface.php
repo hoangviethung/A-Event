@@ -14,14 +14,27 @@
 
 namespace Ramsey\Uuid;
 
+<<<<<<< HEAD
 use Ramsey\Uuid\Converter\NumberConverterInterface;
 use Ramsey\Uuid\Exception\UnsupportedOperationException;
+=======
+use DateTime;
+use JsonSerializable;
+use Ramsey\Uuid\Converter\NumberConverterInterface;
+use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
+use Ramsey\Uuid\Exception\UnsupportedOperationException;
+use Serializable;
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
 /**
  * UuidInterface defines common functionality for all universally unique
  * identifiers (UUIDs)
  */
+<<<<<<< HEAD
 interface UuidInterface extends \JsonSerializable, \Serializable
+=======
+interface UuidInterface extends JsonSerializable, Serializable
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 {
     /**
      * Compares this UUID to the specified UUID.
@@ -121,9 +134,15 @@ interface UuidInterface extends \JsonSerializable, \Serializable
      * has version type 1. If this UUID is not a time-based UUID then
      * this method throws `UnsupportedOperationException`.
      *
+<<<<<<< HEAD
      * @return \DateTime A PHP DateTime representation of the date
      * @throws UnsupportedOperationException If this UUID is not a version 1 UUID
      * @throws \Ramsey\Uuid\Exception\UnsatisfiedDependencyException if called in a 32-bit system and
+=======
+     * @return DateTime A PHP DateTime representation of the date
+     * @throws UnsupportedOperationException If this UUID is not a version 1 UUID
+     * @throws UnsatisfiedDependencyException if called in a 32-bit system and
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      *     `Moontoast\Math\BigNumber` is not present
      */
     public function getDateTime();
@@ -133,7 +152,11 @@ interface UuidInterface extends \JsonSerializable, \Serializable
      * representation.
      *
      * @return mixed Converted representation of the unsigned 128-bit integer value
+<<<<<<< HEAD
      * @throws \Ramsey\Uuid\Exception\UnsatisfiedDependencyException if `Moontoast\Math\BigNumber` is not present
+=======
+     * @throws UnsatisfiedDependencyException if `Moontoast\Math\BigNumber` is not present
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     public function getInteger();
 

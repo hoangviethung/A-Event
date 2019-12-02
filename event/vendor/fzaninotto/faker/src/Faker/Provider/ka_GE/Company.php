@@ -2,7 +2,10 @@
 
 namespace Faker\Provider\ka_GE;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 class Company extends \Faker\Provider\Company
 {
     protected static $companyPrefixes = array(

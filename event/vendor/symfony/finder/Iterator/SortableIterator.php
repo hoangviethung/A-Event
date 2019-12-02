@@ -79,6 +79,12 @@ class SortableIterator implements \IteratorAggregate
         }
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * @return \Traversable
+     */
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     public function getIterator()
     {
         if (1 === $this->sort) {

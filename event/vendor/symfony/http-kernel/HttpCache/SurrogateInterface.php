@@ -78,10 +78,16 @@ interface SurrogateInterface
     /**
      * Handles a Surrogate from the cache.
      *
+<<<<<<< HEAD
      * @param HttpCache $cache        An HttpCache instance
      * @param string    $uri          The main URI
      * @param string    $alt          An alternative URI
      * @param bool      $ignoreErrors Whether to ignore errors or not
+=======
+     * @param string $uri          The main URI
+     * @param string $alt          An alternative URI
+     * @param bool   $ignoreErrors Whether to ignore errors or not
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      *
      * @return string
      *

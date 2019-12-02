@@ -1,13 +1,18 @@
 {
     "name": "phpoption/phpoption",
     "description": "Option Type for PHP",
+<<<<<<< HEAD
     "keywords": ["php","option","language","type"],
     "type": "library",
+=======
+    "keywords": ["php", "option", "language", "type"],
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     "license": "Apache-2.0",
     "authors": [
         {
             "name": "Johannes M. Schmitt",
             "email": "schmittjoh@gmail.com"
+<<<<<<< HEAD
         }
     ],
     "require": {
@@ -22,6 +27,28 @@
     "extra": {
         "branch-alias": {
             "dev-master": "1.3-dev"
+=======
+        },
+        {
+            "name": "Graham Campbell",
+            "email": "graham@alt-three.com"
+        }
+    ],
+    "require": {
+        "php": "^5.5.9 || ^7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.8.35 || ^5.0 || ^6.0 || ^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "PhpOption\\": "src/PhpOption/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.6-dev"
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         }
     }
 }

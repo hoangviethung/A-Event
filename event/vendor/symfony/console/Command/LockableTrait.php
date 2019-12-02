@@ -12,8 +12,13 @@
 namespace Symfony\Component\Console\Command;
 
 use Symfony\Component\Console\Exception\LogicException;
+<<<<<<< HEAD
 use Symfony\Component\Lock\Factory;
 use Symfony\Component\Lock\Lock;
+=======
+use Symfony\Component\Lock\Lock;
+use Symfony\Component\Lock\LockFactory;
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 use Symfony\Component\Lock\Store\FlockStore;
 use Symfony\Component\Lock\Store\SemaphoreStore;
 
@@ -29,10 +34,15 @@ trait LockableTrait
 
     /**
      * Locks a command.
+<<<<<<< HEAD
      *
      * @return bool
      */
     private function lock($name = null, $blocking = false)
+=======
+     */
+    private function lock(string $name = null, bool $blocking = false): bool
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         if (!class_exists(SemaphoreStore::class)) {
             throw new LogicException('To enable the locking feature you must install the symfony/lock component.');
@@ -48,7 +58,11 @@ trait LockableTrait
             $store = new FlockStore();
         }
 
+<<<<<<< HEAD
         $this->lock = (new Factory($store))->createLock($name ?: $this->getName());
+=======
+        $this->lock = (new LockFactory($store))->createLock($name ?: $this->getName());
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         if (!$this->lock->acquire($blocking)) {
             $this->lock = null;
 

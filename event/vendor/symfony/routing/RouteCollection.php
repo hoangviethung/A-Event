@@ -69,8 +69,12 @@ class RouteCollection implements \IteratorAggregate, \Countable
     /**
      * Adds a route.
      *
+<<<<<<< HEAD
      * @param string $name  The route name
      * @param Route  $route A Route instance
+=======
+     * @param string $name The route name
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     public function add($name, Route $route)
     {
@@ -140,6 +144,13 @@ class RouteCollection implements \IteratorAggregate, \Countable
      */
     public function addPrefix($prefix, array $defaults = [], array $requirements = [])
     {
+<<<<<<< HEAD
+=======
+        if (null === $prefix) {
+            @trigger_error(sprintf('Passing null as $prefix to %s is deprecated in Symfony 4.4 and will trigger a TypeError in 5.0.', __METHOD__), E_USER_DEPRECATED);
+        }
+
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         $prefix = trim(trim($prefix), '/');
 
         if ('' === $prefix) {
@@ -236,8 +247,11 @@ class RouteCollection implements \IteratorAggregate, \Countable
      * Adds options to all routes.
      *
      * An existing option value under the same name in a route will be overridden.
+<<<<<<< HEAD
      *
      * @param array $options An array of options
+=======
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     public function addOptions(array $options)
     {

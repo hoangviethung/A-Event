@@ -15,10 +15,19 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\HttpKernel\KernelInterface;
+<<<<<<< HEAD
 use Symfony\Component\VarDumper\Caster\LinkStub;
 
 /**
  * @author Fabien Potencier <fabien@symfony.com>
+=======
+use Symfony\Component\VarDumper\Caster\ClassStub;
+
+/**
+ * @author Fabien Potencier <fabien@symfony.com>
+ *
+ * @final since Symfony 4.4
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
  */
 class ConfigDataCollector extends DataCollector implements LateDataCollectorInterface
 {
@@ -28,7 +37,10 @@ class ConfigDataCollector extends DataCollector implements LateDataCollectorInte
     private $kernel;
     private $name;
     private $version;
+<<<<<<< HEAD
     private $hasVarDumper;
+=======
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
     public function __construct(string $name = null, string $version = null)
     {
@@ -41,7 +53,10 @@ class ConfigDataCollector extends DataCollector implements LateDataCollectorInte
 
         $this->name = $name;
         $this->version = $version;
+<<<<<<< HEAD
         $this->hasVarDumper = class_exists(LinkStub::class);
+=======
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 
     /**
@@ -54,8 +69,15 @@ class ConfigDataCollector extends DataCollector implements LateDataCollectorInte
 
     /**
      * {@inheritdoc}
+<<<<<<< HEAD
      */
     public function collect(Request $request, Response $response, \Exception $exception = null)
+=======
+     *
+     * @param \Throwable|null $exception
+     */
+    public function collect(Request $request, Response $response/*, \Throwable $exception = null*/)
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $this->data = [
             'app_name' => $this->name,
@@ -78,13 +100,23 @@ class ConfigDataCollector extends DataCollector implements LateDataCollectorInte
 
         if (isset($this->kernel)) {
             foreach ($this->kernel->getBundles() as $name => $bundle) {
+<<<<<<< HEAD
                 $this->data['bundles'][$name] = $this->hasVarDumper ? new LinkStub($bundle->getPath()) : $bundle->getPath();
+=======
+                $this->data['bundles'][$name] = new ClassStub(\get_class($bundle));
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
             }
 
             $this->data['symfony_state'] = $this->determineSymfonyState();
             $this->data['symfony_minor_version'] = sprintf('%s.%s', Kernel::MAJOR_VERSION, Kernel::MINOR_VERSION);
+<<<<<<< HEAD
             $eom = \DateTime::createFromFormat('m/Y', Kernel::END_OF_MAINTENANCE);
             $eol = \DateTime::createFromFormat('m/Y', Kernel::END_OF_LIFE);
+=======
+            $this->data['symfony_lts'] = 4 === Kernel::MINOR_VERSION;
+            $eom = \DateTime::createFromFormat('d/m/Y', '01/'.Kernel::END_OF_MAINTENANCE);
+            $eol = \DateTime::createFromFormat('d/m/Y', '01/'.Kernel::END_OF_LIFE);
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
             $this->data['symfony_eom'] = $eom->format('F Y');
             $this->data['symfony_eol'] = $eol->format('F Y');
         }
@@ -170,6 +202,17 @@ class ConfigDataCollector extends DataCollector implements LateDataCollectorInte
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Returns if the current Symfony version is a Long-Term Support one.
+     */
+    public function isSymfonyLts(): bool
+    {
+        return $this->data['symfony_lts'];
+    }
+
+    /**
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * Returns the human redable date when this Symfony version ends its
      * maintenance period.
      *
@@ -327,11 +370,19 @@ class ConfigDataCollector extends DataCollector implements LateDataCollectorInte
      *
      * @return string One of: dev, stable, eom, eol
      */
+<<<<<<< HEAD
     private function determineSymfonyState()
     {
         $now = new \DateTime();
         $eom = \DateTime::createFromFormat('m/Y', Kernel::END_OF_MAINTENANCE)->modify('last day of this month');
         $eol = \DateTime::createFromFormat('m/Y', Kernel::END_OF_LIFE)->modify('last day of this month');
+=======
+    private function determineSymfonyState(): string
+    {
+        $now = new \DateTime();
+        $eom = \DateTime::createFromFormat('d/m/Y', '01/'.Kernel::END_OF_MAINTENANCE)->modify('last day of this month');
+        $eol = \DateTime::createFromFormat('d/m/Y', '01/'.Kernel::END_OF_LIFE)->modify('last day of this month');
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
         if ($now > $eol) {
             $versionState = 'eol';

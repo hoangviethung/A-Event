@@ -1,6 +1,23 @@
 CHANGELOG
 =========
 
+<<<<<<< HEAD
+=======
+4.4.0
+-----
+
+ * deprecated finding hidden commands using an abbreviation, use the full name instead
+ * added `Question::setTrimmable` default to true to allow the answer to be trimmed
+ * added method `minSecondsBetweenRedraws()` and `maxSecondsBetweenRedraws()` on `ProgressBar`
+ * `Application` implements `ResetInterface`
+ * marked all dispatched event classes as `@final`
+ * added support for displaying table horizontally
+ * deprecated returning `null` from `Command::execute()`, return `0` instead
+ * Deprecated the `Application::renderException()` and `Application::doRenderException()` methods,
+   use `renderThrowable()` and `doRenderThrowable()` instead.
+ * added support for the `NO_COLOR` env var (https://no-color.org/)
+
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 4.3.0
 -----
 
@@ -32,7 +49,11 @@ CHANGELOG
 
  * `OutputFormatter` throws an exception when unknown options are used
  * removed `QuestionHelper::setInputStream()/getInputStream()`
+<<<<<<< HEAD
  * removed `Application::getTerminalWidth()/getTerminalHeight()` and 
+=======
+ * removed `Application::getTerminalWidth()/getTerminalHeight()` and
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
   `Application::setTerminalDimensions()/getTerminalDimensions()`
 * removed `ConsoleExceptionEvent`
 * removed `ConsoleEvents::EXCEPTION`

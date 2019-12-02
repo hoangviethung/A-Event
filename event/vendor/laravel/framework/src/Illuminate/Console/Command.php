@@ -59,14 +59,22 @@ class Command extends SymfonyCommand
     /**
      * The console command description.
      *
+<<<<<<< HEAD
      * @var string
+=======
+     * @var string|null
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     protected $description;
 
     /**
      * The console command help text.
      *
+<<<<<<< HEAD
      * @var string
+=======
+     * @var string|null
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     protected $help;
 
@@ -116,9 +124,15 @@ class Command extends SymfonyCommand
         // Once we have constructed the command, we'll set the description and other
         // related properties of the command. If a signature wasn't used to build
         // the command we'll set the arguments and the options on this command.
+<<<<<<< HEAD
         $this->setDescription($this->description);
 
         $this->setHelp($this->help);
+=======
+        $this->setDescription((string) $this->description);
+
+        $this->setHelp((string) $this->help);
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
         $this->setHidden($this->isHidden());
 

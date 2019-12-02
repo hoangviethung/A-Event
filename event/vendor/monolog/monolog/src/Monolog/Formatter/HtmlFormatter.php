@@ -12,6 +12,10 @@
 namespace Monolog\Formatter;
 
 use Monolog\Logger;
+<<<<<<< HEAD
+=======
+use Monolog\Utils;
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
 /**
  * Formats incoming records into an HTML table
@@ -92,7 +96,11 @@ class HtmlFormatter extends NormalizerFormatter
         if ($record['context']) {
             $embeddedTable = '<table cellspacing="1" width="100%">';
             foreach ($record['context'] as $key => $value) {
+<<<<<<< HEAD
                 $embeddedTable .= $this->addRow($key, $this->convertToString($value));
+=======
+                $embeddedTable .= $this->addRow((string)$key, $this->convertToString($value));
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
             }
             $embeddedTable .= '</table>';
             $output .= $this->addRow('Context', $embeddedTable, false);
@@ -100,7 +108,11 @@ class HtmlFormatter extends NormalizerFormatter
         if ($record['extra']) {
             $embeddedTable = '<table cellspacing="1" width="100%">';
             foreach ($record['extra'] as $key => $value) {
+<<<<<<< HEAD
                 $embeddedTable .= $this->addRow($key, $this->convertToString($value));
+=======
+                $embeddedTable .= $this->addRow((string)$key, $this->convertToString($value));
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
             }
             $embeddedTable .= '</table>';
             $output .= $this->addRow('Extra', $embeddedTable, false);
@@ -133,6 +145,10 @@ class HtmlFormatter extends NormalizerFormatter
 
         $data = $this->normalize($data);
 
+<<<<<<< HEAD
         return json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+=======
+        return Utils::jsonEncode($data, JSON_PRETTY_PRINT | Utils::DEFAULT_JSON_FLAGS, true);
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 }

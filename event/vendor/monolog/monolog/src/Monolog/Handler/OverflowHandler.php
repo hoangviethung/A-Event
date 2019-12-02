@@ -12,6 +12,10 @@
 namespace Monolog\Handler;
 
 use Monolog\Logger;
+<<<<<<< HEAD
+=======
+use Monolog\Formatter\FormatterInterface;
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
 /**
  * Handler to only pass log messages when a certain threshold of number of messages is reached.
@@ -33,7 +37,11 @@ use Monolog\Logger;
  *
  * @author Kris Buist <krisbuist@gmail.com>
  */
+<<<<<<< HEAD
 class OverflowHandler extends AbstractHandler
+=======
+class OverflowHandler extends AbstractHandler implements FormattableHandlerInterface
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 {
     /** @var HandlerInterface */
     private $handler;
@@ -124,4 +132,25 @@ class OverflowHandler extends AbstractHandler
 
         return false === $this->bubble;
     }
+<<<<<<< HEAD
+=======
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setFormatter(FormatterInterface $formatter): HandlerInterface
+    {
+        $this->handler->setFormatter($formatter);
+
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getFormatter(): FormatterInterface
+    {
+        return $this->handler->getFormatter();
+    }
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 }

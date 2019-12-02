@@ -61,9 +61,12 @@ class MongoDbSessionHandler extends AbstractSessionHandler
      * If you use such an index, you can drop `gc_probability` to 0 since
      * no garbage-collection is required.
      *
+<<<<<<< HEAD
      * @param \MongoDB\Client $mongo   A MongoDB\Client instance
      * @param array           $options An associative array of field options
      *
+=======
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * @throws \InvalidArgumentException When "database" or "collection" not provided
      */
     public function __construct(\MongoDB\Client $mongo, array $options)
@@ -83,7 +86,11 @@ class MongoDbSessionHandler extends AbstractSessionHandler
     }
 
     /**
+<<<<<<< HEAD
      * {@inheritdoc}
+=======
+     * @return bool
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     public function close()
     {
@@ -103,7 +110,11 @@ class MongoDbSessionHandler extends AbstractSessionHandler
     }
 
     /**
+<<<<<<< HEAD
      * {@inheritdoc}
+=======
+     * @return bool
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     public function gc($maxlifetime)
     {
@@ -137,7 +148,11 @@ class MongoDbSessionHandler extends AbstractSessionHandler
     }
 
     /**
+<<<<<<< HEAD
      * {@inheritdoc}
+=======
+     * @return bool
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     public function updateTimestamp($sessionId, $data)
     {
@@ -171,10 +186,14 @@ class MongoDbSessionHandler extends AbstractSessionHandler
         return $dbData[$this->options['data_field']]->getData();
     }
 
+<<<<<<< HEAD
     /**
      * @return \MongoDB\Collection
      */
     private function getCollection()
+=======
+    private function getCollection(): \MongoDB\Collection
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         if (null === $this->collection) {
             $this->collection = $this->mongo->selectCollection($this->options['database'], $this->options['collection']);

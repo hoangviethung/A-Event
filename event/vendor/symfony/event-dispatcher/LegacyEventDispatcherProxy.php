@@ -59,7 +59,11 @@ final class LegacyEventDispatcherProxy implements EventDispatcherInterface
 
         if (\is_object($event)) {
             $eventName = $eventName ?? \get_class($event);
+<<<<<<< HEAD
         } elseif (\is_string($event) && (null === $eventName || $eventName instanceof Event)) {
+=======
+        } elseif (\is_string($event) && (null === $eventName || $eventName instanceof ContractsEvent || $eventName instanceof Event)) {
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
             @trigger_error(sprintf('Calling the "%s::dispatch()" method with the event name as the first argument is deprecated since Symfony 4.3, pass it as the second argument and provide the event object as the first argument instead.', ContractsEventDispatcherInterface::class), E_USER_DEPRECATED);
             $swap = $event;
             $event = $eventName ?? new Event();
@@ -116,7 +120,11 @@ final class LegacyEventDispatcherProxy implements EventDispatcherInterface
     /**
      * {@inheritdoc}
      */
+<<<<<<< HEAD
     public function getListeners($eventName = null)
+=======
+    public function getListeners($eventName = null): array
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         return $this->dispatcher->getListeners($eventName);
     }
@@ -124,7 +132,11 @@ final class LegacyEventDispatcherProxy implements EventDispatcherInterface
     /**
      * {@inheritdoc}
      */
+<<<<<<< HEAD
     public function getListenerPriority($eventName, $listener)
+=======
+    public function getListenerPriority($eventName, $listener): ?int
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         return $this->dispatcher->getListenerPriority($eventName, $listener);
     }
@@ -132,7 +144,11 @@ final class LegacyEventDispatcherProxy implements EventDispatcherInterface
     /**
      * {@inheritdoc}
      */
+<<<<<<< HEAD
     public function hasListeners($eventName = null)
+=======
+    public function hasListeners($eventName = null): bool
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         return $this->dispatcher->hasListeners($eventName);
     }

@@ -8,9 +8,12 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+<<<<<<< HEAD
 \Symfony\Component\Translation\PluralizationRules::set(function ($number) {
     return $number === 1 ? 0 : 1;
 }, 'yo');
+=======
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
 /*
  * Authors:
@@ -19,6 +22,7 @@
  */
 return [
     'year' => 'ọdún :count',
+<<<<<<< HEAD
     'a_year' => 'ọdún kan|ọdún :count',
     'month' => 'osù :count',
     'a_month' => 'osù kan|osù :count',
@@ -32,6 +36,21 @@ return [
     'a_minute' => 'ìsẹjú kan|ìsẹjú :count',
     'second' => 'iaayá :count',
     'a_second' => 'ìsẹjú aayá die|aayá :count',
+=======
+    'a_year' => '{1}ọdún kan|ọdún :count',
+    'month' => 'osù :count',
+    'a_month' => '{1}osù kan|osù :count',
+    'week' => 'ọsẹ :count',
+    'a_week' => '{1}ọsẹ kan|ọsẹ :count',
+    'day' => 'ọjọ́ :count',
+    'a_day' => '{1}ọjọ́ kan|ọjọ́ :count',
+    'hour' => 'wákati :count',
+    'a_hour' => '{1}wákati kan|wákati :count',
+    'minute' => 'ìsẹjú :count',
+    'a_minute' => '{1}ìsẹjú kan|ìsẹjú :count',
+    'second' => 'iaayá :count',
+    'a_second' => '{1}ìsẹjú aayá die|aayá :count',
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     'ago' => ':time kọjá',
     'from_now' => 'ní :time',
     'diff_yesterday' => 'Àna',

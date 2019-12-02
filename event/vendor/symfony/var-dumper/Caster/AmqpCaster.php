@@ -17,6 +17,11 @@ use Symfony\Component\VarDumper\Cloner\Stub;
  * Casts Amqp related classes to array representation.
  *
  * @author Grégoire Pineau <lyrixx@lyrixx.info>
+<<<<<<< HEAD
+=======
+ *
+ * @final since Symfony 4.4
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
  */
 class AmqpCaster
 {
@@ -191,7 +196,11 @@ class AmqpCaster
         return $a;
     }
 
+<<<<<<< HEAD
     private static function extractFlags($flags)
+=======
+    private static function extractFlags(int $flags): ConstStub
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $flagsArray = [];
 

@@ -14,6 +14,10 @@
 
 namespace Ramsey\Uuid\Provider\Time;
 
+<<<<<<< HEAD
+=======
+use InvalidArgumentException;
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 use Ramsey\Uuid\Provider\TimeProviderInterface;
 
 /**
@@ -33,12 +37,20 @@ class FixedTimeProvider implements TimeProviderInterface
      * Constructs a `FixedTimeProvider` using the provided `$timestamp`
      *
      * @param int[] Array containing `sec` and `usec` components of a timestamp
+<<<<<<< HEAD
      * @throws \InvalidArgumentException if the `$timestamp` does not contain `sec` or `usec` components
+=======
+     * @throws InvalidArgumentException if the `$timestamp` does not contain `sec` or `usec` components
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     public function __construct(array $timestamp)
     {
         if (!array_key_exists('sec', $timestamp) || !array_key_exists('usec', $timestamp)) {
+<<<<<<< HEAD
             throw new \InvalidArgumentException('Array must contain sec and usec keys.');
+=======
+            throw new InvalidArgumentException('Array must contain sec and usec keys.');
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         }
 
         $this->fixedTime = $timestamp;

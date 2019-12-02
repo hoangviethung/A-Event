@@ -47,7 +47,11 @@ class FileProfilerStorage implements ProfilerStorageInterface
     /**
      * {@inheritdoc}
      */
+<<<<<<< HEAD
     public function find($ip, $url, $limit, $method, $start = null, $end = null, $statusCode = null)
+=======
+    public function find($ip, $url, $limit, $method, $start = null, $end = null, $statusCode = null): array
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $file = $this->getIndexFilename();
 
@@ -113,12 +117,23 @@ class FileProfilerStorage implements ProfilerStorageInterface
     /**
      * {@inheritdoc}
      */
+<<<<<<< HEAD
     public function read($token)
+=======
+    public function read($token): ?Profile
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         if (!$token || !file_exists($file = $this->getFilename($token))) {
             return null;
         }
 
+<<<<<<< HEAD
+=======
+        if (\function_exists('gzcompress')) {
+            $file = 'compress.zlib://'.$file;
+        }
+
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         return $this->createProfileFromData($token, unserialize(file_get_contents($file)));
     }
 
@@ -127,7 +142,11 @@ class FileProfilerStorage implements ProfilerStorageInterface
      *
      * @throws \RuntimeException
      */
+<<<<<<< HEAD
     public function write(Profile $profile)
+=======
+    public function write(Profile $profile): bool
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $file = $this->getFilename($profile->getToken());
 
@@ -161,7 +180,18 @@ class FileProfilerStorage implements ProfilerStorageInterface
             'status_code' => $profile->getStatusCode(),
         ];
 
+<<<<<<< HEAD
         if (false === file_put_contents($file, serialize($data))) {
+=======
+        $context = stream_context_create();
+
+        if (\function_exists('gzcompress')) {
+            $file = 'compress.zlib://'.$file;
+            stream_context_set_option($context, 'zlib', 'level', 3);
+        }
+
+        if (false === file_put_contents($file, serialize($data), 0, $context)) {
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
             return false;
         }
 
@@ -282,6 +312,13 @@ class FileProfilerStorage implements ProfilerStorageInterface
                 continue;
             }
 
+<<<<<<< HEAD
+=======
+            if (\function_exists('gzcompress')) {
+                $file = 'compress.zlib://'.$file;
+            }
+
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
             $profile->addChild($this->createProfileFromData($token, unserialize(file_get_contents($file)), $profile));
         }
 

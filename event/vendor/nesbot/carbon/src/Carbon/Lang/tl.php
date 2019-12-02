@@ -8,6 +8,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+<<<<<<< HEAD
 \Symfony\Component\Translation\PluralizationRules::set(function ($number) {
     return $number === 1 ? 0 : 1;
 }, 'tl');
@@ -28,6 +29,25 @@ return [
     'min' => ':count min.',
     'second' => ':count segundo',
     'a_second' => 'ilang segundo|:count segundo',
+=======
+
+return [
+    'year' => ':count taon',
+    'a_year' => '{1}isang taon|:count taon',
+    'month' => ':count buwan',
+    'a_month' => '{1}isang buwan|:count buwan',
+    'week' => ':count linggo',
+    'a_week' => '{1}isang linggo|:count linggo',
+    'day' => ':count araw',
+    'a_day' => '{1}isang araw|:count araw',
+    'hour' => ':count oras',
+    'a_hour' => '{1}isang oras|:count oras',
+    'minute' => ':count minuto',
+    'a_minute' => '{1}isang minuto|:count minuto',
+    'min' => ':count min.',
+    'second' => ':count segundo',
+    'a_second' => '{1}ilang segundo|:count segundo',
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     's' => ':count seg.',
     'ago' => ':time ang nakalipas',
     'from_now' => 'sa loob ng :time',

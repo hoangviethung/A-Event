@@ -11,10 +11,20 @@
 
 namespace Symfony\Component\Debug\Exception;
 
+<<<<<<< HEAD
+=======
+@trigger_error(sprintf('The "%s" class is deprecated since Symfony 4.4, use "%s" instead.', UndefinedMethodException::class, \Symfony\Component\ErrorHandler\Error\UndefinedMethodError::class), E_USER_DEPRECATED);
+
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 /**
  * Undefined Method Exception.
  *
  * @author Grégoire Pineau <lyrixx@lyrixx.info>
+<<<<<<< HEAD
+=======
+ *
+ * @deprecated since Symfony 4.4, use Symfony\Component\ErrorHandler\Error\UndefinedMethodError instead.
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
  */
 class UndefinedMethodException extends FatalErrorException
 {

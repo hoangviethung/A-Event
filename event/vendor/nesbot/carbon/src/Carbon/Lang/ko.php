@@ -21,6 +21,7 @@
  * - Juwon Kim
  */
 return [
+<<<<<<< HEAD
     'year' => '{1}일 년|]1,Inf[:count년',
     'y' => ':count 년',
     'month' => '{1}한 달|]1,Inf[:count달',
@@ -39,6 +40,33 @@ return [
     'from_now' => ':time 후',
     'after' => ':time 이후',
     'before' => ':time 이전',
+=======
+    'year' => ':count년',
+    'a_year' => '{1}일년|]1,Inf[:count년',
+    'y' => ':count년',
+    'month' => ':count달',
+    'a_month' => '{1}한달|]1,Inf[:count달',
+    'm' => ':count개월',
+    'week' => ':count주일',
+    'a_week' => '{1}일주일|]1,Inf[:count 주일',
+    'w' => ':count주일',
+    'day' => ':count일',
+    'a_day' => '{1}하루|]1,Inf[:count일',
+    'd' => ':count일',
+    'hour' => ':count시간',
+    'a_hour' => '{1}한시간|]1,Inf[:count시간',
+    'h' => ':count시간',
+    'minute' => ':count분',
+    'a_minute' => '{1}일분|]1,Inf[:count분',
+    'min' => ':count분',
+    'second' => ':count초',
+    'a_second' => '{1}몇초|]1,Inf[:count초',
+    's' => ':count초',
+    'ago' => ':time 전',
+    'from_now' => ':time 후',
+    'after' => ':time 후',
+    'before' => ':time 전',
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     'formats' => [
         'LT' => 'A h:mm',
         'LTS' => 'A h:mm:ss',

@@ -8,9 +8,12 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+<<<<<<< HEAD
 \Symfony\Component\Translation\PluralizationRules::set(function ($number) {
     return $number === 1 ? 0 : 1;
 }, 'my');
+=======
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
 /*
  * Authors:
@@ -19,6 +22,7 @@
  * - Nay Lin Aung
  */
 return [
+<<<<<<< HEAD
     'year' => 'တစ်နှစ်|:count နှစ်',
     'y' => ':count နှစ်',
     'month' => 'တစ်လ|:count လ',
@@ -32,6 +36,21 @@ return [
     'minute' => 'တစ်မိနစ်|:count မိနစ်',
     'min' => ':count မိနစ်',
     'second' => 'စက္ကန်.အနည်းငယ်|:count စက္ကန့်',
+=======
+    'year' => '{1}တစ်နှစ်|]1,Inf[:count နှစ်',
+    'y' => ':count နှစ်',
+    'month' => '{1}တစ်လ|]1,Inf[:count လ',
+    'm' => ':count လ',
+    'week' => ':count ပတ်',
+    'w' => ':count ပတ်',
+    'day' => '{1}တစ်ရက်|]1,Inf[:count ရက်',
+    'd' => ':count ရက်',
+    'hour' => '{1}တစ်နာရီ|]1,Inf[:count နာရီ',
+    'h' => ':count နာရီ',
+    'minute' => '{1}တစ်မိနစ်|]1,Inf[:count မိနစ်',
+    'min' => ':count မိနစ်',
+    'second' => '{1}စက္ကန်.အနည်းငယ်|]1,Inf[:count စက္ကန့်',
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     's' => ':count စက္ကန့်',
     'ago' => 'လွန်ခဲ့သော :time က',
     'from_now' => 'လာမည့် :time မှာ',

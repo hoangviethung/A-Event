@@ -1,6 +1,16 @@
 CHANGELOG
 =========
 
+<<<<<<< HEAD
+=======
+4.4.0
+-----
+
+ * deprecated support for using `null` as the locale in `Translator`
+ * deprecated accepting STDIN implicitly when using the `lint:xliff` command, use `lint:xliff -` (append a dash) instead to make it explicit.
+ * Marked the `TranslationDataCollector` class as `@final`.
+
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 4.3.0
 -----
 

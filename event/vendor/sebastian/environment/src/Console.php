@@ -40,7 +40,11 @@ final class Console
 
         if ($this->isWindows()) {
             // @codeCoverageIgnoreStart
+<<<<<<< HEAD
             return (\defined('STDOUT') && \function_exists('sapi_windows_vt100_support') && @sapi_windows_vt100_support(\STDOUT))
+=======
+            return (\defined('STDOUT') && \function_exists('sapi_windows_vt100_support') && @\sapi_windows_vt100_support(\STDOUT))
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
                 || false !== \getenv('ANSICON')
                 || 'ON' === \getenv('ConEmuANSI')
                 || 'xterm' === \getenv('TERM');
@@ -53,6 +57,7 @@ final class Console
             // @codeCoverageIgnoreEnd
         }
 
+<<<<<<< HEAD
         if ($this->isInteractive(\STDOUT)) {
             return true;
         }
@@ -60,6 +65,9 @@ final class Console
         $stat = @\fstat(\STDOUT);
         // Check if formatted mode is S_IFCHR
         return $stat ? 0020000 === ($stat['mode'] & 0170000) : false;
+=======
+        return $this->isInteractive(\STDOUT);
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 
     /**
@@ -69,14 +77,24 @@ final class Console
      */
     public function getNumberOfColumns(): int
     {
+<<<<<<< HEAD
         if ($this->isWindows()) {
             return $this->getNumberOfColumnsWindows();
         }
 
+=======
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         if (!$this->isInteractive(\defined('STDIN') ? \STDIN : self::STDIN)) {
             return 80;
         }
 
+<<<<<<< HEAD
+=======
+        if ($this->isWindows()) {
+            return $this->getNumberOfColumnsWindows();
+        }
+
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         return $this->getNumberOfColumnsInteractive();
     }
 
@@ -90,8 +108,23 @@ final class Console
      */
     public function isInteractive($fileDescriptor = self::STDOUT): bool
     {
+<<<<<<< HEAD
         return (\is_resource($fileDescriptor) && \function_exists('stream_isatty') && @\stream_isatty($fileDescriptor)) // stream_isatty requires that descriptor is a real resource, not numeric ID of it
             || (\function_exists('posix_isatty') && @\posix_isatty($fileDescriptor));
+=======
+        if (\is_resource($fileDescriptor)) {
+            // These functions require a descriptor that is a real resource, not a numeric ID of it
+            if (\function_exists('stream_isatty') && @\stream_isatty($fileDescriptor)) {
+                return true;
+            }
+
+            $stat = @\fstat(\STDOUT);
+            // Check if formatted mode is S_IFCHR
+            return $stat ? 0020000 === ($stat['mode'] & 0170000) : false;
+        }
+
+        return \function_exists('posix_isatty') && @\posix_isatty($fileDescriptor);
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 
     private function isWindows(): bool

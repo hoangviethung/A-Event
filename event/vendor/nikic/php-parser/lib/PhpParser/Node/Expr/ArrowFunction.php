@@ -17,7 +17,11 @@ class ArrowFunction extends Expr implements FunctionLike
     /** @var Node\Param[] */
     public $params = [];
 
+<<<<<<< HEAD
     /** @var null|Node\Identifier|Node\Name|Node\NullableType */
+=======
+    /** @var null|Node\Identifier|Node\Name|Node\NullableType|Node\UnionType */
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     public $returnType;
 
     /** @var Expr */

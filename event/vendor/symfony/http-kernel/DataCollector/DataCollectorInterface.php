@@ -24,8 +24,15 @@ interface DataCollectorInterface extends ResetInterface
 {
     /**
      * Collects data for the given Request and Response.
+<<<<<<< HEAD
      */
     public function collect(Request $request, Response $response, \Exception $exception = null);
+=======
+     *
+     * @param \Throwable|null $exception
+     */
+    public function collect(Request $request, Response $response/*, \Throwable $exception = null*/);
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
     /**
      * Returns the name of the collector.

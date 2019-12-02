@@ -48,7 +48,11 @@ class XliffFileLoader implements LoaderInterface
         return $catalogue;
     }
 
+<<<<<<< HEAD
     private function extract($resource, MessageCatalogue $catalogue, $domain)
+=======
+    private function extract($resource, MessageCatalogue $catalogue, string $domain)
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         try {
             $dom = XmlUtils::loadFile($resource);
@@ -72,10 +76,13 @@ class XliffFileLoader implements LoaderInterface
 
     /**
      * Extract messages and metadata from DOMDocument into a MessageCatalogue.
+<<<<<<< HEAD
      *
      * @param \DOMDocument     $dom       Source to extract messages and metadata
      * @param MessageCatalogue $catalogue Catalogue where we'll collect messages and metadata
      * @param string           $domain    The domain
+=======
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     private function extractXliff1(\DOMDocument $dom, MessageCatalogue $catalogue, string $domain)
     {

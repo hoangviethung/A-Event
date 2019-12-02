@@ -57,8 +57,13 @@ class RequestContext
         $this->setMethod($request->getMethod());
         $this->setHost($request->getHost());
         $this->setScheme($request->getScheme());
+<<<<<<< HEAD
         $this->setHttpPort($request->isSecure() ? $this->httpPort : $request->getPort());
         $this->setHttpsPort($request->isSecure() ? $request->getPort() : $this->httpsPort);
+=======
+        $this->setHttpPort($request->isSecure() || null === $request->getPort() ? $this->httpPort : $request->getPort());
+        $this->setHttpsPort($request->isSecure() && null !== $request->getPort() ? $request->getPort() : $this->httpsPort);
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         $this->setQueryString($request->server->get('QUERY_STRING', ''));
 
         return $this;

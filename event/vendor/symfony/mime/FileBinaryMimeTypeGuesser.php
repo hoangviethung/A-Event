@@ -18,8 +18,11 @@ use Symfony\Component\Mime\Exception\LogicException;
  * Guesses the MIME type with the binary "file" (only available on *nix).
  *
  * @author Bernhard Schussek <bschussek@gmail.com>
+<<<<<<< HEAD
  *
  * @experimental in 4.3
+=======
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
  */
 class FileBinaryMimeTypeGuesser implements MimeTypeGuesserInterface
 {
@@ -33,7 +36,11 @@ class FileBinaryMimeTypeGuesser implements MimeTypeGuesserInterface
      *
      * @param string $cmd The command to run to get the MIME type of a file
      */
+<<<<<<< HEAD
     public function __construct(string $cmd = 'file -b --mime %s 2>/dev/null')
+=======
+    public function __construct(string $cmd = 'file -b --mime -- %s 2>/dev/null')
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $this->cmd = $cmd;
     }
@@ -76,7 +83,11 @@ class FileBinaryMimeTypeGuesser implements MimeTypeGuesserInterface
         ob_start();
 
         // need to use --mime instead of -i. see #6641
+<<<<<<< HEAD
         passthru(sprintf($this->cmd, escapeshellarg($path)), $return);
+=======
+        passthru(sprintf($this->cmd, escapeshellarg((0 === strpos($path, '-') ? './' : '').$path)), $return);
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         if ($return > 0) {
             ob_end_clean();
 

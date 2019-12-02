@@ -97,6 +97,14 @@ class StreamOutput extends Output
      */
     protected function hasColorSupport()
     {
+<<<<<<< HEAD
+=======
+        // Follow https://no-color.org/
+        if (isset($_SERVER['NO_COLOR']) || false !== getenv('NO_COLOR')) {
+            return false;
+        }
+
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         if ('Hyper' === getenv('TERM_PROGRAM')) {
             return true;
         }

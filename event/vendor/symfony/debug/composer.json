@@ -23,7 +23,11 @@
         "symfony/http-kernel": "<3.4"
     },
     "require-dev": {
+<<<<<<< HEAD
         "symfony/http-kernel": "~3.4|~4.0"
+=======
+        "symfony/http-kernel": "^3.4|^4.0|^5.0"
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     },
     "autoload": {
         "psr-4": { "Symfony\\Component\\Debug\\": "" },
@@ -34,7 +38,11 @@
     "minimum-stability": "dev",
     "extra": {
         "branch-alias": {
+<<<<<<< HEAD
             "dev-master": "4.3-dev"
+=======
+            "dev-master": "4.4-dev"
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         }
     }
 }

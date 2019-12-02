@@ -75,7 +75,11 @@ EOF
         ;
     }
 
+<<<<<<< HEAD
     protected function execute(InputInterface $input, OutputInterface $output)
+=======
+    protected function execute(InputInterface $input, OutputInterface $output): int
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $io = new SymfonyStyle($input, $output);
         $format = $input->getOption('format');

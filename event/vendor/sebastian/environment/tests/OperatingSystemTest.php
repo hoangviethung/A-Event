@@ -35,6 +35,17 @@ final class OperatingSystemTest extends TestCase
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * @requires OS Darwin
+     */
+    public function testFamilyReturnsDarwinWhenRunningOnDarwin(): void
+    {
+        $this->assertEquals('Darwin', $this->os->getFamily());
+    }
+
+    /**
+>>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * @requires OS Windows
      */
     public function testGetFamilyReturnsWindowsWhenRunningOnWindows(): void
