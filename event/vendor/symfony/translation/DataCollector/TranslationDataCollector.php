@@ -19,11 +19,8 @@ use Symfony\Component\Translation\DataCollectorTranslator;
 
 /**
  * @author Abdellatif Ait boudad <a.aitboudad@gmail.com>
-<<<<<<< HEAD
-=======
  *
  * @final since Symfony 4.4
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
  */
 class TranslationDataCollector extends DataCollector implements LateDataCollectorInterface
 {
@@ -49,15 +46,10 @@ class TranslationDataCollector extends DataCollector implements LateDataCollecto
 
     /**
      * {@inheritdoc}
-<<<<<<< HEAD
-     */
-    public function collect(Request $request, Response $response, \Exception $exception = null)
-=======
      *
      * @param \Throwable|null $exception
      */
     public function collect(Request $request, Response $response/*, \Throwable $exception = null*/)
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $this->data['locale'] = $this->translator->getLocale();
         $this->data['fallback_locales'] = $this->translator->getFallbackLocales();
@@ -124,11 +116,7 @@ class TranslationDataCollector extends DataCollector implements LateDataCollecto
         return 'translation';
     }
 
-<<<<<<< HEAD
-    private function sanitizeCollectedMessages($messages)
-=======
     private function sanitizeCollectedMessages(array $messages)
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $result = [];
         foreach ($messages as $key => $message) {
@@ -153,11 +141,7 @@ class TranslationDataCollector extends DataCollector implements LateDataCollecto
         return $result;
     }
 
-<<<<<<< HEAD
-    private function computeCount($messages)
-=======
     private function computeCount(array $messages)
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $count = [
             DataCollectorTranslator::MESSAGE_DEFINED => 0,
@@ -172,11 +156,7 @@ class TranslationDataCollector extends DataCollector implements LateDataCollecto
         return $count;
     }
 
-<<<<<<< HEAD
-    private function sanitizeString($string, $length = 80)
-=======
     private function sanitizeString(string $string, int $length = 80)
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $string = trim(preg_replace('/\s+/', ' ', $string));
 

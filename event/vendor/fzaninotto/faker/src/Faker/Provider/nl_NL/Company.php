@@ -4,16 +4,6 @@ namespace Faker\Provider\nl_NL;
 
 class Company extends \Faker\Provider\Company
 {
-<<<<<<< HEAD
-    protected static $formats = array(
-        '{{lastName}} {{companySuffix}}',
-        '{{lastName}} {{lastName}} {{companySuffix}}',
-        '{{lastName}}',
-        '{{lastName}}',
-    );
-
-    protected static $companySuffix = array('VOF', 'CV', 'LLP', 'BV', 'NV', 'IBC', 'CSL', 'EESV', 'SE', 'CV', 'Stichting', '& Zonen', '& Zn');
-=======
     /**
      * @see https://nl.wikipedia.org/wiki/Lijst_van_beroepen
      */
@@ -98,38 +88,25 @@ class Company extends \Faker\Provider\Company
 
         return $companyName;
     }
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
     /**
      * Belasting Toegevoegde Waarde (BTW) = VAT
      *
      * @example 'NL123456789B01'
      *
-<<<<<<< HEAD
-     * @see (dutch) http://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/administratie_bijhouden/btw_nummers_controleren/uw_btw_nummer
-     *
-=======
      * @see http://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/zakelijk/btw/administratie_bijhouden/btw_nummers_controleren/uw_btw_nummer
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      *
      * @return string VAT Number
      */
     public static function vat()
     {
         return sprintf("%s%d%s%d", 'NL', self::randomNumber(9, true), 'B', self::randomNumber(2, true));
-<<<<<<< HEAD
-
-=======
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 
     /**
      * Alias dutch vat number format
-<<<<<<< HEAD
-=======
      *
      * @return string
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     public static function btw()
     {

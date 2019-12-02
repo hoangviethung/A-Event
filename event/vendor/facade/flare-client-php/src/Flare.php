@@ -41,15 +41,12 @@ class Flare
     /** @var ContextDetectorInterface */
     private $contextDetector;
 
-<<<<<<< HEAD
-=======
     /** @var callable|null */
     private $previousExceptionHandler;
 
     /** @var callable|null */
     private $previousErrorHandler;
 
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     public static function register(string $apiKey, string $apiSecret = null, ContextDetectorInterface $contextDetector = null, Container $container = null)
     {
         $client = new Client($apiKey, $apiSecret);
@@ -74,11 +71,6 @@ class Flare
         return $this->middleware;
     }
 
-<<<<<<< HEAD
-    public function registerExceptionHandler()
-    {
-        set_exception_handler([$this, 'handleException']);
-=======
     public function registerFlareHandlers()
     {
         $this->registerExceptionHandler();
@@ -97,7 +89,6 @@ class Flare
     public function registerErrorHandler()
     {
         $this->previousErrorHandler = set_error_handler([$this, 'handleError']);
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
         return $this;
     }
@@ -130,8 +121,6 @@ class Flare
     public function handleException(Throwable $throwable)
     {
         $this->report($throwable);
-<<<<<<< HEAD
-=======
 
         if ($this->previousExceptionHandler) {
             call_user_func($this->previousExceptionHandler, $throwable);
@@ -153,7 +142,6 @@ class Flare
                 $line
             );
         }
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 
     public function applicationPath(string $applicationPath)
@@ -242,11 +230,6 @@ class Flare
             $this->applicationPath
         );
 
-<<<<<<< HEAD
-=======
-        $report->groupByException();
-
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         return $this->applyMiddlewareToReport($report);
     }
 

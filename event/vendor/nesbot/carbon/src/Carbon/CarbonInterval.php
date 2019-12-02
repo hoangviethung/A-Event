@@ -11,10 +11,7 @@
 namespace Carbon;
 
 use BadMethodCallException;
-<<<<<<< HEAD
-=======
 use Carbon\Exceptions\ParseErrorException;
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 use Carbon\Traits\Mixin;
 use Carbon\Traits\Options;
 use Closure;
@@ -198,8 +195,6 @@ class CarbonInterval extends DateInterval
     protected static $cascadeFactors;
 
     /**
-<<<<<<< HEAD
-=======
      * @var array
      */
     protected static $formats = [
@@ -223,7 +218,6 @@ class CarbonInterval extends DateInterval
     ];
 
     /**
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * @var array|null
      */
     private static $flipCascadeFactors;
@@ -323,11 +317,7 @@ class CarbonInterval extends DateInterval
      * @param int|null $seconds
      * @param int|null $microseconds
      *
-<<<<<<< HEAD
-     * @throws Exception
-=======
      * @throws Exception when the interval_spec (passed as $years) cannot be parsed as an interval.
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     public function __construct($years = 1, $months = null, $weeks = null, $days = null, $hours = null, $minutes = null, $seconds = null, $microseconds = null)
     {
@@ -463,11 +453,8 @@ class CarbonInterval extends DateInterval
      * @param int $seconds
      * @param int $microseconds
      *
-<<<<<<< HEAD
-=======
      * @throws Exception when the interval_spec (passed as $years) cannot be parsed as an interval.
      *
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * @return static
      */
     public static function create($years = 1, $months = null, $weeks = null, $days = null, $hours = null, $minutes = null, $seconds = null, $microseconds = null)
@@ -476,8 +463,6 @@ class CarbonInterval extends DateInterval
     }
 
     /**
-<<<<<<< HEAD
-=======
      * Parse a string into a new CarbonInterval object according to the specified format.
      *
      * @example
@@ -543,7 +528,6 @@ class CarbonInterval extends DateInterval
     }
 
     /**
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * Get a copy of the instance.
      *
      * @return static
@@ -1376,8 +1360,6 @@ class CarbonInterval extends DateInterval
         return [$syntax, $short, $parts, $options, $join, $aUnit, $altNumbers, $interpolations];
     }
 
-<<<<<<< HEAD
-=======
     protected static function getRoundingMethodFromOptions(int $options): ?string
     {
         if ($options & CarbonInterface::ROUND) {
@@ -1461,7 +1443,6 @@ class CarbonInterval extends DateInterval
         return $values;
     }
 
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     /**
      * Get the current interval in a human readable format in the current locale.
      *
@@ -1534,16 +1515,6 @@ class CarbonInterval extends DateInterval
             return null;
         };
 
-<<<<<<< HEAD
-        $diffIntervalArray = [
-            ['value' => $this->years,            'unit' => 'year',   'unitShort' => 'y'],
-            ['value' => $this->months,           'unit' => 'month',  'unitShort' => 'm'],
-            ['value' => $this->weeks,            'unit' => 'week',   'unitShort' => 'w'],
-            ['value' => $this->daysExcludeWeeks, 'unit' => 'day',    'unitShort' => 'd'],
-            ['value' => $this->hours,            'unit' => 'hour',   'unitShort' => 'h'],
-            ['value' => $this->minutes,          'unit' => 'minute', 'unitShort' => 'min'],
-            ['value' => $this->seconds,          'unit' => 'second', 'unitShort' => 's'],
-=======
         $intervalValues = $this;
         $method = static::getRoundingMethodFromOptions($options);
 
@@ -1564,7 +1535,6 @@ class CarbonInterval extends DateInterval
             ['value' => $intervalValues->hours,            'unit' => 'hour',   'unitShort' => 'h'],
             ['value' => $intervalValues->minutes,          'unit' => 'minute', 'unitShort' => 'min'],
             ['value' => $intervalValues->seconds,          'unit' => 'second', 'unitShort' => 's'],
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         ];
 
         $transChoice = function ($short, $unitData) use ($handleDeclensions, $translator, $aUnit, $altNumbers, $interpolations) {
@@ -1752,10 +1722,7 @@ class CarbonInterval extends DateInterval
         if ($value !== 1) {
             $interval->times($value);
         }
-<<<<<<< HEAD
-=======
 
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         $sign = ($this->invert === 1) !== ($interval->invert === 1) ? -1 : 1;
         $this->years += $interval->y * $sign;
         $this->months += $interval->m * $sign;

@@ -140,25 +140,6 @@ class SqlServerConnector extends Connector implements ConnectorInterface
             $arguments['MultiSubnetFailover'] = $config['multi_subnet_failover'];
         }
 
-<<<<<<< HEAD
-=======
-        if (isset($config['column_encryption'])) {
-            $arguments['ColumnEncryption'] = $config['column_encryption'];
-        }
-
-        if (isset($config['key_store_authentication'])) {
-            $arguments['KeyStoreAuthentication'] = $config['key_store_authentication'];
-        }
-
-        if (isset($config['key_store_principal_id'])) {
-            $arguments['KeyStorePrincipalId'] = $config['key_store_principal_id'];
-        }
-
-        if (isset($config['key_store_secret'])) {
-            $arguments['KeyStoreSecret'] = $config['key_store_secret'];
-        }
-
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         return $this->buildConnectString('sqlsrv', $arguments);
     }
 

@@ -18,11 +18,6 @@ use Symfony\Component\Mime\Exception\RfcComplianceException;
  * An ID MIME Header for something like Message-ID or Content-ID (one or more addresses).
  *
  * @author Chris Corbyn
-<<<<<<< HEAD
- *
- * @experimental in 4.3
-=======
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
  */
 final class IdentificationHeader extends AbstractHeader
 {
@@ -49,14 +44,7 @@ final class IdentificationHeader extends AbstractHeader
         $this->setId($body);
     }
 
-<<<<<<< HEAD
-    /**
-     * @return array
-     */
-    public function getBody()
-=======
     public function getBody(): array
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         return $this->getIds();
     }

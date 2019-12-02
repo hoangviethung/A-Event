@@ -1,8 +1,6 @@
 Changelog
 =========
 
-<<<<<<< HEAD
-=======
 6.2.2 (2019-11-12)
 ------------------
 
@@ -14,7 +12,6 @@ Changelog
  * fixed cmopat with PHP 7.4
  * fixed error message when connecting to a stream raises an error before connect()
 
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 6.2.1 (2019-04-21)
 ------------------
 

@@ -30,11 +30,7 @@ class PostgresBuilder extends Builder
     {
         $tables = [];
 
-<<<<<<< HEAD
-        $excludedTables = ['spatial_ref_sys'];
-=======
         $excludedTables = $this->connection->getConfig('dont_drop') ?? ['spatial_ref_sys'];
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
         foreach ($this->getAllTables() as $row) {
             $row = (array) $row;
@@ -109,11 +105,7 @@ class PostgresBuilder extends Builder
     public function getAllTables()
     {
         return $this->connection->select(
-<<<<<<< HEAD
-            $this->grammar->compileGetAllTables($this->connection->getConfig('schema'))
-=======
             $this->grammar->compileGetAllTables((array) $this->connection->getConfig('schema'))
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         );
     }
 
@@ -125,11 +117,7 @@ class PostgresBuilder extends Builder
     protected function getAllViews()
     {
         return $this->connection->select(
-<<<<<<< HEAD
-            $this->grammar->compileGetAllViews($this->connection->getConfig('schema'))
-=======
             $this->grammar->compileGetAllViews((array) $this->connection->getConfig('schema'))
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         );
     }
 

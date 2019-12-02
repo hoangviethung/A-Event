@@ -106,11 +106,7 @@ class PhpStringTokenParser
         );
     }
 
-<<<<<<< HEAD
-    private static function parseCallback($matches)
-=======
     private static function parseCallback(array $matches): string
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $str = $matches[1];
 

@@ -106,11 +106,6 @@ HELP
 
             $output->writeln(\sprintf(self::AVG_RESULT_MSG, $total / $num, $median, $total));
         }
-<<<<<<< HEAD
-=======
-
-        return 0;
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 
     /**

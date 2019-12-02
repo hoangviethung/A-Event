@@ -65,11 +65,8 @@ class Logger extends AbstractLogger
 
     /**
      * {@inheritdoc}
-<<<<<<< HEAD
-=======
      *
      * @return void
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     public function log($level, $message, array $context = [])
     {

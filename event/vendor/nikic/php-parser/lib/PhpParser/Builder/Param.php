@@ -12,11 +12,7 @@ class Param implements PhpParser\Builder
 
     protected $default = null;
 
-<<<<<<< HEAD
-    /** @var string|Node\Name|Node\NullableType|null */
-=======
     /** @var Node\Identifier|Node\Name|Node\NullableType|null */
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     protected $type = null;
 
     protected $byRef = false;

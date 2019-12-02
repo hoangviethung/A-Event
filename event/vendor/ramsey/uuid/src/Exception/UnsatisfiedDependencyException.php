@@ -14,19 +14,10 @@
 
 namespace Ramsey\Uuid\Exception;
 
-<<<<<<< HEAD
-=======
-use RuntimeException;
-
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 /**
  * Thrown to indicate that the requested operation has dependencies that have not
  * been satisfied.
  */
-<<<<<<< HEAD
 class UnsatisfiedDependencyException extends \RuntimeException
-=======
-class UnsatisfiedDependencyException extends RuntimeException
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 {
 }

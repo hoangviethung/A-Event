@@ -13,11 +13,8 @@ namespace Monolog;
 
 final class Utils
 {
-<<<<<<< HEAD
-=======
     const DEFAULT_JSON_FLAGS = JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRESERVE_ZERO_FRACTION;
 
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     /**
      * @internal
      */
@@ -36,8 +33,6 @@ final class Utils
 
         return substr($string, $start, $length);
     }
-<<<<<<< HEAD
-=======
 
     /**
      * Return the JSON representation of a value
@@ -173,5 +168,4 @@ final class Utils
             );
         }
     }
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 }

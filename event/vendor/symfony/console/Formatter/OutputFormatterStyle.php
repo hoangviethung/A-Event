@@ -61,10 +61,6 @@ class OutputFormatterStyle implements OutputFormatterStyleInterface
      *
      * @param string|null $foreground The style foreground color name
      * @param string|null $background The style background color name
-<<<<<<< HEAD
-     * @param array       $options    The style options
-=======
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     public function __construct(string $foreground = null, string $background = null, array $options = [])
     {

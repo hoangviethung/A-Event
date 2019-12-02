@@ -14,10 +14,7 @@ namespace Monolog\Handler;
 use Monolog\Formatter\LineFormatter;
 use Monolog\Formatter\FormatterInterface;
 use Monolog\Logger;
-<<<<<<< HEAD
-=======
 use Monolog\Utils;
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 use PhpConsole\Connector;
 use PhpConsole\Handler as VendorPhpConsoleHandler;
 use PhpConsole\Helper;
@@ -192,11 +189,7 @@ class PHPConsoleHandler extends AbstractProcessingHandler
         $tags = $this->getRecordTags($record);
         $message = $record['message'];
         if ($record['context']) {
-<<<<<<< HEAD
-            $message .= ' ' . json_encode($this->connector->getDumper()->dump(array_filter($record['context'])));
-=======
             $message .= ' ' . Utils::jsonEncode($this->connector->getDumper()->dump(array_filter($record['context'])), null, true);
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         }
         $this->connector->getDebugDispatcher()->dispatchDebug($message, $tags, $this->options['classesPartialsTraceIgnore']);
     }

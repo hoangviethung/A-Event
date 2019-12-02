@@ -18,10 +18,7 @@ use Psy\Exception\RuntimeException;
 use Psy\Formatter\CodeFormatter;
 use Psy\Formatter\SignatureFormatter;
 use Psy\Input\CodeArgument;
-<<<<<<< HEAD
 use Psy\Output\ShellOutput;
-=======
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 use Symfony\Component\Console\Formatter\OutputFormatter;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
@@ -102,23 +99,11 @@ HELP
                 throw new \InvalidArgumentException('Too many arguments (supply either "target" or "--ex")');
             }
 
-<<<<<<< HEAD
             return $this->writeExceptionContext($input, $output);
         }
 
         if ($input->getArgument('target')) {
             return $this->writeCodeContext($input, $output);
-=======
-            $this->writeExceptionContext($input, $output);
-
-            return 0;
-        }
-
-        if ($input->getArgument('target')) {
-            $this->writeCodeContext($input, $output);
-
-            return 0;
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         }
 
         throw new RuntimeException('Not enough arguments (missing: "target")');
@@ -132,11 +117,7 @@ HELP
         $this->setCommandScopeVariables($reflector);
 
         try {
-<<<<<<< HEAD
             $output->page(CodeFormatter::format($reflector, $this->colorMode), ShellOutput::OUTPUT_RAW);
-=======
-            $output->page(CodeFormatter::format($reflector, $this->colorMode), OutputInterface::OUTPUT_RAW);
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         } catch (RuntimeException $e) {
             $output->writeln(SignatureFormatter::format($reflector));
             throw $e;
@@ -235,11 +216,7 @@ HELP
             return;
         }
 
-<<<<<<< HEAD
         $output->write($this->getHighlighter()->getCodeSnippet($code, $line, 5, 5), ShellOutput::OUTPUT_RAW);
-=======
-        $output->write($this->getHighlighter()->getCodeSnippet($code, $line, 5, 5), false, OutputInterface::OUTPUT_RAW);
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 
     private function getHighlighter()

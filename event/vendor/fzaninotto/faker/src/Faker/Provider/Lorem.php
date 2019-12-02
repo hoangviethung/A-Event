@@ -92,11 +92,7 @@ class Lorem extends Base
         $words = static::words($nbWords);
         $words[0] = ucwords($words[0]);
 
-<<<<<<< HEAD
-        return implode($words, ' ') . '.';
-=======
         return implode(' ', $words) . '.';
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 
     /**
@@ -135,11 +131,7 @@ class Lorem extends Base
             $nbSentences = self::randomizeNbElements($nbSentences);
         }
 
-<<<<<<< HEAD
-        return implode(static::sentences($nbSentences), ' ');
-=======
         return implode(' ', static::sentences($nbSentences));
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 
     /**
@@ -201,11 +193,7 @@ class Lorem extends Base
             $text[count($text) - 1] .= '.';
         }
 
-<<<<<<< HEAD
-        return implode($text, '');
-=======
         return implode('', $text);
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 
     protected static function randomizeNbElements($nbElements)

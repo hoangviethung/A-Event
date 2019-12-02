@@ -86,8 +86,6 @@ class Person extends \Faker\Provider\de_DE\Person
         'Wagner', 'Walker', 'Walser', 'Weber', 'Wehrli', 'Weibel', 'Weiss', 'Wenger', 'Wicki', 'Widmer', 'Willi', 'Wirth', 'Wirz', 'Wittwer', 'Wolf', 'Wyss', 'Wüthrich',
         'Zaugg', 'Zbinden', 'Zehnder', 'Ziegler', 'Zimmermann', 'Zwahlen', 'Zürcher',
     );
-<<<<<<< HEAD
-=======
 
     /**
      * Generates a valid random AVS13 (swiss social security) number
@@ -116,5 +114,4 @@ class Person extends \Faker\Provider\de_DE\Person
     {
         return \Faker\Provider\fr_CH\Person::avs13();
     }
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 }

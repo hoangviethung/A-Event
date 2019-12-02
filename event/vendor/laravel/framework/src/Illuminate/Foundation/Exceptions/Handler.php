@@ -188,13 +188,8 @@ class Handler implements ExceptionHandlerContract
         }
 
         return $request->expectsJson()
-<<<<<<< HEAD
-                        ? $this->prepareJsonResponse($request, $e)
-                        : $this->prepareResponse($request, $e);
-=======
                     ? $this->prepareJsonResponse($request, $e)
                     : $this->prepareResponse($request, $e);
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 
     /**
@@ -283,11 +278,7 @@ class Handler implements ExceptionHandlerContract
      * Prepare a response for the given exception.
      *
      * @param  \Illuminate\Http\Request  $request
-<<<<<<< HEAD
-     * @param  \Exception $e
-=======
      * @param  \Exception  $e
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * @return \Symfony\Component\HttpFoundation\Response
      */
     protected function prepareResponse($request, Exception $e)
@@ -442,11 +433,7 @@ class Handler implements ExceptionHandlerContract
      * Prepare a JSON response for the given exception.
      *
      * @param  \Illuminate\Http\Request  $request
-<<<<<<< HEAD
-     * @param  \Exception $e
-=======
      * @param  \Exception  $e
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * @return \Illuminate\Http\JsonResponse
      */
     protected function prepareJsonResponse($request, Exception $e)

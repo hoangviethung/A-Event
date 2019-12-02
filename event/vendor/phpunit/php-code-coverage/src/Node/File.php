@@ -578,11 +578,7 @@ final class File extends AbstractNode
 
     private function crap(int $ccn, float $coverage): string
     {
-<<<<<<< HEAD
-        if ($coverage === 0) {
-=======
         if ($coverage === 0.0) {
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
             return (string) ($ccn ** 2 + $ccn);
         }
 

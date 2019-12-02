@@ -167,37 +167,22 @@ class BrowserConsoleHandler extends AbstractProcessingHandler
 
     private static function handleStyles(string $formatted): array
     {
-<<<<<<< HEAD
-        $args = [static::quote('font-weight: normal')];
-=======
         $args = [];
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         $format = '%c' . $formatted;
         preg_match_all('/\[\[(.*?)\]\]\{([^}]*)\}/s', $format, $matches, PREG_OFFSET_CAPTURE | PREG_SET_ORDER);
 
         foreach (array_reverse($matches) as $match) {
-<<<<<<< HEAD
-            $args[] = static::quote(static::handleCustomStyles($match[2][0], $match[1][0]));
-            $args[] = '"font-weight: normal"';
-=======
             $args[] = '"font-weight: normal"';
             $args[] = static::quote(static::handleCustomStyles($match[2][0], $match[1][0]));
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
             $pos = $match[0][1];
             $format = Utils::substr($format, 0, $pos) . '%c' . $match[1][0] . '%c' . Utils::substr($format, $pos + strlen($match[0][0]));
         }
 
-<<<<<<< HEAD
-        array_unshift($args, static::quote($format));
-
-        return $args;
-=======
         $args[] = static::quote('font-weight: normal');
         $args[] = static::quote($format);
 
         return array_reverse($args);
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 
     private static function handleCustomStyles(string $style, string $string): string
@@ -233,11 +218,7 @@ class BrowserConsoleHandler extends AbstractProcessingHandler
             if (empty($value)) {
                 $value = static::quote('');
             }
-<<<<<<< HEAD
-            $script[] = static::call('log', static::quote('%s: %o'), static::quote($key), $value);
-=======
             $script[] = static::call('log', static::quote('%s: %o'), static::quote((string) $key), $value);
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         }
 
         return $script;

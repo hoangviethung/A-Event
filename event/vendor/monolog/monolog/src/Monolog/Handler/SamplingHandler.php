@@ -11,11 +11,8 @@
 
 namespace Monolog\Handler;
 
-<<<<<<< HEAD
-=======
 use Monolog\Formatter\FormatterInterface;
 
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 /**
  * Sampling handler
  *
@@ -30,11 +27,7 @@ use Monolog\Formatter\FormatterInterface;
  * @author Bryan Davis <bd808@wikimedia.org>
  * @author Kunal Mehta <legoktm@gmail.com>
  */
-<<<<<<< HEAD
-class SamplingHandler extends AbstractHandler implements ProcessableHandlerInterface
-=======
 class SamplingHandler extends AbstractHandler implements ProcessableHandlerInterface, FormattableHandlerInterface
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 {
     use ProcessableHandlerTrait;
 
@@ -49,11 +42,7 @@ class SamplingHandler extends AbstractHandler implements ProcessableHandlerInter
     protected $factor;
 
     /**
-<<<<<<< HEAD
-     * @param callable|HandlerInterface $handler Handler or factory callable($record, $fingersCrossedHandler).
-=======
      * @param callable|HandlerInterface $handler Handler or factory callable($record|null, $samplingHandler).
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * @param int                       $factor  Sample factor (e.g. 10 means every ~10th record is sampled)
      */
     public function __construct($handler, int $factor)
@@ -69,42 +58,21 @@ class SamplingHandler extends AbstractHandler implements ProcessableHandlerInter
 
     public function isHandling(array $record): bool
     {
-<<<<<<< HEAD
-        return $this->handler->isHandling($record);
-=======
         return $this->getHandler($record)->isHandling($record);
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 
     public function handle(array $record): bool
     {
         if ($this->isHandling($record) && mt_rand(1, $this->factor) === 1) {
-<<<<<<< HEAD
-            // The same logic as in FingersCrossedHandler
-            if (!$this->handler instanceof HandlerInterface) {
-                $this->handler = call_user_func($this->handler, $record, $this);
-                if (!$this->handler instanceof HandlerInterface) {
-                    throw new \RuntimeException("The factory callable should return a HandlerInterface");
-                }
-            }
-
-=======
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
             if ($this->processors) {
                 $record = $this->processRecord($record);
             }
 
-<<<<<<< HEAD
-            $this->handler->handle($record);
-=======
             $this->getHandler($record)->handle($record);
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         }
 
         return false === $this->bubble;
     }
-<<<<<<< HEAD
-=======
 
     /**
      * Return the nested handler
@@ -142,5 +110,4 @@ class SamplingHandler extends AbstractHandler implements ProcessableHandlerInter
     {
         return $this->getHandler()->getFormatter();
     }
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 }

@@ -51,16 +51,6 @@ composer require fzaninotto/faker
 
 ## Basic Usage
 
-<<<<<<< HEAD
-Use `Faker\Factory::create()` to create and initialize a faker generator, which can generate data by accessing properties named after the type of data you want.
-
-```php
-<?php
-// require the Faker autoloader
-require_once '/path/to/Faker/src/autoload.php';
-// alternatively, use another PSR-0 compliant autoloader (like the Symfony2 ClassLoader for instance)
-
-=======
 ### Autoloading
 
 Faker supports both `PSR-0` as `PSR-4` autoloaders. 
@@ -84,7 +74,6 @@ Use `Faker\Factory::create()` to create and initialize a faker generator, which 
 
 ```php
 <?php
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 // use the factory to create a Faker\Generator instance
 $faker = Faker\Factory::create();
 
@@ -105,11 +94,7 @@ Even if this example shows a property access, each call to `$faker->name` yields
 
 ```php
 <?php
-<<<<<<< HEAD
-for ($i=0; $i < 10; $i++) {
-=======
 for ($i = 0; $i < 10; $i++) {
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
   echo $faker->name, "\n";
 }
   // Adaline Reichel
@@ -133,10 +118,7 @@ Each of the generator properties (like `name`, `address`, and `lorem`) are calle
 ### `Faker\Provider\Base`
 
     randomDigit             // 7
-<<<<<<< HEAD
-=======
     randomDigitNot(5)       // 0, 1, 2, 3, 4, 6, 7, 8, or 9
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     randomDigitNotNull      // 5
     randomNumber($nbDigits = NULL, $strict = false) // 79907610
     randomFloat($nbMaxDecimals = NULL, $min = 0, $max = NULL) // 48.8932
@@ -284,11 +266,8 @@ Methods accepting a `$timezone` argument default to `date_default_timezone_get()
     rgbCssColor            // 'rgb(0,255,122)'
     safeColorName          // 'fuchsia'
     colorName              // 'Gainsbor'
-<<<<<<< HEAD
-=======
     hslColor               // '340,50,20'
     hslColorAsArray        // array(340,50,20)
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
 ### `Faker\Provider\File`
 
@@ -304,11 +283,7 @@ Methods accepting a `$timezone` argument default to `date_default_timezone_get()
     imageUrl($width = 640, $height = 480) // 'http://lorempixel.com/640/480/'
     imageUrl($width, $height, 'cats')     // 'http://lorempixel.com/800/600/cats/'
     imageUrl($width, $height, 'cats', true, 'Faker') // 'http://lorempixel.com/800/400/cats/Faker'
-<<<<<<< HEAD
-    imageUrl($width, $height, 'cats', true, 'Faker', true) // 'http://lorempixel.com/grey/800/400/cats/Faker/' Monochrome image
-=======
     imageUrl($width, $height, 'cats', true, 'Faker', true) // 'http://lorempixel.com/gray/800/400/cats/Faker/' Monochrome image
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     image($dir = '/tmp', $width = 640, $height = 480) // '/tmp/13b73edae8443990be1aa8f1a483bc27.jpg'
     image($dir, $width, $height, 'cats')  // 'tmp/13b73edae8443990be1aa8f1a483bc27.jpg' it's a cat!
     image($dir, $width, $height, 'cats', false) // '13b73edae8443990be1aa8f1a483bc27.jpg' it's a filename without path
@@ -357,11 +332,7 @@ Faker provides three special providers, `unique()`, `optional()`, and `valid()`,
 ```php
 // unique() forces providers to return unique values
 $values = array();
-<<<<<<< HEAD
-for ($i=0; $i < 10; $i++) {
-=======
 for ($i = 0; $i < 10; $i++) {
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
   // get a random digit, but always a new one, to avoid duplicates
   $values []= $faker->unique()->randomDigit;
 }
@@ -370,11 +341,7 @@ print_r($values); // [4, 1, 8, 5, 0, 2, 6, 9, 7, 3]
 // providers with a limited range will throw an exception when no new unique value can be generated
 $values = array();
 try {
-<<<<<<< HEAD
-  for ($i=0; $i < 10; $i++) {
-=======
   for ($i = 0; $i < 10; $i++) {
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     $values []= $faker->unique()->randomDigitNotNull;
   }
 } catch (\OverflowException $e) {
@@ -387,11 +354,7 @@ $faker->unique($reset = true)->randomDigitNotNull; // will not throw OverflowExc
 
 // optional() sometimes bypasses the provider to return a default value instead (which defaults to NULL)
 $values = array();
-<<<<<<< HEAD
-for ($i=0; $i < 10; $i++) {
-=======
 for ($i = 0; $i < 10; $i++) {
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
   // get a random digit, but also null sometimes
   $values []= $faker->optional()->randomDigit;
 }
@@ -412,11 +375,7 @@ $values = array();
 $evenValidator = function($digit) {
 	return $digit % 2 === 0;
 };
-<<<<<<< HEAD
-for ($i=0; $i < 10; $i++) {
-=======
 for ($i = 0; $i < 10; $i++) {
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 	$values []= $faker->valid($evenValidator)->randomDigit;
 }
 print_r($values); // [0, 4, 8, 4, 2, 6, 0, 8, 8, 6]
@@ -443,11 +402,7 @@ $faker->optional()->passthrough(mt_rand(5, 15));
 ```php
 <?php
 $faker = Faker\Factory::create('fr_FR'); // create a French faker
-<<<<<<< HEAD
-for ($i=0; $i < 10; $i++) {
-=======
 for ($i = 0; $i < 10; $i++) {
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
   echo $faker->name, "\n";
 }
   // Luce du Coulon
@@ -470,22 +425,15 @@ Faker provides adapters for Object-Relational and Object-Document Mappers (curre
 
 To populate entities, create a new populator class (using a generator instance as parameter), then list the class and number of all the entities that must be generated. To launch the actual data population, call the `execute()` method.
 
-<<<<<<< HEAD
-=======
 Note that some of the `populators` could require additional parameters. As example the `doctrine` populator has an option to specify
 its batchSize on how often it will flush the UnitOfWork to the database.
 
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 Here is an example showing how to populate 5 `Author` and 10 `Book` objects:
 
 ```php
 <?php
 $generator = \Faker\Factory::create();
-<<<<<<< HEAD
-$populator = new Faker\ORM\Propel\Populator($generator);
-=======
 $populator = new \Faker\ORM\Propel\Populator($generator);
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 $populator->addEntity('Author', 5);
 $populator->addEntity('Book', 10);
 $insertedPKs = $populator->execute();
@@ -523,11 +471,8 @@ print_r($insertedPKs);
 // )
 ```
 
-<<<<<<< HEAD
-=======
 **Note:** Due to the fact that `Faker` returns all the primary keys inserted, the memory consumption will go up drastically when you do batch inserts due to the big list of data.
 
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 In the previous example, the `Book` and `Author` models share a relationship. Since `Author` entities are populated first, Faker is smart enough to relate the populated `Book` entities to one of the populated `Author` entities.
 
 Lastly, if you want to execute an arbitrary function on an entity before insertion, use the fourth argument of the `addEntity()` method:
@@ -645,11 +590,7 @@ $faker = Faker\Factory::create();
 ?>
 <?xml version="1.0" encoding="UTF-8"?>
 <contacts>
-<<<<<<< HEAD
-<?php for ($i=0; $i < 10; $i++): ?>
-=======
 <?php for ($i = 0; $i < 10; $i++): ?>
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
   <contact firstName="<?php echo $faker->firstName ?>" lastName="<?php echo $faker->lastName ?>" email="<?php echo $faker->email ?>">
     <phone number="<?php echo $faker->phoneNumber ?>"/>
 <?php if ($faker->boolean(25)): ?>
@@ -941,8 +882,6 @@ echo $faker->cvr; // "32458723"
 echo $faker->p; // "5398237590"
 ```
 
-<<<<<<< HEAD
-=======
 ### `Faker\Provider\de_CH\Person`
 ```php
 <?php
@@ -952,7 +891,6 @@ echo $faker->avs13; // "756.1234.5678.97" OR
 echo $faker->ahv13; // "756.1234.5678.97"
 ```
 
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 ### `Faker\Provider\de_DE\Payment`
 
 ```php
@@ -1019,11 +957,7 @@ echo $faker->name; // 'Oluwunmi Mayowa'
 <?php
 
 // Generates a cell (mobile) phone number
-<<<<<<< HEAD
-echo $faker->cellNumber; // "021 123 4567"
-=======
 echo $faker->mobileNumber; // "021 123 4567"
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
 // Generates a toll free number
 echo $faker->tollFreeNumber; // "0800 123 456"
@@ -1112,8 +1046,6 @@ echo $faker->licenceCode; // B
 echo $faker->vat;           // "A35864370"
 ```
 
-<<<<<<< HEAD
-=======
 ### `Faker\Provider\es_ES\PhoneNumber`
 
 ```php
@@ -1126,7 +1058,6 @@ echo $faker->tollFreeNumber; // 900 123 456
 echo $faker->mobileNumber; // +34 612 12 24
 ```
 
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 ### `Faker\Provider\es_PE\Person`
 
 ```php
@@ -1136,8 +1067,6 @@ echo $faker->mobileNumber; // +34 612 12 24
 echo $faker->dni; // '83367512'
 ```
 
-<<<<<<< HEAD
-=======
 ### `Faker\Provider\fa_IR\Person`
 
 ```php
@@ -1147,7 +1076,6 @@ echo $faker->dni; // '83367512'
 echo $faker->nationalCode; // "0078475759"
 ```
 
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 ### `Faker\Provider\fa_IR\Address`
 
 ```php
@@ -1217,8 +1145,6 @@ echo $faker->nationalId; // 'V11223344'
 echo $faker->taxpayerIdentificationNumber; // 'J1234567891'
 ```
 
-<<<<<<< HEAD
-=======
 ### `Faker\Provider\fr_CH\Person`
 ```php
 <?php
@@ -1227,7 +1153,6 @@ echo $faker->taxpayerIdentificationNumber; // 'J1234567891'
 echo $faker->avs13; // "756.1234.5678.97"
 ```
 
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 ### `Faker\Provider\fr_FR\Address`
 
 ```php
@@ -1328,8 +1253,6 @@ echo $faker->bankAccountNumber; // "HU09904437680048220079300783"
 echo $faker->nik(); // "8522246001570940"
 ```
 
-<<<<<<< HEAD
-=======
 ### `Faker\Provider\it_CH\Person`
 ```php
 <?php
@@ -1338,7 +1261,6 @@ echo $faker->nik(); // "8522246001570940"
 echo $faker->avs13; // "756.1234.5678.97"
 ```
 
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 ### `Faker\Provider\it_IT\Company`
 
 ```php
@@ -1559,10 +1481,7 @@ echo $faker->rrn('female'); // "50032089858" - Belgian Rijksregisternummer for a
 ```php
 <?php
 
-<<<<<<< HEAD
-=======
 echo $faker->jobTitle; // "Houtbewerker"
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 echo $faker->vat; // "NL123456789B01" - Dutch Value Added Tax number
 echo $faker->btw; // "NL123456789B01" - Dutch Value Added Tax number (alias)
 ```
@@ -1575,8 +1494,6 @@ echo $faker->btw; // "NL123456789B01" - Dutch Value Added Tax number (alias)
 echo $faker->idNumber; // "111222333" - Dutch Personal identification number (BSN)
 ```
 
-<<<<<<< HEAD
-=======
 ### `Faker\Provider\nb_NO\MobileNumber`
 
 ```php
@@ -1588,7 +1505,6 @@ echo $faker->mobileNumber; // "999 88 777"
 echo $faker->mobileNumber; // "99988777"
 ```
 
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 ### `Faker\Provider\nb_NO\Payment`
 
 ```php
@@ -1843,35 +1759,6 @@ echo $faker->VAT; //23456789
 
 ## Third-Party Libraries Extending/Based On Faker
 
-<<<<<<< HEAD
-* Symfony2 bundles:
-  * [BazingaFakerBundle](https://github.com/willdurand/BazingaFakerBundle): Put the awesome Faker library into the Symfony2 DIC and populate your database with fake data.
-  * [AliceBundle](https://github.com/hautelook/AliceBundle), [AliceFixturesBundle](https://github.com/h4cc/AliceFixturesBundle): Bundles for using [Alice](https://packagist.org/packages/nelmio/alice) and Faker with data fixtures. Able to use Doctrine ORM as well as Doctrine MongoDB ODM.
-* [FakerServiceProvider](https://github.com/EmanueleMinotto/FakerServiceProvider): Faker Service Provider for Silex
-* [faker-cli](https://github.com/bit3/faker-cli): Command Line Tool for the Faker PHP library
-* [Factory Muffin](https://github.com/thephpleague/factory-muffin): enable the rapid creation of objects (PHP port of factory-girl)
-* [CompanyNameGenerator](https://github.com/fzaninotto/CompanyNameGenerator): Generate names for English tech companies with class
-* [PlaceholdItProvider](https://github.com/EmanueleMinotto/PlaceholdItProvider): Generate images using placehold.it
-* [datalea](https://github.com/spyrit/datalea) A highly customizable random test data generator web app
-* [newage-ipsum](https://github.com/frequenc1/newage-ipsum): A new aged ipsum provider for the faker library inspired by http://sebpearce.com/bullshit/
-* [xml-faker](https://github.com/prewk/xml-faker): Create fake XML with Faker
-* [faker-context](https://github.com/denheck/faker-context): Behat context using Faker to generate testdata
-* [CronExpressionGenerator](https://github.com/swekaj/CronExpressionGenerator): Faker provider for generating random, valid cron expressions.
-* [pragmafabrik/Pomm2Faker](https://github.com/pragmafabrik/Pomm2Faker): Faker client for Pomm database framework (PostgreSQL)
-* [nelmio/alice](https://packagist.org/packages/nelmio/alice): Fixtures/object generator with a yaml DSL that can use Faker as data generator.
-* [CakePHP 2.x Fake Seeder Plugin](https://github.com/ravage84/cakephp-fake-seeder) A CakePHP 2.x shell to seed your database with fake and/or fixed data.
-* [images-generator](https://github.com/bruceheller/images-generator): An image generator provider using GD for placeholder type pictures
-* [pattern-lab/plugin-php-faker](https://github.com/pattern-lab/plugin-php-faker): Pattern Lab is a Styleguide, Component Library, and Prototyping tool. This creates unique content each time Pattern Lab is generated.
-* [guidocella/eloquent-populator](https://github.com/guidocella/eloquent-populator): Adapter for Laravel's Eloquent ORM.
-* [tamperdata/exiges](https://github.com/tamperdata/exiges): Faker provider for generating random temperatures
-* [jzonta/FakerRestaurant](https://github.com/jzonta/FakerRestaurant): Faker for Food and Beverage names generate
-* [aalaap/faker-youtube](https://github.com/aalaap/faker-youtube): Faker for YouTube URLs in various formats
-* [pelmered/fake-car](https://github.com/pelmered/fake-car): Faker for cars and car data
-
-## License
-
-Faker is released under the MIT Licence. See the bundled LICENSE file for details.
-=======
 * Symfony bundles:
   * [`willdurand/faker-bundle`](https://github.com/willdurand/BazingaFakerBundle): Put the awesome Faker library into the Symfony2 DIC and populate your database with fake data.
   * [`hautelook/alice-bundle`](https://github.com/hautelook/AliceBundle), [`h4cc/alice-fixtures-bundle`](https://github.com/h4cc/AliceFixturesBundle): Bundles for using [`nelmio/alice`](https://packagist.org/packages/nelmio/alice) and Faker with data fixtures. Able to use Doctrine ORM as well as Doctrine MongoDB ODM.
@@ -1906,4 +1793,3 @@ Faker is released under the MIT Licence. See the bundled LICENSE file for detail
 ## License
 
 Faker is released under the MIT License. See the bundled LICENSE file for details.
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045

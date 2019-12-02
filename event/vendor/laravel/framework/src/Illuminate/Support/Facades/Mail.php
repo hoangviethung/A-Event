@@ -12,19 +12,11 @@ use Illuminate\Support\Testing\Fakes\MailFake;
  * @method static array failures()
  * @method static mixed queue(\Illuminate\Contracts\Mail\Mailable|string|array $view, string $queue = null)
  * @method static mixed later(\DateTimeInterface|\DateInterval|int $delay, \Illuminate\Contracts\Mail\Mailable|string|array $view, string $queue = null)
-<<<<<<< HEAD
  * @method static void assertSent(string $mailable, \Closure|string $callback = null)
  * @method static void assertNotSent(string $mailable, \Closure|string $callback = null)
  * @method static void assertNothingSent()
  * @method static void assertQueued(string $mailable, \Closure|string $callback = null)
  * @method static void assertNotQueued(string $mailable, \Closure|string $callback = null)
-=======
- * @method static void assertSent(string $mailable, callable|int $callback = null)
- * @method static void assertNotSent(string $mailable, callable|int $callback = null)
- * @method static void assertNothingSent()
- * @method static void assertQueued(string $mailable, callable|int $callback = null)
- * @method static void assertNotQueued(string $mailable, callable $callback = null)
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
  * @method static void assertNothingQueued()
  * @method static \Illuminate\Support\Collection sent(string $mailable, \Closure|string $callback = null)
  * @method static bool hasSent(string $mailable)

@@ -19,11 +19,6 @@ Adapters for other platforms are listed at the community driven [Socialite Provi
 
 Documentation for Socialite can be found on the [Laravel website](https://laravel.com/docs/socialite).
 
-<<<<<<< HEAD
-## License
-
-Laravel Socialite is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-=======
 ## Contributing
 
 Thank you for considering contributing to Socialite! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
@@ -39,4 +34,3 @@ Please review [our security policy](https://github.com/laravel/socialite/securit
 ## License
 
 Laravel Socialite is open-sourced software licensed under the [MIT license](LICENSE.md).
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045

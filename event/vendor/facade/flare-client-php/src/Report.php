@@ -2,10 +2,6 @@
 
 namespace Facade\FlareClient;
 
-<<<<<<< HEAD
-=======
-use Facade\FlareClient\Enums\GroupingTypes;
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 use Throwable;
 use Facade\FlareClient\Glows\Glow;
 use Facade\IgnitionContracts\Solution;
@@ -62,12 +58,6 @@ class Report
     /** @var int */
     private $openFrameIndex;
 
-<<<<<<< HEAD
-=======
-    /** @var string */
-    private $groupBy;
-
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     public static function createForThrowable(Throwable $throwable, ContextInterface $context, ?string $applicationPath = null): self
     {
         return (new static())
@@ -216,23 +206,6 @@ class Report
         return $this;
     }
 
-<<<<<<< HEAD
-=======
-    public function groupByTopFrame()
-    {
-        $this->groupBy = GroupingTypes::TOP_FRAME;
-
-        return $this;
-    }
-
-    public function groupByException()
-    {
-        $this->groupBy = GroupingTypes::EXCEPTION;
-
-        return $this;
-    }
-
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     public function allContext(): array
     {
         $context = $this->context->toArray();
@@ -268,10 +241,6 @@ class Report
             'stage' => $this->stage,
             'message_level' => $this->messageLevel,
             'open_frame_index' => $this->openFrameIndex,
-<<<<<<< HEAD
-=======
-            'group_by' => $this->groupBy ?? GroupingTypes::TOP_FRAME,
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
             'application_path' => $this->applicationPath,
         ];
     }

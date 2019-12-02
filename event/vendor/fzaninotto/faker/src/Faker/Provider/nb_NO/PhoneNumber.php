@@ -19,8 +19,6 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         '9#######',
         '4#######',
     );
-<<<<<<< HEAD
-=======
 
     /**
      * @var array Norweign mobile number formats
@@ -40,5 +38,4 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
         return self::numerify($this->generator->parse($format));
     }
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 }

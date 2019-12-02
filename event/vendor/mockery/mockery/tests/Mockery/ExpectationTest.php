@@ -179,8 +179,6 @@ class ExpectationTest extends MockeryTestCase
         $this->assertNull($this->mock->bar);
     }
 
-<<<<<<< HEAD
-=======
     /**
      * @group issue/1005
      */
@@ -202,7 +200,6 @@ class ExpectationTest extends MockeryTestCase
         $this->assertEquals('bazz', $mockInstanceTwo->bar);
     }
 
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     public function testReturnsSameValueForAllIfNoArgsExpectationAndSomeGiven()
     {
         $this->mock->shouldReceive('foo')->andReturn(1);
@@ -242,8 +239,6 @@ class ExpectationTest extends MockeryTestCase
         $this->assertEquals(6, $this->mock->foo(5));
     }
 
-<<<<<<< HEAD
-=======
     public function testReturnsValueOfArgument()
     {
         $args = [1, 2, 3, 4, 5];
@@ -273,7 +268,6 @@ class ExpectationTest extends MockeryTestCase
         $this->mock->foo(0, 1); // only pass 2 arguments so index #2 won't exist
     }
 
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     public function testReturnsUndefined()
     {
         $this->mock->shouldReceive('foo')->andReturnUndefined();
@@ -1442,11 +1436,7 @@ class ExpectationTest extends MockeryTestCase
     {
         $this->mock->shouldReceive('foo')->with(Mockery::type('stdClass'));
         $this->expectException(\Mockery\Exception::class);
-<<<<<<< HEAD
-        $this->mock->foo(new Exception);
-=======
         $this->mock->foo(new \DateTime());
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         Mockery::close();
     }
 
@@ -1565,8 +1555,6 @@ class ExpectationTest extends MockeryTestCase
         Mockery::close();
     }
 
-<<<<<<< HEAD
-=======
     public function testCaptureStoresArgumentOfTypeScalar_ClosureEvaluatesToTrue()
     {
         $temp = null;
@@ -1586,7 +1574,6 @@ class ExpectationTest extends MockeryTestCase
         $this->assertSame($object, $temp);
     }
 
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     public function testOnConstraintMatchesArgument_ClosureEvaluatesToTrue()
     {
         $function = function ($arg) {

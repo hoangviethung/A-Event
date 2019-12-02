@@ -520,12 +520,9 @@ interface CarbonInterface extends DateTimeInterface, JsonSerializable
     public const ONE_DAY_WORDS = 04;
     public const TWO_DAY_WORDS = 010;
     public const SEQUENTIAL_PARTS_ONLY = 020;
-<<<<<<< HEAD
-=======
     public const ROUND = 040;
     public const FLOOR = 0100;
     public const CEIL = 0200;
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
     /**
      * Diff syntax options.
@@ -565,10 +562,7 @@ interface CarbonInterface extends DateTimeInterface, JsonSerializable
     public const MONTHS_PER_QUARTER = 3;
     public const WEEKS_PER_YEAR = 52;
     public const WEEKS_PER_MONTH = 4;
-<<<<<<< HEAD
-=======
     public const DAYS_PER_YEAR = 365;
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     public const DAYS_PER_WEEK = 7;
     public const HOURS_PER_DAY = 24;
     public const MINUTES_PER_HOUR = 60;

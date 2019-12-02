@@ -13,11 +13,6 @@
  * Authors:
  * - Quentí
  */
-<<<<<<< HEAD
-\Symfony\Component\Translation\PluralizationRules::set(function ($number) {
-    return $number == 1 ? 0 : 1;
-}, 'oc');
-=======
 // @codeCoverageIgnoreStart
 if (class_exists('Symfony\\Component\\Translation\\PluralizationRules')) {
     \Symfony\Component\Translation\PluralizationRules::set(function ($number) {
@@ -25,7 +20,6 @@ if (class_exists('Symfony\\Component\\Translation\\PluralizationRules')) {
     }, 'oc');
 }
 // @codeCoverageIgnoreEnd
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
 return [
     'year' => ':count an|:count ans',

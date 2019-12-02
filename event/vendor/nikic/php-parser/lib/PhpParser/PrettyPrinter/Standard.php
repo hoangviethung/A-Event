@@ -37,13 +37,10 @@ class Standard extends PrettyPrinterAbstract
         return '?' . $this->p($node->type);
     }
 
-<<<<<<< HEAD
-=======
     protected function pUnionType(Node\UnionType $node) {
         return $this->pImplode($node->types, '|');
     }
 
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     protected function pIdentifier(Node\Identifier $node) {
         return $node->name;
     }

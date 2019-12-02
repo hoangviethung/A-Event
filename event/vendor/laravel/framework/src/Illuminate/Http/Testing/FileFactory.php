@@ -10,30 +10,23 @@ class FileFactory
      * Create a new fake file.
      *
      * @param  string  $name
-<<<<<<< HEAD
-     * @param  int  $kilobytes
-=======
      * @param  string|int  $kilobytes
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * @return \Illuminate\Http\Testing\File
      */
     public function create($name, $kilobytes = 0)
     {
-<<<<<<< HEAD
-=======
+        $tmp = tmpfile();
+
         if (is_string($kilobytes)) {
-            return $this->createWithContent($name, $kilobytes);
+            file_put_contents($tmp, $kilobytes);
         }
 
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
-        return tap(new File($name, tmpfile()), function ($file) use ($kilobytes) {
-            $file->sizeToReport = $kilobytes * 1024;
+        return tap(new File($name, $tmp), function ($file) use ($kilobytes) {
+            $file->sizeToReport = is_string($kilobytes) ? fstat($tmp)['size'] : ($kilobytes * 1024);
         });
     }
 
     /**
-<<<<<<< HEAD
-=======
      * Create a new fake file with content.
      *
      * @param  string  $name
@@ -43,7 +36,6 @@ class FileFactory
     public function createWithContent($name, $content)
     {
         $tmpfile = tmpfile();
-
         fwrite($tmpfile, $content);
 
         return tap(new File($name, $tmpfile), function ($file) use ($tmpfile) {
@@ -52,7 +44,6 @@ class FileFactory
     }
 
     /**
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * Create a new fake image.
      *
      * @param  string  $name

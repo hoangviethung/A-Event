@@ -61,11 +61,7 @@ class ContainerControllerResolver extends ControllerResolver
         $this->throwExceptionIfControllerWasRemoved($class, $e);
 
         if ($e instanceof \ArgumentCountError) {
-<<<<<<< HEAD
-            throw new \InvalidArgumentException(sprintf('Controller "%s" has required constructor arguments and does not exist in the container. Did you forget to define such a service?', $class), 0, $e);
-=======
             throw new \InvalidArgumentException(sprintf('Controller "%s" has required constructor arguments and does not exist in the container. Did you forget to define the controller as a service?', $class), 0, $e);
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         }
 
         throw new \InvalidArgumentException(sprintf('Controller "%s" does neither exist as service nor as class', $class), 0, $e);

@@ -48,8 +48,6 @@ trait SerializesModels
     }
 
     /**
-<<<<<<< HEAD
-=======
      * Prepare the instance values for serialization.
      *
      * @return array
@@ -123,7 +121,6 @@ trait SerializesModels
     }
 
     /**
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * Get the property value for the given property.
      *
      * @param  \ReflectionProperty  $property

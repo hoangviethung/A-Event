@@ -2,22 +2,15 @@
 
 namespace Doctrine\Instantiator;
 
-<<<<<<< HEAD
-=======
 use ArrayIterator;
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 use Doctrine\Instantiator\Exception\InvalidArgumentException;
 use Doctrine\Instantiator\Exception\UnexpectedValueException;
 use Exception;
 use ReflectionClass;
 use ReflectionException;
-<<<<<<< HEAD
-use function class_exists;
-=======
 use Serializable;
 use function class_exists;
 use function is_subclass_of;
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 use function restore_error_handler;
 use function set_error_handler;
 use function sprintf;
@@ -104,11 +97,7 @@ final class Instantiator implements InstantiatorInterface
 
         $serializedString = sprintf(
             '%s:%d:"%s":0:{}',
-<<<<<<< HEAD
-            self::SERIALIZATION_FORMAT_AVOID_UNSERIALIZER,
-=======
             is_subclass_of($className, Serializable::class) ? self::SERIALIZATION_FORMAT_USE_UNSERIALIZER : self::SERIALIZATION_FORMAT_AVOID_UNSERIALIZER,
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
             strlen($className),
             $className
         );
@@ -121,19 +110,10 @@ final class Instantiator implements InstantiatorInterface
     }
 
     /**
-<<<<<<< HEAD
-     * @param string $className
-     *
-     * @throws InvalidArgumentException
-     * @throws ReflectionException
-     */
-    private function getReflectionClass($className) : ReflectionClass
-=======
      * @throws InvalidArgumentException
      * @throws ReflectionException
      */
     private function getReflectionClass(string $className) : ReflectionClass
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         if (! class_exists($className)) {
             throw InvalidArgumentException::fromNonExistingClass($className);
@@ -153,11 +133,7 @@ final class Instantiator implements InstantiatorInterface
      */
     private function checkIfUnSerializationIsSupported(ReflectionClass $reflectionClass, string $serializedString) : void
     {
-<<<<<<< HEAD
-        set_error_handler(static function ($code, $message, $file, $line) use ($reflectionClass, & $error) : void {
-=======
         set_error_handler(static function (int $code, string $message, string $file, int $line) use ($reflectionClass, &$error) : bool {
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
             $error = UnexpectedValueException::fromUncleanUnSerialization(
                 $reflectionClass,
                 $message,
@@ -165,11 +141,8 @@ final class Instantiator implements InstantiatorInterface
                 $file,
                 $line
             );
-<<<<<<< HEAD
-=======
 
             return true;
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         });
 
         try {
@@ -223,12 +196,8 @@ final class Instantiator implements InstantiatorInterface
      */
     private function isSafeToClone(ReflectionClass $reflection) : bool
     {
-<<<<<<< HEAD
-        return $reflection->isCloneable() && ! $reflection->hasMethod('__clone');
-=======
         return $reflection->isCloneable()
             && ! $reflection->hasMethod('__clone')
             && ! $reflection->isSubclassOf(ArrayIterator::class);
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 }

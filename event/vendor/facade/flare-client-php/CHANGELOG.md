@@ -2,12 +2,6 @@
 
 All notable changes to `flare-client-php` will be documented in this file
 
-<<<<<<< HEAD
-=======
-## 1.3.0 - 2019-11-27
-
-- Allow custom grouping types
-
 ## 1.2.1 - 2019-11-19
 
 - Let `registerFlareHandlers` return $this
@@ -21,7 +15,6 @@ All notable changes to `flare-client-php` will be documented in this file
 
 - Ignore invalid mime type detection issues
 
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 ## 1.1.1 - 2019-10-07
 
 - Wrap filesize detection in try-catch block

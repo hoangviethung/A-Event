@@ -11,27 +11,18 @@
 
 namespace Symfony\Component\Routing\Loader;
 
-<<<<<<< HEAD
-use Symfony\Component\Config\Loader\Loader;
-use Symfony\Component\Config\Resource\FileResource;
 use Symfony\Component\Routing\RouteCollection;
-=======
+
 @trigger_error(sprintf('The "%s" class is deprecated since Symfony 4.4, use "%s" instead.', ObjectRouteLoader::class, ObjectLoader::class), E_USER_DEPRECATED);
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
 /**
  * A route loader that calls a method on an object to load the routes.
  *
  * @author Ryan Weaver <ryan@knpuniversity.com>
-<<<<<<< HEAD
- */
-abstract class ObjectRouteLoader extends Loader
-=======
  *
  * @deprecated since Symfony 4.4, use ObjectLoader instead.
  */
 abstract class ObjectRouteLoader extends ObjectLoader
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 {
     /**
      * Returns the object that the method will be called on to load routes.
@@ -46,7 +37,6 @@ abstract class ObjectRouteLoader extends ObjectLoader
     abstract protected function getServiceObject($id);
 
     /**
-<<<<<<< HEAD
      * Calls the service that will load the routes.
      *
      * @param string      $resource Some value that will resolve to a callable
@@ -65,37 +55,10 @@ abstract class ObjectRouteLoader extends ObjectLoader
             @trigger_error(sprintf('Referencing service route loaders with a single colon is deprecated since Symfony 4.1. Use %s instead.', $resource), E_USER_DEPRECATED);
         }
 
-        $parts = explode('::', $resource);
-        $serviceString = $parts[0];
-        $method = $parts[1] ?? '__invoke';
-
-        $loaderObject = $this->getServiceObject($serviceString);
-
-        if (!\is_object($loaderObject)) {
-            throw new \LogicException(sprintf('%s:getServiceObject() must return an object: %s returned', \get_class($this), \gettype($loaderObject)));
-        }
-
-        if (!\is_callable([$loaderObject, $method])) {
-            throw new \BadMethodCallException(sprintf('Method "%s" not found on "%s" when importing routing resource "%s"', $method, \get_class($loaderObject), $resource));
-        }
-
-        $routeCollection = $loaderObject->$method($this);
-
-        if (!$routeCollection instanceof RouteCollection) {
-            $type = \is_object($routeCollection) ? \get_class($routeCollection) : \gettype($routeCollection);
-
-            throw new \LogicException(sprintf('The %s::%s method must return a RouteCollection: %s returned', \get_class($loaderObject), $method, $type));
-        }
-
-        // make the service file tracked so that if it changes, the cache rebuilds
-        $this->addClassResource(new \ReflectionClass($loaderObject), $routeCollection);
-
-        return $routeCollection;
+        return parent::load($resource, $type);
     }
 
     /**
-=======
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * {@inheritdoc}
      */
     public function supports($resource, $type = null)
@@ -103,21 +66,11 @@ abstract class ObjectRouteLoader extends ObjectLoader
         return 'service' === $type;
     }
 
-<<<<<<< HEAD
-    private function addClassResource(\ReflectionClass $class, RouteCollection $collection)
-    {
-        do {
-            if (is_file($class->getFileName())) {
-                $collection->addResource(new FileResource($class->getFileName()));
-            }
-        } while ($class = $class->getParentClass());
-=======
     /**
      * {@inheritdoc}
      */
     protected function getObject(string $id)
     {
         return $this->getServiceObject($id);
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 }

@@ -11,21 +11,15 @@
 
 namespace Symfony\Component\Console\Style;
 
-<<<<<<< HEAD
-=======
 use Symfony\Component\Console\Exception\InvalidArgumentException;
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 use Symfony\Component\Console\Exception\RuntimeException;
 use Symfony\Component\Console\Formatter\OutputFormatter;
 use Symfony\Component\Console\Helper\Helper;
 use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Helper\SymfonyQuestionHelper;
 use Symfony\Component\Console\Helper\Table;
-<<<<<<< HEAD
-=======
 use Symfony\Component\Console\Helper\TableCell;
 use Symfony\Component\Console\Helper\TableSeparator;
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\BufferedOutput;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -200,8 +194,6 @@ class SymfonyStyle extends OutputStyle
     }
 
     /**
-<<<<<<< HEAD
-=======
      * Formats a horizontal table.
      */
     public function horizontalTable(array $headers, array $rows)
@@ -265,7 +257,6 @@ class SymfonyStyle extends OutputStyle
     }
 
     /**
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * {@inheritdoc}
      */
     public function ask($question, $default = null, $validator = null)
@@ -463,11 +454,7 @@ class SymfonyStyle extends OutputStyle
         $this->bufferedOutput->write(substr($message, -4), $newLine, $type);
     }
 
-<<<<<<< HEAD
-    private function createBlock(iterable $messages, string $type = null, string $style = null, string $prefix = ' ', bool $padding = false, bool $escape = false)
-=======
     private function createBlock(iterable $messages, string $type = null, string $style = null, string $prefix = ' ', bool $padding = false, bool $escape = false): array
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $indentLength = 0;
         $prefixLength = Helper::strlenWithoutDecoration($this->getFormatter(), $prefix);

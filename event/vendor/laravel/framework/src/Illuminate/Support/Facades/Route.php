@@ -3,13 +3,7 @@
 namespace Illuminate\Support\Facades;
 
 /**
-<<<<<<< HEAD
  * @method static \Illuminate\Routing\Route get(string $uri, \Closure|array|string|callable|null $action = null)
-=======
- * @method static \Illuminate\Routing\Route fallback(\Closure|array|string|callable|null $action = null)
- * @method static \Illuminate\Routing\Route get(string $uri, \Closure|array|string|callable|null $action = null)
- * @method static \Illuminate\Routing\Route head(string $uri, \Closure|array|string|callable|null $action = null)
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
  * @method static \Illuminate\Routing\Route post(string $uri, \Closure|array|string|callable|null $action = null)
  * @method static \Illuminate\Routing\Route put(string $uri, \Closure|array|string|callable|null $action = null)
  * @method static \Illuminate\Routing\Route delete(string $uri, \Closure|array|string|callable|null $action = null)

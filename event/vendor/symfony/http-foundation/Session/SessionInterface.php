@@ -23,11 +23,7 @@ interface SessionInterface
     /**
      * Starts the session storage.
      *
-<<<<<<< HEAD
-     * @return bool True if session started
-=======
      * @return bool
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      *
      * @throws \RuntimeException if session fails to start
      */
@@ -36,11 +32,7 @@ interface SessionInterface
     /**
      * Returns the session ID.
      *
-<<<<<<< HEAD
-     * @return string The session ID
-=======
      * @return string
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     public function getId();
 
@@ -54,11 +46,7 @@ interface SessionInterface
     /**
      * Returns the session name.
      *
-<<<<<<< HEAD
-     * @return mixed The session name
-=======
      * @return string
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     public function getName();
 
@@ -80,11 +68,7 @@ interface SessionInterface
      *                      to expire with browser session. Time is in seconds, and is
      *                      not a Unix timestamp.
      *
-<<<<<<< HEAD
-     * @return bool True if session invalidated, false if error
-=======
      * @return bool
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     public function invalidate($lifetime = null);
 
@@ -98,11 +82,7 @@ interface SessionInterface
      *                       to expire with browser session. Time is in seconds, and is
      *                       not a Unix timestamp.
      *
-<<<<<<< HEAD
-     * @return bool True if session migrated, false if error
-=======
      * @return bool
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     public function migrate($destroy = false, $lifetime = null);
 
@@ -120,11 +100,7 @@ interface SessionInterface
      *
      * @param string $name The attribute name
      *
-<<<<<<< HEAD
-     * @return bool true if the attribute is defined, false otherwise
-=======
      * @return bool
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     public function has($name);
 
@@ -149,21 +125,12 @@ interface SessionInterface
     /**
      * Returns attributes.
      *
-<<<<<<< HEAD
-     * @return array Attributes
-=======
      * @return array
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     public function all();
 
     /**
      * Sets attributes.
-<<<<<<< HEAD
-     *
-     * @param array $attributes Attributes
-=======
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     public function replace(array $attributes);
 

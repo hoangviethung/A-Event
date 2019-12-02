@@ -69,8 +69,6 @@ class Payment extends \Faker\Provider\Payment
     {
         return static::iban($countryCode, $prefix, $length);
     }
-<<<<<<< HEAD
-=======
 
 
     /**
@@ -145,5 +143,4 @@ class Payment extends \Faker\Provider\Payment
     {
         return static::randomElement(static::$banks);
     }
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 }

@@ -22,15 +22,6 @@ use Symfony\Contracts\Translation\TranslatorTrait;
  */
 class IdentityTranslator implements LegacyTranslatorInterface, TranslatorInterface
 {
-<<<<<<< HEAD
-    use TranslatorTrait;
-
-    private $selector;
-
-    /**
-     * @param MessageSelector|null $selector The message selector for pluralization
-     */
-=======
     use TranslatorTrait {
         trans as private doTrans;
         setLocale as private doSetLocale;
@@ -38,7 +29,6 @@ class IdentityTranslator implements LegacyTranslatorInterface, TranslatorInterfa
 
     private $selector;
 
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     public function __construct(MessageSelector $selector = null)
     {
         $this->selector = $selector;
@@ -50,8 +40,6 @@ class IdentityTranslator implements LegacyTranslatorInterface, TranslatorInterfa
 
     /**
      * {@inheritdoc}
-<<<<<<< HEAD
-=======
      */
     public function trans($id, array $parameters = [], $domain = null, $locale = null)
     {
@@ -68,7 +56,6 @@ class IdentityTranslator implements LegacyTranslatorInterface, TranslatorInterfa
 
     /**
      * {@inheritdoc}
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      *
      * @deprecated since Symfony 4.2, use the trans() method instead with a %count% parameter
      */

@@ -402,11 +402,7 @@ trait EnumeratesValues
     /**
      * Apply the callback if the value is truthy.
      *
-<<<<<<< HEAD
-     * @param  bool  $value
-=======
      * @param  bool|mixed  $value
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * @param  callable  $callback
      * @param  callable  $default
      * @return static|mixed

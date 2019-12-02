@@ -200,11 +200,7 @@ class RouteUrlGenerator
             // Reset only the numeric keys...
             $parameters = array_merge($parameters);
 
-<<<<<<< HEAD
             return (empty($parameters) && ! Str::endsWith($match[0], '?}'))
-=======
-            return (! isset($parameters[0]) && ! Str::endsWith($match[0], '?}'))
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
                         ? $match[0]
                         : Arr::pull($parameters, 0);
         }, $path);

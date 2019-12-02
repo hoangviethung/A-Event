@@ -20,19 +20,6 @@
 
 namespace Mockery\Exception;
 
-<<<<<<< HEAD
-use Mockery;
-
-class NoMatchingExpectationException extends Mockery\Exception
-{
-    protected $method = null;
-
-    protected $actual = array();
-
-    protected $mockObject = null;
-
-    public function setMock(Mockery\LegacyMockInterface $mock)
-=======
 use Hamcrest\Util;
 use Mockery;
 use SebastianBergmann\Comparator\ComparisonFailure;
@@ -114,69 +101,41 @@ class NoMatchingExpectationException extends Mockery\Exception
      * @return $this
      */
     private function setMock(Mockery\MockInterface $mock)
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $this->mockObject = $mock;
         return $this;
     }
 
-<<<<<<< HEAD
-    public function setMethodName($name)
-=======
     /**
      * @param string $name
      *
      * @return $this
      */
     private function setMethodName($name)
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $this->method = $name;
         return $this;
     }
 
-<<<<<<< HEAD
-    public function setActualArguments($count)
-=======
     /**
      * @param array $count
      *
      * @return $this
      */
     private function setActualArguments($count)
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $this->actual = $count;
         return $this;
     }
 
-<<<<<<< HEAD
-    public function getMock()
-=======
     /**
      * @return Mockery\MockInterface
      */
     private function getMock()
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         return $this->mockObject;
     }
 
-<<<<<<< HEAD
-    public function getMethodName()
-    {
-        return $this->method;
-    }
-
-    public function getActualArguments()
-    {
-        return $this->actual;
-    }
-
-    public function getMockName()
-    {
-        return $this->getMock()->mockery_getName();
-=======
     /**
      * @return string
      */
@@ -242,6 +201,5 @@ class NoMatchingExpectationException extends Mockery\Exception
         }
 
         return $normalized;
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 }

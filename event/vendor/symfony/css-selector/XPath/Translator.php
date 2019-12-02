@@ -215,11 +215,7 @@ class Translator implements TranslatorInterface
     /**
      * @return SelectorNode[]
      */
-<<<<<<< HEAD
-    private function parseSelectors(string $css)
-=======
     private function parseSelectors(string $css): array
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         foreach ($this->shortcutParsers as $shortcut) {
             $tokens = $shortcut->parse($css);

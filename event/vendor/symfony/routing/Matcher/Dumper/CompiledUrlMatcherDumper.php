@@ -443,11 +443,7 @@ EOF;
         ];
     }
 
-<<<<<<< HEAD
-    private function getExpressionLanguage()
-=======
     private function getExpressionLanguage(): ExpressionLanguage
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         if (null === $this->expressionLanguage) {
             if (!class_exists('Symfony\Component\ExpressionLanguage\ExpressionLanguage')) {
@@ -459,11 +455,7 @@ EOF;
         return $this->expressionLanguage;
     }
 
-<<<<<<< HEAD
-    private function indent($code, $level = 1)
-=======
     private function indent(string $code, int $level = 1): string
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         return preg_replace('/^./m', str_repeat('    ', $level).'$0', $code);
     }

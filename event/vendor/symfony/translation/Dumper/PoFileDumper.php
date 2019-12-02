@@ -51,10 +51,6 @@ class PoFileDumper extends FileDumper
                 $output .= $this->formatComments(implode(' ', (array) $metadata['sources']), ':');
             }
 
-<<<<<<< HEAD
-            $output .= sprintf('msgid "%s"'."\n", $this->escape($source));
-            $output .= sprintf('msgstr "%s"'."\n", $this->escape($target));
-=======
             $sourceRules = $this->getStandardRules($source);
             $targetRules = $this->getStandardRules($target);
             if (2 == \count($sourceRules) && $targetRules !== []) {
@@ -67,14 +63,11 @@ class PoFileDumper extends FileDumper
                 $output .= sprintf('msgid "%s"'."\n", $this->escape($source));
                 $output .= sprintf('msgstr "%s"'."\n", $this->escape($target));
             }
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         }
 
         return $output;
     }
 
-<<<<<<< HEAD
-=======
     private function getStandardRules(string $id)
     {
         // Partly copied from TranslatorTrait::trans.
@@ -118,7 +111,6 @@ EOF;
         return $standardRules;
     }
 
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     /**
      * {@inheritdoc}
      */
@@ -127,11 +119,7 @@ EOF;
         return 'po';
     }
 
-<<<<<<< HEAD
-    private function escape($str)
-=======
     private function escape(string $str): string
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         return addcslashes($str, "\0..\37\42\134");
     }

@@ -192,11 +192,7 @@ class TableStyle
      *
      * @internal
      */
-<<<<<<< HEAD
-    public function getBorderChars()
-=======
     public function getBorderChars(): array
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         return [
             $this->horizontalOutsideBorderChar,

@@ -38,11 +38,7 @@ interface ProfilerStorageInterface
      *
      * @return array An array of tokens
      */
-<<<<<<< HEAD
-    public function find($ip, $url, $limit, $method, $start = null, $end = null);
-=======
     public function find($ip, $url, $limit, $method, $start = null, $end = null): array;
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
     /**
      * Reads data associated with the given token.
@@ -53,22 +49,14 @@ interface ProfilerStorageInterface
      *
      * @return Profile|null The profile associated with token
      */
-<<<<<<< HEAD
-    public function read($token);
-=======
     public function read($token): ?Profile;
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
     /**
      * Saves a Profile.
      *
      * @return bool Write operation successful
      */
-<<<<<<< HEAD
-    public function write(Profile $profile);
-=======
     public function write(Profile $profile): bool;
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
     /**
      * Purges all data from the database.

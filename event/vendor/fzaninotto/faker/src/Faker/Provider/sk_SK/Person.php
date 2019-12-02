@@ -74,15 +74,9 @@ class Person extends \Faker\Provider\Person
         'Cyprich', 'Cíger', 'Dacej', 'Danko', 'Debnár', 'Dej', 'Dekýš', 'Doležal', 'Dostál', 'Dočolomanský', 'Drajna', 'Droppa', 'Dubovský',
         'Dudek', 'Dula', 'Dulla', 'Dusík', 'Dvonč', 'Dzurjanin', 'Dávid', 'Fabian', 'Fabián', 'Fajnor', 'Farkašovský', 'Feldek', 'Fico', 'Filc',
         'Filip', 'Finka', 'Ftorek', 'Galis', 'Gallo', 'Gašpar', 'Gašparovič', 'Gocník', 'Golonka', 'Greguš', 'Grznár', 'Hablák', 'Habšuda',
-<<<<<<< HEAD
-        'Haluška', 'Halák', 'Hanko', 'Hanzal', 'Hanzel', 'Hanzel', 'Haščák', 'Heretik', 'Hečko', 'Hečková', 'Hlaváček', 'Hlinka', 'Hochschorner',
-        'Holub', 'Holuby', 'Horváth', 'Hossa', 'Hraško', 'Hric', 'Hrmo', 'Hrušovský', 'Huba', 'Hudáček', 'Hála', 'Ihnačák', 'Janoška', 'Jantošovič',
-        'Janík', 'Jonata', 'Jurina', 'Jurinová', 'Jurík', 'Jáni', 'Jánošík', 'Kaliský', 'Karul', 'Karvaš', 'Keníž', 'Klapka', 'Klaus', 'Kolník',
-=======
         'Haluška', 'Halák', 'Hanko', 'Hanzal', 'Hanzel', 'Hanzel', 'Haščák', 'Heretik', 'Hečko', 'Hlaváček', 'Hlinka', 'Hochschorner',
         'Holub', 'Holuby', 'Horváth', 'Hossa', 'Hraško', 'Hric', 'Hrmo', 'Hrušovský', 'Huba', 'Hudáček', 'Hála', 'Ihnačák', 'Janoška', 'Jantošovič',
         'Janík', 'Jonata', 'Jurina', 'Jurík', 'Jáni', 'Jánošík', 'Kaliský', 'Karul', 'Karvaš', 'Keníž', 'Klapka', 'Klaus', 'Kolník',
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         'Konstantinidis', 'Korec', 'Kostrec', 'Kováč', 'Kováčik', 'Koza', 'Kubík', 'Kučera', 'Labuda', 'Langoš', 'Lepšík', 'Lexa', 'Lintner',
         'Lubina', 'Lukáč', 'Lupták', 'Líška', 'Majeský', 'Malachovský', 'Malíšek', 'Marián', 'Masaryk', 'Maslo', 'Matiaško', 'Medveď', 'Menyhért',
         'Mečiar', 'Mečíř', 'Mikloško', 'Mikulík', 'Mikuš', 'Mikúš', 'Mišík', 'Mojžiš', 'Mokroš', 'Molnár', 'Moravčík', 'Musil', 'Mydlo', 'Nagy',

@@ -1172,12 +1172,9 @@ trait HasAttributes
         } elseif ($this->isDateAttribute($key)) {
             return $this->fromDateTime($current) ===
                    $this->fromDateTime($original);
-<<<<<<< HEAD
-=======
         } elseif ($this->hasCast($key, ['object', 'collection'])) {
             return $this->castAttribute($key, $current) ==
                 $this->castAttribute($key, $original);
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         } elseif ($this->hasCast($key)) {
             return $this->castAttribute($key, $current) ===
                    $this->castAttribute($key, $original);

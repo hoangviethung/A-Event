@@ -138,11 +138,6 @@ HELP
         $output->page($this->presenter->present($nodes, $depth));
 
         $this->context->setReturnValue($nodes);
-<<<<<<< HEAD
-=======
-
-        return 0;
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 
     /**

@@ -8,12 +8,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-<<<<<<< HEAD
-\Symfony\Component\Translation\PluralizationRules::set(function ($number) {
-    return $number === 1 ? 0 : 1;
-}, 'lo');
-=======
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
 /*
  * Authors:
@@ -33,11 +27,7 @@ return [
     'h' => ':count ຊມ. ',
     'minute' => ':count ນາທີ',
     'min' => ':count ນທ. ',
-<<<<<<< HEAD
-    'second' => 'ບໍ່ເທົ່າໃດວິນາທີ|:count ວິນາທີ',
-=======
     'second' => '{1}ບໍ່ເທົ່າໃດວິນາທີ|]1,Inf[:count ວິນາທີ',
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     's' => ':count ວິ. ',
     'ago' => ':timeຜ່ານມາ',
     'from_now' => 'ອີກ :time',

@@ -39,11 +39,7 @@ class HtmlExtension extends AbstractExtension
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
-    public function getPseudoClassTranslators()
-=======
     public function getPseudoClassTranslators(): array
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         return [
             'checked' => [$this, 'translateChecked'],
@@ -60,25 +56,14 @@ class HtmlExtension extends AbstractExtension
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
-    public function getFunctionTranslators()
-=======
     public function getFunctionTranslators(): array
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         return [
             'lang' => [$this, 'translateLang'],
         ];
     }
 
-<<<<<<< HEAD
-    /**
-     * @return XPathExpr
-     */
-    public function translateChecked(XPathExpr $xpath)
-=======
     public function translateChecked(XPathExpr $xpath): XPathExpr
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         return $xpath->addCondition(
             '(@checked '
@@ -87,26 +72,12 @@ class HtmlExtension extends AbstractExtension
         );
     }
 
-<<<<<<< HEAD
-    /**
-     * @return XPathExpr
-     */
-    public function translateLink(XPathExpr $xpath)
-=======
     public function translateLink(XPathExpr $xpath): XPathExpr
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         return $xpath->addCondition("@href and (name(.) = 'a' or name(.) = 'link' or name(.) = 'area')");
     }
 
-<<<<<<< HEAD
-    /**
-     * @return XPathExpr
-     */
-    public function translateDisabled(XPathExpr $xpath)
-=======
     public function translateDisabled(XPathExpr $xpath): XPathExpr
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         return $xpath->addCondition(
             '('
@@ -132,14 +103,7 @@ class HtmlExtension extends AbstractExtension
         // todo: in the second half, add "and is not a descendant of that fieldset element's first legend element child, if any."
     }
 
-<<<<<<< HEAD
-    /**
-     * @return XPathExpr
-     */
-    public function translateEnabled(XPathExpr $xpath)
-=======
     public function translateEnabled(XPathExpr $xpath): XPathExpr
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         return $xpath->addCondition(
             '('
@@ -173,17 +137,9 @@ class HtmlExtension extends AbstractExtension
     }
 
     /**
-<<<<<<< HEAD
-     * @return XPathExpr
-     *
-     * @throws ExpressionErrorException
-     */
-    public function translateLang(XPathExpr $xpath, FunctionNode $function)
-=======
      * @throws ExpressionErrorException
      */
     public function translateLang(XPathExpr $xpath, FunctionNode $function): XPathExpr
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $arguments = $function->getArguments();
         foreach ($arguments as $token) {
@@ -201,50 +157,22 @@ class HtmlExtension extends AbstractExtension
         ));
     }
 
-<<<<<<< HEAD
-    /**
-     * @return XPathExpr
-     */
-    public function translateSelected(XPathExpr $xpath)
-=======
     public function translateSelected(XPathExpr $xpath): XPathExpr
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         return $xpath->addCondition("(@selected and name(.) = 'option')");
     }
 
-<<<<<<< HEAD
-    /**
-     * @return XPathExpr
-     */
-    public function translateInvalid(XPathExpr $xpath)
-=======
     public function translateInvalid(XPathExpr $xpath): XPathExpr
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         return $xpath->addCondition('0');
     }
 
-<<<<<<< HEAD
-    /**
-     * @return XPathExpr
-     */
-    public function translateHover(XPathExpr $xpath)
-=======
     public function translateHover(XPathExpr $xpath): XPathExpr
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         return $xpath->addCondition('0');
     }
 
-<<<<<<< HEAD
-    /**
-     * @return XPathExpr
-     */
-    public function translateVisited(XPathExpr $xpath)
-=======
     public function translateVisited(XPathExpr $xpath): XPathExpr
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         return $xpath->addCondition('0');
     }
@@ -252,11 +180,7 @@ class HtmlExtension extends AbstractExtension
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
-    public function getName()
-=======
     public function getName(): string
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         return 'html';
     }

@@ -45,10 +45,5 @@ HELP
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $output->write(\sprintf('%c[2J%c[0;0f', 27, 27));
-<<<<<<< HEAD
-=======
-
-        return 0;
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 }

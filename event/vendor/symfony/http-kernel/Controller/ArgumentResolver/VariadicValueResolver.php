@@ -25,11 +25,7 @@ final class VariadicValueResolver implements ArgumentValueResolverInterface
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
-    public function supports(Request $request, ArgumentMetadata $argument)
-=======
     public function supports(Request $request, ArgumentMetadata $argument): bool
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         return $argument->isVariadic() && $request->attributes->has($argument->getName());
     }
@@ -37,11 +33,7 @@ final class VariadicValueResolver implements ArgumentValueResolverInterface
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
-    public function resolve(Request $request, ArgumentMetadata $argument)
-=======
     public function resolve(Request $request, ArgumentMetadata $argument): iterable
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $values = $request->attributes->get($argument->getName());
 
@@ -49,12 +41,6 @@ final class VariadicValueResolver implements ArgumentValueResolverInterface
             throw new \InvalidArgumentException(sprintf('The action argument "...$%1$s" is required to be an array, the request attribute "%1$s" contains a type of "%2$s" instead.', $argument->getName(), \gettype($values)));
         }
 
-<<<<<<< HEAD
-        foreach ($values as $value) {
-            yield $value;
-        }
-=======
         yield from $values;
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 }

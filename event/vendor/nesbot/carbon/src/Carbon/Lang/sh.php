@@ -8,11 +8,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-<<<<<<< HEAD
-\Symfony\Component\Translation\PluralizationRules::set(function ($number) {
-    return ((1 == $number % 10) && (11 != $number % 100)) ? 0 : ((($number % 10 >= 2) && ($number % 10 <= 4) && (($number % 100 < 10) || ($number % 100 >= 20))) ? 1 : 2);
-}, 'sh');
-=======
 // @codeCoverageIgnoreStart
 if (class_exists('Symfony\\Component\\Translation\\PluralizationRules')) {
     \Symfony\Component\Translation\PluralizationRules::set(function ($number) {
@@ -20,7 +15,6 @@ if (class_exists('Symfony\\Component\\Translation\\PluralizationRules')) {
     }, 'sh');
 }
 // @codeCoverageIgnoreEnd
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
 /*
  * Authors:

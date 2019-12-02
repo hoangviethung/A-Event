@@ -270,11 +270,7 @@ class Response
         } else {
             // Content-type based on the Request
             if (!$headers->has('Content-Type')) {
-<<<<<<< HEAD
-                $format = $request->getRequestFormat();
-=======
                 $format = $request->getPreferredFormat();
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
                 if (null !== $format && $mimeType = $request->getMimeType($format)) {
                     $headers->set('Content-Type', $mimeType);
                 }
@@ -1028,11 +1024,7 @@ class Response
      */
     public function getVary(): array
     {
-<<<<<<< HEAD
-        if (!$vary = $this->headers->get('Vary', null, false)) {
-=======
         if (!$vary = $this->headers->all('Vary')) {
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
             return [];
         }
 
@@ -1216,11 +1208,7 @@ class Response
      *
      * @final
      */
-<<<<<<< HEAD
-    public static function closeOutputBuffers(int $targetLevel, bool $flush)
-=======
     public static function closeOutputBuffers(int $targetLevel, bool $flush): void
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $status = ob_get_status(true);
         $level = \count($status);
@@ -1242,11 +1230,7 @@ class Response
      *
      * @final
      */
-<<<<<<< HEAD
-    protected function ensureIEOverSSLCompatibility(Request $request)
-=======
     protected function ensureIEOverSSLCompatibility(Request $request): void
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         if (false !== stripos($this->headers->get('Content-Disposition'), 'attachment') && 1 == preg_match('/MSIE (.*?);/i', $request->server->get('HTTP_USER_AGENT'), $match) && true === $request->isSecure()) {
             if ((int) preg_replace('/(MSIE )(.*?);/', '$2', $match[0]) < 9) {

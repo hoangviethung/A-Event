@@ -15,10 +15,7 @@ use Monolog\Handler\FingersCrossed\ErrorLevelActivationStrategy;
 use Monolog\Handler\FingersCrossed\ActivationStrategyInterface;
 use Monolog\Logger;
 use Monolog\ResettableInterface;
-<<<<<<< HEAD
-=======
 use Monolog\Formatter\FormatterInterface;
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
 /**
  * Buffers all records until a certain level is reached
@@ -36,11 +33,7 @@ use Monolog\Formatter\FormatterInterface;
  *
  * @author Jordi Boggiano <j.boggiano@seld.be>
  */
-<<<<<<< HEAD
-class FingersCrossedHandler extends Handler implements ProcessableHandlerInterface, ResettableInterface
-=======
 class FingersCrossedHandler extends Handler implements ProcessableHandlerInterface, ResettableInterface, FormattableHandlerInterface
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 {
     use ProcessableHandlerTrait;
 
@@ -54,11 +47,7 @@ class FingersCrossedHandler extends Handler implements ProcessableHandlerInterfa
     protected $bubble;
 
     /**
-<<<<<<< HEAD
-     * @param callable|HandlerInterface              $handler            Handler or factory callable($record, $fingersCrossedHandler).
-=======
      * @param callable|HandlerInterface              $handler            Handler or factory callable($record|null, $fingersCrossedHandler).
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * @param int|string|ActivationStrategyInterface $activationStrategy Strategy which determines when this handler takes action, or a level name/value at which the handler is activated
      * @param int                                    $bufferSize         How many entries should be buffered at most, beyond that the oldest items are removed from the buffer.
      * @param bool                                   $bubble             Whether the messages that are handled can bubble up the stack or not
@@ -107,20 +96,8 @@ class FingersCrossedHandler extends Handler implements ProcessableHandlerInterfa
         if ($this->stopBuffering) {
             $this->buffering = false;
         }
-<<<<<<< HEAD
-        if (!$this->handler instanceof HandlerInterface) {
-            $record = end($this->buffer) ?: null;
-
-            $this->handler = call_user_func($this->handler, $record, $this);
-            if (!$this->handler instanceof HandlerInterface) {
-                throw new \RuntimeException("The factory callable should return a HandlerInterface");
-            }
-        }
-        $this->handler->handleBatch($this->buffer);
-=======
 
         $this->getHandler(end($this->buffer) ?: null)->handleBatch($this->buffer);
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         $this->buffer = [];
     }
 
@@ -142,11 +119,7 @@ class FingersCrossedHandler extends Handler implements ProcessableHandlerInterfa
                 $this->activate();
             }
         } else {
-<<<<<<< HEAD
-            $this->handler->handle($record);
-=======
             $this->getHandler($record)->handle($record);
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         }
 
         return false === $this->bubble;
@@ -168,13 +141,8 @@ class FingersCrossedHandler extends Handler implements ProcessableHandlerInterfa
 
         $this->resetProcessors();
 
-<<<<<<< HEAD
-        if ($this->handler instanceof ResettableInterface) {
-            $this->handler->reset();
-=======
         if ($this->getHandler() instanceof ResettableInterface) {
             $this->getHandler()->reset();
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         }
     }
 
@@ -200,19 +168,13 @@ class FingersCrossedHandler extends Handler implements ProcessableHandlerInterfa
                 return $record['level'] >= $level;
             });
             if (count($this->buffer) > 0) {
-<<<<<<< HEAD
-                $this->handler->handleBatch($this->buffer);
-=======
                 $this->getHandler(end($this->buffer) ?: null)->handleBatch($this->buffer);
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
             }
         }
 
         $this->buffer = [];
         $this->buffering = true;
     }
-<<<<<<< HEAD
-=======
 
     /**
      * Return the nested handler
@@ -250,5 +212,4 @@ class FingersCrossedHandler extends Handler implements ProcessableHandlerInterfa
     {
         return $this->getHandler()->getFormatter();
     }
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 }

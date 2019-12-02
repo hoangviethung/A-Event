@@ -12,33 +12,6 @@
 /**
  * Thanks to André Silva : https://github.com/askpt
  */
-<<<<<<< HEAD
-\Symfony\Component\Translation\PluralizationRules::set(function ($number) {
-    return $number === 1 ? 0 : 1;
-}, 'ga');
-
-return [
-    'year' => ':count bliain',
-    'a_year' => 'bliain|:count bliain',
-    'y' => ':countb',
-    'month' => ':count mí',
-    'a_month' => 'mí|:count mí',
-    'm' => ':countm',
-    'week' => ':count sheachtain',
-    'a_week' => 'sheachtain|:count sheachtain',
-    'w' => ':countsh',
-    'day' => ':count lá',
-    'a_day' => 'lá|:count lá',
-    'd' => ':countl',
-    'hour' => ':count uair an chloig',
-    'a_hour' => 'uair an chloig|:count uair an chloig',
-    'h' => ':countu',
-    'minute' => ':count nóiméad',
-    'a_minute' => 'nóiméad|:count nóiméad',
-    'min' => ':countn',
-    'second' => ':count soicind',
-    'a_second' => 'cúpla soicind|:count soicind',
-=======
 
 return [
     'year' => ':count bliain',
@@ -61,7 +34,6 @@ return [
     'min' => ':countn',
     'second' => ':count soicind',
     'a_second' => '{1}cúpla soicind|:count soicind',
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     's' => ':countso',
     'ago' => ':time ó shin',
     'from_now' => 'i :time',

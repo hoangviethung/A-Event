@@ -79,15 +79,8 @@ EOF;
     /**
      * Generates PHP code representing an array of defined routes
      * together with the routes properties (e.g. requirements).
-<<<<<<< HEAD
-     *
-     * @return string PHP code
-     */
-    private function generateDeclaredRoutes()
-=======
      */
     private function generateDeclaredRoutes(): string
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $routes = "[\n";
         foreach ($this->getRoutes()->all() as $name => $route) {
@@ -110,15 +103,8 @@ EOF;
 
     /**
      * Generates PHP code representing the `generate` method that implements the UrlGeneratorInterface.
-<<<<<<< HEAD
-     *
-     * @return string PHP code
-     */
-    private function generateGenerateMethod()
-=======
      */
     private function generateGenerateMethod(): string
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         return <<<'EOF'
     public function generate($name, $parameters = [], $referenceType = self::ABSOLUTE_PATH)

@@ -12,16 +12,10 @@
 namespace Symfony\Component\HttpKernel\DependencyInjection;
 
 use Composer\Autoload\ClassLoader;
-<<<<<<< HEAD
-use Symfony\Component\Debug\DebugClassLoader;
-use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
-use Symfony\Component\DependencyInjection\ContainerBuilder;
-=======
 use Symfony\Component\Debug\DebugClassLoader as LegacyDebugClassLoader;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\ErrorHandler\DebugClassLoader;
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 use Symfony\Component\HttpKernel\Kernel;
 
 /**
@@ -61,15 +55,8 @@ class AddAnnotatedClassesToCachePass implements CompilerPassInterface
      *
      * @param array $patterns The class patterns to expand
      * @param array $classes  The existing classes to match against the patterns
-<<<<<<< HEAD
-     *
-     * @return array A list of classes derived from the patterns
-     */
-    private function expandClasses(array $patterns, array $classes)
-=======
      */
     private function expandClasses(array $patterns, array $classes): array
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $expanded = [];
 
@@ -95,11 +82,7 @@ class AddAnnotatedClassesToCachePass implements CompilerPassInterface
         return array_unique($expanded);
     }
 
-<<<<<<< HEAD
-    private function getClassesInComposerClassMaps()
-=======
     private function getClassesInComposerClassMaps(): array
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $classes = [];
 
@@ -108,11 +91,7 @@ class AddAnnotatedClassesToCachePass implements CompilerPassInterface
                 continue;
             }
 
-<<<<<<< HEAD
-            if ($function[0] instanceof DebugClassLoader) {
-=======
             if ($function[0] instanceof DebugClassLoader || $function[0] instanceof LegacyDebugClassLoader) {
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
                 $function = $function[0]->getClassLoader();
             }
 
@@ -124,11 +103,7 @@ class AddAnnotatedClassesToCachePass implements CompilerPassInterface
         return array_keys($classes);
     }
 
-<<<<<<< HEAD
-    private function patternsToRegexps($patterns)
-=======
     private function patternsToRegexps(array $patterns): array
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $regexps = [];
 
@@ -150,11 +125,7 @@ class AddAnnotatedClassesToCachePass implements CompilerPassInterface
         return $regexps;
     }
 
-<<<<<<< HEAD
-    private function matchAnyRegexps($class, $regexps)
-=======
     private function matchAnyRegexps(string $class, array $regexps): bool
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $blacklisted = false !== strpos($class, 'Test');
 

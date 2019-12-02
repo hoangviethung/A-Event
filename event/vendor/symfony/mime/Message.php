@@ -18,11 +18,6 @@ use Symfony\Component\Mime\Part\TextPart;
 
 /**
  * @author Fabien Potencier <fabien@symfony.com>
-<<<<<<< HEAD
- *
- * @experimental in 4.3
-=======
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
  */
 class Message extends RawMessage
 {
@@ -37,13 +32,7 @@ class Message extends RawMessage
 
     public function __clone()
     {
-<<<<<<< HEAD
-        if (null !== $this->headers) {
-            $this->headers = clone $this->headers;
-        }
-=======
         $this->headers = clone $this->headers;
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
         if (null !== $this->body) {
             $this->body = clone $this->body;
@@ -95,25 +84,12 @@ class Message extends RawMessage
         }
 
         // determine the "real" sender
-<<<<<<< HEAD
-        $senders = $headers->get('From')->getAddresses();
-        $sender = $senders[0];
-        if ($headers->has('Sender')) {
-            $sender = $headers->get('Sender')->getAddress();
-        } elseif (\count($senders) > 1) {
-            $headers->addMailboxHeader('Sender', $sender);
-        }
-
-        if (!$headers->has('Message-ID')) {
-            $headers->addIdHeader('Message-ID', $this->generateMessageId($sender->getAddress()));
-=======
         if (!$headers->has('Sender') && \count($froms = $headers->get('From')->getAddresses()) > 1) {
             $headers->addMailboxHeader('Sender', $froms[0]);
         }
 
         if (!$headers->has('Message-ID')) {
             $headers->addIdHeader('Message-ID', $this->generateMessageId());
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         }
 
         // remove the Bcc field which should NOT be part of the sent message
@@ -141,11 +117,6 @@ class Message extends RawMessage
         yield from $body->toIterable();
     }
 
-<<<<<<< HEAD
-    private function generateMessageId(string $email): string
-    {
-        return bin2hex(random_bytes(16)).strstr($email, '@');
-=======
     public function ensureValidity()
     {
         if (!$this->headers->has('From')) {
@@ -166,7 +137,6 @@ class Message extends RawMessage
         }
 
         return bin2hex(random_bytes(16)).strstr($sender->getAddress(), '@');
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 
     public function __serialize(): array

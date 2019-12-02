@@ -13,10 +13,7 @@ namespace Monolog\Handler;
 
 use Monolog\Logger;
 use Monolog\ResettableInterface;
-<<<<<<< HEAD
-=======
 use Monolog\Formatter\FormatterInterface;
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
 /**
  * Simple handler wrapper that filters records based on a list of levels
@@ -26,11 +23,7 @@ use Monolog\Formatter\FormatterInterface;
  * @author Hennadiy Verkh
  * @author Jordi Boggiano <j.boggiano@seld.be>
  */
-<<<<<<< HEAD
-class FilterHandler extends Handler implements ProcessableHandlerInterface, ResettableInterface
-=======
 class FilterHandler extends Handler implements ProcessableHandlerInterface, ResettableInterface, FormattableHandlerInterface
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 {
     use ProcessableHandlerTrait;
 
@@ -56,11 +49,7 @@ class FilterHandler extends Handler implements ProcessableHandlerInterface, Rese
     protected $bubble;
 
     /**
-<<<<<<< HEAD
-     * @param callable|HandlerInterface $handler        Handler or factory callable($record, $this).
-=======
      * @param callable|HandlerInterface $handler        Handler or factory callable($record|null, $filterHandler).
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * @param int|array                 $minLevelOrList A list of levels to accept or a minimum level if maxLevel is provided
      * @param int|string                $maxLevel       Maximum level to accept, only used if $minLevelOrList is not an array
      * @param bool                      $bubble         Whether the messages that are handled can bubble up the stack or not
@@ -118,26 +107,11 @@ class FilterHandler extends Handler implements ProcessableHandlerInterface, Rese
             return false;
         }
 
-<<<<<<< HEAD
-        // The same logic as in FingersCrossedHandler
-        if (!$this->handler instanceof HandlerInterface) {
-            $this->handler = call_user_func($this->handler, $record, $this);
-            if (!$this->handler instanceof HandlerInterface) {
-                throw new \RuntimeException("The factory callable should return a HandlerInterface");
-            }
-        }
-
-=======
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         if ($this->processors) {
             $record = $this->processRecord($record);
         }
 
-<<<<<<< HEAD
-        $this->handler->handle($record);
-=======
         $this->getHandler($record)->handle($record);
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
         return false === $this->bubble;
     }
@@ -154,9 +128,6 @@ class FilterHandler extends Handler implements ProcessableHandlerInterface, Rese
             }
         }
 
-<<<<<<< HEAD
-        $this->handler->handleBatch($filtered);
-=======
         $this->getHandler($filtered[count($filtered) - 1])->handleBatch($filtered);
     }
 
@@ -195,7 +166,6 @@ class FilterHandler extends Handler implements ProcessableHandlerInterface, Rese
     public function getFormatter(): FormatterInterface
     {
         return $this->getHandler()->getFormatter();
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 
     public function reset()

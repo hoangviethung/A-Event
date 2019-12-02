@@ -3,8 +3,6 @@ Changelog
 
 ## UNRELEASED
 
-<<<<<<< HEAD
-=======
 ## 1.6.0 (2019-11-24)
 
 ### Added
@@ -33,7 +31,6 @@ If a non empty variant is needed, use `isNonEmptyList` or `isNonEmptyMap`.
 * If you use psalm, the minimum version needed is `3.6.0`. Which is enforced through a composer conflict. 
 If you don't use psalm, then this has no impact.
 
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 ## 1.5.0 (2019-08-24)
 
 ### Added 
@@ -43,16 +40,6 @@ If you don't use psalm, then this has no impact.
 * added: `Assert::email()`
 * added support for [Psalm](https://github.com/vimeo/psalm), by adding `@psalm-assert` annotations where appropriate.
 
-<<<<<<< HEAD
-## Fixed
-
-* `Assert::endsWith()` would not give the correct result when dealing with multibyte suffix. 
-* `Assert::length(), minLength, maxLength, lengthBetween` would not give the correct result when dealing with multibyte characters. 
-
-**NOTE**: These 2 changes may break your assertions if you relied on the fact that multibyte characters didn't behave correctly.
-
-## Changed
-=======
 ### Fixed
 
 * `Assert::endsWith()` would not give the correct result when dealing with multibyte suffix.
@@ -61,7 +48,6 @@ If you don't use psalm, then this has no impact.
 **NOTE**: These 2 changes may break your assertions if you relied on the fact that multibyte characters didn't behave correctly.
 
 ### Changed
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
 * The names of some variables have been updated to better reflect what they are.
 * All function calls are now in their FQN form, slightly increasing performance.

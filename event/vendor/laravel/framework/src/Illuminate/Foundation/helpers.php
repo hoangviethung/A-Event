@@ -902,11 +902,7 @@ if (! function_exists('__')) {
      * @param  string|null  $key
      * @param  array  $replace
      * @param  string|null  $locale
-<<<<<<< HEAD
      * @return \Illuminate\Contracts\Translation\Translator|string|array|null
-=======
-     * @return string|array|null
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     function __($key = null, $replace = [], $locale = null)
     {

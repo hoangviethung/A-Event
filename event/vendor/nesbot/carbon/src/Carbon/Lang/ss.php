@@ -8,12 +8,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-<<<<<<< HEAD
-\Symfony\Component\Translation\PluralizationRules::set(function ($number) {
-    return $number === 1 ? 0 : 1;
-}, 'ss');
-=======
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
 /*
  * Authors:
@@ -21,15 +15,6 @@
  * - Nicolai Davies
  */
 return [
-<<<<<<< HEAD
-    'year' => 'umnyaka|:count iminyaka',
-    'month' => 'inyanga|:count tinyanga',
-    'week' => ':count liviki|:count emaviki',
-    'day' => 'lilanga|:count emalanga',
-    'hour' => 'lihora|:count emahora',
-    'minute' => 'umzuzu|:count emizuzu',
-    'second' => 'emizuzwana lomcane|:count mzuzwana',
-=======
     'year' => '{1}umnyaka|:count iminyaka',
     'month' => '{1}inyanga|:count tinyanga',
     'week' => '{1}:count liviki|:count emaviki',
@@ -37,7 +22,6 @@ return [
     'hour' => '{1}lihora|:count emahora',
     'minute' => '{1}umzuzu|:count emizuzu',
     'second' => '{1}emizuzwana lomcane|:count mzuzwana',
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     'ago' => 'wenteka nga :time',
     'from_now' => 'nga :time',
     'diff_yesterday' => 'Itolo',

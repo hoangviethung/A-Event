@@ -56,11 +56,6 @@ HELP
         } else {
             $output->writeln($this->formatLines($buf), ShellOutput::NUMBER_LINES);
         }
-<<<<<<< HEAD
-=======
-
-        return 0;
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 
     /**

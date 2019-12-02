@@ -26,14 +26,7 @@ use Symfony\Component\Console\Input\InputOption;
  */
 class XmlDescriptor extends Descriptor
 {
-<<<<<<< HEAD
-    /**
-     * @return \DOMDocument
-     */
-    public function getInputDefinitionDocument(InputDefinition $definition)
-=======
     public function getInputDefinitionDocument(InputDefinition $definition): \DOMDocument
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $dom = new \DOMDocument('1.0', 'UTF-8');
         $dom->appendChild($definitionXML = $dom->createElement('definition'));
@@ -51,14 +44,7 @@ class XmlDescriptor extends Descriptor
         return $dom;
     }
 
-<<<<<<< HEAD
-    /**
-     * @return \DOMDocument
-     */
-    public function getCommandDocument(Command $command)
-=======
     public function getCommandDocument(Command $command): \DOMDocument
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $dom = new \DOMDocument('1.0', 'UTF-8');
         $dom->appendChild($commandXML = $dom->createElement('command'));
@@ -88,16 +74,7 @@ class XmlDescriptor extends Descriptor
         return $dom;
     }
 
-<<<<<<< HEAD
-    /**
-     * @param string|null $namespace
-     *
-     * @return \DOMDocument
-     */
-    public function getApplicationDocument(Application $application, $namespace = null)
-=======
     public function getApplicationDocument(Application $application, string $namespace = null): \DOMDocument
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $dom = new \DOMDocument('1.0', 'UTF-8');
         $dom->appendChild($rootXml = $dom->createElement('symfony'));

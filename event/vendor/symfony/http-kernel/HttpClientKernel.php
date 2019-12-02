@@ -39,11 +39,7 @@ final class HttpClientKernel implements HttpKernelInterface
         $this->client = $client ?? HttpClient::create();
     }
 
-<<<<<<< HEAD
-    public function handle(Request $request, $type = HttpKernelInterface::MASTER_REQUEST, $catch = true)
-=======
     public function handle(Request $request, $type = HttpKernelInterface::MASTER_REQUEST, $catch = true): Response
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $headers = $this->getHeaders($request);
         $body = '';
@@ -60,11 +56,7 @@ final class HttpClientKernel implements HttpKernelInterface
         $response = new Response($response->getContent(!$catch), $response->getStatusCode(), $response->getHeaders(!$catch));
 
         $response->headers = new class($response->headers->all()) extends ResponseHeaderBag {
-<<<<<<< HEAD
-            protected function computeCacheControlValue()
-=======
             protected function computeCacheControlValue(): string
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
             {
                 return $this->getCacheControlHeader(); // preserve the original value
             }

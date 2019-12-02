@@ -39,17 +39,8 @@ class JsonFileLoader extends FileLoader
 
     /**
      * Translates JSON_ERROR_* constant into meaningful message.
-<<<<<<< HEAD
-     *
-     * @param int $errorCode Error code returned by json_last_error() call
-     *
-     * @return string Message string
-     */
-    private function getJSONErrorMessage($errorCode)
-=======
      */
     private function getJSONErrorMessage(int $errorCode): string
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         switch ($errorCode) {
             case JSON_ERROR_DEPTH:

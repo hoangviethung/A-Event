@@ -18,19 +18,11 @@
     },
     "require-dev": {
         "phpunit/phpunit": "^6.5 || ^7.0 || ^8.0",
-<<<<<<< HEAD
-        "ircmaxell/php-yacc": "0.0.4"
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "4.2-dev"
-=======
         "ircmaxell/php-yacc": "0.0.5"
     },
     "extra": {
         "branch-alias": {
             "dev-master": "4.3-dev"
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         }
     },
     "autoload": {

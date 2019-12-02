@@ -1,8 +1,6 @@
 CHANGELOG
 =========
 
-<<<<<<< HEAD
-=======
 4.4.0
 -----
 
@@ -14,7 +12,6 @@ CHANGELOG
  * made all casters final
  * added support for the `NO_COLOR` env var (https://no-color.org/)
 
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 4.3.0
 -----
 

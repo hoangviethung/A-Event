@@ -13,11 +13,6 @@ namespace Symfony\Component\Mime\Encoder;
 
 /**
  * @author Lars Strojny
-<<<<<<< HEAD
- *
- * @experimental in 4.3
-=======
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
  */
 final class QpContentEncoder implements ContentEncoderInterface
 {

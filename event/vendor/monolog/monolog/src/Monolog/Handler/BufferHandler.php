@@ -13,10 +13,7 @@ namespace Monolog\Handler;
 
 use Monolog\Logger;
 use Monolog\ResettableInterface;
-<<<<<<< HEAD
-=======
 use Monolog\Formatter\FormatterInterface;
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
 /**
  * Buffers all records until closing the handler and then pass them as batch.
@@ -26,11 +23,7 @@ use Monolog\Formatter\FormatterInterface;
  *
  * @author Christophe Coevoet <stof@notk.org>
  */
-<<<<<<< HEAD
-class BufferHandler extends AbstractHandler implements ProcessableHandlerInterface
-=======
 class BufferHandler extends AbstractHandler implements ProcessableHandlerInterface, FormattableHandlerInterface
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 {
     use ProcessableHandlerTrait;
 
@@ -138,8 +131,6 @@ class BufferHandler extends AbstractHandler implements ProcessableHandlerInterfa
             $this->handler->reset();
         }
     }
-<<<<<<< HEAD
-=======
 
     /**
      * {@inheritdoc}
@@ -158,5 +149,4 @@ class BufferHandler extends AbstractHandler implements ProcessableHandlerInterfa
     {
         return $this->handler->getFormatter();
     }
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 }

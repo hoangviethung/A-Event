@@ -34,15 +34,6 @@ class RoutingConfigurator
     }
 
     /**
-<<<<<<< HEAD
-     * @return ImportConfigurator
-     */
-    final public function import($resource, $type = null, $ignoreErrors = false)
-    {
-        $this->loader->setCurrentDir(\dirname($this->path));
-        $imported = $this->loader->import($resource, $type, $ignoreErrors, $this->file) ?: [];
-
-=======
      * @param string|string[]|null $exclude Glob patterns to exclude from the import
      */
     final public function import($resource, string $type = null, bool $ignoreErrors = false, $exclude = null): ImportConfigurator
@@ -50,7 +41,6 @@ class RoutingConfigurator
         $this->loader->setCurrentDir(\dirname($this->path));
 
         $imported = $this->loader->import($resource, $type, $ignoreErrors, $this->file, $exclude) ?: [];
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         if (!\is_array($imported)) {
             return new ImportConfigurator($this->collection, $imported);
         }
@@ -63,14 +53,7 @@ class RoutingConfigurator
         return new ImportConfigurator($this->collection, $mergedCollection);
     }
 
-<<<<<<< HEAD
-    /**
-     * @return CollectionConfigurator
-     */
-    final public function collection($name = '')
-=======
     final public function collection(string $name = ''): CollectionConfigurator
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         return new CollectionConfigurator($this->collection, $name);
     }

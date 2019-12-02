@@ -29,11 +29,7 @@ class AttributeMatchingExtension extends AbstractExtension
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
-    public function getAttributeMatchingTranslators()
-=======
     public function getAttributeMatchingTranslators(): array
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         return [
             'exists' => [$this, 'translateExists'],
@@ -116,11 +112,7 @@ class AttributeMatchingExtension extends AbstractExtension
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
-    public function getName()
-=======
     public function getName(): string
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         return 'attribute-matching';
     }

@@ -162,26 +162,18 @@ class NameResolver extends NodeVisitorAbstract
     }
 
     private function resolveType($node) {
-<<<<<<< HEAD
-=======
         if ($node instanceof Name) {
             return $this->resolveClassName($node);
         }
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         if ($node instanceof Node\NullableType) {
             $node->type = $this->resolveType($node->type);
             return $node;
         }
-<<<<<<< HEAD
-        if ($node instanceof Name) {
-            return $this->resolveClassName($node);
-=======
         if ($node instanceof Node\UnionType) {
             foreach ($node->types as &$type) {
                 $type = $this->resolveType($type);
             }
             return $node;
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         }
         return $node;
     }

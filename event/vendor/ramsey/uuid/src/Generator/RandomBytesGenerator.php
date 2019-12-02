@@ -14,11 +14,6 @@
 
 namespace Ramsey\Uuid\Generator;
 
-<<<<<<< HEAD
-=======
-use Exception;
-
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 /**
  * RandomBytesGenerator provides functionality to generate strings of random
  * binary data using `random_bytes()` function in PHP 7+ or paragonie/random_compat
@@ -33,11 +28,7 @@ class RandomBytesGenerator implements RandomGeneratorInterface
      *
      * @param integer $length The number of bytes of random binary data to generate
      * @return string A binary string
-<<<<<<< HEAD
      * @throws \Exception if it was not possible to gather sufficient entropy
-=======
-     * @throws Exception if it was not possible to gather sufficient entropy
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     public function generate($length)
     {

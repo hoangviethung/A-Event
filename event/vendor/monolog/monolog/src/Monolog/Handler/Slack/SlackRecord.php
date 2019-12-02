@@ -12,10 +12,7 @@
 namespace Monolog\Handler\Slack;
 
 use Monolog\Logger;
-<<<<<<< HEAD
-=======
 use Monolog\Utils;
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 use Monolog\Formatter\NormalizerFormatter;
 use Monolog\Formatter\FormatterInterface;
 
@@ -162,11 +159,7 @@ class SlackRecord
 
                     if ($this->useShortAttachment) {
                         $attachment['fields'][] = $this->generateAttachmentField(
-<<<<<<< HEAD
-                            $key,
-=======
                             (string) $key,
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
                             $record[$key]
                         );
                     } else {
@@ -219,22 +212,13 @@ class SlackRecord
     public function stringify(array $fields): string
     {
         $normalized = $this->normalizerFormatter->format($fields);
-<<<<<<< HEAD
-        $prettyPrintFlag = defined('JSON_PRETTY_PRINT') ? JSON_PRETTY_PRINT : 128;
-=======
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
         $hasSecondDimension = count(array_filter($normalized, 'is_array'));
         $hasNonNumericKeys = !count(array_filter(array_keys($normalized), 'is_numeric'));
 
         return $hasSecondDimension || $hasNonNumericKeys
-<<<<<<< HEAD
-            ? json_encode($normalized, $prettyPrintFlag|JSON_UNESCAPED_UNICODE)
-            : json_encode($normalized, JSON_UNESCAPED_UNICODE);
-=======
             ? Utils::jsonEncode($normalized, JSON_PRETTY_PRINT|Utils::DEFAULT_JSON_FLAGS)
             : Utils::jsonEncode($normalized, Utils::DEFAULT_JSON_FLAGS);
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 
     /**
@@ -340,11 +324,7 @@ class SlackRecord
     {
         $fields = array();
         foreach ($this->normalizerFormatter->format($data) as $key => $value) {
-<<<<<<< HEAD
-            $fields[] = $this->generateAttachmentField($key, $value);
-=======
             $fields[] = $this->generateAttachmentField((string) $key, $value);
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         }
 
         return $fields;

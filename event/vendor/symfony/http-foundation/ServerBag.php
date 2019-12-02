@@ -28,20 +28,10 @@ class ServerBag extends ParameterBag
     public function getHeaders()
     {
         $headers = [];
-<<<<<<< HEAD
-        $contentHeaders = ['CONTENT_LENGTH' => true, 'CONTENT_MD5' => true, 'CONTENT_TYPE' => true];
-        foreach ($this->parameters as $key => $value) {
-            if (0 === strpos($key, 'HTTP_')) {
-                $headers[substr($key, 5)] = $value;
-            }
-            // CONTENT_* are not prefixed with HTTP_
-            elseif (isset($contentHeaders[$key])) {
-=======
         foreach ($this->parameters as $key => $value) {
             if (0 === strpos($key, 'HTTP_')) {
                 $headers[substr($key, 5)] = $value;
             } elseif (\in_array($key, ['CONTENT_TYPE', 'CONTENT_LENGTH', 'CONTENT_MD5'], true)) {
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
                 $headers[$key] = $value;
             }
         }
@@ -53,7 +43,6 @@ class ServerBag extends ParameterBag
             /*
              * php-cgi under Apache does not pass HTTP Basic user/pass to PHP by default
              * For this workaround to work, add these lines to your .htaccess file:
-<<<<<<< HEAD
              * RewriteCond %{HTTP:Authorization} ^(.+)$
              * RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
              *
@@ -61,15 +50,6 @@ class ServerBag extends ParameterBag
              * RewriteEngine On
              * RewriteCond %{HTTP:Authorization} ^(.+)$
              * RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
-=======
-             * RewriteCond %{HTTP:Authorization} .+
-             * RewriteRule ^ - [E=HTTP_AUTHORIZATION:%0]
-             *
-             * A sample .htaccess file:
-             * RewriteEngine On
-             * RewriteCond %{HTTP:Authorization} .+
-             * RewriteRule ^ - [E=HTTP_AUTHORIZATION:%0]
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
              * RewriteCond %{REQUEST_FILENAME} !-f
              * RewriteRule ^(.*)$ app.php [QSA,L]
              */

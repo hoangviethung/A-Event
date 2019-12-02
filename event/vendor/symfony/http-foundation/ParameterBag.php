@@ -23,12 +23,6 @@ class ParameterBag implements \IteratorAggregate, \Countable
      */
     protected $parameters;
 
-<<<<<<< HEAD
-    /**
-     * @param array $parameters An array of parameters
-     */
-=======
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     public function __construct(array $parameters = [])
     {
         $this->parameters = $parameters;
@@ -56,11 +50,6 @@ class ParameterBag implements \IteratorAggregate, \Countable
 
     /**
      * Replaces the current parameters by a new set.
-<<<<<<< HEAD
-     *
-     * @param array $parameters An array of parameters
-=======
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     public function replace(array $parameters = [])
     {
@@ -69,11 +58,6 @@ class ParameterBag implements \IteratorAggregate, \Countable
 
     /**
      * Adds parameters.
-<<<<<<< HEAD
-     *
-     * @param array $parameters An array of parameters
-=======
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     public function add(array $parameters = [])
     {

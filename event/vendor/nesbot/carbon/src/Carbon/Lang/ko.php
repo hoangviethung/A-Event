@@ -21,26 +21,6 @@
  * - Juwon Kim
  */
 return [
-<<<<<<< HEAD
-    'year' => '{1}일 년|]1,Inf[:count년',
-    'y' => ':count 년',
-    'month' => '{1}한 달|]1,Inf[:count달',
-    'm' => ':count 개월',
-    'week' => ':count 주일',
-    'w' => ':count 주일',
-    'day' => '{1}하루|]1,Inf[:count일',
-    'd' => ':count 일',
-    'hour' => '{1}한 시간|]1,Inf[:count시간',
-    'h' => ':count 시간',
-    'minute' => '{1}1분|]1,Inf[:count분',
-    'min' => ':count 분',
-    'second' => '{1}몇 초|]1,Inf[:count초',
-    's' => ':count 초',
-    'ago' => ':time 전',
-    'from_now' => ':time 후',
-    'after' => ':time 이후',
-    'before' => ':time 이전',
-=======
     'year' => ':count년',
     'a_year' => '{1}일년|]1,Inf[:count년',
     'y' => ':count년',
@@ -66,7 +46,6 @@ return [
     'from_now' => ':time 후',
     'after' => ':time 후',
     'before' => ':time 전',
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     'formats' => [
         'LT' => 'A h:mm',
         'LTS' => 'A h:mm:ss',

@@ -8,12 +8,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-<<<<<<< HEAD
-\Symfony\Component\Translation\PluralizationRules::set(function ($number) {
-    return $number === 1 ? 0 : 1;
-}, 'ky');
-=======
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
 /*
  * Authors:
@@ -29,27 +23,6 @@
  */
 return [
     'year' => ':count жыл',
-<<<<<<< HEAD
-    'a_year' => 'бир жыл|:count жыл',
-    'y' => ':count жыл',
-    'month' => ':count ай',
-    'a_month' => 'бир ай|:count ай',
-    'm' => ':count ай',
-    'week' => ':count апта',
-    'a_week' => 'бир апта|:count апта',
-    'w' => ':count апт.',
-    'day' => ':count күн',
-    'a_day' => 'бир күн|:count күн',
-    'd' => ':count күн',
-    'hour' => ':count саат',
-    'a_hour' => 'бир саат|:count саат',
-    'h' => ':count саат.',
-    'minute' => ':count мүнөт',
-    'a_minute' => 'бир мүнөт|:count мүнөт',
-    'min' => ':count мүн.',
-    'second' => ':count секунд',
-    'a_second' => 'бирнече секунд|:count секунд',
-=======
     'a_year' => '{1}бир жыл|:count жыл',
     'y' => ':count жыл',
     'month' => ':count ай',
@@ -69,7 +42,6 @@ return [
     'min' => ':count мүн.',
     'second' => ':count секунд',
     'a_second' => '{1}бирнече секунд|:count секунд',
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     's' => ':count сек.',
     'ago' => ':time мурун',
     'from_now' => ':time ичинде',

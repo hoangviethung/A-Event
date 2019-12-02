@@ -34,11 +34,7 @@ class Translator extends Translation\Translator
     /**
      * List of custom directories that contain translation files.
      *
-<<<<<<< HEAD
-     * @var array
-=======
      * @var string[]
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     protected $directories = [];
 
@@ -50,8 +46,6 @@ class Translator extends Translation\Translator
     protected $initializing = false;
 
     /**
-<<<<<<< HEAD
-=======
      * List of locales aliases.
      *
      * @var string[]
@@ -62,7 +56,6 @@ class Translator extends Translation\Translator
     ];
 
     /**
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * Return a singleton instance of Translator.
      *
      * @param string|null $locale optional initial locale ("en" - english by default)
@@ -378,13 +371,10 @@ class Translator extends Translation\Translator
             $locale = $locales[0];
         }
 
-<<<<<<< HEAD
-=======
         if (isset($this->aliases[$locale])) {
             $locale = $this->aliases[$locale];
         }
 
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         // If subtag (ex: en_CA) first load the macro (ex: en) to have a fallback
         if (strpos($locale, '_') !== false &&
             $this->loadMessagesFromFile($macroLocale = preg_replace('/^([^_]+).*$/', '$1', $locale))

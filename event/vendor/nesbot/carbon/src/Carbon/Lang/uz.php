@@ -8,12 +8,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-<<<<<<< HEAD
-\Symfony\Component\Translation\PluralizationRules::set(function ($number) {
-    return $number === 1 ? 0 : 1;
-}, 'uz');
-=======
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
 /*
  * Authors:
@@ -32,27 +26,6 @@
  */
 return [
     'year' => ':count йил',
-<<<<<<< HEAD
-    'a_year' => 'бир йил|:count йил',
-    'y' => ':count й',
-    'month' => ':count ой',
-    'a_month' => 'бир ой|:count ой',
-    'm' => ':count о',
-    'week' => ':count ҳафта',
-    'a_week' => 'бир ҳафта|:count ҳафта',
-    'w' => ':count ҳ',
-    'day' => ':count кун',
-    'a_day' => 'бир кун|:count кун',
-    'd' => ':count к',
-    'hour' => ':count соат',
-    'a_hour' => 'бир соат|:count соат',
-    'h' => ':count с',
-    'minute' => ':count дакика',
-    'a_minute' => 'бир дакика|:count дакика',
-    'min' => ':count д',
-    'second' => ':count фурсат',
-    'a_second' => 'фурсат|:count фурсат',
-=======
     'a_year' => '{1}бир йил|:count йил',
     'y' => ':count й',
     'month' => ':count ой',
@@ -72,7 +45,6 @@ return [
     'min' => ':count д',
     'second' => ':count фурсат',
     'a_second' => '{1}фурсат|:count фурсат',
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     's' => ':count ф',
     'ago' => 'Бир неча :time олдин',
     'from_now' => 'Якин :time ичида',

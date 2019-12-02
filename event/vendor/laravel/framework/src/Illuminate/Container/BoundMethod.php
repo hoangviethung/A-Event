@@ -75,11 +75,7 @@ class BoundMethod
     protected static function callBoundMethod($container, $callback, $default)
     {
         if (! is_array($callback)) {
-<<<<<<< HEAD
-            return value($default);
-=======
             return Util::unwrapIfClosure($default);
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         }
 
         // Here we need to turn the array callable into a Class@method string we can use to
@@ -91,11 +87,7 @@ class BoundMethod
             return $container->callMethodBinding($method, $callback[0]);
         }
 
-<<<<<<< HEAD
-        return value($default);
-=======
         return Util::unwrapIfClosure($default);
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 
     /**

@@ -21,11 +21,7 @@ final class ArgumentMetadataFactory implements ArgumentMetadataFactoryInterface
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
-    public function createArgumentMetadata($controller)
-=======
     public function createArgumentMetadata($controller): array
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $arguments = [];
 
@@ -53,24 +49,6 @@ final class ArgumentMetadataFactory implements ArgumentMetadataFactoryInterface
             return null;
         }
         $name = $type->getName();
-<<<<<<< HEAD
-        $lcName = strtolower($name);
-
-        if ('self' !== $lcName && 'parent' !== $lcName) {
-            return $name;
-        }
-        if (!$function instanceof \ReflectionMethod) {
-            return null;
-        }
-        if ('self' === $lcName) {
-            return $function->getDeclaringClass()->name;
-        }
-        if ($parent = $function->getDeclaringClass()->getParentClass()) {
-            return $parent->name;
-        }
-
-        return null;
-=======
 
         if ($function instanceof \ReflectionMethod) {
             $lcName = strtolower($name);
@@ -83,6 +61,5 @@ final class ArgumentMetadataFactory implements ArgumentMetadataFactoryInterface
         }
 
         return $name;
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 }

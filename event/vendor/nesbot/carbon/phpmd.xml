@@ -28,10 +28,7 @@
     <rule ref="rulesets/design.xml">
         <exclude name="EvalExpression" />
         <exclude name="CouplingBetweenObjects" />
-<<<<<<< HEAD
-=======
         <exclude name="CountInLoopExpression" />
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     </rule>
     <rule ref="rulesets/design.xml/CouplingBetweenObjects">
         <properties>

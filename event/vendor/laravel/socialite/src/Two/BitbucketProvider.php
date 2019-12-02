@@ -3,13 +3,8 @@
 namespace Laravel\Socialite\Two;
 
 use Exception;
-<<<<<<< HEAD
-use Illuminate\Support\Arr;
-use GuzzleHttp\ClientInterface;
-=======
 use GuzzleHttp\ClientInterface;
 use Illuminate\Support\Arr;
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
 class BitbucketProvider extends AbstractProvider implements ProviderInterface
 {

@@ -107,16 +107,7 @@ class DebugFormatterHelper extends Helper
         return $message;
     }
 
-<<<<<<< HEAD
-    /**
-     * @param string $id The id of the formatting session
-     *
-     * @return string
-     */
-    private function getBorder($id)
-=======
     private function getBorder(string $id): string
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         return sprintf('<bg=%s> </>', $this->colors[$this->started[$id]['border']]);
     }

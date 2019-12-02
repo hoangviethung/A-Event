@@ -14,18 +14,9 @@
 
 namespace Ramsey\Uuid\Exception;
 
-<<<<<<< HEAD
 /**
  * Thrown to indicate that the requested operation is not supported.
  */
 class UnsupportedOperationException extends \RuntimeException
-=======
-use RuntimeException;
-
-/**
- * Thrown to indicate that the requested operation is not supported.
- */
-class UnsupportedOperationException extends RuntimeException
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 {
 }

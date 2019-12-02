@@ -134,8 +134,6 @@ class Person extends \Faker\Provider\Person
 
     protected static $titleMale = array('آقای', 'استاد', 'دکتر', 'مهندس');
     protected static $titleFemale = array('خانم', 'استاد', 'دکتر', 'مهندس');
-<<<<<<< HEAD
-=======
 
     /**
      * This method returns a valid Iranian nationalCode
@@ -200,5 +198,4 @@ class Person extends \Faker\Provider\Person
         }
         return 11 - ($sum % 11);
     }
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 }

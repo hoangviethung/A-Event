@@ -141,18 +141,7 @@ class DataCollectorTranslator implements LegacyTranslatorInterface, TranslatorIn
         return $this->messages;
     }
 
-<<<<<<< HEAD
-    /**
-     * @param string|null $locale
-     * @param string|null $domain
-     * @param string      $id
-     * @param string      $translation
-     * @param array|null  $parameters
-     */
-    private function collectMessage($locale, $domain, $id, $translation, $parameters = [])
-=======
     private function collectMessage(?string $locale, ?string $domain, ?string $id, string $translation, ?array $parameters = [])
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         if (null === $domain) {
             $domain = 'messages';

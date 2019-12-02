@@ -24,8 +24,6 @@ return array_replace_recursive(require __DIR__.'/sr.php', [
     'before' => ':time prije',
     'week_from_now' => ':count nedjelju|:count nedjelje|:count nedjelja',
     'week_ago' => ':count nedjelju|:count nedjelje|:count nedjelja',
-<<<<<<< HEAD
-=======
     'diff_tomorrow' => 'sjutra',
     'calendar' => [
         'nextDay' => '[sjutra u] LT',
@@ -62,5 +60,4 @@ return array_replace_recursive(require __DIR__.'/sr.php', [
     ],
     'weekdays' => ['nedjelja', 'ponedjeljak', 'utorak', 'srijeda', 'četvrtak', 'petak', 'subota'],
     'weekdays_short' => ['ned.', 'pon.', 'uto.', 'sri.', 'čet.', 'pet.', 'sub.'],
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 ]);

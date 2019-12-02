@@ -125,15 +125,8 @@ class ConsoleOutput extends StreamOutput implements ConsoleOutputInterface
     /**
      * Checks if current executing environment is IBM iSeries (OS400), which
      * doesn't properly convert character-encodings between ASCII to EBCDIC.
-<<<<<<< HEAD
-     *
-     * @return bool
-     */
-    private function isRunningOS400()
-=======
      */
     private function isRunningOS400(): bool
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $checks = [
             \function_exists('php_uname') ? php_uname('s') : '',

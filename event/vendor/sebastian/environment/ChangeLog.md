@@ -2,8 +2,6 @@
 
 All notable changes in `sebastianbergmann/environment` are documented in this file using the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
-<<<<<<< HEAD
-=======
 ## [4.2.3] - 2019-11-20
 
 ### Changed
@@ -14,7 +12,6 @@ All notable changes in `sebastianbergmann/environment` are documented in this fi
 
 * Fixed [#49](https://github.com/sebastianbergmann/environment/issues/49): Detection how OpCache handles docblocks does not work correctly when PHPDBG is used
 
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 ## [4.2.2] - 2019-05-05
 
 ### Fixed
@@ -106,10 +103,7 @@ All notable changes in `sebastianbergmann/environment` are documented in this fi
 
 * This component is no longer supported on PHP 5.6
 
-<<<<<<< HEAD
-=======
 [4.2.3]: https://github.com/sebastianbergmann/phpunit/compare/4.2.2...4.2.3
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 [4.2.2]: https://github.com/sebastianbergmann/phpunit/compare/4.2.1...4.2.2
 [4.2.1]: https://github.com/sebastianbergmann/phpunit/compare/4.2.0...4.2.1
 [4.2.0]: https://github.com/sebastianbergmann/phpunit/compare/4.1.0...4.2.0

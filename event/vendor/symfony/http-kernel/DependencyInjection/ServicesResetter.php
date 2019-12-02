@@ -35,13 +35,7 @@ class ServicesResetter implements ResetInterface
     public function reset()
     {
         foreach ($this->resettableServices as $id => $service) {
-<<<<<<< HEAD
             $service->{$this->resetMethods[$id]}();
-=======
-            foreach ((array) $this->resetMethods[$id] as $resetMethod) {
-                $service->$resetMethod();
-            }
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         }
     }
 }

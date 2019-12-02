@@ -262,11 +262,6 @@ method which accepts one or more closure:
 
 Closures can be queued by passing them as extra parameters as for ``andReturn()``.
 
-<<<<<<< HEAD
-.. note::
-
-    We cannot currently mix ``andReturnUsing()`` with ``andReturn()``.
-=======
 Occasionally, it can be useful to echo back one of the arguments that a method
 is called with. In this case we can use the ``andReturnArg()`` method; the
 argument to be returned is specified by its index in the arguments list:
@@ -284,7 +279,6 @@ method is called.
 
     We cannot currently mix ``andReturnUsing()`` or ``andReturnArg`` with
     ``andReturn()``.
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
 If we are mocking fluid interfaces, the following method will be helpful:
 
@@ -305,11 +299,7 @@ We can tell the method of mock objects to throw exceptions:
 
     $mock = \Mockery::mock('MyClass');
     $mock->shouldReceive('name_of_method')
-<<<<<<< HEAD
-        ->andThrow(Exception);
-=======
         ->andThrow(new Exception);
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
 It will throw the given ``Exception`` object when called.
 

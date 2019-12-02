@@ -41,11 +41,7 @@ class NodeExtension extends AbstractExtension
     /**
      * @return $this
      */
-<<<<<<< HEAD
-    public function setFlag(int $flag, bool $on)
-=======
     public function setFlag(int $flag, bool $on): self
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         if ($on && !$this->hasFlag($flag)) {
             $this->flags += $flag;
@@ -66,11 +62,7 @@ class NodeExtension extends AbstractExtension
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
-    public function getNodeTranslators()
-=======
     public function getNodeTranslators(): array
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         return [
             'Selector' => [$this, 'translateSelector'],
@@ -193,11 +185,7 @@ class NodeExtension extends AbstractExtension
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
-    public function getName()
-=======
     public function getName(): string
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         return 'node';
     }

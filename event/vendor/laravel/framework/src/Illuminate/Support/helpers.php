@@ -529,11 +529,7 @@ if (! function_exists('windows_os')) {
      */
     function windows_os()
     {
-<<<<<<< HEAD
         return strtolower(substr(PHP_OS, 0, 3)) === 'win';
-=======
-        return PHP_OS_FAMILY === 'Windows';
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 }
 

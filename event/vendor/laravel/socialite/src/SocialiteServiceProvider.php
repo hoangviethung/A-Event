@@ -8,7 +8,6 @@ use Laravel\Socialite\Contracts\Factory;
 class SocialiteServiceProvider extends ServiceProvider
 {
     /**
-<<<<<<< HEAD
      * Indicates if loading of the provider is deferred.
      *
      * @var bool
@@ -16,8 +15,6 @@ class SocialiteServiceProvider extends ServiceProvider
     protected $defer = true;
 
     /**
-=======
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * Register the service provider.
      *
      * @return void
@@ -38,17 +35,4 @@ class SocialiteServiceProvider extends ServiceProvider
     {
         return [Factory::class];
     }
-<<<<<<< HEAD
-=======
-
-    /**
-     * Determine if the provider is deferred.
-     *
-     * @return bool
-     */
-    public function isDeferred()
-    {
-        return true;
-    }
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 }

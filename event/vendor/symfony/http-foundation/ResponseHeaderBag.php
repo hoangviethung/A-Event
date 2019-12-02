@@ -51,11 +51,7 @@ class ResponseHeaderBag extends HeaderBag
     {
         $headers = [];
         foreach ($this->all() as $name => $value) {
-<<<<<<< HEAD
-            $headers[isset($this->headerNames[$name]) ? $this->headerNames[$name] : $name] = $value;
-=======
             $headers[$this->headerNames[$name] ?? $name] = $value;
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         }
 
         return $headers;
@@ -91,12 +87,6 @@ class ResponseHeaderBag extends HeaderBag
 
     /**
      * {@inheritdoc}
-<<<<<<< HEAD
-     */
-    public function all()
-    {
-        $headers = parent::all();
-=======
      *
      * @param string|null $key The name of the headers to return or null to get them all
      */
@@ -110,7 +100,6 @@ class ResponseHeaderBag extends HeaderBag
             return 'set-cookie' !== $key ? $headers[$key] ?? [] : array_map('strval', $this->getCookies());
         }
 
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         foreach ($this->getCookies() as $cookie) {
             $headers['set-cookie'][] = (string) $cookie;
         }
@@ -123,11 +112,7 @@ class ResponseHeaderBag extends HeaderBag
      */
     public function set($key, $values, $replace = true)
     {
-<<<<<<< HEAD
-        $uniqueKey = str_replace('_', '-', strtolower($key));
-=======
         $uniqueKey = strtr($key, self::UPPER, self::LOWER);
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
         if ('set-cookie' === $uniqueKey) {
             if ($replace) {
@@ -158,11 +143,7 @@ class ResponseHeaderBag extends HeaderBag
      */
     public function remove($key)
     {
-<<<<<<< HEAD
-        $uniqueKey = str_replace('_', '-', strtolower($key));
-=======
         $uniqueKey = strtr($key, self::UPPER, self::LOWER);
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
         unset($this->headerNames[$uniqueKey]);
 
         if ('set-cookie' === $uniqueKey) {
@@ -317,11 +298,7 @@ class ResponseHeaderBag extends HeaderBag
         return $header;
     }
 
-<<<<<<< HEAD
-    private function initDate()
-=======
     private function initDate(): void
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $now = \DateTime::createFromFormat('U', time());
         $now->setTimezone(new \DateTimeZone('UTC'));

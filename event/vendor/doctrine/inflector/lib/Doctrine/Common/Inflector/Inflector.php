@@ -85,10 +85,7 @@ class Inflector
             'beef' => 'beefs',
             'brother' => 'brothers',
             'cafe' => 'cafes',
-<<<<<<< HEAD
-=======
             'canvas' => 'canvases',
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
             'chateau' => 'chateaux',
             'niveau' => 'niveaux',
             'child' => 'children',
@@ -103,10 +100,7 @@ class Inflector
             'foot' => 'feet',
             'fungus' => 'fungi',
             'ganglion' => 'ganglions',
-<<<<<<< HEAD
-=======
             'gas' => 'gases',
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
             'genie' => 'genies',
             'genus' => 'genera',
             'goose' => 'geese',

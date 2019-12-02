@@ -50,14 +50,7 @@ class ApplicationDescription
         $this->showHidden = $showHidden;
     }
 
-<<<<<<< HEAD
-    /**
-     * @return array
-     */
-    public function getNamespaces()
-=======
     public function getNamespaces(): array
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         if (null === $this->namespaces) {
             $this->inspectApplication();
@@ -69,11 +62,7 @@ class ApplicationDescription
     /**
      * @return Command[]
      */
-<<<<<<< HEAD
-    public function getCommands()
-=======
     public function getCommands(): array
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         if (null === $this->commands) {
             $this->inspectApplication();
@@ -83,19 +72,9 @@ class ApplicationDescription
     }
 
     /**
-<<<<<<< HEAD
-     * @param string $name
-     *
-     * @return Command
-     *
-     * @throws CommandNotFoundException
-     */
-    public function getCommand($name)
-=======
      * @throws CommandNotFoundException
      */
     public function getCommand(string $name): Command
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         if (!isset($this->commands[$name]) && !isset($this->aliases[$name])) {
             throw new CommandNotFoundException(sprintf('Command %s does not exist.', $name));
@@ -136,23 +115,14 @@ class ApplicationDescription
     {
         $namespacedCommands = [];
         $globalCommands = [];
-<<<<<<< HEAD
         foreach ($commands as $name => $command) {
             $key = $this->application->extractNamespace($name, 1);
             if (!$key) {
                 $globalCommands['_global'][$name] = $command;
-=======
-        $sortedCommands = [];
-        foreach ($commands as $name => $command) {
-            $key = $this->application->extractNamespace($name, 1);
-            if (\in_array($key, ['', self::GLOBAL_NAMESPACE], true)) {
-                $globalCommands[$name] = $command;
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
             } else {
                 $namespacedCommands[$key][$name] = $command;
             }
         }
-<<<<<<< HEAD
         ksort($namespacedCommands);
         $namespacedCommands = array_merge($globalCommands, $namespacedCommands);
 
@@ -163,22 +133,5 @@ class ApplicationDescription
         unset($commandsSet);
 
         return $namespacedCommands;
-=======
-
-        if ($globalCommands) {
-            ksort($globalCommands);
-            $sortedCommands[self::GLOBAL_NAMESPACE] = $globalCommands;
-        }
-
-        if ($namespacedCommands) {
-            ksort($namespacedCommands);
-            foreach ($namespacedCommands as $key => $commandsSet) {
-                ksort($commandsSet);
-                $sortedCommands[$key] = $commandsSet;
-            }
-        }
-
-        return $sortedCommands;
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     }
 }

@@ -14,10 +14,6 @@
 
 namespace Ramsey\Uuid\Provider\Node;
 
-<<<<<<< HEAD
-=======
-use Exception;
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 use Ramsey\Uuid\Provider\NodeProviderInterface;
 
 /**
@@ -47,11 +43,7 @@ class FallbackNodeProvider implements NodeProviderInterface
      * and returning the first non-empty value found
      *
      * @return string System node ID as a hexadecimal string
-<<<<<<< HEAD
      * @throws \Exception
-=======
-     * @throws Exception
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     public function getNode()
     {

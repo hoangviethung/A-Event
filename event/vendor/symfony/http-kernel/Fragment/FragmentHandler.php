@@ -33,14 +33,8 @@ class FragmentHandler
     private $requestStack;
 
     /**
-<<<<<<< HEAD
-     * @param RequestStack                $requestStack The Request stack that controls the lifecycle of requests
-     * @param FragmentRendererInterface[] $renderers    An array of FragmentRendererInterface instances
-     * @param bool                        $debug        Whether the debug mode is enabled or not
-=======
      * @param FragmentRendererInterface[] $renderers An array of FragmentRendererInterface instances
      * @param bool                        $debug     Whether the debug mode is enabled or not
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      */
     public function __construct(RequestStack $requestStack, array $renderers = [], bool $debug = false)
     {
@@ -68,10 +62,6 @@ class FragmentHandler
      *
      * @param string|ControllerReference $uri      A URI as a string or a ControllerReference instance
      * @param string                     $renderer The renderer name
-<<<<<<< HEAD
-     * @param array                      $options  An array of options
-=======
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      *
      * @return string|null The Response content or null when the Response is streamed
      *

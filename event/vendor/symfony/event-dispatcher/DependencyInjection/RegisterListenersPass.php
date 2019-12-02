@@ -16,15 +16,10 @@ use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
 use Symfony\Component\DependencyInjection\Reference;
-<<<<<<< HEAD
-use Symfony\Component\EventDispatcher\EventDispatcher;
-use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-=======
 use Symfony\Component\EventDispatcher\Event as LegacyEvent;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Contracts\EventDispatcher\Event;
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 
 /**
  * Compiler pass to register tagged services for an event dispatcher.
@@ -74,10 +69,6 @@ class RegisterListenersPass implements CompilerPassInterface
                 $priority = isset($event['priority']) ? $event['priority'] : 0;
 
                 if (!isset($event['event'])) {
-<<<<<<< HEAD
-                    throw new InvalidArgumentException(sprintf('Service "%s" must define the "event" attribute on "%s" tags.', $id, $this->listenerTag));
-                }
-=======
                     if ($container->getDefinition($id)->hasTag($this->subscriberTag)) {
                         continue;
                     }
@@ -86,7 +77,6 @@ class RegisterListenersPass implements CompilerPassInterface
                     $event['event'] = $this->getEventFromTypeDeclaration($container, $id, $event['method']);
                 }
 
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
                 $event['event'] = $aliases[$event['event']] ?? $event['event'];
 
                 if (!isset($event['method'])) {
@@ -140,8 +130,6 @@ class RegisterListenersPass implements CompilerPassInterface
             ExtractingEventDispatcher::$aliases = [];
         }
     }
-<<<<<<< HEAD
-=======
 
     private function getEventFromTypeDeclaration(ContainerBuilder $container, string $id, string $method): string
     {
@@ -160,7 +148,6 @@ class RegisterListenersPass implements CompilerPassInterface
 
         return $name;
     }
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
 }
 
 /**
@@ -178,11 +165,7 @@ class ExtractingEventDispatcher extends EventDispatcher implements EventSubscrib
         $this->listeners[] = [$eventName, $listener[1], $priority];
     }
 
-<<<<<<< HEAD
-    public static function getSubscribedEvents()
-=======
     public static function getSubscribedEvents(): array
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $events = [];
 

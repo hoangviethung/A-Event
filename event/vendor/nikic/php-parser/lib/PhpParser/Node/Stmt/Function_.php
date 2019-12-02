@@ -16,11 +16,7 @@ class Function_ extends Node\Stmt implements FunctionLike
     public $name;
     /** @var Node\Param[] Parameters */
     public $params;
-<<<<<<< HEAD
-    /** @var null|Node\Identifier|Node\Name|Node\NullableType Return type */
-=======
     /** @var null|Node\Identifier|Node\Name|Node\NullableType|Node\UnionType Return type */
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     public $returnType;
     /** @var Node\Stmt[] Statements */
     public $stmts;

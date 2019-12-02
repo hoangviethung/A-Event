@@ -152,11 +152,7 @@ class TraceableUrlMatcher extends UrlMatcher
         return [];
     }
 
-<<<<<<< HEAD
-    private function addTrace($log, $level = self::ROUTE_DOES_NOT_MATCH, $name = null, $route = null)
-=======
     private function addTrace(string $log, int $level = self::ROUTE_DOES_NOT_MATCH, string $name = null, Route $route = null)
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
     {
         $this->traces[] = [
             'log' => $log,

@@ -55,8 +55,6 @@ trait CompilesIncludes
     }
 
     /**
-<<<<<<< HEAD
-=======
      * Compile the include-unless statements into valid PHP.
      *
      * @param  string  $expression
@@ -70,7 +68,6 @@ trait CompilesIncludes
     }
 
     /**
->>>>>>> 67f1e3165dd1a748e8288b061d312588d9bf3045
      * Compile the include-first statements into valid PHP.
      *
      * @param  string  $expression
