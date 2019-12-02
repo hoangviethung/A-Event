@@ -7,11 +7,11 @@ use App\users;
 class UserController extends Controller
 {
     public function getDanhsach(){
-        $user = users::all();
-        return view('admin/user/danhsach',['user'=>$user]);
+        $user = users::paginate(5);
+        return view('admin.user.danhsach',['user'=>$user]);
     }
     public function getThem(){
-        return view('admin/user/them');
+        return view('admin.user.them');
     }
     public function postThem(Request $request){
         $this->validate($request,
@@ -84,7 +84,7 @@ class UserController extends Controller
     }
     public function getSua($id){
         $user = users::find($id);
-        return view('admin/user/sua',['user'=>$user]);
+        return view('admin.user.sua',['user'=>$user]);
     }
 
     public function postSua(Request $request, $id){

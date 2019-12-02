@@ -87,6 +87,7 @@
 <!-- <script src="https://cdn.ckeditor.com/ckeditor5/12.4.0/classic/ckeditor.js"></script> -->
 <script src='https://www.google.com/recaptcha/api.js'></script>
 <script type="text/javascript" src="editor/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="js/validate.js"></script>
 @yield('script')
 </body>
 </html>

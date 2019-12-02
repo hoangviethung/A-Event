@@ -12,34 +12,40 @@
                     </div>
                     <!-- /.col-lg-12 -->
                     <div class="col-lg-7" style="padding-bottom:120px">
-
-                    @if(count($errors) > 0)
-                        <div class="alert alert-danger">
-                            @foreach($errors->all() as $err)
-                                {{$err}}<br>
-                            @endforeach
-                        </div>
-                    @endif
-
-                    @if(session('thongbao'))
-                        <div class="alert alert-success">
-                            {{session('thongbao')}}
-                        </div>
-                    @endif
+                        @if(session('thongbao'))
+                            <div class="alert alert-success">
+                                {{session('thongbao')}}
+                            </div>
+                        @endif
                         <form action="admin/event/them" method="POST" enctype="multipart/form-data" >
                             <!-- để truyền dữ liệu phải cho nó 1 cái token -->
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                             <div class="form-group">
                                 <label>Tên sự kiện</label>
                                 <input class="form-control" name="ten_su_kien" placeholder="Nhập tên sự kiện"/>
+                                @if($errors->has('ten_su_kien'))
+                                    <span class="error">
+                                        {{$errors->first('ten_su_kien')}}
+                                    </span>
+                                @endif 
                             </div>
                             <div class="form-group">
                                 <label>Nhà tài trợ</label>
                                 <input class="form-control" name="nha_tai_tro" placeholder="Nhà tài trợ"/>
+                                @if($errors->has('nha_tai_tro'))
+                                    <span class="error">
+                                        {{$errors->first('nha_tai_tro')}}
+                                    </span>
+                                @endif 
                             </div>
                             <div class="form-group">
                                 <label>Logo Nhà tài trợ</label>
-                                <input class="form-control" name="logo" id="" type="file"/>
+                                <input class="form-control" name="logo" type="file"/>
+                                @if($errors->has('logo'))
+                                    <span class="error">
+                                        {{$errors->first('logo')}}
+                                    </span>
+                                @endif 
                             </div>
                             <div class="form-group">
                                 <label>Thể loại sự kiện</label>
@@ -57,94 +63,139 @@
                             @endif
                                 <label>Ảnh Banner của sự kiện</label>
                                 <input class="form-control" name="banner" type="file"/>
+                                @if($errors->has('banner'))
+                                    <span class="error">
+                                        {{$errors->first('banner')}}
+                                    </span>
+                                @endif 
                             </div>
                             <div class="form-group">
                                 <label>Ngày diễn ra sự kiện</label>
                                 <input class="form-control" name="ngay_dien_ra" type="date"/>
+                                @if($errors->has('ngay_dien_ra'))
+                                    <span class="error">
+                                        {{$errors->first('ngay_dien_ra')}}
+                                    </span>
+                                @endif 
                             </div>
                             <div class="form-group">
                                 <label>Giờ diễn ra</label>
                                 <input class="form-control" name="thoi_gian" type="time" />
+                                @if($errors->has('thoi_gian'))
+                                    <span class="error">
+                                        {{$errors->first('thoi_gian')}}
+                                    </span>
+                                @endif 
                             </div>
                             <div class="form-group">
                                 <label>Ngày bán vé</label>
                                 <input class="form-control" name="ngay_ban" type="date"/>
+                                @if($errors->has('ngay_ban'))
+                                    <span class="error">
+                                        {{$errors->first('ngay_ban')}}
+                                    </span>
+                                @endif 
                             </div>
                             <div class="form-group">
                                 <label>Vị trí ngồi của vé thường</label>
-
                                 <input class="form-control" name="vi_tri_ve_thuong"  type="text"/>
+                                @if($errors->has('vi_tri_ve_thuong'))
+                                    <span class="error">
+                                        {{$errors->first('vi_tri_ve_thuong')}}
+                                    </span>
+                                @endif 
                             </div>
                             <div class="form-group">
                                 <label>Quà tặng khi mua vé thường</label>
-
                                 <input class="form-control" name="qua_tang_thuong"  type="text"/>
+                                @if($errors->has('qua_tang_thuong'))
+                                    <span class="error">
+                                        {{$errors->first('qua_tang_thuong')}}
+                                    </span>
+                                @endif 
                             </div>
                             <div class="form-group">
                                 <label>Giá vé thường</label>
-
                                 <input class="form-control" name="gia_ve"  type="number"/>
+                                @if($errors->has('gia_ve'))
+                                    <span class="error">
+                                        {{$errors->first('gia_ve')}}
+                                    </span>
+                                @endif 
                             </div>
                             <div class="form-group">
                                 <label>Vị trí ngồi của vé VIP</label>
-
                                 <input class="form-control" name="vi_tri_ve_vip"  type="text"/>
+                                @if($errors->has('vi_tri_ve_vip'))
+                                    <span class="error">
+                                        {{$errors->first('vi_tri_ve_vip')}}
+                                    </span>
+                                @endif 
                             </div>
                             <div class="form-group">
                                 <label>Quà tặng khi mua vé VIP</label>
-
                                 <input class="form-control" name="qua_tang_vip"  type="text"/>
+                                @if($errors->has('qua_tang_vip'))
+                                    <span class="error">
+                                        {{$errors->first('qua_tang_vip')}}
+                                    </span>
+                                @endif 
                             </div>
                             <div class="form-group">
                                 <label>Giá vé VIP</label>
-
                                 <input class="form-control" name="gia_ve_vip"  type="number"/>
+                                @if($errors->has('gia_ve_vip'))
+                                    <span class="error">
+                                        {{$errors->first('gia_ve_vip')}}
+                                    </span>
+                                @endif 
                             </div>
-
-
-
                             <div class="form-group">
-
                                 <label>Số lượng vé< thường </label>
                                 <input class="form-control" name="so_luong_ve_thuong" type="text"/>
+                                @if($errors->has('so_luong_ve_thuong'))
+                                    <span class="error">
+                                        {{$errors->first('so_luong_ve_thuong')}}
+                                    </span>
+                                @endif 
                             </div>
                             <div class="form-group">
-
                                 <label>Số lượng vé vip</label>
                                 <input class="form-control" name="so_luong_ve_vip" type="text"/>
+                                @if($errors->has('so_luong_ve_vip'))
+                                    <span class="error">
+                                        {{$errors->first('so_luong_ve_vip')}}
+                                    </span>
+                                @endif 
                             </div>
                             <div class="form-group">
                                 <label>Nơi diễn ra sự kiện</label>
                                 <input class="form-control" name="dia_chi" type="text"/>
+                                @if($errors->has('dia_chi'))
+                                    <span class="error">
+                                        {{$errors->first('dia_chi')}}
+                                    </span>
+                                @endif 
                             </div>
 
-                            <div class="form-group" style="width: 150%">
+                            <div class="form-group">
                                 <label>Tóm tắt sự kiện ( Hiển thị trên Slider, Sự kiện nổi bật)</label>
                                 <textarea class="form-control ckeditor" id="editor1"  rows="2" cols="20" name="tom_tat"></textarea>
+                                @if($errors->has('tom_tat'))
+                                    <span class="error">
+                                        {{$errors->first('tom_tat')}}
+                                    </span>
+                                @endif 
                             </div>
-
-
-                            <div class="form-group" style="width: 150%">
+                            <div class="form-group">
                                 <label>Mô tả sự kiện</label>
                                 <textarea class="form-control ckeditor" id="editor"  rows="3" cols="10"  name="mo_ta"></textarea>
-
-
-                                <!-- <script>
-                                    CKEDITOR.replace('editor', {
-                                    fullPage: true,
-                                    extraPlugins: 'docprops',
-                                    // Disable content filtering because if you use full page mode, you probably
-                                    // want to  freely enter any HTML content in source mode without any limitations.
-                                    allowedContent: true,
-                                    height: 320
-                                    });
-                                </script> -->
-
+                                @if($errors->has('mo_ta'))
+                                    <span class="error">
+                                        {{$errors->first('mo_ta')}}
+                                    </span>
+                                @endif
                             </div>
-
-
-
-
                             <div class="form-group">
                                 <label>Hiển thị sự kiện trên Slider </label>
                                 <label class="radio-inline">
@@ -172,12 +223,7 @@
                                 <input name="duyet" value="1" type="radio" >Có
                                 </label>
                             </div>
-
-
-
-
-
-                            <button type="submit" class="btn btn-default">Thêm</button>
+                            <button type="submit" class="btn btn-success">+ THÊM</button>
                         <form>
                     </div>
                 </div>

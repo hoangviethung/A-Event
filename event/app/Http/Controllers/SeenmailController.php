@@ -23,8 +23,6 @@ class SeenmailController extends Controller
             'ten_khach_hang'=>'required',
             'so_ve'=>'required',
             'cho_ngoi'=>'required',
-            'dia_chi'=>'required',
-            'mo_ta'=>'required',
 
         ],[
             'ten_su_kien.required'=>'bạn chưa nhập tên sự kiện',
@@ -33,8 +31,6 @@ class SeenmailController extends Controller
             'ten_khach_hang.required'=>'bạn chưa nhập tên khách hàng',
             'so_ve.required'=>'bạn chưa chọn số vé',
             'cho_ngoi.required'=>'bạn chưa nhập chỗ ngồi',
-            'dia_chi.required'=>'bạn chưa nhập địa chỉ',
-            'mo_ta.required'=>'bạn chưa nhập mô tả',
         ]);
 
         $data = [
@@ -44,8 +40,6 @@ class SeenmailController extends Controller
             'ten_khach_hang' => $request->ten_khach_hang,
             'so_ve' => $request->so_ve,
             'cho_ngoi' => $request->cho_ngoi,
-            'dia_chi' => $request->dia_chi,
-            'mo_ta' => $request->mo_ta,
             'banner' => 'images/email/banner.jpg',
             'logo'=>'images/email/logo.png',
           
@@ -58,8 +52,6 @@ class SeenmailController extends Controller
             $message->subject($data['ten_khach_hang']);
             $message->subject($data['so_ve']);
             $message->subject($data['cho_ngoi']);
-            $message->subject($data['dia_chi']);
-            $message->subject($data['mo_ta']);
         });
 
         // echo "

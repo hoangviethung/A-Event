@@ -36,22 +36,26 @@ Route::group(['prefix'=>'pages'], function(){
         'as' => 'bookingone',
         'uses' => 'BookingController@getBookingone',
     ]);
+
     Route::get('bookingtwo/{id}',[
         'as' => 'bookingtwo',
         'uses' =>'BookingController@getBookingtwo']);
- Route::post('bookingtwo/{id}',[
-            'as' => 'postbookingtwo',
-            'uses' =>'BookingController@postBookingtwo']);
+
+    Route::post('bookingtwo/{id}',[
+                'as' => 'postbookingtwo',
+                'uses' =>'BookingController@postBookingtwo']);
+
+    Route::post('bookingthree/{id}',[
+                'as' => 'postBookingthree',
+                'uses' =>'BookingController@postBookingthree']);
+
+    Route::get('bookingthree/{id}', 'BookingController@getBookingthree');
+
     Route::get('danhmuc/{id}',[
         'as' => 'danhmuc',
         'uses' => 'PagesController@getDanhmuc',
     ]);
-
-    Route::post('bookingone','BookingController@postBookingone');
-
-
-
-    Route::post('bookingtwo','BookingController@postBookingtwo');
+    Route::post('danhmuc', 'PagesController@postDanhmuc');
 
     Route::get('login', 'PagesController@getLogin');
     Route::post('login', 'PagesController@postLogin');

@@ -81,24 +81,6 @@
                                 </span>
                              @endif
                             </div>
-                            <div class="form-group">
-                                <label>Nơi diễn ra sự kiện</label>
-                                <input class="form-control" name="dia_chi" type="text" placeholder="Nhập nơi diễn ra sự kiện"/>
-                                @if($errors->has('dia_chi'))
-                                <span style="color: red; text-align: left;font-size: 14px;font-weight: bold;">
-                                    {{$errors->first('dia_chi')}}
-                                </span>
-                             @endif
-                            </div>
-                            <div class="form-group" style="width: 60%%">
-                                <label>Mô tả sự kiện</label>
-                                <textarea class="form-control"  rows="3" cols="6"  name="mo_ta"></textarea>
-                                @if($errors->has('mo_ta'))
-                                    <span style="color: red; text-align: left;font-size: 14px;font-weight: bold;">
-                                        {{$errors->first('mo_ta')}}
-                                    </span>
-                                @endif
-                            </div>
                             <button type="submit" class="btn btn-default">Gửi</button>
                         <form>
                     </div>

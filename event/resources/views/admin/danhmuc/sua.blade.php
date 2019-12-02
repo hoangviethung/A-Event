@@ -33,9 +33,7 @@
                                 <label>Tên danh mục</label>
                                 <input class="form-control" name="ten_loai" placeholder="Nhập tên danh mục" value="{{$danhmuc->ten_loai}}"/>
                             </div>
-
-                            <button type="submit" class="btn btn-default">Sửa</button>
-                            <button type="reset" class="btn btn-default">Làm mới</button>
+                            <button type="submit" class="btn btn-info">+ SỬA</button>
                         <form>
                     </div>
                 </div>

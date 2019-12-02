@@ -147,7 +147,7 @@
                                 type="radio" >Có
                                 </label>
                             </div>
-                            <button type="submit" class="btn btn-default">DUYỆT BÀI</button>
+                            <button type="submit" class="btn btn-success">DUYỆT BÀI</button>
                         <form>
                     </div>
                 </div>

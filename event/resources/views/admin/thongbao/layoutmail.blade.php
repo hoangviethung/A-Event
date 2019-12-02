@@ -73,30 +73,6 @@
                                 <tr bgcolor="#2aa5b4">
                                     <td style="width: 20%">
                                         <p style="text-align: center;padding: 10px; margin: 0;font-family: K2D,sans-serif;font-size: 14px;color: #fff;line-height: 1.3; font-weight: normal;">
-                                            Địa chỉ diễn ra
-                                        </p>
-                                    </td>
-                                    <td style="width: 80%">
-                                        <p style="text-align: left;padding: 10px; margin: 0;font-family: K2D,sans-serif;font-size: 14px;color: #fff;line-height: 1.3; font-weight: normal;">
-                                            {{$dia_chi}}
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr bgcolor="#159dad">
-                                    <td style="width: 20%">
-                                        <p style="text-align: center;padding: 10px; margin: 0;font-family: K2D,sans-serif;font-size: 14px;color: #fff;line-height: 1.3; font-weight: normal;">
-                                            Mô tả sự kiện
-                                        </p>
-                                    </td>
-                                    <td style="width: 80%">
-                                        <p style="text-align: left;padding: 10px; margin: 0;font-family: K2D,sans-serif;font-size: 14px;color: #fff;line-height: 1.3; font-weight: normal;">
-                                            {{$mo_ta}}
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr bgcolor="#2aa5b4">
-                                    <td style="width: 20%">
-                                        <p style="text-align: center;padding: 10px; margin: 0;font-family: K2D,sans-serif;font-size: 14px;color: #fff;line-height: 1.3; font-weight: normal;">
                                             Kiểm vé
                                         </p>
                                     </td>

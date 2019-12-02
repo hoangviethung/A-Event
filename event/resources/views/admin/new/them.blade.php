@@ -56,11 +56,11 @@
                                 <label>Nơi diễn ra sự kiện</label>
                                 <input class="form-control" name="dia_chi" type="text"/>
                             </div>
-                            <div class="form-group" style="width: 150%">
+                            <div class="form-group">
                                 <label>Tóm tắt sự kiện ( Hiển thị trên Slider, Sự kiện nổi bật)</label>
                                 <textarea class="form-control ckeditor" id="editor1"  rows="2" cols="20" name="tom_tat"></textarea>
                             </div>
-                            <div class="form-group" style="width: 150%">
+                            <div class="form-group">
                                 <label>Mô tả sự kiện</label>
                                 <textarea class="form-control ckeditor" id="editor"  rows="3" cols="10"  name="mo_ta"></textarea>
                             </div>
@@ -91,7 +91,7 @@
                                 <input name="duyet" value="1" type="radio" >Có
                                 </label>
                             </div>
-                            <button type="submit" class="btn btn-default">Thêm</button>
+                            <button type="submit" class="btn btn-success">+ THÊM</button>
                         <form>
                     </div>
                 </div>

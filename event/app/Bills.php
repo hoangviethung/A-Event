@@ -10,5 +10,4 @@ class Bills extends Model
     public function events(){
         return $this->belongsTo('App\Events','id_event','id');
     }
-    public $timestamps = false;
 }

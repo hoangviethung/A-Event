@@ -65,22 +65,22 @@ class PagesController extends Controller
           $linkloginfb = str_replace('amp;','',htmlspecialchars($linkloginfb));
         return view('pages.login',['linkloginfb'=>$linkloginfb]);
     }
-
-
-
     public function getChitiet(Request $req){
         $chitiet = Events::where('id',$req->id)->first();
         return view('pages.chitiet',compact('chitiet'));
     }
-
-
-
     public function getDanhmuc($id)
     {
         $danhmuc = Type_events::find($id);
         $sukien = Events::where('id_loai',$id)->paginate(9);
         return view('pages.danhmuc',['danhmuc'=>$danhmuc,'sukien'=>$sukien]);
     }
+    public function postDanhmuc(Request $request){
+        $timkiem = $request->timkiem;
+        $event = Events::where('ten_su_kien','like',"%$timkiem%")->orWhere('dia_chi','like',"%$timkiem%")->orWhere('tom_tat','like',"%$timkiem%")->take(12)->get();
+        return view('pages.danhmuc',['event'=>$event,'tukhoa'=>$timkiem,'sreach'=>$event]);
+    }
+
     public function postLogin(Request $request){
         $this->validate($request,
         [
