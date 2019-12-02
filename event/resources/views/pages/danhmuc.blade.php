@@ -4,7 +4,7 @@
 				<section class="list-product">
 					<div class="banner-search">
 						<figure><img class="ofc" src="./images/banner/search-banner.png" alt=""></figure>
-						<form action="pages/danhmuc" method="POST" autocomplete="off">
+						<form action="pages/danhmuc/{{$id}}" method="POST" autocomplete="off">
 							@csrf
 							<div class="form-group">
 								<input type="text" placeholder="Tìm sự kiện, khóa học, khu vui chơi..." name="timkiem">

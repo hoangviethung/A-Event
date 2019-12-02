@@ -73,12 +73,13 @@ class PagesController extends Controller
     {
         $danhmuc = Type_events::find($id);
         $sukien = Events::where('id_loai',$id)->paginate(9);
-        return view('pages.danhmuc',['danhmuc'=>$danhmuc,'sukien'=>$sukien]);
+        return view('pages.danhmuc',['danhmuc'=>$danhmuc,'sukien'=>$sukien,'id'=>$id]);
     }
     public function postDanhmuc(Request $request){
         $timkiem = $request->timkiem;
-        $event = Events::where('ten_su_kien','like',"%$timkiem%")->orWhere('dia_chi','like',"%$timkiem%")->orWhere('tom_tat','like',"%$timkiem%")->take(12)->get();
-        return view('pages.danhmuc',['event'=>$event,'tukhoa'=>$timkiem,'sreach'=>$event]);
+        $danhmuc = Type_events::find($request->id);
+        $event = Events::where('id_loai',$request->id)->where('ten_su_kien','like',"%$timkiem%")->orWhere('dia_chi','like',"%$timkiem%")->orWhere('tom_tat','like',"%$timkiem%")->take(12)->get();
+        return view('pages.danhmuc',['danhmuc'=>$danhmuc,'sukien'=>$event,'tukhoa'=>$timkiem,'sreach'=>$event,'id'=>$request->id]);
     }
 
     public function postLogin(Request $request){

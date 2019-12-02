@@ -55,7 +55,7 @@ Route::group(['prefix'=>'pages'], function(){
         'as' => 'danhmuc',
         'uses' => 'PagesController@getDanhmuc',
     ]);
-    Route::post('danhmuc', 'PagesController@postDanhmuc');
+    Route::post('danhmuc/{id}', 'PagesController@postDanhmuc');
 
     Route::get('login', 'PagesController@getLogin');
     Route::post('login', 'PagesController@postLogin');
