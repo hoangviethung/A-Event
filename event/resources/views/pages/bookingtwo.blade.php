@@ -33,19 +33,19 @@
                                         <div class="form-row">
                                             <div class="form-group col-lg-6">
                                                 <label for="firstname">Họ và Tên*</label>
-                                                <input id="firstname" type="text" name="ten_nguoi_mua" placeholder="Nhập họ của bạn">
+                                                <input id="firstname" type="text" name="ten_nguoi_mua" placeholder="Nhập họ của bạn" required>
                                             </div>
                                             <div class="form-group col-lg-6">
                                                 <label for="email">Email*</label>
-                                                <input id="email" type="text" name="email" placeholder="Nhập địa chỉ email nhận vé">
+                                                <input id="email" type="text" name="email" placeholder="Nhập địa chỉ email nhận vé" required>
                                             </div>
                                             <div class="form-group col-lg-6">
                                                 <label for="emailagain">Nhập lại Email*</label>
-                                                <input id="emailagain" type="text" name="email" placeholder="Nhập lại Email">
+                                                <input id="emailagain" type="text" name="email" placeholder="Nhập lại Email" required>
                                             </div>
                                             <div class="form-group col-lg-6">
                                                 <label for="phone">Số điện thoại*</label>
-                                                <input id="phone" type="text" name="phone" placeholder="Nhập số điện thoại">
+                                                <input id="phone" type="text" name="phone" placeholder="Nhập số điện thoại" required>
                                             </div>
                                         </div>
                                 </div>
