@@ -16,19 +16,20 @@
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-xs-3">
-                                <i class="fa fa-comments fa-5x"></i>
+                                <i class="fa fa-briefcase fa-5x"></i>
                             </div>
                             <div class="col-xs-9 text-right">
                                 <div class="huge">26</div>
-                                <div>New Comments!</div>
+                                <div>Danh mục</div>
                             </div>
                         </div>
                     </div>
                         <div class="panel-footer">
-                            <span class="pull-left">View Details</span>
-                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-
-                            <div class="clearfix"></div>
+                        <a href="{{url('admin/danhmuc/danhsach')}}">
+                                <span class="pull-left">Xem chi tiết</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </a>
                         </div>
                 </div>
             </div>
@@ -37,19 +38,20 @@
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-xs-3">
-                                <i class="fa fa-tasks fa-5x"></i>
+                                <i class="fa fa-calendar-o fa-5x"></i>
                             </div>
                             <div class="col-xs-9 text-right">
                                 <div class="huge">12</div>
-                                <div>New Tasks!</div>
+                                <div>Sự Kiện</div>
                             </div>
                         </div>
                     </div>
                         <div class="panel-footer">
-                            <span class="pull-left">View Details</span>
-                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-
-                            <div class="clearfix"></div>
+                            <a href="{{url('admin/event/danhsach')}}">
+                                <span class="pull-left">Xem chi tiết</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </a>
                         </div>
                 </div>
             </div>
@@ -58,19 +60,20 @@
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-xs-3">
-                                <i class="fa fa-shopping-cart fa-5x"></i>
+                                <i class="fa fa-newspaper-o fa-5x"></i>
                             </div>
                             <div class="col-xs-9 text-right">
                                 <div class="huge">124</div>
-                                <div>New Orders!</div>
+                                <div>Tin Tức</div>
                             </div>
                         </div>
                     </div>
                         <div class="panel-footer">
-                            <span class="pull-left">View Details</span>
-                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-
-                            <div class="clearfix"></div>
+                            <a href="{{url('admin/new/danhsach')}}">
+                                <span class="pull-left">Xem chi tiết</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </a>
                         </div>
                 </div>
             </div>
@@ -79,19 +82,20 @@
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-xs-3">
-                                <i class="fa fa-support fa-5x"></i>
+                                <i class="fa fa-user fa-5x"></i>
                             </div>
                             <div class="col-xs-9 text-right">
                                 <div class="huge">13</div>
-                                <div>Support Tickets!</div>
+                                <div>Account</div>
                             </div>
                         </div>
                     </div>
                         <div class="panel-footer">
-                            <span class="pull-left">View Details</span>
-                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-
-                            <div class="clearfix"></div>
+                            <a href="{{url('admin/user/danhsach')}}">
+                                <span class="pull-left">Xem chi tiết</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </a>
                         </div>
                 </div>
             </div>
@@ -99,24 +103,60 @@
         <!-- /.row -->
         <div class="row">
             <div class="col-md-8">
-                <div class="panel panel-default">
+                <div class="panel panel-success">
                     <div class="panel-heading">
-                        <i class="fa fa-bar-chart-o fa-fw"></i> Area Chart Example
-                      
+                        <i class="fa fa-area-chart"></i> Biểu đồ Thống Kê
                     </div>
                     <!-- /.panel-heading -->
                     <div class="panel-body">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti dolorum id aperiam odit nemo porro, voluptatem molestiae rerum debitis quasi, quidem architecto praesentium, quaerat sed sunt non nesciunt consectetur sint.
-                        </p>
+                        <div class="box_content">
+                            <div class="chart">
+                                <div class="line_chart"></div>
+                                <div class="kets sock"></div>
+                                <div class="line_txt_1 sock"></div>
+                                <div class="txt_blue sock">
+                                    13.5 %
+                                </div>
+                                <div class="txt_lf_1 sock">
+                                    6.4 %
+                                </div>
+                                <div class="txt_lf_2 sock">
+                                    7.1 %
+                                </div>
+                                <div class="text_blue">
+                                    Danh Mục
+                                </div>
+                                <div class="text_green">
+                                    Sự Kiện
+                                </div>
+                                <div class="text_yellow">
+                                    Tin Tức
+                                </div>
+                                <div class="text_red">
+                                    Account
+                                </div>
+                                <div class="line_txt_2 sock"></div>
+                                <div class="txt_red sock">
+                                    6.3 %
+                                </div>
+                                <div class="txt_rg_1 sock">
+                                    2.5 %
+                                </div>
+                                <div class="txt_rg_2 sock">
+                                    3.8 %
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <!-- /.panel-body -->
                 </div>
             </div>
             <div class="col-md-4">
-                <h1>
-                    lịch
-                </h1>
+                <div class="panel panel-info">
+                    <div class="panel-heading"> <i class="fa fa-calendar"></i> Lịch Thông Báo</div>
+                    <div class="panel-body">
+                    </div>
+                </div>
             </div>
         </div>
       
