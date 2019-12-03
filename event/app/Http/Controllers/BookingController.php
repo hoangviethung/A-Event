@@ -20,7 +20,7 @@ class BookingController extends Controller
             view()->share('logingg',json_decode($request->cookie('logingg')));
             return $next($request);
         });
-        
+
     }
     public function getBookingone(Request $req){
         $bookingone = Events::where('id',$req->id)->first();
@@ -67,28 +67,34 @@ class BookingController extends Controller
             'email' => $req->email,
             'emailc' => 'nguyentuyen1322@gmail.com',
             'ten_khach_hang' => $req->ten_nguoi_mua,
-            'so_ve' => $req->sl_ve_thuong+$req->sl_ve_vip,
-            'cho_ngoi' => $req->cho_ngoi,
+            'so_ve_thuong' => $req->sl_ve_thuong,
+            'so_ve_vip' => $req->sl_ve_vip,
+            'tong_tien_thuong' => $req->tong_tien_ve_thuong,
+            'tong_tien_vip' => $req->tong_tien_ve_vip,
+            'tong_tien' => $req->tong_tien_ve_thuong + $req->tong_tien_ve_vip,
             'banner' => 'images/email/banner.jpg',
             'logo'=>'images/email/logo.png',
-          
+
         ];
         Mail::send('admin.thongbao.layoutmail', $data, function ($message) use ($data) {
             $message->from('hotroaevent@gmail.com', 'Hỗ trợ Aevent');
             $message->to($data['email'], 'Khách hàng');
             $message->to($data['emailc'], 'Khách hàng');
             $message->subject($data['ten_khach_hang']);
-            $message->subject($data['so_ve']);
-            $message->subject($data['cho_ngoi']);
+            $message->subject($data['so_ve_thuong']);
+            $message->subject($data['so_ve_vip']);
+            $message->subject($data['tong_tien_thuong']);
+            $message->subject($data['tong_tien_vip']);
+            $message->subject($data['tong_tien']);
             $message->subject($data['ten_su_kien']);
         });
-       
+
         return view('pages.bookingthree',['bookingtwo'=>$bookingtwo,'thanhcong'=>'Thành công vui lòng check mail.']);
     }
 
     public function getBookingthree(Request $req){
         $bookingtwo = Events::where('id',$req->id)->first();
         return view('pages.bookingthree',['bookingtwo'=>$bookingtwo, 'err'=>'Bạn chưa thanh toán']);
-    
+
     }
 }

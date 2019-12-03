@@ -10,7 +10,7 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-lg-8">
-								<div class="overview">
+                            <div class="overview">
 									<h1 class="wow fadeInLeft" data-wow-delay=".3s">{{$chitiet->ten_su_kien}}</h1>
 									<div class="item time wow fadeInLeft" data-wow-delay=".6s">
                                     <?php $origDate = "$chitiet->ngay_dien_ra";
@@ -21,14 +21,14 @@
 									<div class="item address wow fadeInLeft" data-wow-delay=".9s">{{$chitiet->dia_chi}}</div>
 								</div>
 								<div class="details-event">
-									<div class="desc">
+								<div class="desc">
 										<div class="title">GIỚI THIỆU</div>
 										<div class="CKEditor">
 											{!!htmlspecialchars_decode($chitiet->mo_ta)!!}
 										</div>
 
-									</div>
-									<div class="ticket-booking">
+                                    </div>
+                                    <div class="ticket-booking">
 										<div class="title">THÔNG TIN VÉ</div>
 										<div class="list-ticket wow fadeInDown" data-wow-delay=".3s">
 											<div class="item">
@@ -52,10 +52,12 @@
 
 										</div>
                                     </div>
+
+
                                     <div class="gmap">
 										<div class="title">BẢN ĐỒ</div>
 										<div class="google-map">
-                                        <div id="map" class="mapouter"><div class="gmap_canvas"><iframe width="870" height="500" id="gmap_canvas"
+                                        <div id="map2" class="mapouter" style="width: 100% !important;"><div class="gmap_canvas"><iframe width="870" height="500" id="gmap_canvas"
                                         src="https://maps.google.com/maps?q={{$chitiet->dia_chi}}&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.divi-discounts.com">elegant drag & drop builder</a></div><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div>
 										</div>
 
@@ -79,7 +81,8 @@
 											}
 										</script> -->
 									</div>
-									<div class="organizer">
+
+                                    <div class="organizer">
 										<div class="title">NHÀ TỔ CHỨC</div>
 										<div class="content wow fadeInDown" data-wow-delay=".3s">
 											<div class="org-img"><img class="ofc" src="./images/product/{{$chitiet->logo}}.png" alt="" srcset=""></div>
