@@ -75,7 +75,6 @@ class EventController extends Controller
             'banner.max'=>'Dung lượng hình không được quá 2Mb',
             'logo.mimes'=>'Logo phải là hình có đuôi jpeg,png,jpg,gif,svg',
             'logo.max'=>'Dung lượng hình không được quá 2Mb',
-            // 'banner.image'=> 'Banner phải là ảnh(jpeg, png, bmp, gif, svg)',
             'dia_chi.required' => 'Bạn chưa nhập nơi diễn ra sự kiện',
             'ngay_ban.required' => 'Bạn chưa nhập ngày bán vé',
             'mo_ta.required' => 'Bạn chưa nhập mô tả sự kiện',
@@ -92,8 +91,6 @@ class EventController extends Controller
         $event->ten_su_kien = $request->ten_su_kien;
         $event->id_loai = $request->id_loai;
         $event->ngay_dien_ra = $request->ngay_dien_ra;
-        $event->banner = $request->banner;
-        $event->logo = $request->logo;
         $event->nha_tai_tro = $request->nha_tai_tro;
         $event->vi_tri_ve_thuong = $request->vi_tri_ve_thuong;
         $event->vi_tri_ve_vip = $request->vi_tri_ve_vip;

@@ -31,23 +31,27 @@ class BookingController extends Controller
         // exit;
         $bookingtwo = Events::where('id',$req->id)->first();
         return view('pages.bookingtwo',['bookingtwo'=>$bookingtwo]);
+
+
+
     }
     public function postBookingtwo(Request $req){
         $bookingtwo = Events::where('id',$req->id)->first();
+        // $this->validate($req,
+        // [
+        //     'email'=>'unique:Bills,email'
+        // ],
+        // [
+        //     'email'=>'Bạn đã mua vé rồi'
+        // ]);
+        // $bookingtwo = new Bills;
+
         return view('pages.bookingtwo',['bookingtwo'=>$bookingtwo,'quantity1'=>$req->quantity1,'quantity2'=>$req->quantity2,'tong_tien_thuong'=>$req->tong_tien_thuong,'tong_tien_vip'=>$req->tong_tien_vip,'tong_cong'=>$req->tong_cong])->with('thongbao','Thành công !');
+
     }
 
     public function postBookingthree(Request $req){
-        // $this->validate($req,[
-        //     'ten_nguoi_mua'=>'required',
-        //     'phone'=>'required',
-        //     'email'=>'required',
-        // ],
-        // [
-        //     'ten_nguoi_mua.required'=>'ban chưa nhập tên',
-        //     'phone.required'=>'ban chưa nhập sdt',
-        //     'email.required'=>'ban chưa nhập mail',
-        // ]);
+
         $book = new Bills;
         $book->ten_nguoi_mua = $req->ten_nguoi_mua;
         $book->phone = $req->phone;

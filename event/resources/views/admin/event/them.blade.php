@@ -27,7 +27,7 @@
                                     <span class="error">
                                         {{$errors->first('ten_su_kien')}}
                                     </span>
-                                @endif 
+                                @endif
                             </div>
                             <div class="form-group">
                                 <label>Nhà tài trợ</label>
@@ -36,7 +36,7 @@
                                     <span class="error">
                                         {{$errors->first('nha_tai_tro')}}
                                     </span>
-                                @endif 
+                                @endif
                             </div>
                             <div class="form-group">
                                 <label>Logo Nhà tài trợ</label>
@@ -45,7 +45,7 @@
                                     <span class="error">
                                         {{$errors->first('logo')}}
                                     </span>
-                                @endif 
+                                @endif
                             </div>
                             <div class="form-group">
                                 <label>Thể loại sự kiện</label>
@@ -67,7 +67,7 @@
                                     <span class="error">
                                         {{$errors->first('banner')}}
                                     </span>
-                                @endif 
+                                @endif
                             </div>
                             <div class="form-group">
                                 <label>Ngày diễn ra sự kiện</label>
@@ -76,7 +76,7 @@
                                     <span class="error">
                                         {{$errors->first('ngay_dien_ra')}}
                                     </span>
-                                @endif 
+                                @endif
                             </div>
                             <div class="form-group">
                                 <label>Giờ diễn ra</label>
@@ -85,7 +85,7 @@
                                     <span class="error">
                                         {{$errors->first('thoi_gian')}}
                                     </span>
-                                @endif 
+                                @endif
                             </div>
                             <div class="form-group">
                                 <label>Ngày bán vé</label>
@@ -94,7 +94,7 @@
                                     <span class="error">
                                         {{$errors->first('ngay_ban')}}
                                     </span>
-                                @endif 
+                                @endif
                             </div>
                             <div class="form-group">
                                 <label>Vị trí ngồi của vé thường</label>
@@ -103,7 +103,7 @@
                                     <span class="error">
                                         {{$errors->first('vi_tri_ve_thuong')}}
                                     </span>
-                                @endif 
+                                @endif
                             </div>
                             <div class="form-group">
                                 <label>Quà tặng khi mua vé thường</label>
@@ -112,7 +112,7 @@
                                     <span class="error">
                                         {{$errors->first('qua_tang_thuong')}}
                                     </span>
-                                @endif 
+                                @endif
                             </div>
                             <div class="form-group">
                                 <label>Giá vé thường</label>
@@ -121,7 +121,7 @@
                                     <span class="error">
                                         {{$errors->first('gia_ve')}}
                                     </span>
-                                @endif 
+                                @endif
                             </div>
                             <div class="form-group">
                                 <label>Vị trí ngồi của vé VIP</label>
@@ -130,7 +130,7 @@
                                     <span class="error">
                                         {{$errors->first('vi_tri_ve_vip')}}
                                     </span>
-                                @endif 
+                                @endif
                             </div>
                             <div class="form-group">
                                 <label>Quà tặng khi mua vé VIP</label>
@@ -139,7 +139,7 @@
                                     <span class="error">
                                         {{$errors->first('qua_tang_vip')}}
                                     </span>
-                                @endif 
+                                @endif
                             </div>
                             <div class="form-group">
                                 <label>Giá vé VIP</label>
@@ -148,16 +148,16 @@
                                     <span class="error">
                                         {{$errors->first('gia_ve_vip')}}
                                     </span>
-                                @endif 
+                                @endif
                             </div>
                             <div class="form-group">
-                                <label>Số lượng vé< thường </label>
+                                <label>Số lượng vé thường </label>
                                 <input class="form-control" name="so_luong_ve_thuong" type="text"/>
                                 @if($errors->has('so_luong_ve_thuong'))
                                     <span class="error">
                                         {{$errors->first('so_luong_ve_thuong')}}
                                     </span>
-                                @endif 
+                                @endif
                             </div>
                             <div class="form-group">
                                 <label>Số lượng vé vip</label>
@@ -166,7 +166,7 @@
                                     <span class="error">
                                         {{$errors->first('so_luong_ve_vip')}}
                                     </span>
-                                @endif 
+                                @endif
                             </div>
                             <div class="form-group">
                                 <label>Nơi diễn ra sự kiện</label>
@@ -175,7 +175,7 @@
                                     <span class="error">
                                         {{$errors->first('dia_chi')}}
                                     </span>
-                                @endif 
+                                @endif
                             </div>
 
                             <div class="form-group">
@@ -185,7 +185,7 @@
                                     <span class="error">
                                         {{$errors->first('tom_tat')}}
                                     </span>
-                                @endif 
+                                @endif
                             </div>
                             <div class="form-group">
                                 <label>Mô tả sự kiện</label>

@@ -46,103 +46,6 @@
                             <input id="dia-diem" type="text" name="dia_chi" placeholder="Nhập địa điểm diễn ra sự kiện">
                         </div>
                         <div class="form-row margin-5px">
-                            <div class="form-input col-lg-6">
-                                <select name="">
-                                    <option value="0">-- Tỉnh / Thành --</option>
-                                    <option value="0">Thành Phố Hồ Chí Minh</option>
-                                    <option value="0">Thành Phố Hà Nội</option>
-                                    <option value="0">Thành Phố Đà Nẵng</option>
-                                    <option value="0">Thành Phố Hải Phòng</option>
-                                    <option value="0">Thành Phố Cần Thơ</option>
-                                    <option value="0">Tỉnh An Giang</option>
-                                    <option value="0">Tỉnh Bà Rịa - Vũng Tàu</option>
-                                    <option value="0">Tỉnh Bạc Liêu</option>
-                                    <option value="0">Tỉnh Bắc Giang</option>
-                                    <option value="0">Tỉnh Bắc Kạn</option>
-                                    <option value="0">Tỉnh Bắc Ninh</option>
-                                    <option value="0">Tỉnh Bến Tre</option>
-                                    <option value="0">Tỉnh Bình Dương</option>
-                                    <option value="0">Tỉnh Bình Định</option>
-                                    <option value="0">Tỉnh Bình Phước</option>
-                                    <option value="0">Tỉnh Bình Thuận</option>
-                                    <option value="0">Tỉnh Cà Mau</option>
-                                    <option value="0">Tỉnh Cao Bằng</option>
-                                    <option value="0">Tỉnh Đắk Lắk</option>
-                                    <option value="0">Tỉnh Đắk Nông</option>
-                                    <option value="0">Tỉnh Điện Biên</option>
-                                    <option value="0">Tỉnh Đồng Nai</option>
-                                    <option value="0">Tỉnh Đồng Tháp</option>
-                                    <option value="0">Tỉnh Gia Lai</option>
-                                    <option value="0">Tỉnh Hà Giang</option>
-                                    <option value="0">Tỉnh Hà Nam</option>
-                                    <option value="0">Tỉnh Hà Tĩnh</option>
-                                    <option value="0">Tỉnh Hải Dương</option>
-                                    <option value="0">Tỉnh Hậu Giang</option>
-                                    <option value="0">Tỉnh Hòa Bình</option>
-                                    <option value="0">Tỉnh Hưng Yên</option>
-                                    <option value="0">Tỉnh Kiên Giang</option>
-                                    <option value="0">Tỉnh Kon Tum</option>
-                                    <option value="0">Tỉnh Khánh Hòa</option>
-                                    <option value="0">Tỉnh Lai Châu</option>
-                                    <option value="0">Tỉnh Lạng Sơn</option>
-                                    <option value="0">Tỉnh Lào Cai</option>
-                                    <option value="0">Tỉnh Lâm Đồng</option>
-                                    <option value="0">Tỉnh Long An</option>
-                                    <option value="0">Tỉnh Nam Định</option>
-                                    <option value="0">Tỉnh Ninh Bình</option>
-                                    <option value="0">Tỉnh Ninh Thuận</option>
-                                    <option value="0">Tỉnh Nghệ An</option>
-                                    <option value="0">Tỉnh Phú Thọ</option>
-                                    <option value="0">Tỉnh Phú Yên</option>
-                                    <option value="0">Tỉnh Quảng Bình</option>
-                                    <option value="0">Tỉnh Quảng Nam</option>
-                                    <option value="0">Tỉnh Quảng Ninh</option>
-                                    <option value="0">Tỉnh Quảng Ngãi</option>
-                                    <option value="0">Tỉnh Quảng Trị</option>
-                                    <option value="0">Tỉnh Sóc Trăng</option>
-                                    <option value="0">Tỉnh Sơn La</option>
-                                    <option value="0">Tỉnh Tây Ninh</option>
-                                    <option value="0">Tỉnh Tiền Giang</option>
-                                    <option value="0">Tỉnh Tuyên Quang</option>
-                                    <option value="0">Tỉnh Thái Bình</option>
-                                    <option value="0">Tỉnh Thái Nguyên</option>
-                                    <option value="0">Tỉnh Thanh Hóa</option>
-                                    <option value="0">Tỉnh Thừa Thiên Huế</option>
-                                    <option value="0">Tỉnh Trà Vinh</option>
-                                    <option value="0">Tỉnh Vĩnh Long</option>
-                                    <option value="0">Tỉnh Vĩnh Phúc</option>
-                                    <option value="0">Tỉnh Yên Bái</option>
-                                </select>
-                            </div>
-                            <div class="form-input col-lg-6">
-                                <select name="">
-                                    <option value="0">-- Quận / Huyện --</option>
-                                    <option value="0">Quận 1</option>
-                                    <option value="0">Quận 2</option>
-                                    <option value="0">Quận 3</option>
-                                    <option value="0">Quận 4</option>
-                                    <option value="0">Quận 5</option>
-                                    <option value="0">Quận 6</option>
-                                    <option value="0">Quận 7</option>
-                                    <option value="0">Quận 8</option>
-                                    <option value="0">Quận 9</option>
-                                    <option value="0">Quận 10</option>
-                                    <option value="0">Quận 11</option>
-                                    <option value="0">Quận 12</option>
-                                    <option value="0">Quận Bình Thạnh</option>
-                                    <option value="0">Quận Gò Vấp</option>
-                                    <option value="0">Quận Phú Nhuận</option>
-                                    <option value="0">Quận Tân Bình</option>
-                                    <option value="0">Quận Tân Phú</option>
-                                    <option value="0">Quận Bình Tân</option>
-                                    <option value="0">Huyện Cần Giờ</option>
-                                    <option value="0">Huyện Củ Chi</option>
-                                    <option value="0">Huyện Hóc Môn</option>
-                                    <option value="0">Huyện Nhà Bè</option>
-                                    <option value="0">Huyện Bình Chánh</option>
-                                    <option value="0">Quận Thủ Đức</option>
-                                </select>
-                            </div>
                             @if($errors->has('dia_chi'))
                                 <span class="error" style="text-align: left !important; display: block; color: red;font-family: K2D,sans-serif;line-height: 1.3; font-size: 18px; padding-top: 5px;margin: 0;">
                                     {{$errors->first('dia_chi')}}
@@ -151,7 +54,7 @@
                         </div>
                     </div>
                     <div class="form-group col-lg-6">
-                        <div class="title-input">Logo của sự kiện</div>
+                        <div class="title-input">Logo nhà tài trợ sự kiện</div>
                         <div class="form-input add-img-small">
                             <figure class="button-choose-file"><img class="ofc" src="images/icons/default-logo-organizer.png" alt=""></figure>
                             <input class="file-img" type="file" name="logo" hidden>
@@ -209,6 +112,19 @@
                         </div>
                     </div> -->
                     <div class="form-group col-lg-6">
+                        <label for="dia-diem">Nhà tài trợ:</label>
+                        <div class="form-input">
+                            <input id="dia-diem" type="text" name="nha_tai_tro" placeholder="Nhập tên nhà tài trợ">
+                        </div>
+                        <div class="form-row margin-5px">
+                            @if($errors->has('nha_tai_tro'))
+                                <span class="error" style="text-align: left !important; display: block; color: red;font-family: K2D,sans-serif;line-height: 1.3; font-size: 18px; padding-top: 5px;margin: 0;">
+                                    {{$errors->first('nha_tai_tro')}}
+                                </span>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="form-group col-lg-6">
                         <label>Số lượng vé thường</label>
                         <div class="form-input">
                             <input type="number" name="so_luong_ve_thuong"  placeholder="Nhập số lượng">
@@ -220,12 +136,78 @@
                         </div>
                     </div>
                     <div class="form-group col-lg-6">
-                        <label>Giá vé</label>
+                        <label>Giá vé Thường</label>
                         <div class="form-input">
-                            <input type="number" name="gia_ve" placeholder="Nhập giá vé">
-                            @if($errors->has('gia_ve'))
+                            <input type="number" name="gia_ve" placeholder="Nhập giá vé loại thường">
+                            @if($errors->has('gia_ve_thuong'))
                                 <span class="error" style="text-align: left !important; display: block; color: red;font-family: K2D,sans-serif;line-height: 1.3; font-size: 18px; padding-top: 5px;margin: 0;">
-                                    {{$errors->first('gia_ve')}}
+                                    {{$errors->first('gia_ve_thuong')}}
+                                </span>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <label>Số lượng vé vip</label>
+                        <div class="form-input">
+                            <input type="number" name="so_luong_ve_vip"  placeholder="Nhập số lượng">
+                            @if($errors->has('so_luong_ve_vip'))
+                                <span class="error" style="text-align: left !important; display: block; color: red;font-family: K2D,sans-serif;line-height: 1.3; font-size: 18px; padding-top: 5px;margin: 0;">
+                                    {{$errors->first('so_luong_ve_vip')}}
+                                </span>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <label>Giá vé VIP</label>
+                        <div class="form-input">
+                            <input type="number" name="gia_ve_vip" placeholder="Nhập giá vé loại vip">
+                            @if($errors->has('gia_ve_vip'))
+                                <span class="error" style="text-align: left !important; display: block; color: red;font-family: K2D,sans-serif;line-height: 1.3; font-size: 18px; padding-top: 5px;margin: 0;">
+                                    {{$errors->first('gia_ve_vip')}}
+                                </span>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <label>Vị trí ngồi thường</label>
+                        <div class="form-input">
+                            <input type="text" name="vi_tri_ve_thuong"  placeholder="Vị trí ngồi thường">
+                            @if($errors->has('vi_tri_ve_thuong'))
+                                <span class="error" style="text-align: left !important; display: block; color: red;font-family: K2D,sans-serif;line-height: 1.3; font-size: 18px; padding-top: 5px;margin: 0;">
+                                    {{$errors->first('vi_tri_ve_thuong')}}
+                                </span>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <label>Vị trí ngồi VIP</label>
+                        <div class="form-input">
+                            <input type="text" name="vi_tri_ve_vip" placeholder="Vị trí ngồi VIP">
+                            @if($errors->has('vi_tri_ve_vip'))
+                                <span class="error" style="text-align: left !important; display: block; color: red;font-family: K2D,sans-serif;line-height: 1.3; font-size: 18px; padding-top: 5px;margin: 0;">
+                                    {{$errors->first('vi_tri_ve_vip')}}
+                                </span>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <label>Quà tặng khi mua vé thường</label>
+                        <div class="form-input">
+                            <input type="text" name="qua_tang_thuong"  placeholder="Quà tặng khi mua vé thường">
+                            @if($errors->has('qua_tang_thuong'))
+                                <span class="error" style="text-align: left !important; display: block; color: red;font-family: K2D,sans-serif;line-height: 1.3; font-size: 18px; padding-top: 5px;margin: 0;">
+                                    {{$errors->first('qua_tang_thuong')}}
+                                </span>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <label>Quà tặng khi mua vé VIP</label>
+                        <div class="form-input">
+                            <input type="text" name="vi_tri_ve_vip" placeholder="Quà tặng khi mua vé VIP">
+                            @if($errors->has('qua_tang_vip'))
+                                <span class="error" style="text-align: left !important; display: block; color: red;font-family: K2D,sans-serif;line-height: 1.3; font-size: 18px; padding-top: 5px;margin: 0;">
+                                    {{$errors->first('qua_tang_vip')}}
                                 </span>
                             @endif
                         </div>
@@ -276,18 +258,7 @@
                             </span>
                         @endif
                     </div>
-                    <div class="form-group col-lg-6">
-                        <label for="sdt">Thông tin liên lạc</label>
-                        <div class="form-input">
-                            <input id="sdt" type="text" name="" placeholder="Số điện thoại">
-                        </div>
-                    </div>
-                    <div class="form-group col-lg-6">
-                        <label for="sdt">Email nhận thông báo</label>
-                        <div class="form-input">
-                            <input id="sdt" type="Email" name="" placeholder="hoangviet.hung.009@gmail.com">
-                        </div>
-                    </div>
+
                 </div>
                 <button class="btn" type="submit">THÊM SỰ KIỆN</button>
             </form>
