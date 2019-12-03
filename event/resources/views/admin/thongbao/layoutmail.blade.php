@@ -97,7 +97,7 @@
                                 <tr>
                                     <td align="center" style="padding: 10px;">
                                         <a href="#" target="_blank">
-                                            <img src="https://chart.googleapis.com/chart?cht=qr&chl=<?php echo "----------------";?>Tên sự kiện: <?php echo $ten_su_kien;?><?php echo "----------------";?>Tên khách hàng: <?php echo $ten_khach_hang;?>Số vé: <?php echo $so_ve;?>Chỗ ngồi: <?php echo $cho_ngoi?>&chs=150x150&chld=L|0">
+                                            <img src="https://chart.googleapis.com/chart?cht=qr&chl=Tên sự kiện: <?php echo $ten_su_kien;?>Tên khách hàng: <?php echo $ten_khach_hang;?>Số vé: <?php echo $so_ve;?>Chỗ ngồi: <?php echo $cho_ngoi?>&chs=150x150&chld=L|0">
                                         </a>
                                     </td>
                                 </tr>

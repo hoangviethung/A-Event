@@ -34,7 +34,7 @@
                                 <thead>
                                 <tr>
                                 <th colspan="2">Thao tác</th>
-                                    <th>Id</th>
+                                    <th>STT</th>
                                     <th>Tên sự kiện</th>
                                     <th>Loại sự kiện</th>
                                     <th>Nhà tài trợ</th>
@@ -142,7 +142,7 @@
                                 <thead>
                                 <tr>
                                 <th colspan="2">Thao tác</th>
-                                    <th>Id</th>
+                                    <th>STT</th>
                                     <th>Tên sự kiện</th>
                                     <th>Loại sự kiện</th>
                                     <th>Nhà tài trợ</th>

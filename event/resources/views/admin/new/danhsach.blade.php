@@ -34,7 +34,7 @@
                                 <thead>
                                 <tr>
                                 <th colspan="2">Thao tác</th>
-                                    <th>Id</th>
+                                    <th>STT</th>
                                     <th>Tên sự kiện</th>
                                     <th>Loại sự kiện</th>
                                     <th>Banner của <br>
@@ -105,7 +105,7 @@
                                 <thead>
                                 <tr>
                                 <th colspan="2">Thao tác</th>
-                                    <th>Id</th>
+                                    <th>STT</th>
                                     <th>Tên sự kiện</th>
                                     <th>Loại sự kiện</th>
                                     <th>Banner của <br>

@@ -3,18 +3,23 @@
 namespace App\Http\Controllers;
 use Mail;
 use Illuminate\Http\Request;
-
+use App\Bills;
+use Illuminate\Support\Facades\View;
 class SeenmailController extends Controller
-{
-
+{   
+    public function __construct()
+    {
+        $bills = Bills::orderBy('id')->paginate(5);
+        view()->share('bills', $bills);
+    }
     public function getDanhsach(){
         return view('admin.thongbao.danhsach');
     }
-
-    public function getThongbao(){
-        return view('admin.thongbao.seenmail');
+    public function getXoa($id){
+        $bills = Bills::find($id);
+        $bills->delete();
+        return redirect('admin/booking/danhsach')->with('thongbao','Bạn đã xóa bills thành công !');
     }
-
     public function postThongbao(Request $request){
         $this->validate($request, [
             'ten_su_kien'=>'required',
@@ -61,6 +66,6 @@ class SeenmailController extends Controller
         //    </script>
         // ";
 
-        return redirect('admin/seenmail/getmail')->with('thongbao','Gửi email thành công !');
+        return redirect('admin/thongbao/danhsach');
     }
 }

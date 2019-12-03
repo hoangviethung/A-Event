@@ -80,10 +80,10 @@
                     <!-- /.nav-second-level -->
                 </li>
                 <li>
-                    <a href="admin/seenmail/danhsach"><i class="fa fa-envelope"></i> QL Email<span class="fa arrow"></a>
+                    <a href="admin/booking/danhsach"><i class="fa fa-bullseye"></i> QL Bills<span class="fa arrow"></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="admin/seenmail/getmail">Gửi Email</a>
+                            <a href="admin/booking/danhsach">Danh sách</a>
                         </li>
                     </ul>
                 </li>

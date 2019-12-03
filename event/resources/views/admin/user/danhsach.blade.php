@@ -26,7 +26,7 @@
                                     <thead>
                                     <tr>
                                         <th colspan="2">Thao tác</th>
-                                        <th>Id</th>
+                                        <th>STT</th>
                                         <th>Email Accounts</th>
                                         <th>Tên Accounts</th>
                                         <th><button id="show" class="btn btn-outline-success" type="button">Check Password</button></th>

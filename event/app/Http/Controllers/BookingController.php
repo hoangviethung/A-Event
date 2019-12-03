@@ -88,7 +88,7 @@ class BookingController extends Controller
 
     public function getBookingthree(Request $req){
         $bookingtwo = Events::where('id',$req->id)->first();
-        return view('pages.bookingthree',['bookingtwo'=>$bookingtwo, 'err'=>'Chưa thanh toán']);
+        return view('pages.bookingthree',['bookingtwo'=>$bookingtwo, 'err'=>'Bạn chưa thanh toán']);
     
     }
 }

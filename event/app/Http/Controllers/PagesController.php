@@ -219,7 +219,7 @@ class PagesController extends Controller
     }
 
     public function getDashboard(){
-        return view('admin.layouts.index');
+        return view('admin.dashboard.dashboard');
     }
     // QL User
 

@@ -28,7 +28,7 @@
                                 <!--Table head-->
                                 <thead>
                                 <tr>
-                                    <th>Id</th>
+                                    <th>STT</th>
                                     <th>Tên danh mục</th>
                                     <th colspan="2">Thao tác</th>
                                 </tr>
