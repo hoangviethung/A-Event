@@ -179,6 +179,7 @@
 
                                 <!--Table body-->
                                 <tbody>
+                                <?php $events = $event; ?>
                                 @foreach($event as $event)
                                 <tr class="table-info">
                                 <th>
@@ -210,8 +211,6 @@
                                     <td>
                                         <textarea cols="30" rows="3" style="text-align: center !important"> {{$event->mo_ta}}</textarea>
                                     </td>
-                                    {{-- <td>{{$event->tom_tat}}</td>
-                                    <td class="text-over" style="max-width: 500px; overflow: hidden; text-overflow: ellipsis; -webkit-line-clamp: 3; height: 75px;-webkit-box-orient: vertical;">{{$event->mo_ta}}</td> --}}
                                     <td>
                                         @if($event->hien_thi_slider == 1 )
                                             {{"Cho phép"}}
@@ -241,6 +240,7 @@
                                 <!--Table body-->
                         </table>
                         <!--Table-->
+                        {{ $events->links() }}
                     </div>
                     </div>
                 </div>

@@ -14,7 +14,7 @@ class EventController extends Controller
     public function getDanhsach(){
 
         $duyet = Events::where('duyet',0)->orWhere('duyet',null)->orderBy('id','desc')->get();
-        $event = Events::where('duyet',1)->orderBy('id','desc')->get();
+        $event = Events::where('duyet',1)->orderBy('id','desc')->paginate(5);
         return view('admin.event.danhsach',compact('duyet','event'));
     }
 

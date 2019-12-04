@@ -4,12 +4,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\users;
-use App\Slide;
 use App\Events;
 use App\Rules\Captcha;
 use App\News;
 use App\Type_events;
-use Carbon\Carbon;
 use Facebook\Facebook;
 use Illuminate\Support\Facades\Cookie;
 
@@ -219,7 +217,11 @@ class PagesController extends Controller
     }
 
     public function getDashboard(){
-        return view('admin.dashboard.dashboard');
+        $event = Events::all();
+        $users = users::all();
+        $Type_events = Type_events::all();
+        $News = News::all();
+        return view('admin.dashboard.dashboard',['event'=>$event,'users'=>$users,'type_events'=>$Type_events,'news'=>$News]);
     }
     // QL User
 

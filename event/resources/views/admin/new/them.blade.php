@@ -21,7 +21,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Logo sự kiện</label>
-                                <input class="form-control" name="logo" id="" type="file"/>
+                                <input class="form-control" name="logo" type="file"/>
                             </div>
                             <div class="form-group">
                                 <label>Thể loại sự kiện</label>

@@ -27,8 +27,7 @@ class BookingController extends Controller
         return view('pages.bookingone',compact('bookingone'));
     }
     public function getBookingtwo(Request $req){
-        // print_r( $req->quantity1);
-        // exit;
+   
         $bookingtwo = Events::where('id',$req->id)->first();
         return view('pages.bookingtwo',['bookingtwo'=>$bookingtwo]);
 

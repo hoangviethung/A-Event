@@ -20,164 +20,215 @@
                         <form action="admin/event/them" method="POST" enctype="multipart/form-data" >
                             <!-- để truyền dữ liệu phải cho nó 1 cái token -->
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
-                            <div class="form-group">
-                                <label>Tên sự kiện</label>
-                                <input class="form-control" name="ten_su_kien" placeholder="Nhập tên sự kiện"/>
-                                @if($errors->has('ten_su_kien'))
-                                    <span class="error">
-                                        {{$errors->first('ten_su_kien')}}
-                                    </span>
-                                @endif
-                            </div>
-                            <div class="form-group">
-                                <label>Nhà tài trợ</label>
-                                <input class="form-control" name="nha_tai_tro" placeholder="Nhà tài trợ"/>
-                                @if($errors->has('nha_tai_tro'))
-                                    <span class="error">
-                                        {{$errors->first('nha_tai_tro')}}
-                                    </span>
-                                @endif
-                            </div>
-                            <div class="form-group">
-                                <label>Logo Nhà tài trợ</label>
-                                <input class="form-control" name="logo" type="file"/>
-                                @if($errors->has('logo'))
-                                    <span class="error">
-                                        {{$errors->first('logo')}}
-                                    </span>
-                                @endif
-                            </div>
-                            <div class="form-group">
-                                <label>Thể loại sự kiện</label>
-                            <select class="form-control" name="id_loai" >
-                                    @foreach($danhmuc as $danhmuc)
-                                        <option value="{{$danhmuc->id}}">{{$danhmuc->ten_loai}}</option>
-                                    @endforeach
-                            </select>
-                            </div>
-                            <div class="form-group">
-                            @if(session('loi'))
-                                <div class="alert alert-danger">
-                                    {{session('loi')}}
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Tên sự kiện</label>
+                                        <input class="form-control" name="ten_su_kien" placeholder="Nhập tên sự kiện"/>
+                                        @if($errors->has('ten_su_kien'))
+                                            <span class="error">
+                                                {{$errors->first('ten_su_kien')}}
+                                            </span>
+                                        @endif
+                                    </div>
                                 </div>
-                            @endif
-                                <label>Ảnh Banner của sự kiện</label>
-                                <input class="form-control" name="banner" type="file"/>
-                                @if($errors->has('banner'))
-                                    <span class="error">
-                                        {{$errors->first('banner')}}
-                                    </span>
-                                @endif
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Nhà tài trợ</label>
+                                        <input class="form-control" name="nha_tai_tro" placeholder="Nhà tài trợ"/>
+                                        @if($errors->has('nha_tai_tro'))
+                                            <span class="error">
+                                                {{$errors->first('nha_tai_tro')}}
+                                            </span>
+                                        @endif
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label>Ngày diễn ra sự kiện</label>
-                                <input class="form-control" name="ngay_dien_ra" type="date"/>
-                                @if($errors->has('ngay_dien_ra'))
-                                    <span class="error">
-                                        {{$errors->first('ngay_dien_ra')}}
-                                    </span>
-                                @endif
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Logo Nhà tài trợ</label>
+                                        <input class="form-control" name="logo" type="file"/>
+                                        @if($errors->has('logo'))
+                                            <span class="error">
+                                                {{$errors->first('logo')}}
+                                            </span>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Thể loại sự kiện</label>
+                                        <select class="form-control" name="id_loai" >
+                                            @foreach($danhmuc as $danhmuc)
+                                                <option value="{{$danhmuc->id}}">{{$danhmuc->ten_loai}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label>Giờ diễn ra</label>
-                                <input class="form-control" name="thoi_gian" type="time" />
-                                @if($errors->has('thoi_gian'))
-                                    <span class="error">
-                                        {{$errors->first('thoi_gian')}}
-                                    </span>
-                                @endif
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        @if(session('loi'))
+                                            <div class="alert alert-danger">
+                                                {{session('loi')}}
+                                            </div>
+                                        @endif
+                                        <label>Ảnh Banner của sự kiện</label>
+                                        <input class="form-control" name="banner" type="file"/>
+                                        @if($errors->has('banner'))
+                                            <span class="error">
+                                                {{$errors->first('banner')}}
+                                            </span>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Ngày diễn ra sự kiện</label>
+                                        <input class="form-control" name="ngay_dien_ra" type="date"/>
+                                        @if($errors->has('ngay_dien_ra'))
+                                            <span class="error">
+                                                {{$errors->first('ngay_dien_ra')}}
+                                            </span>
+                                        @endif
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label>Ngày bán vé</label>
-                                <input class="form-control" name="ngay_ban" type="date"/>
-                                @if($errors->has('ngay_ban'))
-                                    <span class="error">
-                                        {{$errors->first('ngay_ban')}}
-                                    </span>
-                                @endif
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Giờ diễn ra</label>
+                                        <input class="form-control" name="thoi_gian" type="time" />
+                                        @if($errors->has('thoi_gian'))
+                                            <span class="error">
+                                                {{$errors->first('thoi_gian')}}
+                                            </span>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Ngày bán vé</label>
+                                        <input class="form-control" name="ngay_ban" type="date"/>
+                                        @if($errors->has('ngay_ban'))
+                                            <span class="error">
+                                                {{$errors->first('ngay_ban')}}
+                                            </span>
+                                        @endif
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label>Vị trí ngồi của vé thường</label>
-                                <input class="form-control" name="vi_tri_ve_thuong"  type="text"/>
-                                @if($errors->has('vi_tri_ve_thuong'))
-                                    <span class="error">
-                                        {{$errors->first('vi_tri_ve_thuong')}}
-                                    </span>
-                                @endif
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Vị trí ngồi của vé thường</label>
+                                        <input class="form-control" name="vi_tri_ve_thuong"  type="text"/>
+                                        @if($errors->has('vi_tri_ve_thuong'))
+                                            <span class="error">
+                                                {{$errors->first('vi_tri_ve_thuong')}}
+                                            </span>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Quà tặng khi mua vé thường</label>
+                                        <input class="form-control" name="qua_tang_thuong"  type="text"/>
+                                        @if($errors->has('qua_tang_thuong'))
+                                            <span class="error">
+                                                {{$errors->first('qua_tang_thuong')}}
+                                            </span>
+                                        @endif
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label>Quà tặng khi mua vé thường</label>
-                                <input class="form-control" name="qua_tang_thuong"  type="text"/>
-                                @if($errors->has('qua_tang_thuong'))
-                                    <span class="error">
-                                        {{$errors->first('qua_tang_thuong')}}
-                                    </span>
-                                @endif
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Giá vé thường</label>
+                                        <input class="form-control" name="gia_ve"  type="number"/>
+                                        @if($errors->has('gia_ve'))
+                                            <span class="error">
+                                                {{$errors->first('gia_ve')}}
+                                            </span>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Vị trí ngồi của vé VIP</label>
+                                        <input class="form-control" name="vi_tri_ve_vip"  type="text"/>
+                                        @if($errors->has('vi_tri_ve_vip'))
+                                            <span class="error">
+                                                {{$errors->first('vi_tri_ve_vip')}}
+                                            </span>
+                                        @endif
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label>Giá vé thường</label>
-                                <input class="form-control" name="gia_ve"  type="number"/>
-                                @if($errors->has('gia_ve'))
-                                    <span class="error">
-                                        {{$errors->first('gia_ve')}}
-                                    </span>
-                                @endif
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Quà tặng khi mua vé VIP</label>
+                                        <input class="form-control" name="qua_tang_vip"  type="text"/>
+                                        @if($errors->has('qua_tang_vip'))
+                                            <span class="error">
+                                                {{$errors->first('qua_tang_vip')}}
+                                            </span>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Giá vé VIP</label>
+                                        <input class="form-control" name="gia_ve_vip"  type="number"/>
+                                        @if($errors->has('gia_ve_vip'))
+                                            <span class="error">
+                                                {{$errors->first('gia_ve_vip')}}
+                                            </span>
+                                        @endif
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label>Vị trí ngồi của vé VIP</label>
-                                <input class="form-control" name="vi_tri_ve_vip"  type="text"/>
-                                @if($errors->has('vi_tri_ve_vip'))
-                                    <span class="error">
-                                        {{$errors->first('vi_tri_ve_vip')}}
-                                    </span>
-                                @endif
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Số lượng vé thường </label>
+                                        <input class="form-control" name="so_luong_ve_thuong" type="text"/>
+                                        @if($errors->has('so_luong_ve_thuong'))
+                                            <span class="error">
+                                                {{$errors->first('so_luong_ve_thuong')}}
+                                            </span>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Số lượng vé vip</label>
+                                        <input class="form-control" name="so_luong_ve_vip" type="text"/>
+                                        @if($errors->has('so_luong_ve_vip'))
+                                            <span class="error">
+                                                {{$errors->first('so_luong_ve_vip')}}
+                                            </span>
+                                        @endif
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label>Quà tặng khi mua vé VIP</label>
-                                <input class="form-control" name="qua_tang_vip"  type="text"/>
-                                @if($errors->has('qua_tang_vip'))
-                                    <span class="error">
-                                        {{$errors->first('qua_tang_vip')}}
-                                    </span>
-                                @endif
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Nơi diễn ra sự kiện</label>
+                                        <input class="form-control" name="dia_chi" type="text"/>
+                                        @if($errors->has('dia_chi'))
+                                            <span class="error">
+                                                {{$errors->first('dia_chi')}}
+                                            </span>
+                                        @endif
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label>Giá vé VIP</label>
-                                <input class="form-control" name="gia_ve_vip"  type="number"/>
-                                @if($errors->has('gia_ve_vip'))
-                                    <span class="error">
-                                        {{$errors->first('gia_ve_vip')}}
-                                    </span>
-                                @endif
-                            </div>
-                            <div class="form-group">
-                                <label>Số lượng vé thường </label>
-                                <input class="form-control" name="so_luong_ve_thuong" type="text"/>
-                                @if($errors->has('so_luong_ve_thuong'))
-                                    <span class="error">
-                                        {{$errors->first('so_luong_ve_thuong')}}
-                                    </span>
-                                @endif
-                            </div>
-                            <div class="form-group">
-                                <label>Số lượng vé vip</label>
-                                <input class="form-control" name="so_luong_ve_vip" type="text"/>
-                                @if($errors->has('so_luong_ve_vip'))
-                                    <span class="error">
-                                        {{$errors->first('so_luong_ve_vip')}}
-                                    </span>
-                                @endif
-                            </div>
-                            <div class="form-group">
-                                <label>Nơi diễn ra sự kiện</label>
-                                <input class="form-control" name="dia_chi" type="text"/>
-                                @if($errors->has('dia_chi'))
-                                    <span class="error">
-                                        {{$errors->first('dia_chi')}}
-                                    </span>
-                                @endif
-                            </div>
-
                             <div class="form-group">
                                 <label>Tóm tắt sự kiện ( Hiển thị trên Slider, Sự kiện nổi bật)</label>
                                 <textarea class="form-control ckeditor" id="editor1"  rows="2" cols="20" name="tom_tat"></textarea>

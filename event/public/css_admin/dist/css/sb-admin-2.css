@@ -380,7 +380,7 @@ table.dataTable thead .sorting:after {
 {
 	border: 1px solid #a5b1c2;
     background-color: #fff;
-    height: 7px !important;
+    height: 10px !important;
     max-width: 10px !important;
 }
 
@@ -388,14 +388,14 @@ table.dataTable thead .sorting:after {
 {
 	max-width: 10px !important;
     background-color: #a5b1c2;
-    height: 7px !important;
+    height: 10px !important;
 }
 
 .table-responsive::-webkit-scrollbar-thumb
 {
 	max-width: 10px !important;
     background-color: #a5b1c2;	
-    height: 7px !important;
+    height: 10px !important;
 }
 
 .form-control{
