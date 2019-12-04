@@ -5,8 +5,8 @@
                     <div class="input-group custom-search-form">
                         <script type = "text/javascript">
                             var d = new Date();
-                            var ngay = new Date().getDate()  
-                            var thang = new Date().getMonth()  
+                            var ngay = new Date().getDate()
+                            var thang = new Date().getMonth()
                             var month = new Array();
                                 month[0] = "1";
                                 month[1] = "2";
@@ -21,9 +21,9 @@
                                 month[10] = "11";
                                 month[11] = "12";
                                 var thang = month[d.getMonth()];
-                                var nam =new Date().getFullYear() 
-                                document.write("Ngày"+" "+ngay+" "+"Tháng"+" "+thang+" "+"Năm"+" "+nam+"."); 
-                            </script> 
+                                var nam =new Date().getFullYear()
+                                document.write("Ngày"+" "+ngay+" "+"Tháng"+" "+thang+" "+"Năm"+" "+nam+".");
+                            </script>
                     </div>
                     <!-- /input-group -->
                 </li>
@@ -57,6 +57,17 @@
                     <!-- /.nav-second-level -->
                 </li>
                 <li>
+                    <a href="admin/loaitin/danhsach"><i class="fa fa-newspaper-o"></i> QL Loại Tin Tức<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="admin/loaitin/danhsach"> Danh Sách Tin Tức</a>
+                        </li>
+                        <li>
+                            <a href="admin/loaitin/them"> Thêm Tin Tức</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
                     <a href="admin/new/danhsach"><i class="fa fa-newspaper-o"></i> QL Tin Tức<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
@@ -65,7 +76,7 @@
                         <li>
                             <a href="admin/new/them"> Thêm Tin Tức</a>
                         </li>
-                    </ul>  
+                    </ul>
                 </li>
                 <li>
                     <a href="admin/user/danhsach"><i class="fa fa-users fa-fw"></i> QL Account<span class="fa arrow"></span></a>

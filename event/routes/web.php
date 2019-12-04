@@ -115,6 +115,36 @@ Route::group(['prefix'=>'admin','middleware'=>'checklogin'], function(){
         Route::get('pheduyet/{id}', 'EventController@getDuyet');
         Route::post('pheduyet/{id}', 'EventController@postDuyet');
     });
+    // Loại tin
+    Route::group(['prefix' => 'loaitin'], function () {
+
+        Route::get('danhsach','LoaitinController@getDanhsach');
+
+        Route::get('sua/{id}', 'LoaitinController@getSua');
+        Route::post('sua/{id}', 'LoaitinController@postSua');
+
+
+        Route::get('them', 'LoaitinController@getThem');
+        Route::post('them', 'LoaitinController@postThem');
+        // Hàm post nhận dữ liệu về và lưu vào cơ sở dữ liệu
+        Route::get('xoa/{id}', 'NewController@getXoa');
+
+    });
+    // Tin tức
+    Route::group(['prefix' => 'news'], function () {
+
+        Route::get('danhsach','NewController@getDanhsach');
+
+        Route::get('sua/{id}', 'NewController@getSua');
+        Route::post('sua/{id}', 'NewController@postSua');
+
+
+        Route::get('them', 'NewController@getThem');
+        Route::post('them', 'NewController@postThem');
+        // Hàm post nhận dữ liệu về và lưu vào cơ sở dữ liệu
+        Route::get('xoa/{id}', 'NewController@getXoa');
+
+    });
     // Addevent
     Route::group(['prefix' => 'new'], function () {
 
