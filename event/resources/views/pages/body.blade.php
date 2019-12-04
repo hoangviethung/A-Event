@@ -19,7 +19,11 @@
 												</div>
 												<div class="decription-event">
                                                         <p>{!! $slide->tom_tat !!}</p>
-                                                        <p>{{$slide->ngay_dien_ra}} - {{$slide->dia_chi}} ({{$slide->thoi_gian}})</p>
+                                                        <p><?php $origDate = "$slide->ngay_dien_ra";
+
+                                                            $newDate = date(" \N\g\à\y\ d, \T\h\á\\n\\g\ m, \N\ă\m\ Y", strtotime($origDate));
+                                                            echo $newDate; ?>
+ - {{$slide->dia_chi}} ({{$slide->thoi_gian}})</p>
 												</div>
 											</figcaption>
 										</figure>
@@ -41,12 +45,13 @@
 					<div class="hotEvent-wrapper">
 						<div class="swpier-container slider-hotEvent">
 							<div class="swiper-wrapper">
+                            @foreach($noibat as $noibat)
 								<div class="swiper-slide">
-									<figure class="wow fadeInDown" data-wow-delay=".3s"><img class="ofc" src="images/hot-item/1.png" alt="" srcset="">
+									<figure class="wow fadeInDown" data-wow-delay=".3s"><img class="ofc" src="images/product/{{$noibat->banner}}" alt="" srcset="">
 										<figcaption>
 											<div class="name-event wow fadeIn" data-wow-delay=".3s">
-												<h3>Sky tour 2019</h3>
-												<h5 class="wow fadeIn" data-wow-duration="4s">Nhận ngay ưu đãi hấp dẫn khi mua vé Sky Tour 2019 trên A.Event</h5>
+												<h3>{{$noibat->ten_su_kien}}</h3>
+												<h5 class="wow fadeIn" data-wow-duration="4s">{{$noibat->tom_tat}}</h5>
 											</div>
 											<div class="decription-event wow fadeIn" data-wow-delay=".6s">
 												<div class="box-countdown">
@@ -59,38 +64,22 @@
 													<div class="block">
 														<div id="seconds">0</div><span>Giây</span>
 													</div>
-													<div class="block"><span>9.9.2019</span></div>
+													<div class="block"><span>
+
+                                                    <?php $origDate = "$noibat->ngay_dien_ra";
+                                                        $newDate = date("d.m.Y", strtotime($origDate));
+                                                        echo $newDate;
+                                                    ?>
+
+                                                    </span></div>
 												</div>
-												<p class="limit-line">Sky Tour đánh dấu cột mốc mới trong hành trình âm nhạc của Sơn Tùng M-TP trong năm 2019, nối tiếp dự án "Hãy Trao Cho Anh". Nam ca sĩ từng biểu diễn nhiều sân khấu, tổ chức các liveshow bùng nổ nhưng đằng sau mỗi sự bùng cháy đó, anh đều mong muốn mình làm được nhiều hơn thế nữa.</p>
-											</div><a class="right wow flipInX" href="chi-tiet-su-kien.html" data-wow-delay=".5s">Tham Gia</a>
+												<p class="limit-line">{{$noibat->tom_tat}}</p>
+											</div><a class="right wow flipInX" href="{{url('pages/chitiet',$noibat->id)}}" data-wow-delay=".5s">Tham Gia</a>
 										</figcaption>
 									</figure>
 								</div>
-								<div class="swiper-slide">
-									<figure class="wow fadeInDown" data-wow-delay=".3s">
-										<figcaption>
-											<div class="name-event wow fadeIn" data-wow-delay=".3s">
-												<h3>Shark Tank</h3>
-												<h5>Cùng tận hưởng trực tiếp các thương vụ vô cùng kịch tính</h5>
-											</div>
-											<div class="decription-event wow fadeIn" data-wow-delay=".6s">
-												<div class="box-countdown">
-													<div class="block">
-														<div id="hours">0</div><span>Giờ</span>
-													</div>
-													<div class="block">
-														<div id="minutes">0</div><span>Phút</span>
-													</div>
-													<div class="block">
-														<div id="seconds">0</div><span>Giây</span>
-													</div>
-													<div class="block"><span>9.9.2019</span></div>
-												</div>
-												<p class="limit-line">Chương trình truyền hình đầu tư thực tế “Shark Tank Việt Nam - Thương vụ bạc tỷ” đang thu hút sự chú ý từ nhiều bạn trẻ, đặc biệt là các công ty khởi nghiệp (start-up), trong không khí quốc gia cùng khởi nghiệp.</p><a href="chi-tiet-su-kien.html">Tham Gia</a>
-											</div>
-										</figcaption><img class="ofc" src="images/hot-item/2.png" alt="" srcset="">
-									</figure>
-								</div>
+                            @endforeach
+
 							</div>
 							<div class="swiper-pagination"></div>
 							<div class="swiper-button-next icon"></div>
@@ -103,8 +92,13 @@
 				<div class="container">
 					<div class="catalog-wrapper">
 						<div class="title-catalog wow fadeInLeft" data-wow-delay=".3s"><a href="#"><img class="icon" src="images/icons/add.svg" alt="" srcset=""></a>
-							<div class="name-catalog"><span>A . Event - loại sự kiện</span><a href="#">
-									<h3>Giải trí</h3></a></div>
+                            <div class="name-catalog"><span>A . Event - loại sự kiện</span>
+
+                            <a href="{{url('pages/danhmuc/1')}}">
+                                    <h3>Giải trí</h3>
+                            </a>
+
+                        </div>
 							<div class="event-tag">
 								<ul class="list-eventTag">
 									<li class="item"><a href="#">#eventtag-1</a></li>
@@ -156,7 +150,8 @@
 				<div class="container">
 					<div class="catalog-wrapper">
 						<div class="title-catalog wow fadeInLeft" data-wow-delay=".3s"><a href="#"><img class="icon" src="images/icons/add.svg" alt="" srcset=""></a>
-							<div class="name-catalog"><span>A . Event - loại sự kiện</span><a href="#">
+                            <div class="name-catalog"><span>A . Event - loại sự kiện</span>
+                            <a href="{{url('pages/danhmuc/2')}}">
 									<h3>Kiến thức</h3></a></div>
 							<div class="event-tag">
 								<ul class="list-eventTag">
@@ -209,8 +204,11 @@
 				<div class="container">
 					<div class="catalog-wrapper">
 						<div class="title-catalog wow fadeInLeft" data-wow-delay=".3s"><a href="#"><img class="icon" src="images/icons/add.svg" alt="" srcset=""></a>
-							<div class="name-catalog"><span>A . Event - loại sự kiện</span><a href="#">
-									<h3>Sự kiện khác</h3></a></div>
+                            <div class="name-catalog"><span>A . Event - loại sự kiện</span>
+                            <a href="{{url('pages/danhmuc/3')}}">
+                                    <h3>Sự kiện khác</h3>
+                            </a>
+                            </div>
 							<div class="event-tag">
 								<ul class="list-eventTag">
 									<li class="item"><a href="#">#eventtag-1</a></li>

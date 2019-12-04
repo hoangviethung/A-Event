@@ -26,10 +26,10 @@
                                     <thead>
                                     <tr>
                                         <th colspan="2">Thao tác</th>
-                                        <th>Id</th>
+                                        <th>STT</th>
                                         <th>Email Accounts</th>
                                         <th>Tên Accounts</th>
-                                        <th>Mật Khẩu</th>
+                                        <th><button id="show" class="btn btn-outline-success" type="button">Check Password</button></th>
                                         <th>Số Điện Thoại</th>
                                         <th>Địa Chỉ</th>
                                         <th>Ngày Sinh</th>
@@ -53,9 +53,12 @@
                                             <td>{{$use->id}}</td>
                                             <td>{{$use->email}}</td>
                                             <td>{{$use->name}}</td>
-                                            <td>{{$use->password}}</td>
+                                            <td>
+                                             
+                                                <textarea class="password" cols="10" rows="2" style="display: none;width: 300px !important;">{{$use->password}}</textarea>
+                                            </td>
                                             <td>{{$use->dien_thoai}}</td>
-                                            <td><textarea cols="30" rows="3">{{$use->dia_chi}}</textarea></td>
+                                            <td><textarea cols="30" rows="2" style="text-align: center">{{$use->dia_chi}}</textarea></td>
                                             <td>{{$use->ngay_sinh}}</td>
                                             <td>{{$use->gioi_tinh}}</td>
                                             <td>
@@ -71,6 +74,7 @@
                             </table>
                         </div>
                         <!--Table-->
+                        {{ $user->links() }}
                     </div>
                 </div>
             </div>

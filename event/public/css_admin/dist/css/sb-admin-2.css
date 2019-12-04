@@ -3,9 +3,11 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
-
+ @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 body {
     background-color: #f8f8f8;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
 }
 
 #wrapper {
@@ -367,3 +369,230 @@ table.dataTable thead .sorting:after {
     vertical-align: middle !important;
     white-space: nowrap !important;
 }
+#show{
+    outline: none;
+    border: 1px solid #2ecc71;
+    background-color: #fff !important;
+    font-weight: bold;
+    
+}
+.table-responsive::-webkit-scrollbar-track
+{
+	border: 1px solid #a5b1c2;
+    background-color: #fff;
+    height: 10px !important;
+    max-width: 10px !important;
+}
+
+.table-responsive::-webkit-scrollbar
+{
+	max-width: 10px !important;
+    background-color: #a5b1c2;
+    height: 10px !important;
+}
+
+.table-responsive::-webkit-scrollbar-thumb
+{
+	max-width: 10px !important;
+    background-color: #a5b1c2;	
+    height: 10px !important;
+}
+
+.form-control{
+    padding: 10px !important;
+    height: 45px !important;
+    outline: none !important;
+    border: 1px solid #a5b1c2 !important;
+}
+.btn{
+    padding: 10px !important;
+}
+.error{
+    font-size: 14px;
+    line-height: 1.3;
+    padding: 0;
+    margin: 0;
+    color: red;
+}
+
+/* chart */
+.box_content{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.chart{
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-image: url(../../../images/dashboard/chart.png);
+    width: 527px;
+    height: 367px;
+    margin: 0 auto;
+    padding: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+}
+.line_chart{
+    position: absolute;
+    background-image: url(../../../images/dashboard/line_chart.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    width: 384px;
+    height: 252px;
+    bottom: 6px;
+    left: 190px;
+    -webkit-animation-name: run; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+    animation-name: run;
+    animation-duration: 1s;
+}
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes run {
+    from {height: 0px;}
+    to {height: 252px;}
+  }
+  
+  /* Standard syntax */
+  @keyframes run {
+    from {height: 0px;}
+    to {height: 252px;}
+  }
+.kets{
+    position: absolute;
+    background-image: url(../../../images/dashboard/kets.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    width: 14px;
+    height: 39px;
+    top: 222px;
+    right: 312px;  
+}
+.line_txt_1{
+    position: absolute;
+    width: 80px;
+    height: 9px;
+    left: 215px;
+    top: 80px;
+    border-right: 1px solid #231F20;
+    border-top: 1px solid #231F20;
+    border-left: 1px solid #231F20;
+}
+.txt_lf_1{
+    position: absolute;
+    top: 110px;
+    left: 207px;
+    font-size: 14px;
+    line-height: 1.3;
+    padding: 0;
+    margin: 0;
+    color: #347ab6;
+}
+.txt_lf_2{
+    position: absolute;
+    top: 90px;
+    left: 285px;
+    font-size: 14px;
+    line-height: 1.3;
+    padding: 0;
+    margin: 0; 
+    color: #5bb85d;
+}
+.txt_blue{
+    position: absolute;
+    font-size: 14px;
+    line-height: 1.3;
+    padding: 0;
+    margin: 0;
+    top: 60px;
+    left: 240px;
+    color: ;
+}
+.text_blue{
+    font-size: 14px;
+    line-height: 1.3;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    position: absolute;
+    top: 5px;
+    right: 65px;
+
+}
+.line_txt_2{
+    position: absolute;
+    width: 74px;
+    height: 9px;
+    right: 245px;
+    top: 195px;
+    border-right: 1px solid #231F20;
+    border-top: 1px solid #231F20;
+    border-left: 1px solid #231F20; 
+}
+.txt_red{
+    padding: 0;
+    margin: 0;
+    line-height: 1.3;
+    top: 175px;
+    right: 261px;
+    position: absolute;
+}
+.txt_rg_1{
+    position: absolute;
+    top: 205px;
+    right: 295px;
+    font-size: 14px;
+    line-height: 1.3;
+    padding: 0;
+    margin: 0; 
+    color: #efad4d; 
+}
+.txt_rg_2{
+    position: absolute;
+    top: 205px;
+    right: 225px;
+    font-size: 14px;
+    line-height: 1.3;
+    padding: 0;
+    margin: 0;  
+    color: #d9544f; 
+}
+.text_green{
+    font-size: 14px;
+    line-height: 1.3;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    position: absolute;  
+    top: 33px;
+    right: 80px;
+}
+.sock{
+    display: none;
+}
+.text_yellow{
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+    line-height: 1.3;
+    top: 65px;
+    right: 80px;
+    position: absolute;
+}
+.text_red{
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+    line-height: 1.3;
+    top: 93px;
+    right: 75px;
+    position: absolute;  
+}
+/* chart */
+

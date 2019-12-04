@@ -71,7 +71,11 @@
                             </div>
                             <div class="form-group">
                                 <label>Số lượng vé</label>
-                                <input class="form-control" name="so_luong_ve" value="{{$duyet->so_luong_ve}}" type="text" readonly/>
+                                <input class="form-control" name="so_luong_ve_thuong" value="{{$duyet->so_luong_ve_thuong}}" type="text" readonly/>
+                            </div>
+                            <div class="form-group">
+                                <label>Số lượng vé vip</label>
+                                <input class="form-control" name="so_luong_ve_vip" value="{{$duyet->so_luong_ve_vip}}" type="text" readonly/>
                             </div>
                             <div class="form-group">
                                 <label>Nơi diễn ra sự kiện</label>
@@ -143,7 +147,7 @@
                                 type="radio" >Có
                                 </label>
                             </div>
-                            <button type="submit" class="btn btn-default">DUYỆT BÀI</button>
+                            <button type="submit" class="btn btn-success">DUYỆT BÀI</button>
                         <form>
                     </div>
                 </div>

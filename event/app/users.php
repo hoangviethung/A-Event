@@ -8,6 +8,8 @@ class users extends Model
 {
     
     protected $table = "user";
-    protected $primaryKey = 'id';
+    public function type_events(){
+        return $this->hasMany('App\events','id','name');
+    }
     public $timestamps=false;
 }

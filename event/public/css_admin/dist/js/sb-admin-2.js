@@ -34,3 +34,8 @@ $(function() {
         element.addClass('active');
     }
 });
+setTimeout(function(){
+    $('.sock').fadeIn(300);
+}, 800);
+
+

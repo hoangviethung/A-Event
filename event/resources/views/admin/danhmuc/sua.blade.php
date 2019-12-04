@@ -12,30 +12,27 @@
                     </div>
                     <!-- /.col-lg-12 -->
                     <div class="col-lg-7" style="padding-bottom:120px">
-                        @if(count($errors) > 0)
-                            <div class="alert alert-danger">
-                                @foreach($errors->all() as $err)
-                                    {{$err}} <br>
-                                @endforeach
-                            </div>
-                        @endif
-
                         @if(session('thongbao'))
-
                             <div class="alert alert-success">  {{session('thongbao')}}</div>
-
                         @endif
 
                         <form action="admin/danhmuc/sua/{{$danhmuc->id}}" method="POST">
                             <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                             <!-- để truyền dữ liệu phải cho nó 1 cái token -->
-                            <div class="form-group">
-                                <label>Tên danh mục</label>
-                                <input class="form-control" name="ten_loai" placeholder="Nhập tên danh mục" value="{{$danhmuc->ten_loai}}"/>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Tên danh mục</label>
+                                        <input class="form-control" name="ten_loai" placeholder="Nhập tên danh mục" value="{{$danhmuc->ten_loai}}"/>
+                                        @if($errors->has('ten_loai'))
+                                            <span class="error">
+                                                {{$errors->first('ten_loai')}}
+                                            </span>
+                                        @endif 
+                                    </div>
+                                </div>
                             </div>
-
-                            <button type="submit" class="btn btn-default">Sửa</button>
-                            <button type="reset" class="btn btn-default">Làm mới</button>
+                            <button type="submit" class="btn btn-info">+ SỬA</button>
                         <form>
                     </div>
                 </div>

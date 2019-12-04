@@ -18,7 +18,7 @@
                         <!-- /.col-lg-12 -->
                        <!--Table-->
                     @if(session('thongbao'))
-                       <div class="alert alert-success">
+                       <div class="alert alert-success" style="width: 50% !important">
                             {{session('thongbao')}}
                        </div>
 
@@ -28,7 +28,7 @@
                                 <!--Table head-->
                                 <thead>
                                 <tr>
-                                    <th>Id</th>
+                                    <th>STT</th>
                                     <th>Tên danh mục</th>
                                     <th colspan="2">Thao tác</th>
                                 </tr>

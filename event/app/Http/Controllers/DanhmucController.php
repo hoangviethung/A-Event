@@ -8,6 +8,7 @@ use App\Type_events;
 
 class DanhmucController extends Controller
 {
+    
     public function getDanhsach(){
         $danhmuc = Type_events::all();
         return view('admin.danhmuc.danhsach',['danhmuc'=>$danhmuc]);
@@ -56,7 +57,6 @@ class DanhmucController extends Controller
         $danhmuc = new Type_events;
         $danhmuc->ten_loai = $request->ten_loai;
         $danhmuc->save();
-
         return redirect('admin/danhmuc/them')->with('thongbao','Thêm thành công');
     }
 

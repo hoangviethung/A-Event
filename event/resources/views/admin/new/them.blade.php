@@ -12,86 +12,76 @@
                     </div>
                     <!-- /.col-lg-12 -->
                     <div class="col-lg-7" style="padding-bottom:120px">
-                        <form action="" method="POST" enctype="multipart/form-data" >
+                    @if(session('thongbao'))
+                            <div class="alert alert-success">
+                                {{session('thongbao')}}
+                            </div>
+                        @endif
+                        <form action="admin/new/them" method="POST" enctype="multipart/form-data" >
                             <!-- để truyền dữ liệu phải cho nó 1 cái token -->
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                             <div class="form-group">
+<<<<<<< HEAD
                                 <label>Tên sự kiện</label>
                                 <input class="form-control" name="ten_su_kien" placeholder="Nhập tên sự kiện"/>
                             </div>
                             <div class="form-group">
                                 <label>Logo sự kiện</label>
-                                <input class="form-control" name="logo" id="" type="file"/>
+                                <input class="form-control" name="logo" type="file"/>
+=======
+                                <label>Tiêu đề</label>
+                                <input class="form-control" name="tieu_de" placeholder="Nhập tiêu đề tin"/>
+                                @if($errors->has('tieu_de'))
+                                    <span class="error">
+                                        {{$errors->first('tieu_de')}}
+                                    </span>
+                                @endif
+>>>>>>> 06cd232b6e8601a9ea3f7075a6a6c627bd5e1615
                             </div>
                             <div class="form-group">
-                                <label>Thể loại sự kiện</label>
-                            <select class="form-control" name="id_loai" >
+                                <label>Thể loại tin tức</label>
+                            <select class="form-control" name="loai_tin" >
+                                    @foreach($loaitin as $loaitin)
+                                        <option value="{{$loaitin->id}}">{{$loaitin->ten_loai}}</option>
+                                    @endforeach
                             </select>
                             </div>
                             <div class="form-group">
-                                <label>Ảnh Banner của sự kiện</label>
+                                <label>Ảnh Banner tin tức</label>
                                 <input class="form-control" name="banner" type="file"/>
+                                @if($errors->has('banner'))
+                                    <span class="error">
+                                        {{$errors->first('banner')}}
+                                    </span>
+                                @endif
                             </div>
                             <div class="form-group">
-                                <label>Ngày diễn ra sự kiện</label>
-                                <input class="form-control" name="ngay_dien_ra" type="datetime"/>
+                                <label>Ngày đăng tin</label>
+                                <input class="form-control" name="ngay_dang" type="date"/>
                             </div>
+
                             <div class="form-group">
-                                <label>Giờ diễn ra</label>
-                                <input class="form-control" name="thoi_gian" type="time" />
-                            </div>
-                            <div class="form-group">
-                                <label>Ngày bán vé</label>
-                                <input class="form-control" name="ngay_ban" type="datetime-local"/>
-                            </div>
-                            <div class="form-group">
-                                <label>Giá vé</label>
-                                <input class="form-control" name="gia_ve"  type="number"/>
-                            </div>
-                            <div class="form-group">
-                                <label>Số lượng vé</label>
-                                <input class="form-control" name="so_luong_ve" type="text"/>
-                            </div>
-                            <div class="form-group">
-                                <label>Nơi diễn ra sự kiện</label>
-                                <input class="form-control" name="dia_chi" type="text"/>
-                            </div>
-                            <div class="form-group" style="width: 150%">
-                                <label>Tóm tắt sự kiện ( Hiển thị trên Slider, Sự kiện nổi bật)</label>
-                                <textarea class="form-control ckeditor" id="editor1"  rows="2" cols="20" name="tom_tat"></textarea>
-                            </div>
-                            <div class="form-group" style="width: 150%">
                                 <label>Mô tả sự kiện</label>
-                                <textarea class="form-control ckeditor" id="editor"  rows="3" cols="10"  name="mo_ta"></textarea>
+                                <textarea class="form-control ckeditor" id="editor"  rows="3" cols="10"  name="noi_dung"></textarea>
+                                @if($errors->has('noi_dung'))
+                                    <span class="error">
+                                        {{$errors->first('noi_dung')}}
+                                    </span>
+                                @endif
                             </div>
+
                             <div class="form-group">
-                                <label>Hiển thị sự kiện trên Slider </label>
+                                <label>Tin tức nổi bật </label>
                                 <label class="radio-inline">
-                                <input name="hien_thi_slider" value="0" type="radio" checked="">Không
+                                <input name="noi_bat" value="0" type="radio" checked="">Không
                                 </label>
                                 <label class="radio-inline">
-                                <input name="hien_thi_slider" value="1" type="radio" >Có
-                                </label>
-                            </div>
-                            <div class="form-group">
-                                <label>Hiển thị sự kiện nổi bật </label>
-                                <label class="radio-inline">
-                                <input name="hien_thi_noi_bat" value="0" type="radio" checked="">Không
-                                </label>
-                                <label class="radio-inline">
-                                <input name="hien_thi_noi_bat" value="1" type="radio" >Có
+                                <input name="noi_bat" value="1" type="radio" >Có
                                 </label>
                             </div>
-                            <div class="form-group">
-                                <label>Duyệt bài </label>
-                                <label class="radio-inline">
-                                <input name="duyet" value="0" type="radio" checked="">Không
-                                </label>
-                                <label class="radio-inline">
-                                <input name="duyet" value="1" type="radio" >Có
-                                </label>
-                            </div>
-                            <button type="submit" class="btn btn-default">Thêm</button>
+
+
+                            <button type="submit" class="btn btn-success">+ THÊM</button>
                         <form>
                     </div>
                 </div>

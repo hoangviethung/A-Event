@@ -3,8 +3,7 @@
         <tr>
             <td>
                 <a href="#" target="_blank" style="text-decoration: none;">
-                <img src="" alt="banner" srcset="">
-                
+                    <img src="<?php echo $message->embed($banner); ?>" width="600" style="width: 600px;">
                 </a>
             </td>
         </tr>
@@ -26,36 +25,36 @@
                                 <tr bgcolor="#2aa5b4">
                                     <td style="width: 20%">
                                         <p style="text-align: center;padding: 10px; margin: 0;font-family: K2D,sans-serif;font-size: 14px;color: #fff;line-height: 1.3; font-weight: normal;">
-                                            Tên sự kiện
+                                            Đơn vé
                                         </p>
                                     </td>
                                     <td style="width: 80%">
                                         <p style="text-align: left;padding: 10px; margin: 0;font-family: K2D,sans-serif;font-size: 14px;color: #fff;line-height: 1.3; font-weight: normal;">
-                                            {{$ten_su_kien}}
+                                            Kiểm tra đầy đủ thông tin sau khi đặt vé để tránh khiếu nại về sau
                                         </p>
                                     </td>
                                 </tr>
                                 <tr bgcolor="#159dad">
                                     <td style="width: 20%">
                                         <p style="text-align: center;padding: 10px; margin: 0;font-family: K2D,sans-serif;font-size: 14px;color: #fff;line-height: 1.3; font-weight: normal;">
-                                            Tên khách hàng
+                                            Lịch diễn
                                         </p>
                                     </td>
                                     <td style="width: 80%">
                                         <p style="text-align: left;padding: 10px; margin: 0;font-family: K2D,sans-serif;font-size: 14px;color: #fff;line-height: 1.3; font-weight: normal;">
-                                            {{$ten_khach_hang}}
+                                            Cập nhật chính xác ngày giờ diễn ra sự kiện
                                         </p>
                                     </td>
                                 </tr>
                                 <tr bgcolor="#2aa5b4">
                                     <td style="width: 20%">
                                         <p style="text-align: center;padding: 10px; margin: 0;font-family: K2D,sans-serif;font-size: 14px;color: #fff;line-height: 1.3; font-weight: normal;">
-                                            Số lượng vé
+                                            Vị trí
                                         </p>
                                     </td>
                                     <td style="width: 80%">
                                         <p style="text-align: left;padding: 10px; margin: 0;font-family: K2D,sans-serif;font-size: 14px;color: #fff;line-height: 1.3; font-weight: normal;">
-                                            {{$so_ve}}
+                                            Xem thông tin sau khi đặt vé hoặc quý khách đã tham khảo từ trước
                                         </p>
                                     </td>
                                 </tr>
@@ -67,31 +66,19 @@
                                     </td>
                                     <td style="width: 80%">
                                         <p style="text-align: left;padding: 10px; margin: 0;font-family: K2D,sans-serif;font-size: 14px;color: #fff;line-height: 1.3; font-weight: normal;">
-                                            {{$cho_ngoi}}
+                                            Nhân viên kiểm vé và hướng dẫn đến chỗ ngồi phù hợp
                                         </p>
                                     </td>
                                 </tr>
                                 <tr bgcolor="#2aa5b4">
                                     <td style="width: 20%">
                                         <p style="text-align: center;padding: 10px; margin: 0;font-family: K2D,sans-serif;font-size: 14px;color: #fff;line-height: 1.3; font-weight: normal;">
-                                            Địa chỉ diễn ra
+                                            Kiểm vé
                                         </p>
                                     </td>
                                     <td style="width: 80%">
                                         <p style="text-align: left;padding: 10px; margin: 0;font-family: K2D,sans-serif;font-size: 14px;color: #fff;line-height: 1.3; font-weight: normal;">
-                                            {{$dia_chi}}
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr bgcolor="#159dad">
-                                    <td style="width: 20%">
-                                        <p style="text-align: center;padding: 10px; margin: 0;font-family: K2D,sans-serif;font-size: 14px;color: #fff;line-height: 1.3; font-weight: normal;">
-                                            Mô tả sự kiện
-                                        </p>
-                                    </td>
-                                    <td style="width: 80%">
-                                        <p style="text-align: left;padding: 10px; margin: 0;font-family: K2D,sans-serif;font-size: 14px;color: #fff;line-height: 1.3; font-weight: normal;">
-                                            {!! $mo_ta !!}
+                                            Vui lòng check mã vạch QR để xem chi tiết vé
                                         </p>
                                     </td>
                                 </tr>
@@ -110,7 +97,7 @@
                                 <tr>
                                     <td align="center" style="padding: 10px;">
                                         <a href="#" target="_blank">
-                                            <img src="" alt="QR code" srcset="">
+                                            <img src="https://chart.googleapis.com/chart?cht=qr&chl=Tên sự kiện: <?php echo $ten_su_kien;?>Tên khách hàng: <?php echo $ten_khach_hang;?>Số lượng vé thường: <?php echo $so_ve_thuong;?>Tổng tiền vé thường: <?php echo $tong_tien_thuong?>Số lượng vé vip: <?php echo $so_ve_vip;?>Tổng tiền vé vip: <?php echo $tong_tien_vip?>Tổng tiền khách trả: <?php echo $tong_tien?>&chs=150x150&chld=L|0">
                                         </a>
                                     </td>
                                 </tr>
@@ -127,7 +114,7 @@
                  <table style="width: 100%;" cellpadding="0" cellspacing="0" bgcolor="#323637">
                     <tr>
                         <td align="center" style="padding-top: 10px;">
-                         <img src="" alt="logo aevnt" srcset="">
+                            <img src="<?php echo $message->embed($logo); ?>" width="60" style="width: 60px; height: 60px;">
                         </td>
                     </tr>
                     <tr>

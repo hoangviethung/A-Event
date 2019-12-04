@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 14, 2019 at 08:02 AM
+-- Generation Time: Dec 04, 2019 at 06:36 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.10
 
@@ -25,23 +25,92 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `bills`
+--
+
+CREATE TABLE `bills` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `id_event` int(10) DEFAULT NULL,
+  `ten_nguoi_mua` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` int(11) DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `sl_ve_thuong` int(10) DEFAULT NULL,
+  `tong_tien_ve_thuong` float DEFAULT NULL,
+  `sl_ve_vip` int(11) DEFAULT NULL,
+  `tong_tien_ve_vip` float DEFAULT NULL,
+  `tong_tien` double DEFAULT NULL,
+  `cho_ngoi` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `bills`
+--
+
+INSERT INTO `bills` (`id`, `id_event`, `ten_nguoi_mua`, `phone`, `email`, `sl_ve_thuong`, `tong_tien_ve_thuong`, `sl_ve_vip`, `tong_tien_ve_vip`, `tong_tien`, `cho_ngoi`, `created_at`, `updated_at`) VALUES
+(1, NULL, 'dasdasd', NULL, 'dasdasdasd', 3, 30000, 4, 0, 30000, NULL, NULL, NULL),
+(2, NULL, 'asdasdsad', NULL, 'dasdasdsadad', 2, 0, 2, 0, 0, NULL, NULL, '2019-11-30 18:05:22'),
+(3, NULL, 'asdasdsad', NULL, 'dasdasdsadad', 2, 0, 2, 0, 0, NULL, NULL, '2019-11-30 18:07:23'),
+(6, NULL, NULL, NULL, NULL, 3, 30000, 3, 0, 30000, NULL, NULL, '2019-11-30 18:14:46'),
+(10, 13, 'tuyen', 15455155, 'tuyennvps08127@fpt.edu.vn', 3, 30000, 3, 0, 30000, NULL, NULL, '2019-11-30 18:31:05'),
+(11, 13, 'fdfsdf', 123456788, 'tuyennvps08127@fpt.edu.vn', 3, 30000, 4, 0, 30000, NULL, NULL, '2019-12-01 12:42:50'),
+(12, 1, NULL, NULL, NULL, 3, 3, 3, 3000, 3003, NULL, NULL, '2019-12-01 13:30:06'),
+(13, 1, NULL, NULL, NULL, 3, 3, 3, 3000, 3003, NULL, NULL, '2019-12-01 13:30:58'),
+(14, 1, NULL, NULL, NULL, 3, 3, 3, 3000, 3003, NULL, NULL, '2019-12-01 13:32:40'),
+(15, 1, NULL, NULL, NULL, 3, 3, 3, 3000, 3003, NULL, NULL, '2019-12-01 13:36:01'),
+(16, 1, NULL, NULL, NULL, 3, 3, 3, 3000, 3003, NULL, NULL, '2019-12-01 13:38:51'),
+(17, 1, NULL, NULL, NULL, 3, 3, 3, 3000, 3003, NULL, NULL, '2019-12-01 13:39:08'),
+(18, 1, NULL, NULL, NULL, 3, 3, 3, 3000, 3003, NULL, NULL, '2019-12-01 13:39:27'),
+(19, 2, NULL, NULL, NULL, 3, 3, 5, 0, 3, NULL, NULL, '2019-12-01 15:51:53'),
+(20, 10, 'Nguyễn Tuyến', 356518433, 'tuyennvps08127@fpt.edu.vn', 3, 3000, 4, 0, 3000, NULL, NULL, '2019-12-01 16:23:55'),
+(21, 16, 'Nguyễn Thành Huy', 388831078, 'nguyenhuyy99@gmail.com', 2, 2000, 2, 2000, 4000, NULL, NULL, '2019-12-02 14:33:33'),
+(22, 16, 'Nguyễn Thành Huy', 388831078, 'nguyenhuyy99@gmail.com', 2, 2000, 2, 2000, 4000, NULL, NULL, '2019-12-02 14:34:38'),
+(23, 15, NULL, NULL, NULL, 3, 30000, 3, 30000, 60000, NULL, NULL, '2019-12-02 15:03:41'),
+(24, 15, 'Nguyễn Thành Huy', 388831078, 'huyntps07484@fpt.edu.vn', 2, 20000, 2, 20000, 40000, NULL, NULL, '2019-12-02 15:04:29'),
+(25, 15, 'Nguyễn Thành Huy', 388831078, 'gekkohayate520@gmail.com', 4, 40000, 3, 30000, 70000, NULL, NULL, '2019-12-02 15:13:12'),
+(26, 16, 'Nguyễn Thành Huy', 388831078, 'nguyenhuyy99@Gmail.com', 2, 2000, 2, 2000, 4000, NULL, NULL, '2019-12-02 15:14:30'),
+(27, 16, 'Nguyễn Thành Huy', 388831078, 'nguyenhuyy99@Gmail.com', 2, 2000, 2, 2000, 4000, NULL, NULL, '2019-12-02 15:14:31'),
+(28, 16, 'Nguyễn Thành Huy', 388831078, 'nguyenhuyy99@Gmail.com', 2, 2000, 2, 2000, 4000, NULL, NULL, '2019-12-02 15:17:24'),
+(29, 12, 'Nguyễn Thành Huy', 388831078, 'nguyenhuyy99@Gmail.com', 2, 20000, 2, 0, 20000, NULL, NULL, '2019-12-03 12:56:34'),
+(30, 13, 'Nguyễn Thành Huy', 388831078, 'nguyenhuyy99@Gmail.com', 2, 20000, 2, 0, 20000, NULL, NULL, '2019-12-03 13:29:24'),
+(31, 13, 'Nguyễn Thành Huy', 388831078, 'nguyenhuyy99@Gmail.com', 2, 20000, 2, 0, 20000, NULL, NULL, '2019-12-03 13:30:13'),
+(32, 13, 'Nguyễn Thành Huy', 388831078, 'nguyenhuyy99@Gmail.com', 2, 20000, 2, 0, 20000, NULL, NULL, '2019-12-03 13:31:45'),
+(33, 13, 'Nguyễn Thành Huy', 388831078, 'nguyenhuyy99@Gmail.com', 2, 20000, 2, 0, 20000, NULL, NULL, '2019-12-03 13:32:49'),
+(34, 16, NULL, NULL, NULL, 2, 2000, 2, 0, 2000, NULL, NULL, '2019-12-03 14:23:46'),
+(35, 16, NULL, NULL, NULL, 2, 2000, 2, 0, 2000, NULL, NULL, '2019-12-03 14:23:55'),
+(36, 16, 'Nguyễn Thành Huy', 388831078, 'nguyenhuyy99@Gmail.com', 2, 2000, 2, 2000, 4000, NULL, NULL, '2019-12-03 14:33:11'),
+(37, 16, 'Nguyễn Thành Huy', 388831078, 'nguyenhuyy99@Gmail.com', 2, 2000, 2, 2000, 4000, NULL, NULL, '2019-12-03 14:34:39'),
+(38, 16, 'Nguyễn Thành Huy', 388831078, 'nguyenhuyy99@Gmail.com', 2, 2000, 2, 2000, 4000, NULL, NULL, '2019-12-03 14:36:45'),
+(39, 17, 'Nguyễn Thành Huy', 388831078, 'nguyenhuyy99@Gmail.com', 3, 300000, 3, 3000000, 3300000, NULL, NULL, '2019-12-04 16:23:48');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `events`
 --
 
 CREATE TABLE `events` (
-  `id` int(10) UNSIGNED NOT NULL,
+  `id` int(10) NOT NULL,
   `ten_su_kien` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `nha_tai_tro` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `logo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `id_loai` int(10) NOT NULL,
   `banner` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `ngay_dien_ra` date DEFAULT NULL,
   `thoi_gian` time DEFAULT NULL,
+  `vi_tri_ve_thuong` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `gia_ve` double(8,2) DEFAULT NULL,
+  `qua_tang_thuong` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `vi_tri_ve_vip` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `gia_ve_vip` double DEFAULT NULL,
+  `qua_tang_vip` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `dia_chi` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `ngay_ban` datetime DEFAULT NULL,
   `tom_tat` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `mo_ta` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `so_luong_ve` int(11) DEFAULT NULL,
+  `so_luong_ve_thuong` int(11) DEFAULT NULL,
+  `so_luong_ve_vip` int(11) NOT NULL,
   `hien_thi_slider` tinyint(1) DEFAULT NULL,
   `hien_thi_noi_bat` tinyint(1) DEFAULT NULL,
   `duyet` tinyint(1) DEFAULT NULL
@@ -51,15 +120,16 @@ CREATE TABLE `events` (
 -- Dumping data for table `events`
 --
 
-INSERT INTO `events` (`id`, `ten_su_kien`, `logo`, `id_loai`, `banner`, `ngay_dien_ra`, `thoi_gian`, `gia_ve`, `dia_chi`, `ngay_ban`, `tom_tat`, `mo_ta`, `so_luong_ve`, `hien_thi_slider`, `hien_thi_noi_bat`, `duyet`) VALUES
-(1, 'Sự kiện test', NULL, 1, '1.jpg', '2019-10-02', NULL, 1.00, 'Hà Nội', '0000-00-00 00:00:00', NULL, NULL, 0, 1, 1, 1),
-(2, 'Sự kiện giải trí', NULL, 1, '2.jpg', '2019-10-03', NULL, 1.00, 'TP HCM', '0000-00-00 00:00:00', NULL, NULL, 100, 1, 1, 1),
-(3, 'Sự kiện 1', NULL, 1, '3.jpg', '2019-10-17', NULL, 100000.00, 'TP HCM', '0000-00-00 00:00:00', NULL, NULL, 100, 1, 1, 1),
-(4, 'Sự kiện kiến thức', '4nWQu7elOj_LeeSin.png', 3, 'S68KvVAcsK_LeeSin.png', '2019-10-10', NULL, 10000.00, 'Hà Nội', '2019-10-10 00:00:00', NULL, '<p><u><em><strong>asdkjasgkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk</strong></em></u></p>', 1000, 1, 0, 1),
-(6, 'Test chức năng phê duyệt', 'edS95pp9QC_LeeSin.png', 2, 'QpVi8wdhDA_LeeSin.png', '2020-02-01', '14:02:00', 100000.00, 'HCM', '2019-01-01 02:00:00', '<p>sdasd</p>', '<h1>asdasdadasdas</h1>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><img alt=\"\" src=\"http://localhost/A-Event/event/public/images/product/images/Capture.PNG\" style=\"width: 352px; height: 360px;\" /></p>', 100, 1, 0, 1),
-(9, 'sadasdfasdfgashdfghasf', '2yoRbqqs8r_LeeSin.png', 1, 'ZogfvqXlyy_LeeSin.png', '2019-11-08', '15:00:00', 100000.00, 'sdasdasd', '2020-01-01 01:00:00', '<p>asd</p>', '<p>d</p>', 1000, 0, 0, 1),
-(10, 'Test nha dsasd', '42HFLmc5FU_LeeSin.png', 2, 'aeesIXC15T_LeeSin.png', '2020-02-02', '02:01:00', 1000.00, 'Ho Chi Minh City', NULL, NULL, '<p>sd</p>', 10000, 0, 0, 1),
-(11, 'Test Add Event', 'trQzNoPcT2_banner.png', 3, '09VFsWbsyr_header.png', '2020-02-02', '02:01:00', 1000.00, 'Ho Chi Minh City', NULL, NULL, '<p>sds</p>', 10000, 0, 0, 1);
+INSERT INTO `events` (`id`, `ten_su_kien`, `nha_tai_tro`, `logo`, `id_loai`, `banner`, `ngay_dien_ra`, `thoi_gian`, `vi_tri_ve_thuong`, `gia_ve`, `qua_tang_thuong`, `vi_tri_ve_vip`, `gia_ve_vip`, `qua_tang_vip`, `dia_chi`, `ngay_ban`, `tom_tat`, `mo_ta`, `so_luong_ve_thuong`, `so_luong_ve_vip`, `hien_thi_slider`, `hien_thi_noi_bat`, `duyet`) VALUES
+(1, 'Sự kiện test', NULL, NULL, 1, '1.jpg', '2019-10-02', NULL, NULL, 1.00, NULL, NULL, NULL, NULL, 'Hà Nội', '0000-00-00 00:00:00', NULL, NULL, 0, 0, 1, 1, 1),
+(2, 'Sự kiện giải trí', NULL, NULL, 1, '2.jpg', '2019-10-03', NULL, NULL, 1.00, NULL, NULL, NULL, NULL, 'TP HCM', '0000-00-00 00:00:00', NULL, NULL, 100, 0, 1, 1, 1),
+(3, 'Sự kiện 1', NULL, NULL, 1, '3.jpg', '2019-10-17', NULL, NULL, 100000.00, NULL, NULL, NULL, NULL, 'TP HCM', '0000-00-00 00:00:00', NULL, NULL, 100, 0, 1, 1, 1),
+(10, 'Test nha dsasd', NULL, '42HFLmc5FU_LeeSin.png', 2, 'aeesIXC15T_LeeSin.png', '2020-02-02', '02:01:00', NULL, 1000.00, NULL, NULL, NULL, NULL, 'Ho Chi Minh City', NULL, NULL, '<p>sd</p>', 10000, 0, 0, 0, 1),
+(12, 'sadasdsad', NULL, 'LS73yPQyX2_521EC9.jpg', 1, '9MFzUQZyt1_521EC9.jpg', '2020-02-02', '01:01:00', NULL, 10000.00, NULL, NULL, NULL, NULL, 'asdasdas', '2019-02-02 14:01:00', '<p>sadasdas</p>', '<p>sadasd</p>', 10000, 0, 0, 0, 1),
+(13, 'Test nha', 'sadsad', 'hEg9dob1cS_521EC9.jpg', 1, '2Rkyz1JCbM_521EC9.jpg', '2019-02-04', '01:00:00', NULL, 10000.00, NULL, NULL, NULL, NULL, 'dsadas', '2019-01-01 00:00:00', '<p>sadsadsadsa</p>', '<p>sadasd</p>', 10000, 0, 0, 0, 1),
+(15, 'Test nha sadasdas dasdsad', 'sadsadasd', '0Fm3PR34e0_521EC9.jpg', 1, 'yNJeZ68eZ1_521EC9.jpg', '2019-02-04', '01:00:00', 'sadsadsadsad', 10000.00, 'asdsadsadsadasdas', 'dsadsadasdsa', 10000, 'dsadsadsadsadas', '350 Lê đức thọ, phường 6 , quận gò vấp', '2019-01-01 00:00:00', '<p>sadsadsadsa</p>', '<p>sadasd</p>', 10000, 0, 0, 0, 1),
+(16, 'Test nha sadsadasdas', 'sadsad', 'LIUhalxsdS_521EC9.jpg', 2, 'nswvwwxpOB_521EC9.jpg', '2020-02-02', '15:03:00', 'TESTTSDASsadasdasdsa', 1000.00, 'sadsadsadsadsadsadsadsadsad', 'asdsaassadasdsadas', 1000, 'sadasdsaasdasdsadsa', '100 Nguyễn Trải , Quận 5', '2020-02-02 00:00:00', '<p>sadsadasdsad</p>', '<p>sadasdsad</p>', 100, 100, 1, 1, 1),
+(17, 'test choi choi', 'Grab', '1VBdut8VDd_Capture.PNG', 2, 'HZb5glnEQk_Capture.PNG', '2019-02-15', '02:01:00', 'Nhà  vệ sinh Nữ', 100000.00, 'sex toy dsadsadsada', 'sextoy', 1000000, NULL, 'HCM', NULL, NULL, '<p>fdsfdsfds</p>', 1000, 1000, 0, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -92,6 +162,28 @@ CREATE TABLE `images_event` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `loaitin`
+--
+
+CREATE TABLE `loaitin` (
+  `id` int(10) NOT NULL,
+  `ten_loai` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `loaitin`
+--
+
+INSERT INTO `loaitin` (`id`, `ten_loai`, `created_at`, `updated_at`) VALUES
+(1, 'GIẢI TRÍ', '2019-12-04 16:12:57', '2019-12-04 16:12:57'),
+(2, 'HỌC HỎI', '2019-12-04 16:13:34', '2019-12-04 16:13:34'),
+(3, 'CÁC LĨNH VỰC KHÁC', '2019-12-04 16:13:38', '2019-12-04 16:13:38');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `migrations`
 --
 
@@ -117,7 +209,11 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (14, '2019_10_24_234232_admin', 8),
 (21, '2019_10_21_215139_images_event', 9),
 (22, '2019_10_21_215741_news', 9),
-(23, '2019_11_02_215354_create_social_accounts_table', 10);
+(23, '2019_11_02_215354_create_social_accounts_table', 10),
+(24, '2019_11_17_145525_create_seenmail', 11),
+(25, '2019_11_26_205701_bills', 11),
+(26, '2019_12_04_224547_loaitin', 12),
+(27, '2019_12_04_224657_tintuc', 13);
 
 -- --------------------------------------------------------
 
@@ -152,6 +248,23 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `seenmail`
+--
+
+CREATE TABLE `seenmail` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `ten_su_kien` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ten_khach_hang` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `so_ve` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `cho_ngoi` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `dia_chi` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `mo_ta` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `short_links`
 --
 
@@ -176,6 +289,31 @@ CREATE TABLE `social_accounts` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tintuc`
+--
+
+CREATE TABLE `tintuc` (
+  `id` int(10) NOT NULL,
+  `loai_tin` int(11) NOT NULL,
+  `tieu_de` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `banner` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ngay_dang` datetime NOT NULL,
+  `noi_dung` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `noi_bat` tinyint(4) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `tintuc`
+--
+
+INSERT INTO `tintuc` (`id`, `loai_tin`, `tieu_de`, `banner`, `ngay_dang`, `noi_dung`, `noi_bat`, `created_at`, `updated_at`) VALUES
+(1, 1, 'asdsadsa', 'sadsadsa', '2019-10-24 00:00:00', 'asdsadsadsadsadsa', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -207,6 +345,8 @@ INSERT INTO `type_events` (`id`, `ten_loai`, `created_at`, `updated_at`) VALUES
 
 CREATE TABLE `user` (
   `id` bigint(20) UNSIGNED NOT NULL,
+  `id_fb` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id_gg` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `name` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `password` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -216,20 +356,31 @@ CREATE TABLE `user` (
   `gioi_tinh` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `hinh` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `vip` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `type` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `type` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `email`, `name`, `password`, `dien_thoai`, `dia_chi`, `ngay_sinh`, `gioi_tinh`, `hinh`, `vip`, `type`) VALUES
-(1, 'nguyentuyen1322@gmail.com', 'Tuyen Nguyen', '$2y$10$50iEPmhhrqPZzSzK3EjQyuy58GHljDipqNHgx7L87f3tIt.jdkXOa', 356518436, 'tp hcm', '2019-11-21', 'Nam', '10710964d7a550c32f92749adcd8d793_cS-6.jpg', 'Normal', '1'),
-(2, 'admin@gmail.com', 'Admin', '$2y$10$0QFAWdoWtsatLCPJzOm.yeKJ8M.0SupSOIcpRO8Bb7DahWjgfOXu.', 356518436, 'Thành Phố Hồ Chí Minh', '2019-11-01', 'Nam', '54671d405544766eaeb406fb19c20850_cS-7.jpg', 'V.I.P', '2');
+INSERT INTO `user` (`id`, `id_fb`, `id_gg`, `email`, `name`, `password`, `dien_thoai`, `dia_chi`, `ngay_sinh`, `gioi_tinh`, `hinh`, `vip`, `type`) VALUES
+(1, NULL, NULL, 'nguyentuyen1322@gmail.com', 'Tuyen Nguyen', '$2y$10$50iEPmhhrqPZzSzK3EjQyuy58GHljDipqNHgx7L87f3tIt.jdkXOa', 356518436, 'tp hcm', '2019-11-21', 'Nam', '10710964d7a550c32f92749adcd8d793_cS-6.jpg', 'Normal', '1'),
+(2, NULL, NULL, 'admin@gmail.com', 'Admin', '$2y$10$T0J6WF5aNtcOGw.N8wsfwOxWW59LKQmkTxzwaCAKnnbhovYMnt5Mm', 356518436, 'Thành Phố Hồ Chí Minh', '2019-11-01', 'Nam', '54671d405544766eaeb406fb19c20850_cS-7.jpg', 'V.I.P', '2'),
+(11, '1385068081652444', NULL, NULL, 'Nguyễn Văn Tuyến', NULL, NULL, NULL, NULL, NULL, 'https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=1385068081652444&height=50&width=50&ext=1577039780&hash=AeTC9iiqXORYVvuJ', NULL, '1'),
+(60, NULL, NULL, 'nguyenkun1322@gmail.com', 'Ba Bự', '$2y$10$GQnj7Mu3fIxHiaO0XoO69uBY5A9A.BEi96Nq7i1vGrm2ssiFbdz2K', 356518433, 'tp hcm', '2019-11-07', 'Nam', '405d7840de09f515b2dba8fc47d90434_2.jpg', 'V.I.P', '1'),
+(61, NULL, '100224081791743476043', 'nguyentuyen1322@gmail.com', 'tuyen nguyen', NULL, NULL, NULL, NULL, NULL, 'https://lh3.googleusercontent.com/a-/AAuE7mCD0vVOoHqaaQvjBOhb9G_NFEgaLqZpZjRBQkkv', NULL, '1'),
+(62, NULL, NULL, 'huyntps07484@fpt.edu.vn', 'nguyenhuyy99', '$2y$10$tgfvO6Eeq8kaQAIRfhhq0u.96EpDBjD7yXW6QZMdHa5X331WqwWZ6', 388831078, 'TP HCM', '2020-03-01', 'Nam', '221536f6b594e3f0b8eb512f42aa2edb_Capture.PNG', 'Normal', '1');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `bills`
+--
+ALTER TABLE `bills`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_event` (`id_event`);
 
 --
 -- Indexes for table `events`
@@ -251,6 +402,12 @@ ALTER TABLE `images_event`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `loaitin`
+--
+ALTER TABLE `loaitin`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
@@ -269,10 +426,23 @@ ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
+-- Indexes for table `seenmail`
+--
+ALTER TABLE `seenmail`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `short_links`
 --
 ALTER TABLE `short_links`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tintuc`
+--
+ALTER TABLE `tintuc`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `tintuc` (`loai_tin`);
 
 --
 -- Indexes for table `type_events`
@@ -291,10 +461,16 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `bills`
+--
+ALTER TABLE `bills`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+
+--
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -309,10 +485,16 @@ ALTER TABLE `images_event`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `loaitin`
+--
+ALTER TABLE `loaitin`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `news`
@@ -321,10 +503,22 @@ ALTER TABLE `news`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `seenmail`
+--
+ALTER TABLE `seenmail`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `short_links`
 --
 ALTER TABLE `short_links`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tintuc`
+--
+ALTER TABLE `tintuc`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `type_events`
@@ -336,7 +530,7 @@ ALTER TABLE `type_events`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- Constraints for dumped tables
@@ -347,6 +541,12 @@ ALTER TABLE `user`
 --
 ALTER TABLE `events`
   ADD CONSTRAINT `events_ibfk_1` FOREIGN KEY (`id_loai`) REFERENCES `type_events` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `tintuc`
+--
+ALTER TABLE `tintuc`
+  ADD CONSTRAINT `tintuc` FOREIGN KEY (`loai_tin`) REFERENCES `loaitin` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

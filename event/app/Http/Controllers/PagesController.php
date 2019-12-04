@@ -4,20 +4,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\users;
-use App\Slide;
 use App\Events;
 use App\Rules\Captcha;
 use App\News;
 use App\Type_events;
-use Carbon\Carbon;
 use Facebook\Facebook;
 use Illuminate\Support\Facades\Cookie;
-
 
 class PagesController extends Controller
 {
     function __construct()
     {
+
         if(Auth::check()){
             view()->share('user', Auth::user());
         }
@@ -26,14 +24,20 @@ class PagesController extends Controller
             view()->share('loginfb',json_decode($request->cookie('loginfb')));
             return $next($request);
         });
+        $this->middleware(function ($request, $next) {
+             if($request->cookie('logingg'))
+            view()->share('logingg',json_decode($request->cookie('logingg')));
+            return $next($request);
+        });
     }
     public function getIndex(){
         $slide = Events::where([['hien_thi_slider',1],['duyet',1],])->orderBy('id','desc')->get();
         $giaitri = Events::where([['id_loai',1],['duyet',1],])->orderBy('id','desc')->get();
         $kienthuc = Events::where([['id_loai',2],['duyet',1],])->orderBy('id','desc')->get();
         $sukienkhac = Events::where([['id_loai',3],['duyet',1],])->orderBy('id','desc')->get();
+        $noibat = Events::where([['hien_thi_noi_bat',1],['duyet',1],])->orderBy('id','desc')->get();
         $new_01= News::get();
-        return view('pages.body',compact('slide','giaitri','kienthuc','new_01','sukienkhac'));
+        return view('pages.body',compact('slide','giaitri','kienthuc','new_01','sukienkhac','noibat'));
     }
     public function getSearch(){
         return view('pages.search');
@@ -44,6 +48,7 @@ class PagesController extends Controller
         return view('pages.search',['event'=>$event,'tukhoa'=>$tukhoa,'sreach'=>$event]);
     }
     public function getLogin(){
+
         session_start();
         $fb = new Facebook([
             'app_id' => '420853728859282',
@@ -61,6 +66,18 @@ class PagesController extends Controller
     public function getChitiet(Request $req){
         $chitiet = Events::where('id',$req->id)->first();
         return view('pages.chitiet',compact('chitiet'));
+    }
+    public function getDanhmuc($id)
+    {
+        $danhmuc = Type_events::find($id);
+        $sukien = Events::where('id_loai',$id)->paginate(9);
+        return view('pages.danhmuc',['danhmuc'=>$danhmuc,'sukien'=>$sukien,'id'=>$id]);
+    }
+    public function postDanhmuc(Request $request){
+        $timkiem = $request->timkiem;
+        $danhmuc = Type_events::find($request->id);
+        $event = Events::where('id_loai',$request->id)->where('ten_su_kien','like',"%$timkiem%")->orWhere('dia_chi','like',"%$timkiem%")->orWhere('tom_tat','like',"%$timkiem%")->take(12)->get();
+        return view('pages.danhmuc',['danhmuc'=>$danhmuc,'sukien'=>$event,'tukhoa'=>$timkiem,'sreach'=>$event,'id'=>$request->id]);
     }
 
     public function postLogin(Request $request){
@@ -162,6 +179,9 @@ class PagesController extends Controller
         Cookie::queue(
             Cookie::forget('loginfb')
         );
+        Cookie::queue(
+            Cookie::forget('logingg')
+        );
         Auth::logout();
         return redirect('pages/index');
 
@@ -187,6 +207,7 @@ class PagesController extends Controller
             ]);
 
         $arr = ['name' => $request->name, 'password' =>$request->password];
+        $this->getDangxuat();
         if(Auth::attempt($arr)){
             return redirect('admin/dashboard')->with('thongbao', 'Đăng nhập thành công !');
         }else{
@@ -196,7 +217,11 @@ class PagesController extends Controller
     }
 
     public function getDashboard(){
-        return view('admin.layouts.index');
+        $event = Events::all();
+        $users = users::all();
+        $Type_events = Type_events::all();
+        $News = News::all();
+        return view('admin.dashboard.dashboard',['event'=>$event,'users'=>$users,'type_events'=>$Type_events,'news'=>$News]);
     }
     // QL User
 

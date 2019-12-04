@@ -31,12 +31,31 @@ Route::group(['prefix'=>'pages'], function(){
         'as' =>'chitiet',
         'uses'=>'PagesController@getChitiet',
     ]);
-    
-    Route::get('bookingone','BookingController@getBookingone');
-    Route::post('bookingone','BookingController@postBookingone');
 
-    Route::get('bookingtwo','BookingController@getBookingtwo');
-    Route::post('bookingtwo','BookingController@postBookingtwo');
+    Route::get('bookingone/{id}',[
+        'as' => 'bookingone',
+        'uses' => 'BookingController@getBookingone',
+    ]);
+
+    Route::get('bookingtwo/{id}',[
+        'as' => 'bookingtwo',
+        'uses' =>'BookingController@getBookingtwo']);
+
+    Route::post('bookingtwo/{id}',[
+                'as' => 'postbookingtwo',
+                'uses' =>'BookingController@postBookingtwo']);
+
+    Route::post('bookingthree/{id}',[
+                'as' => 'postBookingthree',
+                'uses' =>'BookingController@postBookingthree']);
+
+    Route::get('bookingthree/{id}', 'BookingController@getBookingthree');
+
+    Route::get('danhmuc/{id}',[
+        'as' => 'danhmuc',
+        'uses' => 'PagesController@getDanhmuc',
+    ]);
+    Route::post('danhmuc/{id}', 'PagesController@postDanhmuc');
 
     Route::get('login', 'PagesController@getLogin');
     Route::post('login', 'PagesController@postLogin');
@@ -46,14 +65,10 @@ Route::group(['prefix'=>'pages'], function(){
 
     Route::get('dangxuat', 'PagesController@getDangxuat');
 
-    Route::get('login/facebook', 'Auth\SocialController@redirectToProvider');
-    Route::get('login/facebook/callback', 'Auth\SocialController@handleProviderCallback');
-
-
-    Route::get('login/google', 'Auth\SocialController@redirectToProvider');
-    Route::get('login/google/callback', 'Auth\SocialController@handleProviderCallback');
-
     Route::get('login/loginsuccess', 'Auth\SocialController@loginsuccess');
+
+    Route::get('login/{provider}', 'Auth\SocialController@redirectToGoogle');
+    Route::get('login/{provider}/callback', 'Auth\SocialController@handleGoogleCallback');
 
 });
 // pages website
@@ -78,7 +93,7 @@ Route::group(['prefix'=>'admin','middleware'=>'checklogin'], function(){
         Route::get('them', 'DanhmucController@getThem');
         Route::post('them', 'DanhmucController@postThem');
         // Hàm post nhận dữ liệu về và lưu vào cơ sở dữ liệu
-        Route::get('xoa', 'DanhmucController@getXoa');
+        Route::get('xoa/{id}', 'DanhmucController@getXoa');
     });
     // danhmuc
 
@@ -100,11 +115,41 @@ Route::group(['prefix'=>'admin','middleware'=>'checklogin'], function(){
         Route::get('pheduyet/{id}', 'EventController@getDuyet');
         Route::post('pheduyet/{id}', 'EventController@postDuyet');
     });
+    // Loại tin
+    Route::group(['prefix' => 'loaitin'], function () {
+
+        Route::get('danhsach','LoaitinController@getDanhsach');
+
+        Route::get('sua/{id}', 'LoaitinController@getSua');
+        Route::post('sua/{id}', 'LoaitinController@postSua');
+
+
+        Route::get('them', 'LoaitinController@getThem');
+        Route::post('them', 'LoaitinController@postThem');
+        // Hàm post nhận dữ liệu về và lưu vào cơ sở dữ liệu
+        Route::get('xoa/{id}', 'NewController@getXoa');
+
+    });
+    // Tin tức
+    Route::group(['prefix' => 'news'], function () {
+
+        Route::get('danhsach','NewController@getDanhsach');
+
+        Route::get('sua/{id}', 'NewController@getSua');
+        Route::post('sua/{id}', 'NewController@postSua');
+
+
+        Route::get('them', 'NewController@getThem');
+        Route::post('them', 'NewController@postThem');
+        // Hàm post nhận dữ liệu về và lưu vào cơ sở dữ liệu
+        Route::get('xoa/{id}', 'NewController@getXoa');
+
+    });
     // Addevent
     Route::group(['prefix' => 'new'], function () {
 
         Route::get('danhsach','NewController@getDanhsach');
-        
+
         Route::get('sua', 'NewController@getSua');
         Route::post('sua', 'NewController@postSua');
 
@@ -128,12 +173,11 @@ Route::group(['prefix'=>'admin','middleware'=>'checklogin'], function(){
     });
     // Accounts
     // Seenmail
-    Route::group(['prefix' => 'seenmail'], function () {
+    Route::group(['prefix' => 'booking'], function () {
 
         Route::get('danhsach','SeenmailController@getDanhsach');
-        
-        Route::get('getmail','SeenmailController@getThongbao');
-        Route::post('postmail', 'SeenmailController@postThongbao');
+
+        Route::get('xoa/{id}', 'SeenmailController@getXoa');
     });
     // Seenmail
     Route::get('dashboard', 'PagesController@getDashboard');
