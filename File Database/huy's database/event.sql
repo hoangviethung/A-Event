@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 04, 2019 at 06:36 PM
+-- Generation Time: Dec 05, 2019 at 08:31 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.10
 
@@ -301,7 +301,7 @@ CREATE TABLE `tintuc` (
   `loai_tin` int(11) NOT NULL,
   `tieu_de` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `banner` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `ngay_dang` datetime NOT NULL,
+  `ngay_dang` date NOT NULL,
   `noi_dung` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `noi_bat` tinyint(4) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -313,7 +313,7 @@ CREATE TABLE `tintuc` (
 --
 
 INSERT INTO `tintuc` (`id`, `loai_tin`, `tieu_de`, `banner`, `ngay_dang`, `noi_dung`, `noi_bat`, `created_at`, `updated_at`) VALUES
-(1, 1, 'asdsadsa', 'sadsadsa', '2019-10-24 00:00:00', 'asdsadsadsadsadsa', NULL, NULL, NULL);
+(2, 1, 'Test tin', 'fqvp09uiMv_services.png', '2019-12-18', '<p>sadsadsa</p>', 1, '2019-12-05 03:35:34', '2019-12-05 06:47:06');
 
 -- --------------------------------------------------------
 
@@ -518,7 +518,7 @@ ALTER TABLE `short_links`
 -- AUTO_INCREMENT for table `tintuc`
 --
 ALTER TABLE `tintuc`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `type_events`
