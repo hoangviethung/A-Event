@@ -22,7 +22,7 @@ class NewController extends Controller
     public function postThem(Request $request){
        $this->validate($request,
        [
-        'tieu_de' => 'required|unique:News,tieu_de|min:2|max: 100|',
+        'tieu_de' => 'required|unique:tintuc,tieu_de|min:2|max: 100|',
         'banner'=>'required|mimes:jpeg,png,jpg,gif,svg|max:2048|',
         'noi_dung'=>'required',
        ],
@@ -41,7 +41,6 @@ class NewController extends Controller
        $news = new News;
        $news->tieu_de = $request->tieu_de;
        $news->loai_tin = $request->loai_tin;
-       $news->ngay_dang = $request->ngay_dang;
        $news->noi_dung = $request->noi_dung;
        $news->noi_bat= $request->noi_bat;
 
@@ -91,7 +90,6 @@ class NewController extends Controller
 
         $news->tieu_de = $request->tieu_de;
         $news->loai_tin = $request->loai_tin;
-        $news->ngay_dang = $request->ngay_dang;
         $news->noi_dung = $request->noi_dung;
         $news->noi_bat= $request->noi_bat;
 

@@ -8,6 +8,7 @@ use App\Events;
 use App\Rules\Captcha;
 use App\News;
 use App\Type_events;
+use App\Type_news;
 use Facebook\Facebook;
 use Illuminate\Support\Facades\Cookie;
 
@@ -36,8 +37,11 @@ class PagesController extends Controller
         $kienthuc = Events::where([['id_loai',2],['duyet',1],])->orderBy('id','desc')->get();
         $sukienkhac = Events::where([['id_loai',3],['duyet',1],])->orderBy('id','desc')->get();
         $noibat = Events::where([['hien_thi_noi_bat',1],['duyet',1],])->orderBy('id','desc')->get();
-        $new_01= News::get();
-        return view('pages.body',compact('slide','giaitri','kienthuc','new_01','sukienkhac','noibat'));
+        $new_01= News::where('noi_bat',1)->get();
+        $news_moi = News::orderBy('id','desc')->get();
+        $news = News::all();
+        $news_type = Type_news::all();
+        return view('pages.body',compact('slide','giaitri','kienthuc','new_01','sukienkhac','noibat','news_moi','news','news_type'));
     }
     public function getSearch(){
         return view('pages.search');

@@ -51,7 +51,7 @@
 										<figcaption>
 											<div class="name-event wow fadeIn" data-wow-delay=".3s">
 												<h3>{{$noibat->ten_su_kien}}</h3>
-												<h5 class="wow fadeIn" data-wow-duration="4s">{{$noibat->tom_tat}}</h5>
+												<h5 class="wow fadeIn" data-wow-duration="4s">{!!htmlspecialchars_decode($noibat->tom_tat)!!}</h5>
 											</div>
 											<div class="decription-event wow fadeIn" data-wow-delay=".6s">
 												<div class="box-countdown">
@@ -73,7 +73,12 @@
 
                                                     </span></div>
 												</div>
-												<p class="limit-line">{{$noibat->tom_tat}}</p>
+
+                                                <div class="limit-line">
+                                                {!!htmlspecialchars_decode($noibat->mo_ta)!!}
+
+
+                                                </div>
 											</div><a class="right wow flipInX" href="{{url('pages/chitiet',$noibat->id)}}" data-wow-delay=".5s">Tham Gia</a>
 										</figcaption>
 									</figure>
@@ -266,271 +271,74 @@
 						<ul class="list-catalogNews">
 							<li class="item acitve" toggle-for="item-1">NỔI BẬT</li>
 							<li class="item" toggle-for="item-2">MỚI</li>
-							<li class="item" toggle-for="item-3">GIẢI TRÍ</li>
-							<li class="item" toggle-for="item-4">HỌC HỎI</li>
-							<li class="item" toggle-for="item-5">CÁC LĨNH VỰC KHÁC</li>
+                            @foreach ($news_type as $news_type)
+							<li class="item" toggle-for="item-s{{$news_type->id}}">{{$news_type->ten_loai}}</li>
+                            @endforeach
+							<!-- <li class="item" toggle-for="item-4">HỌC HỎI</li>
+							<li class="item" toggle-for="item-5">CÁC LĨNH VỰC KHÁC</li> -->
 						</ul>
 						<div class="tab-content">
 							<div class="content wow fadeIn" tab-id="item-1" data-wow-delay=".3s">
 								<div class="list-news">
+                                @foreach($new_01 as $new_01)
 									<div class="item-news"><a href="chi-tiet-tin-tuc.html">
 											<figure>
-												<div class="box-img"><img class="ofc" src="images/news/1.png" alt="" srcset=""></div>
+												<div class="box-img"><img class="ofc" src="images/news/{{$new_01->banner}}" alt="" srcset=""></div>
 												<figcaption>
-													<h5>Cùng Master Event Điểm Qua Một Khoảng Khắc Thú Vị Tại Sự Kiễn Lễ Hộ Sắc Màu</h5><span class="time">23.10.2018</span>
-													<p>Cùng Master Event điểm qua những tấm hình ấn tượng của The Music Run qua các năm nhé các bạn.</p>
+													<h5>{{$new_01->tieu_de}}</h5><span class="time">
+                                                    <?php
+                                                    $d=strtotime($new_01->created_at);
+                                                    echo "" . date("d-m-Y", $d);
+                                                    ?>
+                                                    </span>
+													{!!htmlspecialchars_decode($new_01->noi_dung)!!}
 												</figcaption>
-											</figure></a></div>
-									<div class="item-news"><a href="chi-tiet-tin-tuc.html">
-											<figure>
-												<div class="box-img"><img class="ofc" src="images/news/2.png" alt="" srcset=""></div>
-												<figcaption>
-													<h5>Cùng Master Event Điểm Qua Một Khoảng Khắc Thú Vị Tại Sự Kiễn Lễ Hộ Sắc Màu</h5><span class="time">23.10.2018</span>
-													<p>Cùng Master Event điểm qua những tấm hình ấn tượng của The Music Run qua các năm nhé các bạn.</p>
-												</figcaption>
-											</figure></a></div>
-									<div class="item-news"><a href="chi-tiet-tin-tuc.html">
-											<figure>
-												<div class="box-img"><img class="ofc" src="images/news/3.png" alt="" srcset=""></div>
-												<figcaption>
-													<h5>Cùng Master Event Điểm Qua Một Khoảng Khắc Thú Vị Tại Sự Kiễn Lễ Hộ Sắc Màu</h5><span class="time">23.10.2018</span>
-													<p>Cùng Master Event điểm qua những tấm hình ấn tượng của The Music Run qua các năm nhé các bạn.</p>
-												</figcaption>
-											</figure></a></div>
-									<div class="item-news"><a href="chi-tiet-tin-tuc.html">
-											<figure>
-												<div class="box-img"><img class="ofc" src="images/news/4.png" alt="" srcset=""></div>
-												<figcaption>
-													<h5>Cùng Master Event Điểm Qua Một Khoảng Khắc Thú Vị Tại Sự Kiễn Lễ Hộ Sắc Màu</h5><span class="time">23.10.2018</span>
-													<p>Cùng Master Event điểm qua những tấm hình ấn tượng của The Music Run qua các năm nhé các bạn.</p>
-												</figcaption>
-											</figure></a></div>
-									<div class="item-news"><a href="chi-tiet-tin-tuc.html">
-											<figure>
-												<div class="box-img"><img class="ofc" src="images/news/5.png" alt="" srcset=""></div>
-												<figcaption>
-													<h5>Cùng Master Event Điểm Qua Một Khoảng Khắc Thú Vị Tại Sự Kiễn Lễ Hộ Sắc Màu</h5><span class="time">23.10.2018</span>
-													<p>Cùng Master Event điểm qua những tấm hình ấn tượng của The Music Run qua các năm nhé các bạn.</p>
-												</figcaption>
-											</figure></a></div>
-									<div class="item-news"><a href="chi-tiet-tin-tuc.html">
-											<figure>
-												<div class="box-img"><img class="ofc" src="images/news/6.png" alt="" srcset=""></div>
-												<figcaption>
-													<h5>Cùng Master Event Điểm Qua Một Khoảng Khắc Thú Vị Tại Sự Kiễn Lễ Hộ Sắc Màu</h5><span class="time">23.10.2018</span>
-													<p>Cùng Master Event điểm qua những tấm hình ấn tượng của The Music Run qua các năm nhé các bạn.</p>
-												</figcaption>
-											</figure></a></div>
+											</figure></a>
+                                    </div>
+                                @endforeach
 								</div>
 							</div>
+
+
 							<div class="content wow fadeIn" tab-id="item-2" data-wow-delay=".3s">
 								<div class="list-news">
+                                @foreach($news_moi as $news_moi)
 									<div class="item-news"><a href="chi-tiet-tin-tuc.html">
 											<figure>
-												<div class="box-img"><img class="ofc" src="images/news/7.png" alt="" srcset=""></div>
+												<div class="box-img"><img class="ofc" src="images/news/{{$news_moi->banner}}" alt="" srcset=""></div>
 												<figcaption>
-													<h5>Sự kiện ra mắt đĩa bay không người lái của VN sản xuất tại trung quốc được tổ chức tại Thái Lan</h5><span class="time">23.10.2018</span>
-													<p>Cùng Master Event điểm qua những tấm hình ấn tượng của The Music Run qua các năm nhé các bạn.</p>
+													<h5>{{$news_moi->tieu_de}}</h5><span class="time"><?php
+                                                    $d=strtotime($news_moi->created_at);
+                                                    echo "" . date("d-m-Y", $d);
+                                                    ?>
+                                                    </span>
+                                                    {!!htmlspecialchars_decode($news_moi->noi_dung)!!}
 												</figcaption>
-											</figure></a></div>
-									<div class="item-news"><a href="chi-tiet-tin-tuc.html">
-											<figure>
-												<div class="box-img"><img class="ofc" src="images/news/8.png" alt="" srcset=""></div>
-												<figcaption>
-													<h5>Sự kiện ra mắt đĩa bay không người lái của VN sản xuất tại trung quốc được tổ chức tại Thái Lan</h5><span class="time">23.10.2018</span>
-													<p>Cùng Master Event điểm qua những tấm hình ấn tượng của The Music Run qua các năm nhé các bạn.</p>
-												</figcaption>
-											</figure></a></div>
-									<div class="item-news"><a href="chi-tiet-tin-tuc.html">
-											<figure>
-												<div class="box-img"><img class="ofc" src="images/news/9.png" alt="" srcset=""></div>
-												<figcaption>
-													<h5>Sự kiện ra mắt đĩa bay không người lái của VN sản xuất tại trung quốc được tổ chức tại Thái Lan</h5><span class="time">23.10.2018</span>
-													<p>Cùng Master Event điểm qua những tấm hình ấn tượng của The Music Run qua các năm nhé các bạn.</p>
-												</figcaption>
-											</figure></a></div>
-									<div class="item-news"><a href="chi-tiet-tin-tuc.html">
-											<figure>
-												<div class="box-img"><img class="ofc" src="images/news/10.png" alt="" srcset=""></div>
-												<figcaption>
-													<h5>Sự kiện ra mắt đĩa bay không người lái của VN sản xuất tại trung quốc được tổ chức tại Thái Lan</h5><span class="time">23.10.2018</span>
-													<p>Cùng Master Event điểm qua những tấm hình ấn tượng của The Music Run qua các năm nhé các bạn.</p>
-												</figcaption>
-											</figure></a></div>
-									<div class="item-news"><a href="chi-tiet-tin-tuc.html">
-											<figure>
-												<div class="box-img"><img class="ofc" src="images/news/11.png" alt="" srcset=""></div>
-												<figcaption>
-													<h5>Sự kiện ra mắt đĩa bay không người lái của VN sản xuất tại trung quốc được tổ chức tại Thái Lan</h5><span class="time">23.10.2018</span>
-													<p>Cùng Master Event điểm qua những tấm hình ấn tượng của The Music Run qua các năm nhé các bạn.</p>
-												</figcaption>
-											</figure></a></div>
-									<div class="item-news"><a href="chi-tiet-tin-tuc.html">
-											<figure>
-												<div class="box-img"><img class="ofc" src="images/news/12.png" alt="" srcset=""></div>
-												<figcaption>
-													<h5>Sự kiện ra mắt đĩa bay không người lái của VN sản xuất tại trung quốc được tổ chức tại Thái Lan</h5><span class="time">23.10.2018</span>
-													<p>Cùng Master Event điểm qua những tấm hình ấn tượng của The Music Run qua các năm nhé các bạn.</p>
-												</figcaption>
-											</figure></a></div>
+											</figure></a>
+                                    </div>
+                                @endforeach
 								</div>
 							</div>
-							<div class="content wow fadeIn" tab-id="item-3" data-wow-delay=".3s">
+                                @foreach($news as $news)
+							<div class="content wow fadeIn" tab-id="item-s{{$news->loaitin->id}}" data-wow-delay=".3s">
 								<div class="list-news">
 									<div class="item-news"><a href="chi-tiet-tin-tuc.html">
 											<figure>
-												<div class="box-img"><img class="ofc" src="images/news/13.png" alt="" srcset=""></div>
+												<div class="box-img"><img class="ofc" src="images/news/{{$news->banner}}" alt="" srcset=""></div>
 												<figcaption>
-													<h5>Sự kiện ra mắt đĩa bay không người lái của VN sản xuất tại trung quốc được tổ chức tại Thái Lan</h5><span class="time">23.10.2018</span>
-													<p>Cùng Master Event điểm qua những tấm hình ấn tượng của The Music Run qua các năm nhé các bạn.</p>
+													<h5>{{$news->tieu_de}}</h5><span class="time"><?php
+                                                    $d=strtotime($news->created_at);
+                                                    echo "" . date("d-m-Y", $d);
+                                                    ?></span>
+													{!!htmlspecialchars_decode($news->noi_dung)!!}
 												</figcaption>
-											</figure></a></div>
-									<div class="item-news"><a href="chi-tiet-tin-tuc.html">
-											<figure>
-												<div class="box-img"><img class="ofc" src="images/news/14.png" alt="" srcset=""></div>
-												<figcaption>
-													<h5>Sự kiện ra mắt đĩa bay không người lái của VN sản xuất tại trung quốc được tổ chức tại Thái Lan</h5><span class="time">23.10.2018</span>
-													<p>Cùng Master Event điểm qua những tấm hình ấn tượng của The Music Run qua các năm nhé các bạn.</p>
-												</figcaption>
-											</figure></a></div>
-									<div class="item-news"><a href="chi-tiet-tin-tuc.html">
-											<figure>
-												<div class="box-img"><img class="ofc" src="images/news/15.png" alt="" srcset=""></div>
-												<figcaption>
-													<h5>Sự kiện ra mắt đĩa bay không người lái của VN sản xuất tại trung quốc được tổ chức tại Thái Lan</h5><span class="time">23.10.2018</span>
-													<p>Cùng Master Event điểm qua những tấm hình ấn tượng của The Music Run qua các năm nhé các bạn.</p>
-												</figcaption>
-											</figure></a></div>
-									<div class="item-news"><a href="chi-tiet-tin-tuc.html">
-											<figure>
-												<div class="box-img"><img class="ofc" src="images/news/16.png" alt="" srcset=""></div>
-												<figcaption>
-													<h5>Sự kiện ra mắt đĩa bay không người lái của VN sản xuất tại trung quốc được tổ chức tại Thái Lan</h5><span class="time">23.10.2018</span>
-													<p>Cùng Master Event điểm qua những tấm hình ấn tượng của The Music Run qua các năm nhé các bạn.</p>
-												</figcaption>
-											</figure></a></div>
-									<div class="item-news"><a href="chi-tiet-tin-tuc.html">
-											<figure>
-												<div class="box-img"><img class="ofc" src="images/news/17.png" alt="" srcset=""></div>
-												<figcaption>
-													<h5>Sự kiện ra mắt đĩa bay không người lái của VN sản xuất tại trung quốc được tổ chức tại Thái Lan</h5><span class="time">23.10.2018</span>
-													<p>Cùng Master Event điểm qua những tấm hình ấn tượng của The Music Run qua các năm nhé các bạn.</p>
-												</figcaption>
-											</figure></a></div>
-									<div class="item-news"><a href="chi-tiet-tin-tuc.html">
-											<figure>
-												<div class="box-img"><img class="ofc" src="images/news/18.png" alt="" srcset=""></div>
-												<figcaption>
-													<h5>Sự kiện ra mắt đĩa bay không người lái của VN sản xuất tại trung quốc được tổ chức tại Thái Lan</h5><span class="time">23.10.2018</span>
-													<p>Cùng Master Event điểm qua những tấm hình ấn tượng của The Music Run qua các năm nhé các bạn.</p>
-												</figcaption>
-											</figure></a></div>
-								</div>
-							</div>
-							<div class="content wow fadeIn" tab-id="item-4" data-wow-delay=".3s">
-								<div class="list-news">
-									<div class="item-news"><a href="chi-tiet-tin-tuc.html">
-											<figure>
-												<div class="box-img"><img class="ofc" src="images/news/19.png" alt="" srcset=""></div>
-												<figcaption>
-													<h5>Sự kiện ra mắt đĩa bay không người lái của VN sản xuất tại trung quốc được tổ chức tại Thái Lan</h5><span class="time">23.10.2018</span>
-													<p>Cùng Master Event điểm qua những tấm hình ấn tượng của The Music Run qua các năm nhé các bạn.</p>
-												</figcaption>
-											</figure></a></div>
-									<div class="item-news"><a href="chi-tiet-tin-tuc.html">
-											<figure>
-												<div class="box-img"><img class="ofc" src="images/news/20.png" alt="" srcset=""></div>
-												<figcaption>
-													<h5>Sự kiện ra mắt đĩa bay không người lái của VN sản xuất tại trung quốc được tổ chức tại Thái Lan</h5><span class="time">23.10.2018</span>
-													<p>Cùng Master Event điểm qua những tấm hình ấn tượng của The Music Run qua các năm nhé các bạn.</p>
-												</figcaption>
-											</figure></a></div>
-									<div class="item-news"><a href="chi-tiet-tin-tuc.html">
-											<figure>
-												<div class="box-img"><img class="ofc" src="images/news/21.png" alt="" srcset=""></div>
-												<figcaption>
-													<h5>Sự kiện ra mắt đĩa bay không người lái của VN sản xuất tại trung quốc được tổ chức tại Thái Lan</h5><span class="time">23.10.2018</span>
-													<p>Cùng Master Event điểm qua những tấm hình ấn tượng của The Music Run qua các năm nhé các bạn.</p>
-												</figcaption>
-											</figure></a></div>
-									<div class="item-news"><a href="chi-tiet-tin-tuc.html">
-											<figure>
-												<div class="box-img"><img class="ofc" src="images/news/22.png" alt="" srcset=""></div>
-												<figcaption>
-													<h5>Sự kiện ra mắt đĩa bay không người lái của VN sản xuất tại trung quốc được tổ chức tại Thái Lan</h5><span class="time">23.10.2018</span>
-													<p>Cùng Master Event điểm qua những tấm hình ấn tượng của The Music Run qua các năm nhé các bạn.</p>
-												</figcaption>
-											</figure></a></div>
-									<div class="item-news"><a href="chi-tiet-tin-tuc.html">
-											<figure>
-												<div class="box-img"><img class="ofc" src="images/news/23.png" alt="" srcset=""></div>
-												<figcaption>
-													<h5>Sự kiện ra mắt đĩa bay không người lái của VN sản xuất tại trung quốc được tổ chức tại Thái Lan</h5><span class="time">23.10.2018</span>
-													<p>Cùng Master Event điểm qua những tấm hình ấn tượng của The Music Run qua các năm nhé các bạn.</p>
-												</figcaption>
-											</figure></a></div>
-									<div class="item-news"><a href="chi-tiet-tin-tuc.html">
-											<figure>
-												<div class="box-img"><img class="ofc" src="images/news/24.png" alt="" srcset=""></div>
-												<figcaption>
-													<h5>Sự kiện ra mắt đĩa bay không người lái của VN sản xuất tại trung quốc được tổ chức tại Thái Lan</h5><span class="time">23.10.2018</span>
-													<p>Cùng Master Event điểm qua những tấm hình ấn tượng của The Music Run qua các năm nhé các bạn.</p>
-												</figcaption>
-											</figure></a></div>
-								</div>
-							</div>
-							<div class="content wow fadeIn" tab-id="item-5" data-wow-delay=".3s">
-								<div class="list-news">
-									<div class="item-news"><a href="chi-tiet-tin-tuc.html">
-											<figure>
-												<div class="box-img"><img class="ofc" src="images/news/28.png" alt="" srcset=""></div>
-												<figcaption>
-													<h5>Sự kiện ra mắt đĩa bay không người lái của VN sản xuất tại trung quốc được tổ chức tại Thái Lan</h5><span class="time">23.10.2018</span>
-													<p>Cùng Master Event điểm qua những tấm hình ấn tượng của The Music Run qua các năm nhé các bạn.</p>
-												</figcaption>
-											</figure></a></div>
-									<div class="item-news"><a href="chi-tiet-tin-tuc.html">
-											<figure>
-												<div class="box-img"><img class="ofc" src="images/news/29.png" alt="" srcset=""></div>
-												<figcaption>
-													<h5>Sự kiện ra mắt đĩa bay không người lái của VN sản xuất tại trung quốc được tổ chức tại Thái Lan</h5><span class="time">23.10.2018</span>
-													<p>Cùng Master Event điểm qua những tấm hình ấn tượng của The Music Run qua các năm nhé các bạn.</p>
-												</figcaption>
-											</figure></a></div>
-									<div class="item-news"><a href="chi-tiet-tin-tuc.html">
-											<figure>
-												<div class="box-img"><img class="ofc" src="images/news/30.png" alt="" srcset=""></div>
-												<figcaption>
-													<h5>Sự kiện ra mắt đĩa bay không người lái của VN sản xuất tại trung quốc được tổ chức tại Thái Lan</h5><span class="time">23.10.2018</span>
-													<p>Cùng Master Event điểm qua những tấm hình ấn tượng của The Music Run qua các năm nhé các bạn.</p>
-												</figcaption>
-											</figure></a></div>
-									<div class="item-news"><a href="chi-tiet-tin-tuc.html">
-											<figure>
-												<div class="box-img"><img class="ofc" src="images/news/31.png" alt="" srcset=""></div>
-												<figcaption>
-													<h5>Sự kiện ra mắt đĩa bay không người lái của VN sản xuất tại trung quốc được tổ chức tại Thái Lan</h5><span class="time">23.10.2018</span>
-													<p>Cùng Master Event điểm qua những tấm hình ấn tượng của The Music Run qua các năm nhé các bạn.</p>
-												</figcaption>
-											</figure></a></div>
-									<div class="item-news"><a href="chi-tiet-tin-tuc.html">
-											<figure>
-												<div class="box-img"><img class="ofc" src="images/news/32.png" alt="" srcset=""></div>
-												<figcaption>
-													<h5>Sự kiện ra mắt đĩa bay không người lái của VN sản xuất tại trung quốc được tổ chức tại Thái Lan</h5><span class="time">23.10.2018</span>
-													<p>Cùng Master Event điểm qua những tấm hình ấn tượng của The Music Run qua các năm nhé các bạn.</p>
-												</figcaption>
-											</figure></a></div>
-									<div class="item-news"><a href="chi-tiet-tin-tuc.html">
-											<figure>
-												<div class="box-img"><img class="ofc" src="images/news/33.png" alt="" srcset=""></div>
-												<figcaption>
-													<h5>Sự kiện ra mắt đĩa bay không người lái của VN sản xuất tại trung quốc được tổ chức tại Thái Lan</h5><span class="time">23.10.2018</span>
-													<p>Cùng Master Event điểm qua những tấm hình ấn tượng của The Music Run qua các năm nhé các bạn.</p>
-												</figcaption>
-											</figure></a></div>
-								</div>
-							</div>
+											</figure></a>
+                                    </div>
+
+                                </div>
+                            </div>
+                                @endforeach
+
 						</div>
 					</div>
 				</div>

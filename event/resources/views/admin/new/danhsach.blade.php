@@ -57,7 +57,13 @@
                                         <td>{{$tintuc->tieu_de}}</td>
                                         <td>{{$tintuc->loaitin->ten_loai}}</td>
                                         <td><img src="images/news/{{$tintuc->banner}}" width="120"  height="50"/></td>
-                                        <td>{{$tintuc->ngay_dang}}</td>
+                                        <td>
+                                        <?php
+                                        $d=strtotime($tintuc->created_at);
+                                        echo "" . date("d-m-Y", $d);
+                                        ?>
+
+                                        </td>
                                         <td>
                                             <textarea cols="30" rows="3" style="text-align: center !important"> {{$tintuc->noi_dung}}</textarea>
                                         </td>
