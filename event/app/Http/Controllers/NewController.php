@@ -64,7 +64,62 @@ class NewController extends Controller
 
 
 
-    public function getSua(){
-        return view('admin.new.sua');
+    public function getSua($id){
+        $loaitin = Type_news::all();
+        $news = News::find($id);
+        return view('admin.new.sua',['loaitin'=>$loaitin],['news'=>$news]);
+
     }
+
+    public function postSua(Request $request,$id){
+        $news = News::find($id);
+        $this->validate($request,
+        [
+            'tieu_de' => 'required|min:2|max: 100|',
+            'banner'=>'required|mimes:jpeg,png,jpg,gif,svg|max:2048|',
+            'noi_dung'=>'required',
+        ],
+        [
+            'tieu_de.required' => ' Bạn chưa nhập tiêu đề',
+            'tieu_de.min' => ' Tiêu đề phải có từ 3 đến 100 ký tự',
+            'tieu_de.max' => ' Tiêu đề phải có từ 3 đến 100 ký tự',
+            'banner.required' => 'Bạn chưa add banner sự kiện',
+            'banner.mimes' => 'Banner phải là hình có đuôi jpeg,png,jpg,gif,svg',
+            'banner.max'=>'Dung lượng hình không được quá 2Mb',
+            'noi_dung.required' => 'Bạn chưa nhập nội dung tin tức',
+        ]);
+
+        $news->tieu_de = $request->tieu_de;
+        $news->loai_tin = $request->loai_tin;
+        $news->ngay_dang = $request->ngay_dang;
+        $news->noi_dung = $request->noi_dung;
+        $news->noi_bat= $request->noi_bat;
+
+
+       if($request->hasFile('banner')){
+        $file = $request->file('banner');
+        $name = $file->getClientOriginalName();
+        $banner = Str::random(10)."_". $name;
+        $file->move('images/news',$banner);
+        $news->banner = $banner;
+
+        }
+        $news->save();
+
+        return redirect('admin/new/sua/'.$news->id)->with('thongbao','Sửa thành công');
+
+    }
+
+
+
+    // Xóa
+
+public function getXoa($id){
+    $news = News::find($id);
+    $news->delete();
+    return redirect('admin/new/danhsach')->with('thongbao','Bạn đã xóa thành công');
+}
+
+
+
 }

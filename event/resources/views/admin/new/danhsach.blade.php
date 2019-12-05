@@ -48,10 +48,10 @@
                                 @foreach($tintuc as $tintuc)
                                 <tbody>
                                         <td>
-                                            <a href="admin/new/sua"><img src="images/edit.png" alt="A-event" srcset="" width="40" height="40"></a>
+                                            <a href="admin/new/sua/{{$tintuc->id}}"><img src="images/edit.png" alt="A-event" srcset="" width="40" height="40"></a>
                                         </td>
                                         <td>
-                                            <a href="admin/new/xoa"><img src="images/xoa.png" alt="A-event" srcset="" width="40" height="40"></a>
+                                            <a href="admin/new/xoa/{{$tintuc->id}}"><img src="images/xoa.png" alt="A-event" srcset="" width="40" height="40"></a>
                                         </td>
                                         <td>{{$tintuc->id}}</td>
                                         <td>{{$tintuc->tieu_de}}</td>

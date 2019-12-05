@@ -60,10 +60,10 @@
                     <a href="admin/loaitin/danhsach"><i class="fa fa-newspaper-o"></i> QL Loại Tin Tức<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="admin/loaitin/danhsach"> Danh Sách Tin Tức</a>
+                            <a href="admin/loaitin/danhsach"> Danh Sách Loại Tin</a>
                         </li>
                         <li>
-                            <a href="admin/loaitin/them"> Thêm Tin Tức</a>
+                            <a href="admin/loaitin/them"> Thêm Thể Loại</a>
                         </li>
                     </ul>
                 </li>
