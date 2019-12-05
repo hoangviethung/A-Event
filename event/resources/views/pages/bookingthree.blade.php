@@ -18,8 +18,8 @@
             <div class="row">
                     <div class="col-md-12">
                         <div class="alert alert-danger" style="width: 100%; background-color: green; padding: 100px; margin: 0;height: 100%;
-                        text-align: center; font-size: 48px; font-family: Anton,sans-serif;"> 
-                             {{$thanhcong}} 
+                        text-align: center; font-size: 48px; font-family: Anton,sans-serif;">
+                             {{$thanhcong}}
                         </div>
                     </div>
                 </div>
@@ -28,13 +28,13 @@
             <div class="row">
                     <div class="col-md-12">
                         <div class="alert alert-danger" style="width: 100%; background-color: #ffd800; padding: 100px; margin: 0;height: 100%;
-                        text-align: center; font-size: 48px; font-family: Anton,sans-serif;"> 
-                             {{$err}} 
+                        text-align: center; font-size: 48px; font-family: Anton,sans-serif;">
+                             {{$err}}
                         </div>
                     </div>
                 </div>
         @endif
-           
+
         </section>
     </main>
 

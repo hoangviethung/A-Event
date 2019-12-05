@@ -14,11 +14,17 @@
                     </ul>
                 </div>
             </nav>
+
+            @if($bookingtwo->so_luong_ve_thuong>=$quantity1 && $bookingtwo->so_luong_ve_vip>=$quantity2)
+
             @if(session('thongbao'))
             <div class="alert alert-success" style="width: 50% !important">
-                    {{session('thongbao')}}   
+                    {{session('thongbao')}}
             </div>
         @endif
+
+
+
             @if(isset($quantity1) || count($errors) > 0)
             <div class="booking">
                 <div class="container">
@@ -106,12 +112,27 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="alert alert-danger" style="width: 100%; background-color: #ffd800; padding: 100px; margin: 0;height: 100%;
-                        text-align: center; font-size: 48px; font-family: Anton,sans-serif;"> 
+                        text-align: center; font-size: 48px; font-family: Anton,sans-serif;">
                             Bạn chưa chọn vé
                         </div>
                     </div>
                 </div>
             @endif
+            @else
+        <div class="row">
+                    <div class="col-md-12">
+                        <div class="alert alert-danger" style="width: 100%; background-color: #ffd800; padding: 100px; margin: 0;height: 100%;
+                        text-align: center; font-size: 48px; font-family: Anton,sans-serif;">
+                            @if($bookingtwo->so_luong_ve_thuong<=0)
+                            Hết vé thường
+                            @endif
+                            @if($bookingtwo->so_luong_ve_vip<=0)
+                            Hết vé vip
+                            @endif
+                        </div>
+                    </div>
+                </div>
+        @endif
         </section>
     </main>
 
