@@ -23,7 +23,7 @@
 
                                                             $newDate = date(" \N\g\à\y\ d, \T\h\á\\n\\g\ m, \N\ă\m\ Y", strtotime($origDate));
                                                             echo $newDate; ?>
- - {{$slide->dia_chi}} ({{$slide->thoi_gian}})</p>
+ 														- {{$slide->dia_chi}} ({{$slide->thoi_gian}})</p>
 												</div>
 											</figcaption>
 										</figure>

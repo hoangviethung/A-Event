@@ -56,6 +56,12 @@ Route::group(['prefix'=>'pages'], function(){
         'uses' => 'PagesController@getDanhmuc',
     ]);
     Route::post('danhmuc/{id}', 'PagesController@postDanhmuc');
+    
+    Route::get('eventcreate','InfouserController@getEventcreate');
+    Route::post('eventcreate','InfouserController@postEventcreate');
+    Route::get('eventcreate/sua/{id}', 'InfouserController@getSua');
+    Route::post('eventcreate/sua/{id}', 'InfouserController@postSua');
+    Route::get('eventcreate/xoa/{id}', 'InfouserController@getXoa');
 
     Route::get('login', 'PagesController@getLogin');
     Route::post('login', 'PagesController@postLogin');
@@ -75,9 +81,9 @@ Route::group(['prefix'=>'pages'], function(){
 
 // admin
 
-Route::get('admin/login', 'PagesController@getLoginAdmin');
-Route::post('admin/login', 'PagesController@postLoginAdmin');
-Route::get('admin/logout', 'PagesController@getLogoutAdmin');
+    Route::get('admin/login', 'PagesController@getLoginAdmin');
+    Route::post('admin/login', 'PagesController@postLoginAdmin');
+    Route::get('admin/logout', 'PagesController@getLogoutAdmin');
 
 
 Route::group(['prefix'=>'admin','middleware'=>'checklogin'], function(){

@@ -53,8 +53,8 @@
 										<h5>{{Auth::user()->name}}<span>{{Auth::user()->vip}}</span></h5>
 									</figcaption>
 								</figure>
-								<ul class="list-item"><a href="#">
-									<li class="item">Vé đã đặt</li></a><a href="#">
+								<ul class="list-item">
+									<a href="{{url('pages/eventcreate')}}">
 									<li class="item">Sự kiện đã tạo</li></a><a href="#">
 									<li class="item">Thông tin tài khoản</li></a><a href="{{ url('pages/dangxuat') }}">
 									<li class="item">Đăng xuất</li></a>
@@ -78,8 +78,8 @@
 										<h5>{{$loginfb->name}}<span>Vip</span></h5>
 									</figcaption>
 								</figure>
-								<ul class="list-item"><a href="#">
-									<li class="item">Vé đã đặt</li></a><a href="#">
+								<ul class="list-item">
+									<a href="{{url('pages/eventcreate')}}">
 									<li class="item">Sự kiện đã tạo</li></a><a href="#">
 									<li class="item">Thông tin tài khoản</li></a><a href="{{ url('pages/dangxuat') }}">
 									<li class="item">Đăng xuất</li></a>
@@ -103,8 +103,8 @@
 										<h5>{{$logingg->name}}<span>Vip</span></h5>
 									</figcaption>
 								</figure>
-								<ul class="list-item"><a href="#">
-									<li class="item">Vé đã đặt</li></a><a href="#">
+								<ul class="list-item">
+									<a href="{{url('pages/eventcreate')}}">
 									<li class="item">Sự kiện đã tạo</li></a><a href="#">
 									<li class="item">Thông tin tài khoản</li></a><a href="{{ url('pages/dangxuat') }}">
 									<li class="item">Đăng xuất</li></a>

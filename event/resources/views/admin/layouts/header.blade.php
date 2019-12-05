@@ -4,24 +4,22 @@
         </div>
         <!-- /.navbar-header -->
         @if(Auth::user())
-      <ul class="nav navbar-top-links navbar-right">
-
-            <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
-                </a>
-                <ul class="dropdown-menu dropdown-user">
-                <li><a href="{{ url('admin/dashboard') }}"><i class="fa fa-user fa-fw"></i> {{Auth::user()->name}}</a>
-                    </li>
-                    <li><a href="{{ url('admin/dashboard') }}"><i class="fa fa-gear fa-fw"></i> Cài đặt</a>
-                    </li>
-                    <li class="divider"></li>
-                    <li><a href="{{ url('admin/login') }}"><i class="fa fa-sign-out fa-fw"></i> Đăng xuất</a>
-                    </li>
-                </ul>
-            </li>
-
-        </ul>
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                    <li><a href="{{ url('admin/dashboard') }}"><i class="fa fa-user fa-fw"></i> {{Auth::user()->name}}</a>
+                        </li>
+                        <li><a href="{{ url('admin/dashboard') }}"><i class="fa fa-gear fa-fw"></i> Cài đặt</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="{{ url('admin/login') }}"><i class="fa fa-sign-out fa-fw"></i> Đăng xuất</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
         @endif
         <!-- /.navbar-top-links -->
         @include('admin.layouts.menu')
