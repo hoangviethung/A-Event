@@ -18,6 +18,12 @@
                 width: 100% !important;
                 height: auto !important;
             }
+            .limit-line p{
+                -webkit-line-clamp: 3 !important;
+                height: 90px;
+                color: #8d8f90;
+                font-size: 20px;
+            }
         </style>
 	</head>
 	<body>

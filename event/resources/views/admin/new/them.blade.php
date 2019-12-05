@@ -21,7 +21,7 @@
                             <!-- để truyền dữ liệu phải cho nó 1 cái token -->
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                             <div class="form-group">
-                                <label>Tiêu đề tin<!--  --></label>
+                                <label>Tiêu đề tin</label>
                                 <input class="form-control" name="tieu_de" placeholder="Nhập tiệu đề tin" />
                             </div>
                             <div class="form-group">
@@ -41,10 +41,7 @@
                                     </span>
                                 @endif
                             </div>
-                            <div class="form-group">
-                                <label>Ngày đăng tin</label>
-                                <input class="form-control" name="ngay_dang" type="date"/>
-                            </div>
+
 
                             <div class="form-group">
                                 <label>Mô tả sự kiện</label>

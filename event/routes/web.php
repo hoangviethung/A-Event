@@ -137,32 +137,17 @@ Route::group(['prefix'=>'admin','middleware'=>'checklogin'], function(){
 
     });
     // Tin tức
-    Route::group(['prefix' => 'news'], function () {
+    Route::group(['prefix' => 'new'], function () {
 
         Route::get('danhsach','NewController@getDanhsach');
 
         Route::get('sua/{id}', 'NewController@getSua');
         Route::post('sua/{id}', 'NewController@postSua');
 
-
         Route::get('them', 'NewController@getThem');
         Route::post('them', 'NewController@postThem');
-        // Hàm post nhận dữ liệu về và lưu vào cơ sở dữ liệu
+
         Route::get('xoa/{id}', 'NewController@getXoa');
-
-    });
-    // Addevent
-    Route::group(['prefix' => 'new'], function () {
-
-        Route::get('danhsach','NewController@getDanhsach');
-
-        Route::get('sua', 'NewController@getSua');
-        Route::post('sua', 'NewController@postSua');
-
-        Route::get('them', 'NewController@getThem');
-        Route::post('them', 'NewController@postThem');
-
-        Route::get('xoa', 'NewController@getXoa');
     });
     // Addevent
     // Accounts
