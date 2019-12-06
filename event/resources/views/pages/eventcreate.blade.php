@@ -91,7 +91,7 @@
                                         </div>
                                     </figcaption>
                                     <div class="list-task">
-                                        <div class="item"><a href="pages/addevent/sua/{{$eventcreates->id}}">Sửa</a></div>
+                                        <div class="item"><a href="pages/editevent/sua/{{$eventcreates->id}}">Sửa</a></div>
                                         <div class="item"><a href="pages/eventcreate/xoa/{{$eventcreates->id}}">Xóa</a></div>
                                     </div>
                                 </figure>

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Events;
 use App\users;
+use Illuminate\Support\Str;
 use App\Type_events;
 use Illuminate\Support\Facades\Auth;
 
@@ -34,9 +35,9 @@ class InfouserController extends Controller
     }
 
     public function getSua($id){
-        $create_event = Events::find($id);
+        $edit_event = Events::find($id);
         $danhmuc = Type_events::all();
-        return view('pages.addevent',['create_events'=>$create_event,'danhmuc'=>$danhmuc]);
+        return view('pages.editevent',['edit_events'=>$edit_event,'danhmuc'=>$danhmuc]);
     }
 
     public function postSua(Request $request,$id){
@@ -140,7 +141,7 @@ class InfouserController extends Controller
         $event->banner = "";
         }
         $event->save();
-        return redirect('pages/addevent'.$event->id)->with('thongbao','Đã thêm !!! Sự kiện bạn đang đợi phê duyệt');
+        return redirect('pages/editevent/sua/'.$event->id)->with('thongbao','Đã sửa !!! Sự kiện bạn đang đợi phê duyệt');
     }
 
     public function getXoa($id){

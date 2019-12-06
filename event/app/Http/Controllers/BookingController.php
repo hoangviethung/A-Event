@@ -36,14 +36,6 @@ class BookingController extends Controller
     }
     public function postBookingtwo(Request $req){
         $bookingtwo = Events::find($req->id);
-        // $this->validate($req,
-        // [
-        //     'email'=>'unique:Bills,email'
-        // ],
-        // [
-        //     'email'=>'Bạn đã mua vé rồi'
-        // ]);
-        // $bookingtwo = new Bills;
         return view('pages.bookingtwo',['bookingtwo'=>$bookingtwo,'quantity1'=>$req->quantity1,'quantity2'=>$req->quantity2,'tong_tien_thuong'=>$req->tong_tien_thuong,'tong_tien_vip'=>$req->tong_tien_vip,'tong_cong'=>$req->tong_cong])->with('thongbao','Thành công !');
 
     }
@@ -67,7 +59,7 @@ class BookingController extends Controller
         $data = [
             'ten_su_kien' => $bookingtwo->ten_su_kien,
             'email' => $req->email,
-            'emailc' => 'nguyentuyen1322@gmail.com',
+            'emailc' => $bookingtwo->email_chu,
             'ten_khach_hang' => $req->ten_nguoi_mua,
             'so_ve_thuong' => $req->sl_ve_thuong,
             'so_ve_vip' => $req->sl_ve_vip,
@@ -87,7 +79,7 @@ class BookingController extends Controller
         Mail::send('admin.thongbao.layoutmail', $data, function ($message) use ($data) {
             $message->from('hotroaevent@gmail.com', 'Hỗ trợ Aevent');
             $message->to($data['email'], 'Khách hàng');
-            $message->to($data['emailc'], 'Khách hàng');
+            $message->to($data['emailc'], 'Chủ event');
             $message->subject($data['ten_khach_hang']);
             $message->subject($data['so_ve_thuong']);
             $message->subject($data['so_ve_vip']);

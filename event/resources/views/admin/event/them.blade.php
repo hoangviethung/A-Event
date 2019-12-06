@@ -228,6 +228,17 @@
                                         @endif
                                     </div>
                                 </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Email chủ event</label>
+                                        <input class="form-control" name="email_chu" type="text"/>
+                                        @if($errors->has('email_chu'))
+                                            <span class="error">
+                                                {{$errors->first('email_chu')}}
+                                            </span>
+                                        @endif
+                                    </div>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label>Tóm tắt sự kiện ( Hiển thị trên Slider, Sự kiện nổi bật)</label>

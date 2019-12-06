@@ -14,21 +14,13 @@
                     </ul>
                 </div>
             </nav>
-
-            @if($bookingtwo->so_luong_ve_thuong>=$quantity1 && $bookingtwo->so_luong_ve_vip>=$quantity2)
+            @if(isset($bookingtwo->so_luong_ve_thuong)>=isset($quantity1) && isset($bookingtwo->so_luong_ve_vip)>=isset($quantity2))
 
             @if(session('thongbao'))
-<<<<<<< HEAD
-            <div class="alert alert-success" style="width: 50% !important; color: #000 !important">
-                    {{session('thongbao')}}   
-=======
-            <div class="alert alert-success" style="width: 50% !important">
-                    {{session('thongbao')}}
->>>>>>> 590641f1b8b82e8b856c40f6a5aa6f961cfcd3a9
-            </div>
-        @endif
-
-
+                <div class="alert alert-success" style="width: 50% !important; color: #000 !important">
+                        {{session('thongbao')}}   
+                </div>
+            @endif
 
             @if(isset($quantity1) || count($errors) > 0)
             <div class="booking">
@@ -117,11 +109,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="alert alert-danger" style="width: 100%; background-color: #ffd800; padding: 100px; margin: 0;height: 100%;
-<<<<<<< HEAD
                         text-align: center; font-size: 48px; font-family: Anton,sans-serif;color: #000"> 
-=======
-                        text-align: center; font-size: 48px; font-family: Anton,sans-serif;">
->>>>>>> 590641f1b8b82e8b856c40f6a5aa6f961cfcd3a9
                             Bạn chưa chọn vé
                         </div>
                     </div>
@@ -131,7 +119,7 @@
         <div class="row">
                     <div class="col-md-12">
                         <div class="alert alert-danger" style="width: 100%; background-color: #ffd800; padding: 100px; margin: 0;height: 100%;
-                        text-align: center; font-size: 48px; font-family: Anton,sans-serif;">
+                        text-align: center; font-size: 48px; font-family: Anton,sans-serif;color: #000">
                             @if($bookingtwo->so_luong_ve_thuong<=0)
                             Hết vé thường
                             @endif

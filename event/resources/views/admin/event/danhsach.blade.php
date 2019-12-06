@@ -49,14 +49,13 @@
                                     <th>Vị trí <br> vé VIP</th>
                                     <th>Quà tặng <br> vé VIP</th>
                                     <th>Giá vé VIP</th>
-
-
                                     <th>Số lượng vé thường</th>
                                     <th>Số lượng vé vip</th>
                                     <th>Nơi diễn ra <br>
                                     sự kiện</th>
                                     <th>Tóm tắt</th>
                                     <th>Mô tả</th>
+                                    <th>Email chủ event</th>
                                     <th>Duyệt bài</th>
 
                                 </tr>
@@ -95,6 +94,7 @@
                                     <td>
                                         <textarea cols="5" rows="5"> {{$duyet->mo_ta}}</textarea>
                                     </td>
+                                    <td>{{$duyet->email_chu}}</td>
                                     <td>
                                         @if($duyet->duyet == 1 )
                                             {{"Cho phép"}}
@@ -159,14 +159,13 @@
                                     <th>Vị trí <br> vé VIP</th>
                                     <th>Quà tặng <br> vé VIP</th>
                                     <th>Giá vé VIP</th>
-
-
                                     <th>Số lượng vé thường</th>
                                     <th>Số lượng vé vip</th>
                                     <th>Nơi diễn ra <br>
                                     sự kiện</th>
                                     <th>Tóm tắt</th>
                                     <th>Mô tả</th>
+                                    <th>Email chủ event</th>
                                     <th>Hiển thị trên <br>
                                     Slider trang chủ</th>
                                     <th>Hiển thị trên <br>
@@ -206,10 +205,13 @@
                                     <td>{{$event->so_luong_ve_vip}}</td>
                                     <td>{{$event->dia_chi}}</td>
                                     <td>
-                                        <textarea cols="30" rows="3" style="text-align: center !important"> {{$event->tom_tat}}</textarea>
+                                        <textarea cols="30" rows="3" style="text-align: center !important">{{$event->tom_tat}}</textarea>
                                     </td>
                                     <td>
-                                        <textarea cols="30" rows="3" style="text-align: center !important"> {{$event->mo_ta}}</textarea>
+                                        <textarea cols="30" rows="3" style="text-align: center !important">{{$event->mo_ta}}</textarea>
+                                    </td>
+                                    <td>
+                                        <textarea cols="30" rows="3" style="text-align: center !important">{{$event->email_chu}}</textarea>
                                     </td>
                                     <td>
                                         @if($event->hien_thi_slider == 1 )
