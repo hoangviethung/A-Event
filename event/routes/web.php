@@ -127,7 +127,7 @@ Route::group(['prefix'=>'admin','middleware'=>'checklogin'], function(){
         Route::get('them', 'LoaitinController@getThem');
         Route::post('them', 'LoaitinController@postThem');
         // Hàm post nhận dữ liệu về và lưu vào cơ sở dữ liệu
-        Route::get('xoa/{id}', 'NewController@getXoa');
+        Route::get('xoa/{id}', 'LoaitinController@getXoa');
 
     });
     // Tin tức
