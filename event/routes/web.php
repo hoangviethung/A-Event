@@ -58,8 +58,7 @@ Route::group(['prefix'=>'pages'], function(){
     Route::post('danhmuc/{id}', 'PagesController@postDanhmuc');
     
     Route::get('eventcreate','InfouserController@getEventcreate');
-    Route::post('eventcreate','InfouserController@postEventcreate');
-    Route::get('eventcreate/sua/{id}', 'InfouserController@getSua');
+    Route::get('addevent/sua/{id}', 'InfouserController@getSua');
     Route::post('eventcreate/sua/{id}', 'InfouserController@postSua');
     Route::get('eventcreate/xoa/{id}', 'InfouserController@getXoa');
 

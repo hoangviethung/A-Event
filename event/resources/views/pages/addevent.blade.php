@@ -72,30 +72,6 @@
                                 @foreach($danhmuc as $danhmuc)
                                 <option value="{{$danhmuc->id}}">-- {{$danhmuc->ten_loai}} --</option>
                                 @endforeach
-                                <!-- <optgroup label="Giải trí">
-                                    <option>Thể loại 1</option>
-                                    <option>Thể loại 2</option>
-                                    <option>Thể loại 3</option>
-                                    <option>Thể loại 4</option>
-                                    <option>Thể loại 5</option>
-                                    <option>Thể loại 6</option>
-                                </optgroup>
-                                <optgroup label="Học Tập">
-                                    <option>Thể loại 1</option>
-                                    <option>Thể loại 2</option>
-                                    <option>Thể loại 3</option>
-                                    <option>Thể loại 4</option>
-                                    <option>Thể loại 5</option>
-                                    <option>Thể loại 6</option>
-                                </optgroup>
-                                <optgroup label="Khác">
-                                    <option>Thể loại 1</option>
-                                    <option>Thể loại 2</option>
-                                    <option>Thể loại 3</option>
-                                    <option>Thể loại 4</option>
-                                    <option>Thể loại 5</option>
-                                    <option>Thể loại 6</option>
-                                </optgroup> -->
                             </select>
                         </div>
                         @if($errors->has('ten_loai'))
@@ -104,13 +80,6 @@
                             </span>
                         @endif
                     </div>
-                    <!-- <div class="form-group col-lg-6">
-                        <label>Nhà tổ chức</label>
-                        <div class="form-input add-img-small">
-                            <figure class="button-choose-file"><img class="ofc" src="images/icons/default-logo-organizer.png" alt=""></figure>
-                            <input class="file-img" type="file" name="" hidden>
-                        </div>
-                    </div> -->
                     <div class="form-group col-lg-6">
                         <label for="dia-diem">Nhà tài trợ:</label>
                         <div class="form-input">
@@ -139,9 +108,9 @@
                         <label>Giá vé Thường</label>
                         <div class="form-input">
                             <input type="number" name="gia_ve" placeholder="Nhập giá vé loại thường">
-                            @if($errors->has('gia_ve_thuong'))
+                            @if($errors->has('gia_ve'))
                                 <span class="error" style="text-align: left !important; display: block; color: red;font-family: K2D,sans-serif;line-height: 1.3; font-size: 18px; padding-top: 5px;margin: 0;">
-                                    {{$errors->first('gia_ve_thuong')}}
+                                    {{$errors->first('gia_ve')}}
                                 </span>
                             @endif
                         </div>

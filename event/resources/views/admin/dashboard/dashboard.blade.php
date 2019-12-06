@@ -12,33 +12,34 @@
         <!-- /.row -->
         <div class="row">
             <div class="col-lg-3 col-md-6">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-3">
-                                <i class="fa fa-th fa-5x"></i>
-                            </div>
-                            <div class="col-xs-9 text-right">
-                                <div class="huge">
-                                    @if (isset($type_events))
-                                        <?=count($type_events)?>
-                                    @else
-                                        0 
-                                    @endif
+                    <div class="panel panel-yellow">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-newspaper-o fa-5x"></i>
                                 </div>
-                                <div>Danh mục</div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">
+                                        @if (isset($news))
+                                            <?=count($news)?>
+                                        @else
+                                            0 
+                                        @endif
+                                    </div>
+                                    <div>Tin Tức</div>
+                                </div>
                             </div>
                         </div>
+                            <div class="panel-footer">
+                                <a href="{{url('admin/new/danhsach')}}">
+                                    <span class="pull-left">Xem chi tiết</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </a>
+                            </div>
                     </div>
-                        <div class="panel-footer">
-                        <a href="{{url('admin/danhmuc/danhsach')}}">
-                                <span class="pull-left">Xem chi tiết</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                <div class="clearfix"></div>
-                            </a>
-                        </div>
                 </div>
-            </div>
+         
             <div class="col-lg-3 col-md-6">
                 <div class="panel panel-green">
                     <div class="panel-heading">
@@ -68,33 +69,33 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
-                <div class="panel panel-yellow">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col-xs-3">
-                                <i class="fa fa-newspaper-o fa-5x"></i>
-                            </div>
-                            <div class="col-xs-9 text-right">
-                                <div class="huge">
-                                    @if (isset($news))
-                                        <?=count($news)?>
-                                    @else
-                                        0 
-                                    @endif
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-th fa-5x"></i>
                                 </div>
-                                <div>Tin Tức</div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">
+                                        @if (isset($type_events))
+                                            <?=count($type_events)?>
+                                        @else
+                                            0 
+                                        @endif
+                                    </div>
+                                    <div>Danh mục</div>
+                                </div>
                             </div>
                         </div>
+                            <div class="panel-footer">
+                            <a href="{{url('admin/danhmuc/danhsach')}}">
+                                    <span class="pull-left">Xem chi tiết</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </a>
+                            </div>
                     </div>
-                        <div class="panel-footer">
-                            <a href="{{url('admin/new/danhsach')}}">
-                                <span class="pull-left">Xem chi tiết</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                <div class="clearfix"></div>
-                            </a>
-                        </div>
                 </div>
-            </div>
             <div class="col-lg-3 col-md-6">
                 <div class="panel panel-red">
                     <div class="panel-heading">

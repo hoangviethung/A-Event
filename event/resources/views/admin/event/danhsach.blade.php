@@ -240,8 +240,8 @@
                                 <!--Table body-->
                         </table>
                         <!--Table-->
-                        {{ $events->links() }}
                     </div>
+                    {{ $events->links() }}
                     </div>
                 </div>
             </div>

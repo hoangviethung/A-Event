@@ -2,19 +2,66 @@
 @section('content')
     <main>
         <section class="user">
-            <aside>
-                <figure>
-                    <div class="box-img"><img class="ofc" src="https://scontent.fsgn5-4.fna.fbcdn.net/v/t1.0-9/56446500_806542706382160_330506997671657472_n.jpg?_nc_cat=104&amp;_nc_oc=AQkJPyas19gTNCr6eI_T0vLLSNDj5RdUX2WpIxDmu0BWtBY6RTU8ALdFpub_xZEq9ts&amp;_nc_ht=scontent.fsgn5-4.fna&amp;oh=7e444b18b75f6dce936da9eed8f6778b&amp;oe=5E1AD9DB" alt=""></div>
-                    <figcaption>
-                        <h5>HOÀNG VIỆT HÙNG</h5>
-                    </figcaption>
-                </figure>
-                <ul class="list-item"><a href="{{url('pages/eventcreate')}}">
-                        <li class="item">Sự kiện đã tạo</li></a><a href="#">
-                        <li class="item">Thông tin tài khoản</li></a><a href="{{ url('pages/dangxuat') }}">
-                        <li class="item">Đăng xuất</li></a>
-                </ul>
-            </aside>
+                @if(!Auth::user() && !isset($loginfb) && !isset($logingg))
+                    <aside>
+                            <figure>
+                                <div class="box-img"><img class="ofc" src="images/user/{{Auth::user()->hinh}}" alt=""></div>
+                                <figcaption>
+                                <h5>{{Auth::user()->name}}</h5>
+                                </figcaption>
+                            </figure>
+                            <ul class="list-item"><a href="{{url('pages/eventcreate')}}">
+                                    <li class="item">Sự kiện đã tạo</li></a><a href="#">
+                                    <li class="item">Thông tin tài khoản</li></a><a href="{{ url('pages/dangxuat') }}">
+                                    <li class="item">Đăng xuất</li></a>
+                            </ul>
+                        </aside>
+                @endif
+            @if(Auth::user())
+                <aside>
+                    <figure>
+                        <div class="box-img"><img class="ofc" src="images/user/{{Auth::user()->hinh}}" alt=""></div>
+                        <figcaption>
+                        <h5>{{Auth::user()->name}}</h5>
+                        </figcaption>
+                    </figure>
+                    <ul class="list-item"><a href="{{url('pages/eventcreate')}}">
+                            <li class="item">Sự kiện đã tạo</li></a><a href="#">
+                            <li class="item">Thông tin tài khoản</li></a><a href="{{ url('pages/dangxuat') }}">
+                            <li class="item">Đăng xuất</li></a>
+                    </ul>
+                </aside>
+            @endif
+            @if(isset($loginfb))
+                <aside>
+                    <figure>
+                        <div class="box-img"><img class="ofc" src="{{$loginfb->hinh}}" alt=""></div>
+                        <figcaption>
+                        <h5>{{$loginfb->name}}</h5>
+                        </figcaption>
+                    </figure>
+                    <ul class="list-item"><a href="{{url('pages/eventcreate')}}">
+                            <li class="item">Sự kiện đã tạo</li></a><a href="#">
+                            <li class="item">Thông tin tài khoản</li></a><a href="{{ url('pages/dangxuat') }}">
+                            <li class="item">Đăng xuất</li></a>
+                    </ul>
+                </aside>
+            @endif
+            @if(isset($logingg))
+                <aside>
+                    <figure>
+                        <div class="box-img"><img class="ofc" src="{{$logingg->hinh}}" alt=""></div>
+                        <figcaption>
+                        <h5>{{$logingg->name}}</h5>
+                        </figcaption>
+                    </figure>
+                    <ul class="list-item"><a href="{{url('pages/eventcreate')}}">
+                            <li class="item">Sự kiện đã tạo</li></a><a href="#">
+                            <li class="item">Thông tin tài khoản</li></a><a href="{{ url('pages/dangxuat') }}">
+                            <li class="item">Đăng xuất</li></a>
+                    </ul>
+                </aside>
+            @endif
             <div class="_main-user">
                 <div class="title-catalog wow fadeInLeft" data-wow-delay=".3s"><a href="{{url('pages/eventcreate')}}"><img class="icon" src="./images/icons/add.svg" alt="" srcset=""></a>
                     <div class="name-catalog"><span>A . Event</span><a href="{{url('pages/eventcreate')}}">
@@ -44,7 +91,7 @@
                                         </div>
                                     </figcaption>
                                     <div class="list-task">
-                                        <div class="item"><a href="pages/eventcreate/sua/{{$eventcreates->id}}">Sửa</a></div>
+                                        <div class="item"><a href="pages/addevent/sua/{{$eventcreates->id}}">Sửa</a></div>
                                         <div class="item"><a href="pages/eventcreate/xoa/{{$eventcreates->id}}">Xóa</a></div>
                                     </div>
                                 </figure>
@@ -52,7 +99,6 @@
                         </div> 
                     @endforeach
                 </div>
-                {{ $eventcreate->links() }}
             </div>
         </section>
     </main>

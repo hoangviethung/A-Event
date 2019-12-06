@@ -220,6 +220,11 @@ class PagesController extends Controller
         }
     }
 
+    public function getLogoutAdmin(){
+        Auth::logout();
+        return redirect('admin/login');
+    }
+
     public function getDashboard(){
         $event = Events::all();
         $users = users::all();

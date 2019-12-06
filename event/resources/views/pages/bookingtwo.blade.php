@@ -15,7 +15,7 @@
                 </div>
             </nav>
             @if(session('thongbao'))
-            <div class="alert alert-success" style="width: 50% !important">
+            <div class="alert alert-success" style="width: 50% !important; color: #000 !important">
                     {{session('thongbao')}}   
             </div>
         @endif
@@ -106,7 +106,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="alert alert-danger" style="width: 100%; background-color: #ffd800; padding: 100px; margin: 0;height: 100%;
-                        text-align: center; font-size: 48px; font-family: Anton,sans-serif;"> 
+                        text-align: center; font-size: 48px; font-family: Anton,sans-serif;color: #000"> 
                             Bạn chưa chọn vé
                         </div>
                     </div>
