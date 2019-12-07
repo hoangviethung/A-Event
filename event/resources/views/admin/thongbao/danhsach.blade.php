@@ -37,7 +37,6 @@
                                         <th>Tổng tiền vé vip</th>
                                         <th>Tổng tiền</th>
                                         <th>Ngày tạo</th>
-                                        <th>Chỗ ngồi</th>
                                         <th>Thao tác</th>
                                     </tr>
                                     </thead>
@@ -57,7 +56,6 @@
                                             <td>{{$book->tong_tien_ve_vip}}</td>
                                             <td>{{$book->tong_tien}}</td>
                                             <td>{{$book->updated_at}}</td>
-                                            <td>{{$book->cho_ngoi}}</td>
                                             <td>
                                                 <a href="admin/booking/xoa/{{$book->id}}"><img src="images/xoa.png" alt="A-event" srcset="" width="40" height="40"></a>
                                             </td>

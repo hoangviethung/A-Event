@@ -19,6 +19,7 @@ class Bills extends Migration
             $table->string('ten_nguoi_mua',255)->nullable();
             $table->integer('phone')->nullable();
             $table->string('email',255);
+            $table->integer('id_user', 10);
         });
     }
 

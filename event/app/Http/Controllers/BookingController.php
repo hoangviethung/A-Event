@@ -53,7 +53,6 @@ class BookingController extends Controller
         $book->sl_ve_vip = $req->sl_ve_vip;
         $book->tong_tien_ve_vip = $req->tong_tien_ve_vip;
         $book->tong_tien = $req->tong_tien;
-        $book->cho_ngoi = $req->cho_ngoi;
         $book->save();
         $bookingtwo = Events::where('id',$req->id)->first();
         $data = [

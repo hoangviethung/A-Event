@@ -96,7 +96,7 @@
 			<section class="catalog-event">
 				<div class="container">
 					<div class="catalog-wrapper">
-						<div class="title-catalog wow fadeInLeft" data-wow-delay=".3s"><a href="#"><img class="icon" src="images/icons/add.svg" alt="" srcset=""></a>
+						<div class="title-catalog wow fadeInLeft" data-wow-delay=".3s"><a href="{{url('pages/danhmuc/1')}}"><img class="icon" src="images/icons/add.svg" alt="" srcset=""></a>
                             <div class="name-catalog"><span>A . Event - loại sự kiện</span>
 
                             <a href="{{url('pages/danhmuc/1')}}">
@@ -154,7 +154,7 @@
 			<section class="catalog-event">
 				<div class="container">
 					<div class="catalog-wrapper">
-						<div class="title-catalog wow fadeInLeft" data-wow-delay=".3s"><a href="#"><img class="icon" src="images/icons/add.svg" alt="" srcset=""></a>
+						<div class="title-catalog wow fadeInLeft" data-wow-delay=".3s"><a href="{{url('pages/danhmuc/2')}}"><img class="icon" src="images/icons/add.svg" alt="" srcset=""></a>
                             <div class="name-catalog"><span>A . Event - loại sự kiện</span>
                             <a href="{{url('pages/danhmuc/2')}}">
 									<h3>Kiến thức</h3></a></div>
@@ -208,7 +208,7 @@
 			<section class="catalog-event">
 				<div class="container">
 					<div class="catalog-wrapper">
-						<div class="title-catalog wow fadeInLeft" data-wow-delay=".3s"><a href="#"><img class="icon" src="images/icons/add.svg" alt="" srcset=""></a>
+						<div class="title-catalog wow fadeInLeft" data-wow-delay=".3s"><a href="{{url('pages/danhmuc/3')}}"><img class="icon" src="images/icons/add.svg" alt="" srcset=""></a>
                             <div class="name-catalog"><span>A . Event - loại sự kiện</span>
                             <a href="{{url('pages/danhmuc/3')}}">
                                     <h3>Sự kiện khác</h3>
@@ -264,9 +264,9 @@
 			<section class="home-news">
 				<div class="container">
 					<div class="tab-container">
-						<div class="title-catalog wow fadeInLeft" data-wow-delay=".3s"><a href="#"><img class="icon" src="images/icons/add.svg" alt="" srcset=""></a>
-							<div class="name-catalog"><span>A . Event - News</span><a href="#">
-									<h3>Tin Tức</h3></a></div>
+						<div class="title-catalog wow fadeInLeft" data-wow-delay=".3s"><img class="icon" src="images/icons/add.svg" alt="" srcset="">
+							<div class="name-catalog"><span>A . Event - News</span>
+									<h3>Tin Tức</h3></div>
 						</div>
 						<ul class="list-catalogNews">
 							<li class="item acitve" toggle-for="item-1">NỔI BẬT</li>

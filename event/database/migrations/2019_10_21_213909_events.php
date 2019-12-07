@@ -27,7 +27,7 @@ class Events extends Migration
             $table->text('mo_ta');
             $table->integer('so_luong_ve');
             $table->text('email_chu');
-
+            $table->integer('id_user', 10);
         });
     }
 
