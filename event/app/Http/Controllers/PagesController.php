@@ -234,4 +234,8 @@ class PagesController extends Controller
     }
     // QL User
 
+    public function getErorr(){
+        return view('pages.erorr');
+    }
+
 }

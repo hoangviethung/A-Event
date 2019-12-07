@@ -77,6 +77,8 @@ Route::group(['prefix'=>'pages'], function(){
     Route::get('login/{provider}', 'Auth\SocialController@redirectToGoogle');
     Route::get('login/{provider}/callback', 'Auth\SocialController@handleGoogleCallback');
 
+    Route::get('erorr', 'PagesController@getErorr');
+
 });
 // pages website
 
