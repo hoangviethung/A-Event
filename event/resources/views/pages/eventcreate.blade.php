@@ -11,7 +11,7 @@
                                 </figcaption>
                             </figure>
                             <ul class="list-item"><a href="{{url('pages/eventcreate')}}">
-                                    <li class="item">Sự kiện đã tạo</li></a><a href="#">
+                                    <li class="item">Sự kiện đã tạo</li></a><a href="{{ url('pages/infouser') }}">
                                     <li class="item">Thông tin tài khoản</li></a><a href="{{ url('pages/dangxuat') }}">
                                     <li class="item">Đăng xuất</li></a>
                             </ul>
@@ -26,7 +26,7 @@
                         </figcaption>
                     </figure>
                     <ul class="list-item"><a href="{{url('pages/eventcreate')}}">
-                            <li class="item">Sự kiện đã tạo</li></a><a href="#">
+                            <li class="item">Sự kiện đã tạo</li></a><a href="{{ url('pages/infouser') }}">
                             <li class="item">Thông tin tài khoản</li></a><a href="{{ url('pages/dangxuat') }}">
                             <li class="item">Đăng xuất</li></a>
                     </ul>
@@ -41,7 +41,7 @@
                         </figcaption>
                     </figure>
                     <ul class="list-item"><a href="{{url('pages/eventcreate')}}">
-                            <li class="item">Sự kiện đã tạo</li></a><a href="#">
+                            <li class="item">Sự kiện đã tạo</li></a><a href="{{ url('pages/infouser') }}">
                             <li class="item">Thông tin tài khoản</li></a><a href="{{ url('pages/dangxuat') }}">
                             <li class="item">Đăng xuất</li></a>
                     </ul>
@@ -56,7 +56,7 @@
                         </figcaption>
                     </figure>
                     <ul class="list-item"><a href="{{url('pages/eventcreate')}}">
-                            <li class="item">Sự kiện đã tạo</li></a><a href="#">
+                            <li class="item">Sự kiện đã tạo</li></a><a href="{{ url('pages/infouser') }}">
                             <li class="item">Thông tin tài khoản</li></a><a href="{{ url('pages/dangxuat') }}">
                             <li class="item">Đăng xuất</li></a>
                     </ul>

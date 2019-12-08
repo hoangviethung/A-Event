@@ -3,11 +3,6 @@
 <main>
     <section class="login bg-main">
         <div class="container">
-                @if(session('thongbao'))
-                <p style="text-align: center;margin-bottom: 10px;">
-                        {{session('thongbao')}}
-                </p>
-            @endif
             <div class="box-login">
                 <ul class="menu-login-register">
                     <li class="item active"><a href="{{ url('pages/login') }}">ĐĂNG NHẬP</a></li>
