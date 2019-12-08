@@ -178,8 +178,12 @@ main {
 					max-width: 50%;
 
 					h5 {
-						font-size    : 13px;
-						margin-bottom: 10px;
+						-webkit-line-clamp: 1;
+						max-height        : 20px;
+						overflow          : hidden;
+						text-overflow     : ellipsis;
+						font-size         : 13px;
+						margin-bottom     : 10px;
 
 						span {
 							margin-left: 10px;

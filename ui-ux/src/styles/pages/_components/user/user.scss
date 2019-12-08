@@ -147,5 +147,86 @@
 			}
 		}
 
+		.list-info-user {
+			padding: 50px 30px;
+
+			.form-group {
+				margin-bottom: 30px;
+
+				label {
+					cursor       : pointer;
+					font-size    : 15px;
+					color        : $main-color-1;
+					margin-bottom: 20px;
+
+					&.choose-file {
+						background   : $main-color-2;
+						padding      : 10px 20px;
+						border-radius: 15px;
+						width        : 100%;
+					}
+
+					&.check-box {
+						user-select : none;
+						margin-right: 20px;
+					}
+				}
+
+				.form-input {
+					position: relative;
+
+					input[type="text"],
+					input[type="password"],
+					input[type="phone"] {
+						font-size     : 20px;
+						color         : #FFFFFF;
+						width         : 100%;
+						background    : none;
+						border        : none;
+						padding-bottom: 10px;
+						border-bottom : 2px solid rgba(255, 255, 255, 0.5);
+					}
+
+					input[type="radio"] {
+						margin-right: 20px;
+					}
+
+					input[type="date"] {
+						width        : 100%;
+						margin-right : 20px;
+						border       : none;
+						background   : $main-color-2;
+						color        : $main-color-1;
+						padding      : 10px 0px 10px 10px;
+						border-radius: 15px;
+					}
+
+					select {
+						width        : 100%;
+						color        : $main-color-1;
+						background   : $main-color-2;
+						height       : 42px;
+						border       : none;
+						padding-left : 15px;
+						border-radius: 15px;
+
+						option {
+							text-align: center;
+						}
+					}
+
+					.error {
+						display   : block;
+						text-align: right;
+						margin-top: 10px;
+						color     : #bc2e31;
+					}
+				}
+
+				p {
+					margin-bottom: 10px;
+				}
+			}
+		}
 	}
 }
