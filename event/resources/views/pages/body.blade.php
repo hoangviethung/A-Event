@@ -112,14 +112,6 @@
                             </a>
 
                         </div>
-							<div class="event-tag">
-								<ul class="list-eventTag">
-									<li class="item"><a href="#">#eventtag-1</a></li>
-									<li class="item"><a href="#">#eventtag-2</a></li>
-									<li class="item"><a href="#">#eventtag-3</a></li>
-									<li class="item"><a href="#">#eventtag-4</a></li>
-								</ul>
-							</div>
 						</div>
 						<div class="swpier-container slider-ProductByCatalog">
 							<div class="swiper-wrapper">
@@ -169,14 +161,6 @@
                             <div class="name-catalog"><span>A . Event - loại sự kiện</span>
                             <a href="{{url('pages/danhmuc/2')}}">
 									<h3>Kiến thức</h3></a></div>
-							<div class="event-tag">
-								<ul class="list-eventTag">
-									<li class="item"><a href="#">#eventtag-1</a></li>
-									<li class="item"><a href="#">#eventtag-2</a></li>
-									<li class="item"><a href="#">#eventtag-3</a></li>
-									<li class="item"><a href="#">#eventtag-4</a></li>
-								</ul>
-							</div>
 						</div>
 						<div class="swpier-container slider-ProductByCatalog">
 							<div class="swiper-wrapper">
@@ -228,14 +212,6 @@
                                     <h3>Các lĩnh vực khác</h3>
                             </a>
                             </div>
-							<div class="event-tag">
-								<ul class="list-eventTag">
-									<li class="item"><a href="#">#eventtag-1</a></li>
-									<li class="item"><a href="#">#eventtag-2</a></li>
-									<li class="item"><a href="#">#eventtag-3</a></li>
-									<li class="item"><a href="#">#eventtag-4</a></li>
-								</ul>
-							</div>
 						</div>
 						<div class="swpier-container slider-ProductByCatalog">
 							<div class="swiper-wrapper">
@@ -291,14 +267,16 @@
                             @foreach ($news_type as $news_type)
 							<li class="item" toggle-for="item-s{{$news_type->id}}">{{$news_type->ten_loai}}</li>
                             @endforeach
-							<!-- <li class="item" toggle-for="item-4">HỌC HỎI</li>
-							<li class="item" toggle-for="item-5">CÁC LĨNH VỰC KHÁC</li> -->
 						</ul>
 						<div class="tab-content">
 							<div class="content wow fadeIn" tab-id="item-1" data-wow-delay=".3s">
 								<div class="list-news">
                                 @foreach($new_01 as $new_01)
+<<<<<<< HEAD
+									<div class="item-news"><a href="{{url('pages/chitietnew',$new_01->id)}}">
+=======
 									<div class="item-news"><a href="{{url('pages/chitiettintuc',$new_01->id)}}">
+>>>>>>> 00c800cc14dae1f3d48f55d3e85d22b95c8db7a3
 											<figure>
 												<div class="box-img"><img class="ofc" src="images/news/{{$new_01->banner}}" alt="" srcset=""></div>
 												<figcaption>
@@ -320,11 +298,16 @@
 							<div class="content wow fadeIn" tab-id="item-2" data-wow-delay=".3s">
 								<div class="list-news">
                                 @foreach($news_moi as $news_moi)
+<<<<<<< HEAD
+									<div class="item-news"><a href="{{url('pages/chitietnew',$new_01->id)}}">
+=======
 									<div class="item-news"><a href="{{url('pages/chitiettintuc',$news_moi->id)}}">
+>>>>>>> 00c800cc14dae1f3d48f55d3e85d22b95c8db7a3
 											<figure>
 												<div class="box-img"><img class="ofc" src="images/news/{{$news_moi->banner}}" alt="" srcset=""></div>
 												<figcaption>
-													<h5>{{$news_moi->tieu_de}}</h5><span class="time"><?php
+													<h5>{{$news_moi->tieu_de}}</h5>
+													<span class="time"><?php
                                                     $d=strtotime($news_moi->created_at);
                                                     echo "" . date("d-m-Y", $d);
                                                     ?>
@@ -339,7 +322,11 @@
                                 @foreach($news as $news)
 							<div class="content wow fadeIn" tab-id="item-s{{$news->loaitin->id}}" data-wow-delay=".3s">
 								<div class="list-news">
+<<<<<<< HEAD
+									<div class="item-news"><a href="{{url('pages/chitietnew',$new_01->id)}}">
+=======
 									<div class="item-news"><a href="{{url('pages/chitiettintuc',$news->id)}}">
+>>>>>>> 00c800cc14dae1f3d48f55d3e85d22b95c8db7a3
 											<figure>
 												<div class="box-img"><img class="ofc" src="images/news/{{$news->banner}}" alt="" srcset=""></div>
 												<figcaption>

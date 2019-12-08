@@ -71,6 +71,13 @@ class PagesController extends Controller
         $chitiet = Events::where('id',$req->id)->first();
         return view('pages.chitiet',compact('chitiet'));
     }
+
+    public function getChitietnew(Request $request){
+        $chitietnew = News::where('id',$request->id)->first();
+        return view('pages.chitietnew',['new_01'=>$chitietnew]);
+
+    }
+    
     public function getDanhmuc($id)
     {
         $danhmuc = Type_events::find($id);
@@ -176,7 +183,7 @@ class PagesController extends Controller
     }
     $user->vip = $request->vip;
     $user->save();
-        return redirect('pages/login')->with('thongbao', 'Đăng kí thành công bạn vui lòng đăng nhập !');
+        return redirect('pages/login');
     }
 
     public function getDangxuat(){

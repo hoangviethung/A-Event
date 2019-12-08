@@ -24,65 +24,6 @@
 					</div>
 				</form>
 			</div>
-			<div class="box-filter">
-				<div class="container">
-					<form action="#">
-						<div class="form-row no-gutters">
-							<div class="form-group col-lg-3">
-								<select name="">
-									<option value="" data-filter="all">Tất cả địa điểm</option>
-									<option value="" data-filter="hcm" role="button">Hồ Chí Minh</option>
-									<option value="" data-filter="hanoi" role="button">Hà Nội</option>
-								</select>
-							</div>
-							<div class="form-group col-lg-3">
-								<select name="">
-									<option>-- Thể loại sự kiện --</option>
-									<optgroup label="Giải trí">
-										<option>Thể loại 1</option>
-										<option>Thể loại 2</option>
-										<option>Thể loại 3</option>
-										<option>Thể loại 4</option>
-										<option>Thể loại 5</option>
-										<option>Thể loại 6</option>
-									</optgroup>
-									<optgroup label="Học Tập">
-										<option>Thể loại 1</option>
-										<option>Thể loại 2</option>
-										<option>Thể loại 3</option>
-										<option>Thể loại 4</option>
-										<option>Thể loại 5</option>
-										<option>Thể loại 6</option>
-									</optgroup>
-									<optgroup label="Khác">
-										<option>Thể loại 1</option>
-										<option>Thể loại 2</option>
-										<option>Thể loại 3</option>
-										<option>Thể loại 4</option>
-										<option>Thể loại 5</option>
-										<option>Thể loại 6</option>
-									</optgroup>
-								</select>
-							</div>
-							<div class="form-group col-lg-3">
-								<select name="">
-									<option>Tất cả các ngày sắp tới</option>
-									<option>Hôm nay</option>
-									<option>Ngày mai</option>
-									<option>Tuần này</option>
-								</select>
-							</div>
-							<div class="form-group col-lg-3">
-								<select name="">
-									<option>Tất cả giá vé</option>
-									<option>Miễn phí</option>
-									<option>Có phí</option>
-								</select>
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
 			<div class="title-catalog wow fadeInLeft" data-wow-delay=".3s" style="margin-top: 50px !important;visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;-webkit-box-align: center !important;-ms-flex-align: center !important;display: -webkit-box !important;display: -ms-flexbox !important;display: flex !important;align-items: center !important;"><a href="http://localhost/A-event/event/public/pages/danhmuc/1"><img class="icon" src="images/icons/add.svg" alt="" srcset="" style="cursor: pointer;
 				width: 38px;height: 38px;margin-right: 10px;margin-left: 1.875rem;"></a>
 				<div class="name-catalog"><span style="color: #a0a0a0;font-family: Ubuntu,sans-serif;font-size: 12px;font-weight: 700;">A . Event - loại sự kiện</span>

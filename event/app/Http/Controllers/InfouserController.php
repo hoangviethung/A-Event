@@ -9,12 +9,15 @@ use App\users;
 use Illuminate\Support\Str;
 use App\Type_events;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cookie;
+
 
 
 class InfouserController extends Controller
 {
     function __construct()
     {
+
         $this->middleware(function ($request, $next) {
             if($request->cookie('loginfb'))
             view()->share('loginfb',json_decode($request->cookie('loginfb')));
@@ -148,5 +151,89 @@ class InfouserController extends Controller
         $create_event = Events::find($id);
         $create_event->delete();
         return redirect('pages/eventcreate');
+    }
+
+    public function getInfouser(Request $request){
+        $gg = json_decode($request->cookie('logingg'));
+        if(isset($gg->id_gg)){
+             $user = users::where('id_gg', $gg->id_gg)->get();
+        return view('pages.infouser',['logingg'=>$user[0]]);
+        }
+        $fb = json_decode($request->cookie('loginfb'));
+        if(isset($fb->id_fb)){
+             $user = users::where('id_fb', $fb->id_fb)->get();
+        return view('pages.infouser',['loginfb'=>$user[0]]);
+        }
+        $user = users::all();
+        return view('pages.infouser',['user'=>$user]);
+    }
+
+    public function getEdituser($id){
+       
+        $user = users::find($id);
+        return view('pages.edituser', ['users'=> $user]);
+    }
+
+    public function postEdituser(Request $request,$id){
+        $user = users::find($id);
+        $this->validate($request, 
+        [
+            'email'=>'required|min:3|max:32',
+            'name'=>'required|min:3|max:32',
+            'dien_thoai'=>'required|min:1|max:11',
+            'dia_chi'=>'required|min:3|max:32',
+            'ngay_sinh'=>'required',
+            'gioi_tinh'=>'required',
+            'hinh'=>'required',
+            'vip'=>'required',
+        ],
+        [
+            'email.required'=>'bạn chưa nhập email',
+            'email.min'=>'email phải lớn hơn 3 kí tự',
+            'email.max'=>'email không quá 32 kí tự',
+
+            'name.required'=>'bạn chưa nhập tên',
+            'name.min'=>'tên phải lơn hơn 3 kí tự',
+            'name.max'=>'tên không quá 32 kí tự',
+
+            'dien_thoai.required'=>'bạn chưa nhập số điện thoại',
+            'dien_thoai.min'=>'số điện thoại phải lớn hơn 1 kí tự',
+            'dien_thoai.max'=>'số điện thoại không quá 11 kí tự',
+
+            'dia_chi.required'=>'bạn chưa nhập địa chỉ',
+            'dia_chi.min'=>'địa chỉ phải lớn hơn 3 kí tự',
+            'dia_chi.max'=>'địa chỉ không quá 32 kí tự',
+
+            'ngay_sinh.required'=>'bạn chưa nhập ngày sinh',
+
+            'gioi_tinh.required'=>'bạn chưa chọn giới tính',
+
+            'hinh.required'=>'bạn chưa chọn hình',
+
+            'vip.required'=>'bạn chưa nhập chọn khách hàng',
+        ]);
+            $user->email = $request->email;
+            $user->name = $request->name;
+            if($request->password)
+            $user->password = bcrypt($request->password);
+            $user->dien_thoai = $request->dien_thoai;
+            $user->dia_chi = $request->dia_chi;
+            $user->ngay_sinh = $request->ngay_sinh;
+            $user->gioi_tinh = $request->gioi_tinh;
+            if($request->hasFile('hinh')){
+                $file = $request->file('hinh');
+                if($file->getClientOriginalExtension() == 'png' || 'jpg' || 'jpeg' || 'gif'){
+                    $filename = md5(time()).'_'.$file->getClientOriginalName();
+                    $file->move(public_path('images/user'), $filename);
+                    $link = $filename;
+                    $user->hinh = $link;
+                }
+            }else{
+                $user->hinh= '';
+            }
+            $user->vip = $request->vip;
+            $user->save();
+
+        return redirect('pages/edituser/sua/'.Auth::user()->id)->with('thongbao','Sửa thông tin thành công !');
     }
 }
