@@ -23,7 +23,11 @@
 
                                                             $newDate = date(" \N\g\à\y\ d, \T\h\á\\n\\g\ m, \N\ă\m\ Y", strtotime($origDate));
                                                             echo $newDate; ?>
- 														- {{$slide->dia_chi}} ({{$slide->thoi_gian}})</p>
+                                                         - {{$slide->dia_chi}}
+                                                        <?php $origDate = "$slide->thoi_gian";
+                                                        $newDate = date("\(\ h:i A \)\ ", strtotime($origDate));
+                                                        echo $newDate;
+                                                    ?></p>
 												</div>
 											</figcaption>
 										</figure>
@@ -41,11 +45,15 @@
 						</div></a></div>
 			</section>
 			<section class="hot-event">
+
 				<div class="container">
 					<div class="hotEvent-wrapper">
 						<div class="swpier-container slider-hotEvent">
 							<div class="swiper-wrapper">
                             @foreach($noibat as $noibat)
+                                <div class="date-over hidden">
+                                    <p>{{$noibat->ngay_dien_ra}} {{$noibat->thoi_gian}}</p>
+                                </div>
 								<div class="swiper-slide">
 									<figure class="wow fadeInDown" data-wow-delay=".3s"><img class="ofc" src="images/product/{{$noibat->banner}}" alt="" srcset="">
 										<figcaption>
@@ -131,7 +139,10 @@
 															<h5>Địa chỉ:<span>{{$giaitri->dia_chi}}</span></h5>
 														</div>
 														<div class="item">
-															<h5>Thời gian:<span>{{$giaitri->ngay_dien_ra}} </span></h5>
+															<h5>Thời gian:<span>   <?php $origDate = "$giaitri->ngay_dien_ra";
+                                                        $newDate = date("d.m.Y", strtotime($origDate));
+                                                        echo $newDate;
+                                                    ?> </span></h5>
 														</div>
 														<div class="item">
 															<h5>Trạng thái:<span>Mở bán</span></h5>
@@ -185,7 +196,10 @@
 															<h5>Địa chỉ:<span>{{$kienthuc->dia_chi}}</span></h5>
 														</div>
 														<div class="item">
-															<h5>Thời gian:<span>{{$kienthuc->ngay_dien_ra}} </span></h5>
+															<h5>Thời gian:<span>   <?php $origDate = "$kienthuc->ngay_dien_ra";
+                                                        $newDate = date("d.m.Y", strtotime($origDate));
+                                                        echo $newDate;
+                                                    ?> </span></h5>
 														</div>
 														<div class="item">
 															<h5>Trạng thái:<span>Mở bán</span></h5>
@@ -241,7 +255,10 @@
 															<h5>Địa chỉ:<span>{{$sukienkhac->dia_chi}}</span></h5>
 														</div>
 														<div class="item">
-															<h5>Thời gian:<span>{{$sukienkhac->ngay_dien_ra}}</span></h5>
+															<h5>Thời gian:<span>   <?php $origDate = "$sukienkhac->ngay_dien_ra";
+                                                        $newDate = date("d.m.Y", strtotime($origDate));
+                                                        echo $newDate;
+                                                    ?></span></h5>
 														</div>
 														<div class="item">
 															<h5>Trạng thái:<span>Mở bán</span></h5>
@@ -281,7 +298,7 @@
 							<div class="content wow fadeIn" tab-id="item-1" data-wow-delay=".3s">
 								<div class="list-news">
                                 @foreach($new_01 as $new_01)
-									<div class="item-news"><a href="chi-tiet-tin-tuc.html">
+									<div class="item-news"><a href="{{url('pages/chitiettintuc',$new_01->id)}}">
 											<figure>
 												<div class="box-img"><img class="ofc" src="images/news/{{$new_01->banner}}" alt="" srcset=""></div>
 												<figcaption>
@@ -303,7 +320,7 @@
 							<div class="content wow fadeIn" tab-id="item-2" data-wow-delay=".3s">
 								<div class="list-news">
                                 @foreach($news_moi as $news_moi)
-									<div class="item-news"><a href="chi-tiet-tin-tuc.html">
+									<div class="item-news"><a href="{{url('pages/chitiettintuc',$news_moi->id)}}">
 											<figure>
 												<div class="box-img"><img class="ofc" src="images/news/{{$news_moi->banner}}" alt="" srcset=""></div>
 												<figcaption>
@@ -322,7 +339,7 @@
                                 @foreach($news as $news)
 							<div class="content wow fadeIn" tab-id="item-s{{$news->loaitin->id}}" data-wow-delay=".3s">
 								<div class="list-news">
-									<div class="item-news"><a href="chi-tiet-tin-tuc.html">
+									<div class="item-news"><a href="{{url('pages/chitiettintuc',$news->id)}}">
 											<figure>
 												<div class="box-img"><img class="ofc" src="images/news/{{$news->banner}}" alt="" srcset=""></div>
 												<figcaption>
