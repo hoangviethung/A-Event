@@ -225,7 +225,7 @@
 						<div class="title-catalog wow fadeInLeft" data-wow-delay=".3s"><a href="{{url('pages/danhmuc/3')}}"><img class="icon" src="images/icons/add.svg" alt="" srcset=""></a>
                             <div class="name-catalog"><span>A . Event - loại sự kiện</span>
                             <a href="{{url('pages/danhmuc/3')}}">
-                                    <h3>Sự kiện khác</h3>
+                                    <h3>Các lĩnh vực khác</h3>
                             </a>
                             </div>
 							<div class="event-tag">

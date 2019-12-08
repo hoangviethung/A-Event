@@ -96,7 +96,7 @@ Route::group(['prefix'=>'pages'], function(){
 Route::group(['prefix'=>'admin','middleware'=>'checklogin'], function(){
     // danhmuc
     Route::group(['prefix' => 'danhmuc'], function () {
-        // hướng đi admin/slider/danhsach
+        // hướng đi admin/danhmuc/danhsach
         Route::get('danhsach','DanhmucController@getDanhsach');
 
         Route::get('sua/{id}', 'DanhmucController@getSua');
@@ -108,11 +108,27 @@ Route::group(['prefix'=>'admin','middleware'=>'checklogin'], function(){
         // Hàm post nhận dữ liệu về và lưu vào cơ sở dữ liệu
         Route::get('xoa/{id}', 'DanhmucController@getXoa');
     });
+
+    // Loại sự kiện có trong danh mục
+    Route::group(['prefix' => 'loaievent'], function () {
+        // hướng đi admin/loaievent/danhsach
+        Route::get('danhsach','LoaiEventController@getDanhsach');
+
+        Route::get('sua/{id}', 'LoaiEventController@getSua');
+        Route::post('sua/{id}', 'LoaiEventController@postSua');
+
+
+        Route::get('them', 'LoaiEventController@getThem');
+        Route::post('them', 'LoaiEventController@postThem');
+        // Hàm post nhận dữ liệu về và lưu vào cơ sở dữ liệu
+        Route::get('xoa/{id}', 'LoaiEventController@getXoa');
+    });
     // danhmuc
+
 
     // Sự kiện
     Route::group(['prefix' => 'event'], function () {
-        // hướng đi admin/slider/danhsach
+        // hướng đi admin/event/danhsach
         Route::get('danhsach','EventController@getDanhsach');
 
         Route::get('sua/{id}', 'EventController@getSua');
