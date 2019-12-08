@@ -31,6 +31,10 @@ Route::group(['prefix'=>'pages'], function(){
         'as' =>'chitiet',
         'uses'=>'PagesController@getChitiet',
     ]);
+    Route::get('chitiettintuc/{id}',[
+        'as' =>'chitiettintuc',
+        'uses'=>'NewController@getChitiettintuc',
+    ]);
 
     Route::get('chitietnew/{id}',[
         'as' =>'chitietnew',
@@ -61,7 +65,7 @@ Route::group(['prefix'=>'pages'], function(){
         'uses' => 'PagesController@getDanhmuc',
     ]);
     Route::post('danhmuc/{id}', 'PagesController@postDanhmuc');
-    
+
     Route::get('eventcreate','InfouserController@getEventcreate');
 
     Route::get('editevent/sua/{id}', 'InfouserController@getSua');

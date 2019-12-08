@@ -99,7 +99,11 @@
 										<h1>{{$chitiet->ten_su_kien}}</h1>
 										<div class="item time"><?php $origDate = "$chitiet->ngay_dien_ra";
                                         $newDate = date(" \N\g\à\y\ d, \T\h\á\\n\\g\ m, \N\ă\m\ Y", strtotime($origDate));
-                                        echo $newDate; ?> ( {{$chitiet->thoi_gian}} )</div>
+                                        echo $newDate; ?>   <?php $origDate = "$chitiet->thoi_gian";
+                                        $newDate = date("\(\ h:i A \)\ ", strtotime($origDate));
+                                        echo $newDate;
+                                         ?>
+                                    </div>
 										<div class="item address">{{$chitiet->dia_chi}}</div>
 										<div class="item price">Từ {{number_format($chitiet->gia_ve)}} VNĐ</div>
 									</div>
