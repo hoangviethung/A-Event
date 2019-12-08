@@ -492,7 +492,8 @@ table.dataTable thead .sorting:after {
     line-height: 1.3;
     padding: 0;
     margin: 0;
-    color: #347ab6;
+    color: #efad4d; 
+   
 }
 .txt_lf_2{
     position: absolute;
@@ -551,7 +552,7 @@ table.dataTable thead .sorting:after {
     line-height: 1.3;
     padding: 0;
     margin: 0; 
-    color: #efad4d; 
+    color: #347ab6;
 }
 .txt_rg_2{
     position: absolute;

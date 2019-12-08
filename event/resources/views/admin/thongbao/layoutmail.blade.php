@@ -97,7 +97,7 @@
                                 <tr>
                                     <td align="center" style="padding: 10px;">
                                         <a href="#" target="_blank">
-                                            <img src="https://chart.googleapis.com/chart?cht=qr&chl=Tên sự kiện: <?php echo $ten_su_kien;?>Tên khách hàng: <?php echo $ten_khach_hang;?>Số lượng vé thường: <?php echo $so_ve_thuong;?>Tổng tiền vé thường: <?php echo $tong_tien_thuong?>Số lượng vé vip: <?php echo $so_ve_vip;?>Tổng tiền vé vip: <?php echo $tong_tien_vip?>Tổng tiền khách trả: <?php echo $tong_tien?>&chs=150x150&chld=L|0">
+                                            <img src="https://chart.googleapis.com/chart?cht=qr&chl=Tên sự kiện: <?php echo $ten_su_kien;?>%0ATên khách hàng: <?php echo $ten_khach_hang;?>%0ASố lượng vé thường: <?php echo $so_ve_thuong;?>%0ATổng tiền vé thường: <?php echo number_format($tong_tien_thuong)?>%0ASố lượng vé vip: <?php echo $so_ve_vip;?>%0ATổng tiền vé vip: <?php echo number_format($tong_tien_vip)?>%0ATổng tiền khách trả: <?php echo number_format($tong_tien)?>&chs=150x150&chld=L|0">
                                         </a>
                                     </td>
                                 </tr>

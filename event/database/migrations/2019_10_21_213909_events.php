@@ -26,7 +26,8 @@ class Events extends Migration
             $table->Datetime('ngay_ban');
             $table->text('mo_ta');
             $table->integer('so_luong_ve');
-
+            $table->text('email_chu');
+            $table->integer('id_user', 10);
         });
     }
 

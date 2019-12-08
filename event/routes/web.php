@@ -56,6 +56,13 @@ Route::group(['prefix'=>'pages'], function(){
         'uses' => 'PagesController@getDanhmuc',
     ]);
     Route::post('danhmuc/{id}', 'PagesController@postDanhmuc');
+    
+    Route::get('eventcreate','InfouserController@getEventcreate');
+
+    Route::get('editevent/sua/{id}', 'InfouserController@getSua');
+    Route::post('editevent/sua/{id}', 'InfouserController@postSua');
+
+    Route::get('eventcreate/xoa/{id}', 'InfouserController@getXoa');
 
     Route::get('login', 'PagesController@getLogin');
     Route::post('login', 'PagesController@postLogin');
@@ -70,14 +77,16 @@ Route::group(['prefix'=>'pages'], function(){
     Route::get('login/{provider}', 'Auth\SocialController@redirectToGoogle');
     Route::get('login/{provider}/callback', 'Auth\SocialController@handleGoogleCallback');
 
+    Route::get('erorr', 'PagesController@getErorr');
+
 });
 // pages website
 
 // admin
 
-Route::get('admin/login', 'PagesController@getLoginAdmin');
-Route::post('admin/login', 'PagesController@postLoginAdmin');
-Route::get('admin/logout', 'PagesController@getLogoutAdmin');
+    Route::get('admin/login', 'PagesController@getLoginAdmin');
+    Route::post('admin/login', 'PagesController@postLoginAdmin');
+    Route::get('admin/logout', 'PagesController@getLogoutAdmin');
 
 
 Route::group(['prefix'=>'admin','middleware'=>'checklogin'], function(){
@@ -127,36 +136,21 @@ Route::group(['prefix'=>'admin','middleware'=>'checklogin'], function(){
         Route::get('them', 'LoaitinController@getThem');
         Route::post('them', 'LoaitinController@postThem');
         // Hàm post nhận dữ liệu về và lưu vào cơ sở dữ liệu
-        Route::get('xoa/{id}', 'NewController@getXoa');
+        Route::get('xoa/{id}', 'LoaitinController@getXoa');
 
     });
     // Tin tức
-    Route::group(['prefix' => 'news'], function () {
+    Route::group(['prefix' => 'new'], function () {
 
         Route::get('danhsach','NewController@getDanhsach');
 
         Route::get('sua/{id}', 'NewController@getSua');
         Route::post('sua/{id}', 'NewController@postSua');
 
-
         Route::get('them', 'NewController@getThem');
         Route::post('them', 'NewController@postThem');
-        // Hàm post nhận dữ liệu về và lưu vào cơ sở dữ liệu
+
         Route::get('xoa/{id}', 'NewController@getXoa');
-
-    });
-    // Addevent
-    Route::group(['prefix' => 'new'], function () {
-
-        Route::get('danhsach','NewController@getDanhsach');
-
-        Route::get('sua', 'NewController@getSua');
-        Route::post('sua', 'NewController@postSua');
-
-        Route::get('them', 'NewController@getThem');
-        Route::post('them', 'NewController@postThem');
-
-        Route::get('xoa', 'NewController@getXoa');
     });
     // Addevent
     // Accounts

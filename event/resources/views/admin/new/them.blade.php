@@ -21,22 +21,8 @@
                             <!-- để truyền dữ liệu phải cho nó 1 cái token -->
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                             <div class="form-group">
-<<<<<<< HEAD
-                                <label>Tên sự kiện</label>
-                                <input class="form-control" name="ten_su_kien" placeholder="Nhập tên sự kiện"/>
-                            </div>
-                            <div class="form-group">
-                                <label>Logo sự kiện</label>
-                                <input class="form-control" name="logo" type="file"/>
-=======
-                                <label>Tiêu đề</label>
-                                <input class="form-control" name="tieu_de" placeholder="Nhập tiêu đề tin"/>
-                                @if($errors->has('tieu_de'))
-                                    <span class="error">
-                                        {{$errors->first('tieu_de')}}
-                                    </span>
-                                @endif
->>>>>>> 06cd232b6e8601a9ea3f7075a6a6c627bd5e1615
+                                <label>Tiêu đề tin</label>
+                                <input class="form-control" name="tieu_de" placeholder="Nhập tiệu đề tin" />
                             </div>
                             <div class="form-group">
                                 <label>Thể loại tin tức</label>
@@ -55,10 +41,7 @@
                                     </span>
                                 @endif
                             </div>
-                            <div class="form-group">
-                                <label>Ngày đăng tin</label>
-                                <input class="form-control" name="ngay_dang" type="date"/>
-                            </div>
+
 
                             <div class="form-group">
                                 <label>Mô tả sự kiện</label>

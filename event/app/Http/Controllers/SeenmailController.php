@@ -9,7 +9,7 @@ class SeenmailController extends Controller
 {   
     public function __construct()
     {
-        $bills = Bills::orderBy('id')->paginate(5);
+        $bills = Bills::orderBy('id', 'desc')->paginate(5);
         view()->share('bills', $bills);
     }
     public function getDanhsach(){

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 04, 2019 at 06:36 PM
+-- Generation Time: Dec 05, 2019 at 03:39 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.10
 
@@ -218,24 +218,6 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `news`
---
-
-CREATE TABLE `news` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `tieu_de` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `noi_dung` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `hinh_anh` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `hinh_anh_hien_thi` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `video` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `ngay_dang` datetime NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `password_resets`
 --
 
@@ -301,7 +283,6 @@ CREATE TABLE `tintuc` (
   `loai_tin` int(11) NOT NULL,
   `tieu_de` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `banner` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `ngay_dang` datetime NOT NULL,
   `noi_dung` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `noi_bat` tinyint(4) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -312,8 +293,9 @@ CREATE TABLE `tintuc` (
 -- Dumping data for table `tintuc`
 --
 
-INSERT INTO `tintuc` (`id`, `loai_tin`, `tieu_de`, `banner`, `ngay_dang`, `noi_dung`, `noi_bat`, `created_at`, `updated_at`) VALUES
-(1, 1, 'asdsadsa', 'sadsadsa', '2019-10-24 00:00:00', 'asdsadsadsadsadsa', NULL, NULL, NULL);
+INSERT INTO `tintuc` (`id`, `loai_tin`, `tieu_de`, `banner`, `noi_dung`, `noi_bat`, `created_at`, `updated_at`) VALUES
+(2, 1, 'Test tin', 'Ejc9UdJGnK_Capture.PNG', '<p>asdsadas</p>', 1, '2019-12-05 03:35:34', '2019-12-05 14:24:21'),
+(3, 2, 'Test', 'IYbTxBIKru_521EC9.jpg', '<p>sadsadasdsadasd</p>', 1, '2019-12-05 14:31:59', '2019-12-05 14:31:59');
 
 -- --------------------------------------------------------
 
@@ -414,12 +396,6 @@ ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `news`
---
-ALTER TABLE `news`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `password_resets`
 --
 ALTER TABLE `password_resets`
@@ -497,12 +473,6 @@ ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
--- AUTO_INCREMENT for table `news`
---
-ALTER TABLE `news`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `seenmail`
 --
 ALTER TABLE `seenmail`
@@ -518,7 +488,7 @@ ALTER TABLE `short_links`
 -- AUTO_INCREMENT for table `tintuc`
 --
 ALTER TABLE `tintuc`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `type_events`

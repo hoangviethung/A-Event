@@ -45,6 +45,7 @@ class EventController extends Controller
             'mo_ta' => 'required',
             'so_luong_ve_thuong' => 'required|integer|',
             'so_luong_ve_vip' => 'required|integer|',
+            'email_chu' => 'required',
         ],
         [
             'ten_su_kien.required' => ' Bạn chưa nhập tên sự kiện',
@@ -81,7 +82,8 @@ class EventController extends Controller
             'so_luong_ve_thuong.required' => 'Bạn chưa nhập số lượng vé thường',
             'so_luong_ve_thuong.integer' => ' Số lượng phải là số',
             'so_luong_ve_vip.required' => 'Bạn chưa nhập số lượng vé vip',
-            'so_luong_ve_vip.integer' => ' Số lượng phải là số'
+            'so_luong_ve_vip.integer' => ' Số lượng phải là số',
+            'email_chu.required'=>'Bạn chưa nhập email chủ event'
 
 
 
@@ -108,6 +110,7 @@ class EventController extends Controller
         $event->hien_thi_slider = $request->hien_thi_slider;
         $event->hien_thi_noi_bat = $request->hien_thi_noi_bat;
         $event->duyet = $request->duyet;
+        $event->email_chu = $request->email_chu;
 
         if($request->hasFile('logo')){
             $file_logo = $request->file('logo');
@@ -167,6 +170,7 @@ class EventController extends Controller
             'mo_ta' => 'required',
             'so_luong_ve_thuong' => 'required|integer|',
             'so_luong_ve_vip' => 'required|integer|',
+            'email_chu' => 'required',
         ],[
             'ten_su_kien.required' => ' Bạn chưa nhập tên sự kiện',
             'ten_su_kien.min' => ' Tên sự kiện phải có từ 3 đến 100 ký tự',
@@ -199,7 +203,8 @@ class EventController extends Controller
             'so_luong_ve_thuong.required' => 'Bạn chưa nhập số lượng vé thường',
             'so_luong_ve_thuong.integer' => ' Số lượng phải là số',
             'so_luong_ve_vip.required' => 'Bạn chưa nhập số lượng vé vip',
-            'so_luong_ve_vip.integer' => ' Số lượng phải là số'
+            'so_luong_ve_vip.integer' => ' Số lượng phải là số',
+            'email_chu.required'=>'Bạn chưa nhập email chủ event'
         ]);
 
 
@@ -225,8 +230,7 @@ class EventController extends Controller
         $event->hien_thi_slider = $request->hien_thi_slider;
         $event->hien_thi_noi_bat = $request->hien_thi_noi_bat;
         $event->duyet = $request->duyet;
-
-
+        $event->email_chu = $request->email_chu;
         if($request->hasFile('logo')){
             $file_logo = $request->file('logo');
             $name_logo = $file_logo->getClientOriginalName();

@@ -8,38 +8,38 @@
             <div class="col-lg-2">
                 <h5>COMPANY</h5>
                 <ul class="list-item-footer">
-                    <li class="item-footer"><a href="#">Our Blog</a></li>
-                    <li class="item-footer"><a href="#">Instagram</a></li>
-                    <li class="item-footer"><a href="#">Snapchat</a></li>
-                    <li class="item-footer"><a href="#">Facebook</a></li>
-                    <li class="item-footer"><a href="#">Twitter</a></li>
-                    <li class="item-footer"><a href="#">Dribbble</a></li>
+                    <li class="item-footer"><a href="{{ url('pages/erorr') }}">Our Blog</a></li>
+                    <li class="item-footer"><a href="{{ url('pages/erorr') }}">Instagram</a></li>
+                    <li class="item-footer"><a href="{{ url('pages/erorr') }}">Snapchat</a></li>
+                    <li class="item-footer"><a href="{{ url('pages/erorr') }}">Facebook</a></li>
+                    <li class="item-footer"><a href="{{ url('pages/erorr') }}">Twitter</a></li>
+                    <li class="item-footer"><a href="{{ url('pages/erorr') }}">Dribbble</a></li>
                 </ul>
             </div>
             <div class="col-lg-2">
                 <h5>MEMBER</h5>
                 <ul class="list-item-footer">
-                    <li class="item-footer"><a href="#">Home</a></li>
-                    <li class="item-footer"><a href="#">About</a></li>
-                    <li class="item-footer"><a href="#">Pricing</a></li>
-                    <li class="item-footer"><a href="#">Blog</a></li>
-                    <li class="item-footer"><a href="#">Services</a></li>
-                    <li class="item-footer"><a href="#">Shop</a></li>
+                    <li class="item-footer"><a href="{{ url('pages/erorr') }}">Home</a></li>
+                    <li class="item-footer"><a href="{{ url('pages/erorr') }}">About</a></li>
+                    <li class="item-footer"><a href="{{ url('pages/erorr') }}">Pricing</a></li>
+                    <li class="item-footer"><a href="{{ url('pages/erorr') }}">Blog</a></li>
+                    <li class="item-footer"><a href="{{ url('pages/erorr') }}">Services</a></li>
+                    <li class="item-footer"><a href="{{ url('pages/erorr') }}">Shop</a></li>
                 </ul>
             </div>
             <div class="col-lg-2">
                 <h5>FOLLOW</h5>
                 <ul class="list-item-footer">
-                    <li class="item-footer"><a href="#">Account</a></li>
-                    <li class="item-footer"><a href="#">Billing</a></li>
-                    <li class="item-footer"><a href="#">Membership</a></li>
-                    <li class="item-footer"><a href="#">Receipt</a></li>
-                    <li class="item-footer"><a href="#">Invoice</a></li>
+                    <li class="item-footer"><a href="{{ url('pages/erorr') }}">Account</a></li>
+                    <li class="item-footer"><a href="{{ url('pages/erorr') }}">Billing</a></li>
+                    <li class="item-footer"><a href="{{ url('pages/erorr') }}">Membership</a></li>
+                    <li class="item-footer"><a href="{{ url('pages/erorr') }}">Receipt</a></li>
+                    <li class="item-footer"><a href="{{ url('pages/erorr') }}">Invoice</a></li>
                 </ul>
             </div>
         </div>
         <div class="coppy-right">
-            <h3>@ 2020 <a href="https://www.facebook.com/hoangviet.hung.009"><span>A EVENT | ALL COPYRIGHT BY A EVENT</span></a></h3>
+            <h3>@ 2020 <a href="https://www.facebook.com/A-Event-117903549608295/" target="_blank"><span>A EVENT | ALL COPYRIGHT BY A EVENT</span></a></h3>
             <p>This is Project of Hùng, Tuyến, Huy, Sơn.</p>
         </div>
     </div>
@@ -82,11 +82,13 @@
 </script>
     <div class="fb-customerchat" attribution="setup_tool" page_id="117903549608295" theme_color="#ffc300" logged_in_greeting="A Event xin chào, chúng tôi giúp gì được cho bạn ?" logged_out_greeting="A Event xin chào, chúng tôi giúp gì được cho bạn ?"></div>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?&amp;key=AIzaSyCHvmyTralDp2Y0m7zEiN185u1vtArcC5s&amp;libraries=places"></script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v5.0&appId=420853728859282&autoLogAppEvents=1"></script>
     <script type="text/javascript" src="js/core.min.js"></script>
     <script type="text/javascript" src="js/main.min.js"></script>
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <script type="text/javascript" src="editor/ckeditor/ckeditor.js"></script>
     <script type="text/javascript" src="js/validate.js"></script>
+    <script type="text/javascript" src="js/filters.js"></script>
     <script type="text/javascript" src="js/jquery.validate.min.js"></script>
     @yield('script')
 </body>

@@ -105,7 +105,7 @@
 									</div>
 									<div class="facebook-button">
 										<div class="item">
-											<div class="button fb-share-button" data-href="https://aevent.web404.xyz/" data-layout="button" data-size="large"></div><a class="fb-xfbml-parse-ignore" target="_blank" href="https://aevent.web404.xyz/"></a>
+											<div class="fb-share-button" data-href="https://aevent.web404.xyz/?fbclid=IwAR2SkA9PfLVMSIdO9HU-CgXxxLR3hskQ5S9vnCBVhKMrEHklC8SVT6lGzoY" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%2FA-event%2Fevent%2Fpublic%2Fpages%2Findex&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Chia sẻ</a></div>
 										</div>
 										<div class="item">
 											<div class="button fb-save" data-uri="https://www.instagram.com/facebook/" data-size="large"></div>
