@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Bills;
 use Illuminate\Support\Facades\View;
 class SeenmailController extends Controller
-{   
+{
     public function __construct()
     {
         $bills = Bills::orderBy('id', 'desc')->paginate(5);
@@ -47,7 +47,7 @@ class SeenmailController extends Controller
             'cho_ngoi' => $request->cho_ngoi,
             'banner' => 'images/email/banner.jpg',
             'logo'=>'images/email/logo.png',
-          
+
         ];
         Mail::send('admin.thongbao.layoutmail', $data, function ($message) use ($data) {
             $message->from('hotroaevent@gmail.com', 'Hỗ trợ Aevent');

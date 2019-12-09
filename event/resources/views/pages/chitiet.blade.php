@@ -85,7 +85,7 @@
                                     <div class="organizer">
 										<div class="title">NHÀ TỔ CHỨC</div>
 										<div class="content wow fadeInDown" data-wow-delay=".3s">
-											<div class="org-img"><img class="ofc" src="./images/product/{{$chitiet->logo}}.png" alt="" srcset=""></div>
+											<div class="org-img"><img style="width: 127px !important; height: 127px !important; margin-right: 20px !important;" class="ofc" src="./images/logo/{{$chitiet->logo}}" alt="" srcset=""></div>
 											<div class="desc">
 												<p>{{$chitiet->nha_tai_tro}} tổ chức chương trình.</p>
 											</div>

@@ -36,10 +36,7 @@ Route::group(['prefix'=>'pages'], function(){
         'uses'=>'NewController@getChitiettintuc',
     ]);
 
-    Route::get('chitietnew/{id}',[
-        'as' =>'chitietnew',
-        'uses'=>'PagesController@getChitietnew',
-    ]);
+
 
     Route::get('bookingone/{id}',[
         'as' => 'bookingone',

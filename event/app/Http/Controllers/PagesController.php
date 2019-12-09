@@ -72,12 +72,7 @@ class PagesController extends Controller
         return view('pages.chitiet',compact('chitiet'));
     }
 
-    public function getChitietnew(Request $request){
-        $chitietnew = News::where('id',$request->id)->first();
-        return view('pages.chitietnew',['new_01'=>$chitietnew]);
 
-    }
-    
     public function getDanhmuc($id)
     {
         $danhmuc = Type_events::find($id);

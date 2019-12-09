@@ -7,6 +7,7 @@ use App\Events;
 use App\Type_events;
 use Illuminate\Support\Str;
 use Carbon\Carbon;
+use Mail;
 class EventController extends Controller
 {
 
@@ -24,6 +25,8 @@ class EventController extends Controller
     public function getThem(){
         $danhmuc = Type_events::all();
         return view('admin.event.them',['danhmuc'=>$danhmuc]);
+
+
     }
     public function postThem(Request $request){
         $this->validate($request,
@@ -136,7 +139,25 @@ class EventController extends Controller
         $event->banner = "";
         }
 
+
         $event->save();
+
+
+        $data = [
+            'ten_su_kien' => $event->ten_su_kien,
+            'banner' => 'images/email/banner.jpg',
+            'logo'=>'images/email/logo.png',
+            'email'=> $event->email_chu,
+
+        ];
+        Mail::send('admin.thongbao.duyetsk', $data, function ($message) use ($data) {
+            $message->from('hotroaevent@gmail.com', 'Hỗ trợ Aevent');
+            $message->to($data['email'], 'Khách hàng');
+            $message->subject($data['banner']);
+            $message->subject($data['logo']);
+            $message->subject($data['ten_su_kien']);
+        });
+
         return redirect('admin/event/them')->with('thongbao','Thêm thành công');
     }
 
@@ -157,10 +178,10 @@ class EventController extends Controller
             'nha_tai_tro' => 'required',
             'thoi_gian'=>'required',
             'gia_ve'=> 'required|integer|min:1000|max:100000000|',
-            'vi_tri_ve_thuong' => 'min:10|max:200|',
-            'qua_tang_thuong' => 'min:10|max:200|',
-            'vi_tri_ve_vip' => 'min:10|max:200|',
-            'qua_tang_vip'=>'min:10|max:200|',
+            'vi_tri_ve_thuong' => 'min:2|max:200|',
+            'qua_tang_thuong' => 'min:2|max:200|',
+            'vi_tri_ve_vip' => 'min:2|max:200|',
+            'qua_tang_vip'=>'min:2|max:200|',
             'gia_ve_vip'=>'|integer|min:1000|max:100000000|',
             'banner'=>'required|mimes:jpeg,png,jpg,gif,svg|max:2048|',
             'logo'=>'mimes:jpeg,png,jpg.gif,svg|max:2048|',
@@ -185,10 +206,10 @@ class EventController extends Controller
             'gia_ve_vip.max' => 'Giá tối thiếu 1 000 đồng đến 100 000 000 đồng',
             'gia_ve_vip.min' => 'Giá tối thiếu 1 000 đồng đến 100 000 000 đồng',
             'gia_ve_vip.integer' => 'Giá vé phải là số nguyên dương',
-            'vi_tri_ve_thuong.min' => 'Nhập vị trí ngồi của vé thường( Không được quá 10 -> 200 kí tự )',
-            'vi_tri_ve_thuong.max' => 'Nhập vị trí ngồi của vé thường( Không được quá 10 -> 200 kí tự )',
-            'qua_tang_thuong.max' => 'Nhập quà tặng của vé thường( Không được quá 10 -> 200 kí tự )',
-            'qua_tang_thuong.min' => 'Nhập quà tặng của vé thường( Không được quá 10 -> 200 kí tự )',
+            'vi_tri_ve_thuong.min' => 'Nhập vị trí ngồi của vé thường( Không được quá 2 -> 200 kí tự )',
+            'vi_tri_ve_thuong.max' => 'Nhập vị trí ngồi của vé thường( Không được quá 2 -> 200 kí tự )',
+            'qua_tang_thuong.max' => 'Nhập quà tặng của vé thường( Không được quá 2 -> 200 kí tự )',
+            'qua_tang_thuong.min' => 'Nhập quà tặng của vé thường( Không được quá 2 -> 200 kí tự )',
             'qua_tang_vip.max' => 'Nhập quà tặng của vé vip( Không được quá 10 -> 200 kí tự )',
             'qua_tang_vip.min' => 'Nhập quà tặng của vé vip( Không được quá 10 -> 200 kí tự )',
             'banner.required' => 'Bạn chưa add banner sự kiện',
@@ -268,6 +289,21 @@ class EventController extends Controller
     public function getDuyet($id){
         $danhmuc = Type_events::all();
         $duyet = Events::find($id);
+
+        $data = [
+            'ten_su_kien' => $duyet->ten_su_kien,
+            'banner' => 'images/email/banner.jpg',
+            'logo'=>'images/email/logo.png',
+            'email'=> $duyet->email_chu,
+
+        ];
+        Mail::send('admin.thongbao.duyetsk', $data, function ($message) use ($data) {
+            $message->from('hotroaevent@gmail.com', 'Hỗ trợ Aevent');
+            $message->to($data['email'], 'Khách hàng');
+            $message->subject($data['banner']);
+            $message->subject($data['logo']);
+            $message->subject($data['ten_su_kien']);
+        });
         return view('admin.event.pheduyet',['danhmuc'=>$danhmuc],['duyet'=>$duyet]);
 
     }

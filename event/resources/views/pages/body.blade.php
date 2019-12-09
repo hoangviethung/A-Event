@@ -272,11 +272,7 @@
 							<div class="content wow fadeIn" tab-id="item-1" data-wow-delay=".3s">
 								<div class="list-news">
                                 @foreach($new_01 as $new_01)
-<<<<<<< HEAD
-									<div class="item-news"><a href="{{url('pages/chitietnew',$new_01->id)}}">
-=======
 									<div class="item-news"><a href="{{url('pages/chitiettintuc',$new_01->id)}}">
->>>>>>> 00c800cc14dae1f3d48f55d3e85d22b95c8db7a3
 											<figure>
 												<div class="box-img"><img class="ofc" src="images/news/{{$new_01->banner}}" alt="" srcset=""></div>
 												<figcaption>
@@ -298,11 +294,7 @@
 							<div class="content wow fadeIn" tab-id="item-2" data-wow-delay=".3s">
 								<div class="list-news">
                                 @foreach($news_moi as $news_moi)
-<<<<<<< HEAD
-									<div class="item-news"><a href="{{url('pages/chitietnew',$new_01->id)}}">
-=======
 									<div class="item-news"><a href="{{url('pages/chitiettintuc',$news_moi->id)}}">
->>>>>>> 00c800cc14dae1f3d48f55d3e85d22b95c8db7a3
 											<figure>
 												<div class="box-img"><img class="ofc" src="images/news/{{$news_moi->banner}}" alt="" srcset=""></div>
 												<figcaption>
@@ -322,11 +314,7 @@
                                 @foreach($news as $news)
 							<div class="content wow fadeIn" tab-id="item-s{{$news->loaitin->id}}" data-wow-delay=".3s">
 								<div class="list-news">
-<<<<<<< HEAD
-									<div class="item-news"><a href="{{url('pages/chitietnew',$new_01->id)}}">
-=======
 									<div class="item-news"><a href="{{url('pages/chitiettintuc',$news->id)}}">
->>>>>>> 00c800cc14dae1f3d48f55d3e85d22b95c8db7a3
 											<figure>
 												<div class="box-img"><img class="ofc" src="images/news/{{$news->banner}}" alt="" srcset=""></div>
 												<figcaption>
