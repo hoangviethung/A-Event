@@ -178,9 +178,9 @@
             </div>
             <div class="col-md-4">
                 <div class="panel panel-info">
-                    <div class="panel-heading"> <i class="fa fa-calendar"></i> Lịch Thông Báo</div>
+                    <div class="panel-heading"> <i class="fa fa-map-marker" aria-hidden="true"></i> Bản đồ định vị</div>
                     <div class="panel-body">
-                        
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31349.475067529627!2d106.64898336515017!3d10.835447706639965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529078b51e6eb%3A0x28bd5bd9f01a1edc!2zR8OyIFbhuqVwLCBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1575892005491!5m2!1svi!2s" width="363" height="360" frameborder="0" style="border:0;" allowfullscreen="" style="background-color: #000; opacity: 0.5"></iframe>
                     </div>
                 </div>
             </div>
