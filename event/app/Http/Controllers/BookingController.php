@@ -88,7 +88,7 @@ class BookingController extends Controller
             $message->subject($data['ten_su_kien']);
         });
 
-        return view('pages.bookingthree',['bookingtwo'=>$bookingtwo,'thanhcong'=>'Thành công vui lòng check mail.']);
+        return view('pages.bookingthree',['bookingtwo'=>$bookingtwo,'thanhcong'=>'Thanh toán thành công vui lòng check mail.']);
     }
 
     public function getBookingthree(Request $req){
