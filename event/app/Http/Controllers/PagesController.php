@@ -203,7 +203,7 @@ class PagesController extends Controller
                 'password'=>'required|min:3|max:32',
             ],
             [
-                'name.required'=>'bạn chưa nhập email',
+                'name.required'=>'bạn chưa nhập tên',
                 'name.min'=>'email phải lớn hơn 3 kí tự',
                 'name.max'=>'email không quá 32 kí tự',
 

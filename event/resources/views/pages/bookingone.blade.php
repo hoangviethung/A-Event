@@ -67,7 +67,7 @@
                                     <tbody>
                                         <tr>
                                             <td>
-                                                <div class="loaive">Hạng THƯỜNG ( Còn {{$bookingone->so_luong_ve_thuong}} vé )</div>
+                                                <div class="loaive">HẠNG THƯỜNG ( Còn {{$bookingone->so_luong_ve_thuong}} vé )</div>
                                                 <div class="gia">{{number_format($bookingone->gia_ve)}} VNĐ</div>
                                             </td>
                                             <td>
@@ -78,7 +78,7 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <div class="loaive">Hạng VIP ( Còn {{$bookingone->so_luong_ve_vip}} vé )</div>
+                                                <div class="loaive">HẠNG VIP ( Còn {{$bookingone->so_luong_ve_vip}} vé )</div>
                                                 <div class="gia" >{{number_format($bookingone->gia_ve_vip)}} VNĐ</div>
                                                 <input type="hidden" id="tien_vip_value" name="tong_tien_vip"  value="0">
 

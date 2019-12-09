@@ -27,7 +27,7 @@
 				<div class="container">	
 					<div class="box-login">
 						@if(session('thongbao'))
-							<p style="text-align: center !important;margin-bottom: 10px !important;">
+							<p style="text-align: center !important;margin-bottom: 10px !important;text-align: center !important;margin-top: 10px !important;color: #ffd800; !important">
 									{{session('thongbao')}}
 							</p>
 						@endif
