@@ -15,9 +15,9 @@ class NewController extends Controller
 
     }
     public function getChitiettintuc(Request $req){
-        $tinlienquan = News::where('loai_tin','1')->get();
         $chitiet = News::where('id',$req->id)->first();
-        return view('pages.chitiettintuc',compact('chitiet','tinlienquan'));
+        $danhmuclienquan = News::where('loai_tin',$chitiet->loai_tin)->get();
+        return view('pages.chitiettintuc',['chitiet'=>$chitiet],['danhmuclienquan'=>$danhmuclienquan]);
     }
 
 

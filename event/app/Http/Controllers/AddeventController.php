@@ -7,6 +7,7 @@ use App\Events;
 use App\Type_events;
 use Illuminate\Support\Str;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 class AddeventController extends Controller
 {
     // k hiện user thì add cái này vô controller
@@ -38,9 +39,9 @@ class AddeventController extends Controller
             'nha_tai_tro' => 'required',
             'gia_ve'=> 'required|integer|min:1000|max:100000000|',
             'vi_tri_ve_thuong' => 'min:0|max:200|',
-            'qua_tang_thuong' => 'min:10|max:200|',
+            'qua_tang_thuong' => 'min:2|max:200|',
             'vi_tri_ve_vip' => 'min:0|max:200|',
-            'qua_tang_vip'=>'min:10|max:200|',
+            'qua_tang_vip'=>'min:2|max:200|',
             'gia_ve_vip'=>'|integer|min:1000|max:100000000|',
             'banner'=>'required|mimes:jpeg,png,jpg,gif,svg|max:2048|',
             'logo'=>'mimes:jpeg,png,jpg.gif,svg|max:2048|',
@@ -64,10 +65,10 @@ class AddeventController extends Controller
             'gia_ve_vip.max' => 'Giá tối thiếu 1 000 đồng đến 100 000 000 đồng',
             'gia_ve_vip.min' => 'Giá tối thiếu 1 000 đồng đến 100 000 000 đồng',
             'gia_ve_vip.integer' => 'Giá vé phải là số nguyên dương',
-            'vi_tri_ve_thuong.min' => 'Nhập vị trí ngồi của vé thường( Không được quá 10 -> 200 kí tự )',
-            'vi_tri_ve_thuong.max' => 'Nhập vị trí ngồi của vé thường( Không được quá 10 -> 200 kí tự )',
-            'qua_tang_thuong.max' => 'Nhập quà tặng của vé thường( Không được quá 10 -> 200 kí tự )',
-            'qua_tang_thuong.min' => 'Nhập quà tặng của vé thường( Không được quá 10 -> 200 kí tự )',
+            'vi_tri_ve_thuong.min' => 'Nhập vị trí ngồi của vé thường( Không được quá 2 -> 200 kí tự )',
+            'vi_tri_ve_thuong.max' => 'Nhập vị trí ngồi của vé thường( Không được quá 2 -> 200 kí tự )',
+            'qua_tang_thuong.max' => 'Nhập quà tặng của vé thường( Không được quá 2 -> 200 kí tự )',
+            'qua_tang_thuong.min' => 'Nhập quà tặng của vé thường( Không được quá 2 -> 200 kí tự )',
             'qua_tang_thuong.vip' => 'Nhập quà tặng của vé vip( Không được quá 0 -> 200 kí tự )',
             'qua_tang_thuong.vip' => 'Nhập quà tặng của vé vip( Không được quá 0 -> 200 kí tự )',
             'vi_tri_ve_vip.min' => 'Nhập vị trí ngồi của vé vip( Không được quá 0 -> 200 kí tự )',
@@ -105,6 +106,7 @@ class AddeventController extends Controller
         $event->mo_ta = $request->mo_ta;
         $event->so_luong_ve_thuong = $request->so_luong_ve_thuong;
         $event->so_luong_ve_vip = $request->so_luong_ve_vip;
+        $event->email_chu = Auth::user()->email;
 
         if($request->hasFile('logo')){
             $file_logo = $request->file('logo');
