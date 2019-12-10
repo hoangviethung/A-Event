@@ -101,7 +101,6 @@ class AddeventController extends Controller
         $event->thoi_gian = $request->thoi_gian;
         $event->gia_ve = $request->gia_ve;
         $event->dia_chi = $request->dia_chi;
-        $event->ngay_ban = $request->ngay_ban;
         $event->tom_tat = $request->tom_tat;
         $event->mo_ta = $request->mo_ta;
         $event->so_luong_ve_thuong = $request->so_luong_ve_thuong;

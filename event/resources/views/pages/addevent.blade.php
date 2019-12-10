@@ -40,19 +40,22 @@
                             @endif
                         </div>
                     </div>
+
+
                     <div class="form-group col-lg-6">
-                        <label for="dia-diem">Tên địa điểm:</label>
+                        <label for="dia-diem">Nhà tài trợ:</label>
                         <div class="form-input">
-                            <input id="dia-diem" type="text" name="dia_chi" placeholder="Nhập địa điểm diễn ra sự kiện">
+                            <input id="dia-diem" type="text" name="nha_tai_tro" placeholder="Nhập tên nhà tài trợ">
                         </div>
                         <div class="form-row margin-5px">
-                            @if($errors->has('dia_chi'))
+                            @if($errors->has('nha_tai_tro'))
                                 <span class="error" style="text-align: left !important; display: block; color: red;font-family: K2D,sans-serif;line-height: 1.3; font-size: 18px; padding-top: 5px;margin: 0;">
-                                    {{$errors->first('dia_chi')}}
+                                    {{$errors->first('nha_tai_tro')}}
                                 </span>
                             @endif
                         </div>
                     </div>
+
                     <div class="form-group col-lg-6">
                         <div class="title-input">Logo nhà tài trợ sự kiện</div>
                         <div class="form-input add-img-small">
@@ -65,6 +68,7 @@
                             @endif
                         </div>
                     </div>
+
                     <div class="form-group col-lg-6">
                         <label for="loai-su-kien">Chọn loại sự kiện</label>
                         <div class="form-input">
@@ -81,18 +85,55 @@
                         @endif
                     </div>
                     <div class="form-group col-lg-6">
-                        <label for="dia-diem">Nhà tài trợ:</label>
+                        <label for="dia-diem">Tên địa điểm:</label>
                         <div class="form-input">
-                            <input id="dia-diem" type="text" name="nha_tai_tro" placeholder="Nhập tên nhà tài trợ">
+                            <input id="dia-diem" type="text" name="dia_chi" placeholder="Nhập địa điểm diễn ra sự kiện">
                         </div>
                         <div class="form-row margin-5px">
-                            @if($errors->has('nha_tai_tro'))
+                            @if($errors->has('dia_chi'))
                                 <span class="error" style="text-align: left !important; display: block; color: red;font-family: K2D,sans-serif;line-height: 1.3; font-size: 18px; padding-top: 5px;margin: 0;">
-                                    {{$errors->first('nha_tai_tro')}}
+                                    {{$errors->first('dia_chi')}}
                                 </span>
                             @endif
                         </div>
                     </div>
+                    <div class="form-group col-lg-6">
+                        <label>Ngày diễn ra sự kiện</label>
+                        <div class="form-input">
+                            <input name="ngay_dien_ra" type="date">
+                            @if($errors->has('ngay_dien_ra'))
+                                <span class="error" style="text-align: left !important; display: block; color: red;font-family: K2D,sans-serif;line-height: 1.3; font-size: 18px; padding-top: 5px;margin: 0;">
+                                    {{$errors->first('ngay_dien_ra')}}
+                                </span>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <label>Giờ diễn ra</label>
+                        <div class="form-input">
+                            <input name="thoi_gian" type="time" style="    border: 1px solid #ffd800;
+                            border-radius: 5px;
+                            background: none;
+                            padding: 10px;
+                            width: 100%;
+                            color: #ffd800;
+                            font-size: 18px;">
+                            @if($errors->has('thoi_gian'))
+                                <span class="error" style="text-align: left !important; display: block; color: red;font-family: K2D,sans-serif;line-height: 1.3; font-size: 18px; padding-top: 5px;margin: 0;">
+                                    {{$errors->first('thoi_gian')}}
+                                </span>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="form-group col-lg-6">
+                       <p style="text-align:center !important; color:#ffd800; font-size: 20px">THÔNG TIN VÉ THƯỜNG</p>
+                    </div>
+                    <div class="form-group col-lg-6">
+                    <p style="text-align:center !important; color:#ffd800; font-size: 20px ">THÔNG TIN VÉ VIP</p>
+                    </div>
+
+
+
                     <div class="form-group col-lg-6">
                         <label>Số lượng vé thường</label>
                         <div class="form-input">
@@ -104,17 +145,7 @@
                             @endif
                         </div>
                     </div>
-                    <div class="form-group col-lg-6">
-                        <label>Giá vé Thường</label>
-                        <div class="form-input">
-                            <input type="number" name="gia_ve" placeholder="Nhập giá vé loại thường">
-                            @if($errors->has('gia_ve'))
-                                <span class="error" style="text-align: left !important; display: block; color: red;font-family: K2D,sans-serif;line-height: 1.3; font-size: 18px; padding-top: 5px;margin: 0;">
-                                    {{$errors->first('gia_ve')}}
-                                </span>
-                            @endif
-                        </div>
-                    </div>
+
                     <div class="form-group col-lg-6">
                         <label>Số lượng vé vip</label>
                         <div class="form-input">
@@ -126,6 +157,19 @@
                             @endif
                         </div>
                     </div>
+
+                    <div class="form-group col-lg-6">
+                        <label>Giá vé Thường</label>
+                        <div class="form-input">
+                            <input type="number" name="gia_ve" placeholder="Nhập giá vé loại thường">
+                            @if($errors->has('gia_ve'))
+                                <span class="error" style="text-align: left !important; display: block; color: red;font-family: K2D,sans-serif;line-height: 1.3; font-size: 18px; padding-top: 5px;margin: 0;">
+                                    {{$errors->first('gia_ve')}}
+                                </span>
+                            @endif
+                        </div>
+                    </div>
+
                     <div class="form-group col-lg-6">
                         <label>Giá vé VIP</label>
                         <div class="form-input">
@@ -181,34 +225,7 @@
                             @endif
                         </div>
                     </div>
-                    <div class="form-group col-lg-6">
-                        <label>Ngày diễn ra sự kiện</label>
-                        <div class="form-input">
-                            <input name="ngay_dien_ra" type="date">
-                            @if($errors->has('ngay_dien_ra'))
-                                <span class="error" style="text-align: left !important; display: block; color: red;font-family: K2D,sans-serif;line-height: 1.3; font-size: 18px; padding-top: 5px;margin: 0;">
-                                    {{$errors->first('ngay_dien_ra')}}
-                                </span>
-                            @endif
-                        </div>
-                    </div>
-                    <div class="form-group col-lg-6">
-                        <label>Giờ diễn ra</label>
-                        <div class="form-input">
-                            <input name="thoi_gian" type="time" style="    border: 1px solid #ffd800;
-                            border-radius: 5px;
-                            background: none;
-                            padding: 10px;
-                            width: 100%;
-                            color: #ffd800;
-                            font-size: 18px;">
-                            @if($errors->has('thoi_gian'))
-                                <span class="error" style="text-align: left !important; display: block; color: red;font-family: K2D,sans-serif;line-height: 1.3; font-size: 18px; padding-top: 5px;margin: 0;">
-                                    {{$errors->first('thoi_gian')}}
-                                </span>
-                            @endif
-                        </div>
-                    </div>
+
                     <div class="form-group col-lg-12">
                         <label>Giới thiệu</label>
                         <textarea class="form-control ckeditor" id="editor1"  rows="3" cols="10"  name="mo_ta"></textarea>

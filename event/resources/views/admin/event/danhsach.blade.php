@@ -42,7 +42,6 @@
                                     sự kiện</th>
                                     <th>Ngày diễn <br>
                                     ra sự kiện</th>
-                                    <th>Ngày bán</th>
                                     <th>Vị trí <br> vé thường</th>
                                     <th>Quà tặng <br> vé thường</th>
                                     <th>Giá vé</th>
@@ -78,7 +77,6 @@
                                     <td><img src="images/logo/{{$duyet->logo}}" width="50" height="50"> : {{$duyet->nha_tai_tro}}</td>
                                     <td><img src="images/product/{{$duyet->banner}}" width="120"  height="50"/></td>
                                     <td>{{$duyet->ngay_dien_ra}}</td>
-                                    <td>{{$duyet->ngay_ban}}</td>
                                     <td>{{$duyet->vi_tri_ve_thuong}}</td>
                                     <td>{{$duyet->qua_tang_thuong}}</td>
                                     <td>{{number_format($duyet->gia_ve)}}</td>
@@ -152,7 +150,6 @@
                                     ra sự kiện</th>
                                     <th>Thời gian
                                         <br> diễn ra</th>
-                                    <th>Ngày bán</th>
                                     <th>Vị trí <br> vé thường</th>
                                     <th>Quà tặng <br> vé thường</th>
                                     <th>Giá vé thường</th>
@@ -194,7 +191,6 @@
                                     <td><img src="images/product/{{$event->banner}}" width="120"  height="50"/></td>
                                     <td>{{$event->ngay_dien_ra}}</td>
                                     <td>{{$event->thoi_gian}}</td>
-                                    <td>{{$event->ngay_ban}}</td>
                                     <td>{{$event->vi_tri_ve_thuong}}</td>
                                     <td>{{$event->qua_tang_thuong}}</td>
                                     <td>{{number_format($event->gia_ve)}} VNĐ</td>
