@@ -14,7 +14,7 @@
                 <table style="width: 100%;" cellpadding="0" cellspacing="0">
                     <tr>
                         <td style="width: 100%;">
-                            <p style="text-align: center;padding: 10px; margin: 0;text-transform: uppercase;font-family: K2D,sans-serif;font-size: 18px;color: #fff;line-height: 1.3; font-weight: bold;">
+                            <p style="text-align: center;padding: 10px; margin: 0;text-transform: uppercase;font-family: K2D,sans-serif;font-size: 18px;color: #000;line-height: 1.3; font-weight: bold;">
                                 Thông báo từ A-event
                             </p>
                         </td>
