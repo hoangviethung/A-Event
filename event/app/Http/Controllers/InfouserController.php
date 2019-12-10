@@ -47,7 +47,7 @@ class InfouserController extends Controller
         $event = Events::find($id);
         $this->validate($request,
         [
-            'ten_su_kien' => 'required|unique:Events,ten_su_kien|min:2|max: 100|',
+            'ten_su_kien' => 'required|unique:events,ten_su_kien|min:2|max: 100|',
             'ngay_dien_ra' =>'required',
             'thoi_gian' => 'required',
             'nha_tai_tro' => 'required',
