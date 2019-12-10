@@ -11,7 +11,7 @@
                         </h1>
                     </div>
                     <!-- /.col-lg-12 -->
-                    <div class="col-lg-7" style="padding-bottom:120px">
+                    <div class="col-lg-12" style="padding-bottom:120px">
                     @if(session('thongbao'))
                         <div class="alert alert-success">
                             {{session('thongbao')}}
@@ -29,7 +29,7 @@
                                             <span class="error">
                                                 {{$errors->first('ten_su_kien')}}
                                             </span>
-                                        @endif 
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -47,7 +47,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Logo sự kiện</label>
+                                        <label>Logo nhà tài trợ</label>
                                         <p>
                                             <img width="100px" src="images/logo/{{$event->logo}}">
                                         </p>
@@ -77,7 +77,7 @@
                                             <span class="error">
                                                 {{$errors->first('banner')}}
                                             </span>
-                                        @endif 
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -105,7 +105,7 @@
                                             <span class="error">
                                                 {{$errors->first('ngay_dien_ra')}}
                                             </span>
-                                        @endif 
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -123,39 +123,66 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Ngày bán vé</label>
-                                        <input class="form-control" name="ngay_ban" value="{{$event->ngay_ban}}" type="datetime"/>
-                                        @if($errors->has('ngay_ban'))
+                                        <label>Nơi diễn ra sự kiện</label>
+                                        <input class="form-control" value="{{$event->dia_chi}}" name="dia_chi" type="text"/>
+                                        @if($errors->has('dia_chi'))
                                             <span class="error">
-                                                {{$errors->first('ngay_ban')}}
+                                                {{$errors->first('dia_chi')}}
                                             </span>
                                         @endif
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Email chủ event</label>
+                                            <input class="form-control" value="{{$event->email_chu}}" name="email_chu" type="text"/>
+                                            @if($errors->has('email_chu'))
+                                                <span class="error">
+                                                    {{$errors->first('email_chu')}}
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row" style="margin-top: 20px;">
+                                    <div class="col-md-6" style="text-align: center;font-weight: bold; color: #337ab7; text-transform: uppercase; font-size: 20px">
+                                        Thông tin vé thường
+                                    </div>
+                                    <div class="col-md-6" style="text-align: center;font-weight: bold; color: #337ab7; text-transform: uppercase; font-size: 20px">
+                                        Thông tin vé VIP
+                                    </div>
+                                </div>
+
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Số lượng vé thường</label>
+                                            <input class="form-control" name="so_luong_ve_thuong" value="{{$event->so_luong_ve_thuong}}" type="text"/>
+                                            @if($errors->has('so_luong_ve_thuong'))
+                                                <span class="error">
+                                                    {{$errors->first('so_luong_ve_thuong')}}
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Vị trí ngồi của vé thường</label>
-                                        <input class="form-control" name="vi_tri_ve_thuong" value="{{$event->vi_tri_ve_thuong}}" type="datetime"/>
-                                        @if($errors->has('vi_tri_ve_thuong'))
+                                        <label>Số lượng vé vip</label>
+                                        <input class="form-control" name="so_luong_ve_vip" value="{{$event->so_luong_ve_vip}}" type="text"/>
+                                        @if($errors->has('so_luong_ve_vip'))
                                             <span class="error">
-                                                {{$errors->first('vi_tri_ve_thuong')}}
+                                                {{$errors->first('so_luong_ve_vip')}}
                                             </span>
                                         @endif
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Quà tặng khi mua vé thường</label>
-                                        <input class="form-control" name="qua_tang_thuong" value="{{$event->qua_tang_thuong}}" type="datetime"/>
-                                        @if($errors->has('qua_tang_thuong'))
-                                            <span class="error">
-                                                {{$errors->first('qua_tang_thuong')}}
-                                            </span>
-                                        @endif
-                                    </div>
-                                </div>
+
+
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
@@ -166,31 +193,7 @@
                                             <span class="error">
                                                 {{$errors->first('gia_ve')}}
                                             </span>
-                                        @endif 
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Vị trí ngồi của vé VIP</label>
-                                        <input class="form-control" name="vi_tri_ve_vip" value="{{$event->vi_tri_ve_vip}}" type="datetime"/>
-                                        @if($errors->has('vi_tri_ve_vip'))
-                                            <span class="error">
-                                                {{$errors->first('vi_tri_ve_vip')}}
-                                            </span>
-                                        @endif 
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Quà tặng khi mua vé VIP</label>
-                                        <input class="form-control" name="qua_tang_vip" value="{{$event->qua_tang_vip}}" type="datetime"/>
-                                        @if($errors->has('qua_tang_vip'))
-                                            <span class="error">
-                                                {{$errors->first('qua_tang_vip')}}
-                                            </span>
-                                        @endif 
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -204,55 +207,59 @@
                                         @endif
                                     </div>
                                 </div>
+
                             </div>
                             <div class="row">
-                                <div class="col-md-6">
+                            <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Số lượng vé thường</label>
-                                        <input class="form-control" name="so_luong_ve_thuong" value="{{$event->so_luong_ve_thuong}}" type="text"/>
-                                        @if($errors->has('so_luong_ve_thuong'))
+                                        <label>Vị trí ngồi của vé thường</label>
+                                        <input class="form-control" name="vi_tri_ve_thuong" value="{{$event->vi_tri_ve_thuong}}" type="datetime"/>
+                                        @if($errors->has('vi_tri_ve_thuong'))
                                             <span class="error">
-                                                {{$errors->first('so_luong_ve_thuong')}}
+                                                {{$errors->first('vi_tri_ve_thuong')}}
                                             </span>
                                         @endif
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Số lượng vé vip</label>
-                                        <input class="form-control" name="so_luong_ve_vip" value="{{$event->so_luong_ve_vip}}" type="text"/>
-                                        @if($errors->has('so_luong_ve_vip'))
+                                        <label>Vị trí ngồi của vé VIP</label>
+                                        <input class="form-control" name="vi_tri_ve_vip" value="{{$event->vi_tri_ve_vip}}" type="datetime"/>
+                                        @if($errors->has('vi_tri_ve_vip'))
                                             <span class="error">
-                                                {{$errors->first('so_luong_ve_vip')}}
+                                                {{$errors->first('vi_tri_ve_vip')}}
                                             </span>
-                                        @endif 
+                                        @endif
                                     </div>
                                 </div>
+
+
                             </div>
                             <div class="row">
-                                <div class="col-md-6">
+                            <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Nơi diễn ra sự kiện</label>
-                                        <input class="form-control" value="{{$event->dia_chi}}" name="dia_chi" type="text"/>
-                                        @if($errors->has('dia_chi'))
+                                        <label>Quà tặng khi mua vé thường</label>
+                                        <input class="form-control" name="qua_tang_thuong" value="{{$event->qua_tang_thuong}}" type="datetime"/>
+                                        @if($errors->has('qua_tang_thuong'))
                                             <span class="error">
-                                                {{$errors->first('dia_chi')}}
+                                                {{$errors->first('qua_tang_thuong')}}
                                             </span>
                                         @endif
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Email chủ event</label>
-                                        <input class="form-control" value="{{$event->email_chu}}" name="email_chu" type="text"/>
-                                        @if($errors->has('email_chu'))
+                                        <label>Quà tặng khi mua vé VIP</label>
+                                        <input class="form-control" name="qua_tang_vip" value="{{$event->qua_tang_vip}}" type="datetime"/>
+                                        @if($errors->has('qua_tang_vip'))
                                             <span class="error">
-                                                {{$errors->first('email_chu')}}
+                                                {{$errors->first('qua_tang_vip')}}
                                             </span>
                                         @endif
                                     </div>
                                 </div>
                             </div>
+
                             <div class="form-group">
                                 <label>Tóm tắt sự kiện ( Hiển thị trên Slider, Sự kiện nổi bật)</label>
                                 <textarea class="form-control ckeditor" id="editor1" rows="2" cols="20" value="" name="tom_tat">{{$event->tom_tat}}</textarea>
@@ -260,7 +267,7 @@
                                     <span class="error">
                                         {{$errors->first('tom_tat')}}
                                     </span>
-                                @endif 
+                                @endif
                             </div>
                             <div class="form-group">
                                 <label>Mô tả sự kiện</label>

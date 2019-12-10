@@ -44,7 +44,6 @@ class EventController extends Controller
             'banner'=>'required|mimes:jpeg,png,jpg,gif,svg|max:2048|',
             'logo'=>'mimes:jpeg,png,jpg.gif,svg|max:2048|',
             'dia_chi' => 'required',
-            'ngay_ban' => 'required',
             'mo_ta' => 'required',
             'so_luong_ve_thuong' => 'required|integer|',
             'so_luong_ve_vip' => 'required|integer|',
@@ -80,7 +79,6 @@ class EventController extends Controller
             'logo.mimes'=>'Logo phải là hình có đuôi jpeg,png,jpg,gif,svg',
             'logo.max'=>'Dung lượng hình không được quá 2Mb',
             'dia_chi.required' => 'Bạn chưa nhập nơi diễn ra sự kiện',
-            'ngay_ban.required' => 'Bạn chưa nhập ngày bán vé',
             'mo_ta.required' => 'Bạn chưa nhập mô tả sự kiện',
             'so_luong_ve_thuong.required' => 'Bạn chưa nhập số lượng vé thường',
             'so_luong_ve_thuong.integer' => ' Số lượng phải là số',
@@ -105,7 +103,6 @@ class EventController extends Controller
         $event->thoi_gian = $request->thoi_gian;
         $event->gia_ve = $request->gia_ve;
         $event->dia_chi = $request->dia_chi;
-        $event->ngay_ban = $request->ngay_ban;
         $event->tom_tat = $request->tom_tat;
         $event->mo_ta = $request->mo_ta;
         $event->so_luong_ve_thuong = $request->so_luong_ve_thuong;
@@ -187,7 +184,6 @@ class EventController extends Controller
             'logo'=>'mimes:jpeg,png,jpg.gif,svg|max:2048|',
             'ngay_dien_ra' =>'required',
             'dia_chi' => 'required',
-            'ngay_ban' => 'required',
             'mo_ta' => 'required',
             'so_luong_ve_thuong' => 'required|integer|',
             'so_luong_ve_vip' => 'required|integer|',
@@ -219,7 +215,6 @@ class EventController extends Controller
             'logo.max'=>'Dung lượng hình không được quá 2Mb',
             'ngay_dien_ra.required'=> 'Bạn chưa thêm ngày diễn ra sự kiện',
             'dia_chi.required' => 'Bạn chưa nhập nơi diễn ra sự kiện',
-            'ngay_ban.required' => 'Bạn chưa nhập ngày bán vé',
             'mo_ta.required' => 'Bạn chưa nhập mô tả sự kiện',
             'so_luong_ve_thuong.required' => 'Bạn chưa nhập số lượng vé thường',
             'so_luong_ve_thuong.integer' => ' Số lượng phải là số',
@@ -243,7 +238,6 @@ class EventController extends Controller
         $event->thoi_gian = $request->thoi_gian;
         $event->gia_ve = $request->gia_ve;
         $event->dia_chi = $request->dia_chi;
-        $event->ngay_ban = $request->ngay_ban;
         $event->tom_tat = $request->tom_tat;
         $event->mo_ta = $request->mo_ta;
         $event->so_luong_ve_thuong = $request->so_luong_ve_thuong;
