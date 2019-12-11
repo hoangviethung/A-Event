@@ -187,18 +187,14 @@ function countDownSale() {
 	if (temp) {
 
 		var dateEND = new Date(temp.textContent).getTime();
-		console.log(new Date(temp.textContent));
-		console.log(dateEND);
 
 		// Update the count down every 1 second
 		var x = setInterval(function() {
 			// Get today's date and time
 			var now = new Date().getTime();
-			console.log(new Date());
 
 			// Find the distance between now and the count down date
 			var distance = dateEND - now;
-			console.log(distance);
 
 			// Time calculations for days, hours, minutes and seconds
 
