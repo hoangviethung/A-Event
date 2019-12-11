@@ -35,7 +35,7 @@
                                             <td value="{{$bookingone->gia_ve}}" id="tien_thuong">{{number_format($bookingone->gia_ve)}} VNĐ</td>
                                             <td>
                                                 <div class="quantity">
-                                                    <input type="number" name="quantity1" id="quantity1" min="0" max="9" step="1" value="0">
+                                                    <input type="number" name="quantity1" id="quantity1" min="0" max="2" step="1" value="0">
                                                 </div>
                                             </td>
                                         </tr>
@@ -44,7 +44,7 @@
                                             <td value="{{$bookingone->gia_ve_vip}}" id="tien_vip">{{number_format($bookingone->gia_ve_vip)}} VNĐ</td>
                                             <td>
                                                 <div class="quantity">
-                                                    <input type="number" name="quantity2" id="quantity2" min="0" max="9" step="1" value="0">
+                                                    <input type="number" name="quantity2" id="quantity2" min="0" max="2" step="1" value="0">
                                                 </div>
                                             </td>
                                         </tr>
@@ -67,7 +67,7 @@
                                     <tbody>
                                         <tr>
                                             <td>
-                                                <div class="loaive">Hạng THƯỜNG ( Còn {{$bookingone->so_luong_ve_thuong}} vé )</div>
+                                                <div class="loaive">HẠNG THƯỜNG ( Còn {{$bookingone->so_luong_ve_thuong}} vé )</div>
                                                 <div class="gia">{{number_format($bookingone->gia_ve)}} VNĐ</div>
                                             </td>
                                             <td>
@@ -78,7 +78,7 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <div class="loaive">Hạng VIP ( Còn {{$bookingone->so_luong_ve_vip}} vé )</div>
+                                                <div class="loaive">HẠNG VIP ( Còn {{$bookingone->so_luong_ve_vip}} vé )</div>
                                                 <div class="gia" >{{number_format($bookingone->gia_ve_vip)}} VNĐ</div>
                                                 <input type="hidden" id="tien_vip_value" name="tong_tien_vip"  value="0">
 
@@ -123,7 +123,7 @@
             let quantity2 = $(this).val();
             let tien_vip = $('#tien_vip').attr('value');
              multipart = tien_vip * quantity2;
-            $('#quantity4').html(quantity2); 
+            $('#quantity4').html(quantity2);
             $('#tien_vip_html').html(multipart + ' VNĐ');
             $('#tien_vip_value').val(multipart);
         });

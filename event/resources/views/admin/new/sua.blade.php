@@ -53,7 +53,7 @@
                                 @endif
                             </div>
                             <div class="form-group">
-                                <label>Mô tả sự kiện</label>
+                                <label>Nội dung tin</label>
                                 <textarea class="form-control ckeditor" id="editor" value="{{$news->noi_dung}}"  rows="3" cols="10"  name="noi_dung"></textarea>
                                 @if($errors->has('noi_dung'))
                                     <span class="error">

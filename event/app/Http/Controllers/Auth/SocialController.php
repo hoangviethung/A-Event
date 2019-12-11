@@ -120,6 +120,7 @@ $data = json_decode($data);
 $checkuser = users::where('id_fb',$data->id)->get();
 if(count($checkuser) > 0){
   Cookie::queue(Cookie::make('loginfb',json_encode([
+    'id_fb'=> $data->id,
     'name'=>$data->name,
     'hinh'=>$data->picture->data->url,
   ]), 2000));
@@ -158,6 +159,7 @@ public function finddOrCreateUser($user){
     $checkuser = users::where('id_gg', $user->id)->get();
     if (count($checkuser) > 0) {
         Cookie::queue(Cookie::make('logingg', json_encode([
+        'id_gg'=>$user->id,
         'name'=>$user->name,
         'email'=>$user->email,
         'hinh'=>$user->avatar,

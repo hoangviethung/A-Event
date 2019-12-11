@@ -7,6 +7,7 @@ use App\Events;
 use App\Type_events;
 use Illuminate\Support\Str;
 use Carbon\Carbon;
+use Mail;
 class EventController extends Controller
 {
 
@@ -24,6 +25,8 @@ class EventController extends Controller
     public function getThem(){
         $danhmuc = Type_events::all();
         return view('admin.event.them',['danhmuc'=>$danhmuc]);
+
+
     }
     public function postThem(Request $request){
         $this->validate($request,
@@ -33,15 +36,14 @@ class EventController extends Controller
             'thoi_gian' => 'required',
             'nha_tai_tro' => 'required',
             'gia_ve'=> 'required|integer|min:1000|max:100000000|',
-            'vi_tri_ve_thuong' => 'min:10|max:200|',
-            'qua_tang_thuong' => 'min:10|max:200|',
-            'vi_tri_ve_vip' => 'min:10|max:200|',
-            'qua_tang_vip'=>'min:10|max:200|',
+            'vi_tri_ve_thuong' => 'min:2|max:200|',
+            'qua_tang_thuong' => 'min:2|max:200|',
+            'vi_tri_ve_vip' => 'min:2|max:200|',
+            'qua_tang_vip'=>'min:2|max:200|',
             'gia_ve_vip'=>'|integer|min:1000|max:100000000|',
             'banner'=>'required|mimes:jpeg,png,jpg,gif,svg|max:2048|',
             'logo'=>'mimes:jpeg,png,jpg.gif,svg|max:2048|',
             'dia_chi' => 'required',
-            'ngay_ban' => 'required',
             'mo_ta' => 'required',
             'so_luong_ve_thuong' => 'required|integer|',
             'so_luong_ve_vip' => 'required|integer|',
@@ -62,14 +64,14 @@ class EventController extends Controller
             'gia_ve_vip.max' => 'Giá tối thiếu 1 000 đồng đến 100 000 000 đồng',
             'gia_ve_vip.min' => 'Giá tối thiếu 1 000 đồng đến 100 000 000 đồng',
             'gia_ve_vip.integer' => 'Giá vé phải là số nguyên dương',
-            'vi_tri_ve_thuong.min' => 'Nhập vị trí ngồi của vé thường( Không được quá 10 -> 200 kí tự )',
-            'vi_tri_ve_thuong.max' => 'Nhập vị trí ngồi của vé thường( Không được quá 10 -> 200 kí tự )',
-            'qua_tang_thuong.max' => 'Nhập quà tặng của vé thường( Không được quá 10 -> 200 kí tự )',
-            'qua_tang_thuong.min' => 'Nhập quà tặng của vé thường( Không được quá 10 -> 200 kí tự )',
-            'qua_tang_thuong.vip' => 'Nhập quà tặng của vé vip( Không được quá 10 -> 200 kí tự )',
-            'qua_tang_thuong.vip' => 'Nhập quà tặng của vé vip( Không được quá 10 -> 200 kí tự )',
-            'vi_tri_ve_vip.min' => 'Nhập vị trí ngồi của vé vip( Không được quá 10 -> 200 kí tự )',
-            'vi_tri_ve_vip.max' => 'Nhập vị trí ngồi của vé vip( Không được quá 10 -> 200 kí tự )',
+            'vi_tri_ve_thuong.min' => 'Nhập vị trí ngồi của vé thường( Không được quá 2 -> 200 kí tự )',
+            'vi_tri_ve_thuong.max' => 'Nhập vị trí ngồi của vé thường( Không được quá 2 -> 200 kí tự )',
+            'qua_tang_thuong.max' => 'Nhập quà tặng của vé thường( Không được quá 2 -> 200 kí tự )',
+            'qua_tang_thuong.min' => 'Nhập quà tặng của vé thường( Không được quá 2 -> 200 kí tự )',
+            'qua_tang_thuong.vip' => 'Nhập quà tặng của vé vip( Không được quá 2 -> 200 kí tự )',
+            'qua_tang_thuong.vip' => 'Nhập quà tặng của vé vip( Không được quá 2 -> 200 kí tự )',
+            'vi_tri_ve_vip.min' => 'Nhập vị trí ngồi của vé vip( Không được quá 2 -> 200 kí tự )',
+            'vi_tri_ve_vip.max' => 'Nhập vị trí ngồi của vé vip( Không được quá 2 -> 200 kí tự )',
             'gia_ve.integer' => 'Giá vé phải là số ',
             'banner.required' => 'Bạn chưa add banner sự kiện',
             'banner.mimes' => 'Banner phải là hình có đuôi jpeg,png,jpg,gif,svg',
@@ -77,7 +79,6 @@ class EventController extends Controller
             'logo.mimes'=>'Logo phải là hình có đuôi jpeg,png,jpg,gif,svg',
             'logo.max'=>'Dung lượng hình không được quá 2Mb',
             'dia_chi.required' => 'Bạn chưa nhập nơi diễn ra sự kiện',
-            'ngay_ban.required' => 'Bạn chưa nhập ngày bán vé',
             'mo_ta.required' => 'Bạn chưa nhập mô tả sự kiện',
             'so_luong_ve_thuong.required' => 'Bạn chưa nhập số lượng vé thường',
             'so_luong_ve_thuong.integer' => ' Số lượng phải là số',
@@ -102,7 +103,6 @@ class EventController extends Controller
         $event->thoi_gian = $request->thoi_gian;
         $event->gia_ve = $request->gia_ve;
         $event->dia_chi = $request->dia_chi;
-        $event->ngay_ban = $request->ngay_ban;
         $event->tom_tat = $request->tom_tat;
         $event->mo_ta = $request->mo_ta;
         $event->so_luong_ve_thuong = $request->so_luong_ve_thuong;
@@ -136,7 +136,25 @@ class EventController extends Controller
         $event->banner = "";
         }
 
+
         $event->save();
+
+
+        $data = [
+            'ten_su_kien' => $event->ten_su_kien,
+            'banner' => 'images/email/banner.jpg',
+            'logo'=>'images/email/logo.png',
+            'email'=> $event->email_chu,
+
+        ];
+        Mail::send('admin.thongbao.duyetsk', $data, function ($message) use ($data) {
+            $message->from('hotroaevent@gmail.com', 'Hỗ trợ Aevent');
+            $message->to($data['email'], 'Khách hàng');
+            $message->subject($data['banner']);
+            $message->subject($data['logo']);
+            $message->subject($data['ten_su_kien']);
+        });
+
         return redirect('admin/event/them')->with('thongbao','Thêm thành công');
     }
 
@@ -157,16 +175,15 @@ class EventController extends Controller
             'nha_tai_tro' => 'required',
             'thoi_gian'=>'required',
             'gia_ve'=> 'required|integer|min:1000|max:100000000|',
-            'vi_tri_ve_thuong' => 'min:10|max:200|',
-            'qua_tang_thuong' => 'min:10|max:200|',
-            'vi_tri_ve_vip' => 'min:10|max:200|',
-            'qua_tang_vip'=>'min:10|max:200|',
+            'vi_tri_ve_thuong' => 'min:2|max:200|',
+            'qua_tang_thuong' => 'min:2|max:200|',
+            'vi_tri_ve_vip' => 'min:2|max:200|',
+            'qua_tang_vip'=>'min:2|max:200|',
             'gia_ve_vip'=>'|integer|min:1000|max:100000000|',
             'banner'=>'required|mimes:jpeg,png,jpg,gif,svg|max:2048|',
             'logo'=>'mimes:jpeg,png,jpg.gif,svg|max:2048|',
             'ngay_dien_ra' =>'required',
             'dia_chi' => 'required',
-            'ngay_ban' => 'required',
             'mo_ta' => 'required',
             'so_luong_ve_thuong' => 'required|integer|',
             'so_luong_ve_vip' => 'required|integer|',
@@ -185,10 +202,10 @@ class EventController extends Controller
             'gia_ve_vip.max' => 'Giá tối thiếu 1 000 đồng đến 100 000 000 đồng',
             'gia_ve_vip.min' => 'Giá tối thiếu 1 000 đồng đến 100 000 000 đồng',
             'gia_ve_vip.integer' => 'Giá vé phải là số nguyên dương',
-            'vi_tri_ve_thuong.min' => 'Nhập vị trí ngồi của vé thường( Không được quá 10 -> 200 kí tự )',
-            'vi_tri_ve_thuong.max' => 'Nhập vị trí ngồi của vé thường( Không được quá 10 -> 200 kí tự )',
-            'qua_tang_thuong.max' => 'Nhập quà tặng của vé thường( Không được quá 10 -> 200 kí tự )',
-            'qua_tang_thuong.min' => 'Nhập quà tặng của vé thường( Không được quá 10 -> 200 kí tự )',
+            'vi_tri_ve_thuong.min' => 'Nhập vị trí ngồi của vé thường( Không được quá 2 -> 200 kí tự )',
+            'vi_tri_ve_thuong.max' => 'Nhập vị trí ngồi của vé thường( Không được quá 2 -> 200 kí tự )',
+            'qua_tang_thuong.max' => 'Nhập quà tặng của vé thường( Không được quá 2 -> 200 kí tự )',
+            'qua_tang_thuong.min' => 'Nhập quà tặng của vé thường( Không được quá 2 -> 200 kí tự )',
             'qua_tang_vip.max' => 'Nhập quà tặng của vé vip( Không được quá 10 -> 200 kí tự )',
             'qua_tang_vip.min' => 'Nhập quà tặng của vé vip( Không được quá 10 -> 200 kí tự )',
             'banner.required' => 'Bạn chưa add banner sự kiện',
@@ -198,7 +215,6 @@ class EventController extends Controller
             'logo.max'=>'Dung lượng hình không được quá 2Mb',
             'ngay_dien_ra.required'=> 'Bạn chưa thêm ngày diễn ra sự kiện',
             'dia_chi.required' => 'Bạn chưa nhập nơi diễn ra sự kiện',
-            'ngay_ban.required' => 'Bạn chưa nhập ngày bán vé',
             'mo_ta.required' => 'Bạn chưa nhập mô tả sự kiện',
             'so_luong_ve_thuong.required' => 'Bạn chưa nhập số lượng vé thường',
             'so_luong_ve_thuong.integer' => ' Số lượng phải là số',
@@ -222,7 +238,6 @@ class EventController extends Controller
         $event->thoi_gian = $request->thoi_gian;
         $event->gia_ve = $request->gia_ve;
         $event->dia_chi = $request->dia_chi;
-        $event->ngay_ban = $request->ngay_ban;
         $event->tom_tat = $request->tom_tat;
         $event->mo_ta = $request->mo_ta;
         $event->so_luong_ve_thuong = $request->so_luong_ve_thuong;
@@ -268,6 +283,21 @@ class EventController extends Controller
     public function getDuyet($id){
         $danhmuc = Type_events::all();
         $duyet = Events::find($id);
+
+        $data = [
+            'ten_su_kien' => $duyet->ten_su_kien,
+            'banner' => 'images/email/banner.jpg',
+            'logo'=>'images/email/logo.png',
+            'email'=> $duyet->email_chu,
+
+        ];
+        Mail::send('admin.thongbao.duyetsk', $data, function ($message) use ($data) {
+            $message->from('hotroaevent@gmail.com', 'Hỗ trợ Aevent');
+            $message->to($data['email'], 'Khách hàng');
+            $message->subject($data['banner']);
+            $message->subject($data['logo']);
+            $message->subject($data['ten_su_kien']);
+        });
         return view('admin.event.pheduyet',['danhmuc'=>$danhmuc],['duyet'=>$duyet]);
 
     }

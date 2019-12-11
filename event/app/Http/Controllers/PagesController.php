@@ -71,6 +71,8 @@ class PagesController extends Controller
         $chitiet = Events::where('id',$req->id)->first();
         return view('pages.chitiet',compact('chitiet'));
     }
+
+
     public function getDanhmuc($id)
     {
         $danhmuc = Type_events::find($id);
@@ -176,7 +178,7 @@ class PagesController extends Controller
     }
     $user->vip = $request->vip;
     $user->save();
-        return redirect('pages/login')->with('thongbao', 'Đăng kí thành công bạn vui lòng đăng nhập !');
+        return redirect('pages/login');
     }
 
     public function getDangxuat(){
@@ -201,7 +203,7 @@ class PagesController extends Controller
                 'password'=>'required|min:3|max:32',
             ],
             [
-                'name.required'=>'bạn chưa nhập email',
+                'name.required'=>'bạn chưa nhập tên',
                 'name.min'=>'email phải lớn hơn 3 kí tự',
                 'name.max'=>'email không quá 32 kí tự',
 

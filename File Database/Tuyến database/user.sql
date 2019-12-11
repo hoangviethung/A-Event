@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2019 at 03:39 PM
+-- Generation Time: Dec 09, 2019 at 02:04 PM
 -- Server version: 10.1.40-MariaDB
 -- PHP Version: 7.3.5
 
@@ -49,13 +49,10 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `id_fb`, `id_gg`, `email`, `name`, `password`, `dien_thoai`, `dia_chi`, `ngay_sinh`, `gioi_tinh`, `hinh`, `vip`, `type`) VALUES
-(1, NULL, NULL, 'nguyentuyen1322@gmail.com', 'Tuyen Nguyen', '$2y$10$50iEPmhhrqPZzSzK3EjQyuy58GHljDipqNHgx7L87f3tIt.jdkXOa', 356518436, 'tp hcm', '2019-11-21', 'Nam', '10710964d7a550c32f92749adcd8d793_cS-6.jpg', 'Normal', '1'),
-(2, NULL, NULL, 'admin@gmail.com', 'Admin', '$2y$10$T0J6WF5aNtcOGw.N8wsfwOxWW59LKQmkTxzwaCAKnnbhovYMnt5Mm', 356518436, 'Thành Phố Hồ Chí Minh', '2019-11-01', 'Nam', '54671d405544766eaeb406fb19c20850_cS-7.jpg', 'V.I.P', '2'),
-(11, '1385068081652444', NULL, NULL, 'Nguyễn Văn Tuyến', NULL, NULL, NULL, NULL, NULL, 'https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=1385068081652444&height=50&width=50&ext=1577039780&hash=AeTC9iiqXORYVvuJ', NULL, '1'),
-(61, NULL, '100224081791743476043', 'nguyentuyen1322@gmail.com', 'tuyen nguyen', NULL, NULL, NULL, NULL, NULL, 'https://lh3.googleusercontent.com/a-/AAuE7mCD0vVOoHqaaQvjBOhb9G_NFEgaLqZpZjRBQkkv', NULL, '1'),
-(62, NULL, '110600629830583362931', 'tuyennvps08127@fpt.edu.vn', 'Tuyến Nguyễn', NULL, NULL, NULL, NULL, NULL, 'https://lh3.googleusercontent.com/a-/AAuE7mB9QiE2roqihLy6YKM4zuddCbyuC_IBcIZVP4nc', NULL, '1'),
-(63, NULL, NULL, 'nguyenkun1322@gmail.com', 'Thiên An', '$2y$10$RbcSgqZ1MX.vguhvJSY4ru92S3sQQ1S602pbmN.FegDHWNy4tlkNm', 356518433, 'tp hcm', '2019-12-04', 'Nữ', '62ab5cf097533228472a12e3e9178acd_1.jpg', 'V.I.P', '1'),
-(64, NULL, NULL, 'mama1322@gmail.com', 'Boss', '$2y$10$coKXPJ9i9lygv0V5UXib7eGsvafHLAIcPIFchSXybqvNtgnxnXq2W', 356518432, 'DăkNông', '2019-12-06', 'Nam', 'ceaa55cbc987d971b2bb8969fef07944_imgpsh_fullsize_anim.jpg', 'V.I.P', '2');
+(1, NULL, NULL, 'admin1322@gmail.com', 'Admin', '$2y$10$dgqAiqknJ.RRkB.dZedD6uBjx5kNtrjX20URhoZFCEc5lsmZmtcsW', 356518444, 'Dak Nong', '2019-12-12', 'Nam', '54adc5a28fc2fc8dc939bf53c2b2ed1e_img2.jpg', 'V.I.P', '2'),
+(2, '1385068081652444', NULL, NULL, 'Nguyễn Văn Tuyến', NULL, NULL, NULL, NULL, NULL, 'https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=1385068081652444&height=50&width=50&ext=1578416111&hash=AeSruBPpDLslp6dk', NULL, '1'),
+(3, NULL, '100224081791743476043', 'nguyentuyen1322@gmail.com', 'tuyen nguyen', NULL, NULL, NULL, NULL, NULL, 'https://lh3.googleusercontent.com/a-/AAuE7mCD0vVOoHqaaQvjBOhb9G_NFEgaLqZpZjRBQkkv', NULL, '1'),
+(4, NULL, NULL, 'nhinhi1999@gmail.com', 'Nhi Nhi', '$2y$10$nw5ws29nO746mfXBY1wJGOe37E9yvgEWxYpkDa9gKzEZOSQPt3gAC', 356518444, 'TP.Hồ Chí Ming', '2019-12-26', 'Nữ', '48a80cac0bef961feb6acc5ec672693a_img.jpg', 'V.I.P', '1');
 
 --
 -- Indexes for dumped tables
@@ -75,7 +72,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

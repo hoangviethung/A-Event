@@ -14,6 +14,14 @@ class NewController extends Controller
         return view('admin.new.danhsach',compact('tintuc'));
 
     }
+    public function getChitiettintuc(Request $req){
+        $chitiet = News::where('id',$req->id)->first();
+        $danhmuclienquan = News::where('loai_tin',$chitiet->loai_tin)->get();
+        return view('pages.chitiettintuc',['chitiet'=>$chitiet],['danhmuclienquan'=>$danhmuclienquan]);
+    }
+
+
+
 // Thêm
     public function getThem(){
         $loaitin = Type_news::all();

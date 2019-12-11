@@ -22,7 +22,7 @@ class CheckAddevent
             elseif($request->cookie('logingg'))
             $checkuserlogin = $request->cookie('logingg');
             else
-            $checkuserlogin = Auth::user()->type == 1;
+            $checkuserlogin = Auth::user()->type == 1 || 2;
             if($checkuserlogin){
                 return $next($request);  
             }
