@@ -183,13 +183,13 @@
                             </div>
 
 
-                            <div class="form-group" style="width: 150%">
+                            <div class="form-group" style="width: 100%">
                                 <label>Tóm tắt sự kiện ( Hiển thị trên Slider, Sự kiện nổi bật)</label>
-                                <textarea class="form-control ckeditor" id="editor1" rows="2" cols="20" value="" name="tom_tat" readonly>{{$duyet->tom_tat}}</textarea>
+                                <textarea class="form-control" id="editor1" rows="2" cols="20" value="" name="tom_tat" readonly>{{$duyet->tom_tat}}</textarea>
                             </div>
-                            <div class="form-group" style="width: 150%">
+                            <div class="form-group" style="width: 100%">
                                 <label>Mô tả sự kiện</label>
-                                <textarea class="form-control ckeditor" id="editor" srows="7" cols="20" name="mo_ta" value="" readonly>{{$duyet->mo_ta}}</textarea>
+                                <textarea class="form-control ckeditor" id="editor1" srows="7" cols="20" name="mo_ta" value="" readonly>{{$duyet->mo_ta}}</textarea>
                             </div>
 
 
@@ -259,15 +259,16 @@
         </div>
         <!-- /#page-wrapper -->
 <script>
-    ClassicEditor
-        .create( document.querySelector( '#editor' ) )
-        .catch( error => {
-            console.error( error );
-        } );
-    ClassicEditor
-        .create( document.querySelector( '#editor1' ) )
-        .catch( error => {
-            console.error( error );
-        } );
+    // ClassicEditor
+    //     .create( document.querySelector( '#editor' ) )
+    //     .catch( error => {
+    //         console.error( error );
+    //     } );
+    // ClassicEditor
+    //     .create( document.querySelector( '#editor1' ) )
+    //     .catch( error => {
+    //         console.error( error );
+    //     } );
+    CKEDITOR.replace('editor1');
 </script>
 @endsection

@@ -67,11 +67,11 @@
             xfbml      : true,
             version    : '{5.0}'
           });
-            
-          FB.AppEvents.logPageView();   
-            
+
+          FB.AppEvents.logPageView();
+
         };
-      
+
         (function(d, s, id){
            var js, fjs = d.getElementsByTagName(s)[0];
            if (d.getElementById(id)) {return;}
@@ -80,13 +80,14 @@
            fjs.parentNode.insertBefore(js, fjs);
          }(document, 'script', 'facebook-jssdk'));
 </script>
+
     <div class="fb-customerchat" attribution="setup_tool" page_id="117903549608295" theme_color="#ffc300" logged_in_greeting="A Event xin chào, chúng tôi giúp gì được cho bạn ?" logged_out_greeting="A Event xin chào, chúng tôi giúp gì được cho bạn ?"></div>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?&amp;key=AIzaSyCHvmyTralDp2Y0m7zEiN185u1vtArcC5s&amp;libraries=places"></script>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v5.0&appId=420853728859282&autoLogAppEvents=1"></script>
     <script type="text/javascript" src="js/core.min.js"></script>
     <script type="text/javascript" src="js/main.min.js"></script>
     <script src='https://www.google.com/recaptcha/api.js'></script>
-    <script type="text/javascript" src="editor/ckeditor/ckeditor.js"></script>
+    <!-- <script type="text/javascript" src="editor/ckeditor/ckeditor.js"></script> -->
     <script type="text/javascript" src="js/validate.js"></script>
     <script type="text/javascript" src="js/filters.js"></script>
     <script type="text/javascript" src="js/jquery.validate.min.js"></script>

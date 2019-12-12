@@ -301,8 +301,9 @@
                                     </div>
                                 @endforeach
 								</div>
-							</div>
-                                @foreach($news as $news)
+                            </div>
+
+                            @foreach($news as $news)
 							<div class="content wow fadeIn" tab-id="item-s{{$news->loaitin->id}}" data-wow-delay=".3s">
 								<div class="list-news">
 									<div class="item-news"><a href="{{url('pages/chitiettintuc',$news->id)}}">
@@ -320,7 +321,7 @@
 
                                 </div>
                             </div>
-                                @endforeach
+                            @endforeach
 
 						</div>
 					</div>

@@ -12,7 +12,6 @@
 namespace Monolog\Formatter;
 
 use Exception;
-use Monolog\Utils;
 use Throwable;
 
 /**
@@ -180,11 +179,11 @@ class JsonFormatter extends NormalizerFormatter
     {
         // TODO 2.0 only check for Throwable
         if (!$e instanceof Exception && !$e instanceof Throwable) {
-            throw new \InvalidArgumentException('Exception/Throwable expected, got '.gettype($e).' / '.Utils::getClass($e));
+            throw new \InvalidArgumentException('Exception/Throwable expected, got '.gettype($e).' / '.get_class($e));
         }
 
         $data = array(
-            'class' => Utils::getClass($e),
+            'class' => get_class($e),
             'message' => $e->getMessage(),
             'code' => $e->getCode(),
             'file' => $e->getFile().':'.$e->getLine(),
@@ -195,6 +194,12 @@ class JsonFormatter extends NormalizerFormatter
             foreach ($trace as $frame) {
                 if (isset($frame['file'])) {
                     $data['trace'][] = $frame['file'].':'.$frame['line'];
+                } elseif (isset($frame['function']) && $frame['function'] === '{closure}') {
+                    // We should again normalize the frames, because it might contain invalid items
+                    $data['trace'][] = $frame['function'];
+                } else {
+                    // We should again normalize the frames, because it might contain invalid items
+                    $data['trace'][] = $this->normalize($frame);
                 }
             }
         }
