@@ -10,37 +10,36 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
-        <div class="row">
-            <div class="col-lg-3 col-md-6">
-                    <div class="panel panel-yellow">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-3">
-                                    <i class="fa fa-newspaper-o fa-5x"></i>
-                                </div>
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge">
-                                        @if (isset($news))
-                                            <?=count($news)?>
-                                        @else
-                                            0 
-                                        @endif
+        <div class="row" style="display: flex; justify-content: center;">
+                <div class="col-lg-2 col-md-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-th fa-5x"></i>
                                     </div>
-                                    <div>Tin Tức</div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">
+                                            @if (isset($type_events))
+                                                <?=count($type_events)?>
+                                            @else
+                                                0 
+                                            @endif
+                                        </div>
+                                        <div>Danh mục</div>
+                                    </div>
                                 </div>
                             </div>
+                                <div class="panel-footer">
+                                <a href="{{url('admin/danhmuc/danhsach')}}">
+                                        <span class="pull-left">Xem chi tiết</span>
+                                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                        <div class="clearfix"></div>
+                                    </a>
+                                </div>
                         </div>
-                            <div class="panel-footer">
-                                <a href="{{url('admin/new/danhsach')}}">
-                                    <span class="pull-left">Xem chi tiết</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </a>
-                            </div>
                     </div>
-                </div>
-         
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-2 col-md-6">
                 <div class="panel panel-green">
                     <div class="panel-heading">
                         <div class="row">
@@ -68,27 +67,27 @@
                         </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6">
-                    <div class="panel panel-primary">
+            <div class="col-lg-2 col-md-6">
+                    <div class="panel panel-yellow">
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-th fa-5x"></i>
+                                    <i class="fa fa-newspaper-o fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge">
-                                        @if (isset($type_events))
-                                            <?=count($type_events)?>
+                                        @if (isset($news))
+                                            <?=count($news)?>
                                         @else
                                             0 
                                         @endif
                                     </div>
-                                    <div>Danh mục</div>
+                                    <div>Tin Tức</div>
                                 </div>
                             </div>
                         </div>
                             <div class="panel-footer">
-                            <a href="{{url('admin/danhmuc/danhsach')}}">
+                                <a href="{{url('admin/new/danhsach')}}">
                                     <span class="pull-left">Xem chi tiết</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                     <div class="clearfix"></div>
@@ -96,7 +95,7 @@
                             </div>
                     </div>
                 </div>
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-2 col-md-6">
                 <div class="panel panel-red">
                     <div class="panel-heading">
                         <div class="row">
@@ -124,6 +123,34 @@
                         </div>
                 </div>
             </div>
+            <div class="col-lg-2 col-md-6">
+                <div class="panel panel-tim">
+                    <div class="panel-heading add_color">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-ticket fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">
+                                 @if(isset($bills))
+                                 <?=count($bills)?>
+                                 @else
+                                    0
+                                @endif
+                                </div>
+                                <div>Bills</div>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="panel-footer">
+                            <a href="{{url('admin/booking/danhsach')}}">
+                                <span class="pull-left color">Xem chi tiết</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right color"></i></span>
+                                <div class="clearfix"></div>
+                            </a>
+                        </div>
+                </div>
+            </div>
         </div>
         <!-- /.row -->
         <div class="row">
@@ -135,40 +162,74 @@
                     <!-- /.panel-heading -->
                     <div class="panel-body">
                         <div class="box_content">
-                            <div class="chart">
-                                <div class="line_chart"></div>
-                                <div class="kets sock"></div>
-                                <div class="line_txt_1 sock"></div>
-                                <div class="txt_blue sock">
-                                    13.5 %
+                            <div class="chart_grid">
+                                <div class="col_group col_group_1">
+                                    <div class="col pink_col">
+                                        <div class="numb gray">
+                                            <b>
+                                                @if (isset($type_events))
+                                                    <?=count($type_events)?>
+                                                @else
+                                                    0 
+                                                @endif
+                                            </b>
+                                        </div>
+                                    </div>
+                                    <div class="col blue_col">
+                                        <div class="numb gray">
+                                            <b>
+                                                @if (isset($event))
+                                                    <?=count($event)?>
+                                                @else
+                                                    0 
+                                                @endif
+                                            </b>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="txt_lf_1 sock">
-                                    6.4 %
+                                <div class="col_group col_group_2">
+                                    <div class="col pink_col">
+                                        <div class="numb gray">
+                                            <b>
+                                                @if (isset($news))
+                                                    <?=count($news)?>
+                                                @else
+                                                    0 
+                                                @endif
+                                            </b>
+                                        </div>
+                                    </div>
+                                    <div class="col blue_col">
+                                        <div class="numb gray">
+                                            <b>
+                                                @if (isset($users))
+                                                    <?=count($users)?>
+                                                @else
+                                                    0 
+                                                @endif
+                                            </b>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="txt_lf_2 sock">
-                                    7.1 %
+                                <div class="col_group col_group_3">
+                                    <div class="col pink_col">
+                                        <div class="numb gray">
+                                            <b>
+                                                @if(isset($bills))
+                                                    <?=count($bills)?>
+                                                @else
+                                                    0
+                                                @endif
+                                            </b>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="text_blue">
-                                    Danh Mục
-                                </div>
-                                <div class="text_green">
-                                    Sự Kiện
-                                </div>
-                                <div class="text_yellow">
-                                    Tin Tức
-                                </div>
-                                <div class="text_red">
-                                    Account
-                                </div>
-                                <div class="line_txt_2 sock"></div>
-                                <div class="txt_red sock">
-                                    6.3 %
-                                </div>
-                                <div class="txt_rg_1 sock">
-                                    2.5 %
-                                </div>
-                                <div class="txt_rg_2 sock">
-                                    3.8 %
+                                <div class="legend">
+                                    <span class="pink_col gray"><b>Danh Mục</b></span>
+                                    <span class="blue_col gray"><b>Sự Kiện</b></span>
+                                    <span class="blue_col gray"><b>Sự Kiện</b></span>
+                                    <span class="blue_col gray"><b>Sự Kiện</b></span>
+                                    <span class="blue_col gray"><b>Sự Kiện</b></span>
                                 </div>
                             </div>
                         </div>
@@ -185,7 +246,6 @@
                 </div>
             </div>
         </div>
-      
         <!-- /.row -->
     </div>
     <!-- /.container-fluid -->

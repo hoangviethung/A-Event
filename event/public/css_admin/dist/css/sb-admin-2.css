@@ -328,7 +328,17 @@ table.dataTable thead .sorting:after {
     color: #fff;
     background-color: #d9534f;
 }
-
+.add_color{
+    border-color: #474787 !important;
+    color: #fff;
+    background-color: #474787 !important;
+}
+.panel-tim{
+    border-color: #474787 !important;
+}
+.color{
+    color: #474787 !important;
+}
 .panel-red a {
     color: #d9534f;
 }
@@ -414,186 +424,125 @@ table.dataTable thead .sorting:after {
     margin: 0;
     color: red;
 }
-
 /* chart */
 .box_content{
-    position: relative;
-    width: 100%;
-    height: 100%;
+    color: #777a7d;
+    overflow: hidden;
     padding: 0;
+    width: 677px;
+    height: 365px;
+    margin-right: 0;
     margin: 0;
-    vertical-align: middle;
-    cursor: pointer;
+    box-sizing: border-box;
 }
-.chart{
-    background-repeat: no-repeat;
+.chart_grid{
+    background:url(../../../images/dashboard/chart_grid.png) no-repeat;
     background-size: 100% auto;
-    background-image: url(../../../images/dashboard/chart.png);
-    width: 527px;
-    height: 367px;
-    margin: 0 auto;
+    width:677px; height:289px;
+    position: relative; left:40px; top:0px;margin: 0;
     padding: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-
 }
-.line_chart{
-    position: absolute;
-    background-image: url(../../../images/dashboard/line_chart.png);
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    width: 384px;
-    height: 252px;
-    bottom: 6px;
-    left: 190px;
-    -webkit-animation-name: run; /* Safari 4.0 - 8.0 */
-    -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
-    animation-name: run;
-    animation-duration: 1s;
-}
-/* Safari 4.0 - 8.0 */
-@-webkit-keyframes run {
-    from {height: 0px;}
-    to {height: 252px;}
-  }
-  
-  /* Standard syntax */
-  @keyframes run {
-    from {height: 0px;}
-    to {height: 252px;}
-  }
-.kets{
-    position: absolute;
-    background-image: url(../../../images/dashboard/kets.png);
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    width: 14px;
-    height: 39px;
-    top: 222px;
-    right: 312px;  
-}
-.line_txt_1{
-    position: absolute;
-    width: 80px;
-    height: 9px;
-    left: 215px;
-    top: 80px;
-    border-right: 1px solid #231F20;
-    border-top: 1px solid #231F20;
-    border-left: 1px solid #231F20;
-}
-.txt_lf_1{
-    position: absolute;
-    top: 110px;
-    left: 207px;
-    font-size: 14px;
+.title_top{
+    left: 41px;
+    top: 97px;
     line-height: 1.3;
-    padding: 0;
-    margin: 0;
-    color: #efad4d; 
-   
-}
-.txt_lf_2{
-    position: absolute;
-    top: 90px;
-    left: 285px;
-    font-size: 14px;
-    line-height: 1.3;
-    padding: 0;
-    margin: 0; 
-    color: #5bb85d;
-}
-.txt_blue{
-    position: absolute;
-    font-size: 14px;
-    line-height: 1.3;
-    padding: 0;
-    margin: 0;
-    top: 60px;
-    left: 240px;
-    color: ;
-}
-.text_blue{
-    font-size: 14px;
-    line-height: 1.3;
-    padding: 0;
-    margin: 0;
     text-align: left;
-    position: absolute;
-    top: 5px;
-    right: 65px;
-
-}
-.line_txt_2{
-    position: absolute;
-    width: 74px;
-    height: 9px;
-    right: 245px;
-    top: 195px;
-    border-right: 1px solid #231F20;
-    border-top: 1px solid #231F20;
-    border-left: 1px solid #231F20; 
-}
-.txt_red{
+    font-size: 28px;
     padding: 0;
     margin: 0;
-    line-height: 1.3;
-    top: 175px;
-    right: 261px;
-    position: absolute;
 }
-.txt_rg_1{
-    position: absolute;
-    top: 205px;
-    right: 295px;
-    font-size: 14px;
+.title_chart{
+    left: 105px;
+    top: 193px;
     line-height: 1.3;
-    padding: 0;
-    margin: 0; 
-    color: #347ab6;
-}
-.txt_rg_2{
-    position: absolute;
-    top: 205px;
-    right: 225px;
-    font-size: 14px;
-    line-height: 1.3;
-    padding: 0;
-    margin: 0;  
-    color: #d9544f; 
-}
-.text_green{
-    font-size: 14px;
-    line-height: 1.3;
-    padding: 0;
-    margin: 0;
     text-align: left;
-    position: absolute;  
-    top: 33px;
-    right: 80px;
+    font-size: 26px;
+    padding: 0;
+    margin: 0;
 }
-.sock{
+.chart_grid .y_axis{
+    font-size: 13px; text-align: center;
+    width:289px;
+    position: absolute; left: -164px; top:124px;
+    -webkit-transform: rotate(-90deg);
+}
+
+.col_group{
+    position: absolute;
+    bottom:6px;
+    width:112px;
+}
+
+.col_group_1{ left:105px;}
+.col_group_2{ left:310px;}
+.col_group_3{ left:518px;}
+
+.col_group .bot_text{
+    width:200%;
+    position: absolute; left:-50%; bottom:-20px;
+    font-size: 13px; text-align: center;
+}
+
+.col{
+    width:51px;
+    position: absolute; bottom:0;
+}
+
+.col.pink_col{
+    background:url(../../../images/dashboard/pink_col.png) no-repeat left top;
+    background-size: 100% 100%;
+    left:0;
+}
+
+.col.blue_col{
+    background:url(../../../images/dashboard/blue_col.png) no-repeat left bottom;
+    right:0;
+}
+
+.col .numb{
+    width:100%; 
+    position: absolute; left:0; top:-20px;
+    font-size: 13px; text-align: center;
     display: none;
 }
-.text_yellow{
-    font-size: 14px;
-    padding: 0;
-    margin: 0;
-    line-height: 1.3;
-    top: 65px;
-    right: 80px;
-    position: absolute;
+
+.legend{
+    position: absolute; left:258px; top: 319px;
 }
-.text_red{
-    font-size: 14px;
-    padding: 0;
-    margin: 0;
+
+.legend span{
+    position: relative;
+    font-size: 13px; display: inline; margin-right:52px;
+}
+
+.legend span::before{
+    width:22px; height: 22px;
+    content:''; display:inline-block;
+    position: absolute; left:-25px; top:-3px;
+    background-size: 100% auto !important;
+}
+
+.legend span.pink_col::before{background:url(../../../images/dashboard/pink_col.png) no-repeat left bottom;}
+.legend span.blue_col::before{background:url(../../../images/dashboard/blue_col.png) no-repeat left bottom;}
+
+.green_arrow{
+    background:url(../../../images/dashboard/green_arrow.png) no-repeat;
+    background-size: 100% auto;
+    width:187px; height: 56px;
+    position: absolute; left:44px; top:400px;
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    font-size: 12px; line-height: 16px; color:#fff;
+    text-align: center;
+}
+.green_arrow strong{
+    position: absolute;
+    left: 10px;
+    top: 15px;
     line-height: 1.3;
-    top: 93px;
-    right: 75px;
-    position: absolute;  
+    text-align: center;
+    font-size: 11px;
 }
 /* chart */
-

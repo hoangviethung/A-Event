@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\users;
 use App\Events;
+use App\Bills;
 use App\Rules\Captcha;
 use App\News;
 use App\Type_events;
@@ -232,7 +233,8 @@ class PagesController extends Controller
         $users = users::all();
         $Type_events = Type_events::all();
         $News = News::all();
-        return view('admin.dashboard.dashboard',['event'=>$event,'users'=>$users,'type_events'=>$Type_events,'news'=>$News]);
+        $bilss = Bills::all();
+        return view('admin.dashboard.dashboard',['event'=>$event,'users'=>$users,'type_events'=>$Type_events,'news'=>$News,'bills'=>$bilss]);
     }
     // QL User
 
