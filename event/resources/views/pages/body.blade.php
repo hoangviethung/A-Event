@@ -51,10 +51,7 @@
 						<div class="swpier-container slider-hotEvent">
 							<div class="swiper-wrapper">
                             @foreach($noibat as $noibat)
-                                <div class="date-over hidden">
-                                    <p>{{$noibat->ngay_dien_ra}} {{$noibat->thoi_gian}}</p>
-                                </div>
-								<div class="swiper-slide">
+                            <div class="swiper-slide">
 									<figure class="wow fadeInDown" data-wow-delay=".3s"><img class="ofc" src="images/product/{{$noibat->banner}}" alt="" srcset="">
 										<figcaption>
 											<div class="name-event wow fadeIn" data-wow-delay=".3s">
@@ -62,18 +59,17 @@
 												<h5 class="wow fadeIn" data-wow-duration="4s">{!!htmlspecialchars_decode($noibat->tom_tat)!!}</h5>
 											</div>
 											<div class="decription-event wow fadeIn" data-wow-delay=".6s">
-												<div class="box-countdown">
+												<div class="box-countdown" data-over="{{$noibat->ngay_dien_ra}} {{$noibat->thoi_gian}}">
 													<div class="block">
-														<div id="hours">0</div><span>Giờ</span>
+														<div class="hours">0</div><span>Giờ</span>
 													</div>
 													<div class="block">
-														<div id="minutes">0</div><span>Phút</span>
+														<div class="minutes">0</div><span>Phút</span>
 													</div>
 													<div class="block">
-														<div id="seconds">0</div><span>Giây</span>
+														<div class="seconds">0</div><span>Giây</span>
 													</div>
 													<div class="block"><span>
-
                                                     <?php $origDate = "$noibat->ngay_dien_ra";
                                                         $newDate = date("d.m.Y", strtotime($origDate));
                                                         echo $newDate;
@@ -81,12 +77,7 @@
 
                                                     </span></div>
 												</div>
-
-                                                <div class="limit-line">
-                                                {!!htmlspecialchars_decode($noibat->mo_ta)!!}
-
-
-                                                </div>
+                                                <div class="limit-line">{!!htmlspecialchars_decode($noibat->mo_ta)!!}</div>
 											</div><a class="right wow flipInX" href="{{url('pages/chitiet',$noibat->id)}}" data-wow-delay=".5s">Tham Gia</a>
 										</figcaption>
 									</figure>
