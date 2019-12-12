@@ -123,11 +123,8 @@ abstract class RestSerializer
 
     private function applyHeader($name, Shape $member, $value, array &$opts)
     {
-        if ($member->getType() === 'timestamp') {
-            $timestampFormat = !empty($member['timestampFormat'])
-                ? $member['timestampFormat']
-                : 'rfc822';
-            $value = TimestampShape::format($value, $timestampFormat);
+        if ($member->getType() == 'timestamp') {
+            $value = TimestampShape::format($value, 'rfc822');
         }
         if ($member['jsonvalue']) {
             $value = json_encode($value);
@@ -160,14 +157,8 @@ abstract class RestSerializer
                 ? $opts['query'] + $value
                 : $value;
         } elseif ($value !== null) {
-            $type = $member->getType();
-            if ($type === 'boolean') {
+            if ($member->getType() === 'boolean') {
                 $value = $value ? 'true' : 'false';
-            } elseif ($type === 'timestamp') {
-                $timestampFormat = !empty($member['timestampFormat'])
-                    ? $member['timestampFormat']
-                    : 'iso8601';
-                $value = TimestampShape::format($value, $timestampFormat);
             }
 
             $opts['query'][$member['locationName'] ?: $name] = $value;
@@ -210,12 +201,6 @@ abstract class RestSerializer
         if (!empty($opts['query'])) {
             $append = Psr7\build_query($opts['query']);
             $relative .= strpos($relative, '?') ? "&{$append}" : "?$append";
-        }
-
-        // If endpoint has path, remove leading '/' to preserve URI resolution.
-        $path = $this->endpoint->getPath();
-        if ($path && $relative[0] === '/') {
-            $relative = substr($relative, 1);
         }
 
         // Expand path place holders using Amazon's slightly different URI

@@ -51,10 +51,11 @@
                                         {{$errors->first('banner')}}
                                     </span>
                                 @endif
+                                <img width="300px" src="images/news/{{$news->banner}}" alt="">
                             </div>
                             <div class="form-group">
                                 <label>Nội dung tin</label>
-                                <textarea class="form-control ckeditor" id="editor" value="{{$news->noi_dung}}"  rows="3" cols="10"  name="noi_dung"></textarea>
+                                <textarea class="form-control ckeditor" id="editor1" value=""  rows="3" cols="10"  name="noi_dung">{{$news->noi_dung}}</textarea>
                                 @if($errors->has('noi_dung'))
                                     <span class="error">
                                         {{$errors->first('noi_dung')}}
@@ -91,15 +92,16 @@
         </div>
         <!-- /#page-wrapper -->
 <script>
-    ClassicEditor
-        .create( document.querySelector( '#editor' ) )
-        .catch( error => {
-            console.error( error );
-        } );
-    ClassicEditor
-        .create( document.querySelector( '#editor1' ) )
-        .catch( error => {
-            console.error( error );
-        } );
+    // ClassicEditor
+    //     .create( document.querySelector( '#editor' ) )
+    //     .catch( error => {
+    //         console.error( error );
+    //     } );
+    // ClassicEditor
+    //     .create( document.querySelector( '#editor1' ) )
+    //     .catch( error => {
+    //         console.error( error );
+    //     } );
+    CKEDITOR.replace('editor1');
 </script>
 @endsection

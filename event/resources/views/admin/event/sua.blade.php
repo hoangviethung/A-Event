@@ -262,7 +262,7 @@
 
                             <div class="form-group">
                                 <label>Tóm tắt sự kiện ( Hiển thị trên Slider, Sự kiện nổi bật)</label>
-                                <textarea class="form-control ckeditor" id="editor1" rows="2" cols="20" value="" name="tom_tat">{{$event->tom_tat}}</textarea>
+                                <textarea class="form-control" id="editor1" rows="2" cols="20" value="" name="tom_tat">{{$event->tom_tat}}</textarea>
                                 @if($errors->has('tom_tat'))
                                     <span class="error">
                                         {{$errors->first('tom_tat')}}
@@ -271,7 +271,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Mô tả sự kiện</label>
-                                <textarea class="form-control ckeditor" id="editor" srows="7" cols="20" name="mo_ta" value="" >{{$event->mo_ta}}</textarea>
+                                <textarea class="form-control ckeditor" id="editor1" srows="7" cols="20" name="mo_ta" value="" >{{$event->mo_ta}}</textarea>
                                 @if($errors->has('mo_ta'))
                                     <span class="error">
                                         {{$errors->first('mo_ta')}}
@@ -340,15 +340,16 @@
         </div>
         <!-- /#page-wrapper -->
 <script>
-    ClassicEditor
-        .create( document.querySelector( '#editor' ) )
-        .catch( error => {
-            console.error( error );
-        } );
-    ClassicEditor
-        .create( document.querySelector( '#editor1' ) )
-        .catch( error => {
-            console.error( error );
-        } );
+    // ClassicEditor
+    //     .create( document.querySelector( '#editor' ) )
+    //     .catch( error => {
+    //         console.error( error );
+    //     } );
+    // ClassicEditor
+    //     .create( document.querySelector( '#editor1' ) )
+    //     .catch( error => {
+    //         console.error( error );
+    //     } );
+    CKEDITOR.replace('editor1');
 </script>
 @endsection

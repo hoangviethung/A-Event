@@ -44,19 +44,6 @@
                     <!-- /.nav-second-level -->
                 </li>
                 <li>
-                    <a href="admin/loaievent/danhsach"><i class="fa fa-bar-chart-o fa-fw"></i> QL Loại Sự Kiện<span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-                        <li>
-                            <a href="admin/loaievent/danhsach"> Danh sách</a>
-                        </li>
-                        <li>
-                            <a href="admin/loaievent/them"> Thêm</a>
-                        </li>
-
-                    </ul>
-                    <!-- /.nav-second-level -->
-                </li>
-                <li>
                     <a href="admin/event/danhsach"><i class="fa fa-cube fa-fw"></i> QL Sự kiện<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>

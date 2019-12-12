@@ -17,8 +17,6 @@ use Aws\AwsClient;
  * @method \GuzzleHttp\Promise\Promise deleteFacesAsync(array $args = [])
  * @method \Aws\Result deleteStreamProcessor(array $args = [])
  * @method \GuzzleHttp\Promise\Promise deleteStreamProcessorAsync(array $args = [])
- * @method \Aws\Result describeCollection(array $args = [])
- * @method \GuzzleHttp\Promise\Promise describeCollectionAsync(array $args = [])
  * @method \Aws\Result describeStreamProcessor(array $args = [])
  * @method \GuzzleHttp\Promise\Promise describeStreamProcessorAsync(array $args = [])
  * @method \Aws\Result detectFaces(array $args = [])

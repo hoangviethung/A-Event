@@ -227,17 +227,17 @@
                     </div>
 
                     <div class="form-group col-lg-12">
-                        <label>Giới thiệu</label>
-                        <textarea class="form-control ckeditor" id="editor1"  rows="3" cols="10"  name="mo_ta"></textarea>
-                        @if($errors->has('mo_ta'))
+                        <label>Giới thiệu( Hiển thị đoạn giới thiệu trên Slide & SK Nổi bật )</label>
+                        <textarea class="form-control" id="editor1" rows="3" cols="10"  name="tom_tat"></textarea>
+                        @if($errors->has('tom_tat'))
                             <span class="error" style="text-align: center !important; display: block; color: red;font-family: K2D,sans-serif;line-height: 1.3; font-size: 18px; padding-top: 5px;margin: 0;">
-                                {{$errors->first('mo_ta')}}
+                                {{$errors->first('tom_tat')}}
                             </span>
                         @endif
                     </div>
                     <div class="form-group col-lg-12">
                         <label>Nội dung sự kiện</label>
-                        <textarea class="form-control ckeditor" id="editor"  rows="3" cols="10"  name="mo_ta"></textarea>
+                        <textarea class="form-control ckeditor" id="editor1"   rows="3" cols="10"  name="mo_ta"></textarea>
                         @if($errors->has('mo_ta'))
                             <span class="error" style="text-align: center !important; display: block; color: red;font-family: K2D,sans-serif;line-height: 1.3; font-size: 18px; padding-top: 5px;margin: 0;">
                                 {{$errors->first('mo_ta')}}
@@ -252,16 +252,17 @@
     </section>
 </main>
 <script>
-    ClassicEditor
-        .create( document.querySelector('#editor'))
-        .catch( error => {
-            console.error( error );
-        });
-    ClassicEditor
-        .create( document.querySelector('#editor1'))
-        .catch( error => {
-            console.error( error );
-        });
+    // ClassicEditor
+    //     .create( document.querySelector('#editor'))
+    //     .catch( error => {
+    //         console.error( error );
+    //     });
+    // ClassicEditor
+    //     .create( document.querySelector('#editor1'))
+    //     .catch( error => {
+    //         console.error( error );
+    //     });
+    CKEDITOR.replace('editor1');
 </script>
 
 @endsection

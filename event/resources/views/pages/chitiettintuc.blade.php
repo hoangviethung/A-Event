@@ -10,7 +10,7 @@
 						<div class="the-same-news col-lg-3">
                             <div class="list-sanme-news"></div>
                             @foreach($danhmuclienquan as $danhmuclienquan)
-							<div class="item-same-news"><a href="">
+							<div class="item-same-news"><a href="{{url('pages/chitiettintuc',$danhmuclienquan->id)}}">
 									<figure>
 										<div class="box-img"><img class="ofc" src="./images/news/{{$danhmuclienquan->banner}}" alt="" srcset=""></div>
 										<figcaption>
