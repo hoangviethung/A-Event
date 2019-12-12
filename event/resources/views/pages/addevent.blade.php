@@ -235,6 +235,7 @@
                             </span>
                         @endif
                     </div>
+
                     <div class="form-group col-lg-12">
                         <label>Nội dung sự kiện</label>
                         <textarea class="form-control ckeditor" id="editor1"   rows="3" cols="10"  name="mo_ta"></textarea>
@@ -251,6 +252,8 @@
         </div>
     </section>
 </main>
+<script src="css_admin/bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="editor/ckeditor/ckeditor.js"></script>
 <script>
     // ClassicEditor
     //     .create( document.querySelector('#editor'))
@@ -262,7 +265,10 @@
     //     .catch( error => {
     //         console.error( error );
     //     });
+$(document).ready(function () {
     CKEDITOR.replace('editor1');
+
+});
 </script>
 
 @endsection
