@@ -373,7 +373,13 @@
 										</div>
 									</div>
 									<div class="content" tab-id="item-3">
-										<p>NHẬN XÉT CỦA KHÁCH HÀNG</p>
+										<p>Tôi rất ấn tượng với thái độ nhiệt tình và trách nhiệm của đội ngũ "A-EVENT" trong quá tư vấn, thực hiện các giải pháp sáng tạo theo nhu cầu của khách hàng. Chân thành cảm ơn sự hỗ trợ của các bạn và chúc "A-EVENT" luôn phát triển.</p>
+										<div class="comment">
+											<img src="images/clients-partner/comment.jpg" alt="comment" srcset="">
+										</div><br />
+										<p class="comment_name">
+											Chị Thanh Hằng
+										</p>
 									</div>
 								</div>
 							</div>

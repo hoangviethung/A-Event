@@ -492,11 +492,28 @@ table.dataTable thead .sorting:after {
     background:url(../../../images/dashboard/pink_col.png) no-repeat left top;
     background-size: 100% 100%;
     left:0;
+    bottom: 1px;
 }
 
 .col.blue_col{
     background:url(../../../images/dashboard/blue_col.png) no-repeat left bottom;
     right:0;
+    bottom: 1px;
+}
+.col.yellow_col{
+    background: url(../../../images/dashboard/yellow_col.png) no-repeat left bottom;
+    right: 60px;
+    bottom: 1px;
+}
+.col.red_col{
+    background:url(../../../images/dashboard/red_col.png) no-repeat left bottom;
+    right:0;
+    bottom: 1px;
+}
+.col.order_col{
+    background: url(../../../images/dashboard/order_col.png) no-repeat left bottom;
+    right: 50px;
+    bottom: 1px;
 }
 
 .col .numb{
@@ -504,15 +521,20 @@ table.dataTable thead .sorting:after {
     position: absolute; left:0; top:-20px;
     font-size: 13px; text-align: center;
     display: none;
+    
 }
-
+.gray{
+    color: #000;
+}
 .legend{
-    position: absolute; left:258px; top: 319px;
+    position: absolute;
+    left: 120px;
+    top: 319px;
 }
 
 .legend span{
     position: relative;
-    font-size: 13px; display: inline; margin-right:52px;
+    font-size: 13px; display: inline; margin-right:52px;vertical-align: middle;
 }
 
 .legend span::before{
@@ -522,8 +544,11 @@ table.dataTable thead .sorting:after {
     background-size: 100% auto !important;
 }
 
-.legend span.pink_col::before{background:url(../../../images/dashboard/pink_col.png) no-repeat left bottom;}
-.legend span.blue_col::before{background:url(../../../images/dashboard/blue_col.png) no-repeat left bottom;}
+.legend span.note1::before{background:url(../../../images/dashboard/note1.png) no-repeat left bottom; width: 15px !important; height: 15px !important;top: 0px;}
+.legend span.note2::before{background:url(../../../images/dashboard/note2.png) no-repeat left bottom; width: 15px !important; height: 15px !important;top: 0px;}
+.legend span.note3::before{background:url(../../../images/dashboard/note3.png) no-repeat left bottom; width: 15px !important; height: 15px !important;top: 0px;}
+.legend span.note4::before{background:url(../../../images/dashboard/note4.png) no-repeat left bottom; width: 15px !important; height: 15px !important;top: 0px;}
+.legend span.note5::before{background:url(../../../images/dashboard/note5.png) no-repeat left bottom; width: 15px !important; height: 15px !important;top: 0px;}
 
 .green_arrow{
     background:url(../../../images/dashboard/green_arrow.png) no-repeat;

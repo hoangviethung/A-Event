@@ -26,7 +26,32 @@
                 height: 90px;
                 color: #8d8f90;
                 font-size: 20px;
-            }
+			}
+			.comment{
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin: 0 auto;
+				padding: 0;
+			}
+			.comment img{
+				border: 2px solid #ffd800;
+				border-radius: 50%;
+				width: 100px;
+				height: 100px;
+				display: block;
+			}
+			.comment_name{
+			    padding: 5px 0px;
+				width: 15%;
+				display: flex;
+				position: relative;
+				justify-content: center;
+				align-items: center;
+				border-top: 2px solid #ffd800;
+				margin: 0 auto;
+				text-align: center;
+			}
         </style>
 	</head>
 	<body>

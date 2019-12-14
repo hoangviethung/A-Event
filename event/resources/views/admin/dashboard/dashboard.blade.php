@@ -188,7 +188,7 @@
                                     </div>
                                 </div>
                                 <div class="col_group col_group_2">
-                                    <div class="col pink_col">
+                                    <div class="col yellow_col">
                                         <div class="numb gray">
                                             <b>
                                                 @if (isset($news))
@@ -199,7 +199,7 @@
                                             </b>
                                         </div>
                                     </div>
-                                    <div class="col blue_col">
+                                    <div class="col red_col">
                                         <div class="numb gray">
                                             <b>
                                                 @if (isset($users))
@@ -212,7 +212,7 @@
                                     </div>
                                 </div>
                                 <div class="col_group col_group_3">
-                                    <div class="col pink_col">
+                                    <div class="col order_col">
                                         <div class="numb gray">
                                             <b>
                                                 @if(isset($bills))
@@ -225,11 +225,11 @@
                                     </div>
                                 </div>
                                 <div class="legend">
-                                    <span class="pink_col gray"><b>Danh Mục</b></span>
-                                    <span class="blue_col gray"><b>Sự Kiện</b></span>
-                                    <span class="blue_col gray"><b>Sự Kiện</b></span>
-                                    <span class="blue_col gray"><b>Sự Kiện</b></span>
-                                    <span class="blue_col gray"><b>Sự Kiện</b></span>
+                                    <span class="note1 gray"><b>Danh Mục</b></span>
+                                    <span class="note2 gray"><b>Sự Kiện</b></span>
+                                    <span class="note3 gray"><b>Tin Tức</b></span>
+                                    <span class="note4 gray"><b>Account</b></span>
+                                    <span class="note5 gray"><b>Bills</b></span>
                                 </div>
                             </div>
                         </div>

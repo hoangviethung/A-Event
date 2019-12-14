@@ -106,6 +106,7 @@ class AddeventController extends Controller
         $event->so_luong_ve_thuong = $request->so_luong_ve_thuong;
         $event->so_luong_ve_vip = $request->so_luong_ve_vip;
         $event->email_chu = Auth::user()->email;
+        $event->id_user = Auth::user()->id;
 
         if($request->hasFile('logo')){
             $file_logo = $request->file('logo');
@@ -128,11 +129,17 @@ class AddeventController extends Controller
         }
         else
         {
-        $event->banner = "";
+            $event->banner = "";
         }
 
         $event->save();
-        return redirect('pages/addevent')->with('thongbao','Đã thêm !!! Sự kiện bạn đang đợi phê duyệt');
+        echo "
+           <script>
+                alert('Đã thêm !!! Sự kiện bạn đang đợi phê duyệt');
+                window.location = '".url('pages/addevent')."'
+           </script>
+        ";
+        // return redirect('pages/addevent');
     }
 
 }

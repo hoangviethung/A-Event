@@ -2,11 +2,6 @@
 @section('content')
 <main>
     <section class="form-add-event">
-        @if(session('thongbao'))
-            <div class="alert alert-success">
-                {{session('thongbao')}}
-            </div>
-        @endif
         <div class="form-info-event" style="padding-top: 0px;">
         <form action="pages/addevent" method="POST" enctype="multipart/form-data" >
         <input type="hidden" name="_token" value="{{csrf_token()}}">
@@ -43,9 +38,9 @@
 
 
                     <div class="form-group col-lg-6">
-                        <label for="dia-diem">Nhà tài trợ:</label>
+                        <label for="dia-vip">Nhà tài trợ:</label>
                         <div class="form-input">
-                            <input id="dia-diem" type="text" name="nha_tai_tro" placeholder="Nhập tên nhà tài trợ">
+                            <input id="dia-vip" type="text" name="nha_tai_tro" placeholder="Nhập tên nhà tài trợ">
                         </div>
                         <div class="form-row margin-5px">
                             @if($errors->has('nha_tai_tro'))
@@ -227,8 +222,8 @@
                     </div>
 
                     <div class="form-group col-lg-12">
-                        <label>Giới thiệu( Hiển thị đoạn giới thiệu trên Slide & SK Nổi bật )</label>
-                        <textarea class="form-control" id="editor1" rows="3" cols="10"  name="tom_tat"></textarea>
+                        <label>Giới thiệu( Hiển thị đoạn giới thiệu trên Slide & SK Nổi bật )</label><br />
+                        <textarea class="form-control" rows="3" cols="100"  name="tom_tat"></textarea>
                         @if($errors->has('tom_tat'))
                             <span class="error" style="text-align: center !important; display: block; color: red;font-family: K2D,sans-serif;line-height: 1.3; font-size: 18px; padding-top: 5px;margin: 0;">
                                 {{$errors->first('tom_tat')}}

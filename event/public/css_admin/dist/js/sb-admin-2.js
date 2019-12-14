@@ -31,7 +31,7 @@ $(function() {
     }
 });
 $('document').ready(function(){
-	var rate = 5;
+	var rate = 2;
 	function chart_ani(){
 		$('.col').each(function(i,e){
 			var numb = $(this).find('b').text();

@@ -129,7 +129,7 @@
                         <!-- /.col-lg-12 -->
                        <!--Table-->
                     @if(session('thongbao'))
-                       <div class="alert alert-success">
+                       <div class="alert alert-success" style="width: 50% !important">
                             {{session('thongbao')}}
                        </div>
 
