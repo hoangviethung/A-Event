@@ -6,21 +6,9 @@
 	margin-left  : auto;
 }
 
-@media (min-width: 768px) {
-	.container {
-		max-width: 740px;
-	}
-}
-
-@media (min-width: 1025px) {
-	.container {
-		max-width: 990px;
-	}
-}
-
 @media (min-width: 1200px) {
 	.container {
-		max-width: 1140px;
+		max-width: 100%;
 	}
 }
 

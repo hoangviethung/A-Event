@@ -87,6 +87,7 @@ function sliderHomeBanner() {
 			delay: 5000,
 			disableOnInteraction: false,
 		},
+
 		pagination: {
 			el: '.slider-bannerHome .swiper-pagination',
 		},
@@ -121,6 +122,14 @@ function sliderProductByCatalog() {
 		spaceBetween: 10,
 		autoplay: {
 			delay: 5000,
+		},
+		breakpoints: {
+			768: {
+				slidesPerView: 2
+			},
+			575: {
+				slidesPerView: 1
+			}
 		},
 		pagination: {
 			el: '.slider-ProductByCatalog .swiper-pagination',
@@ -179,6 +188,7 @@ function countDownSale() {
 		const timeEnd = $(this).attr('data-over');
 		var dateEND = new Date(timeEnd).getTime();
 		let _this = $(this);
+
 		let x = setInterval(function() {
 			// Get today's date and time
 			let now = new Date().getTime();
@@ -206,9 +216,10 @@ function countDownSale() {
 				}
 			} catch (error) {
 				console.log(error);
-				
+
 			}
 		}, 1000);
+
 	})
 
 	// Set the date we're counting down to

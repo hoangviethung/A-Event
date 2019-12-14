@@ -5,16 +5,8 @@ footer {
 	margin-right: auto;
 	margin-left : auto;
 
-	@media (min-width: 768px) {
-		max-width: 740px;
-	}
-
-	@media (min-width: 1025px) {
-		max-width: 990px;
-	}
-
 	@media (min-width: 1200px) {
-		max-width: 1140px;
+		max-width: 100%;
 	}
 
 	@media (min-width: 1600px) {
@@ -49,6 +41,11 @@ main {
 	width         : 100%;
 	line-height   : 50px;
 	letter-spacing: 5px;
+
+	@media (max-width: 575.98px) {
+		line-height: 25px;
+		font-size  : 13px;
+	}
 }
 
 .hiden {
@@ -218,13 +215,15 @@ main {
 	padding  : 30px 15px;
 
 	figure {
-		cursor : pointer;
-		display: flex;
+		cursor   : pointer;
+		display  : flex;
+		flex-wrap: wrap;
 
 		.box-img {
 			position    : relative;
 			overflow    : hidden;
 			flex        : 0 0 250px;
+			max-width   : 250px;
 			height      : 150px;
 			margin-right: 10px;
 
@@ -245,6 +244,10 @@ main {
 		}
 
 		figcaption {
+			flex-basis: 0;
+			flex-grow : 1;
+			max-width : 100%;
+
 			h5 {
 				display           : -webkit-box;
 				font-size         : 20px;
@@ -265,7 +268,7 @@ main {
 				display           : -webkit-box;
 				font-size         : 14px;
 				text-align        : justify;
-				height            : 65px;
+				max-height        : 65px;
 				overflow          : hidden;
 				text-overflow     : ellipsis;
 				-webkit-line-clamp: 3;
@@ -311,6 +314,39 @@ main {
 							transform: rotate3d(1, 1, 1, 45deg);
 						}
 					}
+				}
+			}
+		}
+	}
+
+	@media (max-width: 1024.98px) {
+		figure {
+			.box-img {
+				flex         : 0 0 100%;
+				max-width    : 100%;
+				margin-bottom: 15px;
+			}
+
+			figcaption {
+				flex     : 0 0 100%;
+				max-width: 100%;
+			}
+		}
+	}
+
+	@media (max-width: 767.98px) {
+		flex     : 0 0 100%;
+		max-width: 100%;
+
+		figure {
+			figcaption {
+				h5 {
+					font-size: 18px;
+				}
+
+				P {
+					font-size : 13px;
+					max-height: 57px;
 				}
 			}
 		}
@@ -428,25 +464,55 @@ main {
 	}
 }
 
-.CKEditor {
-	background: $main-color-4;
-	padding   : 20px;
+.title-catalog {
+	display    : flex;
+	align-items: center;
 
-	p {
-		margin-bottom: 20px;
+	.name-catalog {
+		margin-left: 10px;
 
-		&.text-center {
-			text-align: center;
+		span {
+			font-family: 'Ubuntu', sans-serif;
+			font-size  : 12px;
+			font-weight: 700;
+			color      : rgb(160, 160, 160);
 		}
 
-		&.color {
-			&-red {
-				color: #FF0000;
-			}
+		h3 {
+			font-family    : 'Saira Stencil One', cursive;
+			font-size      : 24px;
+			line-height    : 1.2;
+			color          : $main-color-1;
+			text-decoration: underline;
+		}
+	}
 
-			&-yellow {
-				color: #ffd800;
+	.event-tag {
+		margin-left: auto;
+
+		.list-eventTag {
+			display    : flex;
+			align-items: center;
+
+			.item {
+				padding      : 3px 0;
+				margin-right : 10px;
+				background   : rgba(255, 255, 255, 0.1);
+				border       : 1px solid rgba(255, 255, 255, 0.2);
+				border-radius: 5px;
+
+				a {
+					padding  : 0 5px;
+					font-size: 12px;
+					color    : $main-color-1;
+				}
 			}
+		}
+	}
+
+	@media (max-width: 767.98px) {
+		.event-tag {
+			display: none;
 		}
 	}
 }
