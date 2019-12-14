@@ -5,8 +5,8 @@
 	<a class="blue-btn btn" data-filter="cat1" href="#" role="button">Cat1</a>
 	<a class="blue-btn btn" data-filter="cat2" href="#" role="button">Cat2</a>
 	<a class="blue-btn btn" data-filter="cat3" href="#" role="button">Cat3</a>
-  
-  
+
+
 	<ul class="boxes">
 	  <li data-cat="cat1,cat2">cat1 & cat2</li>
 	  <li data-cat="cat2">cat2</li>
@@ -37,7 +37,7 @@
 					<div class="row">
 						@foreach($sukien as $sukien)
 						<div class="col-lg-4 boxes">
-							<a href="{{url('pages/chitiet',$danhmuc->id)}}">
+							<a href="{{url('pages/chitiet',$sukien->id)}}">
 								<div class="item-event">
 									<figure>
 										<div class="box-img"><img class="ofc" src="./images/product/{{$sukien->banner}}" alt="" srcset=""></div>
