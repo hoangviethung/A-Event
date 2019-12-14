@@ -35,6 +35,7 @@
 			<div class="list-item" style="margin-top: 50px !important;">
 				<div class="container">
 					<div class="row">
+                    <?php $sukienss = $sukien; ?>
 						@foreach($sukien as $sukien)
 						<div class="col-lg-4 boxes">
 							<a href="{{url('pages/chitiet',$sukien->id)}}">

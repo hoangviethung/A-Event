@@ -38,8 +38,8 @@ class PagesController extends Controller
         $kienthuc = Events::where([['id_loai',2],['duyet',1],])->orderBy('id','desc')->get();
         $sukienkhac = Events::where([['id_loai',3],['duyet',1],])->orderBy('id','desc')->get();
         $noibat = Events::where([['hien_thi_noi_bat',1],['duyet',1],])->orderBy('id','desc')->get();
-        $new_01= News::where('noi_bat',1)->get();
-        $news_moi = News::orderBy('id','desc')->get();
+        $new_01= News::where('noi_bat',1)->get()->take(6);
+        $news_moi = News::orderBy('id','desc')->get()->take(6);
         $news = News::all();
         $news_type = Type_news::all();
         return view('pages.body',compact('slide','giaitri','kienthuc','new_01','sukienkhac','noibat','news_moi','news','news_type'));

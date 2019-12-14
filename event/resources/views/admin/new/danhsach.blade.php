@@ -45,6 +45,7 @@
                                 <!--Table head-->
 
                                 <!--Table body-->
+                                <?php $tintucs = $tintuc ;?>
                                 @foreach($tintuc as $tintuc)
                                 <tbody>
                                         <td>
@@ -83,6 +84,7 @@
                         </table>
                         <!--Table-->
                     </div>
+                    {{$tintucs->links()}}
                     </div>
                 </div>
             </div>
