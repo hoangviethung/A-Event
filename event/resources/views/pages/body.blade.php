@@ -255,6 +255,7 @@
 						<ul class="list-catalogNews">
 							<li class="item acitve" toggle-for="item-1">NỔI BẬT</li>
 							<li class="item" toggle-for="item-2">MỚI</li>
+                        <?php $news_types =$news_type;?>
                             @foreach ($news_type as $news_type)
 							<li class="item" toggle-for="item-s{{$news_type->id}}">{{$news_type->ten_loai}}</li>
                             @endforeach
@@ -302,27 +303,29 @@
                                 @endforeach
 								</div>
                             </div>
+                            @foreach ($news_types as $news_type)
 
-                            @foreach($news as $news)
-							<div class="content wow fadeIn" tab-id="item-s{{$news->loaitin->id}}" data-wow-delay=".3s">
+							<div class="content wow fadeIn" tab-id="item-s{{$news_type->id}}" data-wow-delay=".3s">
 								<div class="list-news">
-									<div class="item-news"><a href="{{url('pages/chitiettintuc',$news->id)}}">
+                                @foreach($news as $newss)
+                                @if($newss->loai_tin==$news_type->id)
+									<div class="item-news"><a href="{{url('pages/chitiettintuc',$newss->id)}}">
 											<figure>
-												<div class="box-img"><img class="ofc" src="images/news/{{$news->banner}}" alt="" srcset=""></div>
+												<div class="box-img"><img class="ofc" src="images/news/{{$newss->banner}}" alt="" srcset=""></div>
 												<figcaption>
-													<h5>{{$news->tieu_de}}</h5><span class="time"><?php
-                                                    $d=strtotime($news->created_at);
+													<h5>{{$newss->tieu_de}}</h5><span class="time"><?php
+                                                    $d=strtotime($newss->created_at);
                                                     echo "" . date("d-m-Y", $d);
                                                     ?></span>
-													{!!htmlspecialchars_decode($news->noi_dung)!!}
+													{!!htmlspecialchars_decode($newss->noi_dung)!!}
 												</figcaption>
 											</figure></a>
                                     </div>
-
+                                @endif
+                            @endforeach
                                 </div>
                             </div>
                             @endforeach
-
 						</div>
 					</div>
 				</div>
