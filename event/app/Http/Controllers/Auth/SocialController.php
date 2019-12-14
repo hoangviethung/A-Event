@@ -21,8 +21,8 @@ class SocialController extends Controller
 public function loginsuccess(){
     session_start();
 $fb = new Facebook([
-    'app_id' => '420853728859282', // Replace {app-id} with your app id
-    'app_secret' => '2934d5b7cb9feee19aa59e6466d7b3d9',
+    'app_id' => '512194342977013', // Replace {app-id} with your app id
+    'app_secret' => '8b4dea9632468db3b9d16cedf4a7024c',
     'default_graph_version' => 'v5.0',
   ]);
 
@@ -65,7 +65,7 @@ $tokenMetadata = $oAuth2Client->debugToken($accessToken);
 // print_r($tokenMetadata);
 
 // Validation (these will throw FacebookSDKException's when they fail)
-$tokenMetadata->validateAppId('420853728859282'); // Replace {app-id} with your app id
+$tokenMetadata->validateAppId('512194342977013'); // Replace {app-id} with your app id
 // If you know the user ID this access token belongs to, you can validate it here
 //$tokenMetadata->validateUserId('123');
 $tokenMetadata->validateExpiration();

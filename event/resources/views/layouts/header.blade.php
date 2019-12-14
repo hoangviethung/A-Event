@@ -4,15 +4,18 @@
 		<title>A Event | Trang Chủ</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<link rel="shortcut icon" type="image/png" href="images/favicon/favicon.png">
 		<style>#loading{-webkit-transition:1.5s;-o-transition:1.5s;position:fixed;top:0;right:0;bottom:0;left:0;z-index:99999;transition:1.5s;background:#000;width:100%;height:100%}#loading #progress{-webkit-transition:1.5s;-o-transition:1.5s;display:none;transition:1.5s;background:#000;width:0;height:1px}#loading #progress,#loading .progstat-wrapper{-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);position:absolute;top:50%;transform:translateY(-50%)}#loading .progstat-wrapper{margin-top:0;width:100%;color:#fff;font-size:14px;font-weight:300;letter-spacing:3px;text-align:center}#loading .logo-loader{-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);margin-top:-100px;width:150px;height:150px}</style>
 		<script>!function(){function n(n){return document.getElementById(n)}document.addEventListener("DOMContentLoaded",function(){var e=n("loading"),t=n("progress"),o=n("progstat"),r=document.images,i=0,d=r.length;if(0==d)return u();function a(){var n=100/d*(i+=1)<<0;if(t.style.width=n,o.innerHTML=n,i===d)return u()}function u(){e.style.opacity=0,setTimeout(function(){e.style.display="none";var n=document.getElementById("loading");n.parentNode.removeChild(n)},1500)}for(var c=0;c<d;c++){var s=new Image;s.onload=a,s.onerror=a,s.src=r[c].src}},!1)}();</script>
-		<base href="{{ asset('') }}" />
-		<link rel="stylesheet" href="css/core.min.css">
+        <base href="{{ asset('') }}" />
+        <link rel="stylesheet" href="css/core.min.css">
 		<link rel="stylesheet" href="css/main.min.css"><link href="https://fonts.googleapis.com/css?family=K2D&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Pangolin&display=swap" rel="stylesheet">
+        <script type="text/javascript" src="editor/ckeditor/ckeditor.js"></script>
+
+
         <style>
             .gmap_canvas{
                 width: 100% !important;
@@ -23,7 +26,32 @@
                 height: 90px;
                 color: #8d8f90;
                 font-size: 20px;
-            }
+			}
+			.comment{
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin: 0 auto;
+				padding: 0;
+			}
+			.comment img{
+				border: 2px solid #ffd800;
+				border-radius: 50%;
+				width: 100px;
+				height: 100px;
+				display: block;
+			}
+			.comment_name{
+			    padding: 5px 0px;
+				width: 15%;
+				display: flex;
+				position: relative;
+				justify-content: center;
+				align-items: center;
+				border-top: 2px solid #ffd800;
+				margin: 0 auto;
+				text-align: center;
+			}
         </style>
 	</head>
 	<body>

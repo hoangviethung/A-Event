@@ -69,7 +69,7 @@
                                         <a href="admin/event/pheduyet/{{$duyet->id}}"><img src="images/accept.png" alt="A-event" srcset="" width="40" height="40"></a>
                                     </th>
                                     <th>
-                                        <a href="admin/event/pheduyet/{{$duyet->id}}"><img src="images/xoa.png" alt="A-event" srcset="" width="40" height="40"></a>
+                                        <a href="admin/event/xoa/{{$duyet->id}}"><img src="images/xoa.png" alt="A-event" srcset="" width="40" height="40"></a>
                                     </th>
                                     <th>{{$duyet->id}}</th>
                                     <td>{{$duyet->ten_su_kien}}</td>
@@ -129,7 +129,7 @@
                         <!-- /.col-lg-12 -->
                        <!--Table-->
                     @if(session('thongbao'))
-                       <div class="alert alert-success">
+                       <div class="alert alert-success" style="width: 50% !important">
                             {{session('thongbao')}}
                        </div>
 

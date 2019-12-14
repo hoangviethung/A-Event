@@ -2,11 +2,11 @@
 @section('content')
 <main>
     <section class="form-add-event">
-        @if(session('thongbao'))
+        {{-- @if(session('thongbao'))
             <div class="alert alert-success">
                 {{session('thongbao')}}
             </div>
-        @endif
+        @endif --}}
         <div class="form-info-event" style="padding-top: 0px;">
         <form action="pages/editevent/sua/{{$edit_events->id}}" method="POST" enctype="multipart/form-data" >
         <input type="hidden" name="_token" value="{{csrf_token()}}">

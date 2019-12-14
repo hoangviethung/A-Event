@@ -18,7 +18,7 @@
     <link href="css_admin/toastr/toastr.css" rel="stylesheet">
     <link href="css_admin/toastr/toastr.js.map" rel="stylesheet">
     <link href="css_admin/toastr/toastr.min.css" rel="stylesheet">
-    <script src="editor/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="editor/ckeditor/ckeditor.js"></script>
     <style>
     .ck-content{
         min-height: 200px;
@@ -59,7 +59,7 @@
             $(".password").toggle();
         });
     </script>
-    
+
 
     @yield('script')
 </body>

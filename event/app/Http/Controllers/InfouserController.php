@@ -10,9 +10,6 @@ use Illuminate\Support\Str;
 use App\Type_events;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
-
-
-
 class InfouserController extends Controller
 {
     function __construct()
@@ -33,7 +30,8 @@ class InfouserController extends Controller
 
     public function getEventcreate(){
         $users = users::all();
-        $create_event = Events::all()->take(2);
+        $create_event = Events::where('id_user',Auth::user()->id)->get();
+        // $create_event = Events::all()->take(2);
         return view('pages/eventcreate',['eventcreate'=>$create_event,'user'=>$users]);
     }
 
@@ -144,7 +142,13 @@ class InfouserController extends Controller
         $event->banner = "";
         }
         $event->save();
-        return redirect('pages/editevent/sua/'.$event->id)->with('thongbao','Đã sửa !!! Sự kiện bạn đang đợi phê duyệt');
+        echo "
+           <script>
+                alert('Đã sửa !!! Sự kiện bạn đang đợi phê duyệt');
+                window.location = '".url('pages/editevent/sua/'.$event->id)."'
+           </script>
+        ";
+        // return redirect('pages/editevent/sua/'.$event->id)->with('thongbao','Đã sửa !!! Sự kiện bạn đang đợi phê duyệt');
     }
 
     public function getXoa($id){
@@ -233,7 +237,7 @@ class InfouserController extends Controller
             }
             $user->vip = $request->vip;
             $user->save();
-
+  
         return redirect('pages/edituser/sua/'.Auth::user()->id)->with('thongbao','Sửa thông tin thành công !');
     }
 }

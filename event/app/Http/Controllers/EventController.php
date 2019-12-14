@@ -326,7 +326,7 @@ class EventController extends Controller
 public function getXoa($id){
     $event = Events::find($id);
     $event->delete();
-    return redirect('admin/event/danhsach')->with('thongbao','Bạn đã xóa thành công');
+    return redirect('admin/event/danhsach')->with('thongbao','Bạn đã không duyệt bài');
 }
 
 

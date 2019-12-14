@@ -51,10 +51,7 @@
 						<div class="swpier-container slider-hotEvent">
 							<div class="swiper-wrapper">
                             @foreach($noibat as $noibat)
-                                <div class="date-over hidden">
-                                    <p>{{$noibat->ngay_dien_ra}} {{$noibat->thoi_gian}}</p>
-                                </div>
-								<div class="swiper-slide">
+                            <div class="swiper-slide">
 									<figure class="wow fadeInDown" data-wow-delay=".3s"><img class="ofc" src="images/product/{{$noibat->banner}}" alt="" srcset="">
 										<figcaption>
 											<div class="name-event wow fadeIn" data-wow-delay=".3s">
@@ -62,18 +59,17 @@
 												<h5 class="wow fadeIn" data-wow-duration="4s">{!!htmlspecialchars_decode($noibat->tom_tat)!!}</h5>
 											</div>
 											<div class="decription-event wow fadeIn" data-wow-delay=".6s">
-												<div class="box-countdown">
+												<div class="box-countdown" data-over="{{$noibat->ngay_dien_ra}} {{$noibat->thoi_gian}}">
 													<div class="block">
-														<div id="hours">0</div><span>Giờ</span>
+														<div class="hours">0</div><span>Giờ</span>
 													</div>
 													<div class="block">
-														<div id="minutes">0</div><span>Phút</span>
+														<div class="minutes">0</div><span>Phút</span>
 													</div>
 													<div class="block">
-														<div id="seconds">0</div><span>Giây</span>
+														<div class="seconds">0</div><span>Giây</span>
 													</div>
 													<div class="block"><span>
-
                                                     <?php $origDate = "$noibat->ngay_dien_ra";
                                                         $newDate = date("d.m.Y", strtotime($origDate));
                                                         echo $newDate;
@@ -81,12 +77,7 @@
 
                                                     </span></div>
 												</div>
-
-                                                <div class="limit-line">
-                                                {!!htmlspecialchars_decode($noibat->mo_ta)!!}
-
-
-                                                </div>
+                                                <div class="limit-line">{!!htmlspecialchars_decode($noibat->mo_ta)!!}</div>
 											</div><a class="right wow flipInX" href="{{url('pages/chitiet',$noibat->id)}}" data-wow-delay=".5s">Tham Gia</a>
 										</figcaption>
 									</figure>
@@ -264,6 +255,7 @@
 						<ul class="list-catalogNews">
 							<li class="item acitve" toggle-for="item-1">NỔI BẬT</li>
 							<li class="item" toggle-for="item-2">MỚI</li>
+                        <?php $news_types =$news_type;?>
                             @foreach ($news_type as $news_type)
 							<li class="item" toggle-for="item-s{{$news_type->id}}">{{$news_type->ten_loai}}</li>
                             @endforeach
@@ -310,27 +302,30 @@
                                     </div>
                                 @endforeach
 								</div>
-							</div>
-                                @foreach($news as $news)
-							<div class="content wow fadeIn" tab-id="item-s{{$news->loaitin->id}}" data-wow-delay=".3s">
+                            </div>
+                            @foreach ($news_types as $news_type)
+
+							<div class="content wow fadeIn" tab-id="item-s{{$news_type->id}}" data-wow-delay=".3s">
 								<div class="list-news">
-									<div class="item-news"><a href="{{url('pages/chitiettintuc',$news->id)}}">
+                                @foreach($news as $newss)
+                                @if($newss->loai_tin==$news_type->id)
+									<div class="item-news"><a href="{{url('pages/chitiettintuc',$newss->id)}}">
 											<figure>
-												<div class="box-img"><img class="ofc" src="images/news/{{$news->banner}}" alt="" srcset=""></div>
+												<div class="box-img"><img class="ofc" src="images/news/{{$newss->banner}}" alt="" srcset=""></div>
 												<figcaption>
-													<h5>{{$news->tieu_de}}</h5><span class="time"><?php
-                                                    $d=strtotime($news->created_at);
+													<h5>{{$newss->tieu_de}}</h5><span class="time"><?php
+                                                    $d=strtotime($newss->created_at);
                                                     echo "" . date("d-m-Y", $d);
                                                     ?></span>
-													{!!htmlspecialchars_decode($news->noi_dung)!!}
+													{!!htmlspecialchars_decode($newss->noi_dung)!!}
 												</figcaption>
 											</figure></a>
                                     </div>
-
+                                @endif
+                            @endforeach
                                 </div>
                             </div>
-                                @endforeach
-
+                            @endforeach
 						</div>
 					</div>
 				</div>
@@ -381,7 +376,13 @@
 										</div>
 									</div>
 									<div class="content" tab-id="item-3">
-										<p>NHẬN XÉT CỦA KHÁCH HÀNG</p>
+										<p>Tôi rất ấn tượng với thái độ nhiệt tình và trách nhiệm của đội ngũ "A-EVENT" trong quá tư vấn, thực hiện các giải pháp sáng tạo theo nhu cầu của khách hàng. Chân thành cảm ơn sự hỗ trợ của các bạn và chúc "A-EVENT" luôn phát triển.</p>
+										<div class="comment">
+											<img src="images/clients-partner/comment.jpg" alt="comment" srcset="">
+										</div><br />
+										<p class="comment_name">
+											Chị Thanh Hằng
+										</p>
 									</div>
 								</div>
 							</div>

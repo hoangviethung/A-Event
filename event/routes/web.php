@@ -116,20 +116,6 @@ Route::group(['prefix'=>'admin','middleware'=>'checklogin'], function(){
         Route::get('xoa/{id}', 'DanhmucController@getXoa');
     });
 
-    // Loại sự kiện có trong danh mục
-    Route::group(['prefix' => 'loaievent'], function () {
-        // hướng đi admin/loaievent/danhsach
-        Route::get('danhsach','LoaiEventController@getDanhsach');
-
-        Route::get('sua/{id}', 'LoaiEventController@getSua');
-        Route::post('sua/{id}', 'LoaiEventController@postSua');
-
-
-        Route::get('them', 'LoaiEventController@getThem');
-        Route::post('them', 'LoaiEventController@postThem');
-        // Hàm post nhận dữ liệu về và lưu vào cơ sở dữ liệu
-        Route::get('xoa/{id}', 'LoaiEventController@getXoa');
-    });
     // danhmuc
 
 

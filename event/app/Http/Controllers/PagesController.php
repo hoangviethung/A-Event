@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\users;
 use App\Events;
+use App\Bills;
 use App\Rules\Captcha;
 use App\News;
 use App\Type_events;
@@ -55,15 +56,15 @@ class PagesController extends Controller
 
         session_start();
         $fb = new Facebook([
-            'app_id' => '420853728859282',
-            'app_secret' => '2934d5b7cb9feee19aa59e6466d7b3d9',
+            'app_id' => '512194342977013',
+            'app_secret' => '8b4dea9632468db3b9d16cedf4a7024c',
             'default_graph_version' => 'v5.0',
             ]);
 
           $helper = $fb->getRedirectLoginHelper();
 
           $permissions = ['email'];
-          $linkloginfb = $helper->getLoginUrl('https://localhost/A-event/event/public/pages/login/loginsuccess', $permissions);
+          $linkloginfb = $helper->getLoginUrl('http://localhost/A-event/event/public/pages/login/loginsuccess', $permissions);
           $linkloginfb = str_replace('amp;','',htmlspecialchars($linkloginfb));
         return view('pages.login',['linkloginfb'=>$linkloginfb]);
     }
@@ -232,7 +233,8 @@ class PagesController extends Controller
         $users = users::all();
         $Type_events = Type_events::all();
         $News = News::all();
-        return view('admin.dashboard.dashboard',['event'=>$event,'users'=>$users,'type_events'=>$Type_events,'news'=>$News]);
+        $bilss = Bills::all();
+        return view('admin.dashboard.dashboard',['event'=>$event,'users'=>$users,'type_events'=>$Type_events,'news'=>$News,'bills'=>$bilss]);
     }
     // QL User
 

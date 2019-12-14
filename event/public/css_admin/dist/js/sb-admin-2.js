@@ -3,10 +3,6 @@ $(function() {
     $('#side-menu').metisMenu();
 
 });
-
-//Loads the correct sidebar on window load,
-//collapses the sidebar on window resize.
-// Sets the min-height of #page-wrapper to window size
 $(function() {
     $(window).bind("load resize", function() {
         topOffset = 50;
@@ -34,8 +30,24 @@ $(function() {
         element.addClass('active');
     }
 });
-setTimeout(function(){
-    $('.sock').fadeIn(300);
-}, 800);
+$('document').ready(function(){
+	var rate = 2;
+	function chart_ani(){
+		$('.col').each(function(i,e){
+			var numb = $(this).find('b').text();
+			console.log( (parseFloat(numb) * rate).toFixed(0) + 'px');
+			$('.col').eq(i).animate({
+				height: (parseFloat(numb) * rate).toFixed(0) + 'px'
+			}, 500)
+		})
+		setTimeout(function(){
+			$('.chart_grid .numb').fadeIn(300);
+		}, 800);
+	}
+	chart_ani();
+});
+
+	
+
 
 
