@@ -255,7 +255,7 @@
 
                             <div class="form-group">
                                 <label>Tóm tắt sự kiện ( Hiển thị trên Slider, Sự kiện nổi bật)</label>
-                                <textarea class="form-control" id="editor1"  rows="2" cols="20" name="tom_tat"></textarea>
+                                <textarea class="form-control"  rows="2" cols="20" name="tom_tat"></textarea>
                                 @if($errors->has('tom_tat'))
                                     <span class="error">
                                         {{$errors->first('tom_tat')}}

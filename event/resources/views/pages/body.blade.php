@@ -52,7 +52,8 @@
 							<div class="swiper-wrapper">
                             @foreach($noibat as $noibat)
                             <div class="swiper-slide">
-									<figure class="wow fadeInDown" data-wow-delay=".3s"><img class="ofc" src="images/product/{{$noibat->banner}}" alt="" srcset="">
+
+									<figure class="wow fadeInDown" data-wow-delay=".3s"><div class="box-img"><img class="ofc" src="images/product/{{$noibat->banner}}" alt="" srcset=""></div>
 										<figcaption>
 											<div class="name-event wow fadeIn" data-wow-delay=".3s">
 												<h3>{{$noibat->ten_su_kien}}</h3>
@@ -77,7 +78,7 @@
 
                                                     </span></div>
 												</div>
-                                                <div class="limit-line">{!!htmlspecialchars_decode($noibat->mo_ta)!!}</div>
+                                                <p class="limit-line">A-Event hợp tác với "{{$noibat->nha_tai_tro}}" mang đến cho các bạn sự kiện thú vị. Cùng nhau kêu gọi bạn bè tham gia ngay để nhận ưu đãi.</p>
 											</div><a class="right wow flipInX" href="{{url('pages/chitiet',$noibat->id)}}" data-wow-delay=".5s">Tham Gia</a>
 										</figcaption>
 									</figure>
@@ -274,7 +275,9 @@
                                                     echo "" . date("d-m-Y", $d);
                                                     ?>
                                                     </span>
-													{!!htmlspecialchars_decode($new_01->noi_dung)!!}
+													<div class="limit-content-news">
+                                                    {!!htmlspecialchars_decode($new_01->noi_dung)!!}
+                                                    </div>
 												</figcaption>
 											</figure></a>
                                     </div>
@@ -296,7 +299,9 @@
                                                     echo "" . date("d-m-Y", $d);
                                                     ?>
                                                     </span>
+                                                    <div class="limit-content-news">
                                                     {!!htmlspecialchars_decode($news_moi->noi_dung)!!}
+                                                    </div>
 												</figcaption>
 											</figure></a>
                                     </div>
@@ -317,7 +322,9 @@
                                                     $d=strtotime($newss->created_at);
                                                     echo "" . date("d-m-Y", $d);
                                                     ?></span>
-													{!!htmlspecialchars_decode($newss->noi_dung)!!}
+													<div class="limit-content-news">
+                                                    {!!htmlspecialchars_decode($newss->noi_dung)!!}
+                                                    </div>
 												</figcaption>
 											</figure></a>
                                     </div>

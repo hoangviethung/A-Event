@@ -10,7 +10,7 @@ use Carbon\Carbon;
 class NewController extends Controller
 {
     public function getDanhsach(){
-        $tintuc = News::all();
+        $tintuc = News::paginate(5);
         return view('admin.new.danhsach',compact('tintuc'));
 
     }

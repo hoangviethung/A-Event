@@ -1,10 +1,12 @@
 @extends('layouts.index')
 @section('content')
 <main>
+
 			<section class="detail-news">
 				<div class="container">
 					<div class="row">
 						<div class="content-news col-lg-9">
+                        <h1>{{$chitiet->tieu_de}}</h1>
                         {!!htmlspecialchars_decode($chitiet->noi_dung)!!}
 						</div>
 						<div class="the-same-news col-lg-3">
@@ -19,7 +21,7 @@
                                                     echo "" . date("d-m-Y", $d);
                                                     ?>
                                                     </span>
-                                                    {!!htmlspecialchars_decode($danhmuclienquan->noi_dung)!!}
+                                                    <!-- {!!htmlspecialchars_decode($danhmuclienquan->noi_dung)!!} -->
 										</figcaption>
                                     </figure></a>
                                 </div>

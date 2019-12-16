@@ -3,31 +3,31 @@
  * For licensing, see https://ckeditor.com/legal/ckeditor-oss-license
  */
 
-CKEDITOR.editorConfig = function( config ) {
+CKEDITOR.editorConfig = function(config) {
     config.language = "vi";
     config.uiColor = "#ffd800"
-    CKEDITOR.editorConfig = function( config ) {
+    CKEDITOR.editorConfig = function(config) {
         config.toolbarGroups = [
-            { name: 'clipboard', groups: [ 'undo', 'clipboard' ] },
-            { name: 'editing', groups: [ 'find', 'selection', 'spellchecker', 'editing' ] },
-            { name: 'links', groups: [ 'links' ] },
-            { name: 'insert', groups: [ 'insert' ] },
-            { name: 'forms', groups: [ 'forms' ] },
-            { name: 'tools', groups: [ 'tools' ] },
-            { name: 'document', groups: [ 'mode', 'document', 'doctools' ] },
-            { name: 'others', groups: [ 'others' ] },
+            { name: 'clipboard', groups: ['undo', 'clipboard'] },
+            { name: 'editing', groups: ['find', 'selection', 'spellchecker', 'editing'] },
+            { name: 'links', groups: ['links'] },
+            { name: 'insert', groups: ['insert'] },
+            { name: 'forms', groups: ['forms'] },
+            { name: 'tools', groups: ['tools'] },
+            { name: 'document', groups: ['mode', 'document', 'doctools'] },
+            { name: 'others', groups: ['others'] },
             '/',
-            { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
-            { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi', 'paragraph' ] },
-            '/',
-            '/',
+            { name: 'basicstyles', groups: ['basicstyles', 'cleanup'] },
+            { name: 'paragraph', groups: ['list', 'indent', 'blocks', 'align', 'bidi', 'paragraph'] },
             '/',
             '/',
             '/',
             '/',
-            { name: 'styles', groups: [ 'styles' ] },
-            { name: 'colors', groups: [ 'colors' ] },
-            { name: 'about', groups: [ 'about' ] }
+            '/',
+            '/',
+            { name: 'styles', groups: ['styles'] },
+            { name: 'colors', groups: ['colors'] },
+            { name: 'about', groups: ['about'] }
         ];
 
         config.removeButtons = 'Subscript,Superscript,Paste,PasteText,PasteFromWord,Copy,Anchor';
