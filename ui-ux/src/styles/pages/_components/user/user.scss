@@ -229,4 +229,36 @@
 			}
 		}
 	}
+
+	@media (max-width: 1024.98px) {
+		aside {
+			flex     : 0 0 40%;
+			max-width: 40%;
+
+			figure {
+				padding: 50px 20px;
+
+				.box-img {
+					width : 50px;
+					height: 50px;
+				}
+			}
+		}
+
+		._main-user {
+			flex     : 0 0 60%;
+			max-width: 60%;
+		}
+	}
+
+	@media (max-width: 767.98px) {
+		aside {
+			display: none;
+		}
+
+		._main-user {
+			flex     : 0 0 100%;
+			max-width: 100%;
+		}
+	}
 }

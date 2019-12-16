@@ -166,7 +166,7 @@
 					background: $main-color-4;
 					padding   : 20px;
 
-					.org-images {
+					.org-img {
 						flex        : 0 0 100px;
 						max-width   : 100px;
 						height      : 100px;
@@ -221,6 +221,56 @@
 
 					.item {
 						margin-right: 10px;
+					}
+				}
+			}
+		}
+	}
+
+	@media (max-width: 1024.98px) {
+		.main-intro {
+			.aside-boxing {
+				margin-top: 50px;
+			}
+		}
+	}
+
+	@media (max-width: 767.98px) {
+		.main-intro {
+			padding-top: 20px;
+
+			.overview {
+				h1 {
+					font-size    : 24px;
+					margin-bottom: 15px;
+				}
+
+				.item {
+					padding-left: 25px;
+
+					&:after {
+						top   : 10px;
+						width : 14px;
+						height: 14px;
+					}
+				}
+			}
+
+			.details-event {
+				.ticket-booking {
+					.list-ticket {
+						.item {
+
+							.name,
+							.price {
+								padding  : 0;
+								font-size: 14px;
+
+								&:after {
+									content: none;
+								}
+							}
+						}
 					}
 				}
 			}

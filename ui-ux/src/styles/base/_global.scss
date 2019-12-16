@@ -56,6 +56,12 @@ main {
 	figure {
 		height: 600px;
 	}
+
+	@media (max-width: 1024.98px) {
+		figure {
+			height: auto;
+		}
+	}
 }
 
 .tab-container {
@@ -76,6 +82,11 @@ main {
 			}
 		}
 	}
+}
+
+.CKEditor {
+	padding   : 25px;
+	background: #0d0f0f;
 }
 
 #sub-information {
@@ -264,11 +275,11 @@ main {
 				font-size: 12px;
 			}
 
-			p {
-				display           : -webkit-box;
-				font-size         : 14px;
-				text-align        : justify;
+			.limit-content-news {
 				max-height        : 65px;
+				display           : -webkit-box;
+				font-size         : 15px;
+				text-align        : justify;
 				overflow          : hidden;
 				text-overflow     : ellipsis;
 				-webkit-line-clamp: 3;
@@ -344,8 +355,8 @@ main {
 					font-size: 18px;
 				}
 
-				P {
-					font-size : 13px;
+				.limit-content-news {
+					font-size : 14px;
 					max-height: 57px;
 				}
 			}
@@ -354,9 +365,11 @@ main {
 }
 
 .item-same-news {
-	position : relative;
-	flex     : 0 0 100%;
-	max-width: 100%;
+	position      : relative;
+	flex          : 0 0 100%;
+	max-width     : 100%;
+	margin-bottom : 30px;
+	padding-bottom: 30px;
 
 	figure {
 		cursor   : pointer;
@@ -408,7 +421,7 @@ main {
 				font-size: 12px;
 			}
 
-			p {
+			.litmit-content-same-news {
 				display           : -webkit-box;
 				font-size         : 14px;
 				text-align        : justify;
@@ -463,6 +476,7 @@ main {
 		}
 	}
 }
+
 
 .title-catalog {
 	display    : flex;
